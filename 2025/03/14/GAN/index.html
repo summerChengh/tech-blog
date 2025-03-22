@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content="生成对抗网络（GAN）简介生成对抗网络（Generative Adversarial Networks，简称GAN）是一种深度学习模型，由Ian Goodfellow和他的同事们于2014年提出。GAN由两个神经网络组成：生成器（Generator）和判别器（Discriminator），这两个网络相互对抗，通过博弈过程来提高彼此的能力。  GAN的工作原理GAN的工作原理可以类比为一个伪造者和一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GAN神经网络">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/14/GAN/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content="生成对抗网络（GAN）简介生成对抗网络（Generative Adversarial Networks，简称GAN）是一种深度学习模型，由Ian Goodfellow和他的同事们于2014年提出。GAN由两个神经网络组成：生成器（Generator）和判别器（Discriminator），这两个网络相互对抗，通过博弈过程来提高彼此的能力。  GAN的工作原理GAN的工作原理可以类比为一个伪造者和一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/XVKRM4F.png">
+<meta property="article:published_time" content="2025-03-14T10:25:00.000Z">
+<meta property="article:modified_time" content="2025-03-14T13:47:58.512Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="DeepLearning">
+<meta property="article:tag" content="Image">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Neural Networks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i.imgur.com/XVKRM4F.png">
+  
+  
+  
+  <title>GAN神经网络 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/projects/" target="_self">
+                <i class="iconfont icon-clipboard"></i>
+                <span>projects</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="GAN神经网络"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-14 18:25" pubdate>
+          March 14, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">GAN神经网络</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="生成对抗网络（GAN）简介"><a href="#生成对抗网络（GAN）简介" class="headerlink" title="生成对抗网络（GAN）简介"></a>生成对抗网络（GAN）简介</h1><p>生成对抗网络（Generative Adversarial Networks，简称GAN）是一种深度学习模型，由Ian Goodfellow和他的同事们于2014年提出。GAN由两个神经网络组成：生成器（Generator）和判别器（Discriminator），这两个网络相互对抗，通过博弈过程来提高彼此的能力。</p>
+<p><img src="https://i.imgur.com/XVKRM4F.png" srcset="/tech-blog/img/loading.gif" lazyload alt="GAN Architecture"></p>
+<h2 id="GAN的工作原理"><a href="#GAN的工作原理" class="headerlink" title="GAN的工作原理"></a>GAN的工作原理</h2><p>GAN的工作原理可以类比为一个伪造者和一个鉴定专家之间的博弈：</p>
+<ol>
+<li><strong>生成器（伪造者）</strong>：尝试创建看起来真实的数据（如图像）</li>
+<li><strong>判别器（鉴定专家）</strong>：尝试区分真实数据和生成器创建的假数据</li>
+</ol>
+<p>这两个网络在训练过程中相互竞争：</p>
+<ul>
+<li>生成器试图欺骗判别器，创建越来越逼真的假数据</li>
+<li>判别器试图变得更加精明，更好地区分真假数据</li>
+</ul>
+<p>随着训练的进行，两个网络都会不断改进，最终生成器能够创建非常逼真的数据，而判别器难以区分真假。</p>
+<h2 id="GAN的数学表达"><a href="#GAN的数学表达" class="headerlink" title="GAN的数学表达"></a>GAN的数学表达</h2><p>从数学角度看，GAN的目标函数可以表示为一个极小极大博弈（minimax game）：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">min_G max_D <span class="hljs-built_in">V</span>(D, G) = E_&#123;<span class="hljs-attribute">x</span>~<span class="hljs-built_in">p_data</span>(x)&#125;[log <span class="hljs-built_in">D</span>(x)] + E_&#123;z~<span class="hljs-built_in">p_z</span>(z)&#125;[<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> - <span class="hljs-built_in">D</span>(<span class="hljs-built_in">G</span>(z)))]<br></code></pre></td></tr></table></figure>
+
+<p>其中：</p>
+<ul>
+<li>G是生成器网络</li>
+<li>D是判别器网络</li>
+<li>p_data是真实数据分布</li>
+<li>p_z是输入噪声的分布</li>
+<li>D(x)表示判别器认为x是真实数据的概率</li>
+<li>G(z)表示生成器从噪声z生成的数据</li>
+</ul>
+<h2 id="GAN的主要类型"><a href="#GAN的主要类型" class="headerlink" title="GAN的主要类型"></a>GAN的主要类型</h2><p>自2014年以来，GAN已经发展出许多变体，以下是一些最重要的类型：</p>
+<h3 id="1-DCGAN（Deep-Convolutional-GAN）"><a href="#1-DCGAN（Deep-Convolutional-GAN）" class="headerlink" title="1. DCGAN（Deep Convolutional GAN）"></a>1. DCGAN（Deep Convolutional GAN）</h3><p>DCGAN在GAN的基础上使用了卷积神经网络，使其更适合处理图像数据。它引入了一些架构指南，如使用批量归一化、去除全连接层等，大大提高了GAN训练的稳定性。</p>
+<h3 id="2-CGAN（Conditional-GAN）"><a href="#2-CGAN（Conditional-GAN）" class="headerlink" title="2. CGAN（Conditional GAN）"></a>2. CGAN（Conditional GAN）</h3><p>条件GAN通过向生成器和判别器提供额外的条件信息（如类别标签），使模型能够生成特定类别的数据。这使得我们可以控制生成过程，例如生成特定数字的手写体。</p>
+<h3 id="3-CycleGAN"><a href="#3-CycleGAN" class="headerlink" title="3. CycleGAN"></a>3. CycleGAN</h3><p>CycleGAN能够在没有成对训练数据的情况下，学习将图像从一个域转换到另一个域，例如将马变成斑马、夏天变成冬天等。它通过引入循环一致性损失（cycle consistency loss）来实现这一点。</p>
+<h3 id="4-StyleGAN"><a href="#4-StyleGAN" class="headerlink" title="4. StyleGAN"></a>4. StyleGAN</h3><p>StyleGAN引入了一种新的生成器架构，能够在不同的分辨率级别上控制生成图像的风格。它能够生成极其逼真的人脸图像，并允许对不同的面部特征进行精细控制。</p>
+<h2 id="GAN的应用"><a href="#GAN的应用" class="headerlink" title="GAN的应用"></a>GAN的应用</h2><p>GAN已经在多个领域展现出巨大的应用潜力：</p>
+<h3 id="图像生成与编辑"><a href="#图像生成与编辑" class="headerlink" title="图像生成与编辑"></a>图像生成与编辑</h3><ul>
+<li>生成高分辨率、逼真的人脸图像</li>
+<li>图像到图像的转换（如素描转照片）</li>
+<li>图像修复与超分辨率重建</li>
+<li>风格迁移</li>
+</ul>
+<h3 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h3><p>GAN可以生成额外的训练数据，帮助解决数据稀缺问题，特别是在医学影像等领域。</p>
+<h3 id="药物发现"><a href="#药物发现" class="headerlink" title="药物发现"></a>药物发现</h3><p>GAN可以用于生成新的分子结构，加速药物发现过程。</p>
+<h3 id="视频生成"><a href="#视频生成" class="headerlink" title="视频生成"></a>视频生成</h3><p>最新的GAN模型能够生成短视频片段，未来可能彻底改变影视制作流程。</p>
+<h2 id="GAN的挑战"><a href="#GAN的挑战" class="headerlink" title="GAN的挑战"></a>GAN的挑战</h2><p>尽管GAN非常强大，但它们也面临一些挑战：</p>
+<ol>
+<li><strong>训练不稳定</strong>：GAN的训练过程可能不稳定，容易出现模式崩溃（mode collapse）等问题</li>
+<li><strong>评估困难</strong>：很难客观地评估GAN的性能</li>
+<li><strong>计算资源需求高</strong>：训练高质量的GAN通常需要大量的计算资源</li>
+<li><strong>伦理问题</strong>：GAN可能被用于生成深度伪造（deepfake）内容，引发隐私和信息真实性问题</li>
+</ol>
+<h2 id="实现一个简单的GAN"><a href="#实现一个简单的GAN" class="headerlink" title="实现一个简单的GAN"></a>实现一个简单的GAN</h2><p>以下是使用PyTorch实现一个简单GAN的代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">import</span> torch.optim <span class="hljs-keyword">as</span> optim<br><span class="hljs-keyword">import</span> torchvision<br><span class="hljs-keyword">import</span> torchvision.transforms <span class="hljs-keyword">as</span> transforms<br><span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> DataLoader<br><span class="hljs-keyword">from</span> torchvision.datasets <span class="hljs-keyword">import</span> MNIST<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><span class="hljs-comment"># 设置随机种子，确保结果可复现</span><br>torch.manual_seed(<span class="hljs-number">42</span>)<br><br><span class="hljs-comment"># 设备配置</span><br>device = torch.device(<span class="hljs-string">&#x27;cuda&#x27;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&#x27;cpu&#x27;</span>)<br><br><span class="hljs-comment"># 超参数</span><br>batch_size = <span class="hljs-number">64</span><br>z_dimension = <span class="hljs-number">100</span><br>learning_rate = <span class="hljs-number">0.0002</span><br>num_epochs = <span class="hljs-number">50</span><br><br><span class="hljs-comment"># 数据加载和预处理</span><br>transform = transforms.Compose([<br>    transforms.ToTensor(),<br>    transforms.Normalize((<span class="hljs-number">0.5</span>,), (<span class="hljs-number">0.5</span>,))<br>])<br><br>mnist_dataset = MNIST(root=<span class="hljs-string">&#x27;./data&#x27;</span>, train=<span class="hljs-literal">True</span>, transform=transform, download=<span class="hljs-literal">True</span>)<br>dataloader = DataLoader(mnist_dataset, batch_size=batch_size, shuffle=<span class="hljs-literal">True</span>)<br><br><span class="hljs-comment"># 定义生成器</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Generator</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">super</span>(Generator, <span class="hljs-variable language_">self</span>).__init__()<br>        <span class="hljs-variable language_">self</span>.model = nn.Sequential(<br>            nn.Linear(z_dimension, <span class="hljs-number">256</span>),<br>            nn.LeakyReLU(<span class="hljs-number">0.2</span>),<br>            nn.Linear(<span class="hljs-number">256</span>, <span class="hljs-number">512</span>),<br>            nn.LeakyReLU(<span class="hljs-number">0.2</span>),<br>            nn.Linear(<span class="hljs-number">512</span>, <span class="hljs-number">1024</span>),<br>            nn.LeakyReLU(<span class="hljs-number">0.2</span>),<br>            nn.Linear(<span class="hljs-number">1024</span>, <span class="hljs-number">784</span>),<br>            nn.Tanh()<br>        )<br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, z</span>):<br>        img = <span class="hljs-variable language_">self</span>.model(z)<br>        img = img.view(img.size(<span class="hljs-number">0</span>), <span class="hljs-number">1</span>, <span class="hljs-number">28</span>, <span class="hljs-number">28</span>)<br>        <span class="hljs-keyword">return</span> img<br><br><span class="hljs-comment"># 定义判别器</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Discriminator</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">super</span>(Discriminator, <span class="hljs-variable language_">self</span>).__init__()<br>        <span class="hljs-variable language_">self</span>.model = nn.Sequential(<br>            nn.Linear(<span class="hljs-number">784</span>, <span class="hljs-number">512</span>),<br>            nn.LeakyReLU(<span class="hljs-number">0.2</span>),<br>            nn.Linear(<span class="hljs-number">512</span>, <span class="hljs-number">256</span>),<br>            nn.LeakyReLU(<span class="hljs-number">0.2</span>),<br>            nn.Linear(<span class="hljs-number">256</span>, <span class="hljs-number">1</span>),<br>            nn.Sigmoid()<br>        )<br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, img</span>):<br>        img_flat = img.view(img.size(<span class="hljs-number">0</span>), -<span class="hljs-number">1</span>)<br>        validity = <span class="hljs-variable language_">self</span>.model(img_flat)<br>        <span class="hljs-keyword">return</span> validity<br><br><span class="hljs-comment"># 初始化模型</span><br>generator = Generator().to(device)<br>discriminator = Discriminator().to(device)<br><br><span class="hljs-comment"># 损失函数和优化器</span><br>criterion = nn.BCELoss()<br>optimizer_G = optim.Adam(generator.parameters(), lr=learning_rate, betas=(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.999</span>))<br>optimizer_D = optim.Adam(discriminator.parameters(), lr=learning_rate, betas=(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.999</span>))<br><br><span class="hljs-comment"># 训练循环</span><br><span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(num_epochs):<br>    <span class="hljs-keyword">for</span> i, (real_imgs, _) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(dataloader):<br>        real_imgs = real_imgs.to(device)<br>        batch_size = real_imgs.size(<span class="hljs-number">0</span>)<br>        <br>        <span class="hljs-comment"># 创建标签</span><br>        real_label = torch.ones(batch_size, <span class="hljs-number">1</span>).to(device)<br>        fake_label = torch.zeros(batch_size, <span class="hljs-number">1</span>).to(device)<br>        <br>        <span class="hljs-comment"># 训练判别器</span><br>        optimizer_D.zero_grad()<br>        <br>        <span class="hljs-comment"># 真实图像的损失</span><br>        real_pred = discriminator(real_imgs)<br>        d_loss_real = criterion(real_pred, real_label)<br>        <br>        <span class="hljs-comment"># 生成假图像</span><br>        z = torch.randn(batch_size, z_dimension).to(device)<br>        fake_imgs = generator(z)<br>        <br>        <span class="hljs-comment"># 假图像的损失</span><br>        fake_pred = discriminator(fake_imgs.detach())<br>        d_loss_fake = criterion(fake_pred, fake_label)<br>        <br>        <span class="hljs-comment"># 总判别器损失</span><br>        d_loss = d_loss_real + d_loss_fake<br>        d_loss.backward()<br>        optimizer_D.step()<br>        <br>        <span class="hljs-comment"># 训练生成器</span><br>        optimizer_G.zero_grad()<br>        <br>        <span class="hljs-comment"># 生成器希望判别器将假图像判为真</span><br>        fake_pred = discriminator(fake_imgs)<br>        g_loss = criterion(fake_pred, real_label)<br>        <br>        g_loss.backward()<br>        optimizer_G.step()<br>        <br>        <span class="hljs-keyword">if</span> (i+<span class="hljs-number">1</span>) % <span class="hljs-number">100</span> == <span class="hljs-number">0</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Epoch [<span class="hljs-subst">&#123;epoch+<span class="hljs-number">1</span>&#125;</span>/<span class="hljs-subst">&#123;num_epochs&#125;</span>], Step [<span class="hljs-subst">&#123;i+<span class="hljs-number">1</span>&#125;</span>/<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(dataloader)&#125;</span>], &quot;</span><br>                  <span class="hljs-string">f&quot;D Loss: <span class="hljs-subst">&#123;d_loss.item():<span class="hljs-number">.4</span>f&#125;</span>, G Loss: <span class="hljs-subst">&#123;g_loss.item():<span class="hljs-number">.4</span>f&#125;</span>&quot;</span>)<br>    <br>    <span class="hljs-comment"># 每个epoch保存生成的图像</span><br>    <span class="hljs-keyword">if</span> (epoch+<span class="hljs-number">1</span>) % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">with</span> torch.no_grad():<br>            test_z = torch.randn(<span class="hljs-number">16</span>, z_dimension).to(device)<br>            generated_imgs = generator(test_z)<br>            generated_imgs = generated_imgs.cpu().numpy()<br>            <br>            <span class="hljs-comment"># 显示生成的图像</span><br>            fig, axes = plt.subplots(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>, figsize=(<span class="hljs-number">8</span>, <span class="hljs-number">8</span>))<br>            <span class="hljs-keyword">for</span> i, ax <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(axes.flat):<br>                ax.imshow(generated_imgs[i, <span class="hljs-number">0</span>, :, :], cmap=<span class="hljs-string">&#x27;gray&#x27;</span>)<br>                ax.axis(<span class="hljs-string">&#x27;off&#x27;</span>)<br>            plt.savefig(<span class="hljs-string">f&quot;gan_epoch_<span class="hljs-subst">&#123;epoch+<span class="hljs-number">1</span>&#125;</span>.png&quot;</span>)<br>            plt.close()<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Training finished!&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>生成对抗网络是深度学习领域最令人兴奋的发展之一，它们不仅推动了人工智能的边界，还为艺术创作、内容生成和数据增强等领域带来了革命性的变化。随着研究的不断深入，我们可以期待GAN在未来发挥更大的作用，创造出更加惊人的成果。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>Goodfellow, I., et al. (2014). Generative Adversarial Nets. NIPS.</li>
+<li>Radford, A., et al. (2015). Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks. arXiv:1511.06434.</li>
+<li>Karras, T., et al. (2019). A Style-Based Generator Architecture for Generative Adversarial Networks. CVPR.</li>
+<li>Zhu, J., et al. (2017). Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks. ICCV.</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/DeepLearning/" class="category-chain-item">DeepLearning</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/DeepLearning/AI/" class="category-chain-item">AI</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/DeepLearning/" class="print-no-link">#DeepLearning</a>
+      
+        <a href="/tech-blog/tags/Image/" class="print-no-link">#Image</a>
+      
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tech-blog/tags/Neural-Networks/" class="print-no-link">#Neural Networks</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>GAN神经网络</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/03/14/GAN/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 14, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/03/14/Setting-Up-a-Development-Environment/" title="Setting Up a Development Environment">
+                        <span class="hidden-mobile">Setting Up a Development Environment</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
