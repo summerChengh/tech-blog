@@ -41,6 +41,74 @@
   
   
   <entry>
+    <title>LAPA 论文解读：潜在动作视频预训练</title>
+    <link href="/tech-blog/2025/03/22/lapa/"/>
+    <url>/tech-blog/2025/03/22/lapa/</url>
+    
+    <content type="html"><![CDATA[<p>LAPA: Latent Action Pretraining from Videos文章解读</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>DeepLearning</category>
+      
+      <category>AI</category>
+      
+      <category>Research</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>DeepLearning</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>VideoUnderstanding</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>AI研究与创作工具集</title>
+    <link href="/tech-blog/2025/03/22/tools/"/>
+    <url>/tech-blog/2025/03/22/tools/</url>
+    
+    <content type="html"><![CDATA[<h1 id="论文工具"><a href="#论文工具" class="headerlink" title="论文工具"></a>论文工具</h1><p><a href="https://www.alphaxiv.org/code/2503.14476">https://www.alphaxiv.org/code/2503.14476</a></p><h1 id="文生图"><a href="#文生图" class="headerlink" title="文生图"></a>文生图</h1><h1 id="文生视频"><a href="#文生视频" class="headerlink" title="文生视频"></a>文生视频</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tools</category>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Tools</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>GenerativeAI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>GAN神经网络</title>
     <link href="/tech-blog/2025/03/14/GAN/"/>
     <url>/tech-blog/2025/03/14/GAN/</url>
