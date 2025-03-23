@@ -17,6 +17,43 @@
   
   
   <entry>
+    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
+    <link href="/tech-blog/2025/03/23/UMI/"/>
+    <url>/tech-blog/2025/03/23/UMI/</url>
+    
+    <content type="html"><![CDATA[<p>[主页]（<a href="https://umi-gripper.github.io/%EF%BC%89">https://umi-gripper.github.io/）</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>OpenVLA：开源视觉-语言-动作模型解读</title>
     <link href="/tech-blog/2025/03/23/openvla/"/>
     <url>/tech-blog/2025/03/23/openvla/</url>
@@ -37,9 +74,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -74,9 +111,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -111,9 +148,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -227,11 +264,11 @@
     
     <tags>
       
-      <tag>DeepLearning</tag>
-      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
+      
+      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -262,11 +299,11 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
-      
-      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
