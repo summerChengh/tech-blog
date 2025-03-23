@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title></title>
+    <link href="/tech-blog/2025/03/24/ShapeLLM/"/>
+    <url>/tech-blog/2025/03/24/ShapeLLM/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/tech-blog/2025/03/24/FreeMotion/"/>
+    <url>/tech-blog/2025/03/24/FreeMotion/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Humanoid Shadowing and Imitation from Humans文章解读</title>
     <link href="/tech-blog/2025/03/23/humanPlus/"/>
     <url>/tech-blog/2025/03/23/humanPlus/</url>
@@ -24,15 +50,52 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
+    <link href="/tech-blog/2025/03/23/QuasiSim/"/>
+    <url>/tech-blog/2025/03/23/QuasiSim/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -61,52 +124,15 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
-    <link href="/tech-blog/2025/03/23/lapa/"/>
-    <url>/tech-blog/2025/03/23/lapa/</url>
-    
-    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
       <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
       
     </tags>
     
@@ -119,7 +145,7 @@
     <link href="/tech-blog/2025/03/23/openvla/"/>
     <url>/tech-blog/2025/03/23/openvla/</url>
     
-    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><p>image.png</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
     
     
     <categories>
@@ -135,15 +161,15 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -172,15 +198,52 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
+    <link href="/tech-blog/2025/03/23/lapa/"/>
+    <url>/tech-blog/2025/03/23/lapa/</url>
+    
+    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -209,15 +272,15 @@
     
     <tags>
       
+      <tag>Research</tag>
+      
       <tag>AI</tag>
       
-      <tag>Research</tag>
+      <tag>ComputerVision</tag>
       
       <tag>Robotics</tag>
       
       <tag>DiffusionModels</tag>
-      
-      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -312,11 +375,11 @@
     
     <tags>
       
-      <tag>DeepLearning</tag>
-      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
+      
+      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -347,11 +410,11 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
-      
-      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
