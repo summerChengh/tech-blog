@@ -37,9 +37,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -74,9 +74,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -111,9 +111,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -132,7 +132,7 @@
     <link href="/tech-blog/2025/03/22/RDT%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
     <url>/tech-blog/2025/03/22/RDT%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/</url>
     
-    <content type="html"><![CDATA[<h1 id="RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION"><a href="#RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION" class="headerlink" title="RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION"></a>RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>论文链接: <a href="https://arxiv.org/pdf/2410.07864">RDT-1B: A Diffusion Foundation Model for Bimanual Manipulation</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION"><a href="#RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION" class="headerlink" title="RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION"></a>RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><p><a href="https://arxiv.org/pdf/2410.07864">RDT-1B: A Diffusion Foundation Model for Bimanual Manipulation</a></p>]]></content>
     
     
     <categories>
@@ -148,9 +148,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -264,11 +264,11 @@
     
     <tags>
       
+      <tag>DeepLearning</tag>
+      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
-      
-      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -299,11 +299,11 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
+      
+      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
