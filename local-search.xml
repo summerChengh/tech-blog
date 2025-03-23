@@ -24,15 +24,15 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -61,52 +61,15 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
-    <link href="/tech-blog/2025/03/23/lapa/"/>
-    <url>/tech-blog/2025/03/23/lapa/</url>
-    
-    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
       <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
       
     </tags>
     
@@ -135,15 +98,15 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -172,15 +135,52 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LAPA Latent Action Pretraining from Videos文章解读</title>
+    <link href="/tech-blog/2025/03/23/lapa/"/>
+    <url>/tech-blog/2025/03/23/lapa/</url>
+    
+    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -209,15 +209,15 @@
     
     <tags>
       
+      <tag>Research</tag>
+      
       <tag>AI</tag>
       
-      <tag>Research</tag>
+      <tag>ComputerVision</tag>
       
       <tag>Robotics</tag>
       
       <tag>DiffusionModels</tag>
-      
-      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -312,11 +312,11 @@
     
     <tags>
       
-      <tag>DeepLearning</tag>
-      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
+      
+      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -347,11 +347,11 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
-      
-      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
