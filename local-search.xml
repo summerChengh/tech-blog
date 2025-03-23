@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/23/LAPA1/"/>
-    <url>/tech-blog/2025/03/23/LAPA1/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Humanoid Shadowing and Imitation from Humans文章解读</title>
     <link href="/tech-blog/2025/03/23/humanPlus/"/>
     <url>/tech-blog/2025/03/23/humanPlus/</url>
@@ -37,46 +24,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
-    <link href="/tech-blog/2025/03/23/UMI/"/>
-    <url>/tech-blog/2025/03/23/UMI/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>AI</tag>
-      
-      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -111,46 +61,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
-    <link href="/tech-blog/2025/03/23/saycan/"/>
-    <url>/tech-blog/2025/03/23/saycan/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>AI</tag>
-      
-      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -185,9 +98,83 @@
     
     <tags>
       
+      <tag>Research</tag>
+      
       <tag>AI</tag>
       
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
+    <link href="/tech-blog/2025/03/23/UMI/"/>
+    <url>/tech-blog/2025/03/23/UMI/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
+    <link href="/tech-blog/2025/03/23/saycan/"/>
+    <url>/tech-blog/2025/03/23/saycan/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -222,9 +209,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -325,11 +312,11 @@
     
     <tags>
       
-      <tag>DeepLearning</tag>
-      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
+      
+      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -360,11 +347,11 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
-      
-      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
