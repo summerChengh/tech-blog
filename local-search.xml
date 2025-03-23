@@ -4,13 +4,37 @@
   
   
   <entry>
-    <title></title>
+    <title>Humanoid Shadowing and Imitation from Humans文章解读</title>
     <link href="/tech-blog/2025/03/23/humanPlus/"/>
     <url>/tech-blog/2025/03/23/humanPlus/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p><a href="https://humanoid-ai.github.io/">主页</a></p>]]></content>
     
     
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+    </tags>
     
   </entry>
   
@@ -21,7 +45,7 @@
     <link href="/tech-blog/2025/03/23/UMI/"/>
     <url>/tech-blog/2025/03/23/UMI/</url>
     
-    <content type="html"><![CDATA[<p>[主页]（<a href="https://umi-gripper.github.io/%EF%BC%89">https://umi-gripper.github.io/）</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
     
     
     <categories>
