@@ -4,6 +4,122 @@
   
   
   <entry>
+    <title>RDT-1B：双手操作的扩散基础模型解读</title>
+    <link href="/tech-blog/2025/03/22/RDT%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    <url>/tech-blog/2025/03/22/RDT%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/</url>
+    
+    <content type="html"><![CDATA[<h1 id="RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION"><a href="#RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION" class="headerlink" title="RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION"></a>RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>github: <a href="https://arxiv.org/pdf/2410.07864">https://arxiv.org/pdf/2410.07864</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>DiffusionModels</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何找到研究切入点：从文献到创新</title>
+    <link href="/tech-blog/2025/03/22/%E5%A6%82%E4%BD%95%E6%89%BE%E7%A0%94%E7%A9%B6%E7%82%B9/"/>
+    <url>/tech-blog/2025/03/22/%E5%A6%82%E4%BD%95%E6%89%BE%E7%A0%94%E7%A9%B6%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="如何切入研究点"><a href="#如何切入研究点" class="headerlink" title="如何切入研究点"></a>如何切入研究点</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>Academic</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AcademicSkills</tag>
+      
+      <tag>ResearchMethodology</tag>
+      
+      <tag>Innovation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何高效阅读和理解学术论文</title>
+    <link href="/tech-blog/2025/03/22/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/"/>
+    <url>/tech-blog/2025/03/22/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="如何高效阅读和理解学术论文"><a href="#如何高效阅读和理解学术论文" class="headerlink" title="如何高效阅读和理解学术论文"></a>如何高效阅读和理解学术论文</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>Academic</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AcademicSkills</tag>
+      
+      <tag>PaperReading</tag>
+      
+      <tag>Methodology</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/tech-blog/2025/03/22/lapa/"/>
+    <url>/tech-blog/2025/03/22/lapa/</url>
+    
+    <content type="html"><![CDATA[<p>LAPA: Latent Action Pretraining from Videos文章解读</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>灵巧手：UniDexGrasp论文解读</title>
     <link href="/tech-blog/2025/03/22/UniDexGrasp/"/>
     <url>/tech-blog/2025/03/22/UniDexGrasp/</url>
@@ -24,83 +140,15 @@
     
     <tags>
       
-      <tag>DeepLearning</tag>
-      
       <tag>AI</tag>
-      
-      <tag>Robot</tag>
       
       <tag>Robotics</tag>
       
-      <tag>Grasping</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>LAPA 论文解读：潜在动作视频预训练</title>
-    <link href="/tech-blog/2025/03/22/lapa/"/>
-    <url>/tech-blog/2025/03/22/lapa/</url>
-    
-    <content type="html"><![CDATA[<p>LAPA: Latent Action Pretraining from Videos文章解读</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>DeepLearning</category>
-      
-      <category>AI</category>
-      
-      <category>Research</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>DeepLearning</tag>
       
-      <tag>AI</tag>
+      <tag>Robot</tag>
       
-      <tag>ComputerVision</tag>
-      
-      <tag>VideoUnderstanding</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>AI研究与创作工具集</title>
-    <link href="/tech-blog/2025/03/22/tools/"/>
-    <url>/tech-blog/2025/03/22/tools/</url>
-    
-    <content type="html"><![CDATA[<h1 id="论文工具"><a href="#论文工具" class="headerlink" title="论文工具"></a>论文工具</h1><p><a href="https://www.alphaxiv.org/code/2503.14476">https://www.alphaxiv.org/code/2503.14476</a></p><h1 id="文生图"><a href="#文生图" class="headerlink" title="文生图"></a>文生图</h1><h1 id="文生视频"><a href="#文生视频" class="headerlink" title="文生视频"></a>文生视频</h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>Tools</category>
-      
-      <category>AI</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Tools</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>GenerativeAI</tag>
+      <tag>Grasping</tag>
       
     </tags>
     
@@ -127,11 +175,11 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
-      
-      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
