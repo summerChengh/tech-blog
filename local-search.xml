@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
-    <link href="/tech-blog/2025/03/25/GR00T-N1/"/>
-    <url>/tech-blog/2025/03/25/GR00T-N1/</url>
+    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
+    <link href="/tech-blog/2025/03/25/FreeMotion/"/>
+    <url>/tech-blog/2025/03/25/FreeMotion/</url>
     
-    <content type="html"><![CDATA[<h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="">ShapeLLM</a></p>]]></content>
     
     
     <categories>
@@ -28,11 +28,48 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
       <tag>NLP</tag>
       
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
+    <link href="/tech-blog/2025/03/25/GR00T-N1/"/>
+    <url>/tech-blog/2025/03/25/GR00T-N1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="微调数据"><a href="#微调数据" class="headerlink" title="微调数据"></a>微调数据</h2><p>Open X-Embodiment 数据集</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
       <tag>Robotics</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -73,75 +110,10 @@
   
   <entry>
     <title></title>
-    <link href="/tech-blog/2025/03/24/Prompts/"/>
-    <url>/tech-blog/2025/03/24/Prompts/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/24/%E6%96%87%E7%94%9F%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/"/>
-    <url>/tech-blog/2025/03/24/%E6%96%87%E7%94%9F%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/24/Agent/"/>
-    <url>/tech-blog/2025/03/24/Agent/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><h1 id="单Agent框架-vs-多Agent框架"><a href="#单Agent框架-vs-多Agent框架" class="headerlink" title="单Agent框架 vs 多Agent框架"></a>单Agent框架 vs 多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
     <link href="/tech-blog/2025/03/24/Palm-E/"/>
     <url>/tech-blog/2025/03/24/Palm-E/</url>
     
     <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/24/YellAtYourRobot/"/>
-    <url>/tech-blog/2025/03/24/YellAtYourRobot/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/24/FreeMotion/"/>
-    <url>/tech-blog/2025/03/24/FreeMotion/</url>
-    
-    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="">ShapeLLM</a></p>]]></content>
     
     
     
@@ -185,11 +157,36 @@
   
   
   <entry>
+    <title>Agent</title>
+    <link href="/tech-blog/2025/03/24/Agent/"/>
+    <url>/tech-blog/2025/03/24/Agent/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><h1 id="单Agent框架-vs-多Agent框架"><a href="#单Agent框架-vs-多Agent框架" class="headerlink" title="单Agent框架 vs 多Agent框架"></a>单Agent框架 vs 多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>注意力机制：深度学习中的关键创新</title>
     <link href="/tech-blog/2025/03/24/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
     <url>/tech-blog/2025/03/24/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
     
-    <content type="html"><![CDATA[<h1 id="注意力机制：深度学习中的关键创新"><a href="#注意力机制：深度学习中的关键创新" class="headerlink" title="注意力机制：深度学习中的关键创新"></a>注意力机制：深度学习中的关键创新</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>注意力机制(Attention Mechanism)是深度学习领域的重要突破，它模拟了人类选择性关注信息的能力，为神经网络赋予了”关注重点”的能力。自2017年提出以来，以注意力机制为核心的Transformer架构已经彻底改变了自然语言处理、计算机视觉等多个领域的发展方向。</p><h2 id="注意力机制的起源"><a href="#注意力机制的起源" class="headerlink" title="注意力机制的起源"></a>注意力机制的起源</h2><p>最早的注意力机制可以追溯到2014年Bahdanau等人在机器翻译任务中提出的方法，被称为”加性注意力”。随后Luong等人提出了”乘性注意力”。而真正的突破点是2017年Google团队在《Attention is All You Need》论文中提出的自注意力(Self-Attention)机制和Transformer架构。</p><h2 id="注意力机制的核心原理"><a href="#注意力机制的核心原理" class="headerlink" title="注意力机制的核心原理"></a>注意力机制的核心原理</h2><h3 id="查询-键-值-Query-Key-Value-模型"><a href="#查询-键-值-Query-Key-Value-模型" class="headerlink" title="查询-键-值(Query-Key-Value)模型"></a>查询-键-值(Query-Key-Value)模型</h3><p>注意力机制的核心是QKV模型：</p><ul><li>查询(Query)：当前位置的信息需求</li><li>键(Key)：所有位置的信息索引</li><li>值(Value)：所有位置的实际信息内容</li></ul><p>通过计算查询与键的相似度，为每个值分配权重，实现信息的选择性关注。</p><h3 id="自注意力计算过程"><a href="#自注意力计算过程" class="headerlink" title="自注意力计算过程"></a>自注意力计算过程</h3><ol><li>线性投影：将输入转换为Q、K、V矩阵</li><li>注意力分数计算：Q与K的点积操作</li><li>缩放与Softmax：归一化得到注意力权重</li><li>加权求和：将权重与V相乘得到输出</li></ol><h2 id="注意力机制的变体"><a href="#注意力机制的变体" class="headerlink" title="注意力机制的变体"></a>注意力机制的变体</h2><ol><li><strong>多头注意力(Multi-head Attention)</strong>：并行运行多组注意力，捕捉不同角度的依赖关系</li><li><strong>掩码注意力(Masked Attention)</strong>：在自回归生成任务中防止信息泄露</li><li><strong>稀疏注意力(Sparse Attention)</strong>：降低计算复杂度，处理长序列</li><li><strong>局部注意力(Local Attention)</strong>：只关注局部窗口内的信息</li></ol><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>注意力机制已经在多个领域取得了突破性成果：</p><ul><li><strong>自然语言处理</strong>：GPT、BERT等大型语言模型</li><li><strong>计算机视觉</strong>：Vision Transformer</li><li><strong>多模态学习</strong>：CLIP、Stable Diffusion</li><li><strong>音频处理</strong>：用于语音识别和生成</li></ul><h2 id="未来发展趋势"><a href="#未来发展趋势" class="headerlink" title="未来发展趋势"></a>未来发展趋势</h2><ol><li>计算效率优化：降低注意力机制的计算复杂度</li><li>长文本建模：突破序列长度限制</li><li>稀疏性与局部性探索：结合CNN的优势</li><li>跨领域融合：注意力机制与其他技术的结合</li></ol><h1 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h1><h1 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h1><h1 id="FlashAttention2"><a href="#FlashAttention2" class="headerlink" title="FlashAttention2"></a>FlashAttention2</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., … &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems.</li><li>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. ICLR.</li><li>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). BERT: Pre-training of deep bidirectional transformers for language understanding.</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="注意力机制：深度学习中的关键创新"><a href="#注意力机制：深度学习中的关键创新" class="headerlink" title="注意力机制：深度学习中的关键创新"></a>注意力机制：深度学习中的关键创新</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>注意力机制(Attention Mechanism)是深度学习领域的重要突破，它模拟了人类选择性关注信息的能力，为神经网络赋予了”关注重点”的能力。自2017年提出以来，以注意力机制为核心的Transformer架构已经彻底改变了自然语言处理、计算机视觉等多个领域的发展方向。</p><h2 id="注意力机制的起源"><a href="#注意力机制的起源" class="headerlink" title="注意力机制的起源"></a>注意力机制的起源</h2><p>最早的注意力机制可以追溯到2014年Bahdanau等人在机器翻译任务中提出的方法，被称为”加性注意力”。随后Luong等人提出了”乘性注意力”。而真正的突破点是2017年Google团队在《Attention is All You Need》论文中提出的自注意力(Self-Attention)机制和Transformer架构。</p><h2 id="注意力机制的核心原理"><a href="#注意力机制的核心原理" class="headerlink" title="注意力机制的核心原理"></a>注意力机制的核心原理</h2><h3 id="查询-键-值-Query-Key-Value-模型"><a href="#查询-键-值-Query-Key-Value-模型" class="headerlink" title="查询-键-值(Query-Key-Value)模型"></a>查询-键-值(Query-Key-Value)模型</h3><p>注意力机制的核心是QKV模型：</p><ul><li>查询(Query)：当前位置的信息需求</li><li>键(Key)：所有位置的信息索引</li><li>值(Value)：所有位置的实际信息内容</li></ul><p>通过计算查询与键的相似度，为每个值分配权重，实现信息的选择性关注。</p><h3 id="自注意力计算过程"><a href="#自注意力计算过程" class="headerlink" title="自注意力计算过程"></a>自注意力计算过程</h3><ol><li>线性投影：将输入转换为Q、K、V矩阵</li><li>注意力分数计算：Q与K的点积操作</li><li>缩放与Softmax：归一化得到注意力权重</li><li>加权求和：将权重与V相乘得到输出</li></ol><h2 id="注意力机制的变体"><a href="#注意力机制的变体" class="headerlink" title="注意力机制的变体"></a>注意力机制的变体</h2><ol><li><strong>多头注意力(Multi-head Attention)</strong>：并行运行多组注意力，捕捉不同角度的依赖关系</li><li><strong>掩码注意力(Masked Attention)</strong>：在自回归生成任务中防止信息泄露</li><li><strong>稀疏注意力(Sparse Attention)</strong>：降低计算复杂度，处理长序列</li><li><strong>局部注意力(Local Attention)</strong>：只关注局部窗口内的信息</li></ol><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>注意力机制已经在多个领域取得了突破性成果：</p><ul><li><strong>自然语言处理</strong>：GPT、BERT等大型语言模型</li><li><strong>计算机视觉</strong>：Vision Transformer</li><li><strong>多模态学习</strong>：CLIP、Stable Diffusion</li><li><strong>音频处理</strong>：用于语音识别和生成</li></ul><h2 id="未来发展趋势"><a href="#未来发展趋势" class="headerlink" title="未来发展趋势"></a>未来发展趋势</h2><ol><li>计算效率优化：降低注意力机制的计算复杂度</li><li>长文本建模：突破序列长度限制</li><li>稀疏性与局部性探索：结合CNN的优势</li><li>跨领域融合：注意力机制与其他技术的结合</li></ol><h1 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h1><h1 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h1><h1 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h1><h1 id="FlashAttention2"><a href="#FlashAttention2" class="headerlink" title="FlashAttention2"></a>FlashAttention2</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., … &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems.</li><li>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. ICLR.</li><li>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). BERT: Pre-training of deep bidirectional transformers for language understanding.</li></ul>]]></content>
     
     
     <categories>
@@ -290,6 +287,41 @@
   
   
   <entry>
+    <title>文生图技术解析(一)：扩散模型原理与架构</title>
+    <link href="/tech-blog/2025/03/24/%E6%96%87%E7%94%9F%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/"/>
+    <url>/tech-blog/2025/03/24/%E6%96%87%E7%94%9F%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="文生图技术解析-一-：扩散模型原理与架构"><a href="#文生图技术解析-一-：扩散模型原理与架构" class="headerlink" title="文生图技术解析(一)：扩散模型原理与架构"></a>文生图技术解析(一)：扩散模型原理与架构</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>文生图(Text-to-Image)技术是近年来人工智能领域最引人瞩目的突破之一，它能够根据文本描述生成相应的图像，为创意表达、内容创作和视觉设计带来革命性变化。本文作为文生图技术解析系列的第一篇，将重点介绍当前主流文生图技术的核心——扩散模型(Diffusion Models)的基本原理和架构。</p><h2 id="扩散模型的发展历程"><a href="#扩散模型的发展历程" class="headerlink" title="扩散模型的发展历程"></a>扩散模型的发展历程</h2><h3 id="从GAN到扩散模型"><a href="#从GAN到扩散模型" class="headerlink" title="从GAN到扩散模型"></a>从GAN到扩散模型</h3><p>早期的图像生成主要依赖于生成对抗网络(GAN)，如StyleGAN等。但GAN存在训练不稳定、模式崩溃等问题。2020年，Ho等人提出了去噪扩散概率模型(DDPM)，开启了扩散模型在图像生成领域的新纪元。随后，Song等人的基于分数的生成模型(SGM)和Rombach等人的潜在扩散模型(LDM)进一步推动了扩散模型的发展。</p><h3 id="里程碑式产品"><a href="#里程碑式产品" class="headerlink" title="里程碑式产品"></a>里程碑式产品</h3><ul><li><strong>DALL-E&#x2F;DALL-E 2</strong>：OpenAI开发的先驱性文生图系统</li><li><strong>Imagen</strong>：Google开发的高保真文生图模型</li><li><strong>Stable Diffusion</strong>：稳定扩散模型，首个开源且能在消费级硬件上运行的大型文生图模型</li><li><strong>Midjourney</strong>：以艺术审美著称的闭源文生图服务</li></ul><h2 id="扩散模型的基本原理"><a href="#扩散模型的基本原理" class="headerlink" title="扩散模型的基本原理"></a>扩散模型的基本原理</h2><h3 id="扩散过程的数学基础"><a href="#扩散过程的数学基础" class="headerlink" title="扩散过程的数学基础"></a>扩散过程的数学基础</h3><p>扩散模型基于马尔可夫链的数学框架，包含两个核心过程：</p><ol><li><strong>前向过程(扩散过程)</strong>：逐步向图像添加高斯噪声，直到完全破坏图像结构，变为纯噪声</li><li><strong>反向过程(去噪过程)</strong>：学习如何逐步去除噪声，从随机噪声中恢复出有意义的图像</li></ol><p>前向过程可以用以下方程表示：<br>$q(x_t|x_{t-1}) &#x3D; \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_t\mathbf{I})$</p><p>其中，$\beta_t$是控制每一步噪声添加量的参数。</p><h3 id="DDPM算法流程"><a href="#DDPM算法流程" class="headerlink" title="DDPM算法流程"></a>DDPM算法流程</h3><ol><li><p><strong>训练阶段</strong>：</p><ul><li>对原始图像施加不同程度的噪声</li><li>训练神经网络预测每一步添加的噪声，最小化预测误差</li><li>损失函数通常为均方误差：$L &#x3D; \mathbb{E}<em>{x_0,\epsilon,t}[||\epsilon - \epsilon</em>\theta(x_t, t)||^2]$</li></ul></li><li><p><strong>采样阶段</strong>：</p><ul><li>从标准正态分布采样初始噪声$x_T \sim \mathcal{N}(0, \mathbf{I})$</li><li>逐步应用学习到的去噪过程，通过迭代方式生成最终图像</li><li>采样方程：$x_{t-1} &#x3D; \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}<em>t}}\epsilon</em>\theta(x_t, t)) + \sigma_t z$，其中$z \sim \mathcal{N}(0, \mathbf{I})$</li></ul></li></ol><h2 id="文本条件扩散模型架构"><a href="#文本条件扩散模型架构" class="headerlink" title="文本条件扩散模型架构"></a>文本条件扩散模型架构</h2><h3 id="条件生成机制"><a href="#条件生成机制" class="headerlink" title="条件生成机制"></a>条件生成机制</h3><p>为了实现文本控制图像生成，需要将文本信息融入扩散过程：</p><ol><li><strong>文本编码器</strong>：使用预训练语言模型(如CLIP文本编码器)将文本提示转化为高维语义向量</li><li><strong>条件注入</strong>：通过交叉注意力机制将文本特征注入到扩散模型的U-Net架构中</li><li><strong>时间步编码</strong>：为每个去噪步骤提供时间信息，指导噪声预测过程</li></ol><h3 id="Stable-Diffusion模型解析"><a href="#Stable-Diffusion模型解析" class="headerlink" title="Stable Diffusion模型解析"></a>Stable Diffusion模型解析</h3><p>Stable Diffusion作为目前最具影响力的开源文生图模型，采用了潜在扩散模型(LDM)的架构：</p><ol><li><strong>VAE编码器</strong>：将高分辨率图像压缩到低维潜在空间</li><li><strong>U-Net主干网络</strong>：在潜在空间中执行扩散和去噪过程</li><li><strong>CLIP文本编码器</strong>：处理文本输入，提取语义特征</li><li><strong>VAE解码器</strong>：将生成的潜在表示重建为最终图像</li></ol><p>这种架构显著减少了计算资源需求，使模型能够在消费级硬件上运行。</p><h2 id="采样技术与优化方法"><a href="#采样技术与优化方法" class="headerlink" title="采样技术与优化方法"></a>采样技术与优化方法</h2><h3 id="快速采样算法"><a href="#快速采样算法" class="headerlink" title="快速采样算法"></a>快速采样算法</h3><p>扩散模型生成过程原本需要数百次迭代，但通过优化采样算法可大幅加速：</p><ol><li><strong>DDIM(确定性扩散)</strong>：通过构建非马尔可夫过程减少采样步骤</li><li><strong>DPM-Solver&#x2F;DPM-Solver++</strong>：基于常微分方程(ODE)求解器的高效采样器</li><li><strong>Euler&#x2F;Euler-a采样器</strong>：简单高效的欧拉方法及其自适应变种</li><li><strong>PLMS(伪线性多步方法)</strong>：利用前几步信息加速收敛</li></ol><h3 id="引导技术"><a href="#引导技术" class="headerlink" title="引导技术"></a>引导技术</h3><p>通过引导技术增强文本对生成过程的控制：</p><ol><li><strong>分类器引导</strong>：利用预训练图像分类器引导生成过程</li><li><strong>无分类器引导(CFG)</strong>：同时进行条件和无条件生成，通过调整两者权重控制文本遵循度<ul><li>$\epsilon_\theta^{CFG}(x_t|y) &#x3D; \epsilon_\theta(x_t|\emptyset) + s \cdot (\epsilon_\theta(x_t|y) - \epsilon_\theta(x_t|\emptyset))$</li></ul></li></ol><h2 id="当前挑战与局限性"><a href="#当前挑战与局限性" class="headerlink" title="当前挑战与局限性"></a>当前挑战与局限性</h2><h3 id="技术挑战"><a href="#技术挑战" class="headerlink" title="技术挑战"></a>技术挑战</h3><ol><li><strong>精确文本对齐</strong>：准确理解复杂文本指令仍有困难</li><li><strong>空间关系理解</strong>：复杂位置关系和视角描述的处理不够精确</li><li><strong>推理效率</strong>：尽管有所改进，生成高质量图像仍需要较长时间</li><li><strong>风格一致性</strong>：在保持艺术风格一致性方面仍有提升空间</li></ol><h3 id="社会影响与伦理考量"><a href="#社会影响与伦理考量" class="headerlink" title="社会影响与伦理考量"></a>社会影响与伦理考量</h3><ol><li><strong>内容安全</strong>：模型可能生成有害、偏见或不适当内容</li><li><strong>著作权问题</strong>：训练数据来源和生成内容的版权归属存在争议</li><li><strong>身份伪造</strong>：可能被用于创建未经授权的肖像或虚假内容</li><li><strong>就业影响</strong>：对视觉艺术工作者和创意产业的潜在影响</li></ol><h2 id="下一代扩散模型发展方向"><a href="#下一代扩散模型发展方向" class="headerlink" title="下一代扩散模型发展方向"></a>下一代扩散模型发展方向</h2><h3 id="技术演进"><a href="#技术演进" class="headerlink" title="技术演进"></a>技术演进</h3><ol><li><strong>多模态融合</strong>：与视频、3D和音频生成技术的结合</li><li><strong>高效架构</strong>：更轻量化和计算高效的模型结构</li><li><strong>个性化技术</strong>：低成本适应用户特定风格和需求的方法</li><li><strong>物理约束理解</strong>：改进对现实世界物理规则的遵循</li></ol><h3 id="应用拓展"><a href="#应用拓展" class="headerlink" title="应用拓展"></a>应用拓展</h3><ol><li><strong>辅助创意设计</strong>：概念艺术、产品原型、品牌素材生成</li><li><strong>教育可视化</strong>：复杂概念的直观图像表达</li><li><strong>医学影像</strong>：医学图像合成和诊断辅助</li><li><strong>娱乐与游戏</strong>：游戏资产生成和互动内容创作</li></ol><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>扩散模型为文生图技术提供了强大的基础，但这仅是开始。随着算法优化、计算资源降低和应用场景拓展，文生图技术将继续深刻改变视觉内容创作的方式。在下一篇文章中，我们将深入探讨提示工程（Prompt Engineering）技术，帮助读者掌握引导AI生成所需图像的艺术。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems.</li><li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. CVPR.</li><li>Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., … &amp; Chen, M. (2021). GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models. arXiv.</li><li>Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E., … &amp; Norouzi, M. (2022). Photorealistic text-to-image diffusion models with deep language understanding. arXiv.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
+      
+      <tag>扩散模型</tag>
+      
+      <tag>计算机视觉</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Humanoid Shadowing and Imitation from Humans文章解读</title>
     <link href="/tech-blog/2025/03/23/HumanPlus/"/>
     <url>/tech-blog/2025/03/23/HumanPlus/</url>
@@ -314,11 +346,11 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
       <tag>NLP</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -351,11 +383,11 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
       <tag>NLP</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -388,11 +420,11 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
       <tag>NLP</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -425,11 +457,11 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
       <tag>NLP</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -462,11 +494,11 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
       <tag>NLP</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -499,11 +531,11 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
       <tag>NLP</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -536,9 +568,9 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
-      
       <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
       
       <tag>DiffusionModels</tag>
       
@@ -574,6 +606,39 @@
       <tag>ResearchMethodology</tag>
       
       <tag>Innovation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何高效阅读和理解学术论文</title>
+    <link href="/tech-blog/2025/03/22/Prompts/"/>
+    <url>/tech-blog/2025/03/22/Prompts/</url>
+    
+    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>Academic</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Research</tag>
+      
+      <tag>AcademicSkills</tag>
+      
+      <tag>PaperReading</tag>
+      
+      <tag>Methodology</tag>
       
     </tags>
     
@@ -635,11 +700,48 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
+      <tag>Robotics</tag>
+      
       <tag>DeepLearning</tag>
+      
+      <tag>Robot</tag>
+      
+      <tag>Grasping</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Yell at your robot论文解读与复现</title>
+    <link href="/tech-blog/2025/03/22/YellAtYourRobot/"/>
+    <url>/tech-blog/2025/03/22/YellAtYourRobot/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>DeepLearning</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
       
       <tag>AI</tag>
       
       <tag>Robotics</tag>
+      
+      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -670,46 +772,13 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
       
-      <tag>AI</tag>
-      
       <tag>Neural Networks</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Introduction to Docker for Developers</title>
-    <link href="/tech-blog/2025/03/14/Introduction-to-Docker-for-Developers/"/>
-    <url>/tech-blog/2025/03/14/Introduction-to-Docker-for-Developers/</url>
-    
-    <content type="html"><![CDATA[<h2 id="What-is-Docker"><a href="#What-is-Docker" class="headerlink" title="What is Docker?"></a>What is Docker?</h2><p>Docker is a platform that enables developers to build, package, and run applications in containers. Containers are lightweight, portable, and self-sufficient environments that can run consistently across different computing environments. This makes Docker an essential tool for modern software development and deployment.</p><h2 id="Why-Use-Docker"><a href="#Why-Use-Docker" class="headerlink" title="Why Use Docker?"></a>Why Use Docker?</h2><p>As a developer, you might wonder why you should invest time in learning Docker. Here are some compelling reasons:</p><h3 id="1-Consistency-Across-Environments"><a href="#1-Consistency-Across-Environments" class="headerlink" title="1. Consistency Across Environments"></a>1. Consistency Across Environments</h3><p>One of the most common development issues is the “it works on my machine” problem. Docker solves this by packaging your application and its dependencies into a container that runs the same way everywhere.</p><h3 id="2-Isolation"><a href="#2-Isolation" class="headerlink" title="2. Isolation"></a>2. Isolation</h3><p>Containers provide isolation for your applications, ensuring that they don’t interfere with each other or with the host system. This makes it easier to run multiple applications with different dependencies on the same machine.</p><h3 id="3-Efficiency"><a href="#3-Efficiency" class="headerlink" title="3. Efficiency"></a>3. Efficiency</h3><p>Unlike virtual machines, Docker containers share the host system’s kernel, making them much more lightweight and efficient. They start up quickly and use fewer resources.</p><h3 id="4-Simplified-Configuration"><a href="#4-Simplified-Configuration" class="headerlink" title="4. Simplified Configuration"></a>4. Simplified Configuration</h3><p>Docker allows you to define your application’s environment and dependencies in code, making it easier to set up and reproduce development environments.</p><h2 id="Docker-Basics"><a href="#Docker-Basics" class="headerlink" title="Docker Basics"></a>Docker Basics</h2><p>Let’s dive into some Docker fundamentals that every developer should know.</p><h3 id="Docker-Images-and-Containers"><a href="#Docker-Images-and-Containers" class="headerlink" title="Docker Images and Containers"></a>Docker Images and Containers</h3><ul><li><strong>Docker Image</strong>: A read-only template that contains a set of instructions for creating a Docker container. Think of it as a snapshot of your application and its environment.</li><li><strong>Docker Container</strong>: A runnable instance of a Docker image. You can create, start, stop, move, or delete containers using the Docker API or CLI.</li></ul><h3 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><p>A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Here’s a simple example:</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># Use an official Node.js runtime as a parent image</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">14</span><br><br><span class="hljs-comment"># Set the working directory in the container</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /usr/src/app</span><br><br><span class="hljs-comment"># Copy package.json and package-lock.json</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package*.json ./</span><br><br><span class="hljs-comment"># Install dependencies</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> npm install</span><br><br><span class="hljs-comment"># Copy the rest of the application</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><br><span class="hljs-comment"># Make port 3000 available outside the container</span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">3000</span><br><br><span class="hljs-comment"># Define the command to run the application</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;npm&quot;</span>, <span class="hljs-string">&quot;start&quot;</span>]</span><br></code></pre></td></tr></table></figure><h3 id="Basic-Docker-Commands"><a href="#Basic-Docker-Commands" class="headerlink" title="Basic Docker Commands"></a>Basic Docker Commands</h3><p>Here are some essential Docker commands to get you started:</p><h4 id="Building-an-Image"><a href="#Building-an-Image" class="headerlink" title="Building an Image"></a>Building an Image</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker build -t my-app .<br></code></pre></td></tr></table></figure><p>This command builds a Docker image from a Dockerfile in the current directory and tags it as “my-app”.</p><h4 id="Running-a-Container"><a href="#Running-a-Container" class="headerlink" title="Running a Container"></a>Running a Container</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -p 3000:3000 my-app<br></code></pre></td></tr></table></figure><p>This command runs a container from the “my-app” image and maps port 3000 in the container to port 3000 on the host.</p><h4 id="Listing-Containers"><a href="#Listing-Containers" class="headerlink" title="Listing Containers"></a>Listing Containers</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps<br></code></pre></td></tr></table></figure><p>This command lists all running containers. Add the <code>-a</code> flag to see all containers, including stopped ones.</p><h4 id="Stopping-a-Container"><a href="#Stopping-a-Container" class="headerlink" title="Stopping a Container"></a>Stopping a Container</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker stop &lt;container_id&gt;<br></code></pre></td></tr></table></figure><p>This command stops a running container.</p><h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2><p>Docker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services, networks, and volumes.</p><p>Here’s a simple <code>docker-compose.yml</code> example for a web application with a database:</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3&#x27;</span><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">web:</span><br>    <span class="hljs-attr">build:</span> <span class="hljs-string">.</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;3000:3000&quot;</span><br>    <span class="hljs-attr">depends_on:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">db</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">DATABASE_URL=postgres://postgres:password@db:5432/mydb</span><br>  <span class="hljs-attr">db:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:13</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">postgres_data:/var/lib/postgresql/data</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">POSTGRES_PASSWORD=password</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">POSTGRES_DB=mydb</span><br><br><span class="hljs-attr">volumes:</span><br>  <span class="hljs-attr">postgres_data:</span><br></code></pre></td></tr></table></figure><p>To start all services defined in the <code>docker-compose.yml</code> file, run:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up<br></code></pre></td></tr></table></figure><h2 id="Best-Practices-for-Docker"><a href="#Best-Practices-for-Docker" class="headerlink" title="Best Practices for Docker"></a>Best Practices for Docker</h2><p>To make the most of Docker in your development workflow, consider these best practices:</p><h3 id="1-Keep-Images-Small"><a href="#1-Keep-Images-Small" class="headerlink" title="1. Keep Images Small"></a>1. Keep Images Small</h3><p>Use lightweight base images like Alpine Linux when possible. Remove unnecessary files and avoid installing packages you don’t need.</p><h3 id="2-Use-Multi-Stage-Builds"><a href="#2-Use-Multi-Stage-Builds" class="headerlink" title="2. Use Multi-Stage Builds"></a>2. Use Multi-Stage Builds</h3><p>Multi-stage builds allow you to use multiple FROM statements in your Dockerfile. Each FROM instruction can use a different base, and begins a new stage of the build. You can selectively copy artifacts from one stage to another, leaving behind everything you don’t need.</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># Build stage</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">14</span> AS build<br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package*.json ./</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> npm install</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> npm run build</span><br><br><span class="hljs-comment"># Production stage</span><br><span class="hljs-keyword">FROM</span> nginx:alpine<br><span class="hljs-keyword">COPY</span><span class="language-bash"> --from=build /app/build /usr/share/nginx/html</span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">80</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;nginx&quot;</span>, <span class="hljs-string">&quot;-g&quot;</span>, <span class="hljs-string">&quot;daemon off;&quot;</span>]</span><br></code></pre></td></tr></table></figure><h3 id="3-Don’t-Run-as-Root"><a href="#3-Don’t-Run-as-Root" class="headerlink" title="3. Don’t Run as Root"></a>3. Don’t Run as Root</h3><p>For security reasons, it’s best to run your containers as a non-root user:</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># Create a user and group</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> groupadd -r myuser &amp;&amp; useradd -r -g myuser myuser</span><br><br><span class="hljs-comment"># Set the user</span><br><span class="hljs-keyword">USER</span> myuser<br></code></pre></td></tr></table></figure><h3 id="4-Use-Environment-Variables"><a href="#4-Use-Environment-Variables" class="headerlink" title="4. Use Environment Variables"></a>4. Use Environment Variables</h3><p>Use environment variables for configuration that might change between environments:</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># Set default environment variables</span><br><span class="hljs-keyword">ENV</span> NODE_ENV=production<br><span class="hljs-keyword">ENV</span> PORT=<span class="hljs-number">3000</span><br><br><span class="hljs-comment"># Use the environment variables</span><br><span class="hljs-keyword">EXPOSE</span> $PORT<br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;npm&quot;</span>, <span class="hljs-string">&quot;start&quot;</span>]</span><br></code></pre></td></tr></table></figure><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Docker has revolutionized how developers build, ship, and run applications. By providing a consistent environment across development, testing, and production, Docker helps eliminate the “it works on my machine” problem and streamlines the development process.</p><p>In this post, we’ve covered the basics of Docker, including images, containers, Dockerfiles, and Docker Compose. We’ve also discussed some best practices to help you make the most of Docker in your development workflow.</p><p>As you continue your Docker journey, I encourage you to explore more advanced topics like Docker networking, volume management, and orchestration with Kubernetes.</p><p>Happy containerizing!</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>DevOps</category>
-      
-      <category>Tools</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Docker</tag>
-      
-      <tag>DevOps</tag>
-      
-      <tag>Containers</tag>
-      
-      <tag>Backend</tag>
       
     </tags>
     
