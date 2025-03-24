@@ -28,11 +28,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -73,8 +73,8 @@
   
   <entry>
     <title></title>
-    <link href="/tech-blog/2025/03/24/prompts/"/>
-    <url>/tech-blog/2025/03/24/prompts/</url>
+    <link href="/tech-blog/2025/03/24/Prompts/"/>
+    <url>/tech-blog/2025/03/24/Prompts/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -314,11 +314,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -351,11 +351,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -388,11 +388,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -425,11 +425,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -439,8 +439,8 @@
   
   <entry>
     <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
-    <link href="/tech-blog/2025/03/23/saycan/"/>
-    <url>/tech-blog/2025/03/23/saycan/</url>
+    <link href="/tech-blog/2025/03/23/SayCan/"/>
+    <url>/tech-blog/2025/03/23/SayCan/</url>
     
     <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
     
@@ -462,11 +462,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -499,11 +499,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -536,9 +536,9 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>DiffusionModels</tag>
       
@@ -619,7 +619,7 @@
     <link href="/tech-blog/2025/03/22/UniDexGrasp/"/>
     <url>/tech-blog/2025/03/22/UniDexGrasp/</url>
     
-    <content type="html"><![CDATA[<h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在现实世界的应用中，机器人需要能够处理形状、大小和材质各异的物体。传统的抓取方法往往针对特定场景进行设计，难以泛化到新的物体和环境中。UniDexGrasp提出了一种统一的框架，旨在解决这一挑战。</p><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p><ul><li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li><li><strong>触觉传感器</strong>：获取接触力和滑动信息</li><li><strong>自监督特征提取</strong>：无需人工标注的特征学习</li></ul><p>这种融合方式使机器人能够像人类一样，同时利用视觉和触觉信息指导抓取动作。</p><h3 id="2-层次化强化学习"><a href="#2-层次化强化学习" class="headerlink" title="2. 层次化强化学习"></a>2. 层次化强化学习</h3><p>框架采用了层次化的强化学习结构：</p><ul><li><strong>高层策略</strong>：决定整体抓取姿态和方法</li><li><strong>中层策略</strong>：控制手指运动顺序和协调</li><li><strong>低层控制器</strong>：精确控制关节力矩和位置</li></ul><p>这种分层设计大大降低了学习难度，加速了训练过程。</p><h3 id="3-模拟到现实迁移"><a href="#3-模拟到现实迁移" class="headerlink" title="3. 模拟到现实迁移"></a>3. 模拟到现实迁移</h3><p>为解决sim2real问题，UniDexGrasp采用了：</p><ul><li><strong>域随机化</strong>：在模拟中随机化物理参数和视觉特征</li><li><strong>渐进式学习</strong>：从简单任务到复杂任务的课程学习</li><li><strong>现实世界微调</strong>：通过少量真实世界样本进行适应</li></ul><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文在多个基准测试和真实机器人上进行了评估：</p><ul><li>在YCB物体集上达到了92%的抓取成功率</li><li>对未见过的物体达到了85%的泛化成功率</li><li>在不同光照和杂乱环境中展现了鲁棒性</li></ul><h2 id="与现有方法的比较"><a href="#与现有方法的比较" class="headerlink" title="与现有方法的比较"></a>与现有方法的比较</h2><p>与现有的方法相比，UniDexGrasp在以下方面显示出优势：</p><table><thead><tr><th>方法</th><th>成功率</th><th>泛化能力</th><th>计算效率</th></tr></thead><tbody><tr><td>DexNet</td><td>85%</td><td>中等</td><td>高</td></tr><tr><td>DexPilot</td><td>88%</td><td>高</td><td>低</td></tr><tr><td>UniDexGrasp</td><td>92%</td><td>高</td><td>中等</td></tr></tbody></table><h2 id="局限性与未来工作"><a href="#局限性与未来工作" class="headerlink" title="局限性与未来工作"></a>局限性与未来工作</h2><p>尽管UniDexGrasp取得了显著成果，但仍存在一些局限性：</p><ol><li>对极细或极软物体的处理能力有限</li><li>实时性在复杂场景中仍有提升空间</li><li>多物体交互场景下的表现需要改进</li></ol><p>未来工作将聚焦于：</p><ul><li>集成语言模型指导复杂操作</li><li>增强物理推理能力</li><li>改进在低资源环境中的适应性</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>UniDexGrasp代表了机器人灵巧抓取领域的重要进展，为通用机器人操纵提供了有效解决方案。通过统一的框架整合多模态感知和层次化学习，该方法展现了强大的性能和泛化能力。随着技术的进一步发展，我们有望看到更加智能和灵活的机器人系统在工业和家庭环境中的广泛应用。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Andrychowicz, M., et al. (2020). Learning dexterous in-hand manipulation. The International Journal of Robotics Research.</li><li>Levine, S., et al. (2018). Learning hand-eye coordination for robotic grasping with deep learning and large-scale data collection. The International Journal of Robotics Research.</li><li>OpenAI, et al. (2019). Solving Rubik’s Cube with a Robot Hand. arXiv preprint arXiv:1910.07113.</li><li>Kalashnikov, D., et al. (2018). Qt-opt: Scalable deep reinforcement learning for vision-based robotic manipulation. Conference on Robot Learning.</li><li>Pinto, L., &amp; Gupta, A. (2016). Supersizing self-supervision: Learning to grasp from 50k tries and 700 robot hours. IEEE International Conference on Robotics and Automation.</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>二指夹爪的局限性：</p><p>目标：学习一个通用的灵巧手抓取方法，在仿真环境泛化到数百中见过或未见过的</p><p>平行夹持器7个自由度，而ShadowHand有26个自由度。高维度加大了生成有效抓取姿势和规划执行轨迹的难度。提出两阶段，评估结果体现出方法：高抓取质量、高多样性的优势。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="生成有效抓取手势"><a href="#生成有效抓取手势" class="headerlink" title="生成有效抓取手势"></a>生成有效抓取手势</h3><p>输入：物体点云输入，输出：若干抓取姿势<br>抓取姿势的表征：</p><p>生成抓取手势共分为3个子模块：（1）生成总体旋转的模块 GraspIPDF，（2），（3）</p><h4 id="GraspIPDF"><a href="#GraspIPDF" class="headerlink" title="GraspIPDF"></a>GraspIPDF</h4><h4 id="GraspGlow"><a href="#GraspGlow" class="headerlink" title="GraspGlow"></a>GraspGlow</h4><p>自监督损失函数：1. 预测的理想接触图与由 GraspGlow 输出的手计算得到的接触图之前的差异；2. 物体点云穿透进手的网格的距离平方值；3. 手上预先选定的点位穿透进平面的深度；4. 自穿透。</p><h4 id="ContactNet"><a href="#ContactNet" class="headerlink" title="ContactNet"></a>ContactNet</h4><h3 id="规划执行轨迹"><a href="#规划执行轨迹" class="headerlink" title="规划执行轨迹"></a>规划执行轨迹</h3><h2 id="抓取策略训练3技巧"><a href="#抓取策略训练3技巧" class="headerlink" title="抓取策略训练3技巧"></a>抓取策略训练3技巧</h2><h3 id="状态规范化"><a href="#状态规范化" class="headerlink" title="状态规范化"></a>状态规范化</h3><h3 id="物体课程学习"><a href="#物体课程学习" class="headerlink" title="物体课程学习"></a>物体课程学习</h3><h3 id="使用分类任务协助训练"><a href="#使用分类任务协助训练" class="headerlink" title="使用分类任务协助训练"></a>使用分类任务协助训练</h3><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="机器人灵巧手抓取数据集"><a href="#机器人灵巧手抓取数据集" class="headerlink" title="机器人灵巧手抓取数据集"></a>机器人灵巧手抓取数据集</h3><p>133个物体类别、5519个物体示例、100多万种抓取姿势。</p><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p><ul><li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li><li><strong>触觉传感器</strong>：获取接触力和滑动信息</li><li><strong>自监督特征提取</strong>：无需人工标注的特征学习</li></ul><p>这种融合方式使机器人能够像人类一样，同时利用视觉和触觉信息指导抓取动作。</p><h3 id="2-层次化强化学习"><a href="#2-层次化强化学习" class="headerlink" title="2. 层次化强化学习"></a>2. 层次化强化学习</h3><p>框架采用了层次化的强化学习结构：</p><ul><li><strong>高层策略</strong>：决定整体抓取姿态和方法</li><li><strong>中层策略</strong>：控制手指运动顺序和协调</li><li><strong>低层控制器</strong>：精确控制关节力矩和位置</li></ul><p>这种分层设计大大降低了学习难度，加速了训练过程。</p><h3 id="3-模拟到现实迁移"><a href="#3-模拟到现实迁移" class="headerlink" title="3. 模拟到现实迁移"></a>3. 模拟到现实迁移</h3><p>为解决sim2real问题，UniDexGrasp采用了：</p><ul><li><strong>域随机化</strong>：在模拟中随机化物理参数和视觉特征</li><li><strong>渐进式学习</strong>：从简单任务到复杂任务的课程学习</li><li><strong>现实世界微调</strong>：通过少量真实世界样本进行适应</li></ul><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文在多个基准测试和真实机器人上进行了评估：</p><ul><li>在YCB物体集上达到了92%的抓取成功率</li><li>对未见过的物体达到了85%的泛化成功率</li><li>在不同光照和杂乱环境中展现了鲁棒性</li></ul><h2 id="与现有方法的比较"><a href="#与现有方法的比较" class="headerlink" title="与现有方法的比较"></a>与现有方法的比较</h2><p>与现有的方法相比，UniDexGrasp在以下方面显示出优势：</p><table><thead><tr><th>方法</th><th>成功率</th><th>泛化能力</th><th>计算效率</th></tr></thead><tbody><tr><td>DexNet</td><td>85%</td><td>中等</td><td>高</td></tr><tr><td>DexPilot</td><td>88%</td><td>高</td><td>低</td></tr><tr><td>UniDexGrasp</td><td>92%</td><td>高</td><td>中等</td></tr></tbody></table><h2 id="局限性与未来工作"><a href="#局限性与未来工作" class="headerlink" title="局限性与未来工作"></a>局限性与未来工作</h2><p>尽管UniDexGrasp取得了显著成果，但仍存在一些局限性：</p><ol><li>对极细或极软物体的处理能力有限</li><li>实时性在复杂场景中仍有提升空间</li><li>多物体交互场景下的表现需要改进</li></ol><p>未来工作将聚焦于：</p><ul><li>集成语言模型指导复杂操作</li><li>增强物理推理能力</li><li>改进在低资源环境中的适应性</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>UniDexGrasp代表了机器人灵巧抓取领域的重要进展，为通用机器人操纵提供了有效解决方案。通过统一的框架整合多模态感知和层次化学习，该方法展现了强大的性能和泛化能力。随着技术的进一步发展，我们有望看到更加智能和灵活的机器人系统在工业和家庭环境中的广泛应用。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Andrychowicz, M., et al. (2020). Learning dexterous in-hand manipulation. The International Journal of Robotics Research.</li><li>Levine, S., et al. (2018). Learning hand-eye coordination for robotic grasping with deep learning and large-scale data collection. The International Journal of Robotics Research.</li><li>OpenAI, et al. (2019). Solving Rubik’s Cube with a Robot Hand. arXiv preprint arXiv:1910.07113.</li><li>Kalashnikov, D., et al. (2018). Qt-opt: Scalable deep reinforcement learning for vision-based robotic manipulation. Conference on Robot Learning.</li><li>Pinto, L., &amp; Gupta, A. (2016). Supersizing self-supervision: Learning to grasp from 50k tries and 700 robot hours. IEEE International Conference on Robotics and Automation.</li></ol>]]></content>
     
     
     <categories>

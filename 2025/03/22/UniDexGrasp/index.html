@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="UniDexGrasp: 统一框架下的机器人灵巧抓取摘要机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。 引言在现实世界的应用中，机器人需要能够处理形状、大小和材质各异的物体。传">
+    <meta name="description" content="UniDexGrasp: 统一框架下的机器人灵巧抓取摘要机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。 引言二指夹爪的局限性： 目标：学习一个通用的灵巧手抓取方法，在仿真环境泛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="灵巧手：UniDexGrasp论文解读">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/22/UniDexGrasp/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="UniDexGrasp: 统一框架下的机器人灵巧抓取摘要机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。 引言在现实世界的应用中，机器人需要能够处理形状、大小和材质各异的物体。传">
+<meta property="og:description" content="UniDexGrasp: 统一框架下的机器人灵巧抓取摘要机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。 引言二指夹爪的局限性： 目标：学习一个通用的灵巧手抓取方法，在仿真环境泛">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-22T10:25:00.000Z">
-<meta property="article:modified_time" content="2025-03-22T13:01:15.864Z">
+<meta property="article:modified_time" content="2025-03-24T05:49:59.246Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="DeepLearning">
 <meta property="article:tag" content="AI">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          887 words
+          1.1k words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          8 mins
+          10 mins
         
       </span>
     
@@ -298,7 +298,13 @@
               <div class="markdown-body">
                 
                 <h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在现实世界的应用中，机器人需要能够处理形状、大小和材质各异的物体。传统的抓取方法往往针对特定场景进行设计，难以泛化到新的物体和环境中。UniDexGrasp提出了一种统一的框架，旨在解决这一挑战。</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>二指夹爪的局限性：</p>
+<p>目标：学习一个通用的灵巧手抓取方法，在仿真环境泛化到数百中见过或未见过的</p>
+<p>平行夹持器7个自由度，而ShadowHand有26个自由度。高维度加大了生成有效抓取姿势和规划执行轨迹的难度。提出两阶段，评估结果体现出方法：高抓取质量、高多样性的优势。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="生成有效抓取手势"><a href="#生成有效抓取手势" class="headerlink" title="生成有效抓取手势"></a>生成有效抓取手势</h3><p>输入：物体点云输入，输出：若干抓取姿势<br>抓取姿势的表征：</p>
+<p>生成抓取手势共分为3个子模块：（1）生成总体旋转的模块 GraspIPDF，（2），（3）</p>
+<h4 id="GraspIPDF"><a href="#GraspIPDF" class="headerlink" title="GraspIPDF"></a>GraspIPDF</h4><h4 id="GraspGlow"><a href="#GraspGlow" class="headerlink" title="GraspGlow"></a>GraspGlow</h4><p>自监督损失函数：1. 预测的理想接触图与由 GraspGlow 输出的手计算得到的接触图之前的差异；2. 物体点云穿透进手的网格的距离平方值；3. 手上预先选定的点位穿透进平面的深度；4. 自穿透。</p>
+<h4 id="ContactNet"><a href="#ContactNet" class="headerlink" title="ContactNet"></a>ContactNet</h4><h3 id="规划执行轨迹"><a href="#规划执行轨迹" class="headerlink" title="规划执行轨迹"></a>规划执行轨迹</h3><h2 id="抓取策略训练3技巧"><a href="#抓取策略训练3技巧" class="headerlink" title="抓取策略训练3技巧"></a>抓取策略训练3技巧</h2><h3 id="状态规范化"><a href="#状态规范化" class="headerlink" title="状态规范化"></a>状态规范化</h3><h3 id="物体课程学习"><a href="#物体课程学习" class="headerlink" title="物体课程学习"></a>物体课程学习</h3><h3 id="使用分类任务协助训练"><a href="#使用分类任务协助训练" class="headerlink" title="使用分类任务协助训练"></a>使用分类任务协助训练</h3><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="机器人灵巧手抓取数据集"><a href="#机器人灵巧手抓取数据集" class="headerlink" title="机器人灵巧手抓取数据集"></a>机器人灵巧手抓取数据集</h3><p>133个物体类别、5519个物体示例、100多万种抓取姿势。</p>
 <h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p>
 <ul>
 <li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li>
