@@ -24,9 +24,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -61,9 +61,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -127,9 +127,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>LLM</tag>
       
@@ -217,6 +217,39 @@
     <tags>
       
       <tag>AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>目标检测</title>
+    <link href="/tech-blog/2025/03/24/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    <url>/tech-blog/2025/03/24/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="目标检测方法演进"><a href="#目标检测方法演进" class="headerlink" title="目标检测方法演进"></a>目标检测方法演进</h1><h1 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h1><h1 id="目标检测损失函数"><a href="#目标检测损失函数" class="headerlink" title="目标检测损失函数"></a>目标检测损失函数</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>深度学习</category>
+      
+      <category>计算机视觉</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>计算机视觉</tag>
       
     </tags>
     
@@ -389,9 +422,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>扩散模型</tag>
-      
       <tag>计算机视觉</tag>
+      
+      <tag>扩散模型</tag>
       
     </tags>
     
@@ -420,9 +453,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -457,46 +490,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
-    <link href="/tech-blog/2025/03/23/OpenVLA/"/>
-    <url>/tech-blog/2025/03/23/OpenVLA/</url>
-    
-    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>AI</tag>
-      
-      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -531,9 +527,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -568,9 +564,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -585,11 +581,11 @@
   
   
   <entry>
-    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
-    <link href="/tech-blog/2025/03/23/UMI/"/>
-    <url>/tech-blog/2025/03/23/UMI/</url>
+    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
+    <link href="/tech-blog/2025/03/23/OpenVLA/"/>
+    <url>/tech-blog/2025/03/23/OpenVLA/</url>
     
-    <content type="html"><![CDATA[<p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
     
     
     <categories>
@@ -605,9 +601,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -642,9 +638,46 @@
     
     <tags>
       
+      <tag>Research</tag>
+      
       <tag>AI</tag>
       
+      <tag>Robotics</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
+    <link href="/tech-blog/2025/03/23/UMI/"/>
+    <url>/tech-blog/2025/03/23/UMI/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -679,9 +712,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Research</tag>
+      
+      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
