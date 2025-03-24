@@ -24,9 +24,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -59,52 +59,13 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>LLM</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/24/%E6%90%9C%E7%B4%A2%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/"/>
-    <url>/tech-blog/2025/03/24/%E6%90%9C%E7%B4%A2%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/24/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
-    <url>/tech-blog/2025/03/24/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E7%BB%BC%E8%BF%B0/"/>
-    <url>/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E7%BB%BC%E8%BF%B0/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
     
   </entry>
   
@@ -189,6 +150,146 @@
   
   
   <entry>
+    <title>具身智能综述：发展历程与未来展望</title>
+    <link href="/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E7%BB%BC%E8%BF%B0/"/>
+    <url>/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E7%BB%BC%E8%BF%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="具身智能综述：发展历程与未来展望"><a href="#具身智能综述：发展历程与未来展望" class="headerlink" title="具身智能综述：发展历程与未来展望"></a>具身智能综述：发展历程与未来展望</h1><h2 id="具身智能起源"><a href="#具身智能起源" class="headerlink" title="具身智能起源"></a>具身智能起源</h2><p>具身智能(Embodied Intelligence)是指通过物理或虚拟身体与环境互动来学习和适应的智能形式。这一概念最早由认知科学家提出，认为智能不仅仅是抽象的计算过程，更是一种与身体和环境密切相关的适应性能力。在人工智能领域，具身智能的研究旨在创造能够感知环境、做出决策并执行动作的智能系统。</p><h2 id="关键技术与方法"><a href="#关键技术与方法" class="headerlink" title="关键技术与方法"></a>关键技术与方法</h2><p>具身智能研究涉及多个技术领域的融合，包括：</p><ul><li>多模态学习：整合视觉、语言、触觉等多种输入信号</li><li>强化学习：通过尝试与环境互动来学习最优策略</li><li>仿真环境：为智能体提供安全、可控的学习场景</li><li>迁移学习：将模拟环境中学到的知识迁移到真实世界</li></ul><h2 id="研究现状与挑战"><a href="#研究现状与挑战" class="headerlink" title="研究现状与挑战"></a>研究现状与挑战</h2><p>当前具身智能研究面临的主要挑战包括：</p><ol><li>跨模态理解能力的提升</li><li>仿真到现实的迁移鸿沟</li><li>长期规划与短期动作执行的协调</li><li>样本效率与泛化能力的平衡</li></ol><h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>随着大型多模态模型的发展，具身智能研究正迈向新的阶段。未来研究方向可能包括：</p><ul><li>通用型机器人基础模型</li><li>自主学习与适应能力增强</li><li>人机协作场景下的具身智能应用</li><li>伦理与安全保障机制</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="http://arxiv.org/abs/2502.15336">Exploring Embodied Multimodal Large Models: Development, Datasets, and Future Directions</a></li><li>Duan, J., Yu, S., Tan, H. L., Geng, X., Wang, Y., Yang, X., … &amp; Liu, Y. (2024). The Rise and Potential of Large Language Model Based Agents: A Survey.</li><li>Huang, S., Xu, C., Yu, B., &amp; Li, S. (2023). Language models as embodied agents.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>Research</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>具身智能</tag>
+      
+      <tag>机器人</tag>
+      
+      <tag>多模态</tag>
+      
+      <tag>综述</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>注意力机制：深度学习中的关键创新</title>
+    <link href="/tech-blog/2025/03/24/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
+    <url>/tech-blog/2025/03/24/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<h1 id="注意力机制：深度学习中的关键创新"><a href="#注意力机制：深度学习中的关键创新" class="headerlink" title="注意力机制：深度学习中的关键创新"></a>注意力机制：深度学习中的关键创新</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>注意力机制(Attention Mechanism)是深度学习领域的重要突破，它模拟了人类选择性关注信息的能力，为神经网络赋予了”关注重点”的能力。自2017年提出以来，以注意力机制为核心的Transformer架构已经彻底改变了自然语言处理、计算机视觉等多个领域的发展方向。</p><h2 id="注意力机制的起源"><a href="#注意力机制的起源" class="headerlink" title="注意力机制的起源"></a>注意力机制的起源</h2><p>最早的注意力机制可以追溯到2014年Bahdanau等人在机器翻译任务中提出的方法，被称为”加性注意力”。随后Luong等人提出了”乘性注意力”。而真正的突破点是2017年Google团队在《Attention is All You Need》论文中提出的自注意力(Self-Attention)机制和Transformer架构。</p><h2 id="注意力机制的核心原理"><a href="#注意力机制的核心原理" class="headerlink" title="注意力机制的核心原理"></a>注意力机制的核心原理</h2><h3 id="查询-键-值-Query-Key-Value-模型"><a href="#查询-键-值-Query-Key-Value-模型" class="headerlink" title="查询-键-值(Query-Key-Value)模型"></a>查询-键-值(Query-Key-Value)模型</h3><p>注意力机制的核心是QKV模型：</p><ul><li>查询(Query)：当前位置的信息需求</li><li>键(Key)：所有位置的信息索引</li><li>值(Value)：所有位置的实际信息内容</li></ul><p>通过计算查询与键的相似度，为每个值分配权重，实现信息的选择性关注。</p><h3 id="自注意力计算过程"><a href="#自注意力计算过程" class="headerlink" title="自注意力计算过程"></a>自注意力计算过程</h3><ol><li>线性投影：将输入转换为Q、K、V矩阵</li><li>注意力分数计算：Q与K的点积操作</li><li>缩放与Softmax：归一化得到注意力权重</li><li>加权求和：将权重与V相乘得到输出</li></ol><h2 id="注意力机制的变体"><a href="#注意力机制的变体" class="headerlink" title="注意力机制的变体"></a>注意力机制的变体</h2><ol><li><strong>多头注意力(Multi-head Attention)</strong>：并行运行多组注意力，捕捉不同角度的依赖关系</li><li><strong>掩码注意力(Masked Attention)</strong>：在自回归生成任务中防止信息泄露</li><li><strong>稀疏注意力(Sparse Attention)</strong>：降低计算复杂度，处理长序列</li><li><strong>局部注意力(Local Attention)</strong>：只关注局部窗口内的信息</li></ol><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>注意力机制已经在多个领域取得了突破性成果：</p><ul><li><strong>自然语言处理</strong>：GPT、BERT等大型语言模型</li><li><strong>计算机视觉</strong>：Vision Transformer</li><li><strong>多模态学习</strong>：CLIP、Stable Diffusion</li><li><strong>音频处理</strong>：用于语音识别和生成</li></ul><h2 id="未来发展趋势"><a href="#未来发展趋势" class="headerlink" title="未来发展趋势"></a>未来发展趋势</h2><ol><li>计算效率优化：降低注意力机制的计算复杂度</li><li>长文本建模：突破序列长度限制</li><li>稀疏性与局部性探索：结合CNN的优势</li><li>跨领域融合：注意力机制与其他技术的结合</li></ol><h1 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h1><h1 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h1><h1 id="FlashAttention2"><a href="#FlashAttention2" class="headerlink" title="FlashAttention2"></a>FlashAttention2</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., … &amp; Polosukhin, I. (2017). Attention is all you need. Advances in neural information processing systems.</li><li>Bahdanau, D., Cho, K., &amp; Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. ICLR.</li><li>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2018). BERT: Pre-training of deep bidirectional transformers for language understanding.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>深度学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>注意力机制</tag>
+      
+      <tag>Transformer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>搜索中的向量检索：原理、技术与应用</title>
+    <link href="/tech-blog/2025/03/24/%E6%90%9C%E7%B4%A2%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/"/>
+    <url>/tech-blog/2025/03/24/%E6%90%9C%E7%B4%A2%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="搜索中的向量检索：原理、技术与应用"><a href="#搜索中的向量检索：原理、技术与应用" class="headerlink" title="搜索中的向量检索：原理、技术与应用"></a>搜索中的向量检索：原理、技术与应用</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>随着深度学习技术的发展，向量检索(Vector Search)在现代搜索系统中扮演着越来越重要的角色。传统的基于关键词的搜索方法难以捕捉语义相似性，而向量检索通过将查询和文档映射到同一向量空间，能够更好地理解用户意图和内容语义。本文将探讨向量检索的基本原理、主要技术以及在搜索领域的应用。</p><h2 id="向量检索基础"><a href="#向量检索基础" class="headerlink" title="向量检索基础"></a>向量检索基础</h2><h3 id="从关键词匹配到语义搜索"><a href="#从关键词匹配到语义搜索" class="headerlink" title="从关键词匹配到语义搜索"></a>从关键词匹配到语义搜索</h3><p>传统搜索主要依赖于布尔检索和TF-IDF等技术，这些方法主要关注词汇的精确匹配。而向量检索通过将文本转换为高维向量，能够捕捉词语之间的语义关系，使得即使使用不同词汇表达的相似概念也能被识别。</p><h3 id="向量表示方法"><a href="#向量表示方法" class="headerlink" title="向量表示方法"></a>向量表示方法</h3><ol><li><strong>词嵌入(Word Embedding)</strong>：如Word2Vec、GloVe</li><li><strong>句子和文档嵌入</strong>：如Doc2Vec、Universal Sentence Encoder</li><li><strong>预训练语言模型</strong>：如BERT、GPT系列生成的向量表示</li><li><strong>多模态嵌入</strong>：结合文本、图像等多种模态的向量表示</li></ol><h2 id="高效向量检索算法"><a href="#高效向量检索算法" class="headerlink" title="高效向量检索算法"></a>高效向量检索算法</h2><p>在大规模数据集上进行向量检索面临计算复杂度问题，以下是几种常用的高效检索算法：</p><h3 id="精确检索算法"><a href="#精确检索算法" class="headerlink" title="精确检索算法"></a>精确检索算法</h3><ul><li><strong>蛮力搜索</strong>：计算查询向量与所有文档向量的相似度</li><li><strong>KD树</strong>：基于空间划分的数据结构</li></ul><h3 id="近似最近邻检索-ANN"><a href="#近似最近邻检索-ANN" class="headerlink" title="近似最近邻检索(ANN)"></a>近似最近邻检索(ANN)</h3><ul><li><strong>局部敏感哈希(LSH)</strong>：将相似向量映射到相同的桶中</li><li><strong>乘积量化(PQ)</strong>：将高维向量分解为低维子向量的笛卡尔积</li><li><strong>层次导航图(HNSW)</strong>：构建多层图结构实现对数级别的搜索复杂度</li><li><strong>向量索引库</strong>：Faiss、Annoy、NMSLIB等开源工具</li></ul><h2 id="向量检索在搜索系统中的应用"><a href="#向量检索在搜索系统中的应用" class="headerlink" title="向量检索在搜索系统中的应用"></a>向量检索在搜索系统中的应用</h2><h3 id="语义搜索"><a href="#语义搜索" class="headerlink" title="语义搜索"></a>语义搜索</h3><p>通过向量表示捕捉查询和文档的语义关系，解决关键词匹配无法处理的同义词、上下文理解等问题。</p><h3 id="多模态搜索"><a href="#多模态搜索" class="headerlink" title="多模态搜索"></a>多模态搜索</h3><p>结合文本、图像、音频等多种模态的向量表示，实现跨模态搜索，如以图搜图、以文搜图等。</p><h3 id="个性化推荐"><a href="#个性化推荐" class="headerlink" title="个性化推荐"></a>个性化推荐</h3><p>结合用户历史行为向量和内容向量，提供个性化的搜索结果和推荐。</p><h3 id="问答系统"><a href="#问答系统" class="headerlink" title="问答系统"></a>问答系统</h3><p>将问题和可能的答案转化为向量，通过相似度计算找到最匹配的答案。</p><h2 id="工程实践与挑战"><a href="#工程实践与挑战" class="headerlink" title="工程实践与挑战"></a>工程实践与挑战</h2><h3 id="系统架构设计"><a href="#系统架构设计" class="headerlink" title="系统架构设计"></a>系统架构设计</h3><ol><li><strong>在线与离线处理</strong>：预计算文档向量并构建索引</li><li><strong>混合检索策略</strong>：结合关键词匹配与向量检索</li><li><strong>向量索引更新</strong>：处理增量数据的索引更新</li></ol><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ol><li><strong>向量压缩</strong>：降低存储成本和查询延迟</li><li><strong>查询优化</strong>：预过滤、重排序等技术</li><li><strong>分布式部署</strong>：处理大规模向量数据</li></ol><h3 id="评估与调优"><a href="#评估与调优" class="headerlink" title="评估与调优"></a>评估与调优</h3><ol><li><strong>相关性评估</strong>：基于人工标注的评估方法</li><li><strong>向量质量优化</strong>：领域适应、微调等技术</li><li><strong>超参数优化</strong>：索引参数、模型参数等调优</li></ol><h2 id="未来趋势"><a href="#未来趋势" class="headerlink" title="未来趋势"></a>未来趋势</h2><ol><li><strong>更高效的索引算法</strong>：降低内存消耗和提高查询速度</li><li><strong>领域特定的向量表示</strong>：针对垂直领域优化的向量模型</li><li><strong>多模态与交互式搜索</strong>：结合语音、图像等多模态输入</li><li><strong>稀疏与密集混合表示</strong>：结合传统检索与向量检索的优势</li></ol><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul><li>Johnson, J., Douze, M., &amp; Jégou, H. (2019). Billion-scale similarity search with GPUs. IEEE Transactions on Big Data.</li><li>Reimers, N., &amp; Gurevych, I. (2019). Sentence-BERT: Sentence embeddings using Siamese BERT-networks. EMNLP.</li><li>Malkov, Y. A., &amp; Yashunin, D. A. (2018). Efficient and robust approximate nearest neighbor search using hierarchical navigable small world graphs. PAMI.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+      <category>搜索引擎</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>搜索</tag>
+      
+      <tag>向量检索</tag>
+      
+      <tag>机器学习</tag>
+      
+      <tag>信息检索</tag>
+      
+      <tag>相似度搜索</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>逆运动学：机器人控制中的核心技术</title>
+    <link href="/tech-blog/2025/03/24/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
+    <url>/tech-blog/2025/03/24/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/</url>
+    
+    <content type="html"><![CDATA[<h1 id="逆运动学：机器人控制中的核心技术"><a href="#逆运动学：机器人控制中的核心技术" class="headerlink" title="逆运动学：机器人控制中的核心技术"></a>逆运动学：机器人控制中的核心技术</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>逆运动学(Inverse Kinematics)是机器人控制领域的基础技术，用于解决从末端执行器的位置和姿态反推关节角度的问题。这一技术在机器人操作、动画制作、虚拟现实等领域有着广泛的应用。本文将介绍逆运动学的基本原理、常用算法以及应用案例。</p><h2 id="运动学基础"><a href="#运动学基础" class="headerlink" title="运动学基础"></a>运动学基础</h2><h3 id="正运动学与逆运动学"><a href="#正运动学与逆运动学" class="headerlink" title="正运动学与逆运动学"></a>正运动学与逆运动学</h3><ul><li><strong>正运动学(Forward Kinematics)</strong>：已知各关节角度，计算末端执行器的位置和姿态</li><li><strong>逆运动学(Inverse Kinematics)</strong>：已知末端执行器的位置和姿态，计算可行的关节角度</li></ul><p>从数学角度看，正运动学是一个确定性问题，而逆运动学则是一个多解或无解问题，这使得逆运动学在实际应用中更具挑战性。</p><h3 id="DH参数法"><a href="#DH参数法" class="headerlink" title="DH参数法"></a>DH参数法</h3><p>Denavit-Hartenberg(DH)参数是描述机器人运动学的标准方法，使用四个参数（关节距离、关节角、连杆长度、扭转角）来表示相邻关节之间的空间关系。</p><h2 id="逆运动学解算方法"><a href="#逆运动学解算方法" class="headerlink" title="逆运动学解算方法"></a>逆运动学解算方法</h2><h3 id="解析解法"><a href="#解析解法" class="headerlink" title="解析解法"></a>解析解法</h3><p>对于结构简单的机器人（如6自由度及以下），通常可以推导出解析解。解析解具有计算速度快、精度高的优点，但仅适用于特定结构的机器人。</p><h4 id="代数法"><a href="#代数法" class="headerlink" title="代数法"></a>代数法</h4><p>利用几何关系直接推导关节角度，适用于简单结构。</p><h4 id="几何法"><a href="#几何法" class="headerlink" title="几何法"></a>几何法</h4><p>通过三角函数关系求解，直观但受限于机构复杂度。</p><h3 id="数值解法"><a href="#数值解法" class="headerlink" title="数值解法"></a>数值解法</h3><p>对于复杂结构或冗余自由度的机器人，通常采用数值解法。</p><h4 id="雅可比矩阵法"><a href="#雅可比矩阵法" class="headerlink" title="雅可比矩阵法"></a>雅可比矩阵法</h4><p>利用雅可比矩阵描述关节角度变化与末端执行器位置变化的关系，通过迭代计算求解。</p><ol><li>正向雅可比法：$\Delta\theta &#x3D; J^{-1}(θ)\Delta x$</li><li>伪逆法：处理非方阵雅可比矩阵</li><li>阻尼最小二乘法：提高奇异点附近的稳定性</li></ol><h4 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h4><p>将逆运动学问题转化为优化问题，最小化末端执行器目标位置与当前位置之间的误差。</p><ol><li>梯度下降法</li><li>遗传算法</li><li>粒子群优化</li></ol><h2 id="处理关键挑战"><a href="#处理关键挑战" class="headerlink" title="处理关键挑战"></a>处理关键挑战</h2><h3 id="奇异点处理"><a href="#奇异点处理" class="headerlink" title="奇异点处理"></a>奇异点处理</h3><p>奇异点是机器人某些构型下雅可比矩阵秩亏损的位置，在这些位置附近，小的末端移动可能需要大的关节变化。常用处理方法包括：</p><ol><li>SVD分解</li><li>阻尼因子法</li><li>避障算法</li></ol><h3 id="冗余自由度"><a href="#冗余自由度" class="headerlink" title="冗余自由度"></a>冗余自由度</h3><p>当机器人的自由度多于完成任务所需的自由度时，存在无穷多组解。通过引入次优化目标，可以选择符合特定条件的解：</p><ol><li>关节极限避免</li><li>能量最小化</li><li>障碍物避免</li></ol><h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><h3 id="工业机器人控制"><a href="#工业机器人控制" class="headerlink" title="工业机器人控制"></a>工业机器人控制</h3><p>在自动化生产线上，逆运动学用于精确控制机器人完成焊接、装配、搬运等任务。</p><h3 id="人形机器人与仿生结构"><a href="#人形机器人与仿生结构" class="headerlink" title="人形机器人与仿生结构"></a>人形机器人与仿生结构</h3><p>人形机器人的运动控制更加复杂，需要考虑多个末端执行器（双手、双脚）和稳定性约束。</p><h3 id="计算机动画与虚拟现实"><a href="#计算机动画与虚拟现实" class="headerlink" title="计算机动画与虚拟现实"></a>计算机动画与虚拟现实</h3><p>在动画制作和VR中，逆运动学用于生成角色的自然运动和交互。</p><h3 id="医疗机器人"><a href="#医疗机器人" class="headerlink" title="医疗机器人"></a>医疗机器人</h3><p>在微创手术中，逆运动学用于将医生的手部动作映射到手术机器人的运动。</p><h2 id="最新技术进展"><a href="#最新技术进展" class="headerlink" title="最新技术进展"></a>最新技术进展</h2><h3 id="基于学习的方法"><a href="#基于学习的方法" class="headerlink" title="基于学习的方法"></a>基于学习的方法</h3><ol><li>神经网络逆运动学：使用深度学习直接学习从末端位置到关节角度的映射</li><li>强化学习：通过试错学习最优控制策略</li></ol><h3 id="实时计算优化"><a href="#实时计算优化" class="headerlink" title="实时计算优化"></a>实时计算优化</h3><ol><li>GPU加速计算</li><li>并行算法设计</li><li>近似计算方法</li></ol><h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><p>逆运动学作为机器人控制的核心技术，随着人工智能和计算能力的发展，呈现出与机器学习深度融合的趋势。未来的研发方向包括更高效的算法实现、更鲁棒的奇异点处理，以及针对特定领域的专用求解器开发。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Craig, J. J. (2009). Introduction to robotics: mechanics and control. Pearson.</li><li>Buss, S. R. (2004). Introduction to inverse kinematics with jacobian transpose, pseudoinverse and damped least squares methods. IEEE Journal of Robotics and Automation.</li><li>Aristidou, A., &amp; Lasenby, J. (2011). FABRIK: A fast, iterative solver for the Inverse Kinematics problem. Graphical Models.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Robotics</category>
+      
+      <category>控制技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Robotics</tag>
+      
+      <tag>机器人学</tag>
+      
+      <tag>运动规划</tag>
+      
+      <tag>控制理论</tag>
+      
+      <tag>数学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Humanoid Shadowing and Imitation from Humans文章解读</title>
     <link href="/tech-blog/2025/03/23/HumanPlus/"/>
     <url>/tech-blog/2025/03/23/HumanPlus/</url>
@@ -209,9 +310,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -246,9 +347,46 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>Research</tag>
       
+      <tag>Robotics</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
+    <link href="/tech-blog/2025/03/23/OpenVLA/"/>
+    <url>/tech-blog/2025/03/23/OpenVLA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><p>image.png</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -283,9 +421,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -320,46 +458,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
-    <link href="/tech-blog/2025/03/23/openvla/"/>
-    <url>/tech-blog/2025/03/23/openvla/</url>
-    
-    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><p>image.png</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>Research</tag>
-      
-      <tag>AI</tag>
       
       <tag>Robotics</tag>
       
@@ -394,9 +495,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -431,9 +532,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -534,11 +635,11 @@
     
     <tags>
       
+      <tag>DeepLearning</tag>
+      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
-      
-      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -569,11 +670,11 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
+      
+      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
