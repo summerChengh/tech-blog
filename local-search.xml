@@ -5,6 +5,19 @@
   
   <entry>
     <title></title>
+    <link href="/tech-blog/2025/03/24/YellAtYourRobot/"/>
+    <url>/tech-blog/2025/03/24/YellAtYourRobot/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
     <link href="/tech-blog/2025/03/24/ShapeLLM/"/>
     <url>/tech-blog/2025/03/24/ShapeLLM/</url>
     
@@ -31,8 +44,8 @@
   
   <entry>
     <title>Humanoid Shadowing and Imitation from Humans文章解读</title>
-    <link href="/tech-blog/2025/03/23/humanPlus/"/>
-    <url>/tech-blog/2025/03/23/humanPlus/</url>
+    <link href="/tech-blog/2025/03/23/HumanPlus/"/>
+    <url>/tech-blog/2025/03/23/HumanPlus/</url>
     
     <content type="html"><![CDATA[<p><a href="https://humanoid-ai.github.io/">主页</a></p>]]></content>
     
@@ -50,9 +63,46 @@
     
     <tags>
       
+      <tag>AI</tag>
+      
       <tag>Research</tag>
       
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
+    <link href="/tech-blog/2025/03/23/LAPA/"/>
+    <url>/tech-blog/2025/03/23/LAPA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>ComputerVision</tag>
       
@@ -87,9 +137,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>ComputerVision</tag>
       
@@ -124,46 +174,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
       
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>Robotics</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
-    <link href="/tech-blog/2025/03/23/openvla/"/>
-    <url>/tech-blog/2025/03/23/openvla/</url>
-    
-    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><p>image.png</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>Research</tag>
-      
-      <tag>AI</tag>
       
       <tag>ComputerVision</tag>
       
@@ -198,9 +211,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>ComputerVision</tag>
       
@@ -215,11 +228,11 @@
   
   
   <entry>
-    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
-    <link href="/tech-blog/2025/03/23/lapa/"/>
-    <url>/tech-blog/2025/03/23/lapa/</url>
+    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
+    <link href="/tech-blog/2025/03/23/openvla/"/>
+    <url>/tech-blog/2025/03/23/openvla/</url>
     
-    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><p>image.png</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
     
     
     <categories>
@@ -235,9 +248,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>ComputerVision</tag>
       
@@ -272,9 +285,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>ComputerVision</tag>
       
@@ -375,11 +388,11 @@
     
     <tags>
       
+      <tag>DeepLearning</tag>
+      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
-      
-      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -410,11 +423,11 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
+      
+      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       
