@@ -1,0 +1,819 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content=".prompt-container {   position: relative;   background-color: #f8f9fa;   border: 1px solid #e9ecef;   border-radius: 6px;   padding: 20px;   margin: 20px 0;   font-size: 0.95em;   line-height: 1.6; }">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提示词工程：高效指导AI生成内容的艺术">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/AI%E5%B7%A5%E5%85%B7Prompts/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content=".prompt-container {   position: relative;   background-color: #f8f9fa;   border: 1px solid #e9ecef;   border-radius: 6px;   padding: 20px;   margin: 20px 0;   font-size: 0.95em;   line-height: 1.6; }">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-23T17:29:00.000Z">
+<meta property="article:modified_time" content="2025-03-25T03:59:53.548Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Prompts">
+<meta property="article:tag" content="提示词工程">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="生成式AI">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>提示词工程：高效指导AI生成内容的艺术 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="提示词工程：高效指导AI生成内容的艺术"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-24 01:29" pubdate>
+          March 24, 2025 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">提示词工程：高效指导AI生成内容的艺术</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <style>
+.prompt-container {
+  position: relative;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  background-color: #0069d9;
+}
+
+.copy-button.copied {
+  background-color: #28a745;
+}
+</style>
+
+<h1 id="提示词工程：高效指导AI生成内容的艺术"><a href="#提示词工程：高效指导AI生成内容的艺术" class="headerlink" title="提示词工程：高效指导AI生成内容的艺术"></a>提示词工程：高效指导AI生成内容的艺术</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着ChatGPT、Claude、Gemini等大型语言模型的普及，提示词工程（Prompt Engineering）已成为一项重要技能。精心设计的提示词能够显著提高AI生成内容的质量和相关性。本文将分享一些实用的提示词模板，帮助您更好地使用AI工具。</p>
+<h2 id="高级杂志风格卡片生成提示词"><a href="#高级杂志风格卡片生成提示词" class="headerlink" title="高级杂志风格卡片生成提示词"></a>高级杂志风格卡片生成提示词</h2><p>以下是一个用于生成高级时尚杂志风格知识卡片的专业提示词模板。这个提示词特别适合设计师、内容创作者和营销人员使用。来自：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Cz4Xwsa5ZS6tW-H5YdQzSw?s_trans=5141993101_&s_channel=4">https://mp.weixin.qq.com/s/Cz4Xwsa5ZS6tW-H5YdQzSw?s_trans=5141993101_&amp;s_channel=4</a></p>
+<div class="prompt-container" id="magazine-prompt">
+  <button class="copy-button" onclick="copyPrompt('magazine-prompt')">复制</button>
+  <p>你是一位国际顶尖的数字杂志艺术总监和前端开发专家，曾为Vogue、Elle等时尚杂志设计过数字版面，擅长将奢华杂志美学与现代网页设计完美融合，创造出令人惊艳的视觉体验。</p>
+
+  <p>请从以下29种设计风格中随机选择1种，设计高级时尚杂志风格的知识卡片，将日常信息以精致奢华的杂志编排呈现，让用户感受到如同翻阅高端杂志般的视觉享受。</p>
+
+  <p><strong>可选设计风格：</strong></p>
+
+  <p>1. 极简主义风格 (Minimalist)<br>
+  采用极简主义风格设计，遵循"少即是多"的理念。使用大量留白创造呼吸空间，仅保留最必要的元素。配色方案限制在2-3种中性色，主要为白色背景配以黑色或深灰色文字。排版应精确到像素级别，使用精心设计的网格系统和黄金比例。字体选择无衬线字体如Helvetica或Noto Sans，字重变化作为主要层次手段。装饰元素几乎为零，仅使用极细的分隔线和微妙的阴影。整体设计应呈现出克制、优雅且永恒的美学，让内容本身成为焦点。参考Dieter Rams的设计原则和日本无印良品(MUJI)的产品美学。</p>
+
+  <p>2. 大胆现代风格 (Bold Modern)<br>
+  采用大胆现代风格设计，打破传统排版规则，创造强烈视觉冲击。使用鲜艳对比色如荧光粉、电子蓝、亮黄等，背景可使用深色或鲜艳色块。排版应不对称且动态，标题文字极大（至少60px），可使用极粗字重或压缩字体，甚至允许文字重叠和溢出。图形元素应用几何形状，边缘锐利，可添加不规则裁切效果。层次感通过大小、颜色和位置的极端对比创造。整体设计应充满张力和活力，像一张视觉宣言，参考Wired杂志和Pentagram设计工作室的作品。添加微妙动效如悬停放大或颜色变换，增强现代感。</p>
+
+  <p>3. 优雅复古风格 (Elegant Vintage)<br>
+  采用优雅复古风格设计，重现20世纪初期印刷品的精致美学。使用米色或淡黄色纸张质感背景，配以深棕、暗红等老式印刷色。字体必须使用衬线字体如Baskerville或Noto Serif，标题可使用装饰性字体。排版应对称且庄重，遵循传统书籍设计原则。装饰元素包括精致的花纹边框、古典分隔线和角落装饰，可添加轻微做旧效果如纸张纹理和微妙污点。图像应用复古滤镜处理，呈现褪色照片效果。整体设计应散发出典雅、成熟且历经时间考验的气质，参考The New Yorker和老式法国时尚杂志的设计语言。</p>
+
+  <p><strong>每种风格都应包含以下元素，但视觉表现各不相同：</strong></p>
+
+  <ul>
+    <li>日期区域：以各风格特有的方式呈现当前日期</li>
+    <li>标题和副标题：根据风格调整字体、大小、排版方式</li>
+    <li>引用区块：设计独特的引用样式，体现风格特点</li>
+    <li>核心要点列表：以符合风格的方式呈现列表内容</li>
+    <li>二维码区域：将二维码融入整体设计</li>
+    <li>编辑笔记/小贴士：设计成符合风格的边栏或注释</li>
+  </ul>
+
+  <p><strong>技术规范：</strong></p>
+
+  <ul>
+    <li>使用HTML5、Font Awesome、Tailwind CSS和必要的JavaScript
+      <ul>
+        <li>Font Awesome: <a target="_blank" rel="noopener" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css">https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css</a></li>
+        <li>Tailwind CSS: <a target="_blank" rel="noopener" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css">https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css</a></li>
+        <li>中文字体: <a target="_blank" rel="noopener" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap</a></li>
+      </ul>
+    </li>
+    <li>可考虑添加微妙的动效，如页面载入时的淡入效果或微妙的悬停反馈</li>
+    <li>确保代码简洁高效，注重性能和可维护性</li>
+    <li>使用CSS变量管理颜色和间距，便于风格统一</li>
+    <li>对于液态数字形态主义风格，必须添加流体动态效果和渐变过渡</li>
+    <li>对于超感官极简主义风格，必须精确控制每个像素和微妙的交互反馈</li>
+    <li>对于新表现主义数据可视化风格，必须将数据以视觉化方式融入设计</li>
+  </ul>
+
+  <p><strong>输出要求：</strong></p>
+
+  <ul>
+    <li>提供一个完整的HTML文件，包含所有设计风格的卡片</li>
+    <li>确保风格共享相同的内容，但视觉表现完全不同</li>
+    <li>代码应当优雅且符合最佳实践，CSS应体现出对细节的极致追求</li>
+    <li>设计的宽度为400px，高度不超过1280px</li>
+    <li>对主题内容进行抽象提炼，只显示列点或最核心句引用，让人阅读有收获感</li>
+    <li>永远用中文输出，装饰元素可用法语、英语等其他语言显得有逼格</li>
+    <li>二维码截图地址：（必须用）：https://pic.readnow.pro/2025/03/791e29affc7772652c01be54b92e8c43.jpg</li>
+  </ul>
+
+  <p>请以国际顶尖杂志艺术总监的眼光和审美标准，创造风格迥异但同样令人惊艳的数字杂志式卡片，让用户感受到"这不是普通的信息卡片，而是一件可收藏的数字艺术品"。</p>
+
+  <p>待处理内容：<br>
+  日期：2025-03-23<br>
+  主题：[在此输入您的主题]</p>
+</div>
+
+<h2 id="学术论文写作助手"><a href="#学术论文写作助手" class="headerlink" title="学术论文写作助手"></a>学术论文写作助手</h2><h2 id="商业报告生成器"><a href="#商业报告生成器" class="headerlink" title="商业报告生成器"></a>商业报告生成器</h2><h2 id="创意故事构思工具"><a href="#创意故事构思工具" class="headerlink" title="创意故事构思工具"></a>创意故事构思工具</h2><h2 id="技术文档编写指南"><a href="#技术文档编写指南" class="headerlink" title="技术文档编写指南"></a>技术文档编写指南</h2><script>
+function copyPrompt(elementId) {
+  const promptContainer = document.getElementById(elementId);
+  const promptText = promptContainer.innerText.replace('复制', '').trim();
+  
+  // 创建一个临时textarea元素来执行复制
+  const textarea = document.createElement('textarea');
+  textarea.value = promptText;
+  textarea.style.position = 'fixed';  // 防止页面滚动
+  document.body.appendChild(textarea);
+  textarea.select();
+  
+  try {
+    const successful = document.execCommand('copy');
+    const button = promptContainer.querySelector('.copy-button');
+    button.textContent = '已复制!';
+    button.classList.add('copied');
+    
+    // 3秒后恢复按钮状态
+    setTimeout(() => {
+      button.textContent = '复制';
+      button.classList.remove('copied');
+    }, 3000);
+  } catch (err) {
+    console.error('复制失败:', err);
+  }
+  
+  document.body.removeChild(textarea);
+}
+</script>
+
+
+
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/AI/%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8/" class="category-chain-item">技术应用</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tech-blog/tags/Prompts/" class="print-no-link">#Prompts</a>
+      
+        <a href="/tech-blog/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="print-no-link">#提示词工程</a>
+      
+        <a href="/tech-blog/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>提示词工程：高效指导AI生成内容的艺术</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/03/24/AI工具Prompts/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 24, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/03/24/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/" title="逆运动学：机器人控制中的核心技术">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">逆运动学：机器人控制中的核心技术</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/03/24/%E6%96%87%E7%94%9F%E5%9B%BE%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/" title="文生图技术解析(一)：扩散模型原理与架构">
+                        <span class="hidden-mobile">文生图技术解析(一)：扩散模型原理与架构</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
