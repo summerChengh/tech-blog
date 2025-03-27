@@ -272,7 +272,7 @@
     <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
     <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</url>
     
-    <content type="html"><![CDATA[<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><pre><code class=" mermaid">mindmap  root((大模型微调方法))    参数高效微调(PEFT)      LoRA        低秩分解矩阵调整        显著降低训练参数量        适用于计算资源有限场景      QLoRA        量化版LoRA        使用4/8bit量化        进一步降低内存需求      Prefix Tuning        添加可训练的前缀向量        保持原始模型权重不变        适合NLG任务      Prompt Tuning        为模型添加可学习的软提示        更简单与轻量化        在足够数据下效果接近全量微调      Adapter Tuning        在Transformer层中添加小型神经网络        保持原有层参数不变        模块化设计易于组合    全量微调      完整参数更新        训练所有模型参数        效果最好        计算资源需求最高      模型压缩        剪枝        知识蒸馏        量化    指令微调      SFT(监督微调)        使用人工编写的高质量指令-回答对        改善模型对指令的理解与执行能力        一般为全量微调第一阶段      RLHF(人类反馈强化学习)        奖励模型训练        PPO优化        使模型输出更符合人类偏好      DPO(直接偏好优化)        无需显式奖励模型        直接从偏好数据优化        简化RLHF流程    领域适应微调      垂直领域微调        医疗        法律        金融        科研      任务特定微调        文本摘要        代码生成        多语言适配    数据相关策略      数据增强        回译        重述        混合      数据筛选与混合        高质量示例筛选        领域数据与通用数据混合        难例挖掘</code></pre><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p><h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="Lora"><a href="#Lora" class="headerlink" title="Lora"></a>Lora</h3><h3 id="QLora"><a href="#QLora" class="headerlink" title="QLora"></a>QLora</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3>]]></content>
+    <content type="html"><![CDATA[<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><pre><code class=" mermaid">mindmap  root((大模型微调方法))    参数高效微调(PEFT)      LoRA        低秩分解矩阵调整        显著降低训练参数量        适用于计算资源有限场景      QLoRA        量化版LoRA        使用4/8bit量化        进一步降低内存需求      Prefix Tuning        添加可训练的前缀向量        保持原始模型权重不变        适合NLG任务      Prompt Tuning        为模型添加可学习的软提示        更简单与轻量化        在足够数据下效果接近全量微调      Adapter Tuning        在Transformer层中添加小型神经网络        保持原有层参数不变        模块化设计易于组合    全量微调      完整参数更新        训练所有模型参数        效果最好        计算资源需求最高      模型压缩        剪枝        知识蒸馏        量化    指令微调      SFT(监督微调)        使用人工编写的高质量指令-回答对        改善模型对指令的理解与执行能力        一般为全量微调第一阶段      RLHF(人类反馈强化学习)        奖励模型训练        PPO优化        使模型输出更符合人类偏好      DPO(直接偏好优化)        无需显式奖励模型        直接从偏好数据优化        简化RLHF流程    领域适应微调      垂直领域微调        医疗        法律        金融        科研      任务特定微调        文本摘要        代码生成        多语言适配    数据相关策略      数据增强        回译        重述        混合      数据筛选与混合        高质量示例筛选        领域数据与通用数据混合        难例挖掘</code></pre><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p><h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="Lora"><a href="#Lora" class="headerlink" title="Lora"></a>Lora</h3><h3 id="QLora"><a href="#QLora" class="headerlink" title="QLora"></a>QLora</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p><h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>]]></content>
     
     
     <categories>
@@ -369,7 +369,7 @@
     <link href="/tech-blog/2025/03/24/Agent/"/>
     <url>/tech-blog/2025/03/24/Agent/</url>
     
-    <content type="html"><![CDATA[<h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><h3 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><h3 id="多智能体协作"><a href="#多智能体协作" class="headerlink" title="多智能体协作"></a>多智能体协作</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a></p><p><a href="https://github.com/plurai-ai/intellagent">intellagent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><h3 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><h3 id="多智能体协作"><a href="#多智能体协作" class="headerlink" title="多智能体协作"></a>多智能体协作</h3><h2 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h2><h3 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h3><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p><h3 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h3><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p><h3 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h3><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p><h3 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h3><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p><h3 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h3><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a></p><p><a href="https://github.com/plurai-ai/intellagent">intellagent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p><p><a href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a></p>]]></content>
     
     
     <categories>
@@ -623,11 +623,11 @@
   
   
   <entry>
-    <title>文生图技术解析(一)：扩散模型原理与架构</title>
+    <title>文生图技术解析二</title>
     <link href="/tech-blog/2025/03/24/%E6%96%87%E7%94%9F%E5%9B%BE%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6/"/>
     <url>/tech-blog/2025/03/24/%E6%96%87%E7%94%9F%E5%9B%BE%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6/</url>
     
-    <content type="html"><![CDATA[<h1 id="文生图技术解析-一-：扩散模型原理与架构"><a href="#文生图技术解析-一-：扩散模型原理与架构" class="headerlink" title="文生图技术解析(一)：扩散模型原理与架构"></a>文生图技术解析(一)：扩散模型原理与架构</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>文生图(Text-to-Image)技术是近年来人工智能领域最引人瞩目的突破之一，它能够根据文本描述生成相应的图像，为创意表达、内容创作和视觉设计带来革命性变化。本文作为文生图技术解析系列的第一篇，将重点介绍当前主流文生图技术的核心——扩散模型(Diffusion Models)的基本原理和架构。</p><h2 id="扩散模型的发展历程"><a href="#扩散模型的发展历程" class="headerlink" title="扩散模型的发展历程"></a>扩散模型的发展历程</h2><h3 id="从GAN到扩散模型"><a href="#从GAN到扩散模型" class="headerlink" title="从GAN到扩散模型"></a>从GAN到扩散模型</h3><p>早期的图像生成主要依赖于生成对抗网络(GAN)，如StyleGAN等。但GAN存在训练不稳定、模式崩溃等问题。2020年，Ho等人提出了去噪扩散概率模型(DDPM)，开启了扩散模型在图像生成领域的新纪元。随后，Song等人的基于分数的生成模型(SGM)和Rombach等人的潜在扩散模型(LDM)进一步推动了扩散模型的发展。</p><h3 id="里程碑式产品"><a href="#里程碑式产品" class="headerlink" title="里程碑式产品"></a>里程碑式产品</h3><ul><li><strong>DALL-E&#x2F;DALL-E 2</strong>：OpenAI开发的先驱性文生图系统</li><li><strong>Imagen</strong>：Google开发的高保真文生图模型</li><li><strong>Stable Diffusion</strong>：稳定扩散模型，首个开源且能在消费级硬件上运行的大型文生图模型</li><li><strong>Midjourney</strong>：以艺术审美著称的闭源文生图服务</li></ul><h2 id="扩散模型的基本原理"><a href="#扩散模型的基本原理" class="headerlink" title="扩散模型的基本原理"></a>扩散模型的基本原理</h2><h3 id="扩散过程的数学基础"><a href="#扩散过程的数学基础" class="headerlink" title="扩散过程的数学基础"></a>扩散过程的数学基础</h3><p>扩散模型基于马尔可夫链的数学框架，包含两个核心过程：</p><ol><li><strong>前向过程(扩散过程)</strong>：逐步向图像添加高斯噪声，直到完全破坏图像结构，变为纯噪声</li><li><strong>反向过程(去噪过程)</strong>：学习如何逐步去除噪声，从随机噪声中恢复出有意义的图像</li></ol><p>前向过程可以用以下方程表示：<br>$q(x_t|x_{t-1}) &#x3D; \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_t\mathbf{I})$</p><p>其中，$\beta_t$是控制每一步噪声添加量的参数。</p><h3 id="DDPM算法流程"><a href="#DDPM算法流程" class="headerlink" title="DDPM算法流程"></a>DDPM算法流程</h3><ol><li><p><strong>训练阶段</strong>：</p><ul><li>对原始图像施加不同程度的噪声</li><li>训练神经网络预测每一步添加的噪声，最小化预测误差</li><li>损失函数通常为均方误差：$L &#x3D; \mathbb{E}<em>{x_0,\epsilon,t}[||\epsilon - \epsilon</em>\theta(x_t, t)||^2]$</li></ul></li><li><p><strong>采样阶段</strong>：</p><ul><li>从标准正态分布采样初始噪声$x_T \sim \mathcal{N}(0, \mathbf{I})$</li><li>逐步应用学习到的去噪过程，通过迭代方式生成最终图像</li><li>采样方程：$x_{t-1} &#x3D; \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}<em>t}}\epsilon</em>\theta(x_t, t)) + \sigma_t z$，其中$z \sim \mathcal{N}(0, \mathbf{I})$</li></ul></li></ol><h2 id="文本条件扩散模型架构"><a href="#文本条件扩散模型架构" class="headerlink" title="文本条件扩散模型架构"></a>文本条件扩散模型架构</h2><h3 id="条件生成机制"><a href="#条件生成机制" class="headerlink" title="条件生成机制"></a>条件生成机制</h3><p>为了实现文本控制图像生成，需要将文本信息融入扩散过程：</p><ol><li><strong>文本编码器</strong>：使用预训练语言模型(如CLIP文本编码器)将文本提示转化为高维语义向量</li><li><strong>条件注入</strong>：通过交叉注意力机制将文本特征注入到扩散模型的U-Net架构中</li><li><strong>时间步编码</strong>：为每个去噪步骤提供时间信息，指导噪声预测过程</li></ol><h3 id="Stable-Diffusion模型解析"><a href="#Stable-Diffusion模型解析" class="headerlink" title="Stable Diffusion模型解析"></a>Stable Diffusion模型解析</h3><p>Stable Diffusion作为目前最具影响力的开源文生图模型，采用了潜在扩散模型(LDM)的架构：</p><ol><li><strong>VAE编码器</strong>：将高分辨率图像压缩到低维潜在空间</li><li><strong>U-Net主干网络</strong>：在潜在空间中执行扩散和去噪过程</li><li><strong>CLIP文本编码器</strong>：处理文本输入，提取语义特征</li><li><strong>VAE解码器</strong>：将生成的潜在表示重建为最终图像</li></ol><p>这种架构显著减少了计算资源需求，使模型能够在消费级硬件上运行。</p><h2 id="采样技术与优化方法"><a href="#采样技术与优化方法" class="headerlink" title="采样技术与优化方法"></a>采样技术与优化方法</h2><h3 id="快速采样算法"><a href="#快速采样算法" class="headerlink" title="快速采样算法"></a>快速采样算法</h3><p>扩散模型生成过程原本需要数百次迭代，但通过优化采样算法可大幅加速：</p><ol><li><strong>DDIM(确定性扩散)</strong>：通过构建非马尔可夫过程减少采样步骤</li><li><strong>DPM-Solver&#x2F;DPM-Solver++</strong>：基于常微分方程(ODE)求解器的高效采样器</li><li><strong>Euler&#x2F;Euler-a采样器</strong>：简单高效的欧拉方法及其自适应变种</li><li><strong>PLMS(伪线性多步方法)</strong>：利用前几步信息加速收敛</li></ol><h3 id="引导技术"><a href="#引导技术" class="headerlink" title="引导技术"></a>引导技术</h3><p>通过引导技术增强文本对生成过程的控制：</p><ol><li><strong>分类器引导</strong>：利用预训练图像分类器引导生成过程</li><li><strong>无分类器引导(CFG)</strong>：同时进行条件和无条件生成，通过调整两者权重控制文本遵循度<ul><li>$\epsilon_\theta^{CFG}(x_t|y) &#x3D; \epsilon_\theta(x_t|\emptyset) + s \cdot (\epsilon_\theta(x_t|y) - \epsilon_\theta(x_t|\emptyset))$</li></ul></li></ol><h2 id="当前挑战与局限性"><a href="#当前挑战与局限性" class="headerlink" title="当前挑战与局限性"></a>当前挑战与局限性</h2><h3 id="技术挑战"><a href="#技术挑战" class="headerlink" title="技术挑战"></a>技术挑战</h3><ol><li><strong>精确文本对齐</strong>：准确理解复杂文本指令仍有困难</li><li><strong>空间关系理解</strong>：复杂位置关系和视角描述的处理不够精确</li><li><strong>推理效率</strong>：尽管有所改进，生成高质量图像仍需要较长时间</li><li><strong>风格一致性</strong>：在保持艺术风格一致性方面仍有提升空间</li></ol><h3 id="社会影响与伦理考量"><a href="#社会影响与伦理考量" class="headerlink" title="社会影响与伦理考量"></a>社会影响与伦理考量</h3><ol><li><strong>内容安全</strong>：模型可能生成有害、偏见或不适当内容</li><li><strong>著作权问题</strong>：训练数据来源和生成内容的版权归属存在争议</li><li><strong>身份伪造</strong>：可能被用于创建未经授权的肖像或虚假内容</li><li><strong>就业影响</strong>：对视觉艺术工作者和创意产业的潜在影响</li></ol><h2 id="下一代扩散模型发展方向"><a href="#下一代扩散模型发展方向" class="headerlink" title="下一代扩散模型发展方向"></a>下一代扩散模型发展方向</h2><h3 id="技术演进"><a href="#技术演进" class="headerlink" title="技术演进"></a>技术演进</h3><ol><li><strong>多模态融合</strong>：与视频、3D和音频生成技术的结合</li><li><strong>高效架构</strong>：更轻量化和计算高效的模型结构</li><li><strong>个性化技术</strong>：低成本适应用户特定风格和需求的方法</li><li><strong>物理约束理解</strong>：改进对现实世界物理规则的遵循</li></ol><h3 id="应用拓展"><a href="#应用拓展" class="headerlink" title="应用拓展"></a>应用拓展</h3><ol><li><strong>辅助创意设计</strong>：概念艺术、产品原型、品牌素材生成</li><li><strong>教育可视化</strong>：复杂概念的直观图像表达</li><li><strong>医学影像</strong>：医学图像合成和诊断辅助</li><li><strong>娱乐与游戏</strong>：游戏资产生成和互动内容创作</li></ol><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>扩散模型为文生图技术提供了强大的基础，但这仅是开始。随着算法优化、计算资源降低和应用场景拓展，文生图技术将继续深刻改变视觉内容创作的方式。在下一篇文章中，我们将深入探讨提示工程（Prompt Engineering）技术，帮助读者掌握引导AI生成所需图像的艺术。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems.</li><li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. CVPR.</li><li>Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., … &amp; Chen, M. (2021). GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models. arXiv.</li><li>Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E., … &amp; Norouzi, M. (2022). Photorealistic text-to-image diffusion models with deep language understanding. arXiv.</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="文生图技术解析-二-：生成式文生图"><a href="#文生图技术解析-二-：生成式文生图" class="headerlink" title="文生图技术解析(二)：生成式文生图"></a>文生图技术解析(二)：生成式文生图</h1>]]></content>
     
     
     <categories>
@@ -769,43 +769,6 @@
   
   
   <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/Palm-E/"/>
-    <url>/tech-blog/2025/03/23/Palm-E/</url>
-    
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
     <link href="/tech-blog/2025/03/23/QuasiSim/"/>
     <url>/tech-blog/2025/03/23/QuasiSim/</url>
@@ -843,11 +806,11 @@
   
   
   <entry>
-    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
-    <link href="/tech-blog/2025/03/23/SayCan/"/>
-    <url>/tech-blog/2025/03/23/SayCan/</url>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/Palm-E/"/>
+    <url>/tech-blog/2025/03/23/Palm-E/</url>
     
-    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
     
     
     <categories>
@@ -885,6 +848,43 @@
     <url>/tech-blog/2025/03/23/UMI/</url>
     
     <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
+    <link href="/tech-blog/2025/03/23/SayCan/"/>
+    <url>/tech-blog/2025/03/23/SayCan/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
     
     
     <categories>

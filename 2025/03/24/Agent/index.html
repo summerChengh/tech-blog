@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="Agent核心问题Auto-AgentAutoGenMetaGPT单Agent框架VS多Agent框架LLM Agents主要组件工作原理设计模式反思规划工具使用多智能体协作参考AutoAgentAutoGenMetaGPT intellagentA Visual Guide to LLM Agents: Exploring the main components of Single- and M">
+    <meta name="description" content="Agent核心问题Auto-AgentAutoGenMetaGPT单Agent框架VS多Agent框架LLM Agents主要组件工作原理设计模式反思规划工具使用多智能体协作智能体记忆框架GraphitiGraphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。 LettaLetta 是一个开源框架，用于构建具有高级推理能力和透明且">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Agent">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/Agent/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="Agent核心问题Auto-AgentAutoGenMetaGPT单Agent框架VS多Agent框架LLM Agents主要组件工作原理设计模式反思规划工具使用多智能体协作参考AutoAgentAutoGenMetaGPT intellagentA Visual Guide to LLM Agents: Exploring the main components of Single- and M">
+<meta property="og:description" content="Agent核心问题Auto-AgentAutoGenMetaGPT单Agent框架VS多Agent框架LLM Agents主要组件工作原理设计模式反思规划工具使用多智能体协作智能体记忆框架GraphitiGraphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。 LettaLetta 是一个开源框架，用于构建具有高级推理能力和透明且">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-23T20:26:00.000Z">
-<meta property="article:modified_time" content="2025-03-26T04:24:59.734Z">
+<meta property="article:modified_time" content="2025-03-26T13:17:13.274Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          43 words
+          383 words
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          1 mins
+          4 mins
         
       </span>
     
@@ -293,8 +293,14 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><h3 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><h3 id="多智能体协作"><a href="#多智能体协作" class="headerlink" title="多智能体协作"></a>多智能体协作</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a target="_blank" rel="noopener" href="https://github.com/microsoft/autogen">AutoGen</a><br><a target="_blank" rel="noopener" href="https://github.com/geekan/MetaGPT">MetaGPT</a></p>
+                <h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><h3 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><h3 id="多智能体协作"><a href="#多智能体协作" class="headerlink" title="多智能体协作"></a>多智能体协作</h3><h2 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h2><h3 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h3><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p>
+<h3 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h3><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p>
+<h3 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h3><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p>
+<h3 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h3><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p>
+<h3 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h3><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a target="_blank" rel="noopener" href="https://github.com/microsoft/autogen">AutoGen</a><br><a target="_blank" rel="noopener" href="https://github.com/geekan/MetaGPT">MetaGPT</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/plurai-ai/intellagent">intellagent</a><br><a target="_blank" rel="noopener" href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a target="_blank" rel="noopener" href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a target="_blank" rel="noopener" href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a></p>
 
                 
               </div>
