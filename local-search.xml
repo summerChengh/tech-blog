@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>大模型位置编码</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/</url>
+    <title>大模型原理</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力源于代码</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><p>自回归语言模型</p><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h1 id="DeepSeek对AI的影响"><a href="#DeepSeek对AI的影响" class="headerlink" title="DeepSeek对AI的影响"></a>DeepSeek对AI的影响</h1><h1 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h1><h1 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h1><h2 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h2><p><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
     
     
     <categories>
@@ -35,11 +35,11 @@
   
   
   <entry>
-    <title>大模型原理</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
+    <title>大模型位置编码</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/</url>
     
-    <content type="html"><![CDATA[<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力源于代码</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><p>自回归语言模型</p><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h1 id="DeepSeek对AI的影响"><a href="#DeepSeek对AI的影响" class="headerlink" title="DeepSeek对AI的影响"></a>DeepSeek对AI的影响</h1><h1 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h1><h1 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h1><h2 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h2><p><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1>]]></content>
     
     
     <categories>
@@ -159,6 +159,39 @@
   
   
   <entry>
+    <title>Natural Humanoid Walk Using Reinforcement Learning</title>
+    <link href="/tech-blog/2025/03/25/Figure/"/>
+    <url>/tech-blog/2025/03/25/Figure/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.figure.ai/news/reinforcement-learning-walking">Figure.ai</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
     <link href="/tech-blog/2025/03/25/FreeMotion/"/>
     <url>/tech-blog/2025/03/25/FreeMotion/</url>
@@ -233,39 +266,6 @@
   
   
   <entry>
-    <title>Natural Humanoid Walk Using Reinforcement Learning</title>
-    <link href="/tech-blog/2025/03/25/Figure/"/>
-    <url>/tech-blog/2025/03/25/Figure/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.figure.ai/news/reinforcement-learning-walking">Figure.ai</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots解读</title>
     <link href="/tech-blog/2025/03/25/%E8%8B%B1%E4%BC%9F%E8%BE%BEHover/"/>
     <url>/tech-blog/2025/03/25/%E8%8B%B1%E4%BC%9F%E8%BE%BEHover/</url>
@@ -303,7 +303,7 @@
     <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
     <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</url>
     
-    <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><script>  MathJax = {    tex: {      inlineMath: [['$', '$'], ['\\(', '\\)']],      displayMath: [['$$', '$$'], ['\\[', '\\]']]    }  };</script><h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><pre><code class=" mermaid">mindmap  root((大模型微调方法))    参数高效微调(PEFT)      LoRA        低秩分解矩阵调整        显著降低训练参数量        适用于计算资源有限场景      QLoRA        量化版LoRA        使用4/8bit量化        进一步降低内存需求      Prefix Tuning        添加可训练的前缀向量        保持原始模型权重不变        适合NLG任务      Prompt Tuning        为模型添加可学习的软提示        更简单与轻量化        在足够数据下效果接近全量微调      Adapter Tuning        在Transformer层中添加小型神经网络        保持原有层参数不变        模块化设计易于组合    全量微调      完整参数更新        训练所有模型参数        效果最好        计算资源需求最高      模型压缩        剪枝        知识蒸馏        量化    指令微调      SFT(监督微调)        使用人工编写的高质量指令-回答对        改善模型对指令的理解与执行能力        一般为全量微调第一阶段      RLHF(人类反馈强化学习)        奖励模型训练        PPO优化        使模型输出更符合人类偏好      DPO(直接偏好优化)        无需显式奖励模型        直接从偏好数据优化        简化RLHF流程    领域适应微调      垂直领域微调        医疗        法律        金融        科研      任务特定微调        文本摘要        代码生成        多语言适配    数据相关策略      数据增强        回译        重述        混合      数据筛选与混合        高质量示例筛选        领域数据与通用数据混合        难例挖掘</code></pre><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p><h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p><p>$$W_0 + \Delta W &#x3D; W_0 + BA$$</p><p>$W_0$ 为预训练模型参数，$\Delta W$ 为微调参数，使用矩阵的低秩分解 $B$ 和 $A$ 的乘积近似微调参数矩阵，模型微调训练时，更新的参数为 $A$、$B$ 矩阵，在执行推理时，将 $BA$ 与 $W_0$ 进行合并。</p><h4 id="LoRA微调的优点"><a href="#LoRA微调的优点" class="headerlink" title="LoRA微调的优点"></a>LoRA微调的优点</h4><ol><li>一个中心模型可以有多个下游任务</li><li>适配器权重可以与基本模型参数矩阵合并，因此不增加额外的推理计算量，不增加推理延迟。额外增加的计算量只有参数合并的计算量。</li><li>与其他PEFT方法正交，可以多种微调方法组合</li><li>可插拔</li></ol><h4 id="LoRA作用于Transformer的哪个参数矩阵比较好？"><a href="#LoRA作用于Transformer的哪个参数矩阵比较好？" class="headerlink" title="LoRA作用于Transformer的哪个参数矩阵比较好？"></a>LoRA作用于Transformer的哪个参数矩阵比较好？</h4><h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p><h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>]]></content>
+    <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><script>  MathJax = {    tex: {      inlineMath: [['$', '$'], ['\\(', '\\)']],      displayMath: [['$$', '$$'], ['\\[', '\\]']]    }  };</script><h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><style>.mindmap-img {  width: 100%;  max-width: 800px;  margin: 20px auto;  display: block;  border-radius: 5px;  box-shadow: 0 4px 8px rgba(0,0,0,0.1);}</style><div class="mindmap-content"><img src="https://mermaid.ink/img/pako:eNqVVctu2zAQ_BWCpw2QBJLlOHaa-BT00PbQAnXQXnphKK4tIhSpklQSN_C_d0hKfshJD7kI5JLLmdnZWfpkci9BY-Z5-p9TZHAYuE10Jx1yBOEuaBtUd8j9DJg0PZwgC0bnj7EBY0IeqcOF7QiCR26iEJh2Jgj_0CnIWEyoWEzcVTnp0qYs7QylFUdxYmxP3LUQT5PiNTWd1NxBKdC5MYOBykrMcGRQoLCnIxRGkrtjy7LG6tDPsxaD4qFYrHEVXF-eTrNsrjJd5eA5Y5ogjcG5u8AGncGNdgD6EfD4OaIL_I0q3KaSz5HWPY12NVRnbFFMUO5RSME15e9D-qoQpCf5h2IkDZQzQlR7kVBpOQ0dH7H7mxC0Ak_XzJ7YRFWp3JWwDYq0YkI9ZVUu-fT7z-8_7m5-_bq_fbr_ef_wf8F7jVs_uZZmwfY6YPPyLr6E5ktrpklh5tIl_2JhvCySCY-W9Fln5BgXKxQlW9AjRZu0D8qyaHPJFTTEv-xtFAfm9QvJA4a0WYCeICKPaM2A2qZ7UBvKw9qiEk1jGtlGP5MxvlA1NvGQZqHDlZlCqRKZfC2tmaSXpnQqqKYZOJXa1CZLfIcquVCf_W_SQ6rDfJ6eZgzJaGBLAGsRqEK9UdBFqJVtQmtSvxXBLcYr1CntVlFGQslZYsUuKHV9DRH-Wla2qLLEeaOKWCunfQ9qO6AiAyZzd9VFPA-w-JrfjM4mWRpEAEfBjPT9mVEGGk1_QxFECgtBzxRQDEzHQA8wMn4-0jNlAVujWrrzFgVyR3d5tTpfgvbeUxpcfGkPJWQ" alt="大模型微调方法思维导图" class="mindmap-img"></div><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p><h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p><p>$$W_0 + \Delta W &#x3D; W_0 + BA$$</p><p>$W_0$ 为预训练模型参数，$\Delta W$ 为微调参数，使用矩阵的低秩分解 $B$ 和 $A$ 的乘积近似微调参数矩阵，模型微调训练时，更新的参数为 $A$、$B$ 矩阵，在执行推理时，将 $BA$ 与 $W_0$ 进行合并。</p><h4 id="LoRA微调的优点"><a href="#LoRA微调的优点" class="headerlink" title="LoRA微调的优点"></a>LoRA微调的优点</h4><ol><li>一个中心模型可以有多个下游任务</li><li>适配器权重可以与基本模型参数矩阵合并，因此不增加额外的推理计算量，不增加推理延迟。额外增加的计算量只有参数合并的计算量。</li><li>与其他PEFT方法正交，可以多种微调方法组合</li><li>可插拔</li></ol><p>LoRA作用于Transformer的哪个参数矩阵比较好？</p><h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p><h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>]]></content>
     
     
     <categories>
@@ -421,31 +421,6 @@
   
   
   <entry>
-    <title>数字分身</title>
-    <link href="/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
-    <url>/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
-    
-    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h1><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>注意力机制：深度学习中的关键创新</title>
     <link href="/tech-blog/2025/03/24/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
     <url>/tech-blog/2025/03/24/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
@@ -506,6 +481,31 @@
       <tag>深度学习</tag>
       
       <tag>计算机视觉</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数字分身</title>
+    <link href="/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
+    <url>/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
+    
+    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h1><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
       
     </tags>
     
@@ -800,43 +800,6 @@
   
   
   <entry>
-    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
-    <link href="/tech-blog/2025/03/23/QuasiSim/"/>
-    <url>/tech-blog/2025/03/23/QuasiSim/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>PaLM-E解读</title>
     <link href="/tech-blog/2025/03/23/Palm-E/"/>
     <url>/tech-blog/2025/03/23/Palm-E/</url>
@@ -879,6 +842,43 @@
     <url>/tech-blog/2025/03/23/SayCan/</url>
     
     <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
+    <link href="/tech-blog/2025/03/23/QuasiSim/"/>
+    <url>/tech-blog/2025/03/23/QuasiSim/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
     
     
     <categories>
@@ -1051,11 +1051,11 @@
   
   
   <entry>
-    <title>Yell at your robot论文解读与复现</title>
-    <link href="/tech-blog/2025/03/22/YellAtYourRobot/"/>
-    <url>/tech-blog/2025/03/22/YellAtYourRobot/</url>
+    <title>灵巧手：UniDexGrasp论文解读</title>
+    <link href="/tech-blog/2025/03/22/UniDexGrasp/"/>
+    <url>/tech-blog/2025/03/22/UniDexGrasp/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>二指夹爪的局限性：</p><p>目标：学习一个通用的灵巧手抓取方法，在仿真环境泛化到数百中见过或未见过的</p><p>平行夹持器7个自由度，而ShadowHand有26个自由度。高维度加大了生成有效抓取姿势和规划执行轨迹的难度。提出两阶段，评估结果体现出方法：高抓取质量、高多样性的优势。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="生成有效抓取手势"><a href="#生成有效抓取手势" class="headerlink" title="生成有效抓取手势"></a>生成有效抓取手势</h3><p>输入：物体点云输入，输出：若干抓取姿势<br>抓取姿势的表征：</p><p>生成抓取手势共分为3个子模块：（1）生成总体旋转的模块 GraspIPDF，（2），（3）</p><h4 id="GraspIPDF"><a href="#GraspIPDF" class="headerlink" title="GraspIPDF"></a>GraspIPDF</h4><h4 id="GraspGlow"><a href="#GraspGlow" class="headerlink" title="GraspGlow"></a>GraspGlow</h4><p>自监督损失函数：1. 预测的理想接触图与由 GraspGlow 输出的手计算得到的接触图之前的差异；2. 物体点云穿透进手的网格的距离平方值；3. 手上预先选定的点位穿透进平面的深度；4. 自穿透。</p><h4 id="ContactNet"><a href="#ContactNet" class="headerlink" title="ContactNet"></a>ContactNet</h4><h3 id="规划执行轨迹"><a href="#规划执行轨迹" class="headerlink" title="规划执行轨迹"></a>规划执行轨迹</h3><h2 id="抓取策略训练3技巧"><a href="#抓取策略训练3技巧" class="headerlink" title="抓取策略训练3技巧"></a>抓取策略训练3技巧</h2><h3 id="状态规范化"><a href="#状态规范化" class="headerlink" title="状态规范化"></a>状态规范化</h3><h3 id="物体课程学习"><a href="#物体课程学习" class="headerlink" title="物体课程学习"></a>物体课程学习</h3><h3 id="使用分类任务协助训练"><a href="#使用分类任务协助训练" class="headerlink" title="使用分类任务协助训练"></a>使用分类任务协助训练</h3><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="机器人灵巧手抓取数据集"><a href="#机器人灵巧手抓取数据集" class="headerlink" title="机器人灵巧手抓取数据集"></a>机器人灵巧手抓取数据集</h3><p>133个物体类别、5519个物体示例、100多万种抓取姿势。</p><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p><ul><li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li><li><strong>触觉传感器</strong>：获取接触力和滑动信息</li><li><strong>自监督特征提取</strong>：无需人工标注的特征学习</li></ul><p>这种融合方式使机器人能够像人类一样，同时利用视觉和触觉信息指导抓取动作。</p><h3 id="2-层次化强化学习"><a href="#2-层次化强化学习" class="headerlink" title="2. 层次化强化学习"></a>2. 层次化强化学习</h3><p>框架采用了层次化的强化学习结构：</p><ul><li><strong>高层策略</strong>：决定整体抓取姿态和方法</li><li><strong>中层策略</strong>：控制手指运动顺序和协调</li><li><strong>低层控制器</strong>：精确控制关节力矩和位置</li></ul><p>这种分层设计大大降低了学习难度，加速了训练过程。</p><h3 id="3-模拟到现实迁移"><a href="#3-模拟到现实迁移" class="headerlink" title="3. 模拟到现实迁移"></a>3. 模拟到现实迁移</h3><p>为解决sim2real问题，UniDexGrasp采用了：</p><ul><li><strong>域随机化</strong>：在模拟中随机化物理参数和视觉特征</li><li><strong>渐进式学习</strong>：从简单任务到复杂任务的课程学习</li><li><strong>现实世界微调</strong>：通过少量真实世界样本进行适应</li></ul><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文在多个基准测试和真实机器人上进行了评估：</p><ul><li>在YCB物体集上达到了92%的抓取成功率</li><li>对未见过的物体达到了85%的泛化成功率</li><li>在不同光照和杂乱环境中展现了鲁棒性</li></ul><h2 id="与现有方法的比较"><a href="#与现有方法的比较" class="headerlink" title="与现有方法的比较"></a>与现有方法的比较</h2><p>与现有的方法相比，UniDexGrasp在以下方面显示出优势：</p><table><thead><tr><th>方法</th><th>成功率</th><th>泛化能力</th><th>计算效率</th></tr></thead><tbody><tr><td>DexNet</td><td>85%</td><td>中等</td><td>高</td></tr><tr><td>DexPilot</td><td>88%</td><td>高</td><td>低</td></tr><tr><td>UniDexGrasp</td><td>92%</td><td>高</td><td>中等</td></tr></tbody></table><h2 id="局限性与未来工作"><a href="#局限性与未来工作" class="headerlink" title="局限性与未来工作"></a>局限性与未来工作</h2><p>尽管UniDexGrasp取得了显著成果，但仍存在一些局限性：</p><ol><li>对极细或极软物体的处理能力有限</li><li>实时性在复杂场景中仍有提升空间</li><li>多物体交互场景下的表现需要改进</li></ol><p>未来工作将聚焦于：</p><ul><li>集成语言模型指导复杂操作</li><li>增强物理推理能力</li><li>改进在低资源环境中的适应性</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>UniDexGrasp代表了机器人灵巧抓取领域的重要进展，为通用机器人操纵提供了有效解决方案。通过统一的框架整合多模态感知和层次化学习，该方法展现了强大的性能和泛化能力。随着技术的进一步发展，我们有望看到更加智能和灵活的机器人系统在工业和家庭环境中的广泛应用。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Andrychowicz, M., et al. (2020). Learning dexterous in-hand manipulation. The International Journal of Robotics Research.</li><li>Levine, S., et al. (2018). Learning hand-eye coordination for robotic grasping with deep learning and large-scale data collection. The International Journal of Robotics Research.</li><li>OpenAI, et al. (2019). Solving Rubik’s Cube with a Robot Hand. arXiv preprint arXiv:1910.07113.</li><li>Kalashnikov, D., et al. (2018). Qt-opt: Scalable deep reinforcement learning for vision-based robotic manipulation. Conference on Robot Learning.</li><li>Pinto, L., &amp; Gupta, A. (2016). Supersizing self-supervision: Learning to grasp from 50k tries and 700 robot hours. IEEE International Conference on Robotics and Automation.</li></ol>]]></content>
     
     
     <categories>
@@ -1088,11 +1088,11 @@
   
   
   <entry>
-    <title>灵巧手：UniDexGrasp论文解读</title>
-    <link href="/tech-blog/2025/03/22/UniDexGrasp/"/>
-    <url>/tech-blog/2025/03/22/UniDexGrasp/</url>
+    <title>Yell at your robot论文解读与复现</title>
+    <link href="/tech-blog/2025/03/22/YellAtYourRobot/"/>
+    <url>/tech-blog/2025/03/22/YellAtYourRobot/</url>
     
-    <content type="html"><![CDATA[<h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>二指夹爪的局限性：</p><p>目标：学习一个通用的灵巧手抓取方法，在仿真环境泛化到数百中见过或未见过的</p><p>平行夹持器7个自由度，而ShadowHand有26个自由度。高维度加大了生成有效抓取姿势和规划执行轨迹的难度。提出两阶段，评估结果体现出方法：高抓取质量、高多样性的优势。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="生成有效抓取手势"><a href="#生成有效抓取手势" class="headerlink" title="生成有效抓取手势"></a>生成有效抓取手势</h3><p>输入：物体点云输入，输出：若干抓取姿势<br>抓取姿势的表征：</p><p>生成抓取手势共分为3个子模块：（1）生成总体旋转的模块 GraspIPDF，（2），（3）</p><h4 id="GraspIPDF"><a href="#GraspIPDF" class="headerlink" title="GraspIPDF"></a>GraspIPDF</h4><h4 id="GraspGlow"><a href="#GraspGlow" class="headerlink" title="GraspGlow"></a>GraspGlow</h4><p>自监督损失函数：1. 预测的理想接触图与由 GraspGlow 输出的手计算得到的接触图之前的差异；2. 物体点云穿透进手的网格的距离平方值；3. 手上预先选定的点位穿透进平面的深度；4. 自穿透。</p><h4 id="ContactNet"><a href="#ContactNet" class="headerlink" title="ContactNet"></a>ContactNet</h4><h3 id="规划执行轨迹"><a href="#规划执行轨迹" class="headerlink" title="规划执行轨迹"></a>规划执行轨迹</h3><h2 id="抓取策略训练3技巧"><a href="#抓取策略训练3技巧" class="headerlink" title="抓取策略训练3技巧"></a>抓取策略训练3技巧</h2><h3 id="状态规范化"><a href="#状态规范化" class="headerlink" title="状态规范化"></a>状态规范化</h3><h3 id="物体课程学习"><a href="#物体课程学习" class="headerlink" title="物体课程学习"></a>物体课程学习</h3><h3 id="使用分类任务协助训练"><a href="#使用分类任务协助训练" class="headerlink" title="使用分类任务协助训练"></a>使用分类任务协助训练</h3><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="机器人灵巧手抓取数据集"><a href="#机器人灵巧手抓取数据集" class="headerlink" title="机器人灵巧手抓取数据集"></a>机器人灵巧手抓取数据集</h3><p>133个物体类别、5519个物体示例、100多万种抓取姿势。</p><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p><ul><li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li><li><strong>触觉传感器</strong>：获取接触力和滑动信息</li><li><strong>自监督特征提取</strong>：无需人工标注的特征学习</li></ul><p>这种融合方式使机器人能够像人类一样，同时利用视觉和触觉信息指导抓取动作。</p><h3 id="2-层次化强化学习"><a href="#2-层次化强化学习" class="headerlink" title="2. 层次化强化学习"></a>2. 层次化强化学习</h3><p>框架采用了层次化的强化学习结构：</p><ul><li><strong>高层策略</strong>：决定整体抓取姿态和方法</li><li><strong>中层策略</strong>：控制手指运动顺序和协调</li><li><strong>低层控制器</strong>：精确控制关节力矩和位置</li></ul><p>这种分层设计大大降低了学习难度，加速了训练过程。</p><h3 id="3-模拟到现实迁移"><a href="#3-模拟到现实迁移" class="headerlink" title="3. 模拟到现实迁移"></a>3. 模拟到现实迁移</h3><p>为解决sim2real问题，UniDexGrasp采用了：</p><ul><li><strong>域随机化</strong>：在模拟中随机化物理参数和视觉特征</li><li><strong>渐进式学习</strong>：从简单任务到复杂任务的课程学习</li><li><strong>现实世界微调</strong>：通过少量真实世界样本进行适应</li></ul><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文在多个基准测试和真实机器人上进行了评估：</p><ul><li>在YCB物体集上达到了92%的抓取成功率</li><li>对未见过的物体达到了85%的泛化成功率</li><li>在不同光照和杂乱环境中展现了鲁棒性</li></ul><h2 id="与现有方法的比较"><a href="#与现有方法的比较" class="headerlink" title="与现有方法的比较"></a>与现有方法的比较</h2><p>与现有的方法相比，UniDexGrasp在以下方面显示出优势：</p><table><thead><tr><th>方法</th><th>成功率</th><th>泛化能力</th><th>计算效率</th></tr></thead><tbody><tr><td>DexNet</td><td>85%</td><td>中等</td><td>高</td></tr><tr><td>DexPilot</td><td>88%</td><td>高</td><td>低</td></tr><tr><td>UniDexGrasp</td><td>92%</td><td>高</td><td>中等</td></tr></tbody></table><h2 id="局限性与未来工作"><a href="#局限性与未来工作" class="headerlink" title="局限性与未来工作"></a>局限性与未来工作</h2><p>尽管UniDexGrasp取得了显著成果，但仍存在一些局限性：</p><ol><li>对极细或极软物体的处理能力有限</li><li>实时性在复杂场景中仍有提升空间</li><li>多物体交互场景下的表现需要改进</li></ol><p>未来工作将聚焦于：</p><ul><li>集成语言模型指导复杂操作</li><li>增强物理推理能力</li><li>改进在低资源环境中的适应性</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>UniDexGrasp代表了机器人灵巧抓取领域的重要进展，为通用机器人操纵提供了有效解决方案。通过统一的框架整合多模态感知和层次化学习，该方法展现了强大的性能和泛化能力。随着技术的进一步发展，我们有望看到更加智能和灵活的机器人系统在工业和家庭环境中的广泛应用。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Andrychowicz, M., et al. (2020). Learning dexterous in-hand manipulation. The International Journal of Robotics Research.</li><li>Levine, S., et al. (2018). Learning hand-eye coordination for robotic grasping with deep learning and large-scale data collection. The International Journal of Robotics Research.</li><li>OpenAI, et al. (2019). Solving Rubik’s Cube with a Robot Hand. arXiv preprint arXiv:1910.07113.</li><li>Kalashnikov, D., et al. (2018). Qt-opt: Scalable deep reinforcement learning for vision-based robotic manipulation. Conference on Robot Learning.</li><li>Pinto, L., &amp; Gupta, A. (2016). Supersizing self-supervision: Learning to grasp from 50k tries and 700 robot hours. IEEE International Conference on Robotics and Automation.</li></ol>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
     <categories>

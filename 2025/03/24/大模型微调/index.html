@@ -19,20 +19,22 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法mindmap   root((大模型微调方法))     参数高效微调(PEFT)       LoRA">
+    <meta name="description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法 .mindmap-img {   width: 100%;   max-width: 800px;   mar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型微调">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法mindmap   root((大模型微调方法))     参数高效微调(PEFT)       LoRA">
+<meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法 .mindmap-img {   width: 100%;   max-width: 800px;   mar">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mermaid.ink/img/pako:eNqVVctu2zAQ_BWCpw2QBJLlOHaa-BT00PbQAnXQXnphKK4tIhSpklQSN_C_d0hKfshJD7kI5JLLmdnZWfpkci9BY-Z5-p9TZHAYuE10Jx1yBOEuaBtUd8j9DJg0PZwgC0bnj7EBY0IeqcOF7QiCR26iEJh2Jgj_0CnIWEyoWEzcVTnp0qYs7QylFUdxYmxP3LUQT5PiNTWd1NxBKdC5MYOBykrMcGRQoLCnIxRGkrtjy7LG6tDPsxaD4qFYrHEVXF-eTrNsrjJd5eA5Y5ogjcG5u8AGncGNdgD6EfD4OaIL_I0q3KaSz5HWPY12NVRnbFFMUO5RSME15e9D-qoQpCf5h2IkDZQzQlR7kVBpOQ0dH7H7mxC0Ak_XzJ7YRFWp3JWwDYq0YkI9ZVUu-fT7z-8_7m5-_bq_fbr_ef_wf8F7jVs_uZZmwfY6YPPyLr6E5ktrpklh5tIl_2JhvCySCY-W9Fln5BgXKxQlW9AjRZu0D8qyaHPJFTTEv-xtFAfm9QvJA4a0WYCeICKPaM2A2qZ7UBvKw9qiEk1jGtlGP5MxvlA1NvGQZqHDlZlCqRKZfC2tmaSXpnQqqKYZOJXa1CZLfIcquVCf_W_SQ6rDfJ6eZgzJaGBLAGsRqEK9UdBFqJVtQmtSvxXBLcYr1CntVlFGQslZYsUuKHV9DRH-Wla2qLLEeaOKWCunfQ9qO6AiAyZzd9VFPA-w-JrfjM4mWRpEAEfBjPT9mVEGGk1_QxFECgtBzxRQDEzHQA8wMn4-0jNlAVujWrrzFgVyR3d5tTpfgvbeUxpcfGkPJWQ">
 <meta property="article:published_time" content="2025-03-24T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T08:07:37.113Z">
+<meta property="article:modified_time" content="2025-03-27T08:11:33.816Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mermaid.ink/img/pako:eNqVVctu2zAQ_BWCpw2QBJLlOHaa-BT00PbQAnXQXnphKK4tIhSpklQSN_C_d0hKfshJD7kI5JLLmdnZWfpkci9BY-Z5-p9TZHAYuE10Jx1yBOEuaBtUd8j9DJg0PZwgC0bnj7EBY0IeqcOF7QiCR26iEJh2Jgj_0CnIWEyoWEzcVTnp0qYs7QylFUdxYmxP3LUQT5PiNTWd1NxBKdC5MYOBykrMcGRQoLCnIxRGkrtjy7LG6tDPsxaD4qFYrHEVXF-eTrNsrjJd5eA5Y5ogjcG5u8AGncGNdgD6EfD4OaIL_I0q3KaSz5HWPY12NVRnbFFMUO5RSME15e9D-qoQpCf5h2IkDZQzQlR7kVBpOQ0dH7H7mxC0Ak_XzJ7YRFWp3JWwDYq0YkI9ZVUu-fT7z-8_7m5-_bq_fbr_ef_wf8F7jVs_uZZmwfY6YPPyLr6E5ktrpklh5tIl_2JhvCySCY-W9Fln5BgXKxQlW9AjRZu0D8qyaHPJFTTEv-xtFAfm9QvJA4a0WYCeICKPaM2A2qZ7UBvKw9qiEk1jGtlGP5MxvlA1NvGQZqHDlZlCqRKZfC2tmaSXpnQqqKYZOJXa1CZLfIcquVCf_W_SQ6rDfJ6eZgzJaGBLAGsRqEK9UdBFqJVtQmtSvxXBLcYr1CntVlFGQslZYsUuKHV9DRH-Wla2qLLEeaOKWCunfQ9qO6AiAyZzd9VFPA-w-JrfjM4mWRpEAEfBjPT9mVEGGk1_QxFECgtBzxRQDEzHQA8wMn4-0jNlAVujWrrzFgVyR3d5tTpfgvbeUxpcfGkPJWQ">
   
   
   
@@ -244,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          750 words
+          392 words
         
       </span>
     
@@ -255,7 +257,7 @@
         
         
         
-          7 mins
+          4 mins
         
       </span>
     
@@ -307,71 +309,20 @@
   };
 </script>
 
-<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><pre><code class=" mermaid">mindmap
-  root((大模型微调方法))
-    参数高效微调(PEFT)
-      LoRA
-        低秩分解矩阵调整
-        显著降低训练参数量
-        适用于计算资源有限场景
-      QLoRA
-        量化版LoRA
-        使用4/8bit量化
-        进一步降低内存需求
-      Prefix Tuning
-        添加可训练的前缀向量
-        保持原始模型权重不变
-        适合NLG任务
-      Prompt Tuning
-        为模型添加可学习的软提示
-        更简单与轻量化
-        在足够数据下效果接近全量微调
-      Adapter Tuning
-        在Transformer层中添加小型神经网络
-        保持原有层参数不变
-        模块化设计易于组合
-    全量微调
-      完整参数更新
-        训练所有模型参数
-        效果最好
-        计算资源需求最高
-      模型压缩
-        剪枝
-        知识蒸馏
-        量化
-    指令微调
-      SFT(监督微调)
-        使用人工编写的高质量指令-回答对
-        改善模型对指令的理解与执行能力
-        一般为全量微调第一阶段
-      RLHF(人类反馈强化学习)
-        奖励模型训练
-        PPO优化
-        使模型输出更符合人类偏好
-      DPO(直接偏好优化)
-        无需显式奖励模型
-        直接从偏好数据优化
-        简化RLHF流程
-    领域适应微调
-      垂直领域微调
-        医疗
-        法律
-        金融
-        科研
-      任务特定微调
-        文本摘要
-        代码生成
-        多语言适配
-    数据相关策略
-      数据增强
-        回译
-        重述
-        混合
-      数据筛选与混合
-        高质量示例筛选
-        领域数据与通用数据混合
-        难例挖掘
-</code></pre>
+<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><style>
+.mindmap-img {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+</style>
+
+<div class="mindmap-content">
+<img src="https://mermaid.ink/img/pako:eNqVVctu2zAQ_BWCpw2QBJLlOHaa-BT00PbQAnXQXnphKK4tIhSpklQSN_C_d0hKfshJD7kI5JLLmdnZWfpkci9BY-Z5-p9TZHAYuE10Jx1yBOEuaBtUd8j9DJg0PZwgC0bnj7EBY0IeqcOF7QiCR26iEJh2Jgj_0CnIWEyoWEzcVTnp0qYs7QylFUdxYmxP3LUQT5PiNTWd1NxBKdC5MYOBykrMcGRQoLCnIxRGkrtjy7LG6tDPsxaD4qFYrHEVXF-eTrNsrjJd5eA5Y5ogjcG5u8AGncGNdgD6EfD4OaIL_I0q3KaSz5HWPY12NVRnbFFMUO5RSME15e9D-qoQpCf5h2IkDZQzQlR7kVBpOQ0dH7H7mxC0Ak_XzJ7YRFWp3JWwDYq0YkI9ZVUu-fT7z-8_7m5-_bq_fbr_ef_wf8F7jVs_uZZmwfY6YPPyLr6E5ktrpklh5tIl_2JhvCySCY-W9Fln5BgXKxQlW9AjRZu0D8qyaHPJFTTEv-xtFAfm9QvJA4a0WYCeICKPaM2A2qZ7UBvKw9qiEk1jGtlGP5MxvlA1NvGQZqHDlZlCqRKZfC2tmaSXpnQqqKYZOJXa1CZLfIcquVCf_W_SQ6rDfJ6eZgzJaGBLAGsRqEK9UdBFqJVtQmtSvxXBLcYr1CntVlFGQslZYsUuKHV9DRH-Wla2qLLEeaOKWCunfQ9qO6AiAyZzd9VFPA-w-JrfjM4mWRpEAEfBjPT9mVEGGk1_QxFECgtBzxRQDEzHQA8wMn4-0jNlAVujWrrzFgVyR3d5tTpfgvbeUxpcfGkPJWQ" srcset="/tech-blog/img/loading.gif" lazyload alt="大模型微调方法思维导图" class="mindmap-img">
+</div>
 
 <h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p>
 <h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p>
@@ -383,7 +334,8 @@
 <li>与其他PEFT方法正交，可以多种微调方法组合</li>
 <li>可插拔</li>
 </ol>
-<h4 id="LoRA作用于Transformer的哪个参数矩阵比较好？"><a href="#LoRA作用于Transformer的哪个参数矩阵比较好？" class="headerlink" title="LoRA作用于Transformer的哪个参数矩阵比较好？"></a>LoRA作用于Transformer的哪个参数矩阵比较好？</h4><h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p>
+<p>LoRA作用于Transformer的哪个参数矩阵比较好？</p>
+<h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p>
 <h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>
                 
               </div>
