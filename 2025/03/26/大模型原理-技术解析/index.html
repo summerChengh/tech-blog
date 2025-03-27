@@ -21,13 +21,13 @@
   
     <meta name="description" content="模型结构训练数据代码推理能力源于代码 优化目标自回归语言模型 训练策略GPT指令微调RLHF强化学习之PPO奖励状态行为优化目标 deepseekDeepSeek对AI的影响微调蒸馏后训练DeepSeek Innovative Techniques">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大模型微调">
+<meta property="og:title" content="大模型原理">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Tech Blog">
 <meta property="og:description" content="模型结构训练数据代码推理能力源于代码 优化目标自回归语言模型 训练策略GPT指令微调RLHF强化学习之PPO奖励状态行为优化目标 deepseekDeepSeek对AI的影响微调蒸馏后训练DeepSeek Innovative Techniques">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T06:56:21.662Z">
+<meta property="article:modified_time" content="2025-03-27T07:57:49.829Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -36,7 +36,7 @@
   
   
   
-  <title>大模型微调 - Tech Blog</title>
+  <title>大模型原理 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -87,7 +87,9 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -214,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大模型微调"></span>
+            <span id="subtitle" data-typed-text="大模型原理"></span>
           
         </div>
 
@@ -290,7 +292,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">大模型微调</h1>
+            <h1 id="seo-header">大模型原理</h1>
             
             
               <div class="markdown-body">
@@ -355,7 +357,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大模型微调</div>
+      <div>大模型原理</div>
       <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型原理-技术解析/</div>
     </div>
     <div class="license-meta">
@@ -469,6 +471,27 @@
 
   
 
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
 
 
 
@@ -660,6 +683,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/tech-blog/js/local-search.js" ></script>
 

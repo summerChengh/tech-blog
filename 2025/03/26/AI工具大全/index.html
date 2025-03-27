@@ -87,7 +87,9 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -641,9 +643,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B-%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/" title="窗口外推技术综述">
+                      <a href="/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/" title="AI编程与VibeCoding">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">窗口外推技术综述</span>
+                        <span class="hidden-mobile">AI编程与VibeCoding</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -651,8 +653,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/" title="AI编程与VibeCoding">
-                        <span class="hidden-mobile">AI编程与VibeCoding</span>
+                      <a href="/tech-blog/2025/03/25/FreeMotion/" title="傅立叶机器人最新研究FreeMotion、ShapeLLM解读">
+                        <span class="hidden-mobile">傅立叶机器人最新研究FreeMotion、ShapeLLM解读</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -710,6 +712,27 @@
 
   
 
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
 
 
 
@@ -901,6 +924,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/tech-blog/js/local-search.js" ></script>
 

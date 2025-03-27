@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="微调常用方法mindmap   root((大模型微调方法))     参数高效微调(PEFT)       LoRA         低秩分解矩阵调整         显著降低训练参数量         适用于计算资源有限场景       QLoRA         量化版LoRA         使用4&#x2F;8bit量化         进一步降低内存需求       Prefix Tuning">
+    <meta name="description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法mindmap   root((大模型微调方法))     参数高效微调(PEFT)       LoRA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型微调">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="微调常用方法mindmap   root((大模型微调方法))     参数高效微调(PEFT)       LoRA         低秩分解矩阵调整         显著降低训练参数量         适用于计算资源有限场景       QLoRA         量化版LoRA         使用4&#x2F;8bit量化         进一步降低内存需求       Prefix Tuning">
+<meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法mindmap   root((大模型微调方法))     参数高效微调(PEFT)       LoRA">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-24T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T07:57:00.029Z">
+<meta property="article:modified_time" content="2025-03-27T08:07:37.113Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -87,7 +87,9 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -242,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          677 words
+          750 words
         
       </span>
     
@@ -253,7 +255,7 @@
         
         
         
-          6 mins
+          7 mins
         
       </span>
     
@@ -295,7 +297,17 @@
             
               <div class="markdown-body">
                 
-                <h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><pre><code class=" mermaid">mindmap
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+
+<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><pre><code class=" mermaid">mindmap
   root((大模型微调方法))
     参数高效微调(PEFT)
       LoRA
@@ -362,7 +374,9 @@
 </code></pre>
 
 <h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p>
-<h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。<br>$$<br>W_0 + \Delta W &#x3D; W_0 +BA<br>$$</p>
+<h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p>
+<p>$$W_0 + \Delta W &#x3D; W_0 + BA$$</p>
+<p>$W_0$ 为预训练模型参数，$\Delta W$ 为微调参数，使用矩阵的低秩分解 $B$ 和 $A$ 的乘积近似微调参数矩阵，模型微调训练时，更新的参数为 $A$、$B$ 矩阵，在执行推理时，将 $BA$ 与 $W_0$ 进行合并。</p>
 <h4 id="LoRA微调的优点"><a href="#LoRA微调的优点" class="headerlink" title="LoRA微调的优点"></a>LoRA微调的优点</h4><ol>
 <li>一个中心模型可以有多个下游任务</li>
 <li>适配器权重可以与基本模型参数矩阵合并，因此不增加额外的推理计算量，不增加推理延迟。额外增加的计算量只有参数合并的计算量。</li>
@@ -540,6 +554,27 @@
 
   
 
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
 
 
 
@@ -731,6 +766,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/tech-blog/js/local-search.js" ></script>
 
