@@ -27,7 +27,7 @@
 <meta property="og:description" content="微调常用方法mindmap   root((大模型微调方法))     参数高效微调(PEFT)       LoRA         低秩分解矩阵调整         显著降低训练参数量         适用于计算资源有限场景       QLoRA         量化版LoRA         使用4&#x2F;8bit量化         进一步降低内存需求       Prefix Tuning">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-24T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T05:08:09.640Z">
+<meta property="article:modified_time" content="2025-03-27T07:57:00.029Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          467 words
+          677 words
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          4 mins
+          6 mins
         
       </span>
     
@@ -362,7 +362,14 @@
 </code></pre>
 
 <h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p>
-<h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="Lora"><a href="#Lora" class="headerlink" title="Lora"></a>Lora</h3><h3 id="QLora"><a href="#QLora" class="headerlink" title="QLora"></a>QLora</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p>
+<h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。<br>$$<br>W_0 + \Delta W &#x3D; W_0 +BA<br>$$</p>
+<h4 id="LoRA微调的优点"><a href="#LoRA微调的优点" class="headerlink" title="LoRA微调的优点"></a>LoRA微调的优点</h4><ol>
+<li>一个中心模型可以有多个下游任务</li>
+<li>适配器权重可以与基本模型参数矩阵合并，因此不增加额外的推理计算量，不增加推理延迟。额外增加的计算量只有参数合并的计算量。</li>
+<li>与其他PEFT方法正交，可以多种微调方法组合</li>
+<li>可插拔</li>
+</ol>
+<h4 id="LoRA作用于Transformer的哪个参数矩阵比较好？"><a href="#LoRA作用于Transformer的哪个参数矩阵比较好？" class="headerlink" title="LoRA作用于Transformer的哪个参数矩阵比较好？"></a>LoRA作用于Transformer的哪个参数矩阵比较好？</h4><h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p>
 <h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>
                 
               </div>
