@@ -19,22 +19,20 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法 .mindmap-img {   width: 100%;   max-width: 800px;   mar">
+    <meta name="description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法参数高效微调 (PEFT)参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型微调">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法 .mindmap-img {   width: 100%;   max-width: 800px;   mar">
+<meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法参数高效微调 (PEFT)参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://mermaid.ink/img/pako:eNqVVctu2zAQ_BWCpw2QBJLlOHaa-BT00PbQAnXQXnphKK4tIhSpklQSN_C_d0hKfshJD7kI5JLLmdnZWfpkci9BY-Z5-p9TZHAYuE10Jx1yBOEuaBtUd8j9DJg0PZwgC0bnj7EBY0IeqcOF7QiCR26iEJh2Jgj_0CnIWEyoWEzcVTnp0qYs7QylFUdxYmxP3LUQT5PiNTWd1NxBKdC5MYOBykrMcGRQoLCnIxRGkrtjy7LG6tDPsxaD4qFYrHEVXF-eTrNsrjJd5eA5Y5ogjcG5u8AGncGNdgD6EfD4OaIL_I0q3KaSz5HWPY12NVRnbFFMUO5RSME15e9D-qoQpCf5h2IkDZQzQlR7kVBpOQ0dH7H7mxC0Ak_XzJ7YRFWp3JWwDYq0YkI9ZVUu-fT7z-8_7m5-_bq_fbr_ef_wf8F7jVs_uZZmwfY6YPPyLr6E5ktrpklh5tIl_2JhvCySCY-W9Fln5BgXKxQlW9AjRZu0D8qyaHPJFTTEv-xtFAfm9QvJA4a0WYCeICKPaM2A2qZ7UBvKw9qiEk1jGtlGP5MxvlA1NvGQZqHDlZlCqRKZfC2tmaSXpnQqqKYZOJXa1CZLfIcquVCf_W_SQ6rDfJ6eZgzJaGBLAGsRqEK9UdBFqJVtQmtSvxXBLcYr1CntVlFGQslZYsUuKHV9DRH-Wla2qLLEeaOKWCunfQ9qO6AiAyZzd9VFPA-w-JrfjM4mWRpEAEfBjPT9mVEGGk1_QxFECgtBzxRQDEzHQA8wMn4-0jNlAVujWrrzFgVyR3d5tTpfgvbeUxpcfGkPJWQ">
 <meta property="article:published_time" content="2025-03-24T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T08:11:33.816Z">
+<meta property="article:modified_time" content="2025-03-27T08:53:12.513Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mermaid.ink/img/pako:eNqVVctu2zAQ_BWCpw2QBJLlOHaa-BT00PbQAnXQXnphKK4tIhSpklQSN_C_d0hKfshJD7kI5JLLmdnZWfpkci9BY-Z5-p9TZHAYuE10Jx1yBOEuaBtUd8j9DJg0PZwgC0bnj7EBY0IeqcOF7QiCR26iEJh2Jgj_0CnIWEyoWEzcVTnp0qYs7QylFUdxYmxP3LUQT5PiNTWd1NxBKdC5MYOBykrMcGRQoLCnIxRGkrtjy7LG6tDPsxaD4qFYrHEVXF-eTrNsrjJd5eA5Y5ogjcG5u8AGncGNdgD6EfD4OaIL_I0q3KaSz5HWPY12NVRnbFFMUO5RSME15e9D-qoQpCf5h2IkDZQzQlR7kVBpOQ0dH7H7mxC0Ak_XzJ7YRFWp3JWwDYq0YkI9ZVUu-fT7z-8_7m5-_bq_fbr_ef_wf8F7jVs_uZZmwfY6YPPyLr6E5ktrpklh5tIl_2JhvCySCY-W9Fln5BgXKxQlW9AjRZu0D8qyaHPJFTTEv-xtFAfm9QvJA4a0WYCeICKPaM2A2qZ7UBvKw9qiEk1jGtlGP5MxvlA1NvGQZqHDlZlCqRKZfC2tmaSXpnQqqKYZOJXa1CZLfIcquVCf_W_SQ6rDfJ6eZgzJaGBLAGsRqEK9UdBFqJVtQmtSvxXBLcYr1CntVlFGQslZYsUuKHV9DRH-Wla2qLLEeaOKWCunfQ9qO6AiAyZzd9VFPA-w-JrfjM4mWRpEAEfBjPT9mVEGGk1_QxFECgtBzxRQDEzHQA8wMn4-0jNlAVujWrrzFgVyR3d5tTpfgvbeUxpcfGkPJWQ">
   
   
   
@@ -246,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          392 words
+          669 words
         
       </span>
     
@@ -257,7 +255,7 @@
         
         
         
-          4 mins
+          6 mins
         
       </span>
     
@@ -309,22 +307,7 @@
   };
 </script>
 
-<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><style>
-.mindmap-img {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-</style>
-
-<div class="mindmap-content">
-<img src="https://mermaid.ink/img/pako:eNqVVctu2zAQ_BWCpw2QBJLlOHaa-BT00PbQAnXQXnphKK4tIhSpklQSN_C_d0hKfshJD7kI5JLLmdnZWfpkci9BY-Z5-p9TZHAYuE10Jx1yBOEuaBtUd8j9DJg0PZwgC0bnj7EBY0IeqcOF7QiCR26iEJh2Jgj_0CnIWEyoWEzcVTnp0qYs7QylFUdxYmxP3LUQT5PiNTWd1NxBKdC5MYOBykrMcGRQoLCnIxRGkrtjy7LG6tDPsxaD4qFYrHEVXF-eTrNsrjJd5eA5Y5ogjcG5u8AGncGNdgD6EfD4OaIL_I0q3KaSz5HWPY12NVRnbFFMUO5RSME15e9D-qoQpCf5h2IkDZQzQlR7kVBpOQ0dH7H7mxC0Ak_XzJ7YRFWp3JWwDYq0YkI9ZVUu-fT7z-8_7m5-_bq_fbr_ef_wf8F7jVs_uZZmwfY6YPPyLr6E5ktrpklh5tIl_2JhvCySCY-W9Fln5BgXKxQlW9AjRZu0D8qyaHPJFTTEv-xtFAfm9QvJA4a0WYCeICKPaM2A2qZ7UBvKw9qiEk1jGtlGP5MxvlA1NvGQZqHDlZlCqRKZfC2tmaSXpnQqqKYZOJXa1CZLfIcquVCf_W_SQ6rDfJ6eZgzJaGBLAGsRqEK9UdBFqJVtQmtSvxXBLcYr1CntVlFGQslZYsUuKHV9DRH-Wla2qLLEeaOKWCunfQ9qO6AiAyZzd9VFPA-w-JrfjM4mWRpEAEfBjPT9mVEGGk1_QxFECgtBzxRQDEzHQA8wMn4-0jNlAVujWrrzFgVyR3d5tTpfgvbeUxpcfGkPJWQ" srcset="/tech-blog/img/loading.gif" lazyload alt="大模型微调方法思维导图" class="mindmap-img">
-</div>
-
-<h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p>
+<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p>
 <h2 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p>
 <p>$$W_0 + \Delta W &#x3D; W_0 + BA$$</p>
 <p>$W_0$ 为预训练模型参数，$\Delta W$ 为微调参数，使用矩阵的低秩分解 $B$ 和 $A$ 的乘积近似微调参数矩阵，模型微调训练时，更新的参数为 $A$、$B$ 矩阵，在执行推理时，将 $BA$ 与 $W_0$ 进行合并。</p>
@@ -334,7 +317,10 @@
 <li>与其他PEFT方法正交，可以多种微调方法组合</li>
 <li>可插拔</li>
 </ol>
-<p>LoRA作用于Transformer的哪个参数矩阵比较好？</p>
+<h4 id="LoRA微调的模型参数选取"><a href="#LoRA微调的模型参数选取" class="headerlink" title="LoRA微调的模型参数选取"></a>LoRA微调的模型参数选取</h4><p>注意力参数、FFN参数。</p>
+<p>####LoRA参数初始化<br>LoRA参数初始化如何实现和全参数微调一样从预训练权重$W_0$开始？矩阵A初始化为全零矩阵，矩阵B通过高斯核函数进行初始化。不能初始化两个全零矩阵，否则两个权重矩阵的梯度全为0，处于鞍点不能更新参数。</p>
+<h4 id="LoRA的秩如何选择"><a href="#LoRA的秩如何选择" class="headerlink" title="LoRA的秩如何选择"></a>LoRA的秩如何选择</h4><p>秩r作为模型训练的超参，理想期望低秩近似结构$BA$与$\delta W$的表达能力越接近越好。<br>一些经验：（1）下游任务越复杂，所需的r越高；（2）基座模型能力弱强，所需的r越小；（3）数据规模越大，所需的r越高。</p>
+<h4 id="LoRA微调相比全参数微调降低了显存占用"><a href="#LoRA微调相比全参数微调降低了显存占用" class="headerlink" title="LoRA微调相比全参数微调降低了显存占用"></a>LoRA微调相比全参数微调降低了显存占用</h4><p>预训练权重$W_0$在LoRA微调中只参与前向计算，但不进行梯度计算和参数更，显存不需要存储$W_0$的梯度和优化器状态。B、A矩阵的秩远低于$W_0$的秩，B、A的权重参数、梯度及优化器状态所占的存储开销远小于$W_0$的梯度和优化器状态的存储开销。</p>
 <h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p>
 <h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>
                 
