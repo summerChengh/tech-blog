@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="模型结构训练数据代码推理能力的大幅增加一部分源于使用代码数据进行训练。 优化目标自回归语言模型 训练策略GPT指令微调RLHF强化学习之PPO奖励状态行为优化目标 deepseekDeepSeek的影响改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，">
+    <meta name="description" content="量化KVCacheKVCache的进一步优化deepseek一次生成多个tokenDeepSeek Innovative Techniques">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大模型原理">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:title" content="大模型推理加速">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="模型结构训练数据代码推理能力的大幅增加一部分源于使用代码数据进行训练。 优化目标自回归语言模型 训练策略GPT指令微调RLHF强化学习之PPO奖励状态行为优化目标 deepseekDeepSeek的影响改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，">
+<meta property="og:description" content="量化KVCacheKVCache的进一步优化deepseek一次生成多个tokenDeepSeek Innovative Techniques">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T14:48:42.673Z">
+<meta property="article:modified_time" content="2025-03-28T04:26:49.268Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -36,7 +36,7 @@
   
   
   
-  <title>大模型原理 - Tech Blog</title>
+  <title>大模型推理加速 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大模型原理"></span>
+            <span id="subtitle" data-typed-text="大模型推理加速"></span>
           
         </div>
 
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          210 words
+          15 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -292,17 +292,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">大模型原理</h1>
+            <h1 id="seo-header">大模型推理加速</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p>
-<h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><p>自回归语言模型</p>
-<h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p>
-<h3 id="技术创新"><a href="#技术创新" class="headerlink" title="技术创新"></a>技术创新</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><p>MoE</p>
-<h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>
+                <h1 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h1><h1 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h1><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>
 
                 
               </div>
@@ -359,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大模型原理</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型原理-技术解析/</div>
+      <div>大模型推理加速</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型推理加速-技术解析/</div>
     </div>
     <div class="license-meta">
       
@@ -404,9 +399,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/" title="大模型推理加速">
+                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/" title="大模型位置编码">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大模型推理加速</span>
+                        <span class="hidden-mobile">大模型位置编码</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -414,8 +409,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B-%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/" title="窗口外推技术综述">
-                        <span class="hidden-mobile">窗口外推技术综述</span>
+                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/" title="大模型原理">
+                        <span class="hidden-mobile">大模型原理</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
