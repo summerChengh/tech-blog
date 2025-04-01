@@ -26,9 +26,9 @@
       
       <tag>生成式AI</tag>
       
-      <tag>深度学习</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>深度学习</tag>
       
     </tags>
     
@@ -92,9 +92,42 @@
       
       <tag>生成式AI</tag>
       
+      <tag>多模态</tag>
+      
       <tag>深度学习</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大模型安全</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>生成式AI</tag>
+      
       <tag>多模态</tag>
+      
+      <tag>深度学习</tag>
       
     </tags>
     
@@ -433,7 +466,7 @@
     <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"/>
     <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</url>
     
-    <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><script>  MathJax = {    tex: {      inlineMath: [['$', '$'], ['\\(', '\\)']],      displayMath: [['$$', '$$'], ['\\[', '\\]']]    }  };</script><h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p><h2 id="适配器-Adapter"><a href="#适配器-Adapter" class="headerlink" title="适配器(Adapter)"></a>适配器(Adapter)</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p><p>$$W_0 + \Delta W &#x3D; W_0 + BA$$</p><p>$W_0$ 为预训练模型参数，$\Delta W$ 为微调参数，使用矩阵的低秩分解 $B$ 和 $A$ 的乘积近似微调参数矩阵，模型微调训练时，更新的参数为 $A$、$B$ 矩阵，在执行推理时，将 $BA$ 与 $W_0$ 进行合并。</p><h4 id="LoRA微调的优点"><a href="#LoRA微调的优点" class="headerlink" title="LoRA微调的优点"></a>LoRA微调的优点</h4><ol><li>一个中心模型可以有多个下游任务</li><li>适配器权重可以与基本模型参数矩阵合并，因此不增加额外的推理计算量，不增加推理延迟。额外增加的计算量只有参数合并的计算量。</li><li>与其他PEFT方法正交，可以多种微调方法组合</li><li>可插拔</li></ol><h4 id="LoRA微调的模型参数选取"><a href="#LoRA微调的模型参数选取" class="headerlink" title="LoRA微调的模型参数选取"></a>LoRA微调的模型参数选取</h4><p>注意力参数、FFN参数。</p><p>####LoRA参数初始化<br>LoRA参数初始化如何实现和全参数微调一样从预训练权重$W_0$开始？矩阵A初始化为全零矩阵，矩阵B通过高斯核函数进行初始化。不能初始化两个全零矩阵，否则两个权重矩阵的梯度全为0，处于鞍点不能更新参数。</p><h4 id="LoRA的秩如何选择"><a href="#LoRA的秩如何选择" class="headerlink" title="LoRA的秩如何选择"></a>LoRA的秩如何选择</h4><p>秩r作为模型训练的超参，理想期望低秩近似结构$BA$与$\delta W$的表达能力越接近越好。<br>一些经验：（1）下游任务越复杂，所需的r越高；（2）基座模型能力弱强，所需的r越小；（3）数据规模越大，所需的r越高。</p><h4 id="LoRA微调相比全参数微调降低了显存占用"><a href="#LoRA微调相比全参数微调降低了显存占用" class="headerlink" title="LoRA微调相比全参数微调降低了显存占用"></a>LoRA微调相比全参数微调降低了显存占用</h4><p>预训练权重$W_0$在LoRA微调中只参与前向计算，但不进行梯度计算和参数更，显存不需要存储$W_0$的梯度和优化器状态。B、A矩阵的秩远低于$W_0$的秩，B、A的权重参数、梯度及优化器状态所占的存储开销远小于$W_0$的梯度和优化器状态的存储开销。</p><h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a href="https://github.com/tloen/alpaca-lora">alpaca-lora</a></p><h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>]]></content>
+    <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><script>  MathJax = {    tex: {      inlineMath: [['$', '$'], ['\\(', '\\)']],      displayMath: [['$$', '$$'], ['\\[', '\\]']]    }  };</script><h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p><h2 id="适配器-Adapter"><a href="#适配器-Adapter" class="headerlink" title="适配器(Adapter)"></a>适配器(Adapter)</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p><p>$$W_0 + \Delta W &#x3D; W_0 + BA$$</p><p>$W_0$ 为预训练模型参数，$\Delta W$ 为微调参数，使用矩阵的低秩分解 $B$ 和 $A$ 的乘积近似微调参数矩阵，模型微调训练时，更新的参数为 $A$、$B$ 矩阵，在执行推理时，将 $BA$ 与 $W_0$ 进行合并。</p><h4 id="LoRA微调的优点"><a href="#LoRA微调的优点" class="headerlink" title="LoRA微调的优点"></a>LoRA微调的优点</h4><ol><li>一个中心模型可以有多个下游任务</li><li>适配器权重可以与基本模型参数矩阵合并，因此不增加额外的推理计算量，不增加推理延迟。额外增加的计算量只有参数合并的计算量。</li><li>与其他PEFT方法正交，可以多种微调方法组合</li><li>可插拔</li></ol><h4 id="LoRA微调的模型参数选取"><a href="#LoRA微调的模型参数选取" class="headerlink" title="LoRA微调的模型参数选取"></a>LoRA微调的模型参数选取</h4><p>注意力参数、FFN参数。</p><h4 id="LoRA参数初始化"><a href="#LoRA参数初始化" class="headerlink" title="LoRA参数初始化"></a>LoRA参数初始化</h4><p>LoRA参数初始化如何实现和全参数微调一样从预训练权重$W_0$开始？矩阵A初始化为全零矩阵，矩阵B通过高斯核函数进行初始化。不能初始化两个全零矩阵，否则两个权重矩阵的梯度全为0，处于鞍点不能更新参数。</p><h4 id="LoRA的秩如何选择"><a href="#LoRA的秩如何选择" class="headerlink" title="LoRA的秩如何选择"></a>LoRA的秩如何选择</h4><p>秩r作为模型训练的超参，理想期望低秩近似结构$BA$与$\delta W$的表达能力越接近越好。<br>一些经验：（1）下游任务越复杂，所需的r越高；（2）基座模型能力弱强，所需的r越小；（3）数据规模越大，所需的r越高。</p><h4 id="LoRA微调相比全参数微调降低了显存占用"><a href="#LoRA微调相比全参数微调降低了显存占用" class="headerlink" title="LoRA微调相比全参数微调降低了显存占用"></a>LoRA微调相比全参数微调降低了显存占用</h4><p>预训练权重$W_0$在LoRA微调中只参与前向计算，但不进行梯度计算和参数更，显存不需要存储$W_0$的梯度和优化器状态。B、A矩阵的秩远低于$W_0$的秩，B、A的权重参数、梯度及优化器状态所占的存储开销远小于$W_0$的梯度和优化器状态的存储开销。</p><h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="LST"><a href="#LST" class="headerlink" title="LST"></a>LST</h3><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a href="https://github.com/tloen/alpaca-lora">alpaca-lora</a><br><a href="https://arxiv.org/abs/2206.06522">Ladder Side-Tuning</a></p><h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>]]></content>
     
     
     <categories>
@@ -511,11 +544,11 @@
       
       <tag>AI</tag>
       
-      <tag>多模态</tag>
-      
       <tag>具身智能</tag>
       
       <tag>机器人</tag>
+      
+      <tag>多模态</tag>
       
       <tag>综述</tag>
       
@@ -530,7 +563,32 @@
     <link href="/tech-blog/2025/03/24/Agent/"/>
     <url>/tech-blog/2025/03/24/Agent/</url>
     
-    <content type="html"><![CDATA[<h1 id="Agent发展"><a href="#Agent发展" class="headerlink" title="Agent发展"></a>Agent发展</h1><p>符号式Agents<br>符号智能时代的产物，使用符号抽象规则和推理过程。<br>反馈式Agents<br>强化学习Agents<br>迁移学习、元学习Agents<br>大语言模型Agents</p><h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h2 id="自主性"><a href="#自主性" class="headerlink" title="自主性"></a>自主性</h2><h2 id="反应性"><a href="#反应性" class="headerlink" title="反应性"></a>反应性</h2><ol><li>额外模态扩展<br>感知空间非常大，通过输出访问给定外部API、具身智能等</li></ol><h2 id="积极主动性"><a href="#积极主动性" class="headerlink" title="积极主动性"></a>积极主动性</h2><p>以任务目标为导向主动采取行动的能力，即对Agent的推理</p><h2 id="社会交互能力"><a href="#社会交互能力" class="headerlink" title="社会交互能力"></a>社会交互能力</h2><p>通过合作、竞争等社交可以更好的完成任务。</p><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><p>多智能体系统框架。</p><h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h1 id="Agent框架对比"><a href="#Agent框架对比" class="headerlink" title="Agent框架对比"></a>Agent框架对比</h1><h2 id="Auto-GPT"><a href="#Auto-GPT" class="headerlink" title="Auto-GPT"></a>Auto-GPT</h2><p>规划能力强<br>缺点：接口和变量的定义和Agent框架的概念没有对应，学习成本会高一些。</p><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><p>学习成本低<br>入门项目</p><ol><li>调用成本</li></ol><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><h3 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><h3 id="多智能体协作"><a href="#多智能体协作" class="headerlink" title="多智能体协作"></a>多智能体协作</h3><h2 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h2><h3 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h3><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p><h3 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h3><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p><h3 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h3><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p><h3 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h3><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p><h3 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h3><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/WooooDyy/LLM-Agent-Paper-List">LLM-Agent-Paper-List</a><br><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a><br><a href="https://github.com/crewAIInc/crewAI">CrewAI</a><br><a href="">Dify</a><br><a href="https://github.com/om-ai-lab/OmAgent">OmAgent</a><br><a href="">LangGraph</a></p><p><a href="https://github.com/plurai-ai/intellagent">intellagent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p><p><a href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a></p><p>###文献</p><ul><li>Duan, J., Yu, S., Tan, H. L., Geng, X., Wang, Y., Yang, X., … &amp; Liu, Y. (2024). The Rise and Potential of Large Language Model Based Agents: A Survey.</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="Agent发展"><a href="#Agent发展" class="headerlink" title="Agent发展"></a>Agent发展</h1><p>符号式Agents<br>符号智能时代的产物，使用符号抽象规则和推理过程。<br>反馈式Agents<br>强化学习Agents<br>迁移学习、元学习Agents<br>大语言模型Agents</p><h1 id="Agent核心问题"><a href="#Agent核心问题" class="headerlink" title="Agent核心问题"></a>Agent核心问题</h1><h2 id="自主性"><a href="#自主性" class="headerlink" title="自主性"></a>自主性</h2><h2 id="反应性"><a href="#反应性" class="headerlink" title="反应性"></a>反应性</h2><ol><li>额外模态扩展<br>感知空间非常大，通过输出访问给定外部API、具身智能等</li></ol><h2 id="积极主动性"><a href="#积极主动性" class="headerlink" title="积极主动性"></a>积极主动性</h2><p>以任务目标为导向主动采取行动的能力，即对Agent的推理</p><h2 id="社会交互能力"><a href="#社会交互能力" class="headerlink" title="社会交互能力"></a>社会交互能力</h2><p>通过合作、竞争等社交可以更好的完成任务。</p><h1 id="Auto-Agent"><a href="#Auto-Agent" class="headerlink" title="Auto-Agent"></a>Auto-Agent</h1><h1 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h1><h1 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h1><p>多智能体系统框架。</p><h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><h1 id="LLM-Agents"><a href="#LLM-Agents" class="headerlink" title="LLM Agents"></a>LLM Agents</h1><h1 id="Agent框架对比"><a href="#Agent框架对比" class="headerlink" title="Agent框架对比"></a>Agent框架对比</h1><h2 id="Auto-GPT"><a href="#Auto-GPT" class="headerlink" title="Auto-GPT"></a>Auto-GPT</h2><p>规划能力强<br>缺点：接口和变量的定义和Agent框架的概念没有对应，学习成本会高一些。</p><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><p>学习成本低<br>入门项目</p><ol><li>调用成本</li></ol><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="主要组件"><a href="#主要组件" class="headerlink" title="主要组件"></a>主要组件</h2><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><h3 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><h3 id="多智能体协作"><a href="#多智能体协作" class="headerlink" title="多智能体协作"></a>多智能体协作</h3><h2 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h2><h3 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h3><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p><h3 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h3><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p><h3 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h3><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p><h3 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h3><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p><h3 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h3><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/WooooDyy/LLM-Agent-Paper-List">LLM-Agent-Paper-List</a><br><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a><br><a href="https://github.com/crewAIInc/crewAI">CrewAI</a><br><a href="">Dify</a><br><a href="https://github.com/om-ai-lab/OmAgent">OmAgent</a><br><a href="">LangGraph</a></p><p><a href="https://github.com/plurai-ai/intellagent">intellagent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p><p><a href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a></p><p><a href="https://github.com/MotiaDev/motia">Motia</a></p><p>###文献</p><ul><li>Duan, J., Yu, S., Tan, H. L., Geng, X., Wang, Y., Yang, X., … &amp; Liu, Y. (2024). The Rise and Potential of Large Language Model Based Agents: A Survey.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数字分身</title>
+    <link href="/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
+    <url>/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
+    
+    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h1><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
     
     
     <categories>
@@ -611,31 +669,6 @@
       <tag>注意力机制</tag>
       
       <tag>Transformer</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>数字分身</title>
-    <link href="/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
-    <url>/tech-blog/2025/03/24/%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
-    
-    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h1><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
       
     </tags>
     
@@ -893,6 +926,43 @@
   
   
   <entry>
+    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
+    <link href="/tech-blog/2025/03/23/QuasiSim/"/>
+    <url>/tech-blog/2025/03/23/QuasiSim/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>PaLM-E解读</title>
     <link href="/tech-blog/2025/03/23/Palm-E/"/>
     <url>/tech-blog/2025/03/23/Palm-E/</url>
@@ -930,11 +1000,11 @@
   
   
   <entry>
-    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
-    <link href="/tech-blog/2025/03/23/QuasiSim/"/>
-    <url>/tech-blog/2025/03/23/QuasiSim/</url>
+    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
+    <link href="/tech-blog/2025/03/23/SayCan/"/>
+    <url>/tech-blog/2025/03/23/SayCan/</url>
     
-    <content type="html"><![CDATA[<p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
     
     
     <categories>
@@ -1009,43 +1079,6 @@
     <url>/tech-blog/2025/03/23/UMI/</url>
     
     <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
-    <link href="/tech-blog/2025/03/23/SayCan/"/>
-    <url>/tech-blog/2025/03/23/SayCan/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
     
     
     <categories>
