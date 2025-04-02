@@ -27,7 +27,7 @@
 <meta property="og:description" content="RAG技术概述RAG是一种结合了检索机制和大语言模型的技术。它通过从一个长文档或文档集合中检索相关信息，然后将这些信息融合到大模型的生成过程中，以提高模型的回答质量、准确性和实时性。 特点与优势实时性可扩展性提升特定领域任务的性能减轻大模型的幻觉问题。 技术方案检索优化过滤器筛选出有利于LM生成质量的内容，过滤掉不相关的检索信息。 MetaGPT的RAG功能应用基于RAG的企业知识库问答RAG v">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-27T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-02T00:40:32.238Z">
+<meta property="article:modified_time" content="2025-04-02T07:12:04.062Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          239 words
+          373 words
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          2 mins
+          4 mins
         
       </span>
     
@@ -302,7 +302,9 @@
 <h1 id="特点与优势"><a href="#特点与优势" class="headerlink" title="特点与优势"></a>特点与优势</h1><h2 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h2><h2 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h2><h2 id="提升特定领域任务的性能"><a href="#提升特定领域任务的性能" class="headerlink" title="提升特定领域任务的性能"></a>提升特定领域任务的性能</h2><p>减轻大模型的幻觉问题。</p>
 <h1 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h1><h2 id="检索优化"><a href="#检索优化" class="headerlink" title="检索优化"></a>检索优化</h2><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>筛选出有利于LM生成质量的内容，过滤掉不相关的检索信息。</p>
 <h2 id="MetaGPT的RAG功能"><a href="#MetaGPT的RAG功能" class="headerlink" title="MetaGPT的RAG功能"></a>MetaGPT的RAG功能</h2><h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="基于RAG的企业知识库问答"><a href="#基于RAG的企业知识库问答" class="headerlink" title="基于RAG的企业知识库问答"></a>基于RAG的企业知识库问答</h2><h1 id="RAG-vs-Agent"><a href="#RAG-vs-Agent" class="headerlink" title="RAG vs Agent"></a>RAG vs Agent</h1><h2 id="Qwen-Agent-RAG"><a href="#Qwen-Agent-RAG" class="headerlink" title="Qwen-Agent RAG"></a>Qwen-Agent RAG</h2><p>不微调、直接使用上下文为8K的LLM处理百万字上下文。<br>RAG将上下文分割成较短的块，每块不超过512，仅保留最相关的8K在上下文中。</p>
-<h3 id="精准定位最相关的块"><a href="#精准定位最相关的块" class="headerlink" title="精准定位最相关的块"></a>精准定位最相关的块</h3><h2 id="RAGFlow"><a href="#RAGFlow" class="headerlink" title="RAGFlow"></a>RAGFlow</h2><h2 id="定制化开发"><a href="#定制化开发" class="headerlink" title="定制化开发"></a>定制化开发</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://github.com/infiniflow/ragflow">RAGFlow</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2311.08377.pdf">FILCO：Filter Context for Retrieval-Augmented Generation</a></p>
+<h3 id="精准定位最相关的块"><a href="#精准定位最相关的块" class="headerlink" title="精准定位最相关的块"></a>精准定位最相关的块</h3><p>输入构造：将查询中的指令信息和非指令信息分开。<br>推导多语言关键词：从查询的非指令信息推导除多语言关键词。<br>检索：使用BM25检索关键词相关的块。</p>
+<h3 id="相关块与查询词重叠度低"><a href="#相关块与查询词重叠度低" class="headerlink" title="相关块与查询词重叠度低"></a>相关块与查询词重叠度低</h3><p>相关块与查询词重叠度低导致有些相关块无法被检索到。使用类似于搜索中的查询改写方法，将相关块作为查询词，通过BM25检索更多相关块。</p>
+<h3 id="多跳推理"><a href="#多跳推理" class="headerlink" title="多跳推理"></a>多跳推理</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="RAGFlow"><a href="#RAGFlow" class="headerlink" title="RAGFlow"></a>RAGFlow</h2><h2 id="定制化开发"><a href="#定制化开发" class="headerlink" title="定制化开发"></a>定制化开发</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://github.com/infiniflow/ragflow">RAGFlow</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2311.08377.pdf">FILCO：Filter Context for Retrieval-Augmented Generation</a></p>
 <h2 id="Blogs"><a href="#Blogs" class="headerlink" title="Blogs"></a>Blogs</h2><p><a target="_blank" rel="noopener" href="https://qwenlm.github.io/zh/blog/qwen-agent-2405/">qwen-agent</a></p>
 
                 

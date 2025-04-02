@@ -136,7 +136,7 @@
     <link href="/tech-blog/2025/03/27/%E5%A4%A7%E6%A8%A1%E5%9E%8B-RAG/"/>
     <url>/tech-blog/2025/03/27/%E5%A4%A7%E6%A8%A1%E5%9E%8B-RAG/</url>
     
-    <content type="html"><![CDATA[<h1 id="RAG技术概述"><a href="#RAG技术概述" class="headerlink" title="RAG技术概述"></a>RAG技术概述</h1><p>RAG是一种结合了检索机制和大语言模型的技术。它通过从一个长文档或文档集合中检索相关信息，然后将这些信息融合到大模型的生成过程中，以提高模型的回答质量、准确性和实时性。</p><h1 id="特点与优势"><a href="#特点与优势" class="headerlink" title="特点与优势"></a>特点与优势</h1><h2 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h2><h2 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h2><h2 id="提升特定领域任务的性能"><a href="#提升特定领域任务的性能" class="headerlink" title="提升特定领域任务的性能"></a>提升特定领域任务的性能</h2><p>减轻大模型的幻觉问题。</p><h1 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h1><h2 id="检索优化"><a href="#检索优化" class="headerlink" title="检索优化"></a>检索优化</h2><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>筛选出有利于LM生成质量的内容，过滤掉不相关的检索信息。</p><h2 id="MetaGPT的RAG功能"><a href="#MetaGPT的RAG功能" class="headerlink" title="MetaGPT的RAG功能"></a>MetaGPT的RAG功能</h2><h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="基于RAG的企业知识库问答"><a href="#基于RAG的企业知识库问答" class="headerlink" title="基于RAG的企业知识库问答"></a>基于RAG的企业知识库问答</h2><h1 id="RAG-vs-Agent"><a href="#RAG-vs-Agent" class="headerlink" title="RAG vs Agent"></a>RAG vs Agent</h1><h2 id="Qwen-Agent-RAG"><a href="#Qwen-Agent-RAG" class="headerlink" title="Qwen-Agent RAG"></a>Qwen-Agent RAG</h2><p>不微调、直接使用上下文为8K的LLM处理百万字上下文。<br>RAG将上下文分割成较短的块，每块不超过512，仅保留最相关的8K在上下文中。</p><h3 id="精准定位最相关的块"><a href="#精准定位最相关的块" class="headerlink" title="精准定位最相关的块"></a>精准定位最相关的块</h3><h2 id="RAGFlow"><a href="#RAGFlow" class="headerlink" title="RAGFlow"></a>RAGFlow</h2><h2 id="定制化开发"><a href="#定制化开发" class="headerlink" title="定制化开发"></a>定制化开发</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/infiniflow/ragflow">RAGFlow</a><br><a href="https://arxiv.org/pdf/2311.08377.pdf">FILCO：Filter Context for Retrieval-Augmented Generation</a></p><h2 id="Blogs"><a href="#Blogs" class="headerlink" title="Blogs"></a>Blogs</h2><p><a href="https://qwenlm.github.io/zh/blog/qwen-agent-2405/">qwen-agent</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="RAG技术概述"><a href="#RAG技术概述" class="headerlink" title="RAG技术概述"></a>RAG技术概述</h1><p>RAG是一种结合了检索机制和大语言模型的技术。它通过从一个长文档或文档集合中检索相关信息，然后将这些信息融合到大模型的生成过程中，以提高模型的回答质量、准确性和实时性。</p><h1 id="特点与优势"><a href="#特点与优势" class="headerlink" title="特点与优势"></a>特点与优势</h1><h2 id="实时性"><a href="#实时性" class="headerlink" title="实时性"></a>实时性</h2><h2 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h2><h2 id="提升特定领域任务的性能"><a href="#提升特定领域任务的性能" class="headerlink" title="提升特定领域任务的性能"></a>提升特定领域任务的性能</h2><p>减轻大模型的幻觉问题。</p><h1 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h1><h2 id="检索优化"><a href="#检索优化" class="headerlink" title="检索优化"></a>检索优化</h2><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>筛选出有利于LM生成质量的内容，过滤掉不相关的检索信息。</p><h2 id="MetaGPT的RAG功能"><a href="#MetaGPT的RAG功能" class="headerlink" title="MetaGPT的RAG功能"></a>MetaGPT的RAG功能</h2><h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="基于RAG的企业知识库问答"><a href="#基于RAG的企业知识库问答" class="headerlink" title="基于RAG的企业知识库问答"></a>基于RAG的企业知识库问答</h2><h1 id="RAG-vs-Agent"><a href="#RAG-vs-Agent" class="headerlink" title="RAG vs Agent"></a>RAG vs Agent</h1><h2 id="Qwen-Agent-RAG"><a href="#Qwen-Agent-RAG" class="headerlink" title="Qwen-Agent RAG"></a>Qwen-Agent RAG</h2><p>不微调、直接使用上下文为8K的LLM处理百万字上下文。<br>RAG将上下文分割成较短的块，每块不超过512，仅保留最相关的8K在上下文中。</p><h3 id="精准定位最相关的块"><a href="#精准定位最相关的块" class="headerlink" title="精准定位最相关的块"></a>精准定位最相关的块</h3><p>输入构造：将查询中的指令信息和非指令信息分开。<br>推导多语言关键词：从查询的非指令信息推导除多语言关键词。<br>检索：使用BM25检索关键词相关的块。</p><h3 id="相关块与查询词重叠度低"><a href="#相关块与查询词重叠度低" class="headerlink" title="相关块与查询词重叠度低"></a>相关块与查询词重叠度低</h3><p>相关块与查询词重叠度低导致有些相关块无法被检索到。使用类似于搜索中的查询改写方法，将相关块作为查询词，通过BM25检索更多相关块。</p><h3 id="多跳推理"><a href="#多跳推理" class="headerlink" title="多跳推理"></a>多跳推理</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="RAGFlow"><a href="#RAGFlow" class="headerlink" title="RAGFlow"></a>RAGFlow</h2><h2 id="定制化开发"><a href="#定制化开发" class="headerlink" title="定制化开发"></a>定制化开发</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/infiniflow/ragflow">RAGFlow</a><br><a href="https://arxiv.org/pdf/2311.08377.pdf">FILCO：Filter Context for Retrieval-Augmented Generation</a></p><h2 id="Blogs"><a href="#Blogs" class="headerlink" title="Blogs"></a>Blogs</h2><p><a href="https://qwenlm.github.io/zh/blog/qwen-agent-2405/">qwen-agent</a></p>]]></content>
     
     
     <categories>
@@ -262,11 +262,11 @@
   
   
   <entry>
-    <title>大模型推理加速</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
+    <title>大模型位置编码</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/</url>
     
-    <content type="html"><![CDATA[<h1 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h1><p>16bit、8bit量化，通常会损失一定的效果。</p><h1 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h1><h2 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h2><p>小结：训练速度不变，推理速度提升很大。</p><h2 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h2><h2 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h2><p>分配计算、充分利用GPU。</p><h2 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h2><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h1 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h1><h1 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h1><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3>]]></content>
     
     
     <categories>
@@ -293,11 +293,11 @@
   
   
   <entry>
-    <title>大模型位置编码</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/</url>
+    <title>大模型推理加速</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3>]]></content>
+    <content type="html"><![CDATA[<h1 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h1><p>16bit、8bit量化，通常会损失一定的效果。</p><h1 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h1><h2 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h2><p>小结：训练速度不变，推理速度提升很大。</p><h2 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h2><h2 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h2><p>分配计算、充分利用GPU。</p><h2 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h2><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h1 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h1><h1 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h1><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
     
     
     <categories>
@@ -450,11 +450,11 @@
   
   
   <entry>
-    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
-    <link href="/tech-blog/2025/03/25/FreeMotion/"/>
-    <url>/tech-blog/2025/03/25/FreeMotion/</url>
+    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
+    <link href="/tech-blog/2025/03/25/GR00T-N1/"/>
+    <url>/tech-blog/2025/03/25/GR00T-N1/</url>
     
-    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="">ShapeLLM</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
     
     
     <categories>
@@ -487,11 +487,11 @@
   
   
   <entry>
-    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
-    <link href="/tech-blog/2025/03/25/GR00T-N1/"/>
-    <url>/tech-blog/2025/03/25/GR00T-N1/</url>
+    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
+    <link href="/tech-blog/2025/03/25/FreeMotion/"/>
+    <url>/tech-blog/2025/03/25/FreeMotion/</url>
     
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="">ShapeLLM</a></p>]]></content>
     
     
     <categories>
