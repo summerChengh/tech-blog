@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="Scaling Law模型结构GPTLLaMADeepSeekChatGLM提示技术In-Context Learning思维链链式思维(Chain of Thought)思维树(Tree of Thought)关键步骤选择以推理为中心的训练集代码本身是Step-by-Step的指令数据。 强化学习指令微调RLHF参考Fine-Tuning Language Models from Human P">
+    <meta name="description" content="Scaling Law模型结构GPTLLaMADeepSeekChatGLM问题实效性低通过RAG等技术解决。 大模型幻觉生成式模型生成了与模型输入不相关或不准确的内容。缓解大模型幻觉的常用策略 提示学习提示（Prompt）是伴随着输入一起给模型的上下文。cloze prompt：填充答案的位置在句中。prefix prompt：填充答案的位置在句末。 提示技术In-Context Learnin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型训练">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AE%AD%E7%BB%83/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="Scaling Law模型结构GPTLLaMADeepSeekChatGLM提示技术In-Context Learning思维链链式思维(Chain of Thought)思维树(Tree of Thought)关键步骤选择以推理为中心的训练集代码本身是Step-by-Step的指令数据。 强化学习指令微调RLHF参考Fine-Tuning Language Models from Human P">
+<meta property="og:description" content="Scaling Law模型结构GPTLLaMADeepSeekChatGLM问题实效性低通过RAG等技术解决。 大模型幻觉生成式模型生成了与模型输入不相关或不准确的内容。缓解大模型幻觉的常用策略 提示学习提示（Prompt）是伴随着输入一起给模型的上下文。cloze prompt：填充答案的位置在句中。prefix prompt：填充答案的位置在句末。 提示技术In-Context Learnin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-01T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-02T06:02:59.619Z">
+<meta property="article:modified_time" content="2025-04-02T06:48:47.301Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          106 words
+          210 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          1 mins
+          2 mins
         
       </span>
     
@@ -297,8 +297,11 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h1><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thought"><a href="#链式思维-Chain-of-Thought" class="headerlink" title="链式思维(Chain of Thought)"></a>链式思维(Chain of Thought)</h3><h3 id="思维树-Tree-of-Thought"><a href="#思维树-Tree-of-Thought" class="headerlink" title="思维树(Tree of Thought)"></a>思维树(Tree of Thought)</h3><h2 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h2><h3 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h3><p>代码本身是Step-by-Step的指令数据。</p>
-<h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a target="_blank" rel="noopener" href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a target="_blank" rel="noopener" href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a></p>
+                <h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p>
+<h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p>
+<h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p>
+<h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h2 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h2><h3 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h3><p>代码本身是Step-by-Step的指令数据。</p>
+<h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a target="_blank" rel="noopener" href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a target="_blank" rel="noopener" href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a target="_blank" rel="noopener" href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a></p>
 
                 
               </div>

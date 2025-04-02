@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="超长上下文窗口外推技术">
+    <meta name="description" content="超长上下文窗口外推技术直接外推提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。 插值线性内插将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。 进制转换NTK-aware插值YaRN本质是一种新的RoPE方法。 S2-AttentionReformer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="窗口外推技术综述">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B-%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="超长上下文窗口外推技术">
+<meta property="og:description" content="超长上下文窗口外推技术直接外推提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。 插值线性内插将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。 进制转换NTK-aware插值YaRN本质是一种新的RoPE方法。 S2-AttentionReformer">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-03-27T06:58:32.588Z">
+<meta property="article:modified_time" content="2025-04-02T06:57:32.029Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11 words
+          120 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          1 mins
+          2 mins
         
       </span>
     
@@ -297,7 +297,10 @@
             
               <div class="markdown-body">
                 
-                <h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+                <h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p>
+<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p>
+<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p>
+<h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h2 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h2>
                 
               </div>
             
@@ -398,9 +401,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/" title="大模型安全">
+                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/" title="大模型位置编码">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大模型安全</span>
+                        <span class="hidden-mobile">大模型位置编码</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
