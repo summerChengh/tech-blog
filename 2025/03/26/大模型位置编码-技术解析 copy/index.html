@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="位置编码NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。 绝对位置编码Transformer使用三角函数位置编码。BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。 相对位置编码Reformer">
+    <meta name="description" content="位置编码NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。 图像任务（目标检测、图像分割、） 绝对位置编码Transformer使用三角函数位置编码。BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型位置编码">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="位置编码NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。 绝对位置编码Transformer使用三角函数位置编码。BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。 相对位置编码Reformer">
+<meta property="og:description" content="位置编码NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。 图像任务（目标检测、图像分割、） 绝对位置编码Transformer使用三角函数位置编码。BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-02T04:11:30.770Z">
+<meta property="article:modified_time" content="2025-04-02T07:34:35.824Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          112 words
+          128 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          1 mins
+          2 mins
         
       </span>
     
@@ -298,8 +298,9 @@
               <div class="markdown-body">
                 
                 <h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p>
+<p>图像任务（目标检测、图像分割、）</p>
 <h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p>
-<h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3>
+<h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4>
                 
               </div>
             
