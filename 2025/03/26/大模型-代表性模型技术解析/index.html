@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法参数高效微调 (PEFT)参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适">
+    <meta name="description" content="模型结构训练数据代码推理能力的大幅增加一部分源于使用代码数据进行训练。 优化目标自回归语言模型 训练策略GPT指令微调RLHF强化学习之PPO奖励状态行为优化目标 deepseekDeepSeek的影响改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大模型微调">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/index.html">
+<meta property="og:title" content="大模型原理">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   微调常用方法参数高效微调 (PEFT)参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适">
+<meta property="og:description" content="模型结构训练数据代码推理能力的大幅增加一部分源于使用代码数据进行训练。 优化目标自回归语言模型 训练策略GPT指令微调RLHF强化学习之PPO奖励状态行为优化目标 deepseekDeepSeek的影响改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-24T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-01T04:24:21.339Z">
+<meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
+<meta property="article:modified_time" content="2025-03-27T14:48:42.673Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -36,7 +36,7 @@
   
   
   
-  <title>大模型微调 - Tech Blog</title>
+  <title>大模型原理 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大模型微调"></span>
+            <span id="subtitle" data-typed-text="大模型原理"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-24 15:11" pubdate>
-          March 24, 2025 pm
+        <time datetime="2025-03-26 15:11" pubdate>
+          March 26, 2025 pm
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          673 words
+          210 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          6 mins
+          2 mins
         
       </span>
     
@@ -292,37 +292,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">大模型微调</h1>
+            <h1 id="seo-header">大模型原理</h1>
             
             
               <div class="markdown-body">
                 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    }
-  };
-</script>
+                <h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p>
+<h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><p>自回归语言模型</p>
+<h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p>
+<h3 id="技术创新"><a href="#技术创新" class="headerlink" title="技术创新"></a>技术创新</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><p>MoE</p>
+<h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>
 
-<h1 id="微调常用方法"><a href="#微调常用方法" class="headerlink" title="微调常用方法"></a>微调常用方法</h1><h2 id="参数高效微调-PEFT"><a href="#参数高效微调-PEFT" class="headerlink" title="参数高效微调 (PEFT)"></a>参数高效微调 (PEFT)</h2><p>参数高效微调方法致力于在保持模型性能的同时，显著减少需要训练的参数数量。这类方法特别适合计算资源有限的场景。</p>
-<h2 id="适配器-Adapter"><a href="#适配器-Adapter" class="headerlink" title="适配器(Adapter)"></a>适配器(Adapter)</h2><h2 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h2><h3 id="Adapter-Tuning"><a href="#Adapter-Tuning" class="headerlink" title="Adapter Tuning"></a>Adapter Tuning</h3><h3 id="LoRA"><a href="#LoRA" class="headerlink" title="LoRA"></a>LoRA</h3><p>背景：常规的Adapter参数微调方法，增加了额外的训练参数，且改变了模型结构，导致训练时的内存占用增大，推理时长增加。<br>关键假设：针对下游任务微调得到的增量参数矩阵是低秩的。<br>LoRA方法：使用低秩分解近微调的增量参数矩阵。</p>
-<p>$$W_0 + \Delta W &#x3D; W_0 + BA$$</p>
-<p>$W_0$ 为预训练模型参数，$\Delta W$ 为微调参数，使用矩阵的低秩分解 $B$ 和 $A$ 的乘积近似微调参数矩阵，模型微调训练时，更新的参数为 $A$、$B$ 矩阵，在执行推理时，将 $BA$ 与 $W_0$ 进行合并。</p>
-<h4 id="LoRA微调的优点"><a href="#LoRA微调的优点" class="headerlink" title="LoRA微调的优点"></a>LoRA微调的优点</h4><ol>
-<li>一个中心模型可以有多个下游任务</li>
-<li>适配器权重可以与基本模型参数矩阵合并，因此不增加额外的推理计算量，不增加推理延迟。额外增加的计算量只有参数合并的计算量。</li>
-<li>与其他PEFT方法正交，可以多种微调方法组合</li>
-<li>可插拔</li>
-</ol>
-<h4 id="LoRA微调的模型参数选取"><a href="#LoRA微调的模型参数选取" class="headerlink" title="LoRA微调的模型参数选取"></a>LoRA微调的模型参数选取</h4><p>注意力参数、FFN参数。</p>
-<h4 id="LoRA参数初始化"><a href="#LoRA参数初始化" class="headerlink" title="LoRA参数初始化"></a>LoRA参数初始化</h4><p>LoRA参数初始化如何实现和全参数微调一样从预训练权重$W_0$开始？矩阵A初始化为全零矩阵，矩阵B通过高斯核函数进行初始化。不能初始化两个全零矩阵，否则两个权重矩阵的梯度全为0，处于鞍点不能更新参数。</p>
-<h4 id="LoRA的秩如何选择"><a href="#LoRA的秩如何选择" class="headerlink" title="LoRA的秩如何选择"></a>LoRA的秩如何选择</h4><p>秩r作为模型训练的超参，理想期望低秩近似结构$BA$与$\delta W$的表达能力越接近越好。<br>一些经验：（1）下游任务越复杂，所需的r越高；（2）基座模型能力弱强，所需的r越小；（3）数据规模越大，所需的r越高。</p>
-<h4 id="LoRA微调相比全参数微调降低了显存占用"><a href="#LoRA微调相比全参数微调降低了显存占用" class="headerlink" title="LoRA微调相比全参数微调降低了显存占用"></a>LoRA微调相比全参数微调降低了显存占用</h4><p>预训练权重$W_0$在LoRA微调中只参与前向计算，但不进行梯度计算和参数更，显存不需要存储$W_0$的梯度和优化器状态。B、A矩阵的秩远低于$W_0$的秩，B、A的权重参数、梯度及优化器状态所占的存储开销远小于$W_0$的梯度和优化器状态的存储开销。</p>
-<h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="LST"><a href="#LST" class="headerlink" title="LST"></a>LST</h3><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a target="_blank" rel="noopener" href="https://github.com/tloen/alpaca-lora">alpaca-lora</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2206.06522">Ladder Side-Tuning</a></p>
-<h3 id="审稿机器人"><a href="#审稿机器人" class="headerlink" title="审稿机器人"></a>审稿机器人</h3>
                 
               </div>
             
@@ -378,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大模型微调</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/24/大模型微调/</div>
+      <div>大模型原理</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型-代表性模型技术解析/</div>
     </div>
     <div class="license-meta">
       
@@ -391,7 +372,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 24, 2025</div>
+          <div>March 26, 2025</div>
         </div>
       
       
@@ -423,9 +404,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/25/%E8%8B%B1%E4%BC%9F%E8%BE%BEHover/" title="HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots解读">
+                      <a href="/tech-blog/2025/03/27/%E5%A4%A7%E6%A8%A1%E5%9E%8B-RAG/" title="RAG">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots解读</span>
+                        <span class="hidden-mobile">RAG</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -433,8 +414,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/24/MOE/" title="MOE">
-                        <span class="hidden-mobile">MOE</span>
+                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/" title="大模型安全">
+                        <span class="hidden-mobile">大模型安全</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
