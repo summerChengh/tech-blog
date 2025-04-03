@@ -35,6 +35,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/tech-blog/2025/04/03/001-%E6%8A%95%E8%B5%84-%E5%9F%BA%E6%9C%AC%E7%AD%96%E7%95%A5/"/>
+    <url>/tech-blog/2025/04/03/001-%E6%8A%95%E8%B5%84-%E5%9F%BA%E6%9C%AC%E7%AD%96%E7%95%A5/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>你的大脑也许根本就不会老：认知能力与年龄的复杂关系</title>
     <link href="/tech-blog/2025/04/02/%E8%84%91%E7%A7%91%E5%AD%A6-%E5%B9%B4%E9%BE%84%E4%B8%8E%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/"/>
     <url>/tech-blog/2025/04/02/%E8%84%91%E7%A7%91%E5%AD%A6-%E5%B9%B4%E9%BE%84%E4%B8%8E%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/</url>
@@ -60,6 +73,39 @@
       <tag>神经可塑性</tag>
       
       <tag>生命科学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大模型训练</title>
+    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="强化学习在大模型中的核心作用"><a href="#强化学习在大模型中的核心作用" class="headerlink" title="强化学习在大模型中的核心作用"></a>强化学习在大模型中的核心作用</h1><p>显著提升大模型的推理能力。</p><h2 id="代表性技术"><a href="#代表性技术" class="headerlink" title="代表性技术"></a>代表性技术</h2><h3 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="研究点"><a href="#研究点" class="headerlink" title="研究点"></a>研究点</h2><h3 id="提升模型推理能力"><a href="#提升模型推理能力" class="headerlink" title="提升模型推理能力"></a>提升模型推理能力</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><p>现状：预先确定了工具的使用模式、限制了对最优策略的探索、实现透明度不足等。<br>Tool-Integrated Reinforcement Learning框架允许模型直接从基座模型开始，通过强化学习自主探索最优工具使用策略，而非受限于与定义的工具使用模式。</p><p>参考<br>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="">DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models</a><br><a href="https://arxiv.org/pdf/2503.23383">TORL: Scaling Tool-Integrated RL</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+      <category>强化学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>生成式AI</tag>
+      
+      <tag>强化学习</tag>
       
     </tags>
     
@@ -100,8 +146,8 @@
   
   <entry>
     <title>大模型训练</title>
-    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AE%AD%E7%BB%83/"/>
-    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AE%AD%E7%BB%83/</url>
+    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/"/>
+    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/</url>
     
     <content type="html"><![CDATA[<h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p><h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p><h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p><h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h2 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h2><h3 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h3><p>代码本身是Step-by-Step的指令数据。</p><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a></p>]]></content>
     
@@ -152,9 +198,9 @@
       
       <tag>生成式AI</tag>
       
-      <tag>多模态</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -200,7 +246,38 @@
     <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1><p>NLP任务的发展阶段：（1）基于规则+传统机器学习；（2）预训练语言模型+下游任务微调；（3）提示微调+指令微调；（4）多模态大模型+端到端智能体</p><h2 id="自回归语言模型"><a href="#自回归语言模型" class="headerlink" title="自回归语言模型"></a>自回归语言模型</h2><h2 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h2><h2 id="灾难性遗忘问题"><a href="#灾难性遗忘问题" class="headerlink" title="灾难性遗忘问题"></a>灾难性遗忘问题</h2><h3 id="弹性权重巩固（EWC）"><a href="#弹性权重巩固（EWC）" class="headerlink" title="弹性权重巩固（EWC）"></a>弹性权重巩固（EWC）</h3><p>通过引入正则化项，限制对旧任务重要权重的更新。实现方式：<br>（1）计算Fisher信息矩阵，确定权重对就任务的重要性。<br>（2）在新任务的训练中，添加一个正则化项，限制权重更新幅度。</p><h3 id="经验回放"><a href="#经验回放" class="headerlink" title="经验回放"></a>经验回放</h3><p>保留一部分旧任务的数据，在学习新任务时进行回放，帮助模型在新、旧任务之间保持平衡。</p><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="Transformer-Encoder"><a href="#Transformer-Encoder" class="headerlink" title="Transformer Encoder"></a>Transformer Encoder</h2><h2 id="Transformer-Decoder"><a href="#Transformer-Decoder" class="headerlink" title="Transformer Decoder"></a>Transformer Decoder</h2><p>生成式大语言模型采用的是Transformer Decoder结构。</p><p>LLaMa采用了前置层归一和RMSNorm均方根标准化替代曾标准化。</p><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h1 id="代表性模型"><a href="#代表性模型" class="headerlink" title="代表性模型"></a>代表性模型</h1><h2 id="GPT-1"><a href="#GPT-1" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h3 id="LLaMA3"><a href="#LLaMA3" class="headerlink" title="LLaMA3"></a>LLaMA3</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><h4 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h4><h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>RoPE</p><h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><h2 id="Qwen"><a href="#Qwen" class="headerlink" title="Qwen"></a>Qwen</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p><h3 id="技术创新"><a href="#技术创新" class="headerlink" title="技术创新"></a>技术创新</h3><h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>MoE</p><h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/pdf/2301.00234">A Survey on In-context Learning</a></p><p><a href="https://github.com/naklecha/llama3-from-scratch/tree/main">llama3 implemented from scratch</a><br><a href="https://github.com/HarleysZhang/llm_note/blob/main/1-transformer_model/llama1-3%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.md">llama1模型结构详解</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1><p>NLP任务的发展阶段：（1）基于规则+传统机器学习；（2）预训练语言模型+下游任务微调；（3）提示微调+指令微调；（4）多模态大模型+端到端智能体</p><h2 id="自回归语言模型"><a href="#自回归语言模型" class="headerlink" title="自回归语言模型"></a>自回归语言模型</h2><h2 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h2><h2 id="灾难性遗忘问题"><a href="#灾难性遗忘问题" class="headerlink" title="灾难性遗忘问题"></a>灾难性遗忘问题</h2><h3 id="弹性权重巩固（EWC）"><a href="#弹性权重巩固（EWC）" class="headerlink" title="弹性权重巩固（EWC）"></a>弹性权重巩固（EWC）</h3><p>通过引入正则化项，限制对旧任务重要权重的更新。实现方式：<br>（1）计算Fisher信息矩阵，确定权重对就任务的重要性。<br>（2）在新任务的训练中，添加一个正则化项，限制权重更新幅度。</p><h3 id="经验回放"><a href="#经验回放" class="headerlink" title="经验回放"></a>经验回放</h3><p>保留一部分旧任务的数据，在学习新任务时进行回放，帮助模型在新、旧任务之间保持平衡。</p><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="Transformer-Encoder"><a href="#Transformer-Encoder" class="headerlink" title="Transformer Encoder"></a>Transformer Encoder</h2><h2 id="Transformer-Decoder"><a href="#Transformer-Decoder" class="headerlink" title="Transformer Decoder"></a>Transformer Decoder</h2><p>生成式大语言模型采用的是Transformer Decoder结构。</p><p>LLaMa采用了前置层归一和RMSNorm均方根标准化替代曾标准化。</p><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h1 id="代表性模型"><a href="#代表性模型" class="headerlink" title="代表性模型"></a>代表性模型</h1><h2 id="GPT-1"><a href="#GPT-1" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h3 id="LLaMA3"><a href="#LLaMA3" class="headerlink" title="LLaMA3"></a>LLaMA3</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><h4 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h4><h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>RoPE</p><h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><h2 id="Qwen"><a href="#Qwen" class="headerlink" title="Qwen"></a>Qwen</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p><h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>采用了多头潜在注意力(MLA)和DeepSeekMoE架构。</p><h4 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h4><p>负载平衡策略<br>采用了多token预测训练目标，验证对模型性能有益且，并且可用于推理加速。</p><h4 id="语料"><a href="#语料" class="headerlink" title="语料"></a>语料</h4><p>14.8万亿token</p><h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/pdf/2301.00234">A Survey on In-context Learning</a></p><p><a href="https://github.com/naklecha/llama3-from-scratch/tree/main">llama3 implemented from scratch</a><br><a href="https://github.com/HarleysZhang/llm_note/blob/main/1-transformer_model/llama1-3%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.md">llama1模型结构详解</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>生成式AI</tag>
+      
+      <tag>深度学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大模型位置编码</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/</url>
+    
+    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4>]]></content>
     
     
     <categories>
@@ -249,9 +326,9 @@
       
       <tag>生成式AI</tag>
       
-      <tag>多模态</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -282,9 +359,9 @@
       
       <tag>生成式AI</tag>
       
-      <tag>多模态</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -298,37 +375,6 @@
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
     <content type="html"><![CDATA[<h1 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h1><p>16bit、8bit量化，通常会损失一定的效果。</p><h1 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h1><h2 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h2><p>小结：训练速度不变，推理速度提升很大。</p><h2 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h2><h2 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h2><p>分配计算、充分利用GPU。</p><h2 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h2><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h1 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h1><h1 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h1><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>生成式AI</tag>
-      
-      <tag>深度学习</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>大模型位置编码</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%20copy/</url>
-    
-    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4>]]></content>
     
     
     <categories>
@@ -386,11 +432,11 @@
   
   
   <entry>
-    <title>AI编程与VibeCoding</title>
-    <link href="/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/"/>
-    <url>/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/</url>
+    <title>AI工具大全：提升效率的必备神器</title>
+    <link href="/tech-blog/2025/03/26/AI%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8/"/>
+    <url>/tech-blog/2025/03/26/AI%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8/</url>
     
-    <content type="html"><![CDATA[<h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a>Cursor</h3><h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>原则：用户提供一系列包含详细信息的文档，为AI设定明确的上下文边界。</p><p>六类核心文档：</p><h5 id="PRD（项目需求文档）"><a href="#PRD（项目需求文档）" class="headerlink" title="PRD（项目需求文档）"></a>PRD（项目需求文档）</h5><p>让人工智能对您正在构建的内容有了深入的高层理解。</p><p>内容包括：【视频1】<br>• 应用概述<br>• 用户流程说明<br>• 技术栈与API信息<br>• 核心功能<br>• 项目的边界（哪些在范围内，哪些不在）</p><h5 id="应用流程文档"><a href="#应用流程文档" class="headerlink" title="应用流程文档"></a>应用流程文档</h5><p>相当于应用的导航地图。地图越清晰，AI的表现越稳定。  </p><p>关键要点：【视频2】<br>• 描述每一个页面的功能与结构<br>• 用户如何从一个页面跳转到另一个页面<br>• 使用简单直接的语言，避免模糊和抽象<br>• 尽可能具体，帮助AI明确路径，减少混淆</p><h5 id="技术栈文档"><a href="#技术栈文档" class="headerlink" title="技术栈文档"></a>技术栈文档</h5><p>明确告诉AI应使用哪些技术组件。  </p><p>应包含：【视频3】<br>• 所有相关软件包与依赖项的清单<br>• API文档链接（AI可以读取）<br>• 首选的库或工具（如Supabase、Stripe、NextAuth等）</p><p>这样可有效避免AI随意“发挥”，减少使用错误技术的幻觉。</p><h5 id="前端设计指南"><a href="#前端设计指南" class="headerlink" title="前端设计指南"></a>前端设计指南</h5><p>教会AI你的视觉语言，确保UI风格一致。</p><p>包含：【视频4】<br>• 字体<br>• 色彩搭配<br>• 间距与布局规范<br>• 首选的UI库或框架<br>• 图标集</p><h5 id="后端结构文档：对使用Supabase或Firebase尤为关键。"><a href="#后端结构文档：对使用Supabase或Firebase尤为关键。" class="headerlink" title="后端结构文档：对使用Supabase或Firebase尤为关键。"></a>后端结构文档：对使用Supabase或Firebase尤为关键。</h5><p>需涵盖：【视频5】<br>• 数据库结构<br>• 用户认证逻辑<br>• 存储规则<br>• 特殊边界情况处理方式  </p><p>只有清楚这些前提，AI才能正确生成SQL等后端逻辑。</p><h5 id="实施计划：这是抗“幻觉”的关键步骤。【视频6】"><a href="#实施计划：这是抗“幻觉”的关键步骤。【视频6】" class="headerlink" title="实施计划：这是抗“幻觉”的关键步骤。【视频6】"></a>实施计划：这是抗“幻觉”的关键步骤。【视频6】</h5><p>将手动开发时需执行的50多个步骤详列出来，交由Cursor或Windsurf执行。</p><p>如此一来，AI便不再进行猜测，而是直接执行。</p><h3 id="Trae"><a href="#Trae" class="headerlink" title="Trae"></a>Trae</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.bilibili.com/video/BV16GN4e7ERA/?buvid=XY5D2C15CF4199B5ED6EE69F69422AC4BBE2B&from_spmid=default-value&is_story_h5=false&mid=d+MKyVknc5z+4F6jTmu5tw==&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=43a1c249-2941-4674-b28d-eb83bb7cdbcf&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1738896201&unique_k=njG74Bc&up_id=597930426">AI编程分享</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="AI工具大全：提升效率的必备神器"><a href="#AI工具大全：提升效率的必备神器" class="headerlink" title="AI工具大全：提升效率的必备神器"></a>AI工具大全：提升效率的必备神器</h1><p>本文将为大家介绍目前最实用的AI工具，按照不同应用场景进行分类，帮助你在合适的场景选择最适合的工具。</p><h2 id="内容创作类"><a href="#内容创作类" class="headerlink" title="内容创作类"></a>内容创作类</h2><h3 id="文本生成"><a href="#文本生成" class="headerlink" title="文本生成"></a>文本生成</h3><p><strong>ChatGPT</strong></p><ul><li><strong>开发商</strong>：OpenAI</li><li><strong>特点</strong>：基于GPT-4等模型，可进行对话式交互，生成高质量文本</li><li><strong>适用场景</strong>：写作辅助、内容创作、问题解答、头脑风暴等</li><li><strong>链接</strong>：<a href="https://chat.openai.com/">https://chat.openai.com</a></li></ul><p><strong>Claude</strong></p><ul><li><strong>开发商</strong>：Anthropic</li><li><strong>特点</strong>：专注于安全和有帮助性，理解复杂指令能力强，处理长文本能力优秀</li><li><strong>适用场景</strong>：长篇内容创作、复杂文档分析、学术研究等</li><li><strong>链接</strong>：<a href="https://claude.ai/">https://claude.ai</a></li></ul><p><strong>Gemini</strong></p><ul><li><strong>开发商</strong>：Google</li><li><strong>特点</strong>：多模态能力，文本理解和生成能力强，与Google工具生态集成</li><li><strong>适用场景</strong>：多种格式内容创作、知识查询、辅助编程等</li><li><strong>链接</strong>：<a href="https://gemini.google.com/">https://gemini.google.com</a></li></ul><h3 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h3><p><strong>Reve Image</strong></p><ul><li><strong>开发商</strong>：Reve AI</li><li><strong>特点</strong>：高质量、快速的AI图像生成工具，提供多种风格选择和自定义选项</li><li><strong>适用场景</strong>：插画创作、产品设计概念图、社交媒体内容、艺术创作</li><li><strong>链接</strong>：<a href="https://preview.reve.art/">https://preview.reve.art</a></li></ul><p><strong>Midjourney</strong></p><ul><li><strong>开发商</strong>：Midjourney Inc.</li><li><strong>特点</strong>：生成艺术感极强的图像，风格多样，质量高</li><li><strong>适用场景</strong>：概念艺术、插图设计、创意灵感、社交媒体图像等</li><li><strong>链接</strong>：通过Discord使用 <a href="https://www.midjourney.com/">https://www.midjourney.com</a></li></ul><p><strong>DALL-E 3</strong></p><ul><li><strong>开发商</strong>：OpenAI</li><li><strong>特点</strong>：文本到图像生成，高度精确的细节控制，支持各种艺术风格</li><li><strong>适用场景</strong>：产品设计、插图创作、概念可视化等</li><li><strong>链接</strong>：通过ChatGPT Plus或<a href="https://openai.com/dall-e-3">https://openai.com/dall-e-3</a></li></ul><p><strong>Stable Diffusion</strong></p><ul><li><strong>开发商</strong>：Stability AI</li><li><strong>特点</strong>：开源，可本地部署，自定义能力强，社区活跃</li><li><strong>适用场景</strong>：图像生成、风格迁移、图像编辑、本地化应用等</li><li><strong>链接</strong>：<a href="https://stability.ai/">https://stability.ai</a></li></ul><h3 id="音频生成"><a href="#音频生成" class="headerlink" title="音频生成"></a>音频生成</h3><p><strong>ElevenLabs</strong></p><ul><li><strong>开发商</strong>：ElevenLabs Inc.</li><li><strong>特点</strong>：超真实的AI语音生成，支持多种语言和情感表达</li><li><strong>适用场景</strong>：有声书、播客、视频配音、虚拟助手等</li><li><strong>链接</strong>：<a href="https://elevenlabs.io/">https://elevenlabs.io</a></li></ul><p><strong>Murf AI</strong></p><ul><li><strong>开发商</strong>：Murf AI</li><li><strong>特点</strong>：专业级AI配音，丰富的声音库，适合商业用途</li><li><strong>适用场景</strong>：营销视频、教学内容、演示文稿等</li><li><strong>链接</strong>：<a href="https://murf.ai/">https://murf.ai</a></li></ul><h3 id="视频生成"><a href="#视频生成" class="headerlink" title="视频生成"></a>视频生成</h3><p><strong>Runway Gen-2</strong></p><ul><li><strong>开发商</strong>：Runway AI</li><li><strong>特点</strong>：文本到视频、图像到视频的高质量生成</li><li><strong>适用场景</strong>：短视频创作、视觉效果、创意内容等</li><li><strong>链接</strong>：<a href="https://runwayml.com/">https://runwayml.com</a></li></ul><p><strong>Synthesia</strong></p><ul><li><strong>开发商</strong>：Synthesia</li><li><strong>特点</strong>：AI视频讲解人，可从文本生成真人视频</li><li><strong>适用场景</strong>：培训视频、营销内容、客户沟通等</li><li><strong>链接</strong>：<a href="https://www.synthesia.io/">https://www.synthesia.io</a></li></ul><p><strong>Pika Labs</strong></p><ul><li><strong>开发商</strong>：Pika Labs</li><li><strong>特点</strong>：简单的文本提示即可生成流畅的短视频</li><li><strong>适用场景</strong>：社交媒体内容、短视频创作、动画生成等</li><li><strong>链接</strong>：<a href="https://pika.art/">https://pika.art</a></li></ul><h2 id="工作效率类"><a href="#工作效率类" class="headerlink" title="工作效率类"></a>工作效率类</h2><h3 id="写作辅助"><a href="#写作辅助" class="headerlink" title="写作辅助"></a>写作辅助</h3><p><strong>Notion AI</strong></p><ul><li><strong>开发商</strong>：Notion</li><li><strong>特点</strong>：集成在Notion中的AI助手，可辅助内容创作、总结和编辑</li><li><strong>适用场景</strong>：笔记整理、文档创建、内容总结等</li><li><strong>链接</strong>：<a href="https://www.notion.so/product/ai">https://www.notion.so/product/ai</a></li></ul><p><strong>Grammarly</strong></p><ul><li><strong>开发商</strong>：Grammarly Inc.</li><li><strong>特点</strong>：AI驱动的写作助手，提供语法纠正、风格建议、清晰度改进等</li><li><strong>适用场景</strong>：学术写作、商业邮件、内容创作等</li><li><strong>链接</strong>：<a href="https://www.grammarly.com/">https://www.grammarly.com</a></li></ul><p><strong>Jasper</strong></p><ul><li><strong>开发商</strong>：Jasper AI</li><li><strong>特点</strong>：专为营销内容设计的AI写作助手，提供多种模板和功能</li><li><strong>适用场景</strong>：博客文章、社交媒体内容、广告文案等</li><li><strong>链接</strong>：<a href="https://www.jasper.ai/">https://www.jasper.ai</a></li></ul><h3 id="时间管理"><a href="#时间管理" class="headerlink" title="时间管理"></a>时间管理</h3><p><strong>Motion</strong></p><ul><li><strong>开发商</strong>：Motion</li><li><strong>特点</strong>：AI日程安排，自动优化你的日程和任务</li><li><strong>适用场景</strong>：时间管理、项目计划、会议安排等</li><li><strong>链接</strong>：<a href="https://www.usemotion.com/">https://www.usemotion.com</a></li></ul><p><strong>Reclaim.ai</strong></p><ul><li><strong>开发商</strong>：Reclaim.ai</li><li><strong>特点</strong>：智能日历助手，自动安排任务和会议</li><li><strong>适用场景</strong>：工作计划、时间分配、团队协作等</li><li><strong>链接</strong>：<a href="https://reclaim.ai/">https://reclaim.ai</a></li></ul><h3 id="邮件管理"><a href="#邮件管理" class="headerlink" title="邮件管理"></a>邮件管理</h3><p><strong>Superhuman</strong></p><ul><li><strong>开发商</strong>：Superhuman</li><li><strong>特点</strong>：AI辅助的邮件客户端，提高邮件处理效率</li><li><strong>适用场景</strong>：高邮件量管理、快速响应、邮件整理等</li><li><strong>链接</strong>：<a href="https://superhuman.com/">https://superhuman.com</a></li></ul><p><strong>Lavender</strong></p><ul><li><strong>开发商</strong>：Lavender</li><li><strong>特点</strong>：AI邮件写作助手，优化邮件内容和响应率</li><li><strong>适用场景</strong>：销售邮件、跟进邮件、客户沟通等</li><li><strong>链接</strong>：<a href="https://www.lavender.ai/">https://www.lavender.ai</a></li></ul><h2 id="开发与设计类"><a href="#开发与设计类" class="headerlink" title="开发与设计类"></a>开发与设计类</h2><h3 id="编程辅助"><a href="#编程辅助" class="headerlink" title="编程辅助"></a>编程辅助</h3><p><strong>GitHub Copilot</strong></p><ul><li><strong>开发商</strong>：GitHub &amp; OpenAI</li><li><strong>特点</strong>：AI代码补全和生成，支持多种编程语言和IDE</li><li><strong>适用场景</strong>：软件开发、代码编写、开发学习等</li><li><strong>链接</strong>：<a href="https://github.com/features/copilot">https://github.com/features/copilot</a></li></ul><p><strong>Cursor</strong></p><ul><li><strong>开发商</strong>：Cursor</li><li><strong>特点</strong>：内置AI功能的代码编辑器，支持代码生成、解释和重构</li><li><strong>适用场景</strong>：软件开发、代码理解、编程学习等</li><li><strong>链接</strong>：<a href="https://cursor.sh/">https://cursor.sh</a></li></ul><p><strong>Replit GhostWriter</strong></p><ul><li><strong>开发商</strong>：Replit</li><li><strong>特点</strong>：在线IDE中集成的AI编程助手</li><li><strong>适用场景</strong>：快速原型开发、学习编程、小项目创建等</li><li><strong>链接</strong>：<a href="https://replit.com/ghostwriter">https://replit.com/ghostwriter</a></li></ul><h3 id="设计辅助"><a href="#设计辅助" class="headerlink" title="设计辅助"></a>设计辅助</h3><p><strong>Figma AI</strong></p><ul><li><strong>开发商</strong>：Figma</li><li><strong>特点</strong>：集成在Figma中的AI设计助手，辅助创建和编辑设计</li><li><strong>适用场景</strong>：UI&#x2F;UX设计、原型创建、设计系统等</li><li><strong>链接</strong>：<a href="https://www.figma.com/ai">https://www.figma.com/ai</a></li></ul><p><strong>Adobe Firefly</strong></p><ul><li><strong>开发商</strong>：Adobe</li><li><strong>特点</strong>：Adobe生态中的生成式AI工具，用于创意内容生成</li><li><strong>适用场景</strong>：创意设计、图像生成与编辑、商业创意等</li><li><strong>链接</strong>：<a href="https://www.adobe.com/products/firefly">https://www.adobe.com/products/firefly</a></li></ul><p><strong>Canva Magic Studio</strong></p><ul><li><strong>开发商</strong>：Canva</li><li><strong>特点</strong>：Canva平台中的AI设计工具集，简化设计流程</li><li><strong>适用场景</strong>：快速设计、社交媒体图片、演示文稿等</li><li><strong>链接</strong>：<a href="https://www.canva.com/magic-studio">https://www.canva.com/magic-studio</a></li></ul><h2 id="研究与学习类"><a href="#研究与学习类" class="headerlink" title="研究与学习类"></a>研究与学习类</h2><h3 id="研究辅助"><a href="#研究辅助" class="headerlink" title="研究辅助"></a>研究辅助</h3><p><strong>AMiner</strong></p><ul><li><strong>开发商</strong>：清华大学知识工程实验室</li><li><strong>特点</strong>：学术挖掘系统，汇集全球科研成果，提供论文查找、学者网络分析和学术趋势挖掘</li><li><strong>适用场景</strong>：学术研究、文献调研、学者关系分析、科研趋势追踪</li><li><strong>链接</strong>：<a href="https://www.aminer.cn/">https://www.aminer.cn</a></li></ul><p><strong>Elicit</strong></p><ul><li><strong>开发商</strong>：Ought</li><li><strong>特点</strong>：AI研究助手，帮助查找和分析研究论文</li><li><strong>适用场景</strong>：学术研究、文献综述、研究规划等</li><li><strong>链接</strong>：<a href="https://elicit.org/">https://elicit.org</a></li></ul><p><strong>Connected Papers</strong></p><ul><li><strong>开发商</strong>：Connected Papers</li><li><strong>特点</strong>：视觉化学术论文关系，发现相关研究</li><li><strong>适用场景</strong>：研究领域探索、文献梳理、相关工作查找等</li><li><strong>链接</strong>：<a href="https://www.connectedpapers.com/">https://www.connectedpapers.com</a></li></ul><h3 id="学习工具"><a href="#学习工具" class="headerlink" title="学习工具"></a>学习工具</h3><p><strong>Duolingo Max</strong></p><ul><li><strong>开发商</strong>：Duolingo</li><li><strong>特点</strong>：结合AI的语言学习应用，提供个性化练习和反馈</li><li><strong>适用场景</strong>：语言学习、口语练习、语法提高等</li><li><strong>链接</strong>：<a href="https://www.duolingo.com/">https://www.duolingo.com</a></li></ul><p><strong>Khan Academy Khanmigo</strong></p><ul><li><strong>开发商</strong>：Khan Academy</li><li><strong>特点</strong>：AI辅导助手，提供个性化学习指导和问题解答</li><li><strong>适用场景</strong>：学科学习、家庭作业辅导、考试准备等</li><li><strong>链接</strong>：<a href="https://www.khanacademy.org/khanmigo">https://www.khanacademy.org/khanmigo</a></li></ul><h2 id="数据分析与商业智能"><a href="#数据分析与商业智能" class="headerlink" title="数据分析与商业智能"></a>数据分析与商业智能</h2><h3 id="数据分析工具"><a href="#数据分析工具" class="headerlink" title="数据分析工具"></a>数据分析工具</h3><p><strong>Obviously AI</strong></p><ul><li><strong>开发商</strong>：Obviously AI</li><li><strong>特点</strong>：无代码AI数据分析平台，快速构建预测模型</li><li><strong>适用场景</strong>：业务预测、客户分析、市场研究等</li><li><strong>链接</strong>：<a href="https://www.obviously.ai/">https://www.obviously.ai</a></li></ul><p><strong>Akkio</strong></p><ul><li><strong>开发商</strong>：Akkio</li><li><strong>特点</strong>：简易AI分析平台，无需数据科学背景即可使用</li><li><strong>适用场景</strong>：销售预测、客户流失分析、市场细分等</li><li><strong>链接</strong>：<a href="https://www.akkio.com/">https://www.akkio.com</a></li></ul><h3 id="商业智能"><a href="#商业智能" class="headerlink" title="商业智能"></a>商业智能</h3><p><strong>Viable</strong></p><ul><li><strong>开发商</strong>：Viable</li><li><strong>特点</strong>：AI驱动的客户反馈分析工具</li><li><strong>适用场景</strong>：用户体验优化、产品改进、客户洞察等</li><li><strong>链接</strong>：<a href="https://www.askviable.com/">https://www.askviable.com</a></li></ul><p><strong>Pecan</strong></p><ul><li><strong>开发商</strong>：Pecan AI</li><li><strong>特点</strong>：AI预测分析平台，面向业务用户</li><li><strong>适用场景</strong>：销售预测、用户行为分析、运营优化等</li><li><strong>链接</strong>：<a href="https://www.pecan.ai/">https://www.pecan.ai</a></li></ul><h2 id="资源和进一步阅读"><a href="#资源和进一步阅读" class="headerlink" title="资源和进一步阅读"></a>资源和进一步阅读</h2><ul><li><a href="https://www.futuretools.io/">AI工具评测网站</a></li><li><a href="https://www.producthunt.com/topics/artificial-intelligence">产品Hunt AI工具集合</a></li><li><a href="https://github.com/collections/ai-powered-apps">开源AI项目汇总</a></li></ul><p>你正在使用哪些AI工具？有什么推荐或使用心得？欢迎在评论区分享！ </p>]]></content>
     
     
     <categories>
@@ -417,11 +463,11 @@
   
   
   <entry>
-    <title>AI工具大全：提升效率的必备神器</title>
-    <link href="/tech-blog/2025/03/26/AI%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8/"/>
-    <url>/tech-blog/2025/03/26/AI%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8/</url>
+    <title>AI编程与VibeCoding</title>
+    <link href="/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/"/>
+    <url>/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/</url>
     
-    <content type="html"><![CDATA[<h1 id="AI工具大全：提升效率的必备神器"><a href="#AI工具大全：提升效率的必备神器" class="headerlink" title="AI工具大全：提升效率的必备神器"></a>AI工具大全：提升效率的必备神器</h1><p>本文将为大家介绍目前最实用的AI工具，按照不同应用场景进行分类，帮助你在合适的场景选择最适合的工具。</p><h2 id="内容创作类"><a href="#内容创作类" class="headerlink" title="内容创作类"></a>内容创作类</h2><h3 id="文本生成"><a href="#文本生成" class="headerlink" title="文本生成"></a>文本生成</h3><p><strong>ChatGPT</strong></p><ul><li><strong>开发商</strong>：OpenAI</li><li><strong>特点</strong>：基于GPT-4等模型，可进行对话式交互，生成高质量文本</li><li><strong>适用场景</strong>：写作辅助、内容创作、问题解答、头脑风暴等</li><li><strong>链接</strong>：<a href="https://chat.openai.com/">https://chat.openai.com</a></li></ul><p><strong>Claude</strong></p><ul><li><strong>开发商</strong>：Anthropic</li><li><strong>特点</strong>：专注于安全和有帮助性，理解复杂指令能力强，处理长文本能力优秀</li><li><strong>适用场景</strong>：长篇内容创作、复杂文档分析、学术研究等</li><li><strong>链接</strong>：<a href="https://claude.ai/">https://claude.ai</a></li></ul><p><strong>Gemini</strong></p><ul><li><strong>开发商</strong>：Google</li><li><strong>特点</strong>：多模态能力，文本理解和生成能力强，与Google工具生态集成</li><li><strong>适用场景</strong>：多种格式内容创作、知识查询、辅助编程等</li><li><strong>链接</strong>：<a href="https://gemini.google.com/">https://gemini.google.com</a></li></ul><h3 id="图像生成"><a href="#图像生成" class="headerlink" title="图像生成"></a>图像生成</h3><p><strong>Reve Image</strong></p><ul><li><strong>开发商</strong>：Reve AI</li><li><strong>特点</strong>：高质量、快速的AI图像生成工具，提供多种风格选择和自定义选项</li><li><strong>适用场景</strong>：插画创作、产品设计概念图、社交媒体内容、艺术创作</li><li><strong>链接</strong>：<a href="https://preview.reve.art/">https://preview.reve.art</a></li></ul><p><strong>Midjourney</strong></p><ul><li><strong>开发商</strong>：Midjourney Inc.</li><li><strong>特点</strong>：生成艺术感极强的图像，风格多样，质量高</li><li><strong>适用场景</strong>：概念艺术、插图设计、创意灵感、社交媒体图像等</li><li><strong>链接</strong>：通过Discord使用 <a href="https://www.midjourney.com/">https://www.midjourney.com</a></li></ul><p><strong>DALL-E 3</strong></p><ul><li><strong>开发商</strong>：OpenAI</li><li><strong>特点</strong>：文本到图像生成，高度精确的细节控制，支持各种艺术风格</li><li><strong>适用场景</strong>：产品设计、插图创作、概念可视化等</li><li><strong>链接</strong>：通过ChatGPT Plus或<a href="https://openai.com/dall-e-3">https://openai.com/dall-e-3</a></li></ul><p><strong>Stable Diffusion</strong></p><ul><li><strong>开发商</strong>：Stability AI</li><li><strong>特点</strong>：开源，可本地部署，自定义能力强，社区活跃</li><li><strong>适用场景</strong>：图像生成、风格迁移、图像编辑、本地化应用等</li><li><strong>链接</strong>：<a href="https://stability.ai/">https://stability.ai</a></li></ul><h3 id="音频生成"><a href="#音频生成" class="headerlink" title="音频生成"></a>音频生成</h3><p><strong>ElevenLabs</strong></p><ul><li><strong>开发商</strong>：ElevenLabs Inc.</li><li><strong>特点</strong>：超真实的AI语音生成，支持多种语言和情感表达</li><li><strong>适用场景</strong>：有声书、播客、视频配音、虚拟助手等</li><li><strong>链接</strong>：<a href="https://elevenlabs.io/">https://elevenlabs.io</a></li></ul><p><strong>Murf AI</strong></p><ul><li><strong>开发商</strong>：Murf AI</li><li><strong>特点</strong>：专业级AI配音，丰富的声音库，适合商业用途</li><li><strong>适用场景</strong>：营销视频、教学内容、演示文稿等</li><li><strong>链接</strong>：<a href="https://murf.ai/">https://murf.ai</a></li></ul><h3 id="视频生成"><a href="#视频生成" class="headerlink" title="视频生成"></a>视频生成</h3><p><strong>Runway Gen-2</strong></p><ul><li><strong>开发商</strong>：Runway AI</li><li><strong>特点</strong>：文本到视频、图像到视频的高质量生成</li><li><strong>适用场景</strong>：短视频创作、视觉效果、创意内容等</li><li><strong>链接</strong>：<a href="https://runwayml.com/">https://runwayml.com</a></li></ul><p><strong>Synthesia</strong></p><ul><li><strong>开发商</strong>：Synthesia</li><li><strong>特点</strong>：AI视频讲解人，可从文本生成真人视频</li><li><strong>适用场景</strong>：培训视频、营销内容、客户沟通等</li><li><strong>链接</strong>：<a href="https://www.synthesia.io/">https://www.synthesia.io</a></li></ul><p><strong>Pika Labs</strong></p><ul><li><strong>开发商</strong>：Pika Labs</li><li><strong>特点</strong>：简单的文本提示即可生成流畅的短视频</li><li><strong>适用场景</strong>：社交媒体内容、短视频创作、动画生成等</li><li><strong>链接</strong>：<a href="https://pika.art/">https://pika.art</a></li></ul><h2 id="工作效率类"><a href="#工作效率类" class="headerlink" title="工作效率类"></a>工作效率类</h2><h3 id="写作辅助"><a href="#写作辅助" class="headerlink" title="写作辅助"></a>写作辅助</h3><p><strong>Notion AI</strong></p><ul><li><strong>开发商</strong>：Notion</li><li><strong>特点</strong>：集成在Notion中的AI助手，可辅助内容创作、总结和编辑</li><li><strong>适用场景</strong>：笔记整理、文档创建、内容总结等</li><li><strong>链接</strong>：<a href="https://www.notion.so/product/ai">https://www.notion.so/product/ai</a></li></ul><p><strong>Grammarly</strong></p><ul><li><strong>开发商</strong>：Grammarly Inc.</li><li><strong>特点</strong>：AI驱动的写作助手，提供语法纠正、风格建议、清晰度改进等</li><li><strong>适用场景</strong>：学术写作、商业邮件、内容创作等</li><li><strong>链接</strong>：<a href="https://www.grammarly.com/">https://www.grammarly.com</a></li></ul><p><strong>Jasper</strong></p><ul><li><strong>开发商</strong>：Jasper AI</li><li><strong>特点</strong>：专为营销内容设计的AI写作助手，提供多种模板和功能</li><li><strong>适用场景</strong>：博客文章、社交媒体内容、广告文案等</li><li><strong>链接</strong>：<a href="https://www.jasper.ai/">https://www.jasper.ai</a></li></ul><h3 id="时间管理"><a href="#时间管理" class="headerlink" title="时间管理"></a>时间管理</h3><p><strong>Motion</strong></p><ul><li><strong>开发商</strong>：Motion</li><li><strong>特点</strong>：AI日程安排，自动优化你的日程和任务</li><li><strong>适用场景</strong>：时间管理、项目计划、会议安排等</li><li><strong>链接</strong>：<a href="https://www.usemotion.com/">https://www.usemotion.com</a></li></ul><p><strong>Reclaim.ai</strong></p><ul><li><strong>开发商</strong>：Reclaim.ai</li><li><strong>特点</strong>：智能日历助手，自动安排任务和会议</li><li><strong>适用场景</strong>：工作计划、时间分配、团队协作等</li><li><strong>链接</strong>：<a href="https://reclaim.ai/">https://reclaim.ai</a></li></ul><h3 id="邮件管理"><a href="#邮件管理" class="headerlink" title="邮件管理"></a>邮件管理</h3><p><strong>Superhuman</strong></p><ul><li><strong>开发商</strong>：Superhuman</li><li><strong>特点</strong>：AI辅助的邮件客户端，提高邮件处理效率</li><li><strong>适用场景</strong>：高邮件量管理、快速响应、邮件整理等</li><li><strong>链接</strong>：<a href="https://superhuman.com/">https://superhuman.com</a></li></ul><p><strong>Lavender</strong></p><ul><li><strong>开发商</strong>：Lavender</li><li><strong>特点</strong>：AI邮件写作助手，优化邮件内容和响应率</li><li><strong>适用场景</strong>：销售邮件、跟进邮件、客户沟通等</li><li><strong>链接</strong>：<a href="https://www.lavender.ai/">https://www.lavender.ai</a></li></ul><h2 id="开发与设计类"><a href="#开发与设计类" class="headerlink" title="开发与设计类"></a>开发与设计类</h2><h3 id="编程辅助"><a href="#编程辅助" class="headerlink" title="编程辅助"></a>编程辅助</h3><p><strong>GitHub Copilot</strong></p><ul><li><strong>开发商</strong>：GitHub &amp; OpenAI</li><li><strong>特点</strong>：AI代码补全和生成，支持多种编程语言和IDE</li><li><strong>适用场景</strong>：软件开发、代码编写、开发学习等</li><li><strong>链接</strong>：<a href="https://github.com/features/copilot">https://github.com/features/copilot</a></li></ul><p><strong>Cursor</strong></p><ul><li><strong>开发商</strong>：Cursor</li><li><strong>特点</strong>：内置AI功能的代码编辑器，支持代码生成、解释和重构</li><li><strong>适用场景</strong>：软件开发、代码理解、编程学习等</li><li><strong>链接</strong>：<a href="https://cursor.sh/">https://cursor.sh</a></li></ul><p><strong>Replit GhostWriter</strong></p><ul><li><strong>开发商</strong>：Replit</li><li><strong>特点</strong>：在线IDE中集成的AI编程助手</li><li><strong>适用场景</strong>：快速原型开发、学习编程、小项目创建等</li><li><strong>链接</strong>：<a href="https://replit.com/ghostwriter">https://replit.com/ghostwriter</a></li></ul><h3 id="设计辅助"><a href="#设计辅助" class="headerlink" title="设计辅助"></a>设计辅助</h3><p><strong>Figma AI</strong></p><ul><li><strong>开发商</strong>：Figma</li><li><strong>特点</strong>：集成在Figma中的AI设计助手，辅助创建和编辑设计</li><li><strong>适用场景</strong>：UI&#x2F;UX设计、原型创建、设计系统等</li><li><strong>链接</strong>：<a href="https://www.figma.com/ai">https://www.figma.com/ai</a></li></ul><p><strong>Adobe Firefly</strong></p><ul><li><strong>开发商</strong>：Adobe</li><li><strong>特点</strong>：Adobe生态中的生成式AI工具，用于创意内容生成</li><li><strong>适用场景</strong>：创意设计、图像生成与编辑、商业创意等</li><li><strong>链接</strong>：<a href="https://www.adobe.com/products/firefly">https://www.adobe.com/products/firefly</a></li></ul><p><strong>Canva Magic Studio</strong></p><ul><li><strong>开发商</strong>：Canva</li><li><strong>特点</strong>：Canva平台中的AI设计工具集，简化设计流程</li><li><strong>适用场景</strong>：快速设计、社交媒体图片、演示文稿等</li><li><strong>链接</strong>：<a href="https://www.canva.com/magic-studio">https://www.canva.com/magic-studio</a></li></ul><h2 id="研究与学习类"><a href="#研究与学习类" class="headerlink" title="研究与学习类"></a>研究与学习类</h2><h3 id="研究辅助"><a href="#研究辅助" class="headerlink" title="研究辅助"></a>研究辅助</h3><p><strong>AMiner</strong></p><ul><li><strong>开发商</strong>：清华大学知识工程实验室</li><li><strong>特点</strong>：学术挖掘系统，汇集全球科研成果，提供论文查找、学者网络分析和学术趋势挖掘</li><li><strong>适用场景</strong>：学术研究、文献调研、学者关系分析、科研趋势追踪</li><li><strong>链接</strong>：<a href="https://www.aminer.cn/">https://www.aminer.cn</a></li></ul><p><strong>Elicit</strong></p><ul><li><strong>开发商</strong>：Ought</li><li><strong>特点</strong>：AI研究助手，帮助查找和分析研究论文</li><li><strong>适用场景</strong>：学术研究、文献综述、研究规划等</li><li><strong>链接</strong>：<a href="https://elicit.org/">https://elicit.org</a></li></ul><p><strong>Connected Papers</strong></p><ul><li><strong>开发商</strong>：Connected Papers</li><li><strong>特点</strong>：视觉化学术论文关系，发现相关研究</li><li><strong>适用场景</strong>：研究领域探索、文献梳理、相关工作查找等</li><li><strong>链接</strong>：<a href="https://www.connectedpapers.com/">https://www.connectedpapers.com</a></li></ul><h3 id="学习工具"><a href="#学习工具" class="headerlink" title="学习工具"></a>学习工具</h3><p><strong>Duolingo Max</strong></p><ul><li><strong>开发商</strong>：Duolingo</li><li><strong>特点</strong>：结合AI的语言学习应用，提供个性化练习和反馈</li><li><strong>适用场景</strong>：语言学习、口语练习、语法提高等</li><li><strong>链接</strong>：<a href="https://www.duolingo.com/">https://www.duolingo.com</a></li></ul><p><strong>Khan Academy Khanmigo</strong></p><ul><li><strong>开发商</strong>：Khan Academy</li><li><strong>特点</strong>：AI辅导助手，提供个性化学习指导和问题解答</li><li><strong>适用场景</strong>：学科学习、家庭作业辅导、考试准备等</li><li><strong>链接</strong>：<a href="https://www.khanacademy.org/khanmigo">https://www.khanacademy.org/khanmigo</a></li></ul><h2 id="数据分析与商业智能"><a href="#数据分析与商业智能" class="headerlink" title="数据分析与商业智能"></a>数据分析与商业智能</h2><h3 id="数据分析工具"><a href="#数据分析工具" class="headerlink" title="数据分析工具"></a>数据分析工具</h3><p><strong>Obviously AI</strong></p><ul><li><strong>开发商</strong>：Obviously AI</li><li><strong>特点</strong>：无代码AI数据分析平台，快速构建预测模型</li><li><strong>适用场景</strong>：业务预测、客户分析、市场研究等</li><li><strong>链接</strong>：<a href="https://www.obviously.ai/">https://www.obviously.ai</a></li></ul><p><strong>Akkio</strong></p><ul><li><strong>开发商</strong>：Akkio</li><li><strong>特点</strong>：简易AI分析平台，无需数据科学背景即可使用</li><li><strong>适用场景</strong>：销售预测、客户流失分析、市场细分等</li><li><strong>链接</strong>：<a href="https://www.akkio.com/">https://www.akkio.com</a></li></ul><h3 id="商业智能"><a href="#商业智能" class="headerlink" title="商业智能"></a>商业智能</h3><p><strong>Viable</strong></p><ul><li><strong>开发商</strong>：Viable</li><li><strong>特点</strong>：AI驱动的客户反馈分析工具</li><li><strong>适用场景</strong>：用户体验优化、产品改进、客户洞察等</li><li><strong>链接</strong>：<a href="https://www.askviable.com/">https://www.askviable.com</a></li></ul><p><strong>Pecan</strong></p><ul><li><strong>开发商</strong>：Pecan AI</li><li><strong>特点</strong>：AI预测分析平台，面向业务用户</li><li><strong>适用场景</strong>：销售预测、用户行为分析、运营优化等</li><li><strong>链接</strong>：<a href="https://www.pecan.ai/">https://www.pecan.ai</a></li></ul><h2 id="资源和进一步阅读"><a href="#资源和进一步阅读" class="headerlink" title="资源和进一步阅读"></a>资源和进一步阅读</h2><ul><li><a href="https://www.futuretools.io/">AI工具评测网站</a></li><li><a href="https://www.producthunt.com/topics/artificial-intelligence">产品Hunt AI工具集合</a></li><li><a href="https://github.com/collections/ai-powered-apps">开源AI项目汇总</a></li></ul><p>你正在使用哪些AI工具？有什么推荐或使用心得？欢迎在评论区分享！ </p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a>Cursor</h3><h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>原则：用户提供一系列包含详细信息的文档，为AI设定明确的上下文边界。</p><p>六类核心文档：</p><h5 id="PRD（项目需求文档）"><a href="#PRD（项目需求文档）" class="headerlink" title="PRD（项目需求文档）"></a>PRD（项目需求文档）</h5><p>让人工智能对您正在构建的内容有了深入的高层理解。</p><p>内容包括：【视频1】<br>• 应用概述<br>• 用户流程说明<br>• 技术栈与API信息<br>• 核心功能<br>• 项目的边界（哪些在范围内，哪些不在）</p><h5 id="应用流程文档"><a href="#应用流程文档" class="headerlink" title="应用流程文档"></a>应用流程文档</h5><p>相当于应用的导航地图。地图越清晰，AI的表现越稳定。  </p><p>关键要点：【视频2】<br>• 描述每一个页面的功能与结构<br>• 用户如何从一个页面跳转到另一个页面<br>• 使用简单直接的语言，避免模糊和抽象<br>• 尽可能具体，帮助AI明确路径，减少混淆</p><h5 id="技术栈文档"><a href="#技术栈文档" class="headerlink" title="技术栈文档"></a>技术栈文档</h5><p>明确告诉AI应使用哪些技术组件。  </p><p>应包含：【视频3】<br>• 所有相关软件包与依赖项的清单<br>• API文档链接（AI可以读取）<br>• 首选的库或工具（如Supabase、Stripe、NextAuth等）</p><p>这样可有效避免AI随意“发挥”，减少使用错误技术的幻觉。</p><h5 id="前端设计指南"><a href="#前端设计指南" class="headerlink" title="前端设计指南"></a>前端设计指南</h5><p>教会AI你的视觉语言，确保UI风格一致。</p><p>包含：【视频4】<br>• 字体<br>• 色彩搭配<br>• 间距与布局规范<br>• 首选的UI库或框架<br>• 图标集</p><h5 id="后端结构文档：对使用Supabase或Firebase尤为关键。"><a href="#后端结构文档：对使用Supabase或Firebase尤为关键。" class="headerlink" title="后端结构文档：对使用Supabase或Firebase尤为关键。"></a>后端结构文档：对使用Supabase或Firebase尤为关键。</h5><p>需涵盖：【视频5】<br>• 数据库结构<br>• 用户认证逻辑<br>• 存储规则<br>• 特殊边界情况处理方式  </p><p>只有清楚这些前提，AI才能正确生成SQL等后端逻辑。</p><h5 id="实施计划：这是抗“幻觉”的关键步骤。【视频6】"><a href="#实施计划：这是抗“幻觉”的关键步骤。【视频6】" class="headerlink" title="实施计划：这是抗“幻觉”的关键步骤。【视频6】"></a>实施计划：这是抗“幻觉”的关键步骤。【视频6】</h5><p>将手动开发时需执行的50多个步骤详列出来，交由Cursor或Windsurf执行。</p><p>如此一来，AI便不再进行猜测，而是直接执行。</p><h3 id="Trae"><a href="#Trae" class="headerlink" title="Trae"></a>Trae</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.bilibili.com/video/BV16GN4e7ERA/?buvid=XY5D2C15CF4199B5ED6EE69F69422AC4BBE2B&from_spmid=default-value&is_story_h5=false&mid=d+MKyVknc5z+4F6jTmu5tw==&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=43a1c249-2941-4674-b28d-eb83bb7cdbcf&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1738896201&unique_k=njG74Bc&up_id=597930426">AI编程分享</a></p>]]></content>
     
     
     <categories>
@@ -481,11 +527,11 @@
   
   
   <entry>
-    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
-    <link href="/tech-blog/2025/03/25/FreeMotion/"/>
-    <url>/tech-blog/2025/03/25/FreeMotion/</url>
+    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
+    <link href="/tech-blog/2025/03/25/GR00T-N1/"/>
+    <url>/tech-blog/2025/03/25/GR00T-N1/</url>
     
-    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="https://github.com/qizekun/ShapeLLM">ShapeLLM</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
     
     
     <categories>
@@ -518,11 +564,11 @@
   
   
   <entry>
-    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
-    <link href="/tech-blog/2025/03/25/GR00T-N1/"/>
-    <url>/tech-blog/2025/03/25/GR00T-N1/</url>
+    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
+    <link href="/tech-blog/2025/03/25/FreeMotion/"/>
+    <url>/tech-blog/2025/03/25/FreeMotion/</url>
     
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="https://github.com/qizekun/ShapeLLM">ShapeLLM</a></p>]]></content>
     
     
     <categories>
@@ -620,8 +666,8 @@
   
   <entry>
     <title>MOE</title>
-    <link href="/tech-blog/2025/03/24/MOE/"/>
-    <url>/tech-blog/2025/03/24/MOE/</url>
+    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-MOE/"/>
+    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-MOE/</url>
     
     <content type="html"><![CDATA[<h1 id="MoE提出"><a href="#MoE提出" class="headerlink" title="MoE提出"></a>MoE提出</h1><h1 id="MoE相关工作"><a href="#MoE相关工作" class="headerlink" title="MoE相关工作"></a>MoE相关工作</h1><h1 id="DeepSeek-MoE"><a href="#DeepSeek-MoE" class="headerlink" title="DeepSeek MoE"></a>DeepSeek MoE</h1><h1 id="MoE设计的核心"><a href="#MoE设计的核心" class="headerlink" title="MoE设计的核心"></a>MoE设计的核心</h1>]]></content>
     
@@ -1089,11 +1135,11 @@
   
   
   <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/Palm-E/"/>
-    <url>/tech-blog/2025/03/23/Palm-E/</url>
+    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
+    <link href="/tech-blog/2025/03/23/QuasiSim/"/>
+    <url>/tech-blog/2025/03/23/QuasiSim/</url>
     
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
     
     
     <categories>
@@ -1126,11 +1172,11 @@
   
   
   <entry>
-    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
-    <link href="/tech-blog/2025/03/23/QuasiSim/"/>
-    <url>/tech-blog/2025/03/23/QuasiSim/</url>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/Palm-E/"/>
+    <url>/tech-blog/2025/03/23/Palm-E/</url>
     
-    <content type="html"><![CDATA[<p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
     
     
     <categories>
@@ -1340,43 +1386,6 @@
   
   
   <entry>
-    <title>灵巧手：UniDexGrasp论文解读</title>
-    <link href="/tech-blog/2025/03/22/UniDexGrasp/"/>
-    <url>/tech-blog/2025/03/22/UniDexGrasp/</url>
-    
-    <content type="html"><![CDATA[<h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>二指夹爪的局限性：</p><p>目标：学习一个通用的灵巧手抓取方法，在仿真环境泛化到数百中见过或未见过的</p><p>平行夹持器7个自由度，而ShadowHand有26个自由度。高维度加大了生成有效抓取姿势和规划执行轨迹的难度。提出两阶段，评估结果体现出方法：高抓取质量、高多样性的优势。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="生成有效抓取手势"><a href="#生成有效抓取手势" class="headerlink" title="生成有效抓取手势"></a>生成有效抓取手势</h3><p>输入：物体点云输入，输出：若干抓取姿势<br>抓取姿势的表征：</p><p>生成抓取手势共分为3个子模块：（1）生成总体旋转的模块 GraspIPDF，（2），（3）</p><h4 id="GraspIPDF"><a href="#GraspIPDF" class="headerlink" title="GraspIPDF"></a>GraspIPDF</h4><h4 id="GraspGlow"><a href="#GraspGlow" class="headerlink" title="GraspGlow"></a>GraspGlow</h4><p>自监督损失函数：1. 预测的理想接触图与由 GraspGlow 输出的手计算得到的接触图之前的差异；2. 物体点云穿透进手的网格的距离平方值；3. 手上预先选定的点位穿透进平面的深度；4. 自穿透。</p><h4 id="ContactNet"><a href="#ContactNet" class="headerlink" title="ContactNet"></a>ContactNet</h4><h3 id="规划执行轨迹"><a href="#规划执行轨迹" class="headerlink" title="规划执行轨迹"></a>规划执行轨迹</h3><h2 id="抓取策略训练3技巧"><a href="#抓取策略训练3技巧" class="headerlink" title="抓取策略训练3技巧"></a>抓取策略训练3技巧</h2><h3 id="状态规范化"><a href="#状态规范化" class="headerlink" title="状态规范化"></a>状态规范化</h3><h3 id="物体课程学习"><a href="#物体课程学习" class="headerlink" title="物体课程学习"></a>物体课程学习</h3><h3 id="使用分类任务协助训练"><a href="#使用分类任务协助训练" class="headerlink" title="使用分类任务协助训练"></a>使用分类任务协助训练</h3><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="机器人灵巧手抓取数据集"><a href="#机器人灵巧手抓取数据集" class="headerlink" title="机器人灵巧手抓取数据集"></a>机器人灵巧手抓取数据集</h3><p>133个物体类别、5519个物体示例、100多万种抓取姿势。</p><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p><ul><li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li><li><strong>触觉传感器</strong>：获取接触力和滑动信息</li><li><strong>自监督特征提取</strong>：无需人工标注的特征学习</li></ul><p>这种融合方式使机器人能够像人类一样，同时利用视觉和触觉信息指导抓取动作。</p><h3 id="2-层次化强化学习"><a href="#2-层次化强化学习" class="headerlink" title="2. 层次化强化学习"></a>2. 层次化强化学习</h3><p>框架采用了层次化的强化学习结构：</p><ul><li><strong>高层策略</strong>：决定整体抓取姿态和方法</li><li><strong>中层策略</strong>：控制手指运动顺序和协调</li><li><strong>低层控制器</strong>：精确控制关节力矩和位置</li></ul><p>这种分层设计大大降低了学习难度，加速了训练过程。</p><h3 id="3-模拟到现实迁移"><a href="#3-模拟到现实迁移" class="headerlink" title="3. 模拟到现实迁移"></a>3. 模拟到现实迁移</h3><p>为解决sim2real问题，UniDexGrasp采用了：</p><ul><li><strong>域随机化</strong>：在模拟中随机化物理参数和视觉特征</li><li><strong>渐进式学习</strong>：从简单任务到复杂任务的课程学习</li><li><strong>现实世界微调</strong>：通过少量真实世界样本进行适应</li></ul><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文在多个基准测试和真实机器人上进行了评估：</p><ul><li>在YCB物体集上达到了92%的抓取成功率</li><li>对未见过的物体达到了85%的泛化成功率</li><li>在不同光照和杂乱环境中展现了鲁棒性</li></ul><h2 id="与现有方法的比较"><a href="#与现有方法的比较" class="headerlink" title="与现有方法的比较"></a>与现有方法的比较</h2><p>与现有的方法相比，UniDexGrasp在以下方面显示出优势：</p><table><thead><tr><th>方法</th><th>成功率</th><th>泛化能力</th><th>计算效率</th></tr></thead><tbody><tr><td>DexNet</td><td>85%</td><td>中等</td><td>高</td></tr><tr><td>DexPilot</td><td>88%</td><td>高</td><td>低</td></tr><tr><td>UniDexGrasp</td><td>92%</td><td>高</td><td>中等</td></tr></tbody></table><h2 id="局限性与未来工作"><a href="#局限性与未来工作" class="headerlink" title="局限性与未来工作"></a>局限性与未来工作</h2><p>尽管UniDexGrasp取得了显著成果，但仍存在一些局限性：</p><ol><li>对极细或极软物体的处理能力有限</li><li>实时性在复杂场景中仍有提升空间</li><li>多物体交互场景下的表现需要改进</li></ol><p>未来工作将聚焦于：</p><ul><li>集成语言模型指导复杂操作</li><li>增强物理推理能力</li><li>改进在低资源环境中的适应性</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>UniDexGrasp代表了机器人灵巧抓取领域的重要进展，为通用机器人操纵提供了有效解决方案。通过统一的框架整合多模态感知和层次化学习，该方法展现了强大的性能和泛化能力。随着技术的进一步发展，我们有望看到更加智能和灵活的机器人系统在工业和家庭环境中的广泛应用。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Andrychowicz, M., et al. (2020). Learning dexterous in-hand manipulation. The International Journal of Robotics Research.</li><li>Levine, S., et al. (2018). Learning hand-eye coordination for robotic grasping with deep learning and large-scale data collection. The International Journal of Robotics Research.</li><li>OpenAI, et al. (2019). Solving Rubik’s Cube with a Robot Hand. arXiv preprint arXiv:1910.07113.</li><li>Kalashnikov, D., et al. (2018). Qt-opt: Scalable deep reinforcement learning for vision-based robotic manipulation. Conference on Robot Learning.</li><li>Pinto, L., &amp; Gupta, A. (2016). Supersizing self-supervision: Learning to grasp from 50k tries and 700 robot hours. IEEE International Conference on Robotics and Automation.</li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>DeepLearning</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>DeepLearning</tag>
-      
-      <tag>Robot</tag>
-      
-      <tag>Grasping</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Yell at your robot论文解读与复现</title>
     <link href="/tech-blog/2025/03/22/YellAtYourRobot/"/>
     <url>/tech-blog/2025/03/22/YellAtYourRobot/</url>
@@ -1399,9 +1408,46 @@
       
       <tag>AI</tag>
       
+      <tag>DeepLearning</tag>
+      
       <tag>Robotics</tag>
       
+      <tag>Robot</tag>
+      
+      <tag>Grasping</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>灵巧手：UniDexGrasp论文解读</title>
+    <link href="/tech-blog/2025/03/22/UniDexGrasp/"/>
+    <url>/tech-blog/2025/03/22/UniDexGrasp/</url>
+    
+    <content type="html"><![CDATA[<h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>二指夹爪的局限性：</p><p>目标：学习一个通用的灵巧手抓取方法，在仿真环境泛化到数百中见过或未见过的</p><p>平行夹持器7个自由度，而ShadowHand有26个自由度。高维度加大了生成有效抓取姿势和规划执行轨迹的难度。提出两阶段，评估结果体现出方法：高抓取质量、高多样性的优势。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="生成有效抓取手势"><a href="#生成有效抓取手势" class="headerlink" title="生成有效抓取手势"></a>生成有效抓取手势</h3><p>输入：物体点云输入，输出：若干抓取姿势<br>抓取姿势的表征：</p><p>生成抓取手势共分为3个子模块：（1）生成总体旋转的模块 GraspIPDF，（2），（3）</p><h4 id="GraspIPDF"><a href="#GraspIPDF" class="headerlink" title="GraspIPDF"></a>GraspIPDF</h4><h4 id="GraspGlow"><a href="#GraspGlow" class="headerlink" title="GraspGlow"></a>GraspGlow</h4><p>自监督损失函数：1. 预测的理想接触图与由 GraspGlow 输出的手计算得到的接触图之前的差异；2. 物体点云穿透进手的网格的距离平方值；3. 手上预先选定的点位穿透进平面的深度；4. 自穿透。</p><h4 id="ContactNet"><a href="#ContactNet" class="headerlink" title="ContactNet"></a>ContactNet</h4><h3 id="规划执行轨迹"><a href="#规划执行轨迹" class="headerlink" title="规划执行轨迹"></a>规划执行轨迹</h3><h2 id="抓取策略训练3技巧"><a href="#抓取策略训练3技巧" class="headerlink" title="抓取策略训练3技巧"></a>抓取策略训练3技巧</h2><h3 id="状态规范化"><a href="#状态规范化" class="headerlink" title="状态规范化"></a>状态规范化</h3><h3 id="物体课程学习"><a href="#物体课程学习" class="headerlink" title="物体课程学习"></a>物体课程学习</h3><h3 id="使用分类任务协助训练"><a href="#使用分类任务协助训练" class="headerlink" title="使用分类任务协助训练"></a>使用分类任务协助训练</h3><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="机器人灵巧手抓取数据集"><a href="#机器人灵巧手抓取数据集" class="headerlink" title="机器人灵巧手抓取数据集"></a>机器人灵巧手抓取数据集</h3><p>133个物体类别、5519个物体示例、100多万种抓取姿势。</p><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p><ul><li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li><li><strong>触觉传感器</strong>：获取接触力和滑动信息</li><li><strong>自监督特征提取</strong>：无需人工标注的特征学习</li></ul><p>这种融合方式使机器人能够像人类一样，同时利用视觉和触觉信息指导抓取动作。</p><h3 id="2-层次化强化学习"><a href="#2-层次化强化学习" class="headerlink" title="2. 层次化强化学习"></a>2. 层次化强化学习</h3><p>框架采用了层次化的强化学习结构：</p><ul><li><strong>高层策略</strong>：决定整体抓取姿态和方法</li><li><strong>中层策略</strong>：控制手指运动顺序和协调</li><li><strong>低层控制器</strong>：精确控制关节力矩和位置</li></ul><p>这种分层设计大大降低了学习难度，加速了训练过程。</p><h3 id="3-模拟到现实迁移"><a href="#3-模拟到现实迁移" class="headerlink" title="3. 模拟到现实迁移"></a>3. 模拟到现实迁移</h3><p>为解决sim2real问题，UniDexGrasp采用了：</p><ul><li><strong>域随机化</strong>：在模拟中随机化物理参数和视觉特征</li><li><strong>渐进式学习</strong>：从简单任务到复杂任务的课程学习</li><li><strong>现实世界微调</strong>：通过少量真实世界样本进行适应</li></ul><h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文在多个基准测试和真实机器人上进行了评估：</p><ul><li>在YCB物体集上达到了92%的抓取成功率</li><li>对未见过的物体达到了85%的泛化成功率</li><li>在不同光照和杂乱环境中展现了鲁棒性</li></ul><h2 id="与现有方法的比较"><a href="#与现有方法的比较" class="headerlink" title="与现有方法的比较"></a>与现有方法的比较</h2><p>与现有的方法相比，UniDexGrasp在以下方面显示出优势：</p><table><thead><tr><th>方法</th><th>成功率</th><th>泛化能力</th><th>计算效率</th></tr></thead><tbody><tr><td>DexNet</td><td>85%</td><td>中等</td><td>高</td></tr><tr><td>DexPilot</td><td>88%</td><td>高</td><td>低</td></tr><tr><td>UniDexGrasp</td><td>92%</td><td>高</td><td>中等</td></tr></tbody></table><h2 id="局限性与未来工作"><a href="#局限性与未来工作" class="headerlink" title="局限性与未来工作"></a>局限性与未来工作</h2><p>尽管UniDexGrasp取得了显著成果，但仍存在一些局限性：</p><ol><li>对极细或极软物体的处理能力有限</li><li>实时性在复杂场景中仍有提升空间</li><li>多物体交互场景下的表现需要改进</li></ol><p>未来工作将聚焦于：</p><ul><li>集成语言模型指导复杂操作</li><li>增强物理推理能力</li><li>改进在低资源环境中的适应性</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>UniDexGrasp代表了机器人灵巧抓取领域的重要进展，为通用机器人操纵提供了有效解决方案。通过统一的框架整合多模态感知和层次化学习，该方法展现了强大的性能和泛化能力。随着技术的进一步发展，我们有望看到更加智能和灵活的机器人系统在工业和家庭环境中的广泛应用。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Andrychowicz, M., et al. (2020). Learning dexterous in-hand manipulation. The International Journal of Robotics Research.</li><li>Levine, S., et al. (2018). Learning hand-eye coordination for robotic grasping with deep learning and large-scale data collection. The International Journal of Robotics Research.</li><li>OpenAI, et al. (2019). Solving Rubik’s Cube with a Robot Hand. arXiv preprint arXiv:1910.07113.</li><li>Kalashnikov, D., et al. (2018). Qt-opt: Scalable deep reinforcement learning for vision-based robotic manipulation. Conference on Robot Learning.</li><li>Pinto, L., &amp; Gupta, A. (2016). Supersizing self-supervision: Learning to grasp from 50k tries and 700 robot hours. IEEE International Conference on Robotics and Automation.</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>DeepLearning</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       

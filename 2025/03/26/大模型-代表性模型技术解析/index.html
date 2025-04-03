@@ -27,7 +27,7 @@
 <meta property="og:description" content="大模型简介NLP任务的发展阶段：（1）基于规则+传统机器学习；（2）预训练语言模型+下游任务微调；（3）提示微调+指令微调；（4）多模态大模型+端到端智能体 自回归语言模型Scaling Law灾难性遗忘问题弹性权重巩固（EWC）通过引入正则化项，限制对旧任务重要权重的更新。实现方式：（1）计算Fisher信息矩阵，确定权重对就任务的重要性。（2）在新任务的训练中，添加一个正则化项，限制权重更新幅">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-03T04:00:22.148Z">
+<meta property="article:modified_time" content="2025-04-03T06:46:47.393Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          455 words
+          510 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          4 mins
+          5 mins
         
       </span>
     
@@ -306,7 +306,9 @@
 <h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p>
 <h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h1 id="代表性模型"><a href="#代表性模型" class="headerlink" title="代表性模型"></a>代表性模型</h1><h2 id="GPT-1"><a href="#GPT-1" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h3 id="LLaMA3"><a href="#LLaMA3" class="headerlink" title="LLaMA3"></a>LLaMA3</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><h4 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h4><h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>RoPE</p>
 <h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><h2 id="Qwen"><a href="#Qwen" class="headerlink" title="Qwen"></a>Qwen</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p>
-<h3 id="技术创新"><a href="#技术创新" class="headerlink" title="技术创新"></a>技术创新</h3><h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>MoE</p>
+<h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>采用了多头潜在注意力(MLA)和DeepSeekMoE架构。</p>
+<h4 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h4><p>负载平衡策略<br>采用了多token预测训练目标，验证对模型性能有益且，并且可用于推理加速。</p>
+<h4 id="语料"><a href="#语料" class="headerlink" title="语料"></a>语料</h4><p>14.8万亿token</p>
 <h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2301.00234">A Survey on In-context Learning</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/naklecha/llama3-from-scratch/tree/main">llama3 implemented from scratch</a><br><a target="_blank" rel="noopener" href="https://github.com/HarleysZhang/llm_note/blob/main/1-transformer_model/llama1-3%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.md">llama1模型结构详解</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>
 
@@ -420,8 +422,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/" title="多模态大模型：技术演进与最新进展">
-                        <span class="hidden-mobile">多模态大模型：技术演进与最新进展</span>
+                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/" title="大模型位置编码">
+                        <span class="hidden-mobile">大模型位置编码</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

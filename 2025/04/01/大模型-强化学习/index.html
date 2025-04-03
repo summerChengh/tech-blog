@@ -19,26 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="UniDexGrasp: 统一框架下的机器人灵巧抓取摘要机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。 引言二指夹爪的局限性： 目标：学习一个通用的灵巧手抓取方法，在仿真环境泛">
+    <meta name="description" content="强化学习在大模型中的核心作用显著提升大模型的推理能力。 代表性技术ChatGPT研究点提升模型推理能力工具使用现状：预先确定了工具的使用模式、限制了对最优策略的探索、实现透明度不足等。Tool-Integrated Reinforcement Learning框架允许模型直接从基座模型开始，通过强化学习自主探索最优工具使用策略，而非受限于与定义的工具使用模式。 参考Fine-Tuning Lang">
 <meta property="og:type" content="article">
-<meta property="og:title" content="灵巧手：UniDexGrasp论文解读">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/22/UniDexGrasp/index.html">
+<meta property="og:title" content="大模型训练">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="UniDexGrasp: 统一框架下的机器人灵巧抓取摘要机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。 引言二指夹爪的局限性： 目标：学习一个通用的灵巧手抓取方法，在仿真环境泛">
+<meta property="og:description" content="强化学习在大模型中的核心作用显著提升大模型的推理能力。 代表性技术ChatGPT研究点提升模型推理能力工具使用现状：预先确定了工具的使用模式、限制了对最优策略的探索、实现透明度不足等。Tool-Integrated Reinforcement Learning框架允许模型直接从基座模型开始，通过强化学习自主探索最优工具使用策略，而非受限于与定义的工具使用模式。 参考Fine-Tuning Lang">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-22T10:25:00.000Z">
-<meta property="article:modified_time" content="2025-03-24T10:40:23.793Z">
+<meta property="article:published_time" content="2025-04-01T07:11:00.000Z">
+<meta property="article:modified_time" content="2025-04-03T04:23:48.240Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="DeepLearning">
-<meta property="article:tag" content="Robotics">
-<meta property="article:tag" content="Robot">
-<meta property="article:tag" content="Grasping">
+<meta property="article:tag" content="生成式AI">
+<meta property="article:tag" content="强化学习">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>灵巧手：UniDexGrasp论文解读 - Tech Blog</title>
+  <title>大模型训练 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="灵巧手：UniDexGrasp论文解读"></span>
+            <span id="subtitle" data-typed-text="大模型训练"></span>
           
         </div>
 
@@ -234,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-22 18:25" pubdate>
-          March 22, 2025 pm
+        <time datetime="2025-04-01 15:11" pubdate>
+          April 1, 2025 pm
         </time>
       </span>
     
@@ -246,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          147 words
         
       </span>
     
@@ -257,7 +255,7 @@
         
         
         
-          10 mins
+          2 mins
         
       </span>
     
@@ -294,94 +292,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">灵巧手：UniDexGrasp论文解读</h1>
+            <h1 id="seo-header">大模型训练</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="UniDexGrasp-统一框架下的机器人灵巧抓取"><a href="#UniDexGrasp-统一框架下的机器人灵巧抓取" class="headerlink" title="UniDexGrasp: 统一框架下的机器人灵巧抓取"></a>UniDexGrasp: 统一框架下的机器人灵巧抓取</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>机器人灵巧抓取是机器人学和人工智能领域的重要研究方向。本文将详细解读UniDexGrasp论文，这是一个面向多样化物体的统一灵巧抓取框架。UniDexGrasp通过结合视觉感知、触觉反馈和强化学习，实现了对未知物体的鲁棒抓取能力，大幅提升了机器人在复杂环境中的操作能力。</p>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>二指夹爪的局限性：</p>
-<p>目标：学习一个通用的灵巧手抓取方法，在仿真环境泛化到数百中见过或未见过的</p>
-<p>平行夹持器7个自由度，而ShadowHand有26个自由度。高维度加大了生成有效抓取姿势和规划执行轨迹的难度。提出两阶段，评估结果体现出方法：高抓取质量、高多样性的优势。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="生成有效抓取手势"><a href="#生成有效抓取手势" class="headerlink" title="生成有效抓取手势"></a>生成有效抓取手势</h3><p>输入：物体点云输入，输出：若干抓取姿势<br>抓取姿势的表征：</p>
-<p>生成抓取手势共分为3个子模块：（1）生成总体旋转的模块 GraspIPDF，（2），（3）</p>
-<h4 id="GraspIPDF"><a href="#GraspIPDF" class="headerlink" title="GraspIPDF"></a>GraspIPDF</h4><h4 id="GraspGlow"><a href="#GraspGlow" class="headerlink" title="GraspGlow"></a>GraspGlow</h4><p>自监督损失函数：1. 预测的理想接触图与由 GraspGlow 输出的手计算得到的接触图之前的差异；2. 物体点云穿透进手的网格的距离平方值；3. 手上预先选定的点位穿透进平面的深度；4. 自穿透。</p>
-<h4 id="ContactNet"><a href="#ContactNet" class="headerlink" title="ContactNet"></a>ContactNet</h4><h3 id="规划执行轨迹"><a href="#规划执行轨迹" class="headerlink" title="规划执行轨迹"></a>规划执行轨迹</h3><h2 id="抓取策略训练3技巧"><a href="#抓取策略训练3技巧" class="headerlink" title="抓取策略训练3技巧"></a>抓取策略训练3技巧</h2><h3 id="状态规范化"><a href="#状态规范化" class="headerlink" title="状态规范化"></a>状态规范化</h3><h3 id="物体课程学习"><a href="#物体课程学习" class="headerlink" title="物体课程学习"></a>物体课程学习</h3><h3 id="使用分类任务协助训练"><a href="#使用分类任务协助训练" class="headerlink" title="使用分类任务协助训练"></a>使用分类任务协助训练</h3><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="机器人灵巧手抓取数据集"><a href="#机器人灵巧手抓取数据集" class="headerlink" title="机器人灵巧手抓取数据集"></a>机器人灵巧手抓取数据集</h3><p>133个物体类别、5519个物体示例、100多万种抓取姿势。</p>
-<h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="1-视觉-触觉融合感知"><a href="#1-视觉-触觉融合感知" class="headerlink" title="1. 视觉-触觉融合感知"></a>1. 视觉-触觉融合感知</h3><p>UniDexGrasp采用了多模态感知系统，包括：</p>
-<ul>
-<li><strong>RGB-D相机</strong>：捕获物体的几何形状和外观特征</li>
-<li><strong>触觉传感器</strong>：获取接触力和滑动信息</li>
-<li><strong>自监督特征提取</strong>：无需人工标注的特征学习</li>
-</ul>
-<p>这种融合方式使机器人能够像人类一样，同时利用视觉和触觉信息指导抓取动作。</p>
-<h3 id="2-层次化强化学习"><a href="#2-层次化强化学习" class="headerlink" title="2. 层次化强化学习"></a>2. 层次化强化学习</h3><p>框架采用了层次化的强化学习结构：</p>
-<ul>
-<li><strong>高层策略</strong>：决定整体抓取姿态和方法</li>
-<li><strong>中层策略</strong>：控制手指运动顺序和协调</li>
-<li><strong>低层控制器</strong>：精确控制关节力矩和位置</li>
-</ul>
-<p>这种分层设计大大降低了学习难度，加速了训练过程。</p>
-<h3 id="3-模拟到现实迁移"><a href="#3-模拟到现实迁移" class="headerlink" title="3. 模拟到现实迁移"></a>3. 模拟到现实迁移</h3><p>为解决sim2real问题，UniDexGrasp采用了：</p>
-<ul>
-<li><strong>域随机化</strong>：在模拟中随机化物理参数和视觉特征</li>
-<li><strong>渐进式学习</strong>：从简单任务到复杂任务的课程学习</li>
-<li><strong>现实世界微调</strong>：通过少量真实世界样本进行适应</li>
-</ul>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>论文在多个基准测试和真实机器人上进行了评估：</p>
-<ul>
-<li>在YCB物体集上达到了92%的抓取成功率</li>
-<li>对未见过的物体达到了85%的泛化成功率</li>
-<li>在不同光照和杂乱环境中展现了鲁棒性</li>
-</ul>
-<h2 id="与现有方法的比较"><a href="#与现有方法的比较" class="headerlink" title="与现有方法的比较"></a>与现有方法的比较</h2><p>与现有的方法相比，UniDexGrasp在以下方面显示出优势：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>成功率</th>
-<th>泛化能力</th>
-<th>计算效率</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DexNet</td>
-<td>85%</td>
-<td>中等</td>
-<td>高</td>
-</tr>
-<tr>
-<td>DexPilot</td>
-<td>88%</td>
-<td>高</td>
-<td>低</td>
-</tr>
-<tr>
-<td>UniDexGrasp</td>
-<td>92%</td>
-<td>高</td>
-<td>中等</td>
-</tr>
-</tbody></table>
-<h2 id="局限性与未来工作"><a href="#局限性与未来工作" class="headerlink" title="局限性与未来工作"></a>局限性与未来工作</h2><p>尽管UniDexGrasp取得了显著成果，但仍存在一些局限性：</p>
-<ol>
-<li>对极细或极软物体的处理能力有限</li>
-<li>实时性在复杂场景中仍有提升空间</li>
-<li>多物体交互场景下的表现需要改进</li>
-</ol>
-<p>未来工作将聚焦于：</p>
-<ul>
-<li>集成语言模型指导复杂操作</li>
-<li>增强物理推理能力</li>
-<li>改进在低资源环境中的适应性</li>
-</ul>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>UniDexGrasp代表了机器人灵巧抓取领域的重要进展，为通用机器人操纵提供了有效解决方案。通过统一的框架整合多模态感知和层次化学习，该方法展现了强大的性能和泛化能力。随着技术的进一步发展，我们有望看到更加智能和灵活的机器人系统在工业和家庭环境中的广泛应用。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
-<li>Andrychowicz, M., et al. (2020). Learning dexterous in-hand manipulation. The International Journal of Robotics Research.</li>
-<li>Levine, S., et al. (2018). Learning hand-eye coordination for robotic grasping with deep learning and large-scale data collection. The International Journal of Robotics Research.</li>
-<li>OpenAI, et al. (2019). Solving Rubik’s Cube with a Robot Hand. arXiv preprint arXiv:1910.07113.</li>
-<li>Kalashnikov, D., et al. (2018). Qt-opt: Scalable deep reinforcement learning for vision-based robotic manipulation. Conference on Robot Learning.</li>
-<li>Pinto, L., &amp; Gupta, A. (2016). Supersizing self-supervision: Learning to grasp from 50k tries and 700 robot hours. IEEE International Conference on Robotics and Automation.</li>
-</ol>
+                <h1 id="强化学习在大模型中的核心作用"><a href="#强化学习在大模型中的核心作用" class="headerlink" title="强化学习在大模型中的核心作用"></a>强化学习在大模型中的核心作用</h1><p>显著提升大模型的推理能力。</p>
+<h2 id="代表性技术"><a href="#代表性技术" class="headerlink" title="代表性技术"></a>代表性技术</h2><h3 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="研究点"><a href="#研究点" class="headerlink" title="研究点"></a>研究点</h2><h3 id="提升模型推理能力"><a href="#提升模型推理能力" class="headerlink" title="提升模型推理能力"></a>提升模型推理能力</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><p>现状：预先确定了工具的使用模式、限制了对最优策略的探索、实现透明度不足等。<br>Tool-Integrated Reinforcement Learning框架允许模型直接从基座模型开始，通过强化学习自主探索最优工具使用策略，而非受限于与定义的工具使用模式。</p>
+<p>参考<br>Fine-Tuning Language Models from Human Preferences<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="">DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2503.23383">TORL: Scaling Tool-Integrated RL</a></p>
 
                 
               </div>
@@ -400,17 +318,17 @@
     
       <span class="category-chain">
         
-  <a href="/tech-blog/categories/DeepLearning/" class="category-chain-item">DeepLearning</a>
+  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
   
   
     <span>></span>
     
-  <a href="/tech-blog/categories/DeepLearning/AI/" class="category-chain-item">AI</a>
+  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
   
   
     <span>></span>
     
-  <a href="/tech-blog/categories/DeepLearning/AI/Robotics/" class="category-chain-item">Robotics</a>
+  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="category-chain-item">强化学习</a>
   
   
 
@@ -431,13 +349,9 @@
       
         <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tech-blog/tags/DeepLearning/" class="print-no-link">#DeepLearning</a>
+        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
       
-        <a href="/tech-blog/tags/Robotics/" class="print-no-link">#Robotics</a>
-      
-        <a href="/tech-blog/tags/Robot/" class="print-no-link">#Robot</a>
-      
-        <a href="/tech-blog/tags/Grasping/" class="print-no-link">#Grasping</a>
+        <a href="/tech-blog/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="print-no-link">#强化学习</a>
       
     </div>
   
@@ -449,8 +363,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>灵巧手：UniDexGrasp论文解读</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/22/UniDexGrasp/</div>
+      <div>大模型训练</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/01/大模型-强化学习/</div>
     </div>
     <div class="license-meta">
       
@@ -462,7 +376,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 22, 2025</div>
+          <div>April 1, 2025</div>
         </div>
       
       
@@ -494,9 +408,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/22/YellAtYourRobot/" title="Yell at your robot论文解读与复现">
+                      <a href="/tech-blog/2025/04/02/%E8%84%91%E7%A7%91%E5%AD%A6-%E5%B9%B4%E9%BE%84%E4%B8%8E%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" title="你的大脑也许根本就不会老：认知能力与年龄的复杂关系">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Yell at your robot论文解读与复现</span>
+                        <span class="hidden-mobile">你的大脑也许根本就不会老：认知能力与年龄的复杂关系</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -504,8 +418,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/14/GAN/" title="GAN神经网络">
-                        <span class="hidden-mobile">GAN神经网络</span>
+                      <a href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BE%AE%E8%B0%83%E5%AE%9E%E6%88%98/" title="大模型微调实战">
+                        <span class="hidden-mobile">大模型微调实战</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
