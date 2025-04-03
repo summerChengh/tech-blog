@@ -19,24 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="目标检测方法演进YOLO目标检测损失函数传统损失函数L1&#x2F;L2 Loss等通常分别优化边界框的中心坐标、宽度、高度。 IoU based Loss优化预测框与真实框的交并比 目标检测标注数据标注数据LabelImgCVATLabelboxSuperAnnotate">
+    <meta name="description" content="Tokenizer基于规则基于统计WordPieceByte-Pair Encoding(BPE)tiktoken是OpenAI实现BPE方法。 SentencePiece">
 <meta property="og:type" content="article">
-<meta property="og:title" content="目标检测">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/index.html">
+<meta property="og:title" content="大模型-分词器">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/03/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%88%86%E8%AF%8D%E5%99%A8/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="目标检测方法演进YOLO目标检测损失函数传统损失函数L1&#x2F;L2 Loss等通常分别优化边界框的中心坐标、宽度、高度。 IoU based Loss优化预测框与真实框的交并比 目标检测标注数据标注数据LabelImgCVATLabelboxSuperAnnotate">
+<meta property="og:description" content="Tokenizer基于规则基于统计WordPieceByte-Pair Encoding(BPE)tiktoken是OpenAI实现BPE方法。 SentencePiece">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-23T20:26:00.000Z">
-<meta property="article:modified_time" content="2025-04-03T00:29:41.556Z">
+<meta property="article:published_time" content="2025-04-03T07:11:00.000Z">
+<meta property="article:modified_time" content="2025-04-03T03:27:23.383Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
+<meta property="article:tag" content="生成式AI">
 <meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="计算机视觉">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>目标检测 - Tech Blog</title>
+  <title>大模型-分词器 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="目标检测"></span>
+            <span id="subtitle" data-typed-text="大模型-分词器"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-24 04:26" pubdate>
-          March 24, 2025 am
+        <time datetime="2025-04-03 15:11" pubdate>
+          April 3, 2025 pm
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          70 words
+          18 words
         
       </span>
     
@@ -292,15 +292,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">目标检测</h1>
+            <h1 id="seo-header">大模型-分词器</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="目标检测方法演进"><a href="#目标检测方法演进" class="headerlink" title="目标检测方法演进"></a>目标检测方法演进</h1><h1 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h1><h1 id="目标检测损失函数"><a href="#目标检测损失函数" class="headerlink" title="目标检测损失函数"></a>目标检测损失函数</h1><h2 id="传统损失函数L1-L2-Loss等"><a href="#传统损失函数L1-L2-Loss等" class="headerlink" title="传统损失函数L1&#x2F;L2 Loss等"></a>传统损失函数L1&#x2F;L2 Loss等</h2><p>通常分别优化边界框的中心坐标、宽度、高度。</p>
-<h2 id="IoU-based-Loss"><a href="#IoU-based-Loss" class="headerlink" title="IoU based Loss"></a>IoU based Loss</h2><p>优化预测框与真实框的交并比</p>
-<h3 id="目标检测标注数据"><a href="#目标检测标注数据" class="headerlink" title="目标检测标注数据"></a>目标检测标注数据</h3><h4 id="标注数据"><a href="#标注数据" class="headerlink" title="标注数据"></a>标注数据</h4><p>LabelImg<br>CVAT<br>Labelbox<br>SuperAnnotate</p>
-
+                <h1 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h1><h2 id="基于规则"><a href="#基于规则" class="headerlink" title="基于规则"></a>基于规则</h2><h2 id="基于统计"><a href="#基于统计" class="headerlink" title="基于统计"></a>基于统计</h2><h3 id="WordPiece"><a href="#WordPiece" class="headerlink" title="WordPiece"></a>WordPiece</h3><h3 id="Byte-Pair-Encoding-BPE"><a href="#Byte-Pair-Encoding-BPE" class="headerlink" title="Byte-Pair Encoding(BPE)"></a>Byte-Pair Encoding(BPE)</h3><p>tiktoken是OpenAI实现BPE方法。</p>
+<h3 id="SentencePiece"><a href="#SentencePiece" class="headerlink" title="SentencePiece"></a>SentencePiece</h3>
                 
               </div>
             
@@ -323,15 +321,8 @@
   
     <span>></span>
     
-  <a href="/tech-blog/categories/AI/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">深度学习</a>
+  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
   
-  
-    <span>></span>
-    
-  <a href="/tech-blog/categories/AI/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" class="category-chain-item">计算机视觉</a>
-  
-  
-
   
 
   
@@ -349,9 +340,9 @@
       
         <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
       
-        <a href="/tech-blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" class="print-no-link">#计算机视觉</a>
+        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
       
     </div>
   
@@ -363,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>目标检测</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/24/目标检测/</div>
+      <div>大模型-分词器</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/03/大模型-分词器/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 24, 2025</div>
+          <div>April 3, 2025</div>
         </div>
       
       
@@ -408,18 +399,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/24/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" title="注意力机制：深度学习中的关键创新">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">注意力机制：深度学习中的关键创新</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/24/%E6%90%9C%E7%B4%A2%E4%B8%AD%E7%9A%84%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/" title="搜索中的向量检索：原理、技术与应用">
-                        <span class="hidden-mobile">搜索中的向量检索：原理、技术与应用</span>
+                      <a href="/tech-blog/2025/04/02/%E8%84%91%E7%A7%91%E5%AD%A6-%E5%B9%B4%E9%BE%84%E4%B8%8E%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" title="你的大脑也许根本就不会老：认知能力与年龄的复杂关系">
+                        <span class="hidden-mobile">你的大脑也许根本就不会老：认知能力与年龄的复杂关系</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
