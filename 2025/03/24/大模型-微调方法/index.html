@@ -27,11 +27,11 @@
 <meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   简介按微调目标划分指令微调(Instruction Tuning)从模型微调的目标进行划分，可分为提示微调、有监督微调、指令">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-24T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-07T02:28:01.545Z">
+<meta property="article:modified_time" content="2025-04-07T08:35:24.739Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="生成式AI">
 <meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="生成式AI">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          1.2k words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          10 mins
+          11 mins
         
       </span>
     
@@ -325,7 +325,9 @@
 <h4 id="LoRA参数初始化"><a href="#LoRA参数初始化" class="headerlink" title="LoRA参数初始化"></a>LoRA参数初始化</h4><p>LoRA参数初始化如何实现和全参数微调一样从预训练权重$W_0$开始？矩阵A初始化为全零矩阵，矩阵B通过高斯核函数进行初始化。不能初始化两个全零矩阵，否则两个权重矩阵的梯度全为0，处于鞍点不能更新参数。</p>
 <h4 id="LoRA的秩如何选择"><a href="#LoRA的秩如何选择" class="headerlink" title="LoRA的秩如何选择"></a>LoRA的秩如何选择</h4><p>秩r作为模型训练的超参，理想期望低秩近似结构$BA$与$\delta W$的表达能力越接近越好。<br>一些经验：（1）下游任务越复杂，所需的r越高；（2）基座模型能力越强，所需的r越小；（3）数据规模越大，所需的r越高。</p>
 <h4 id="LoRA微调相比全参数微调降低了显存占用"><a href="#LoRA微调相比全参数微调降低了显存占用" class="headerlink" title="LoRA微调相比全参数微调降低了显存占用"></a>LoRA微调相比全参数微调降低了显存占用</h4><p>预训练权重$W_0$在LoRA微调中只参与前向计算，但不进行梯度计算和参数更，显存不需要存储$W_0$的梯度和优化器状态。B、A矩阵的秩远低于$W_0$的秩，B、A的权重参数、梯度及优化器状态所占的存储开销远小于$W_0$的梯度和优化器状态的存储开销。</p>
-<h3 id="QLoRA"><a href="#QLoRA" class="headerlink" title="QLoRA"></a>QLoRA</h3><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><h3 id="LST"><a href="#LST" class="headerlink" title="LST"></a>LST</h3><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h4 id="基座模型"><a href="#基座模型" class="headerlink" title="基座模型"></a>基座模型</h4><p>a.基座模型，不太依赖数据格式，理论上效果应该更好<br>b.chat模型，sft需要遵循指令的格式</p>
+<h4 id="LoRA相关进展"><a href="#LoRA相关进展" class="headerlink" title="LoRA相关进展"></a>LoRA相关进展</h4><h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><p>受prompts技术的启发，P-Tuning采用微调Embedding的方式，在模型输入前添加一个任务特定的向量序列即prefix，微调时冻结基础模型参数，只优化prefix参数。<br>P-Tuning由于引入了可学习的prefix embedding，prefix embedding也可由encoder动态生成，这部分计算会略微增加推理耗时。</p>
+<p>Prefix具体添加的位置</p>
+<h3 id="LST"><a href="#LST" class="headerlink" title="LST"></a>LST</h3><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="微调大语言模型"><a href="#微调大语言模型" class="headerlink" title="微调大语言模型"></a>微调大语言模型</h3><h4 id="基座模型"><a href="#基座模型" class="headerlink" title="基座模型"></a>基座模型</h4><p>a.基座模型，不太依赖数据格式，理论上效果应该更好<br>b.chat模型，sft需要遵循指令的格式</p>
 <h4 id="垂类语料微调"><a href="#垂类语料微调" class="headerlink" title="垂类语料微调"></a>垂类语料微调</h4><p>a.epoch不要超过1轮，避免灾难性遗忘<br>b.最好加通用语料，通用语料、垂直语料的配比要注意，最好在mini-batch层面都能有通用语料</p>
 <h4 id="继续预训练"><a href="#继续预训练" class="headerlink" title="继续预训练"></a>继续预训练</h4><p>a.知识是在预训练阶段记忆的<br>b.默认语料的储备是非常充足的</p>
 <h4 id="基座模型特点"><a href="#基座模型特点" class="headerlink" title="基座模型特点"></a>基座模型特点</h4><p>LLama<br>a.本身sql的能力比较强<br>b.中文字符太少</p>
@@ -372,9 +374,9 @@
       
         <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
-      
         <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+      
+        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
       
     </div>
   
