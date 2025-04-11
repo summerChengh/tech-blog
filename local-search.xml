@@ -5,8 +5,8 @@
   
   <entry>
     <title></title>
-    <link href="/tech-blog/2025/04/11/002-%E4%BA%A7%E5%93%81-DeepSearch/"/>
-    <url>/tech-blog/2025/04/11/002-%E4%BA%A7%E5%93%81-DeepSearch/</url>
+    <link href="/tech-blog/2025/04/11/%E6%90%9C%E7%B4%A2-%20ElasticSearch/"/>
+    <url>/tech-blog/2025/04/11/%E6%90%9C%E7%B4%A2-%20ElasticSearch/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -118,6 +118,33 @@
   
   
   <entry>
+    <title>DeepResearch</title>
+    <link href="/tech-blog/2025/04/10/002-%E4%BA%A7%E5%93%81-DeepSearch/"/>
+    <url>/tech-blog/2025/04/10/002-%E4%BA%A7%E5%93%81-DeepSearch/</url>
+    
+    <content type="html"><![CDATA[<h1 id="OpenAI-DeepResearch"><a href="#OpenAI-DeepResearch" class="headerlink" title="OpenAI DeepResearch"></a>OpenAI DeepResearch</h1><h1 id="Google-DeepResearch"><a href="#Google-DeepResearch" class="headerlink" title="Google DeepResearch"></a>Google DeepResearch</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>投资</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>投资</tag>
+      
+      <tag>个人笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/tech-blog/2025/04/08/NLP-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
     <url>/tech-blog/2025/04/08/NLP-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/</url>
@@ -184,9 +211,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -281,9 +308,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -312,11 +339,11 @@
       
       <tag>AI</tag>
       
+      <tag>深度学习</tag>
+      
       <tag>生成式AI</tag>
       
       <tag>多模态</tag>
-      
-      <tag>深度学习</tag>
       
     </tags>
     
@@ -345,9 +372,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
       <tag>检索</tag>
       
@@ -378,9 +405,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -409,9 +436,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -440,11 +467,11 @@
       
       <tag>AI</tag>
       
+      <tag>深度学习</tag>
+      
       <tag>生成式AI</tag>
       
       <tag>多模态</tag>
-      
-      <tag>深度学习</tag>
       
     </tags>
     
@@ -473,11 +500,11 @@
       
       <tag>AI</tag>
       
+      <tag>深度学习</tag>
+      
       <tag>生成式AI</tag>
       
       <tag>多模态</tag>
-      
-      <tag>深度学习</tag>
       
     </tags>
     
@@ -490,7 +517,7 @@
     <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p><p><a href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>]]></content>
     
     
     <categories>
@@ -506,9 +533,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -537,9 +564,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -770,9 +797,9 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -813,8 +840,8 @@
   
   <entry>
     <title>具身智能综述：发展历程与未来展望</title>
-    <link href="/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E7%BB%BC%E8%BF%B0/"/>
-    <url>/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E7%BB%BC%E8%BF%B0/</url>
+    <link href="/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD-%E7%BB%BC%E8%BF%B0/"/>
+    <url>/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD-%E7%BB%BC%E8%BF%B0/</url>
     
     <content type="html"><![CDATA[<h1 id="具身智能综述：发展历程与未来展望"><a href="#具身智能综述：发展历程与未来展望" class="headerlink" title="具身智能综述：发展历程与未来展望"></a>具身智能综述：发展历程与未来展望</h1><h2 id="具身智能起源"><a href="#具身智能起源" class="headerlink" title="具身智能起源"></a>具身智能起源</h2><p>具身智能(Embodied Intelligence)是指通过物理或虚拟身体与环境互动来学习和适应的智能形式。这一概念最早由认知科学家提出，认为智能不仅仅是抽象的计算过程，更是一种与身体和环境密切相关的适应性能力。在人工智能领域，具身智能的研究旨在创造能够感知环境、做出决策并执行动作的智能系统。</p><h2 id="关键技术与方法"><a href="#关键技术与方法" class="headerlink" title="关键技术与方法"></a>关键技术与方法</h2><p>具身智能研究涉及多个技术领域的融合，包括：</p><ul><li>多模态学习：整合视觉、语言、触觉等多种输入信号</li><li>强化学习：通过尝试与环境互动来学习最优策略</li><li>仿真环境：为智能体提供安全、可控的学习场景</li><li>迁移学习：将模拟环境中学到的知识迁移到真实世界</li></ul><h1 id="一：训练数据来源、动作预测策略、模型训练方法"><a href="#一：训练数据来源、动作预测策略、模型训练方法" class="headerlink" title="一：训练数据来源、动作预测策略、模型训练方法"></a>一：训练数据来源、动作预测策略、模型训练方法</h1><h1 id="VLM和VLA中的动作预测"><a href="#VLM和VLA中的动作预测" class="headerlink" title="VLM和VLA中的动作预测"></a>VLM和VLA中的动作预测</h1><h1 id="端到端及其发展之路"><a href="#端到端及其发展之路" class="headerlink" title="端到端及其发展之路"></a>端到端及其发展之路</h1><h1 id="借鉴大语言模型的发展之路"><a href="#借鉴大语言模型的发展之路" class="headerlink" title="借鉴大语言模型的发展之路"></a>借鉴大语言模型的发展之路</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="http://arxiv.org/abs/2502.15336">Exploring Embodied Multimodal Large Models: Development, Datasets, and Future Directions</a></li><li>Duan, J., Yu, S., Tan, H. L., Geng, X., Wang, Y., Yang, X., … &amp; Liu, Y. (2024). The Rise and Potential of Large Language Model Based Agents: A Survey.</li><li>Huang, S., Xu, C., Yu, B., &amp; Li, S. (2023). Language models as embodied agents.</li></ul>]]></content>
     
@@ -839,6 +866,39 @@
       <tag>多模态</tag>
       
       <tag>综述</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>目标检测</title>
+    <link href="/tech-blog/2025/03/24/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    <url>/tech-blog/2025/03/24/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="目标检测方法演进"><a href="#目标检测方法演进" class="headerlink" title="目标检测方法演进"></a>目标检测方法演进</h1><h1 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h1><h1 id="目标检测损失函数"><a href="#目标检测损失函数" class="headerlink" title="目标检测损失函数"></a>目标检测损失函数</h1><h2 id="传统损失函数L1-L2-Loss等"><a href="#传统损失函数L1-L2-Loss等" class="headerlink" title="传统损失函数L1&#x2F;L2 Loss等"></a>传统损失函数L1&#x2F;L2 Loss等</h2><p>通常分别优化边界框的中心坐标、宽度、高度。</p><h2 id="IoU-based-Loss"><a href="#IoU-based-Loss" class="headerlink" title="IoU based Loss"></a>IoU based Loss</h2><p>优化预测框与真实框的交并比</p><h3 id="目标检测标注数据"><a href="#目标检测标注数据" class="headerlink" title="目标检测标注数据"></a>目标检测标注数据</h3><h4 id="标注数据"><a href="#标注数据" class="headerlink" title="标注数据"></a>标注数据</h4><p>LabelImg<br>CVAT<br>Labelbox<br>SuperAnnotate</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>深度学习</category>
+      
+      <category>计算机视觉</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>计算机视觉</tag>
       
     </tags>
     
@@ -932,39 +992,6 @@
   
   
   <entry>
-    <title>目标检测</title>
-    <link href="/tech-blog/2025/03/24/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    <url>/tech-blog/2025/03/24/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</url>
-    
-    <content type="html"><![CDATA[<h1 id="目标检测方法演进"><a href="#目标检测方法演进" class="headerlink" title="目标检测方法演进"></a>目标检测方法演进</h1><h1 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h1><h1 id="目标检测损失函数"><a href="#目标检测损失函数" class="headerlink" title="目标检测损失函数"></a>目标检测损失函数</h1><h2 id="传统损失函数L1-L2-Loss等"><a href="#传统损失函数L1-L2-Loss等" class="headerlink" title="传统损失函数L1&#x2F;L2 Loss等"></a>传统损失函数L1&#x2F;L2 Loss等</h2><p>通常分别优化边界框的中心坐标、宽度、高度。</p><h2 id="IoU-based-Loss"><a href="#IoU-based-Loss" class="headerlink" title="IoU based Loss"></a>IoU based Loss</h2><p>优化预测框与真实框的交并比</p><h3 id="目标检测标注数据"><a href="#目标检测标注数据" class="headerlink" title="目标检测标注数据"></a>目标检测标注数据</h3><h4 id="标注数据"><a href="#标注数据" class="headerlink" title="标注数据"></a>标注数据</h4><p>LabelImg<br>CVAT<br>Labelbox<br>SuperAnnotate</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>深度学习</category>
-      
-      <category>计算机视觉</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>计算机视觉</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>搜索中的向量检索：原理、技术与应用</title>
     <link href="/tech-blog/2025/03/24/%E6%90%9C%E7%B4%A2-%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/"/>
     <url>/tech-blog/2025/03/24/%E6%90%9C%E7%B4%A2-%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/</url>
@@ -1001,8 +1028,8 @@
   
   <entry>
     <title>逆运动学：机器人控制中的核心技术</title>
-    <link href="/tech-blog/2025/03/24/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
-    <url>/tech-blog/2025/03/24/%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/</url>
+    <link href="/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD-%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
+    <url>/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD-%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/</url>
     
     <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><script>  MathJax = {    tex: {      inlineMath: [['$', '$'], ['\\(', '\\)']],      displayMath: [['$$', '$$'], ['\\[', '\\]']]    }  };</script><h1 id="逆运动学：机器人控制中的核心技术"><a href="#逆运动学：机器人控制中的核心技术" class="headerlink" title="逆运动学：机器人控制中的核心技术"></a>逆运动学：机器人控制中的核心技术</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>逆运动学(Inverse Kinematics)是机器人控制领域的基础技术，用于解决从末端执行器的位置和姿态反推关节角度的问题。这一技术在机器人操作、动画制作、虚拟现实等领域有着广泛的应用。本文将介绍逆运动学的基本原理、常用算法以及应用案例。</p><h2 id="运动学基础"><a href="#运动学基础" class="headerlink" title="运动学基础"></a>运动学基础</h2><h3 id="正运动学与逆运动学"><a href="#正运动学与逆运动学" class="headerlink" title="正运动学与逆运动学"></a>正运动学与逆运动学</h3><ul><li><strong>正运动学(Forward Kinematics)</strong>：已知各关节角度，计算末端执行器的位置和姿态</li><li><strong>逆运动学(Inverse Kinematics)</strong>：已知末端执行器的位置和姿态，计算可行的关节角度</li></ul><p>从数学角度看，正运动学是一个确定性问题，而逆运动学则是一个多解或无解问题，这使得逆运动学在实际应用中更具挑战性。</p><h3 id="DH参数法"><a href="#DH参数法" class="headerlink" title="DH参数法"></a>DH参数法</h3><p>Denavit-Hartenberg(DH)参数是描述机器人运动学的标准方法，使用四个参数（关节距离、关节角、连杆长度、扭转角）来表示相邻关节之间的空间关系。</p><h2 id="逆运动学解算方法"><a href="#逆运动学解算方法" class="headerlink" title="逆运动学解算方法"></a>逆运动学解算方法</h2><h3 id="解析解法"><a href="#解析解法" class="headerlink" title="解析解法"></a>解析解法</h3><p>对于结构简单的机器人（如6自由度及以下），通常可以推导出解析解。解析解具有计算速度快、精度高的优点，但仅适用于特定结构的机器人。</p><h4 id="代数法"><a href="#代数法" class="headerlink" title="代数法"></a>代数法</h4><p>利用几何关系直接推导关节角度，适用于简单结构。</p><h4 id="几何法"><a href="#几何法" class="headerlink" title="几何法"></a>几何法</h4><p>通过三角函数关系求解，直观但受限于机构复杂度。</p><h3 id="数值解法"><a href="#数值解法" class="headerlink" title="数值解法"></a>数值解法</h3><p>对于复杂结构或冗余自由度的机器人，通常采用数值解法。</p><h4 id="雅可比矩阵法"><a href="#雅可比矩阵法" class="headerlink" title="雅可比矩阵法"></a>雅可比矩阵法</h4><p>利用雅可比矩阵描述关节角度变化与末端执行器位置变化的关系，通过迭代计算求解。</p><ol><li>正向雅可比法：$\Delta\theta &#x3D; J^{-1}(θ)\Delta x$</li><li>伪逆法：处理非方阵雅可比矩阵</li><li>阻尼最小二乘法：提高奇异点附近的稳定性</li></ol><h4 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h4><p>将逆运动学问题转化为优化问题，最小化末端执行器目标位置与当前位置之间的误差。</p><ol><li>梯度下降法</li><li>遗传算法</li><li>粒子群优化</li></ol><h2 id="处理关键挑战"><a href="#处理关键挑战" class="headerlink" title="处理关键挑战"></a>处理关键挑战</h2><h3 id="奇异点处理"><a href="#奇异点处理" class="headerlink" title="奇异点处理"></a>奇异点处理</h3><p>奇异点是机器人某些构型下雅可比矩阵秩亏损的位置，在这些位置附近，小的末端移动可能需要大的关节变化。常用处理方法包括：</p><ol><li>SVD分解</li><li>阻尼因子法</li><li>避障算法</li></ol><h3 id="冗余自由度"><a href="#冗余自由度" class="headerlink" title="冗余自由度"></a>冗余自由度</h3><p>当机器人的自由度多于完成任务所需的自由度时，存在无穷多组解。通过引入次优化目标，可以选择符合特定条件的解：</p><ol><li>关节极限避免</li><li>能量最小化</li><li>障碍物避免</li></ol><h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><h3 id="工业机器人控制"><a href="#工业机器人控制" class="headerlink" title="工业机器人控制"></a>工业机器人控制</h3><p>在自动化生产线上，逆运动学用于精确控制机器人完成焊接、装配、搬运等任务。</p><h3 id="人形机器人与仿生结构"><a href="#人形机器人与仿生结构" class="headerlink" title="人形机器人与仿生结构"></a>人形机器人与仿生结构</h3><p>人形机器人的运动控制更加复杂，需要考虑多个末端执行器（双手、双脚）和稳定性约束。</p><h3 id="计算机动画与虚拟现实"><a href="#计算机动画与虚拟现实" class="headerlink" title="计算机动画与虚拟现实"></a>计算机动画与虚拟现实</h3><p>在动画制作和VR中，逆运动学用于生成角色的自然运动和交互。</p><h3 id="医疗机器人"><a href="#医疗机器人" class="headerlink" title="医疗机器人"></a>医疗机器人</h3><p>在微创手术中，逆运动学用于将医生的手部动作映射到手术机器人的运动。</p><h2 id="最新技术进展"><a href="#最新技术进展" class="headerlink" title="最新技术进展"></a>最新技术进展</h2><h3 id="基于学习的方法"><a href="#基于学习的方法" class="headerlink" title="基于学习的方法"></a>基于学习的方法</h3><ol><li>神经网络逆运动学：使用深度学习直接学习从末端位置到关节角度的映射</li><li>强化学习：通过试错学习最优控制策略</li></ol><h3 id="实时计算优化"><a href="#实时计算优化" class="headerlink" title="实时计算优化"></a>实时计算优化</h3><ol><li>GPU加速计算</li><li>并行算法设计</li><li>近似计算方法</li></ol><h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><p>逆运动学作为机器人控制的核心技术，随着人工智能和计算能力的发展，呈现出与机器学习深度融合的趋势。未来的研发方向包括更高效的算法实现、更鲁棒的奇异点处理，以及针对特定领域的专用求解器开发。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Craig, J. J. (2009). Introduction to robotics: mechanics and control. Pearson.</li><li>Buss, S. R. (2004). Introduction to inverse kinematics with jacobian transpose, pseudoinverse and damped least squares methods. IEEE Journal of Robotics and Automation.</li><li>Aristidou, A., &amp; Lasenby, J. (2011). FABRIK: A fast, iterative solver for the Inverse Kinematics problem. Graphical Models.</li></ul>]]></content>
     
@@ -1090,13 +1117,13 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
       
-      <tag>扩散模型</tag>
-      
       <tag>计算机视觉</tag>
+      
+      <tag>生成式AI</tag>
+      
+      <tag>扩散模型</tag>
       
     </tags>
     
@@ -1125,13 +1152,13 @@
       
       <tag>AI</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>深度学习</tag>
       
-      <tag>扩散模型</tag>
-      
       <tag>计算机视觉</tag>
+      
+      <tag>生成式AI</tag>
+      
+      <tag>扩散模型</tag>
       
     </tags>
     
@@ -1145,6 +1172,43 @@
     <url>/tech-blog/2025/03/23/HumanPlus/</url>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h1><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h1 id="实验评估"><a href="#实验评估" class="headerlink" title="实验评估"></a>实验评估</h1><p><a href="https://humanoid-ai.github.io/">主页</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
+    <link href="/tech-blog/2025/03/23/UMI/"/>
+    <url>/tech-blog/2025/03/23/UMI/</url>
+    
+    <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
     
     
     <categories>
@@ -1251,48 +1315,11 @@
   
   
   <entry>
-    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
-    <link href="/tech-blog/2025/03/23/UMI/"/>
-    <url>/tech-blog/2025/03/23/UMI/</url>
+    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
     
-    <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
-    
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
     
     
     <categories>
@@ -1362,11 +1389,11 @@
   
   
   <entry>
-    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
     
-    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
     
     
     <categories>
