@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="长期目标： Todo：智能体回放和调试（智能研讨厅形式-3D）用户可以方便的修改短期记忆、长期记忆、提示等以调整、优化agent的效果。 多Agent框架和多Agent应用的区别多智能体设计智能体角色、每个角色的职责、提示词设计 每个Agent都有特定的角色和专业知识，遵循一些已确立的标准。">
+    <meta name="description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。 多Agent协作机制合作类型合作竞争竞合合作结构集中式去中心化和分布式分层式合作策略基于规则基于角色基于模型协调和编排架构静态架构合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。 动态架构合作和角色分配可以根据任务需求动态调整。例如：Sol">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多智能体协作">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="长期目标： Todo：智能体回放和调试（智能研讨厅形式-3D）用户可以方便的修改短期记忆、长期记忆、提示等以调整、优化agent的效果。 多Agent框架和多Agent应用的区别多智能体设计智能体角色、每个角色的职责、提示词设计 每个Agent都有特定的角色和专业知识，遵循一些已确立的标准。">
+<meta property="og:description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。 多Agent协作机制合作类型合作竞争竞合合作结构集中式去中心化和分布式分层式合作策略基于规则基于角色基于模型协调和编排架构静态架构合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。 动态架构合作和角色分配可以根据任务需求动态调整。例如：Sol">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-11T01:26:00.000Z">
-<meta property="article:modified_time" content="2025-04-13T09:26:01.577Z">
+<meta property="article:modified_time" content="2025-04-13T13:21:37.218Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          109 words
+          314 words
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          1 mins
+          3 mins
         
       </span>
     
@@ -295,11 +295,14 @@
             
               <div class="markdown-body">
                 
-                <p>长期目标：</p>
+                <h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><p>单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。</p>
+<h1 id="多Agent协作机制"><a href="#多Agent协作机制" class="headerlink" title="多Agent协作机制"></a>多Agent协作机制</h1><h2 id="合作类型"><a href="#合作类型" class="headerlink" title="合作类型"></a>合作类型</h2><h3 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h3><h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><h3 id="竞合"><a href="#竞合" class="headerlink" title="竞合"></a>竞合</h3><h2 id="合作结构"><a href="#合作结构" class="headerlink" title="合作结构"></a>合作结构</h2><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><h3 id="去中心化和分布式"><a href="#去中心化和分布式" class="headerlink" title="去中心化和分布式"></a>去中心化和分布式</h3><h3 id="分层式"><a href="#分层式" class="headerlink" title="分层式"></a>分层式</h3><h2 id="合作策略"><a href="#合作策略" class="headerlink" title="合作策略"></a>合作策略</h2><h3 id="基于规则"><a href="#基于规则" class="headerlink" title="基于规则"></a>基于规则</h3><h3 id="基于角色"><a href="#基于角色" class="headerlink" title="基于角色"></a>基于角色</h3><h3 id="基于模型"><a href="#基于模型" class="headerlink" title="基于模型"></a>基于模型</h3><h2 id="协调和编排架构"><a href="#协调和编排架构" class="headerlink" title="协调和编排架构"></a>协调和编排架构</h2><h3 id="静态架构"><a href="#静态架构" class="headerlink" title="静态架构"></a>静态架构</h3><p>合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。</p>
+<h3 id="动态架构"><a href="#动态架构" class="headerlink" title="动态架构"></a>动态架构</h3><p>合作和角色分配可以根据任务需求动态调整。例如：Solo performance Prompting(SPP)可以根据输入动态识别相关角色，并生成相应的LLM代理进行协作。</p>
+<h3 id="动态架构-1"><a href="#动态架构-1" class="headerlink" title="动态架构"></a>动态架构</h3><p>长期目标：</p>
 <p>Todo：智能体回放和调试<br>（智能研讨厅形式-3D）<br>用户可以方便的修改短期记忆、长期记忆、提示等以调整、优化agent的效果。</p>
 <h1 id="多Agent框架和多Agent应用的区别"><a href="#多Agent框架和多Agent应用的区别" class="headerlink" title="多Agent框架和多Agent应用的区别"></a>多Agent框架和多Agent应用的区别</h1><h4 id="多智能体设计"><a href="#多智能体设计" class="headerlink" title="多智能体设计"></a>多智能体设计</h4><p>智能体角色、每个角色的职责、提示词设计</p>
 <p>每个Agent都有特定的角色和专业知识，遵循一些已确立的标准。</p>
-
+<h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="心智理论（Theory-of-Mind）"><a href="#心智理论（Theory-of-Mind）" class="headerlink" title="心智理论（Theory of Mind）"></a>心智理论（Theory of Mind）</h2>
                 
               </div>
             
