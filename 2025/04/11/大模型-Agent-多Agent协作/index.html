@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。 多Agent协作机制合作类型合作竞争竞合合作结构集中式去中心化和分布式分层式合作策略基于规则基于角色基于模型协调和编排架构静态架构合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。 动态架构合作和角色分配可以根据任务需求动态调整。例如：Sol">
+    <meta name="description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。开发单智能体的常用策略包括：（1）LLM配备工具调用能力，如代码执行器、web浏览器等；（2）通过提示策略获取更好的推理和规划能力，提示策略包括：思维链提示、ReAct、少样本提示等。受益于多模态大模型的快速发展，agents也支持 多Agent协作机制合作类型合作在合作机制，多个智能体">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多智能体协作">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。 多Agent协作机制合作类型合作竞争竞合合作结构集中式去中心化和分布式分层式合作策略基于规则基于角色基于模型协调和编排架构静态架构合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。 动态架构合作和角色分配可以根据任务需求动态调整。例如：Sol">
+<meta property="og:description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。开发单智能体的常用策略包括：（1）LLM配备工具调用能力，如代码执行器、web浏览器等；（2）通过提示策略获取更好的推理和规划能力，提示策略包括：思维链提示、ReAct、少样本提示等。受益于多模态大模型的快速发展，agents也支持 多Agent协作机制合作类型合作在合作机制，多个智能体">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-11T01:26:00.000Z">
-<meta property="article:modified_time" content="2025-04-13T13:21:37.218Z">
+<meta property="article:modified_time" content="2025-04-14T03:47:04.069Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          314 words
+          542 words
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          3 mins
+          5 mins
         
       </span>
     
@@ -295,8 +295,10 @@
             
               <div class="markdown-body">
                 
-                <h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><p>单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。</p>
-<h1 id="多Agent协作机制"><a href="#多Agent协作机制" class="headerlink" title="多Agent协作机制"></a>多Agent协作机制</h1><h2 id="合作类型"><a href="#合作类型" class="headerlink" title="合作类型"></a>合作类型</h2><h3 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h3><h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><h3 id="竞合"><a href="#竞合" class="headerlink" title="竞合"></a>竞合</h3><h2 id="合作结构"><a href="#合作结构" class="headerlink" title="合作结构"></a>合作结构</h2><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><h3 id="去中心化和分布式"><a href="#去中心化和分布式" class="headerlink" title="去中心化和分布式"></a>去中心化和分布式</h3><h3 id="分层式"><a href="#分层式" class="headerlink" title="分层式"></a>分层式</h3><h2 id="合作策略"><a href="#合作策略" class="headerlink" title="合作策略"></a>合作策略</h2><h3 id="基于规则"><a href="#基于规则" class="headerlink" title="基于规则"></a>基于规则</h3><h3 id="基于角色"><a href="#基于角色" class="headerlink" title="基于角色"></a>基于角色</h3><h3 id="基于模型"><a href="#基于模型" class="headerlink" title="基于模型"></a>基于模型</h3><h2 id="协调和编排架构"><a href="#协调和编排架构" class="headerlink" title="协调和编排架构"></a>协调和编排架构</h2><h3 id="静态架构"><a href="#静态架构" class="headerlink" title="静态架构"></a>静态架构</h3><p>合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。</p>
+                <h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><p>单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。<br>开发单智能体的常用策略包括：（1）LLM配备工具调用能力，如代码执行器、web浏览器等；（2）通过提示策略获取更好的推理和规划能力，提示策略包括：思维链提示、ReAct、少样本提示等。<br>受益于多模态大模型的快速发展，agents也支持</p>
+<h1 id="多Agent协作机制"><a href="#多Agent协作机制" class="headerlink" title="多Agent协作机制"></a>多Agent协作机制</h1><h2 id="合作类型"><a href="#合作类型" class="headerlink" title="合作类型"></a>合作类型</h2><h3 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h3><p>在合作机制，多个智能体互相协调目标为同一个目标工作。CAMEL、AutoGen等采用合作类型的协作机制。<br>优点：根据agents各自的优势分配子任务，设计简单并且能够执行明确的目标。<br>缺点：</p>
+<p>Agent常见的一个挑战是偶尔无法利用关于物理世界的常识性知识，这种缺陷可能导致系统因重复错误而陷入循环。AutoGen是通过引入一个能够提供关键常识的grounding agent来解决该问题。</p>
+<h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><h3 id="竞合"><a href="#竞合" class="headerlink" title="竞合"></a>竞合</h3><h2 id="合作结构"><a href="#合作结构" class="headerlink" title="合作结构"></a>合作结构</h2><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><h3 id="去中心化和分布式"><a href="#去中心化和分布式" class="headerlink" title="去中心化和分布式"></a>去中心化和分布式</h3><h3 id="分层式"><a href="#分层式" class="headerlink" title="分层式"></a>分层式</h3><h2 id="合作策略"><a href="#合作策略" class="headerlink" title="合作策略"></a>合作策略</h2><h3 id="基于规则"><a href="#基于规则" class="headerlink" title="基于规则"></a>基于规则</h3><h3 id="基于角色"><a href="#基于角色" class="headerlink" title="基于角色"></a>基于角色</h3><h3 id="基于模型"><a href="#基于模型" class="headerlink" title="基于模型"></a>基于模型</h3><h2 id="协调和编排架构"><a href="#协调和编排架构" class="headerlink" title="协调和编排架构"></a>协调和编排架构</h2><h3 id="静态架构"><a href="#静态架构" class="headerlink" title="静态架构"></a>静态架构</h3><p>合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。</p>
 <h3 id="动态架构"><a href="#动态架构" class="headerlink" title="动态架构"></a>动态架构</h3><p>合作和角色分配可以根据任务需求动态调整。例如：Solo performance Prompting(SPP)可以根据输入动态识别相关角色，并生成相应的LLM代理进行协作。</p>
 <h3 id="动态架构-1"><a href="#动态架构-1" class="headerlink" title="动态架构"></a>动态架构</h3><p>长期目标：</p>
 <p>Todo：智能体回放和调试<br>（智能研讨厅形式-3D）<br>用户可以方便的修改短期记忆、长期记忆、提示等以调整、优化agent的效果。</p>
@@ -392,9 +394,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/04/11/002-%E4%BA%A7%E5%93%81-%E6%A0%B8%E5%BF%83%E8%A7%82%E7%82%B9%E7%BA%AA%E8%A6%81/" title="DeepResearch">
+                      <a href="/tech-blog/2025/04/11/%E6%90%9C%E7%B4%A2-ElasticSearch/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DeepResearch</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
