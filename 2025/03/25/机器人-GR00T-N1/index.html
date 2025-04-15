@@ -19,24 +19,28 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="超长上下文窗口外推技术直接外推提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。 插值线性内插将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。 进制转换NTK-aware插值YaRN本质是一种新的RoPE方法。 S2-AttentionReformer">
+    <meta name="description" content="摘要相关工作NVIDIA Isaac GR00T N1 NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。 NVIDIA Isaac GR00T N1 GitHub">
 <meta property="og:type" content="article">
-<meta property="og:title" content="窗口外推技术综述">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B-%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/index.html">
+<meta property="og:title" content="NVIDIA Isaac GR00T N1: 通用机器人基础模型">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="超长上下文窗口外推技术直接外推提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。 插值线性内插将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。 进制转换NTK-aware插值YaRN本质是一种新的RoPE方法。 S2-AttentionReformer">
+<meta property="og:description" content="摘要相关工作NVIDIA Isaac GR00T N1 NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。 NVIDIA Isaac GR00T N1 GitHub">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-02T06:57:32.029Z">
+<meta property="og:image" content="https://summerchengh.github.io/tech-blog/model-architecture.png">
+<meta property="article:published_time" content="2025-03-25T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-26T03:26:10.658Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="生成式AI">
+<meta property="article:tag" content="Research">
+<meta property="article:tag" content="ComputerVision">
+<meta property="article:tag" content="NLP">
+<meta property="article:tag" content="Robotics">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://summerchengh.github.io/tech-blog/model-architecture.png">
   
   
   
-  <title>窗口外推技术综述 - Tech Blog</title>
+  <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +220,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="窗口外推技术综述"></span>
+            <span id="subtitle" data-typed-text="NVIDIA Isaac GR00T N1: 通用机器人基础模型"></span>
           
         </div>
 
@@ -232,8 +236,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-26 15:11" pubdate>
-          March 26, 2025 pm
+        <time datetime="2025-03-25 10:00" pubdate>
+          March 25, 2025 am
         </time>
       </span>
     
@@ -244,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          120 words
+          48 words
         
       </span>
     
@@ -255,7 +259,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -292,15 +296,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">窗口外推技术综述</h1>
+            <h1 id="seo-header">NVIDIA Isaac GR00T N1: 通用机器人基础模型</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p>
-<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p>
-<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p>
-<h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h2 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h2>
+                <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" srcset="/tech-blog/img/loading.gif" lazyload alt="NVIDIA GR00T-N1机器人"></p>
+<p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>
+
                 
               </div>
             
@@ -318,13 +322,20 @@
     
       <span class="category-chain">
         
-  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  <a href="/tech-blog/categories/Research/" class="category-chain-item">Research</a>
   
   
     <span>></span>
     
-  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
+  <a href="/tech-blog/categories/Research/AI/" class="category-chain-item">AI</a>
   
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/Research/AI/Robotics/" class="category-chain-item">Robotics</a>
+  
+  
+
   
 
   
@@ -342,9 +353,13 @@
       
         <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+        <a href="/tech-blog/tags/Research/" class="print-no-link">#Research</a>
       
-        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+        <a href="/tech-blog/tags/ComputerVision/" class="print-no-link">#ComputerVision</a>
+      
+        <a href="/tech-blog/tags/NLP/" class="print-no-link">#NLP</a>
+      
+        <a href="/tech-blog/tags/Robotics/" class="print-no-link">#Robotics</a>
       
     </div>
   
@@ -356,8 +371,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>窗口外推技术综述</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/26/语言模型-窗口外推技术综述/</div>
+      <div>NVIDIA Isaac GR00T N1: 通用机器人基础模型</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/03/25/机器人-GR00T-N1/</div>
     </div>
     <div class="license-meta">
       
@@ -369,7 +384,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 26, 2025</div>
+          <div>March 25, 2025</div>
         </div>
       
       
@@ -401,9 +416,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/" title="大模型安全">
+                      <a href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/" title="傅立叶机器人最新研究FreeMotion、ShapeLLM解读">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大模型安全</span>
+                        <span class="hidden-mobile">傅立叶机器人最新研究FreeMotion、ShapeLLM解读</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -411,8 +426,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/" title="AI编程与VibeCoding">
-                        <span class="hidden-mobile">AI编程与VibeCoding</span>
+                      <a href="/tech-blog/2025/03/25/%E8%8B%B1%E4%BC%9F%E8%BE%BEHover/" title="HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots解读">
+                        <span class="hidden-mobile">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots解读</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
