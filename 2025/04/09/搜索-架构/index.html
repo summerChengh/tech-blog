@@ -19,26 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content=".prompt-container {   position: relative;   background-color: #f8f9fa;   border: 1px solid #e9ecef;   border-radius: 6px;   padding: 20px;   margin: 20px 0;   font-size: 0.95em;   line-height: 1.6; }">
+    <meta name="description" content="搜索架构简介现代搜索引擎架构通常采用分布式系统设计，以处理海量数据和高并发查询。下面介绍一种典型的搜索引擎分层架构。 整体架构图12345678910111213141516171819202122232425                     query                 result                       ↓                     ↑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="提示词工程：高效指导AI生成内容的艺术">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-AI%E5%B7%A5%E5%85%B7Prompts/index.html">
+<meta property="og:title" content="搜索架构">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/09/%E6%90%9C%E7%B4%A2-%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content=".prompt-container {   position: relative;   background-color: #f8f9fa;   border: 1px solid #e9ecef;   border-radius: 6px;   padding: 20px;   margin: 20px 0;   font-size: 0.95em;   line-height: 1.6; }">
+<meta property="og:description" content="搜索架构简介现代搜索引擎架构通常采用分布式系统设计，以处理海量数据和高并发查询。下面介绍一种典型的搜索引擎分层架构。 整体架构图12345678910111213141516171819202122232425                     query                 result                       ↓                     ↑">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-23T17:29:00.000Z">
-<meta property="article:modified_time" content="2025-04-15T03:00:28.076Z">
+<meta property="article:published_time" content="2025-04-09T04:15:00.000Z">
+<meta property="article:modified_time" content="2025-04-15T06:51:19.235Z">
 <meta property="article:author" content="Your Name">
-<meta property="article:tag" content="AI">
-<meta property="article:tag" content="Prompts">
-<meta property="article:tag" content="提示词工程">
-<meta property="article:tag" content="LLM">
-<meta property="article:tag" content="生成式AI">
+<meta property="article:tag" content="搜索">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="信息检索">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>提示词工程：高效指导AI生成内容的艺术 - Tech Blog</title>
+  <title>搜索架构 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="提示词工程：高效指导AI生成内容的艺术"></span>
+            <span id="subtitle" data-typed-text="搜索架构"></span>
           
         </div>
 
@@ -234,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-24 01:29" pubdate>
-          March 24, 2025 am
+        <time datetime="2025-04-09 12:15" pubdate>
+          April 9, 2025 pm
         </time>
       </span>
     
@@ -246,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k words
+          884 words
         
       </span>
     
@@ -257,7 +255,7 @@
         
         
         
-          17 mins
+          8 mins
         
       </span>
     
@@ -294,154 +292,111 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">提示词工程：高效指导AI生成内容的艺术</h1>
+            <h1 id="seo-header">搜索架构</h1>
             
             
               <div class="markdown-body">
                 
-                <style>
-.prompt-container {
-  position: relative;
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 6px;
-  padding: 20px;
-  margin: 20px 0;
-  font-size: 0.95em;
-  line-height: 1.6;
-}
+                <h1 id="搜索架构简介"><a href="#搜索架构简介" class="headerlink" title="搜索架构简介"></a>搜索架构简介</h1><p>现代搜索引擎架构通常采用分布式系统设计，以处理海量数据和高并发查询。下面介绍一种典型的搜索引擎分层架构。</p>
+<h2 id="整体架构图"><a href="#整体架构图" class="headerlink" title="整体架构图"></a>整体架构图</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">                     query                 result<br>                       ↓                     ↑<br>                  +<span class="hljs-params">---------------</span>+<br>                  |  Aggregator   |<br>                  +<span class="hljs-params">---------------</span>+<br>                   /             \<br>              query↓   ↑result   query↓   ↑result<br>             +<span class="hljs-params">--------</span>+         +<span class="hljs-params">--------</span>+<br>             | proxy  |         | proxy  |<br>             +<span class="hljs-params">--------</span>+         +<span class="hljs-params">--------</span>+<br>                  ↑                 ↑<br>                  ↓                 ↓<br>             +<span class="hljs-params">--------</span>+         +<span class="hljs-params">--------</span>+<br>          ↗  | merger |    ↖  ↗  | merger |    ↖<br>     ↗↙     +<span class="hljs-params">--------</span>+    ↘↗↙   +<span class="hljs-params">--------</span>+    ↘<br>+<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+     +<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+<br>|Realtime|  |Realtime| <span class="hljs-string">...</span> |Realtime|  |Realtime| <span class="hljs-string">...</span><br>+<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+     +<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+<br>+<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+     +<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+<br>|Realtime|  |Realtime| <span class="hljs-string">...</span> |Realtime|  |Realtime| <span class="hljs-string">...</span><br>+<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+     +<span class="hljs-params">--------</span>+  +<span class="hljs-params">--------</span>+<br>     ↑                                    ↑<br>+<span class="hljs-params">--------</span>+                             +<span class="hljs-params">--------</span>+<br>| builder|                             | builder|<br>+<span class="hljs-params">--------</span>+                             +<span class="hljs-params">--------</span>+<br></code></pre></td></tr></table></figure>
 
-.copy-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.copy-button:hover {
-  background-color: #0069d9;
-}
-
-.copy-button.copied {
-  background-color: #28a745;
-}
-</style>
-
-<h1 id="提示词工程：高效指导AI生成内容的艺术"><a href="#提示词工程：高效指导AI生成内容的艺术" class="headerlink" title="提示词工程：高效指导AI生成内容的艺术"></a>提示词工程：高效指导AI生成内容的艺术</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着ChatGPT、Claude、Gemini等大型语言模型的普及，提示词工程（Prompt Engineering）已成为一项重要技能。掌握提示工程相关技能可以更好的了解大语言模型的能力和局限性。本文将分享一些实用的提示词模板，帮助您更好地使用AI工具。</p>
-<h2 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h2><h3 id="上下文学习-In-Context-Learning"><a href="#上下文学习-In-Context-Learning" class="headerlink" title="上下文学习(In-Context Learning)"></a>上下文学习(In-Context Learning)</h3><p>在不训练大模型的情况下，输入添加示例即可提升模型的推理效果。</p>
-<h3 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h3><p>输入中的示例按照一步一步执行的提示方式，可提升模型的推理能力。</p>
-<h3 id="从简单到复杂-LEAST-TO-MOST"><a href="#从简单到复杂-LEAST-TO-MOST" class="headerlink" title="从简单到复杂(LEAST-TO-MOST)"></a>从简单到复杂(LEAST-TO-MOST)</h3><h3 id="计划与解决-PLAN-AND-SOLVE-PS"><a href="#计划与解决-PLAN-AND-SOLVE-PS" class="headerlink" title="计划与解决(PLAN-AND-SOLVE, PS)"></a>计划与解决(PLAN-AND-SOLVE, PS)</h3><h3 id="对比思维链-对比一致性"><a href="#对比思维链-对比一致性" class="headerlink" title="对比思维链&#x2F;对比一致性"></a>对比思维链&#x2F;对比一致性</h3><h3 id="验证与编辑"><a href="#验证与编辑" class="headerlink" title="验证与编辑"></a>验证与编辑</h3><p>验证与编辑 (Zhao et al. 2023a) 后编辑推理链，获得更符合事实的输出，在多跳推理任务中表现优异。</p>
-<h3 id="推理-行动"><a href="#推理-行动" class="headerlink" title="推理+行动"></a>推理+行动</h3><p>推理+行动 (Yao et al. 2022b) 结合推理和行动，解决多样的推理和决策任务，表现优于基础提示和思维链。</p>
-<h3 id="三跳推理"><a href="#三跳推理" class="headerlink" title="三跳推理"></a>三跳推理</h3><p>三跳推理 (Fei et al. 2023) 模拟人类推理过程，显著超过以前的模型。</p>
-<h3 id="事件链"><a href="#事件链" class="headerlink" title="事件链"></a>事件链</h3><p>事件链 (Bao et al. 2024) 提出摘要任务的提示方法，显著提高摘要任务的得分。</p>
-<h2 id="高级杂志风格卡片生成提示词"><a href="#高级杂志风格卡片生成提示词" class="headerlink" title="高级杂志风格卡片生成提示词"></a>高级杂志风格卡片生成提示词</h2><p>以下是一个用于生成高级时尚杂志风格知识卡片的专业提示词模板。这个提示词特别适合设计师、内容创作者和营销人员使用。来自：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Cz4Xwsa5ZS6tW-H5YdQzSw?s_trans=5141993101_&s_channel=4">https://mp.weixin.qq.com/s/Cz4Xwsa5ZS6tW-H5YdQzSw?s_trans=5141993101_&amp;s_channel=4</a></p>
-<div class="prompt-container" id="magazine-prompt">
-  <button class="copy-button" onclick="copyPrompt('magazine-prompt')">复制</button>
-  <p>你是一位国际顶尖的数字杂志艺术总监和前端开发专家，曾为Vogue、Elle等时尚杂志设计过数字版面，擅长将奢华杂志美学与现代网页设计完美融合，创造出令人惊艳的视觉体验。</p>
-
-  <p>请从以下29种设计风格中随机选择1种，设计高级时尚杂志风格的知识卡片，将日常信息以精致奢华的杂志编排呈现，让用户感受到如同翻阅高端杂志般的视觉享受。</p>
-
-  <p><strong>可选设计风格：</strong></p>
-
-  <p>1. 极简主义风格 (Minimalist)<br>
-  采用极简主义风格设计，遵循"少即是多"的理念。使用大量留白创造呼吸空间，仅保留最必要的元素。配色方案限制在2-3种中性色，主要为白色背景配以黑色或深灰色文字。排版应精确到像素级别，使用精心设计的网格系统和黄金比例。字体选择无衬线字体如Helvetica或Noto Sans，字重变化作为主要层次手段。装饰元素几乎为零，仅使用极细的分隔线和微妙的阴影。整体设计应呈现出克制、优雅且永恒的美学，让内容本身成为焦点。参考Dieter Rams的设计原则和日本无印良品(MUJI)的产品美学。</p>
-
-  <p>2. 大胆现代风格 (Bold Modern)<br>
-  采用大胆现代风格设计，打破传统排版规则，创造强烈视觉冲击。使用鲜艳对比色如荧光粉、电子蓝、亮黄等，背景可使用深色或鲜艳色块。排版应不对称且动态，标题文字极大（至少60px），可使用极粗字重或压缩字体，甚至允许文字重叠和溢出。图形元素应用几何形状，边缘锐利，可添加不规则裁切效果。层次感通过大小、颜色和位置的极端对比创造。整体设计应充满张力和活力，像一张视觉宣言，参考Wired杂志和Pentagram设计工作室的作品。添加微妙动效如悬停放大或颜色变换，增强现代感。</p>
-
-  <p>3. 优雅复古风格 (Elegant Vintage)<br>
-  采用优雅复古风格设计，重现20世纪初期印刷品的精致美学。使用米色或淡黄色纸张质感背景，配以深棕、暗红等老式印刷色。字体必须使用衬线字体如Baskerville或Noto Serif，标题可使用装饰性字体。排版应对称且庄重，遵循传统书籍设计原则。装饰元素包括精致的花纹边框、古典分隔线和角落装饰，可添加轻微做旧效果如纸张纹理和微妙污点。图像应用复古滤镜处理，呈现褪色照片效果。整体设计应散发出典雅、成熟且历经时间考验的气质，参考The New Yorker和老式法国时尚杂志的设计语言。</p>
-
-  <p><strong>每种风格都应包含以下元素，但视觉表现各不相同：</strong></p>
-
-  <ul>
-    <li>日期区域：以各风格特有的方式呈现当前日期</li>
-    <li>标题和副标题：根据风格调整字体、大小、排版方式</li>
-    <li>引用区块：设计独特的引用样式，体现风格特点</li>
-    <li>核心要点列表：以符合风格的方式呈现列表内容</li>
-    <li>二维码区域：将二维码融入整体设计</li>
-    <li>编辑笔记/小贴士：设计成符合风格的边栏或注释</li>
-  </ul>
-
-  <p><strong>技术规范：</strong></p>
-
-  <ul>
-    <li>使用HTML5、Font Awesome、Tailwind CSS和必要的JavaScript
-      <ul>
-        <li>Font Awesome: <a target="_blank" rel="noopener" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css">https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css</a></li>
-        <li>Tailwind CSS: <a target="_blank" rel="noopener" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css">https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css</a></li>
-        <li>中文字体: <a target="_blank" rel="noopener" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap</a></li>
-      </ul>
-    </li>
-    <li>可考虑添加微妙的动效，如页面载入时的淡入效果或微妙的悬停反馈</li>
-    <li>确保代码简洁高效，注重性能和可维护性</li>
-    <li>使用CSS变量管理颜色和间距，便于风格统一</li>
-    <li>对于液态数字形态主义风格，必须添加流体动态效果和渐变过渡</li>
-    <li>对于超感官极简主义风格，必须精确控制每个像素和微妙的交互反馈</li>
-    <li>对于新表现主义数据可视化风格，必须将数据以视觉化方式融入设计</li>
-  </ul>
-
-  <p><strong>输出要求：</strong></p>
-
-  <ul>
-    <li>提供一个完整的HTML文件，包含所有设计风格的卡片</li>
-    <li>确保风格共享相同的内容，但视觉表现完全不同</li>
-    <li>代码应当优雅且符合最佳实践，CSS应体现出对细节的极致追求</li>
-    <li>设计的宽度为400px，高度不超过1280px</li>
-    <li>对主题内容进行抽象提炼，只显示列点或最核心句引用，让人阅读有收获感</li>
-    <li>永远用中文输出，装饰元素可用法语、英语等其他语言显得有逼格</li>
-    <li>二维码截图地址：（必须用）：https://pic.readnow.pro/2025/03/791e29affc7772652c01be54b92e8c43.jpg</li>
-  </ul>
-
-  <p>请以国际顶尖杂志艺术总监的眼光和审美标准，创造风格迥异但同样令人惊艳的数字杂志式卡片，让用户感受到"这不是普通的信息卡片，而是一件可收藏的数字艺术品"。</p>
-
-  <p>待处理内容：<br>
-  日期：2025-03-23<br>
-  主题：[在此输入您的主题]</p>
-</div>
-
-<h2 id="学术论文写作助手"><a href="#学术论文写作助手" class="headerlink" title="学术论文写作助手"></a>学术论文写作助手</h2><h2 id="商业报告生成器"><a href="#商业报告生成器" class="headerlink" title="商业报告生成器"></a>商业报告生成器</h2><h2 id="创意故事构思工具"><a href="#创意故事构思工具" class="headerlink" title="创意故事构思工具"></a>创意故事构思工具</h2><h2 id="技术文档编写指南"><a href="#技术文档编写指南" class="headerlink" title="技术文档编写指南"></a>技术文档编写指南</h2><script>
-function copyPrompt(elementId) {
-  const promptContainer = document.getElementById(elementId);
-  const promptText = promptContainer.innerText.replace('复制', '').trim();
-  
-  // 创建一个临时textarea元素来执行复制
-  const textarea = document.createElement('textarea');
-  textarea.value = promptText;
-  textarea.style.position = 'fixed';  // 防止页面滚动
-  document.body.appendChild(textarea);
-  textarea.select();
-  
-  try {
-    const successful = document.execCommand('copy');
-    const button = promptContainer.querySelector('.copy-button');
-    button.textContent = '已复制!';
-    button.classList.add('copied');
-    
-    // 3秒后恢复按钮状态
-    setTimeout(() => {
-      button.textContent = '复制';
-      button.classList.remove('copied');
-    }, 3000);
-  } catch (err) {
-    console.error('复制失败:', err);
-  }
-  
-  document.body.removeChild(textarea);
-}
-</script>
-
-
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="www.kaggle.com/whitepaper-prompt-engineering">谷歌提示白皮书</a><br><a target="_blank" rel="noopener" href="https://www.promptingguide.ai/zh/techniques">提示工程指南</a><br><a href="arxiv.org/pdf/2407.12994">提示工程综述</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2201.11903">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</a><br><a target="_blank" rel="noopener" href="https://x.com/mattshumer_/status/1909262079799755123">优化提示词的提示词</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/653191182">PMAI提示</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2301.00234">A Survey on In-context Learning</a></p>
-
+<h2 id="架构组件详解"><a href="#架构组件详解" class="headerlink" title="架构组件详解"></a>架构组件详解</h2><h3 id="1-Aggregator（聚合器）"><a href="#1-Aggregator（聚合器）" class="headerlink" title="1. Aggregator（聚合器）"></a>1. Aggregator（聚合器）</h3><ul>
+<li><strong>功能</strong>：接收用户查询请求，并将结果返回给用户</li>
+<li><strong>职责</strong>：<ul>
+<li>负责接收并解析用户查询</li>
+<li>将查询分发到多个查询代理(Proxy)</li>
+<li>合并和排序从各代理返回的结果</li>
+<li>应用全局排序、过滤和打散策略</li>
+<li>返回最终结果给用户</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>通常部署多个实例以确保高可用性</li>
+<li>包含查询解析、结果合并和排序等核心逻辑</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Proxy（查询代理）"><a href="#2-Proxy（查询代理）" class="headerlink" title="2. Proxy（查询代理）"></a>2. Proxy（查询代理）</h3><ul>
+<li><strong>功能</strong>：转发查询并聚合下层结果</li>
+<li><strong>职责</strong>：<ul>
+<li>接收来自Aggregator的查询请求</li>
+<li>转发查询到适当的Merger节点</li>
+<li>收集并初步合并来自Merger的结果</li>
+<li>执行局部过滤和排序</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>实现查询负载均衡</li>
+<li>提供服务发现和路由功能</li>
+<li>可能包含缓存层以减少重复查询</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-Merger（合并器）"><a href="#3-Merger（合并器）" class="headerlink" title="3. Merger（合并器）"></a>3. Merger（合并器）</h3><ul>
+<li><strong>功能</strong>：合并来自多个实时服务器的结果</li>
+<li><strong>职责</strong>：<ul>
+<li>将查询分发到多个Realtime服务器</li>
+<li>合并多个Realtime服务器返回的结果</li>
+<li>执行初步的相关性排序和过滤</li>
+<li>应用本地打散和去重策略</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>通常按照数据分片(Shard)组织</li>
+<li>处理查询的并行执行和结果合并</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Realtime（实时服务器）"><a href="#4-Realtime（实时服务器）" class="headerlink" title="4. Realtime（实时服务器）"></a>4. Realtime（实时服务器）</h3><ul>
+<li><strong>功能</strong>：存储索引数据并提供实时搜索能力</li>
+<li><strong>职责</strong>：<ul>
+<li>维护倒排索引和正排索引数据</li>
+<li>执行实际的查询匹配和评分</li>
+<li>返回匹配查询的原始结果集</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>针对搜索查询进行了高度优化</li>
+<li>可能包含多个副本以提高可用性和查询吞吐量</li>
+<li>定期从Builder接收索引更新</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-Builder（构建器）"><a href="#5-Builder（构建器）" class="headerlink" title="5. Builder（构建器）"></a>5. Builder（构建器）</h3><ul>
+<li><strong>功能</strong>：构建和更新索引数据</li>
+<li><strong>职责</strong>：<ul>
+<li>从数据源抓取和处理原始数据</li>
+<li>构建倒排索引和正排索引</li>
+<li>将新建索引分发到Realtime服务器</li>
+</ul>
+</li>
+<li><strong>特点</strong>：<ul>
+<li>离线处理大量数据</li>
+<li>执行文档解析、分词和索引构建</li>
+<li>管理索引的生命周期和版本</li>
+</ul>
+</li>
+</ul>
+<h2 id="查询流程"><a href="#查询流程" class="headerlink" title="查询流程"></a>查询流程</h2><ol>
+<li>用户发送查询请求到Aggregator</li>
+<li>Aggregator解析查询并分发到多个Proxy节点</li>
+<li>每个Proxy将查询转发到对应的Merger节点</li>
+<li>Merger将查询分发到多个Realtime服务器</li>
+<li>Realtime服务器执行实际的查询匹配并返回结果</li>
+<li>Merger合并Realtime服务器返回的结果并进行初步排序</li>
+<li>Proxy收集并合并Merger的结果</li>
+<li>Aggregator合并所有Proxy返回的结果，执行最终排序和打散</li>
+<li>将最终结果返回给用户</li>
+</ol>
+<h2 id="数据流程"><a href="#数据流程" class="headerlink" title="数据流程"></a>数据流程</h2><ol>
+<li>Builder从各种数据源收集和处理数据</li>
+<li>Builder构建索引并将索引分发到Realtime服务器集群</li>
+<li>Realtime服务器加载索引并提供查询服务</li>
+<li>索引更新时，新版本索引首先分发到部分Realtime服务器</li>
+<li>在验证新索引无误后，更新扩展到所有Realtime服务器</li>
+</ol>
+<p>这种分层架构设计使搜索引擎能够处理海量数据和高并发查询，同时保持高可用性和可扩展性。通过分离索引构建和查询服务，系统可以在不影响用户体验的情况下持续更新索引数据。</p>
+<h2 id="Searcher"><a href="#Searcher" class="headerlink" title="Searcher"></a>Searcher</h2><h2 id="Merger"><a href="#Merger" class="headerlink" title="Merger"></a>Merger</h2>
                 
               </div>
             
@@ -459,12 +414,12 @@ function copyPrompt(elementId) {
     
       <span class="category-chain">
         
-  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  <a href="/tech-blog/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
   
   
     <span>></span>
     
-  <a href="/tech-blog/categories/AI/%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8/" class="category-chain-item">技术应用</a>
+  <a href="/tech-blog/categories/%E6%8A%80%E6%9C%AF/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" class="category-chain-item">搜索引擎</a>
   
   
 
@@ -481,15 +436,11 @@ function copyPrompt(elementId) {
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+        <a href="/tech-blog/tags/%E6%90%9C%E7%B4%A2/" class="print-no-link">#搜索</a>
       
-        <a href="/tech-blog/tags/Prompts/" class="print-no-link">#Prompts</a>
+        <a href="/tech-blog/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="print-no-link">#机器学习</a>
       
-        <a href="/tech-blog/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="print-no-link">#提示词工程</a>
-      
-        <a href="/tech-blog/tags/LLM/" class="print-no-link">#LLM</a>
-      
-        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+        <a href="/tech-blog/tags/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/" class="print-no-link">#信息检索</a>
       
     </div>
   
@@ -501,8 +452,8 @@ function copyPrompt(elementId) {
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>提示词工程：高效指导AI生成内容的艺术</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/24/大模型-AI工具Prompts/</div>
+      <div>搜索架构</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/09/搜索-架构/</div>
     </div>
     <div class="license-meta">
       
@@ -514,7 +465,7 @@ function copyPrompt(elementId) {
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 24, 2025</div>
+          <div>April 9, 2025</div>
         </div>
       
       
@@ -546,9 +497,9 @@ function copyPrompt(elementId) {
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/24/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD-%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/" title="逆运动学：机器人控制中的核心技术">
+                      <a href="/tech-blog/2025/04/10/002-%E4%BA%A7%E5%93%81-DeepSearch/" title="DeepResearch">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">逆运动学：机器人控制中的核心技术</span>
+                        <span class="hidden-mobile">DeepResearch</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -556,8 +507,8 @@ function copyPrompt(elementId) {
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/" title="文生图技术解析(一)：扩散模型原理与架构">
-                        <span class="hidden-mobile">文生图技术解析(一)：扩散模型原理与架构</span>
+                      <a href="/tech-blog/2025/04/08/NLP-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
