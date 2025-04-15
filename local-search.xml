@@ -39,6 +39,41 @@
   
   
   <entry>
+    <title>Genesis_World: 高级机器人仿真环境与应用</title>
+    <link href="/tech-blog/2025/04/15/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/"/>
+    <url>/tech-blog/2025/04/15/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Genesis-World"><a href="#Genesis-World" class="headerlink" title="Genesis_World"></a>Genesis_World</h1><p>Genesis_World是一个先进的机器人仿真环境，为人形机器人和灵巧手的研究与开发提供了高保真的仿真平台。</p><h2 id="公开数据集"><a href="#公开数据集" class="headerlink" title="公开数据集"></a>公开数据集</h2><ol><li>Partnet</li><li>Objaverse：<a href="https://objaverse.allenai.org/">https://objaverse.allenai.org/</a></li><li>DeepMind Models：<a href="https://github.com/google-deepmind/mujoco_menagerie/blob/main/README.md">https://github.com/google-deepmind/mujoco_menagerie/blob/main/README.md</a></li></ol><h2 id="Robogen流程图整理"><a href="#Robogen流程图整理" class="headerlink" title="Robogen流程图整理"></a>Robogen流程图整理</h2><pre class="mermaid">flowchart TD    A[任务输入] --> B[场景生成]    B --> C[物体加载]    C --> D[机器人模型加载]        D --> E[仿真初始化]    E --> F{执行任务}        F --> G[感知模块]    G --> H[规划模块]    H --> I[控制模块]    I --> F        F -->|任务完成| J[数据收集]    J --> K[强化学习训练]    K --> L[策略模型]    L --> F        J --> M[数据分析与评估]    M --> N[任务优化建议]    N --> A</pre><p>上图展示了Robogen在Genesis_World中的基本工作流程，从任务输入到最终的策略优化形成了一个完整的闭环系统。</p><h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><ol><li>使用robogen完成一个操作任务的生成和仿真（done）</li><li>GPT-4可替换成国内的大模型，如Deepseek（done）</li><li>Deepseek-chat respone解析需调整<br>1. substep、substeps，substep_types, reward_or_primitives, action_spaces调整解析格式</li><li>生成场景仿真，使用的objaverse.load_objects下载objavarse obj接口依赖huggingface资源(<a href="https://huggingface.co/datasets/allenai/objaverse/)%EF%BC%8C%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E3%80%82">https://huggingface.co/datasets/allenai/objaverse/)，使用镜像加速。</a><br>1. AutoDL服务器提供了镜像加速功能，打开镜像加速可下载数据（不稳定，开启镜像后可能无法访问deepseek）。</li><li>强化学习策略训练<br>1. PPO<ol><li>State</li></ol></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">state = &#123;<br>    <span class="hljs-string">&#x27;object_joint_angle_dicts&#x27;</span>: object_joint_angle_dicts,<br>    <span class="hljs-string">&#x27;object_joint_name_dicts&#x27;</span>: object_joint_name_dicts,<br>    <span class="hljs-string">&#x27;object_link_name_dicts&#x27;</span>: object_link_name_dicts,<br>    <span class="hljs-string">&#x27;object_base_position&#x27;</span>: object_base_position,<br>    <span class="hljs-string">&#x27;object_base_orientation&#x27;</span>: object_base_orientation,    <span class="hljs-string">&#x27;activated&#x27;</span>: activated,<br>    <span class="hljs-string">&#x27;suction_object_id&#x27;</span>: suction_object_id,<br>    <span class="hljs-string">&#x27;suction_contact_link&#x27;</span>: suction_contact_link,<br>    <span class="hljs-string">&#x27;suction_to_obj_pose&#x27;</span>: suction_to_obj_pose,<br>    <span class="hljs-string">&quot;urdf_paths&quot;</span>: copy.deepcopy(env.urdf_paths),<br>    <span class="hljs-string">&quot;object_sizes&quot;</span>: env.simulator_sizes,<br>    <span class="hljs-string">&#x27;robot_name&#x27;</span>: env.robot_name,<br>&#125;<br></code></pre></td></tr></table></figure><pre><code class="hljs">  2. Action</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">translation = action[:<span class="hljs-number">3</span>]<br>rotation = action[<span class="hljs-number">3</span>:<span class="hljs-number">6</span>]<br>suction = action[<span class="hljs-number">6</span>]<br></code></pre></td></tr></table></figure><pre><code class="hljs">2. SAC</code></pre><h2 id="使用Genesis实现人形机器人行走策略训练和评估"><a href="#使用Genesis实现人形机器人行走策略训练和评估" class="headerlink" title="使用Genesis实现人形机器人行走策略训练和评估"></a>使用Genesis实现人形机器人行走策略训练和评估</h2><pre class="mermaid">graph LR    A[环境初始化] --> B[状态观察]    B --> C[策略网络]    C --> D[动作执行]    D --> E[奖励计算]    E --> F[策略更新]    F --> B        G[行走评估指标] --- E    H[步态稳定性] --- G    I[能量效率] --- G    J[速度控制] --- G</pre><h2 id="Genesis灵巧手基础元动作仿真（todo）"><a href="#Genesis灵巧手基础元动作仿真（todo）" class="headerlink" title="Genesis灵巧手基础元动作仿真（todo）"></a>Genesis灵巧手基础元动作仿真（todo）</h2><p>计划实现的灵巧手元动作包括：</p><pre class="mermaid">graph TD    classDef process fill:#d4f1f9,stroke:#333,stroke-width:1px;    classDef dataFile fill:#ffeecc,stroke:#333,stroke-width:1px;    classDef decision fill:#e1d5e7,stroke:#333,stroke-width:1px;    classDef api fill:#d5e8d4,stroke:#333,stroke-width:1px;        A[开始: generate_task] --> B[大模型生成任务名称、描述等基本信息]    B --> C[/保存响应: gpt_response/]    C --> D[build_task_given_text]        subgraph 配置生成与验证循环        D --> E{校验通过?}        E -->|否| F[重新生成 YAML 配置]        F --> E    end        E -->|是| G[/保存 YAML 配置: task_yaml_config_task_name.json/]    G --> H[parse_response_to_get_yaml]    H --> I[大模型调整物体尺寸]    I --> J[/保存尺寸信息: size_task_name.json/]        J --> K[decompose_and_generate_reward_or_primitive]    K --> L[解析并生成 substeps、rewards 和 primitives]    L --> M[/保存奖励函数: reward_task_name.json/]        M --> N[query_joint_angle 生成关节角度]    N --> O[/保存关节角度: joint_angle_task_name.json/]        O --> P[query_spatial_relationship 生成空间关系]    P --> Q[/保存空间关系: spatial_relationships_task_name.json/]        Q --> R[generate_distractor?]    R -->|是| S[大模型生成干扰物]    S --> T[/保存干扰物: distractor-task_name.json/]        T --> U[调整干扰物尺寸]    U --> V[/保存干扰物尺寸: size_distractor_task_name.json/]        V --> W[检查干扰物名称与 PartNet 类别相似度]    W --> X[选择相似度>0.95的最高匹配项作为 obj'name']        R -->|否| Z[完成任务生成]    X --> Z        style A fill:#d4f1f9,stroke:#333,stroke-width:2px;    style Z fill:#d4f1f9,stroke:#333,stroke-width:2px;</pre><h1 id="参考工作"><a href="#参考工作" class="headerlink" title="参考工作"></a>参考工作</h1><h2 id="开源数据集"><a href="#开源数据集" class="headerlink" title="开源数据集"></a>开源数据集</h2><p>AgiBot-World<br><a href="https://github.com/OpenDriveLab/AgiBot-World">https://github.com/OpenDriveLab/AgiBot-World</a><br><a href="https://agibot-world.com/blog/agibot_go1.pdf">https://agibot-world.com/blog/agibot_go1.pdf</a><br>Fourier ActionNet Dataset<br><a href="https://action-net.org/">https://action-net.org/</a></p><h2 id="人形机器人"><a href="#人形机器人" class="headerlink" title="人形机器人"></a>人形机器人</h2><p>Fourier<br>人形机器人URDF，walking policy训练、walking policy仿真<br><a href="https://github.com/FFTAI">https://github.com/FFTAI</a><br>英伟达<br><a href="https://github.com/NVIDIA/Isaac-GR00T/">https://github.com/NVIDIA/Isaac-GR00T/</a><br><a href="https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots">https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots</a></p><p>Google DeepMind<br><a href="https://deepmind.google/technologies/gemini-robotics/">https://deepmind.google/technologies/gemini-robotics/</a></p><h2 id="灵巧手"><a href="#灵巧手" class="headerlink" title="灵巧手"></a>灵巧手</h2><p>仿真<br><a href="https://github.com/leap-hand/LEAP_Hand_Sim">https://github.com/leap-hand/LEAP_Hand_Sim</a><br>抓取算法<br><a href="https://www.jiqizhixin.com/articles/2024-12-21">https://www.jiqizhixin.com/articles/2024-12-21</a><br><a href="https://cfcs.pku.edu.cn/news/241386.htm">https://cfcs.pku.edu.cn/news/241386.htm</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>机器人技术</category>
+      
+      <category>仿真系统</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>机器人</tag>
+      
+      <tag>仿真</tag>
+      
+      <tag>Genesis-World</tag>
+      
+      <tag>数据生成</tag>
+      
+      <tag>强化学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大模型训练之数据篇</title>
     <link href="/tech-blog/2025/04/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E6%8D%AE-%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE/"/>
     <url>/tech-blog/2025/04/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E6%8D%AE-%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE/</url>
@@ -111,10 +146,10 @@
   
   <entry>
     <title>搜索中的倒排索引</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/</url>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
     
-    <content type="html"><![CDATA[<h1 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="人工智能搜索引擎"><a href="#人工智能搜索引擎" class="headerlink" title="人工智能搜索引擎"></a>人工智能搜索引擎</h1><h2 id="Perplexity-AI"><a href="#Perplexity-AI" class="headerlink" title="Perplexity AI"></a>Perplexity AI</h2><h2 id="秘塔搜索"><a href="#秘塔搜索" class="headerlink" title="秘塔搜索"></a>秘塔搜索</h2>]]></content>
     
     
     <categories>
@@ -142,10 +177,10 @@
   
   <entry>
     <title>搜索中的倒排索引</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/</url>
     
-    <content type="html"><![CDATA[<h1 id="人工智能搜索引擎"><a href="#人工智能搜索引擎" class="headerlink" title="人工智能搜索引擎"></a>人工智能搜索引擎</h1><h2 id="Perplexity-AI"><a href="#Perplexity-AI" class="headerlink" title="Perplexity AI"></a>Perplexity AI</h2><h2 id="秘塔搜索"><a href="#秘塔搜索" class="headerlink" title="秘塔搜索"></a>秘塔搜索</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h1>]]></content>
     
     
     <categories>
@@ -292,9 +327,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>Agent</tag>
+      
+      <tag>AI</tag>
       
       <tag>大模型</tag>
       
@@ -596,6 +631,39 @@
   
   
   <entry>
+    <title>大模型安全</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="大模型安全问题"><a href="#大模型安全问题" class="headerlink" title="大模型安全问题"></a>大模型安全问题</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大模型推理加速</title>
     <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
@@ -648,39 +716,6 @@
       <tag>AI</tag>
       
       <tag>深度学习</tag>
-      
-      <tag>生成式AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>大模型安全</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="大模型安全问题"><a href="#大模型安全问题" class="headerlink" title="大模型安全问题"></a>大模型安全问题</h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>多模态</tag>
       
       <tag>生成式AI</tag>
       
@@ -786,43 +821,6 @@
   
   
   <entry>
-    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
-    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/"/>
-    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/</url>
-    
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
     <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/"/>
     <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/</url>
@@ -847,11 +845,48 @@
       
       <tag>Research</tag>
       
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
       <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
+    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/"/>
+    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -973,9 +1008,9 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>机器人</tag>
+      
+      <tag>AI</tag>
       
       <tag>具身智能</tag>
       
@@ -1307,11 +1342,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1344,11 +1379,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1381,11 +1416,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1418,11 +1453,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1455,11 +1490,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1492,11 +1527,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1529,11 +1564,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1566,9 +1601,9 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>DiffusionModels</tag>
       
@@ -1665,11 +1700,11 @@
     
     <tags>
       
+      <tag>DeepLearning</tag>
+      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
-      
-      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -1702,50 +1737,15 @@
     
     <tags>
       
+      <tag>DeepLearning</tag>
+      
       <tag>AI</tag>
       
       <tag>Robotics</tag>
       
-      <tag>DeepLearning</tag>
-      
       <tag>Robot</tag>
       
       <tag>Grasping</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Genesis_World: 高级机器人仿真环境与应用</title>
-    <link href="/tech-blog/2025/03/18/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/"/>
-    <url>/tech-blog/2025/03/18/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Genesis-World"><a href="#Genesis-World" class="headerlink" title="Genesis_World"></a>Genesis_World</h1><p>Genesis_World是一个先进的机器人仿真环境，为人形机器人和灵巧手的研究与开发提供了高保真的仿真平台。</p><h2 id="公开数据集"><a href="#公开数据集" class="headerlink" title="公开数据集"></a>公开数据集</h2><ol><li>Partnet</li><li>Objaverse：<a href="https://objaverse.allenai.org/">https://objaverse.allenai.org/</a></li><li>DeepMind Models：<a href="https://github.com/google-deepmind/mujoco_menagerie/blob/main/README.md">https://github.com/google-deepmind/mujoco_menagerie/blob/main/README.md</a></li></ol><h2 id="Robogen流程图整理"><a href="#Robogen流程图整理" class="headerlink" title="Robogen流程图整理"></a>Robogen流程图整理</h2><pre class="mermaid">flowchart TD    A[任务输入] --> B[场景生成]    B --> C[物体加载]    C --> D[机器人模型加载]        D --> E[仿真初始化]    E --> F{执行任务}        F --> G[感知模块]    G --> H[规划模块]    H --> I[控制模块]    I --> F        F -->|任务完成| J[数据收集]    J --> K[强化学习训练]    K --> L[策略模型]    L --> F        J --> M[数据分析与评估]    M --> N[任务优化建议]    N --> A</pre><p>上图展示了Robogen在Genesis_World中的基本工作流程，从任务输入到最终的策略优化形成了一个完整的闭环系统。</p><h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><ol><li>使用robogen完成一个操作任务的生成和仿真（done）</li><li>GPT-4可替换成国内的大模型，如Deepseek（done）</li><li>Deepseek-chat respone解析需调整<br>1. substep、substeps，substep_types, reward_or_primitives, action_spaces调整解析格式</li><li>生成场景仿真，使用的objaverse.load_objects下载objavarse obj接口依赖huggingface资源(<a href="https://huggingface.co/datasets/allenai/objaverse/)%EF%BC%8C%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E3%80%82">https://huggingface.co/datasets/allenai/objaverse/)，使用镜像加速。</a><br>1. AutoDL服务器提供了镜像加速功能，打开镜像加速可下载数据（不稳定，开启镜像后可能无法访问deepseek）。</li><li>强化学习策略训练<br>1. PPO<ol><li>State</li></ol></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">state = &#123;<br>    <span class="hljs-string">&#x27;object_joint_angle_dicts&#x27;</span>: object_joint_angle_dicts,<br>    <span class="hljs-string">&#x27;object_joint_name_dicts&#x27;</span>: object_joint_name_dicts,<br>    <span class="hljs-string">&#x27;object_link_name_dicts&#x27;</span>: object_link_name_dicts,<br>    <span class="hljs-string">&#x27;object_base_position&#x27;</span>: object_base_position,<br>    <span class="hljs-string">&#x27;object_base_orientation&#x27;</span>: object_base_orientation,    <span class="hljs-string">&#x27;activated&#x27;</span>: activated,<br>    <span class="hljs-string">&#x27;suction_object_id&#x27;</span>: suction_object_id,<br>    <span class="hljs-string">&#x27;suction_contact_link&#x27;</span>: suction_contact_link,<br>    <span class="hljs-string">&#x27;suction_to_obj_pose&#x27;</span>: suction_to_obj_pose,<br>    <span class="hljs-string">&quot;urdf_paths&quot;</span>: copy.deepcopy(env.urdf_paths),<br>    <span class="hljs-string">&quot;object_sizes&quot;</span>: env.simulator_sizes,<br>    <span class="hljs-string">&#x27;robot_name&#x27;</span>: env.robot_name,<br>&#125;<br></code></pre></td></tr></table></figure><pre><code class="hljs">  2. Action</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">translation = action[:<span class="hljs-number">3</span>]<br>rotation = action[<span class="hljs-number">3</span>:<span class="hljs-number">6</span>]<br>suction = action[<span class="hljs-number">6</span>]<br></code></pre></td></tr></table></figure><pre><code class="hljs">2. SAC</code></pre><h2 id="使用Genesis实现人形机器人行走策略训练和评估"><a href="#使用Genesis实现人形机器人行走策略训练和评估" class="headerlink" title="使用Genesis实现人形机器人行走策略训练和评估"></a>使用Genesis实现人形机器人行走策略训练和评估</h2><pre class="mermaid">graph LR    A[环境初始化] --> B[状态观察]    B --> C[策略网络]    C --> D[动作执行]    D --> E[奖励计算]    E --> F[策略更新]    F --> B        G[行走评估指标] --- E    H[步态稳定性] --- G    I[能量效率] --- G    J[速度控制] --- G</pre><h2 id="Genesis灵巧手基础元动作仿真（todo）"><a href="#Genesis灵巧手基础元动作仿真（todo）" class="headerlink" title="Genesis灵巧手基础元动作仿真（todo）"></a>Genesis灵巧手基础元动作仿真（todo）</h2><p>计划实现的灵巧手元动作包括：</p><pre class="mermaid">mindmap  root((灵巧手元动作))    抓取      精确抓取      力控抓取      适应性抓取    操作      旋转物体      滑动调整      插入任务    协作      双手配合      与环境互动      手-臂协同</pre><h1 id="参考工作"><a href="#参考工作" class="headerlink" title="参考工作"></a>参考工作</h1><h2 id="开源数据集"><a href="#开源数据集" class="headerlink" title="开源数据集"></a>开源数据集</h2><p>AgiBot-World<br><a href="https://github.com/OpenDriveLab/AgiBot-World">https://github.com/OpenDriveLab/AgiBot-World</a><br><a href="https://agibot-world.com/blog/agibot_go1.pdf">https://agibot-world.com/blog/agibot_go1.pdf</a><br>Fourier ActionNet Dataset<br><a href="https://action-net.org/">https://action-net.org/</a></p><h2 id="人形机器人"><a href="#人形机器人" class="headerlink" title="人形机器人"></a>人形机器人</h2><p>Fourier<br>人形机器人URDF，walking policy训练、walking policy仿真<br><a href="https://github.com/FFTAI">https://github.com/FFTAI</a><br>英伟达<br><a href="https://github.com/NVIDIA/Isaac-GR00T/">https://github.com/NVIDIA/Isaac-GR00T/</a><br><a href="https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots">https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots</a></p><p>Google DeepMind<br><a href="https://deepmind.google/technologies/gemini-robotics/">https://deepmind.google/technologies/gemini-robotics/</a></p><h2 id="灵巧手"><a href="#灵巧手" class="headerlink" title="灵巧手"></a>灵巧手</h2><p>仿真<br><a href="https://github.com/leap-hand/LEAP_Hand_Sim">https://github.com/leap-hand/LEAP_Hand_Sim</a><br>抓取算法<br><a href="https://www.jiqizhixin.com/articles/2024-12-21">https://www.jiqizhixin.com/articles/2024-12-21</a><br><a href="https://cfcs.pku.edu.cn/news/241386.htm">https://cfcs.pku.edu.cn/news/241386.htm</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>机器人技术</category>
-      
-      <category>仿真系统</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>机器人</tag>
-      
-      <tag>仿真</tag>
-      
-      <tag>Genesis-World</tag>
-      
-      <tag>数据生成</tag>
-      
-      <tag>强化学习</tag>
       
     </tags>
     
@@ -1772,11 +1772,11 @@
     
     <tags>
       
-      <tag>AI</tag>
-      
       <tag>DeepLearning</tag>
       
       <tag>Image</tag>
+      
+      <tag>AI</tag>
       
       <tag>Neural Networks</tag>
       

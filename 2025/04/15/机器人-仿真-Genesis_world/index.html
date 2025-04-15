@@ -22,12 +22,12 @@
     <meta name="description" content="Genesis_WorldGenesis_World是一个先进的机器人仿真环境，为人形机器人和灵巧手的研究与开发提供了高保真的仿真平台。 公开数据集 Partnet Objaverse：https:&#x2F;&#x2F;objaverse.allenai.org&#x2F; DeepMind Models：https:&#x2F;&#x2F;github.com&#x2F;google-deepmind&#x2F;mujoco_menagerie&#x2F;blob&#x2F;mai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Genesis_World: 高级机器人仿真环境与应用">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/18/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/index.html">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/15/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/index.html">
 <meta property="og:site_name" content="Tech Blog">
 <meta property="og:description" content="Genesis_WorldGenesis_World是一个先进的机器人仿真环境，为人形机器人和灵巧手的研究与开发提供了高保真的仿真平台。 公开数据集 Partnet Objaverse：https:&#x2F;&#x2F;objaverse.allenai.org&#x2F; DeepMind Models：https:&#x2F;&#x2F;github.com&#x2F;google-deepmind&#x2F;mujoco_menagerie&#x2F;blob&#x2F;mai">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-18T06:20:00.000Z">
-<meta property="article:modified_time" content="2025-04-15T04:28:11.407Z">
+<meta property="article:published_time" content="2025-04-15T04:20:00.000Z">
+<meta property="article:modified_time" content="2025-04-15T04:38:51.525Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="机器人">
 <meta property="article:tag" content="仿真">
@@ -234,8 +234,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-18 14:20" pubdate>
-          March 18, 2025 pm
+        <time datetime="2025-04-15 12:20" pubdate>
+          April 15, 2025 pm
         </time>
       </span>
     
@@ -246,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          660 words
+          891 words
         
       </span>
     
@@ -257,7 +257,7 @@
         
         
         
-          6 mins
+          8 mins
         
       </span>
     
@@ -358,20 +358,52 @@
     J[速度控制] --- G</pre>
 
 <h2 id="Genesis灵巧手基础元动作仿真（todo）"><a href="#Genesis灵巧手基础元动作仿真（todo）" class="headerlink" title="Genesis灵巧手基础元动作仿真（todo）"></a>Genesis灵巧手基础元动作仿真（todo）</h2><p>计划实现的灵巧手元动作包括：</p>
-<pre class="mermaid">mindmap
-  root((灵巧手元动作))
-    抓取
-      精确抓取
-      力控抓取
-      适应性抓取
-    操作
-      旋转物体
-      滑动调整
-      插入任务
-    协作
-      双手配合
-      与环境互动
-      手-臂协同</pre>
+<pre class="mermaid">graph TD
+    classDef process fill:#d4f1f9,stroke:#333,stroke-width:1px;
+    classDef dataFile fill:#ffeecc,stroke:#333,stroke-width:1px;
+    classDef decision fill:#e1d5e7,stroke:#333,stroke-width:1px;
+    classDef api fill:#d5e8d4,stroke:#333,stroke-width:1px;
+    
+    A[开始: generate_task] --> B[大模型生成任务名称、描述等基本信息]
+    B --> C[/保存响应: gpt_response/]
+    C --> D[build_task_given_text]
+    
+    subgraph 配置生成与验证循环
+        D --> E{校验通过?}
+        E -->|否| F[重新生成 YAML 配置]
+        F --> E
+    end
+    
+    E -->|是| G[/保存 YAML 配置: task_yaml_config_task_name.json/]
+    G --> H[parse_response_to_get_yaml]
+    H --> I[大模型调整物体尺寸]
+    I --> J[/保存尺寸信息: size_task_name.json/]
+    
+    J --> K[decompose_and_generate_reward_or_primitive]
+    K --> L[解析并生成 substeps、rewards 和 primitives]
+    L --> M[/保存奖励函数: reward_task_name.json/]
+    
+    M --> N[query_joint_angle 生成关节角度]
+    N --> O[/保存关节角度: joint_angle_task_name.json/]
+    
+    O --> P[query_spatial_relationship 生成空间关系]
+    P --> Q[/保存空间关系: spatial_relationships_task_name.json/]
+    
+    Q --> R[generate_distractor?]
+    R -->|是| S[大模型生成干扰物]
+    S --> T[/保存干扰物: distractor-task_name.json/]
+    
+    T --> U[调整干扰物尺寸]
+    U --> V[/保存干扰物尺寸: size_distractor_task_name.json/]
+    
+    V --> W[检查干扰物名称与 PartNet 类别相似度]
+    W --> X[选择相似度>0.95的最高匹配项作为 obj'name']
+    
+    R -->|否| Z[完成任务生成]
+    X --> Z
+    
+    style A fill:#d4f1f9,stroke:#333,stroke-width:2px;
+    style Z fill:#d4f1f9,stroke:#333,stroke-width:2px;</pre>
 
 <h1 id="参考工作"><a href="#参考工作" class="headerlink" title="参考工作"></a>参考工作</h1><h2 id="开源数据集"><a href="#开源数据集" class="headerlink" title="开源数据集"></a>开源数据集</h2><p>AgiBot-World<br><a target="_blank" rel="noopener" href="https://github.com/OpenDriveLab/AgiBot-World">https://github.com/OpenDriveLab/AgiBot-World</a><br><a target="_blank" rel="noopener" href="https://agibot-world.com/blog/agibot_go1.pdf">https://agibot-world.com/blog/agibot_go1.pdf</a><br>Fourier ActionNet Dataset<br><a target="_blank" rel="noopener" href="https://action-net.org/">https://action-net.org/</a></p>
 <h2 id="人形机器人"><a href="#人形机器人" class="headerlink" title="人形机器人"></a>人形机器人</h2><p>Fourier<br>人形机器人URDF，walking policy训练、walking policy仿真<br><a target="_blank" rel="noopener" href="https://github.com/FFTAI">https://github.com/FFTAI</a><br>英伟达<br><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/Isaac-GR00T/">https://github.com/NVIDIA/Isaac-GR00T/</a><br><a target="_blank" rel="noopener" href="https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots">https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots</a></p>
@@ -438,7 +470,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Genesis_World: 高级机器人仿真环境与应用</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/18/机器人-仿真-Genesis_world/</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/15/机器人-仿真-Genesis_world/</div>
     </div>
     <div class="license-meta">
       
@@ -450,7 +482,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 18, 2025</div>
+          <div>April 15, 2025</div>
         </div>
       
       
@@ -482,9 +514,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/22/YellAtYourRobot/" title="Yell at your robot论文解读与复现">
+                      <a href="/tech-blog/2025/04/15/002-%E4%BA%A7%E5%93%81-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E6%95%B0%E6%8D%AEAgents/" title="SimAgent: 基于Genesis-World的机器人仿真数据自动化生成系统">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Yell at your robot论文解读与复现</span>
+                        <span class="hidden-mobile">SimAgent: 基于Genesis-World的机器人仿真数据自动化生成系统</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -492,8 +524,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/14/GAN/" title="GAN神经网络">
-                        <span class="hidden-mobile">GAN神经网络</span>
+                      <a href="/tech-blog/2025/04/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E6%8D%AE-%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE/" title="大模型训练之数据篇">
+                        <span class="hidden-mobile">大模型训练之数据篇</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
