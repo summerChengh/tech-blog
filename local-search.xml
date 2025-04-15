@@ -327,9 +327,9 @@
     
     <tags>
       
-      <tag>Agent</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Agent</tag>
       
       <tag>大模型</tag>
       
@@ -490,9 +490,9 @@
       
       <tag>AI</tag>
       
-      <tag>深度学习</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>深度学习</tag>
       
       <tag>生成式AI</tag>
       
@@ -598,39 +598,6 @@
   
   
   <entry>
-    <title>大模型安全</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="大模型安全问题"><a href="#大模型安全问题" class="headerlink" title="大模型安全问题"></a>大模型安全问题</h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>多模态</tag>
-      
-      <tag>生成式AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>多模态大模型：技术演进与最新进展</title>
     <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/"/>
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
@@ -651,9 +618,42 @@
       
       <tag>AI</tag>
       
+      <tag>多模态</tag>
+      
       <tag>深度学习</tag>
       
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大模型安全</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="大模型安全问题"><a href="#大模型安全问题" class="headerlink" title="大模型安全问题"></a>大模型安全问题</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
       <tag>多模态</tag>
+      
+      <tag>深度学习</tag>
       
       <tag>生成式AI</tag>
       
@@ -821,11 +821,11 @@
   
   
   <entry>
-    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
-    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/"/>
-    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/</url>
+    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
+    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/"/>
+    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/</url>
     
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="https://github.com/qizekun/ShapeLLM">ShapeLLM</a></p>]]></content>
     
     
     <categories>
@@ -858,11 +858,11 @@
   
   
   <entry>
-    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
-    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/"/>
-    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/</url>
+    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
+    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/"/>
+    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/</url>
     
-    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="https://github.com/qizekun/ShapeLLM">ShapeLLM</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
     
     
     <categories>
@@ -1008,9 +1008,9 @@
     
     <tags>
       
-      <tag>机器人</tag>
-      
       <tag>AI</tag>
+      
+      <tag>机器人</tag>
       
       <tag>具身智能</tag>
       
@@ -1466,11 +1466,11 @@
   
   
   <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
     
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
     
     
     <categories>
@@ -1503,11 +1503,11 @@
   
   
   <entry>
-    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
     
-    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
     
     
     <categories>
@@ -1702,9 +1702,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       
@@ -1739,9 +1739,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       
