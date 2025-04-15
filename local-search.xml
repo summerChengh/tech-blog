@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>SimAgent: 基于Genesis-World的机器人仿真数据自动化生成系统</title>
+    <link href="/tech-blog/2025/04/15/002-%E4%BA%A7%E5%93%81-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E6%95%B0%E6%8D%AEAgents/"/>
+    <url>/tech-blog/2025/04/15/002-%E4%BA%A7%E5%93%81-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E6%95%B0%E6%8D%AEAgents/</url>
+    
+    <content type="html"><![CDATA[<h1 id="SimAgent-基于Genesis-World的机器人仿真数据自动化生成系统"><a href="#SimAgent-基于Genesis-World的机器人仿真数据自动化生成系统" class="headerlink" title="SimAgent: 基于Genesis-World的机器人仿真数据自动化生成系统"></a>SimAgent: 基于Genesis-World的机器人仿真数据自动化生成系统</h1><h2 id="背景与挑战"><a href="#背景与挑战" class="headerlink" title="背景与挑战"></a>背景与挑战</h2><p>机器人训练，特别是涉及操作多样物体的任务，需要大量高质量的数据支持。然而，在现实世界中收集这些数据不仅耗时费力，还面临以下挑战：</p><ol><li><strong>样本多样性受限</strong>：现实环境中难以覆盖所有可能的物体变体和交互场景</li><li><strong>数据标注成本高</strong>：物理世界的数据需要大量人工标注工作</li><li><strong>失败场景重现困难</strong>：现实中的失败案例难以系统性地复现和分析</li><li><strong>硬件损耗风险</strong>：反复测试可能导致机器人硬件损耗</li></ol><p>虚拟仿真环境如Genesis-World提供了解决这些问题的可能性，但仍然需要大量人工干预来设计、执行和收集仿真数据。为此，我们设计了SimAgent，一个能够自动化生成、执行和分析机器人仿真数据的智能系统。</p><h2 id="SimAgent设计架构"><a href="#SimAgent设计架构" class="headerlink" title="SimAgent设计架构"></a>SimAgent设计架构</h2><p>SimAgent是一个智能Agent系统，专为自动化Genesis-World仿真环境中的数据生成而设计。其核心架构包括：</p><h3 id="1-任务规划器-Task-Planner"><a href="#1-任务规划器-Task-Planner" class="headerlink" title="1. 任务规划器(Task Planner)"></a>1. 任务规划器(Task Planner)</h3><ul><li><strong>场景生成模块</strong>：基于LLM的场景描述生成，可以创建丰富多样的测试场景</li><li><strong>任务分解模块</strong>：将复杂任务分解为可执行的子任务序列</li><li><strong>参数变异器</strong>：系统性地变异仿真参数，确保覆盖足够的边缘情况</li></ul><h3 id="2-仿真控制器-Simulation-Controller"><a href="#2-仿真控制器-Simulation-Controller" class="headerlink" title="2. 仿真控制器(Simulation Controller)"></a>2. 仿真控制器(Simulation Controller)</h3><ul><li><strong>Genesis-World接口</strong>：与仿真环境的API交互接口</li><li><strong>机器人控制模块</strong>：发送动作指令并接收状态反馈</li><li><strong>场景构建器</strong>：根据规划自动构建仿真场景</li></ul><h3 id="3-数据采集器-Data-Collector"><a href="#3-数据采集器-Data-Collector" class="headerlink" title="3. 数据采集器(Data Collector)"></a>3. 数据采集器(Data Collector)</h3><ul><li><strong>多模态传感器数据收集</strong>：视觉、触觉、力反馈等数据的同步收集</li><li><strong>交互轨迹记录</strong>：完整记录机器人-环境交互的时序数据</li><li><strong>标签自动生成</strong>：基于仿真结果自动生成数据标签</li></ul><h3 id="4-分析评估器-Analysis-Evaluator"><a href="#4-分析评估器-Analysis-Evaluator" class="headerlink" title="4. 分析评估器(Analysis Evaluator)"></a>4. 分析评估器(Analysis Evaluator)</h3><ul><li><strong>成功&#x2F;失败分类器</strong>：评估任务完成情况</li><li><strong>异常检测器</strong>：识别意外或有价值的交互模式</li><li><strong>改进建议生成器</strong>：生成针对性的改进建议</li></ul><h3 id="5-知识库-Knowledge-Base"><a href="#5-知识库-Knowledge-Base" class="headerlink" title="5. 知识库(Knowledge Base)"></a>5. 知识库(Knowledge Base)</h3><ul><li><strong>任务模板库</strong>：常见任务的模板集合</li><li><strong>物体属性库</strong>：不同物体的物理属性数据</li><li><strong>交互策略库</strong>：针对不同物体和任务的交互策略</li></ul><h2 id="系统工作流程"><a href="#系统工作流程" class="headerlink" title="系统工作流程"></a>系统工作流程</h2><ol><li><strong>任务定义</strong>：用户以自然语言描述任务需求（或选择预定义模板）</li><li><strong>场景生成</strong>：根据任务需求自动生成多样化的仿真场景</li><li><strong>执行与数据收集</strong>：在Genesis-World中自动执行任务并收集数据</li><li><strong>分析与评估</strong>：分析任务执行结果并评估成功&#x2F;失败情况</li><li><strong>数据整理与导出</strong>：将收集的数据整理成标准格式，便于后续训练</li></ol><h2 id="应用案例：杯子抓取任务仿真"><a href="#应用案例：杯子抓取任务仿真" class="headerlink" title="应用案例：杯子抓取任务仿真"></a>应用案例：杯子抓取任务仿真</h2><p>以下是SimAgent如何处理杯子抓取任务的示例：</p><h3 id="任务描述输入"><a href="#任务描述输入" class="headerlink" title="任务描述输入"></a>任务描述输入</h3><p>用户输入：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">设计机器人使用夹具抓起不同材质的杯子，包括玻璃杯、纸杯和带把手的瓷杯。需要测试不同抓取策略的成功率。<br></code></pre></td></tr></table></figure><h3 id="SimAgent自动执行过程"><a href="#SimAgent自动执行过程" class="headerlink" title="SimAgent自动执行过程"></a>SimAgent自动执行过程</h3><h4 id="1-任务规划阶段"><a href="#1-任务规划阶段" class="headerlink" title="1. 任务规划阶段"></a>1. 任务规划阶段</h4><p>SimAgent自动生成了以下测试矩阵：</p><table><thead><tr><th>杯子类型</th><th>材质特性</th><th>抓取位置变体</th><th>力度变体</th><th>环境变量</th></tr></thead><tbody><tr><td>玻璃杯</td><td>光滑、脆弱</td><td>上部&#x2F;中部&#x2F;底部</td><td>低&#x2F;中&#x2F;高</td><td>干燥&#x2F;湿滑</td></tr><tr><td>纸杯</td><td>柔软、可变形</td><td>上部&#x2F;中部&#x2F;底部</td><td>低&#x2F;中&#x2F;高</td><td>干燥&#x2F;湿滑</td></tr><tr><td>瓷杯(带把手)</td><td>硬质、光滑</td><td>杯身&#x2F;把手</td><td>低&#x2F;中&#x2F;高</td><td>干燥&#x2F;湿滑</td></tr></tbody></table><h4 id="2-仿真执行阶段"><a href="#2-仿真执行阶段" class="headerlink" title="2. 仿真执行阶段"></a>2. 仿真执行阶段</h4><p>对于每种组合，SimAgent在Genesis-World中自动设置场景并执行抓取动作：</p><ol><li><p><strong>配置阶段</strong></p><ul><li>加载适当的机器人模型和夹具</li><li>生成指定类型的杯子模型</li><li>设置环境参数（如摩擦系数）</li></ul></li><li><p><strong>执行阶段</strong></p><ul><li>控制机器人接近目标</li><li>按照指定参数调整夹具</li><li>执行抓取动作</li><li>尝试移动物体到指定位置</li></ul></li></ol><h4 id="3-数据收集阶段"><a href="#3-数据收集阶段" class="headerlink" title="3. 数据收集阶段"></a>3. 数据收集阶段</h4><p>对每次尝试，SimAgent收集以下数据：</p><ul><li>视觉数据：多角度的RGB-D图像序列</li><li>触觉数据：夹具接触力和分布</li><li>状态数据：机器人关节状态、物体位置和姿态</li><li>结果数据：抓取成功&#x2F;失败判定及失败模式</li></ul><h4 id="4-分析评估阶段"><a href="#4-分析评估阶段" class="headerlink" title="4. 分析评估阶段"></a>4. 分析评估阶段</h4><p>SimAgent根据预定义的成功标准评估每次尝试：</p><h5 id="玻璃杯抓取分析："><a href="#玻璃杯抓取分析：" class="headerlink" title="玻璃杯抓取分析："></a>玻璃杯抓取分析：</h5><ul><li><p><strong>成功率</strong>：中部抓取成功率最高(78%)，上部次之(65%)，底部最低(43%)</p></li><li><p><strong>失败模式</strong>：</p><ul><li>滑落：占失败案例的62%，主要发生在力度过小或表面湿滑时</li><li>破碎：占失败案例的31%，主要发生在力度过大时</li><li>倾斜溢出：占失败案例的7%，主要发生在抓取位置不均匀时</li></ul></li><li><p><strong>最优参数组合</strong>：中部抓取 + 中等力度 + 防滑垫夹具，成功率可达91%</p></li></ul><h5 id="纸杯抓取分析："><a href="#纸杯抓取分析：" class="headerlink" title="纸杯抓取分析："></a>纸杯抓取分析：</h5><ul><li><p><strong>成功率</strong>：上部抓取成功率最高(82%)，中部次之(75%)，底部最低(51%)</p></li><li><p><strong>失败模式</strong>：</p><ul><li>变形：占失败案例的73%，主要发生在力度过大时</li><li>滑落：占失败案例的22%，主要发生在力度过小时</li><li>撕裂：占失败案例的5%，主要发生在抓取位置不均匀时</li></ul></li><li><p><strong>最优参数组合</strong>：上部抓取 + 低力度 + 平面夹具，成功率可达95%</p></li></ul><h5 id="带把手瓷杯抓取分析："><a href="#带把手瓷杯抓取分析：" class="headerlink" title="带把手瓷杯抓取分析："></a>带把手瓷杯抓取分析：</h5><ul><li><p><strong>成功率</strong>：把手抓取成功率最高(87%)，杯身抓取较低(62%)</p></li><li><p><strong>失败模式</strong>：</p><ul><li>旋转脱落：占失败案例的58%，主要发生在杯身抓取时</li><li>把手滑脱：占失败案例的32%，主要发生在把手抓取力度不足时</li><li>不平衡倾斜：占失败案例的10%，主要发生在抓取位置不准确时</li></ul></li><li><p><strong>最优参数组合</strong>：把手直接抓取 + 中等力度 + 专用夹具，成功率可达97%</p></li></ul><h3 id="通用抓取成功标准"><a href="#通用抓取成功标准" class="headerlink" title="通用抓取成功标准"></a>通用抓取成功标准</h3><p>通过分析仿真数据，SimAgent总结出以下通用抓取成功标准：</p><ol><li><p><strong>稳定性指标</strong>：</p><ul><li>抓取后物体位置变化 &lt; 5mm</li><li>抓取后物体姿态变化 &lt; 5°</li><li>移动过程中物体相对夹具位移 &lt; 2mm</li></ul></li><li><p><strong>完整性指标</strong>：</p><ul><li>接触力分布均匀性 &gt; 80%</li><li>物体形变（适用于柔性物体）&lt; 10%</li><li>应力分布（适用于脆性物体）均匀性 &gt; 90%</li></ul></li><li><p><strong>功能性指标</strong>：</p><ul><li>成功移动到目标位置的精度 &lt; 10mm</li><li>放置后物体姿态误差 &lt; 10°</li><li>任务完成时间 &lt; 预设阈值</li></ul></li></ol><h2 id="系统优势与应用价值"><a href="#系统优势与应用价值" class="headerlink" title="系统优势与应用价值"></a>系统优势与应用价值</h2><p>SimAgent为机器人研发团队提供以下价值：</p><ol><li><p><strong>数据生成效率提升</strong>：自动化生成过程可以在几小时内产生相当于数周人工操作的数据量</p></li><li><p><strong>数据多样性增强</strong>：系统可以探索人类可能忽略的边缘情况和参数组合</p></li><li><p><strong>训练数据质量提升</strong>：自动标注和质量控制确保数据的准确性和一致性</p></li><li><p><strong>研发周期加速</strong>：快速生成和分析数据，加速机器人抓取策略的迭代优化</p></li><li><p><strong>成本节约</strong>：减少对物理设备和人工测试的依赖，降低研发成本</p></li></ol><h2 id="未来发展方向"><a href="#未来发展方向" class="headerlink" title="未来发展方向"></a>未来发展方向</h2><ol><li><p><strong>多智能体协作仿真</strong>：模拟多机器人协作场景的数据生成</p></li><li><p><strong>自主学习能力</strong>：集成强化学习算法，使SimAgent能够从仿真结果中自主学习和改进策略</p></li><li><p><strong>现实到仿真的迁移</strong>：优化仿真参数以更好地匹配现实世界物理特性</p></li><li><p><strong>更复杂任务支持</strong>：扩展到更复杂的操作任务，如组装、扭转、推拉等复合动作</p></li></ol><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>SimAgent代表了机器人数据生成领域的重要进步，通过智能化和自动化的方式解决了机器人训练数据获取的瓶颈问题。基于Genesis-World的高保真仿真环境，结合先进的Agent技术，SimAgent能够大幅提升机器人研发效率，加速机器人技术的创新与应用。</p><p>对于研究团队和企业而言，SimAgent提供了一个理想的解决方案，使他们能够在虚拟环境中快速迭代和验证机器人交互策略，同时收集高质量的训练数据，从而缩短产品开发周期，提高机器人系统的可靠性和适应性。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>机器人技术</category>
+      
+      <category>仿真系统</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>机器人</tag>
+      
+      <tag>仿真</tag>
+      
+      <tag>Agent</tag>
+      
+      <tag>Genesis-World</tag>
+      
+      <tag>数据生成</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大模型训练之数据篇</title>
     <link href="/tech-blog/2025/04/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E6%8D%AE-%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE/"/>
     <url>/tech-blog/2025/04/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E6%8D%AE-%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE/</url>
@@ -226,33 +261,6 @@
   
   
   <entry>
-    <title>DeepResearch</title>
-    <link href="/tech-blog/2025/04/10/002-%E4%BA%A7%E5%93%81-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E6%95%B0%E6%8D%AEAgents/"/>
-    <url>/tech-blog/2025/04/10/002-%E4%BA%A7%E5%93%81-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E6%95%B0%E6%8D%AEAgents/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>投资</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>投资</tag>
-      
-      <tag>个人笔记</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title></title>
     <link href="/tech-blog/2025/04/08/NLP-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
     <url>/tech-blog/2025/04/08/NLP-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/</url>
@@ -286,11 +294,11 @@
       
       <tag>AI</tag>
       
+      <tag>Agent</tag>
+      
       <tag>大模型</tag>
       
       <tag>认知计算</tag>
-      
-      <tag>Agent</tag>
       
     </tags>
     
@@ -588,39 +596,6 @@
   
   
   <entry>
-    <title>大模型安全</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="大模型安全问题"><a href="#大模型安全问题" class="headerlink" title="大模型安全问题"></a>大模型安全问题</h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>多模态</tag>
-      
-      <tag>生成式AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>大模型推理加速</title>
     <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
@@ -673,6 +648,39 @@
       <tag>AI</tag>
       
       <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大模型安全</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="大模型安全问题"><a href="#大模型安全问题" class="headerlink" title="大模型安全问题"></a>大模型安全问题</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>多模态</tag>
       
       <tag>生成式AI</tag>
       
@@ -765,9 +773,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -798,9 +806,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -835,9 +843,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -872,9 +880,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -934,9 +942,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>LLM</tag>
       
@@ -967,9 +975,9 @@
       
       <tag>AI</tag>
       
-      <tag>具身智能</tag>
-      
       <tag>机器人</tag>
+      
+      <tag>具身智能</tag>
       
       <tag>多模态</tag>
       
@@ -1040,6 +1048,31 @@
   
   
   <entry>
+    <title>数字分身(Digital twin)</title>
+    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
+    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Digital twin：译作数字孪生、数字分身、数位双生，指在信息化平台内模拟物理实体、流程或者系统，类似实体系统在信息化平台中的双胞胎。[1]</p><h1 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h1><h2 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h2><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E6%98%A0%E5%B0%84">数字映射-维基百科</a><br><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>注意力机制：深度学习中的关键创新</title>
     <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%90%86%E8%AE%BA-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
     <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%90%86%E8%AE%BA-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
@@ -1067,31 +1100,6 @@
       <tag>注意力机制</tag>
       
       <tag>Transformer</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>数字分身(Digital twin)</title>
-    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
-    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
-    
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Digital twin：译作数字孪生、数字分身、数位双生，指在信息化平台内模拟物理实体、流程或者系统，类似实体系统在信息化平台中的双胞胎。[1]</p><h1 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h1><h2 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h2><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E6%98%A0%E5%B0%84">数字映射-维基百科</a><br><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
       
     </tags>
     
@@ -1295,9 +1303,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1332,9 +1340,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1369,9 +1377,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1406,9 +1414,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1443,9 +1451,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1480,9 +1488,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1517,9 +1525,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1554,9 +1562,9 @@
     
     <tags>
       
-      <tag>Research</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Research</tag>
       
       <tag>Robotics</tag>
       
@@ -1703,6 +1711,41 @@
       <tag>Robot</tag>
       
       <tag>Grasping</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Genesis_World: 高级机器人仿真环境与应用</title>
+    <link href="/tech-blog/2025/03/18/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/"/>
+    <url>/tech-blog/2025/03/18/%E6%9C%BA%E5%99%A8%E4%BA%BA-%E4%BB%BF%E7%9C%9F-Genesis_world/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Genesis-World"><a href="#Genesis-World" class="headerlink" title="Genesis_World"></a>Genesis_World</h1><p>Genesis_World是一个先进的机器人仿真环境，为人形机器人和灵巧手的研究与开发提供了高保真的仿真平台。</p><h2 id="公开数据集"><a href="#公开数据集" class="headerlink" title="公开数据集"></a>公开数据集</h2><ol><li>Partnet</li><li>Objaverse：<a href="https://objaverse.allenai.org/">https://objaverse.allenai.org/</a></li><li>DeepMind Models：<a href="https://github.com/google-deepmind/mujoco_menagerie/blob/main/README.md">https://github.com/google-deepmind/mujoco_menagerie/blob/main/README.md</a></li></ol><h2 id="Robogen流程图整理"><a href="#Robogen流程图整理" class="headerlink" title="Robogen流程图整理"></a>Robogen流程图整理</h2><pre class="mermaid">flowchart TD    A[任务输入] --> B[场景生成]    B --> C[物体加载]    C --> D[机器人模型加载]        D --> E[仿真初始化]    E --> F{执行任务}        F --> G[感知模块]    G --> H[规划模块]    H --> I[控制模块]    I --> F        F -->|任务完成| J[数据收集]    J --> K[强化学习训练]    K --> L[策略模型]    L --> F        J --> M[数据分析与评估]    M --> N[任务优化建议]    N --> A</pre><p>上图展示了Robogen在Genesis_World中的基本工作流程，从任务输入到最终的策略优化形成了一个完整的闭环系统。</p><h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><ol><li>使用robogen完成一个操作任务的生成和仿真（done）</li><li>GPT-4可替换成国内的大模型，如Deepseek（done）</li><li>Deepseek-chat respone解析需调整<br>1. substep、substeps，substep_types, reward_or_primitives, action_spaces调整解析格式</li><li>生成场景仿真，使用的objaverse.load_objects下载objavarse obj接口依赖huggingface资源(<a href="https://huggingface.co/datasets/allenai/objaverse/)%EF%BC%8C%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E3%80%82">https://huggingface.co/datasets/allenai/objaverse/)，使用镜像加速。</a><br>1. AutoDL服务器提供了镜像加速功能，打开镜像加速可下载数据（不稳定，开启镜像后可能无法访问deepseek）。</li><li>强化学习策略训练<br>1. PPO<ol><li>State</li></ol></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">state = &#123;<br>    <span class="hljs-string">&#x27;object_joint_angle_dicts&#x27;</span>: object_joint_angle_dicts,<br>    <span class="hljs-string">&#x27;object_joint_name_dicts&#x27;</span>: object_joint_name_dicts,<br>    <span class="hljs-string">&#x27;object_link_name_dicts&#x27;</span>: object_link_name_dicts,<br>    <span class="hljs-string">&#x27;object_base_position&#x27;</span>: object_base_position,<br>    <span class="hljs-string">&#x27;object_base_orientation&#x27;</span>: object_base_orientation,    <span class="hljs-string">&#x27;activated&#x27;</span>: activated,<br>    <span class="hljs-string">&#x27;suction_object_id&#x27;</span>: suction_object_id,<br>    <span class="hljs-string">&#x27;suction_contact_link&#x27;</span>: suction_contact_link,<br>    <span class="hljs-string">&#x27;suction_to_obj_pose&#x27;</span>: suction_to_obj_pose,<br>    <span class="hljs-string">&quot;urdf_paths&quot;</span>: copy.deepcopy(env.urdf_paths),<br>    <span class="hljs-string">&quot;object_sizes&quot;</span>: env.simulator_sizes,<br>    <span class="hljs-string">&#x27;robot_name&#x27;</span>: env.robot_name,<br>&#125;<br></code></pre></td></tr></table></figure><pre><code class="hljs">  2. Action</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">translation = action[:<span class="hljs-number">3</span>]<br>rotation = action[<span class="hljs-number">3</span>:<span class="hljs-number">6</span>]<br>suction = action[<span class="hljs-number">6</span>]<br></code></pre></td></tr></table></figure><pre><code class="hljs">2. SAC</code></pre><h2 id="使用Genesis实现人形机器人行走策略训练和评估"><a href="#使用Genesis实现人形机器人行走策略训练和评估" class="headerlink" title="使用Genesis实现人形机器人行走策略训练和评估"></a>使用Genesis实现人形机器人行走策略训练和评估</h2><pre class="mermaid">graph LR    A[环境初始化] --> B[状态观察]    B --> C[策略网络]    C --> D[动作执行]    D --> E[奖励计算]    E --> F[策略更新]    F --> B        G[行走评估指标] --- E    H[步态稳定性] --- G    I[能量效率] --- G    J[速度控制] --- G</pre><h2 id="Genesis灵巧手基础元动作仿真（todo）"><a href="#Genesis灵巧手基础元动作仿真（todo）" class="headerlink" title="Genesis灵巧手基础元动作仿真（todo）"></a>Genesis灵巧手基础元动作仿真（todo）</h2><p>计划实现的灵巧手元动作包括：</p><pre class="mermaid">mindmap  root((灵巧手元动作))    抓取      精确抓取      力控抓取      适应性抓取    操作      旋转物体      滑动调整      插入任务    协作      双手配合      与环境互动      手-臂协同</pre><h1 id="参考工作"><a href="#参考工作" class="headerlink" title="参考工作"></a>参考工作</h1><h2 id="开源数据集"><a href="#开源数据集" class="headerlink" title="开源数据集"></a>开源数据集</h2><p>AgiBot-World<br><a href="https://github.com/OpenDriveLab/AgiBot-World">https://github.com/OpenDriveLab/AgiBot-World</a><br><a href="https://agibot-world.com/blog/agibot_go1.pdf">https://agibot-world.com/blog/agibot_go1.pdf</a><br>Fourier ActionNet Dataset<br><a href="https://action-net.org/">https://action-net.org/</a></p><h2 id="人形机器人"><a href="#人形机器人" class="headerlink" title="人形机器人"></a>人形机器人</h2><p>Fourier<br>人形机器人URDF，walking policy训练、walking policy仿真<br><a href="https://github.com/FFTAI">https://github.com/FFTAI</a><br>英伟达<br><a href="https://github.com/NVIDIA/Isaac-GR00T/">https://github.com/NVIDIA/Isaac-GR00T/</a><br><a href="https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots">https://research.nvidia.com/publication/2025-03_nvidia-isaac-gr00t-n1-open-foundation-model-humanoid-robots</a></p><p>Google DeepMind<br><a href="https://deepmind.google/technologies/gemini-robotics/">https://deepmind.google/technologies/gemini-robotics/</a></p><h2 id="灵巧手"><a href="#灵巧手" class="headerlink" title="灵巧手"></a>灵巧手</h2><p>仿真<br><a href="https://github.com/leap-hand/LEAP_Hand_Sim">https://github.com/leap-hand/LEAP_Hand_Sim</a><br>抓取算法<br><a href="https://www.jiqizhixin.com/articles/2024-12-21">https://www.jiqizhixin.com/articles/2024-12-21</a><br><a href="https://cfcs.pku.edu.cn/news/241386.htm">https://cfcs.pku.edu.cn/news/241386.htm</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>机器人技术</category>
+      
+      <category>仿真系统</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>机器人</tag>
+      
+      <tag>仿真</tag>
+      
+      <tag>Genesis-World</tag>
+      
+      <tag>数据生成</tag>
+      
+      <tag>强化学习</tag>
       
     </tags>
     
