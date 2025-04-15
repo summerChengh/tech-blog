@@ -268,6 +268,37 @@
   
   <entry>
     <title>大模型训练</title>
+    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/"/>
+    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p><h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p><h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p><h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h4 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h4><p>代码本身是Step-by-Step的指令数据。</p><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大模型训练</title>
     <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</url>
     
@@ -300,37 +331,6 @@
   
   
   <entry>
-    <title>大模型训练</title>
-    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/"/>
-    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p><h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p><h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p><h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h4 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h4><p>代码本身是Step-by-Step的指令数据。</p><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>生成式AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>大模型训练-分布式架构</title>
     <link href="/tech-blog/2025/03/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84/"/>
     <url>/tech-blog/2025/03/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84/</url>
@@ -353,9 +353,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>多模态</tag>
-      
       <tag>生成式AI</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -397,11 +397,11 @@
   
   
   <entry>
-    <title>大模型原理</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
+    <title>大模型位置编码</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/</url>
     
-    <content type="html"><![CDATA[<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1><p>NLP任务的发展阶段：（1）基于规则+传统机器学习；（2）预训练语言模型+下游任务微调；（3）提示微调+指令微调；（4）多模态大模型+端到端智能体</p><h2 id="自回归语言模型"><a href="#自回归语言模型" class="headerlink" title="自回归语言模型"></a>自回归语言模型</h2><h2 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h2><h2 id="灾难性遗忘问题"><a href="#灾难性遗忘问题" class="headerlink" title="灾难性遗忘问题"></a>灾难性遗忘问题</h2><h3 id="弹性权重巩固（EWC）"><a href="#弹性权重巩固（EWC）" class="headerlink" title="弹性权重巩固（EWC）"></a>弹性权重巩固（EWC）</h3><p>通过引入正则化项，限制对旧任务重要权重的更新。实现方式：<br>（1）计算Fisher信息矩阵，确定权重对就任务的重要性。<br>（2）在新任务的训练中，添加一个正则化项，限制权重更新幅度。</p><h3 id="经验回放"><a href="#经验回放" class="headerlink" title="经验回放"></a>经验回放</h3><p>保留一部分旧任务的数据，在学习新任务时进行回放，帮助模型在新、旧任务之间保持平衡。</p><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="Transformer-Encoder"><a href="#Transformer-Encoder" class="headerlink" title="Transformer Encoder"></a>Transformer Encoder</h2><h2 id="Prefix-Decoder"><a href="#Prefix-Decoder" class="headerlink" title="Prefix Decoder"></a>Prefix Decoder</h2><p>代表性模型有ChatGLM、U-PaLM<br>特点：Prefix部分的token互相可看到。</p><h2 id="Casual-Decoder"><a href="#Casual-Decoder" class="headerlink" title="Casual Decoder"></a>Casual Decoder</h2><p>从左到右的单向注意力<br>代表性模型：LLaMa7B、LLaMa衍生物。</p><h2 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder-Decoder"></a>Encoder-Decoder</h2><p>输入双向注意力、输出单项注意力<br>代表性模型：T5、Flan-T5、BART</p><h2 id="Transformer-Decoder"><a href="#Transformer-Decoder" class="headerlink" title="Transformer Decoder"></a>Transformer Decoder</h2><p>生成式大语言模型采用的是Transformer Decoder结构。</p><p>LLaMa采用了前置层归一和RMSNorm均方根标准化替代曾标准化。</p><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h1 id="代表性模型"><a href="#代表性模型" class="headerlink" title="代表性模型"></a>代表性模型</h1><h2 id="GPT系列"><a href="#GPT系列" class="headerlink" title="GPT系列"></a>GPT系列</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h3 id="LLaMA3"><a href="#LLaMA3" class="headerlink" title="LLaMA3"></a>LLaMA3</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><h4 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h4><h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>RoPE</p><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><p>模型结构采用Prefix Decoder</p><h2 id="Qwen"><a href="#Qwen" class="headerlink" title="Qwen"></a>Qwen</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p><h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>采用了多头潜在注意力(MLA)和DeepSeekMoE架构。</p><h4 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h4><p>负载平衡策略<br>采用了多token预测训练目标，验证对模型性能有益且，并且可用于推理加速。</p><h4 id="语料"><a href="#语料" class="headerlink" title="语料"></a>语料</h4><p>14.8万亿token</p><h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/pdf/2301.00234">A Survey on In-context Learning</a></p><p><a href="https://github.com/naklecha/llama3-from-scratch/tree/main">llama3 implemented from scratch</a><br><a href="https://github.com/HarleysZhang/llm_note/blob/main/1-transformer_model/llama1-3%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.md">llama1模型结构详解</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4>]]></content>
     
     
     <categories>
@@ -428,11 +428,11 @@
   
   
   <entry>
-    <title>大模型位置编码</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/</url>
+    <title>大模型原理</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4>]]></content>
+    <content type="html"><![CDATA[<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1><p>NLP任务的发展阶段：（1）基于规则+传统机器学习；（2）预训练语言模型+下游任务微调；（3）提示微调+指令微调；（4）多模态大模型+端到端智能体</p><h2 id="自回归语言模型"><a href="#自回归语言模型" class="headerlink" title="自回归语言模型"></a>自回归语言模型</h2><h2 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h2><h2 id="灾难性遗忘问题"><a href="#灾难性遗忘问题" class="headerlink" title="灾难性遗忘问题"></a>灾难性遗忘问题</h2><h3 id="弹性权重巩固（EWC）"><a href="#弹性权重巩固（EWC）" class="headerlink" title="弹性权重巩固（EWC）"></a>弹性权重巩固（EWC）</h3><p>通过引入正则化项，限制对旧任务重要权重的更新。实现方式：<br>（1）计算Fisher信息矩阵，确定权重对就任务的重要性。<br>（2）在新任务的训练中，添加一个正则化项，限制权重更新幅度。</p><h3 id="经验回放"><a href="#经验回放" class="headerlink" title="经验回放"></a>经验回放</h3><p>保留一部分旧任务的数据，在学习新任务时进行回放，帮助模型在新、旧任务之间保持平衡。</p><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="Transformer-Encoder"><a href="#Transformer-Encoder" class="headerlink" title="Transformer Encoder"></a>Transformer Encoder</h2><h2 id="Prefix-Decoder"><a href="#Prefix-Decoder" class="headerlink" title="Prefix Decoder"></a>Prefix Decoder</h2><p>代表性模型有ChatGLM、U-PaLM<br>特点：Prefix部分的token互相可看到。</p><h2 id="Casual-Decoder"><a href="#Casual-Decoder" class="headerlink" title="Casual Decoder"></a>Casual Decoder</h2><p>从左到右的单向注意力<br>代表性模型：LLaMa7B、LLaMa衍生物。</p><h2 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder-Decoder"></a>Encoder-Decoder</h2><p>输入双向注意力、输出单项注意力<br>代表性模型：T5、Flan-T5、BART</p><h2 id="Transformer-Decoder"><a href="#Transformer-Decoder" class="headerlink" title="Transformer Decoder"></a>Transformer Decoder</h2><p>生成式大语言模型采用的是Transformer Decoder结构。</p><p>LLaMa采用了前置层归一和RMSNorm均方根标准化替代曾标准化。</p><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h1 id="代表性模型"><a href="#代表性模型" class="headerlink" title="代表性模型"></a>代表性模型</h1><h2 id="GPT系列"><a href="#GPT系列" class="headerlink" title="GPT系列"></a>GPT系列</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h3 id="LLaMA3"><a href="#LLaMA3" class="headerlink" title="LLaMA3"></a>LLaMA3</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><h4 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h4><h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>RoPE</p><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><p>模型结构采用Prefix Decoder</p><h2 id="Qwen"><a href="#Qwen" class="headerlink" title="Qwen"></a>Qwen</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p><h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>采用了多头潜在注意力(MLA)和DeepSeekMoE架构。</p><h4 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h4><p>负载平衡策略<br>采用了多token预测训练目标，验证对模型性能有益且，并且可用于推理加速。</p><h4 id="语料"><a href="#语料" class="headerlink" title="语料"></a>语料</h4><p>14.8万亿token</p><h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/pdf/2301.00234">A Survey on In-context Learning</a></p><p><a href="https://github.com/naklecha/llama3-from-scratch/tree/main">llama3 implemented from scratch</a><br><a href="https://github.com/HarleysZhang/llm_note/blob/main/1-transformer_model/llama1-3%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.md">llama1模型结构详解</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a></p>]]></content>
     
     
     <categories>
@@ -481,7 +481,38 @@
       
       <tag>深度学习</tag>
       
+      <tag>生成式AI</tag>
+      
       <tag>多模态</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大模型推理加速</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
+    
+    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
       
       <tag>生成式AI</tag>
       
@@ -514,40 +545,9 @@
       
       <tag>深度学习</tag>
       
+      <tag>生成式AI</tag>
+      
       <tag>多模态</tag>
-      
-      <tag>生成式AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>大模型推理加速</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
-    
-    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>生成式AI</tag>
       
     </tags>
     
@@ -706,11 +706,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -743,11 +743,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -923,7 +923,7 @@
     <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/"/>
     <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/</url>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="Agent发展"><a href="#Agent发展" class="headerlink" title="Agent发展"></a>Agent发展</h2><p>符号式Agents<br>符号智能时代的产物，使用符号抽象规则和推理过程。<br>反馈式Agents<br>强化学习Agents<br>迁移学习、元学习Agents<br>大语言模型Agents</p><h2 id="Agent架构与组件"><a href="#Agent架构与组件" class="headerlink" title="Agent架构与组件"></a>Agent架构与组件</h2><p>下图展示了现代大模型Agent的核心架构和关键组件：</p><p><img src="/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/agent-architecture.png" alt="Agent架构图"></p><p><strong>图1：Agent架构与工作流程</strong></p><h3 id="核心组件解析"><a href="#核心组件解析" class="headerlink" title="核心组件解析"></a>核心组件解析</h3><ol><li><p><strong>中央处理器 - Agents</strong>：作为整个系统的核心，负责协调各组件之间的交互。</p></li><li><p><strong>记忆系统 (Memory)</strong>：</p><ul><li>感知记忆 (Sensory Memory)：存储感知输入</li><li>短期记忆 (Short-term Memory)：临时工作存储空间</li><li>长期记忆 (Long-term Memory)：持久化知识存储</li></ul></li><li><p><strong>规划模块 (Planning)</strong>：负责确定行动步骤，可以独立规划也可由LLM辅助规划。</p></li><li><p><strong>工具箱 (Tools)</strong>：Agent可用的各种工具，包括搜索、资讯获取、天气查询、汇率转换、代码执行等功能。</p></li><li><p><strong>大语言模型 (LLM)</strong>：作为Agent的”大脑”，负责理解信息、观察反思，并通过FunctionCall、TaskWeaver和ReAct等机制与外界交互。</p></li></ol><h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><ol><li><strong>理解信息</strong>：Agent通过Memory系统理解和存储相关信息</li><li><strong>规划行动</strong>：通过Planning模块确定执行步骤</li><li><strong>工具使用</strong>：选择并使用适当的工具完成任务</li><li><strong>观察反思</strong>：使用LLM进行结果分析和反思</li></ol><p>Agent可以根据任务需求进行自主协调，包括任务分解、Agent协作、LLM调用、工具使用和记忆存取等操作。</p><h2 id="Agents主要组件"><a href="#Agents主要组件" class="headerlink" title="Agents主要组件"></a>Agents主要组件</h2><h3 id="配置模块（Profile-Module）"><a href="#配置模块（Profile-Module）" class="headerlink" title="配置模块（Profile Module）"></a>配置模块（Profile Module）</h3><p>旨在指示agent角色的特征描述，这些评测通常被写入提示中以影响LLM行为。Agent profile通常包含基本信息，例如年龄、性别和职业，以及心理学信息（反映了agent的个性）和社交信息（详细说明了agent之间的关系）。描述agent信息的选择在很大程度上取决于具体的应用场景。</p><h4 id="人工生成"><a href="#人工生成" class="headerlink" title="人工生成"></a>人工生成</h4><h4 id="LLM生成"><a href="#LLM生成" class="headerlink" title="LLM生成"></a>LLM生成</h4><p>基于LLM自动生成，例如，RecAgent首先通过手动制作一些agents的背景，如年龄、性别、个人特征和电影偏好，为他们创建种子档案（profile）。然后，它利用ChatGPT基于种子信息生成更多的agent profile（代理配置文件）。该方法高效但缺乏对Profile的精确控制。</p><h4 id="数据集对齐方法"><a href="#数据集对齐方法" class="headerlink" title="数据集对齐方法"></a>数据集对齐方法</h4><h3 id="记忆模块（Memory-Module）"><a href="#记忆模块（Memory-Module）" class="headerlink" title="记忆模块（Memory Module）"></a>记忆模块（Memory Module）</h3><h3 id="规划模块（Planning-Module）"><a href="#规划模块（Planning-Module）" class="headerlink" title="规划模块（Planning Module）"></a>规划模块（Planning Module）</h3><h3 id="执行模块（Action-Module）"><a href="#执行模块（Action-Module）" class="headerlink" title="执行模块（Action Module）"></a>执行模块（Action Module）</h3><h2 id="Agent设计模式"><a href="#Agent设计模式" class="headerlink" title="Agent设计模式"></a>Agent设计模式</h2><h3 id="反思-Reflection"><a href="#反思-Reflection" class="headerlink" title="反思(Reflection)"></a>反思(Reflection)</h3><p>自我反思是一个通过语言反馈来强化基于大模型的智能体的框架。根据 Shinn et al. (2023)，“自我反思是一种‘口头’强化的新范例，它将策略参数化为智能体的记忆编码与 LLM 的参数选择配对。”<br>在高层次上，自我反思将来自环境的反馈（自由形式的语言或者标量）转换为语言反馈，也被称作 self-reflection，为下一轮中 LLM 智能体提供上下文。这有助于智能体快速有效地从之前的错误中学习，进而提升许多高级任务的性能。</p><p>简单的自我反思由两个LLM组成，一个作为生成器，一个对生成器的结果进行Reflect。</p><p>Reflextion Agents由三个不同的大模型组成：参与者、评估者、自我反思。</p><p>自我反思的关键步骤：（1）任务定义；（2）生成轨迹；（3）评估；（4）执行自我反思；（5）生成下一条轨迹。<br>自我反思引入了自我评估、自我反思、记忆组建来拓展ReAct框架。</p><p>Reflextion Agents适用的任务：<br>（1）序列决策<br>（2）推理<br>（3）编程</p><h3 id="规划-Planning"><a href="#规划-Planning" class="headerlink" title="规划(Planning)"></a>规划(Planning)</h3><p>规划（Planning）设计模式是一种通过提前计划和组织任务步骤来提高效率和准确性的方法。在这种模式中，模型将复杂任务分解为多个步骤，并依次执行每个步骤，以达到预期的目标.这类似于人类在处理复杂任务时所采用的分步计划和执行方法。每个步骤可以由不同的模型或工具来完成，增强了整体任务处理的灵活性和扩展性。<br>示例： HuggingGPT，采用ChatGPT作为控制器，利用其语言理解和生成能力进行任务规划，并根据Hugging Face中模型的描述选择合适的AI模型来执行子任务，最后汇总执行结果。</p><h3 id="工具使用-Tool-use"><a href="#工具使用-Tool-use" class="headerlink" title="工具使用(Tool use)"></a>工具使用(Tool use)</h3><p>工具调用（Tool Use）设计模式是一种让AI模型通过调用外部工具或库来增强任务执行能力的方法。<br>实现方式：（1）预先规划好；（2）自主调用</p><h3 id="多智能体协作-Multi-agent-collaboration"><a href="#多智能体协作-Multi-agent-collaboration" class="headerlink" title="多智能体协作(Multi-agent collaboration)"></a>多智能体协作(Multi-agent collaboration)</h3><p>多智能体协作（Multiagent Collaboration）设计模式是一种通过多个智能体之间的合作来提高任务执行效率和准确性的方法。在这种模式中，多个智能体分担任务，并通过相互交流和协作，共同完成复杂任务。</p><h1 id="Agent框架对比"><a href="#Agent框架对比" class="headerlink" title="Agent框架对比"></a>Agent框架对比</h1><h2 id="Auto-GPT"><a href="#Auto-GPT" class="headerlink" title="Auto-GPT"></a>Auto-GPT</h2><p>规划能力强<br>缺点：接口和变量的定义和Agent框架的概念没有对应，学习成本会高一些。</p><h2 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h2><p>内置扩展LangChain工具、使用Assistant API、在Docker容器中运行模型生成的代码、分布式智能体等功能。</p><p>代表性应用：</p><h2 id="LangFlow"><a href="#LangFlow" class="headerlink" title="LangFlow"></a>LangFlow</h2><h2 id="CrewAI"><a href="#CrewAI" class="headerlink" title="CrewAI"></a>CrewAI</h2><p>CrewAI提供了一组用于构建和编排AI Agents组而设计的通用工具和库，用于处理多代理系统的场景人物，如代理通信、协调和决策等。</p><h2 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h2><p>多智能体系统框架。</p><h3 id="MetaGPT提供的RAG功能"><a href="#MetaGPT提供的RAG功能" class="headerlink" title="MetaGPT提供的RAG功能"></a>MetaGPT提供的RAG功能</h3><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="AutoGLM"><a href="#AutoGLM" class="headerlink" title="AutoGLM"></a>AutoGLM</h2><h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><h3 id="LangGraph"><a href="#LangGraph" class="headerlink" title="LangGraph"></a>LangGraph</h3><h2 id="智能体相关进展"><a href="#智能体相关进展" class="headerlink" title="智能体相关进展"></a>智能体相关进展</h2><h4 id="ReAct-Reasoning-and-Acting-框架"><a href="#ReAct-Reasoning-and-Acting-框架" class="headerlink" title="ReAct(Reasoning and Acting)框架"></a>ReAct(Reasoning and Acting)框架</h4><p>大模型本身具有推理能力和执行能力(比如生成执行计划)，ReAct框架协同推理与执行，解决幻觉问题和COT推理中的错误传播问题、提高答案的可解释性。<br>ReAct采用few-shot in-context学习来生成解决问题的action和thought序列。每个in-context样例是由action、thought、observation构成的行为轨迹。<br>在推理占主导地位的应用中，我们交替生成thought和action，这样完整的行为轨迹就是多个thought-action-observation步骤。<br>在决策生成任务中（涉及大量action），thought只会在行为轨迹中最相关的位置稀疏出现，此时语言模型可用来决定thought和action的异步呈现顺序。</p><h3 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h3><p>Agent记忆包括短期记忆和长期记忆。<br>记忆内容包括：（1）内部任务信息；（2）跨任务信息；（3）外部知识。</p><h4 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h4><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p><h4 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h4><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p><h4 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h4><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p><h4 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h4><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p><h4 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h4><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p><a href="https://github.com/google/adk-python">Google adk-python</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/langflow-ai/langflow.git">LangFlow</a><br><a href="https://github.com/FlowiseAI/Flowise">flowise</a><br><a href="https://github.com/crewAIInc/crewAI">CrewAI</a><br><a href="https://github.com/camel-ai/owl">OWL</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a><br><a href="https://github.com/langgenius/dify">Dify</a><br><a href="https://github.com/om-ai-lab/OmAgent">OmAgent</a><br><a href="https://www.langchain.com/langgraph">LangGraph</a><br><a href="https://github.com/huggingface/smolagents">SmolAgents</a></p><p><a href="https://github.com/plurai-ai/intellagent">intellagent</a></p><p><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p><p><a href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a></p><p><a href="https://github.com/MotiaDev/motia">Motia</a><br><a href="https://www.genspark.ai/agents">GenSpark</a></p><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="https://google.github.io/adk-docs/agents/llm-agents/">Agent Development Kit文档</a><br><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="windsurf.com/blog/what-is-an-agent">windsurf.com&#x2F;blog&#x2F;what-is-an-agent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://docs.deepwisdom.ai/main/zh/guide/tutorials/agent_101.html">Meta-GPT 智能体入门</a><br><a href="https://react-lm.github.io/">ReAct</a></p><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/2504.01990">Advances and challenges in foundatation agents</a><br><a href="https://github.com/WooooDyy/LLM-Agent-Paper-List">LLM-Agent-Paper-List</a><br><a href="https://arxiv.org/pdf/2309.07864">The Rise and Potential of Large Language Model Based Agents: A Survey</a><br><a href="https://arxiv.org/pdf/2504.01990">ADVANCES AND CHALLENGES IN FOUNDATION AGENTS</a></p><p><a href="https://arxiv.org/pdf/2303.17651.pdf">Self-Refine: Iterative Refinement with Self-Feedback</a><br><a href="https://arxiv.org/pdf/2303.11366.pdf">Reflexion: Language Agents with Verbal Reinforcement Learning</a><br><a href="https://arxiv.org/pdf/2305.11738.pdf">CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing</a></p><p><a href="https://arxiv.org/abs/2305.15334">Gorilla: Large Language Model Connected with Massive APIs</a><br><a href="https://arxiv.org/abs/2303.11381">MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action</a></p><p><a href="https://arxiv.org/abs/2303.17580">HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face</a><br><a href="https://arxiv.org/abs/2308.08155">AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation</a><br><a href="https://arxiv.org/pdf/2501.06322">Multi-Agent Collaboration Mechanisms: A Survey of LLMs</a><br><a href="https://link.springer.com/article/10.1007/s11704-024-40231-1">A Survey on Large Language Model Based Autonomous Agents</a></p><h3 id="课程-教程"><a href="#课程-教程" class="headerlink" title="课程&#x2F;教程"></a>课程&#x2F;教程</h3><p><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/">Multi AI Agent Systems with crewAI</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/">AI Agentic Design Patterns with AutoGen</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/">AI Agents in LangGraph</a><br><a href="https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/">LLMs as Operating Systems: Agent Memory</a><br><a href="https://www.youtube.com/watch?v=sC9SV06gsDM">LangFlow创建流程视频教程</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="Agent发展"><a href="#Agent发展" class="headerlink" title="Agent发展"></a>Agent发展</h2><p>符号式Agents<br>符号智能时代的产物，使用符号抽象规则和推理过程。<br>反馈式Agents<br>强化学习Agents<br>迁移学习、元学习Agents<br>大语言模型Agents</p><h2 id="Agent架构与组件"><a href="#Agent架构与组件" class="headerlink" title="Agent架构与组件"></a>Agent架构与组件</h2><p>下图展示了现代大模型Agent的核心架构和关键组件：</p><p><img src="/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/agent-architecture.png" alt="Agent架构图"></p><p><strong>图1：Agent架构与工作流程</strong></p><h3 id="核心组件解析"><a href="#核心组件解析" class="headerlink" title="核心组件解析"></a>核心组件解析</h3><ol><li><p><strong>中央处理器 - Agents</strong>：作为整个系统的核心，负责协调各组件之间的交互。</p></li><li><p><strong>记忆系统 (Memory)</strong>：</p><ul><li>感知记忆 (Sensory Memory)：存储感知输入</li><li>短期记忆 (Short-term Memory)：临时工作存储空间</li><li>长期记忆 (Long-term Memory)：持久化知识存储</li></ul></li><li><p><strong>规划模块 (Planning)</strong>：负责确定行动步骤，可以独立规划也可由LLM辅助规划。</p></li><li><p><strong>工具箱 (Tools)</strong>：Agent可用的各种工具，包括搜索、资讯获取、天气查询、汇率转换、代码执行等功能。</p></li><li><p><strong>大语言模型 (LLM)</strong>：作为Agent的”大脑”，负责理解信息、观察反思，并通过FunctionCall、TaskWeaver和ReAct等机制与外界交互。</p></li></ol><h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><ol><li><strong>理解信息</strong>：Agent通过Memory系统理解和存储相关信息</li><li><strong>规划行动</strong>：通过Planning模块确定执行步骤</li><li><strong>工具使用</strong>：选择并使用适当的工具完成任务</li><li><strong>观察反思</strong>：使用LLM进行结果分析和反思</li></ol><p>Agent可以根据任务需求进行自主协调，包括任务分解、Agent协作、LLM调用、工具使用和记忆存取等操作。</p><h2 id="Agents主要组件"><a href="#Agents主要组件" class="headerlink" title="Agents主要组件"></a>Agents主要组件</h2><h3 id="配置模块（Profile-Module）"><a href="#配置模块（Profile-Module）" class="headerlink" title="配置模块（Profile Module）"></a>配置模块（Profile Module）</h3><p>旨在指示agent角色的特征描述，这些评测通常被写入提示中以影响LLM行为。Agent profile通常包含基本信息，例如年龄、性别和职业，以及心理学信息（反映了agent的个性）和社交信息（详细说明了agent之间的关系）。描述agent信息的选择在很大程度上取决于具体的应用场景。</p><h4 id="人工生成"><a href="#人工生成" class="headerlink" title="人工生成"></a>人工生成</h4><h4 id="LLM生成"><a href="#LLM生成" class="headerlink" title="LLM生成"></a>LLM生成</h4><p>基于LLM自动生成，例如，RecAgent首先通过手动制作一些agents的背景，如年龄、性别、个人特征和电影偏好，为他们创建种子档案（profile）。然后，它利用ChatGPT基于种子信息生成更多的agent profile（代理配置文件）。该方法高效但缺乏对Profile的精确控制。</p><h4 id="数据集对齐方法"><a href="#数据集对齐方法" class="headerlink" title="数据集对齐方法"></a>数据集对齐方法</h4><h3 id="记忆模块（Memory-Module）"><a href="#记忆模块（Memory-Module）" class="headerlink" title="记忆模块（Memory Module）"></a>记忆模块（Memory Module）</h3><h3 id="规划模块（Planning-Module）"><a href="#规划模块（Planning-Module）" class="headerlink" title="规划模块（Planning Module）"></a>规划模块（Planning Module）</h3><h3 id="执行模块（Action-Module）"><a href="#执行模块（Action-Module）" class="headerlink" title="执行模块（Action Module）"></a>执行模块（Action Module）</h3><h2 id="Agent设计模式"><a href="#Agent设计模式" class="headerlink" title="Agent设计模式"></a>Agent设计模式</h2><h3 id="反思-Reflection"><a href="#反思-Reflection" class="headerlink" title="反思(Reflection)"></a>反思(Reflection)</h3><p>自我反思是一个通过语言反馈来强化基于大模型的智能体的框架。根据 Shinn et al. (2023)，“自我反思是一种‘口头’强化的新范例，它将策略参数化为智能体的记忆编码与 LLM 的参数选择配对。”<br>在高层次上，自我反思将来自环境的反馈（自由形式的语言或者标量）转换为语言反馈，也被称作 self-reflection，为下一轮中 LLM 智能体提供上下文。这有助于智能体快速有效地从之前的错误中学习，进而提升许多高级任务的性能。</p><p>简单的自我反思由两个LLM组成，一个作为生成器，一个对生成器的结果进行Reflect。</p><p>Reflextion Agents由三个不同的大模型组成：参与者、评估者、自我反思。</p><p>自我反思的关键步骤：（1）任务定义；（2）生成轨迹；（3）评估；（4）执行自我反思；（5）生成下一条轨迹。<br>自我反思引入了自我评估、自我反思、记忆组建来拓展ReAct框架。</p><p>Reflextion Agents适用的任务：<br>（1）序列决策<br>（2）推理<br>（3）编程</p><h3 id="规划-Planning"><a href="#规划-Planning" class="headerlink" title="规划(Planning)"></a>规划(Planning)</h3><p>规划（Planning）设计模式是一种通过提前计划和组织任务步骤来提高效率和准确性的方法。在这种模式中，模型将复杂任务分解为多个步骤，并依次执行每个步骤，以达到预期的目标.这类似于人类在处理复杂任务时所采用的分步计划和执行方法。每个步骤可以由不同的模型或工具来完成，增强了整体任务处理的灵活性和扩展性。<br>示例： HuggingGPT，采用ChatGPT作为控制器，利用其语言理解和生成能力进行任务规划，并根据Hugging Face中模型的描述选择合适的AI模型来执行子任务，最后汇总执行结果。</p><h3 id="工具使用-Tool-use"><a href="#工具使用-Tool-use" class="headerlink" title="工具使用(Tool use)"></a>工具使用(Tool use)</h3><p>工具调用（Tool Use）设计模式是一种让AI模型通过调用外部工具或库来增强任务执行能力的方法。<br>实现方式：（1）预先规划好；（2）自主调用</p><h3 id="多智能体协作-Multi-agent-collaboration"><a href="#多智能体协作-Multi-agent-collaboration" class="headerlink" title="多智能体协作(Multi-agent collaboration)"></a>多智能体协作(Multi-agent collaboration)</h3><p>多智能体协作（Multiagent Collaboration）设计模式是一种通过多个智能体之间的合作来提高任务执行效率和准确性的方法。在这种模式中，多个智能体分担任务，并通过相互交流和协作，共同完成复杂任务。</p><h1 id="Agent框架对比"><a href="#Agent框架对比" class="headerlink" title="Agent框架对比"></a>Agent框架对比</h1><h2 id="Auto-GPT"><a href="#Auto-GPT" class="headerlink" title="Auto-GPT"></a>Auto-GPT</h2><p>规划能力强<br>缺点：接口和变量的定义和Agent框架的概念没有对应，学习成本会高一些。</p><h2 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h2><p>内置扩展LangChain工具、使用Assistant API、在Docker容器中运行模型生成的代码、分布式智能体等功能。</p><p>代表性应用：</p><h2 id="LangFlow"><a href="#LangFlow" class="headerlink" title="LangFlow"></a>LangFlow</h2><h2 id="CrewAI"><a href="#CrewAI" class="headerlink" title="CrewAI"></a>CrewAI</h2><p>CrewAI提供了一组用于构建和编排AI Agents组而设计的通用工具和库，用于处理多代理系统的场景人物，如代理通信、协调和决策等。</p><h2 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h2><p>多智能体系统框架。</p><h3 id="MetaGPT提供的RAG功能"><a href="#MetaGPT提供的RAG功能" class="headerlink" title="MetaGPT提供的RAG功能"></a>MetaGPT提供的RAG功能</h3><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="AutoGLM"><a href="#AutoGLM" class="headerlink" title="AutoGLM"></a>AutoGLM</h2><h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><h3 id="LangGraph"><a href="#LangGraph" class="headerlink" title="LangGraph"></a>LangGraph</h3><h2 id="智能体相关进展"><a href="#智能体相关进展" class="headerlink" title="智能体相关进展"></a>智能体相关进展</h2><h4 id="ReAct-Reasoning-and-Acting-框架"><a href="#ReAct-Reasoning-and-Acting-框架" class="headerlink" title="ReAct(Reasoning and Acting)框架"></a>ReAct(Reasoning and Acting)框架</h4><p>大模型本身具有推理能力和执行能力(比如生成执行计划)，ReAct框架协同推理与执行，解决幻觉问题和COT推理中的错误传播问题、提高答案的可解释性。<br>ReAct采用few-shot in-context学习来生成解决问题的action和thought序列。每个in-context样例是由action、thought、observation构成的行为轨迹。<br>在推理占主导地位的应用中，我们交替生成thought和action，这样完整的行为轨迹就是多个thought-action-observation步骤。<br>在决策生成任务中（涉及大量action），thought只会在行为轨迹中最相关的位置稀疏出现，此时语言模型可用来决定thought和action的异步呈现顺序。</p><h3 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h3><p>Agent记忆包括短期记忆和长期记忆。<br>记忆内容包括：（1）内部任务信息；（2）跨任务信息；（3）外部知识。</p><h4 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h4><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p><h4 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h4><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p><h4 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h4><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p><h4 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h4><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p><h4 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h4><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p><h1 id="智能体应用发展"><a href="#智能体应用发展" class="headerlink" title="智能体应用发展"></a>智能体应用发展</h1><h2 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h2><p>OpenAI已经推出和即将推出的三款Agent产品</p><ul><li>Deep Research：可自主执行深入调研，自动总结并生成专业报告；</li><li>Operator：可充当线上“任务代理”，帮助预订机票、酒店、餐厅等；</li><li>A-SWE（Agentic Software Engineer）：可以自行完成软件开发、QA、Bug 测试和文档撰写，相当于一个“自动化开发者”。</li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p><a href="https://github.com/google/adk-python">Google adk-python</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/langflow-ai/langflow.git">LangFlow</a><br><a href="https://github.com/FlowiseAI/Flowise">flowise</a><br><a href="https://github.com/crewAIInc/crewAI">CrewAI</a><br><a href="https://github.com/camel-ai/owl">OWL</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a><br><a href="https://github.com/langgenius/dify">Dify</a><br><a href="https://github.com/om-ai-lab/OmAgent">OmAgent</a><br><a href="https://www.langchain.com/langgraph">LangGraph</a><br><a href="https://github.com/huggingface/smolagents">SmolAgents</a></p><p><a href="https://github.com/plurai-ai/intellagent">intellagent</a></p><p><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a></p><p><a href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a></p><p><a href="https://github.com/MotiaDev/motia">Motia</a><br><a href="https://www.genspark.ai/agents">GenSpark</a></p><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="https://google.github.io/adk-docs/agents/llm-agents/">Agent Development Kit文档</a><br><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="windsurf.com/blog/what-is-an-agent">windsurf.com&#x2F;blog&#x2F;what-is-an-agent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://docs.deepwisdom.ai/main/zh/guide/tutorials/agent_101.html">Meta-GPT 智能体入门</a><br><a href="https://react-lm.github.io/">ReAct</a></p><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/2504.01990">Advances and challenges in foundatation agents</a><br><a href="https://github.com/WooooDyy/LLM-Agent-Paper-List">LLM-Agent-Paper-List</a><br><a href="https://arxiv.org/pdf/2309.07864">The Rise and Potential of Large Language Model Based Agents: A Survey</a><br><a href="https://arxiv.org/pdf/2504.01990">ADVANCES AND CHALLENGES IN FOUNDATION AGENTS</a></p><p><a href="https://arxiv.org/pdf/2303.17651.pdf">Self-Refine: Iterative Refinement with Self-Feedback</a><br><a href="https://arxiv.org/pdf/2303.11366.pdf">Reflexion: Language Agents with Verbal Reinforcement Learning</a><br><a href="https://arxiv.org/pdf/2305.11738.pdf">CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing</a></p><p><a href="https://arxiv.org/abs/2305.15334">Gorilla: Large Language Model Connected with Massive APIs</a><br><a href="https://arxiv.org/abs/2303.11381">MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action</a></p><p><a href="https://arxiv.org/abs/2303.17580">HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face</a><br><a href="https://arxiv.org/abs/2308.08155">AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation</a><br><a href="https://arxiv.org/pdf/2501.06322">Multi-Agent Collaboration Mechanisms: A Survey of LLMs</a><br><a href="https://link.springer.com/article/10.1007/s11704-024-40231-1">A Survey on Large Language Model Based Autonomous Agents</a></p><h3 id="课程-教程"><a href="#课程-教程" class="headerlink" title="课程&#x2F;教程"></a>课程&#x2F;教程</h3><p><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/">Multi AI Agent Systems with crewAI</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/">AI Agentic Design Patterns with AutoGen</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/">AI Agents in LangGraph</a><br><a href="https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/">LLMs as Operating Systems: Agent Memory</a><br><a href="https://www.youtube.com/watch?v=sC9SV06gsDM">LangFlow创建流程视频教程</a></p>]]></content>
     
     
     <categories>
@@ -1203,11 +1203,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1240,11 +1240,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1277,11 +1277,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1314,11 +1314,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1351,48 +1351,11 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
-    
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
       <tag>Robotics</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -1425,11 +1388,48 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
+      <tag>ComputerVision</tag>
       
       <tag>NLP</tag>
       
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
       <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -1462,9 +1462,9 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>DiffusionModels</tag>
       
@@ -1563,9 +1563,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       
@@ -1600,9 +1600,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       
