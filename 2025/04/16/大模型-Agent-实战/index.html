@@ -1,0 +1,872 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content="Agent框架实战应用本文介绍两个流行的Agent框架——CrewAI和Flowise的实际应用案例，重点展示多Agent协作场景的实现方法和效果。 CrewAI多AI Agents实战CrewAI是一个专为构建和编排多Agent系统设计的框架，它简化了多个智能体之间的协作流程，使开发者能够轻松创建复杂的多智能体应用。 房地产投资分析案例下面展示一个房地产投资分析应用，通过多个专家Agent协作完">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agent实战应用">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/16/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content="Agent框架实战应用本文介绍两个流行的Agent框架——CrewAI和Flowise的实际应用案例，重点展示多Agent协作场景的实现方法和效果。 CrewAI多AI Agents实战CrewAI是一个专为构建和编排多Agent系统设计的框架，它简化了多个智能体之间的协作流程，使开发者能够轻松创建复杂的多智能体应用。 房地产投资分析案例下面展示一个房地产投资分析应用，通过多个专家Agent协作完">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://summerchengh.github.io/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/flowise-customer-service.png">
+<meta property="article:published_time" content="2025-04-16T01:30:00.000Z">
+<meta property="article:modified_time" content="2025-04-16T04:19:56.622Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="实践">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://summerchengh.github.io/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/flowise-customer-service.png">
+  
+  
+  
+  <title>Agent实战应用 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Agent实战应用"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-16 09:30" pubdate>
+          April 16, 2025 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          20 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Agent实战应用</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Agent框架实战应用"><a href="#Agent框架实战应用" class="headerlink" title="Agent框架实战应用"></a>Agent框架实战应用</h1><p>本文介绍两个流行的Agent框架——CrewAI和Flowise的实际应用案例，重点展示多Agent协作场景的实现方法和效果。</p>
+<h2 id="CrewAI多AI-Agents实战"><a href="#CrewAI多AI-Agents实战" class="headerlink" title="CrewAI多AI Agents实战"></a>CrewAI多AI Agents实战</h2><p>CrewAI是一个专为构建和编排多Agent系统设计的框架，它简化了多个智能体之间的协作流程，使开发者能够轻松创建复杂的多智能体应用。</p>
+<h3 id="房地产投资分析案例"><a href="#房地产投资分析案例" class="headerlink" title="房地产投资分析案例"></a>房地产投资分析案例</h3><p>下面展示一个房地产投资分析应用，通过多个专家Agent协作完成从市场研究到投资建议的全流程分析。</p>
+<h4 id="1-系统架构"><a href="#1-系统架构" class="headerlink" title="1. 系统架构"></a>1. 系统架构</h4><p>该系统由四个专家Agent组成：</p>
+<ul>
+<li>房地产市场研究员：负责收集市场数据和趋势</li>
+<li>财务分析师：评估投资回报率和财务可行性</li>
+<li>本地区域专家：提供特定地区的洞察和风险评估</li>
+<li>投资顾问：整合所有信息并提出最终建议</li>
+</ul>
+<h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> crewai <span class="hljs-keyword">import</span> Agent, Task, Crew, Process<br><span class="hljs-keyword">from</span> langchain.llms <span class="hljs-keyword">import</span> OpenAI<br><br><span class="hljs-comment"># 配置OpenAI模型</span><br>openai_llm = OpenAI(temperature=<span class="hljs-number">0.7</span>, model=<span class="hljs-string">&quot;gpt-4&quot;</span>)<br><br><span class="hljs-comment"># 创建专家Agents</span><br>market_researcher = Agent(<br>    role=<span class="hljs-string">&quot;房地产市场研究员&quot;</span>,<br>    goal=<span class="hljs-string">&quot;提供准确、全面的房地产市场分析&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位经验丰富的房地产市场分析师，擅长识别市场趋势和机会。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>financial_analyst = Agent(<br>    role=<span class="hljs-string">&quot;财务分析师&quot;</span>,<br>    goal=<span class="hljs-string">&quot;评估投资项目的财务可行性和潜在回报&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位精通房地产财务建模的分析师，能够准确预测投资回报率和现金流。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>local_expert = Agent(<br>    role=<span class="hljs-string">&quot;本地区域专家&quot;</span>,<br>    goal=<span class="hljs-string">&quot;提供目标地区的深入洞察和风险评估&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你在目标投资区域生活多年，了解当地法规、发展规划和社区动态。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>investment_advisor = Agent(<br>    role=<span class="hljs-string">&quot;投资顾问&quot;</span>,<br>    goal=<span class="hljs-string">&quot;整合所有信息并提供最佳投资建议&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位资深投资顾问，善于综合各方面信息，为客户提供明智的投资决策建议。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br><span class="hljs-comment"># 定义各专家任务</span><br>market_research_task = Task(<br>    description=<span class="hljs-string">&quot;研究目标区域的房地产市场状况，包括价格趋势、供需关系、租金水平和市场饱和度。&quot;</span>,<br>    agent=market_researcher,<br>    expected_output=<span class="hljs-string">&quot;详细的市场分析报告，包含数据支持的趋势和预测。&quot;</span><br>)<br><br>financial_analysis_task = Task(<br>    description=<span class="hljs-string">&quot;基于市场研究数据，分析潜在投资的财务可行性，包括ROI、现金流、融资选项和税务考量。&quot;</span>,<br>    agent=financial_analyst,<br>    expected_output=<span class="hljs-string">&quot;财务分析报告，包含ROI计算、资本需求和投资风险评估。&quot;</span>,<br>    context=[market_research_task]<br>)<br><br>local_insight_task = Task(<br>    description=<span class="hljs-string">&quot;提供目标区域的本地洞察，包括发展规划、基础设施项目、社区变化和潜在问题。&quot;</span>,<br>    agent=local_expert,<br>    expected_output=<span class="hljs-string">&quot;本地区域分析报告，重点关注可能影响投资的具体因素。&quot;</span><br>)<br><br>investment_recommendation_task = Task(<br>    description=<span class="hljs-string">&quot;整合市场研究、财务分析和本地洞察，提出综合投资建议。&quot;</span>,<br>    agent=investment_advisor,<br>    expected_output=<span class="hljs-string">&quot;最终投资建议报告，包含明确的行动步骤和风险缓解策略。&quot;</span>,<br>    context=[market_research_task, financial_analysis_task, local_insight_task]<br>)<br><br><span class="hljs-comment"># 创建Agent团队并设置执行过程</span><br>real_estate_crew = Crew(<br>    agents=[market_researcher, financial_analyst, local_expert, investment_advisor],<br>    tasks=[market_research_task, financial_analysis_task, local_insight_task, investment_recommendation_task],<br>    verbose=<span class="hljs-number">2</span>,<br>    process=Process.sequential  <span class="hljs-comment"># 按顺序执行任务</span><br>)<br><br><span class="hljs-comment"># 执行任务</span><br>result = real_estate_crew.kickoff(<br>    inputs=&#123;<br>        <span class="hljs-string">&quot;target_area&quot;</span>: <span class="hljs-string">&quot;上海市浦东新区&quot;</span>,<br>        <span class="hljs-string">&quot;investment_budget&quot;</span>: <span class="hljs-string">&quot;500万人民币&quot;</span>,<br>        <span class="hljs-string">&quot;investment_horizon&quot;</span>: <span class="hljs-string">&quot;5-10年&quot;</span>,<br>        <span class="hljs-string">&quot;investment_goals&quot;</span>: <span class="hljs-string">&quot;稳定的租金收入和中长期资本增值&quot;</span><br>    &#125;<br>)<br><br><span class="hljs-built_in">print</span>(result)<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-执行流程"><a href="#3-执行流程" class="headerlink" title="3. 执行流程"></a>3. 执行流程</h4><ol>
+<li><strong>市场研究阶段</strong>：市场研究员Agent首先分析浦东新区的房地产市场状况，包括价格趋势、供需情况和租金水平。</li>
+<li><strong>财务分析阶段</strong>：财务分析师Agent基于市场研究结果，计算潜在投资回报率和财务可行性。</li>
+<li><strong>本地洞察阶段</strong>：本地专家Agent提供浦东新区特有的信息，如发展规划、政策变化和社区动态。</li>
+<li><strong>投资建议整合</strong>：投资顾问Agent综合前三位专家的分析结果，形成最终投资建议。</li>
+</ol>
+<h4 id="4-应用优势"><a href="#4-应用优势" class="headerlink" title="4. 应用优势"></a>4. 应用优势</h4><ul>
+<li><strong>专业分工</strong>：每个Agent专注于自己的专业领域，提高分析质量</li>
+<li><strong>信息传递</strong>：任务之间的上下文传递确保信息连贯性</li>
+<li><strong>灵活配置</strong>：可以根据不同投资类型调整专家组合和任务流程</li>
+<li><strong>系统拓展</strong>：可轻松添加更多专家（如法律顾问、建筑专家等）</li>
+</ul>
+<h4 id="5-拓展应用场景"><a href="#5-拓展应用场景" class="headerlink" title="5. 拓展应用场景"></a>5. 拓展应用场景</h4><p>这一多Agent协作模式可以扩展到其他领域：</p>
+<ul>
+<li>创业项目评估</li>
+<li>股票投资组合分析</li>
+<li>产品市场调研</li>
+<li>企业并购尽职调查</li>
+</ul>
+<h2 id="Flowise-部署及应用"><a href="#Flowise-部署及应用" class="headerlink" title="Flowise 部署及应用"></a>Flowise 部署及应用</h2><p>Flowise是一款基于拖拽界面的Agent编排工具，它通过直观的可视化界面，使非技术用户也能构建复杂的多Agent协作流程。</p>
+<h3 id="智能客服团队案例"><a href="#智能客服团队案例" class="headerlink" title="智能客服团队案例"></a>智能客服团队案例</h3><p>以下案例展示如何使用Flowise构建一个多层级的智能客服系统，结合多个专业Agent处理不同类型的客户查询。</p>
+<h4 id="1-系统架构-1"><a href="#1-系统架构-1" class="headerlink" title="1. 系统架构"></a>1. 系统架构</h4><p>该智能客服系统包含四个关键组件：</p>
+<ul>
+<li>初级分类Agent：接收并分类客户查询</li>
+<li>产品专家Agent：处理产品相关问题</li>
+<li>技术支持Agent：解决技术问题</li>
+<li>客户关系Agent：处理投诉和特殊请求</li>
+</ul>
+<h4 id="2-Flowise流程设计"><a href="#2-Flowise流程设计" class="headerlink" title="2. Flowise流程设计"></a>2. Flowise流程设计</h4><p><img src="/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/flowise-customer-service.png" srcset="/tech-blog/img/loading.gif" lazyload alt="Flowise智能客服流程图"></p>
+<p>在Flowise中，这个系统可以如下设计：</p>
+<ol>
+<li><p><strong>输入节点</strong>：</p>
+<ul>
+<li>ChatInput：接收用户问题</li>
+<li>ConversationHistory：存储对话历史</li>
+</ul>
+</li>
+<li><p><strong>分类节点</strong>：</p>
+<ul>
+<li>LLM节点(初级分类Agent)：分析用户问题并分类为”产品咨询”、”技术支持”或”投诉&#x2F;特殊请求”</li>
+<li>判断节点：根据分类结果路由到相应的专家Agent</li>
+</ul>
+</li>
+<li><p><strong>专家Agent节点</strong>：</p>
+<ul>
+<li>LLM节点(产品专家)：配置专门回答产品问题的提示和知识库</li>
+<li>LLM节点(技术支持)：配置专门解决技术问题的提示和工具</li>
+<li>LLM节点(客户关系)：配置处理投诉和特殊情况的提示和策略</li>
+</ul>
+</li>
+<li><p><strong>工具节点</strong>：</p>
+<ul>
+<li>知识库检索：连接产品文档数据库</li>
+<li>API调用：连接内部系统查询订单状态、技术文档等</li>
+<li>上报流程：当问题超出AI能力范围时，分配给人工客服</li>
+</ul>
+</li>
+<li><p><strong>输出节点</strong>：</p>
+<ul>
+<li>响应格式化：统一响应格式</li>
+<li>ChatOutput：将结果返回给用户</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-工作流程详解"><a href="#3-工作流程详解" class="headerlink" title="3. 工作流程详解"></a>3. 工作流程详解</h4><ol>
+<li><p><strong>用户查询接收与分类</strong>：<br>用户提问首先被初级分类Agent处理，它通过关键词识别和意图分析将问题分为不同类别。例如：</p>
+<ul>
+<li>“我想了解你们的高级套餐包含哪些功能？” → 产品咨询</li>
+<li>“我的账户登录显示错误代码E-201” → 技术支持</li>
+<li>“我已经等待退款三周了，这太不专业了” → 投诉处理</li>
+</ul>
+</li>
+<li><p><strong>专业Agent处理</strong>：</p>
+<ul>
+<li><strong>产品专家Agent</strong>：访问产品知识库，提供准确的产品信息、价格、功能对比等</li>
+<li><strong>技术支持Agent</strong>：分析错误代码，查询技术文档，提供故障排除步骤</li>
+<li><strong>客户关系Agent</strong>：采用更温和、理解的语气，提供解决方案并安抚客户情绪</li>
+</ul>
+</li>
+<li><p><strong>工具调用与集成</strong>：</p>
+<ul>
+<li>产品专家可调用产品数据库API获取最新产品信息</li>
+<li>技术支持可访问错误代码库和常见问题解决方案</li>
+<li>客户关系Agent可查询订单系统、启动退款流程或创建上报工单</li>
+</ul>
+</li>
+<li><p><strong>持续学习与改进</strong>：<br>系统记录所有交互，定期分析成功和失败案例，不断优化各Agent的知识库和响应策略。</p>
+</li>
+</ol>
+<h4 id="4-应用优势-1"><a href="#4-应用优势-1" class="headerlink" title="4. 应用优势"></a>4. 应用优势</h4><ul>
+<li><strong>可视化构建</strong>：无需编程即可设计复杂的多Agent系统</li>
+<li><strong>灵活路由</strong>：根据问题类型动态分配最合适的Agent</li>
+<li><strong>专业化处理</strong>：每个Agent专注于特定类型的问题，提高回答质量</li>
+<li><strong>无缝集成</strong>：可与企业现有系统和知识库集成</li>
+<li><strong>持续优化</strong>：基于用户反馈和交互数据不断改进</li>
+</ul>
+<h4 id="5-拓展应用场景-1"><a href="#5-拓展应用场景-1" class="headerlink" title="5. 拓展应用场景"></a>5. 拓展应用场景</h4><p>这一Flowise多Agent框架可应用于多个行业场景：</p>
+<ul>
+<li>医疗咨询（初诊分类、专科建议、预约安排）</li>
+<li>教育辅导（学科分类、个性化辅导、学习计划制定）</li>
+<li>金融顾问（产品推荐、风险评估、投资建议）</li>
+<li>旅游规划（目的地推荐、行程安排、预订服务）</li>
+</ul>
+<h2 id="总结与最佳实践"><a href="#总结与最佳实践" class="headerlink" title="总结与最佳实践"></a>总结与最佳实践</h2><h3 id="多Agent系统设计原则"><a href="#多Agent系统设计原则" class="headerlink" title="多Agent系统设计原则"></a>多Agent系统设计原则</h3><ol>
+<li><strong>明确分工</strong>：每个Agent应有清晰的角色定位和专业领域</li>
+<li><strong>有效协作</strong>：设计合理的信息流转和协作机制</li>
+<li><strong>平衡自主性</strong>：在集中控制和分散决策间找到平衡</li>
+<li><strong>系统可解释性</strong>：确保Agent决策过程和推理逻辑可追踪</li>
+<li><strong>持续评估</strong>：建立评估机制，不断优化Agent性能</li>
+</ol>
+<h3 id="选择合适的框架"><a href="#选择合适的框架" class="headerlink" title="选择合适的框架"></a>选择合适的框架</h3><ul>
+<li><strong>CrewAI</strong>：适合需要精细控制和自定义Agent行为的开发者</li>
+<li><strong>Flowise</strong>：适合快速原型设计和非技术人员参与构建</li>
+</ul>
+<p>两种框架各有优势，可根据项目需求、技术团队能力和用户参与程度选择最合适的解决方案。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/AI/%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/" class="category-chain-item">应用实践</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/Agent/" class="print-no-link">#Agent</a>
+      
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tech-blog/tags/%E5%AE%9E%E8%B7%B5/" class="print-no-link">#实践</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Agent实战应用</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/16/大模型-Agent-实战/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 16, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/04/16/%E6%95%99%E8%82%B2-%E5%A5%96%E5%8A%B1%E4%B8%8E%E6%83%A9%E7%BD%9A/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/04/15/002-%E4%BA%A7%E5%93%81-%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E6%95%B0%E6%8D%AEAgents/" title="SimAgent: 基于Genesis-World的机器人仿真数据自动化生成系统">
+                        <span class="hidden-mobile">SimAgent: 基于Genesis-World的机器人仿真数据自动化生成系统</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
