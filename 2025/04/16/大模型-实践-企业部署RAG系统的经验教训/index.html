@@ -19,26 +19,25 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATIONRDT-1B: A Diffusion Foundation Model for Bimanual Manipulation">
+    <meta name="description" content="现在存在 AI Context 悖论：LLM 在复杂推理、综合信息、代码生成、数学计算等方面表现惊人（对人类“难”），但在理解和应用特定上下文信息 (Context) 方面却很困难，而这恰恰是人类凭直觉和专业知识能轻松做到的。  企业要实现从 AI 中获得差异化价值和业务转型（而不仅仅是便利性或效率提升），就必须依赖于深度、准确的企业上下文信息。目前大多数应用还停留在低上下文信息需求的“便利性”阶">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RDT-1B：双手操作的扩散基础模型解读">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/22/%E6%9C%BA%E5%99%A8%E4%BA%BA-RDT%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/index.html">
+<meta property="og:title" content="企业部署RAG系统的10条经验教训">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/16/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E4%BC%81%E4%B8%9A%E9%83%A8%E7%BD%B2RAG%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATIONRDT-1B: A Diffusion Foundation Model for Bimanual Manipulation">
+<meta property="og:description" content="现在存在 AI Context 悖论：LLM 在复杂推理、综合信息、代码生成、数学计算等方面表现惊人（对人类“难”），但在理解和应用特定上下文信息 (Context) 方面却很困难，而这恰恰是人类凭直觉和专业知识能轻松做到的。  企业要实现从 AI 中获得差异化价值和业务转型（而不仅仅是便利性或效率提升），就必须依赖于深度、准确的企业上下文信息。目前大多数应用还停留在低上下文信息需求的“便利性”阶">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-22T15:42:00.000Z">
-<meta property="article:modified_time" content="2025-03-23T13:56:17.260Z">
+<meta property="article:published_time" content="2025-04-16T03:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-16T07:11:35.120Z">
 <meta property="article:author" content="Your Name">
-<meta property="article:tag" content="AI">
-<meta property="article:tag" content="Research">
-<meta property="article:tag" content="Robotics">
-<meta property="article:tag" content="ComputerVision">
-<meta property="article:tag" content="DiffusionModels">
+<meta property="article:tag" content="大模型">
+<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="企业AI">
+<meta property="article:tag" content="最佳实践">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>RDT-1B：双手操作的扩散基础模型解读 - Tech Blog</title>
+  <title>企业部署RAG系统的10条经验教训 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="RDT-1B：双手操作的扩散基础模型解读"></span>
+            <span id="subtitle" data-typed-text="企业部署RAG系统的10条经验教训"></span>
           
         </div>
 
@@ -234,8 +233,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-22 23:42" pubdate>
-          March 22, 2025 pm
+        <time datetime="2025-04-16 11:00" pubdate>
+          April 16, 2025 am
         </time>
       </span>
     
@@ -246,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5 words
+          1k words
         
       </span>
     
@@ -257,7 +256,7 @@
         
         
         
-          1 mins
+          9 mins
         
       </span>
     
@@ -294,12 +293,27 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">RDT-1B：双手操作的扩散基础模型解读</h1>
+            <h1 id="seo-header">企业部署RAG系统的10条经验教训</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION"><a href="#RDT-1B-A-DIFFUSION-FOUNDATION-MODEL-FOR-BIMANUAL-MANIPULATION" class="headerlink" title="RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION"></a>RDT-1B: A DIFFUSION FOUNDATION MODEL FOR BIMANUAL MANIPULATION</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2410.07864">RDT-1B: A Diffusion Foundation Model for Bimanual Manipulation</a></p>
+                <p>现在存在 AI Context 悖论：LLM 在复杂推理、综合信息、代码生成、数学计算等方面表现惊人（对人类“难”），但在理解和应用特定上下文信息 (Context) 方面却很困难，而这恰恰是人类凭直觉和专业知识能轻松做到的。 </p>
+<p>企业要实现从 AI 中获得差异化价值和业务转型（而不仅仅是便利性或效率提升），就必须依赖于深度、准确的企业上下文信息。目前大多数应用还停留在低上下文信息需求的“便利性”阶段。</p>
+<p>10个经验教训：</p>
+<p>1.更好的 LLM 不是（唯一）答案： LLM 只是整个 AI 系统（特别是 RAG 系统，包括提取、检索、生成、联合优化）的一小部分（约 20%）。一个优秀的 RAG 系统配合普通的 LLM，效果可能优于一个顶尖 LLM 配合糟糕的 RAG 系统。关键是关注系统而非孤立的模型。</p>
+<p>2.专业知识是你的燃料： 企业内部积累的专业知识和机构知识（通常存在于文档和数据中）是驱动 AI 产生价值的核心燃料。必须设法解锁这些专业知识。</p>
+<p>3.企业规模是你的护城河： 企业的核心竞争力在于其独特的数据。真正的挑战在于大规模地利用这些数据，让 AI 能够处理大规模、甚至“嘈杂”的真实数据。成功做到这一点，就能构建竞争壁垒。</p>
+<p>4.试点与生产之间的鸿沟总是比预想的要大： 建立小规模试点相对容易（少量文档、用户、单一场景、低风险），但将其扩展到生产环境则面临巨大挑战（海量文档、大量用户、多场景、高安全风险、SLA 要求等）。</p>
+<p>5.速度比完美更重要： 不要追求一开始就完美。应尽早将（哪怕不完美的）系统交给真实用户使用，获取反馈并快速迭代。通过迭代“爬山”达到目标，而不是试图一次性设计出完美方案。</p>
+<p>6.工程师在“无聊”的事情上花费大量时间： 工程师本应专注于构建流程、提升精度、扩展应用等创造业务价值的工作，但现实中却常常耗费时间在数据分块 (chunking) 策略、文本清洗、构建连接器、配置向量数据库、调整提示、管理基础设施等相对基础且耗时的工作上。应设法将这些工作自动化或平台化。</p>
+<p>7.让 AI 易于消费： 即使 AI 系统已部署到生产环境，如果没有被用户方便地使用，也无法产生价值。很多时候系统使用率为零。关键在于将 AI 集成到用户现有的工作流中。企业数据 + AI + 集成 &#x3D; 成功。</p>
+<p>8.让你的用户“惊叹”(Wow)： 要让 AI 应用产生粘性，需要尽快让用户体验到“惊艳”时刻。例如，帮助用户找到一个他们自己都不知道存在的、埋藏多年的重要文档并回答了关键问题。用户体验设计应围绕创造这种早期价值。</p>
+<ol start="9">
+<li>可观测性比准确率更重要： 达到 100% 准确率几乎不可能，90-95% 也许可以。但企业更关心的是那无法避免的 5-10% 的错误会带来什么影响以及如何处理。因此，可观测性，包括理解系统为何给出某个答案、提供溯源依据、建立审计追踪等，比单纯追求更高的准确率更重要，尤其是在受监管行业。</li>
+</ol>
+<p>10.要有雄心壮志：很多 AI 项目失败往往不是因为目标太高，而是因为目标太低。不要满足于解决“401k 供应商是谁”这类简单问题，要敢于挑战能带来真正业务转型的难题。</p>
+<p>From: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=kPL-6-9MVyA">RAG Agents in Prod: 10 Lessons We Learned — Douwe Kiela, creator of RAG</a></p>
 
                 
               </div>
@@ -318,20 +332,13 @@
     
       <span class="category-chain">
         
-  <a href="/tech-blog/categories/Research/" class="category-chain-item">Research</a>
+  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
   
   
     <span>></span>
     
-  <a href="/tech-blog/categories/Research/AI/" class="category-chain-item">AI</a>
+  <a href="/tech-blog/categories/AI/%E4%BC%81%E4%B8%9A%E5%BA%94%E7%94%A8/" class="category-chain-item">企业应用</a>
   
-  
-    <span>></span>
-    
-  <a href="/tech-blog/categories/Research/AI/Robotics/" class="category-chain-item">Robotics</a>
-  
-  
-
   
 
   
@@ -347,15 +354,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+        <a href="/tech-blog/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#大模型</a>
       
-        <a href="/tech-blog/tags/Research/" class="print-no-link">#Research</a>
+        <a href="/tech-blog/tags/RAG/" class="print-no-link">#RAG</a>
       
-        <a href="/tech-blog/tags/Robotics/" class="print-no-link">#Robotics</a>
+        <a href="/tech-blog/tags/%E4%BC%81%E4%B8%9AAI/" class="print-no-link">#企业AI</a>
       
-        <a href="/tech-blog/tags/ComputerVision/" class="print-no-link">#ComputerVision</a>
-      
-        <a href="/tech-blog/tags/DiffusionModels/" class="print-no-link">#DiffusionModels</a>
+        <a href="/tech-blog/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" class="print-no-link">#最佳实践</a>
       
     </div>
   
@@ -367,8 +372,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>RDT-1B：双手操作的扩散基础模型解读</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/22/机器人-RDT论文解读/</div>
+      <div>企业部署RAG系统的10条经验教训</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/16/大模型-实践-企业部署RAG系统的经验教训/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +385,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 22, 2025</div>
+          <div>April 16, 2025</div>
         </div>
       
       
@@ -412,18 +417,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/" title="QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/22/%E5%A6%82%E4%BD%95%E8%AF%BB%E8%AE%BA%E6%96%87/" title="如何高效阅读和理解学术论文">
-                        <span class="hidden-mobile">如何高效阅读和理解学术论文</span>
+                      <a href="/tech-blog/2025/04/16/%E6%95%99%E8%82%B2-%E5%A5%96%E5%8A%B1%E4%B8%8E%E6%83%A9%E7%BD%9A/" title="家庭教育中的奖励与惩罚：平衡发展的艺术">
+                        <span class="hidden-mobile">家庭教育中的奖励与惩罚：平衡发展的艺术</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
