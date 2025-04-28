@@ -4,6 +4,68 @@
   
   
   <entry>
+    <title>大模型应用参考</title>
+    <link href="/tech-blog/2025/04/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BA%94%E7%94%A8-%E6%88%90%E5%8A%9F%E6%A1%88%E4%BE%8B/"/>
+    <url>/tech-blog/2025/04/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BA%94%E7%94%A8-%E6%88%90%E5%8A%9F%E6%A1%88%E4%BE%8B/</url>
+    
+    <content type="html"><![CDATA[<p>一些落地的案例和结论分享：<br>1、通过将销售过程中遇到的问题，让AI自动记录并自动更新到新的知识库，可以持续完善FAQ系统，这个过程由原来的人工变成了现在的自动化+AI，质量和效率都得到了极大的提升<br>2、通过访谈或者提问，加上一套非常好用的个人故事框架，可以让AI自动写一段自己的人生故事，目效果极佳<br>3、通过把编导的工作用自动化+AI对接后，编导人数从7人减到1人，日承接的工作量和质量要比没有AI时的7人还要高，意味着这里的成本降低就直接多出了百万级别的利润<br>4、在AI客服和AI销售上，AI也都具备了显著的提效能力，比如销售提效30%-50%，另外还做到了大量之前无法轻易做到的事情，比如系统性的对标分析，如果多平台CRM能打通，提效的空间还可以更大。朋友分享，目前AI销售在大客单价上也有一些进展，近期成交了两单高客单价的产品<br>当然，在落地AI的过程中，也有一些困难，如果能突破，效果会进一步显著提高，比如：<br>1、有效数据的获取。以短视频起号为例，第一步：先全网抓取所有近期的低粉高赞短视频，通过分析形成对标知识库；第二步：AI对这些参考短视频进行二次文案生成。这个非常依赖于数据抓取能力<br>2、多平台打通，比如抖音或视频号的用户数据，与私域用户、自有产品的用户三端打通，就有希望形成一个全链路自动化AI的逻辑，极大降低对人的依赖<br>3、好的模型对产出质量影响比提示词更大，而真正质量高的模型不仅仅成本更高，在批量使用上也有较多的门槛。比如，目前在文案和编程方面，世界上最好的模型：Claude 3.7</p><p>通才：通过跨学科或跨专业视角，将各种能力快速整合，最终形成更有竞争力的模式，而这过程中涉及到的一些专业能力，AI其实是可以很好的快速弥补的。<br>产品、销售、AI应用三个纬度拓展。</p><p>希望把我们的产品和技能和你们的业务流程进行整合，快速打造出比明显高出同行竞争力的商业模式出来。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://anyvoice.net/zh/voices">AnyVoice</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>论文解读系列-任务向量做模型编辑为何有效？</title>
+    <link href="/tech-blog/2025/04/23/00-%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%BB%E5%8A%A1%E5%90%91%E9%87%8F%E5%81%9A%E6%A8%A1%E5%9E%8B%E7%BC%96%E8%BE%91%E4%B8%BA%E4%BD%95%E6%9C%89%E6%95%88/"/>
+    <url>/tech-blog/2025/04/23/00-%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%BB%E5%8A%A1%E5%90%91%E9%87%8F%E5%81%9A%E6%A8%A1%E5%9E%8B%E7%BC%96%E8%BE%91%E4%B8%BA%E4%BD%95%E6%9C%89%E6%95%88/</url>
+    
+    <content type="html"><![CDATA[<p>作者介绍：</p><p>论文标题：<br>When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers<br>论文地址：<br><a href="https://openreview.net/pdf?id=vRvVVb0NAz">https://openreview.net/pdf?id=vRvVVb0NAz</a></p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>任务向量（task vector）指微调得到的模型与预训练模型之间的权重差值。<br>将不同的任务向量进行线性算数运算后叠加在一个预训练模型上可以直接赋予该模型新的能力，比如多任务学习、机器遗忘、分布外泛化等，这种基于任务向量的直接运算对模型进行编辑做下游任务预测的方法称为任务运算。<br>该文章为任务加减法运算的有效性提供了一个特征学习的理论框架。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>LLM</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>LLM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大模型后训练：方法与实践分析</title>
     <link href="/tech-blog/2025/04/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%90%8E%E8%AE%AD%E7%BB%83/"/>
     <url>/tech-blog/2025/04/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%90%8E%E8%AE%AD%E7%BB%83/</url>
@@ -140,7 +202,7 @@
     <link href="/tech-blog/2025/04/16/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/"/>
     <url>/tech-blog/2025/04/16/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/</url>
     
-    <content type="html"><![CDATA[<h1 id="Agent框架实战应用"><a href="#Agent框架实战应用" class="headerlink" title="Agent框架实战应用"></a>Agent框架实战应用</h1><p>本文介绍两个流行的Agent框架——CrewAI和Flowise的实际应用案例，重点展示多Agent协作场景的实现方法和效果。</p><h2 id="CrewAI多AI-Agents实战"><a href="#CrewAI多AI-Agents实战" class="headerlink" title="CrewAI多AI Agents实战"></a>CrewAI多AI Agents实战</h2><p>CrewAI是一个专为构建和编排多Agent系统设计的框架，它简化了多个智能体之间的协作流程，使开发者能够轻松创建复杂的多智能体应用。</p><h3 id="房地产投资分析案例"><a href="#房地产投资分析案例" class="headerlink" title="房地产投资分析案例"></a>房地产投资分析案例</h3><p>下面展示一个房地产投资分析应用，通过多个专家Agent协作完成从市场研究到投资建议的全流程分析。</p><h4 id="1-系统架构"><a href="#1-系统架构" class="headerlink" title="1. 系统架构"></a>1. 系统架构</h4><p>该系统由四个专家Agent组成：</p><ul><li>房地产市场研究员：负责收集市场数据和趋势</li><li>财务分析师：评估投资回报率和财务可行性</li><li>本地区域专家：提供特定地区的洞察和风险评估</li><li>投资顾问：整合所有信息并提出最终建议</li></ul><h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> crewai <span class="hljs-keyword">import</span> Agent, Task, Crew, Process<br><span class="hljs-keyword">from</span> langchain.llms <span class="hljs-keyword">import</span> OpenAI<br><br><span class="hljs-comment"># 配置OpenAI模型</span><br>openai_llm = OpenAI(temperature=<span class="hljs-number">0.7</span>, model=<span class="hljs-string">&quot;gpt-4&quot;</span>)<br><br><span class="hljs-comment"># 创建专家Agents</span><br>market_researcher = Agent(<br>    role=<span class="hljs-string">&quot;房地产市场研究员&quot;</span>,<br>    goal=<span class="hljs-string">&quot;提供准确、全面的房地产市场分析&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位经验丰富的房地产市场分析师，擅长识别市场趋势和机会。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>financial_analyst = Agent(<br>    role=<span class="hljs-string">&quot;财务分析师&quot;</span>,<br>    goal=<span class="hljs-string">&quot;评估投资项目的财务可行性和潜在回报&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位精通房地产财务建模的分析师，能够准确预测投资回报率和现金流。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>local_expert = Agent(<br>    role=<span class="hljs-string">&quot;本地区域专家&quot;</span>,<br>    goal=<span class="hljs-string">&quot;提供目标地区的深入洞察和风险评估&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你在目标投资区域生活多年，了解当地法规、发展规划和社区动态。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>investment_advisor = Agent(<br>    role=<span class="hljs-string">&quot;投资顾问&quot;</span>,<br>    goal=<span class="hljs-string">&quot;整合所有信息并提供最佳投资建议&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位资深投资顾问，善于综合各方面信息，为客户提供明智的投资决策建议。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br><span class="hljs-comment"># 定义各专家任务</span><br>market_research_task = Task(<br>    description=<span class="hljs-string">&quot;研究目标区域的房地产市场状况，包括价格趋势、供需关系、租金水平和市场饱和度。&quot;</span>,<br>    agent=market_researcher,<br>    expected_output=<span class="hljs-string">&quot;详细的市场分析报告，包含数据支持的趋势和预测。&quot;</span><br>)<br><br>financial_analysis_task = Task(<br>    description=<span class="hljs-string">&quot;基于市场研究数据，分析潜在投资的财务可行性，包括ROI、现金流、融资选项和税务考量。&quot;</span>,<br>    agent=financial_analyst,<br>    expected_output=<span class="hljs-string">&quot;财务分析报告，包含ROI计算、资本需求和投资风险评估。&quot;</span>,<br>    context=[market_research_task]<br>)<br><br>local_insight_task = Task(<br>    description=<span class="hljs-string">&quot;提供目标区域的本地洞察，包括发展规划、基础设施项目、社区变化和潜在问题。&quot;</span>,<br>    agent=local_expert,<br>    expected_output=<span class="hljs-string">&quot;本地区域分析报告，重点关注可能影响投资的具体因素。&quot;</span><br>)<br><br>investment_recommendation_task = Task(<br>    description=<span class="hljs-string">&quot;整合市场研究、财务分析和本地洞察，提出综合投资建议。&quot;</span>,<br>    agent=investment_advisor,<br>    expected_output=<span class="hljs-string">&quot;最终投资建议报告，包含明确的行动步骤和风险缓解策略。&quot;</span>,<br>    context=[market_research_task, financial_analysis_task, local_insight_task]<br>)<br><br><span class="hljs-comment"># 创建Agent团队并设置执行过程</span><br>real_estate_crew = Crew(<br>    agents=[market_researcher, financial_analyst, local_expert, investment_advisor],<br>    tasks=[market_research_task, financial_analysis_task, local_insight_task, investment_recommendation_task],<br>    verbose=<span class="hljs-number">2</span>,<br>    process=Process.sequential  <span class="hljs-comment"># 按顺序执行任务</span><br>)<br><br><span class="hljs-comment"># 执行任务</span><br>result = real_estate_crew.kickoff(<br>    inputs=&#123;<br>        <span class="hljs-string">&quot;target_area&quot;</span>: <span class="hljs-string">&quot;上海市浦东新区&quot;</span>,<br>        <span class="hljs-string">&quot;investment_budget&quot;</span>: <span class="hljs-string">&quot;500万人民币&quot;</span>,<br>        <span class="hljs-string">&quot;investment_horizon&quot;</span>: <span class="hljs-string">&quot;5-10年&quot;</span>,<br>        <span class="hljs-string">&quot;investment_goals&quot;</span>: <span class="hljs-string">&quot;稳定的租金收入和中长期资本增值&quot;</span><br>    &#125;<br>)<br><br><span class="hljs-built_in">print</span>(result)<br></code></pre></td></tr></table></figure><h4 id="3-执行流程"><a href="#3-执行流程" class="headerlink" title="3. 执行流程"></a>3. 执行流程</h4><ol><li><strong>市场研究阶段</strong>：市场研究员Agent首先分析浦东新区的房地产市场状况，包括价格趋势、供需情况和租金水平。</li><li><strong>财务分析阶段</strong>：财务分析师Agent基于市场研究结果，计算潜在投资回报率和财务可行性。</li><li><strong>本地洞察阶段</strong>：本地专家Agent提供浦东新区特有的信息，如发展规划、政策变化和社区动态。</li><li><strong>投资建议整合</strong>：投资顾问Agent综合前三位专家的分析结果，形成最终投资建议。</li></ol><h4 id="4-应用优势"><a href="#4-应用优势" class="headerlink" title="4. 应用优势"></a>4. 应用优势</h4><ul><li><strong>专业分工</strong>：每个Agent专注于自己的专业领域，提高分析质量</li><li><strong>信息传递</strong>：任务之间的上下文传递确保信息连贯性</li><li><strong>灵活配置</strong>：可以根据不同投资类型调整专家组合和任务流程</li><li><strong>系统拓展</strong>：可轻松添加更多专家（如法律顾问、建筑专家等）</li></ul><h4 id="5-拓展应用场景"><a href="#5-拓展应用场景" class="headerlink" title="5. 拓展应用场景"></a>5. 拓展应用场景</h4><p>这一多Agent协作模式可以扩展到其他领域：</p><ul><li>创业项目评估</li><li>股票投资组合分析</li><li>产品市场调研</li><li>企业并购尽职调查</li></ul><h2 id="Flowise-部署及应用"><a href="#Flowise-部署及应用" class="headerlink" title="Flowise 部署及应用"></a>Flowise 部署及应用</h2><p>Flowise是一款基于拖拽界面的Agent编排工具，它通过直观的可视化界面，使非技术用户也能构建复杂的多Agent协作流程。</p><h3 id="智能客服团队案例"><a href="#智能客服团队案例" class="headerlink" title="智能客服团队案例"></a>智能客服团队案例</h3><p>以下案例展示如何使用Flowise构建一个多层级的智能客服系统，结合多个专业Agent处理不同类型的客户查询。</p><h4 id="1-系统架构-1"><a href="#1-系统架构-1" class="headerlink" title="1. 系统架构"></a>1. 系统架构</h4><p>该智能客服系统包含四个关键组件：</p><ul><li>初级分类Agent：接收并分类客户查询</li><li>产品专家Agent：处理产品相关问题</li><li>技术支持Agent：解决技术问题</li><li>客户关系Agent：处理投诉和特殊请求</li></ul><h4 id="2-Flowise流程设计"><a href="#2-Flowise流程设计" class="headerlink" title="2. Flowise流程设计"></a>2. Flowise流程设计</h4><p><img src="/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/flowise-customer-service.png" alt="Flowise智能客服流程图"></p><p>在Flowise中，这个系统可以如下设计：</p><ol><li><p><strong>输入节点</strong>：</p><ul><li>ChatInput：接收用户问题</li><li>ConversationHistory：存储对话历史</li></ul></li><li><p><strong>分类节点</strong>：</p><ul><li>LLM节点(初级分类Agent)：分析用户问题并分类为”产品咨询”、”技术支持”或”投诉&#x2F;特殊请求”</li><li>判断节点：根据分类结果路由到相应的专家Agent</li></ul></li><li><p><strong>专家Agent节点</strong>：</p><ul><li>LLM节点(产品专家)：配置专门回答产品问题的提示和知识库</li><li>LLM节点(技术支持)：配置专门解决技术问题的提示和工具</li><li>LLM节点(客户关系)：配置处理投诉和特殊情况的提示和策略</li></ul></li><li><p><strong>工具节点</strong>：</p><ul><li>知识库检索：连接产品文档数据库</li><li>API调用：连接内部系统查询订单状态、技术文档等</li><li>上报流程：当问题超出AI能力范围时，分配给人工客服</li></ul></li><li><p><strong>输出节点</strong>：</p><ul><li>响应格式化：统一响应格式</li><li>ChatOutput：将结果返回给用户</li></ul></li></ol><h4 id="3-工作流程详解"><a href="#3-工作流程详解" class="headerlink" title="3. 工作流程详解"></a>3. 工作流程详解</h4><ol><li><p><strong>用户查询接收与分类</strong>：<br>用户提问首先被初级分类Agent处理，它通过关键词识别和意图分析将问题分为不同类别。例如：</p><ul><li>“我想了解你们的高级套餐包含哪些功能？” → 产品咨询</li><li>“我的账户登录显示错误代码E-201” → 技术支持</li><li>“我已经等待退款三周了，这太不专业了” → 投诉处理</li></ul></li><li><p><strong>专业Agent处理</strong>：</p><ul><li><strong>产品专家Agent</strong>：访问产品知识库，提供准确的产品信息、价格、功能对比等</li><li><strong>技术支持Agent</strong>：分析错误代码，查询技术文档，提供故障排除步骤</li><li><strong>客户关系Agent</strong>：采用更温和、理解的语气，提供解决方案并安抚客户情绪</li></ul></li><li><p><strong>工具调用与集成</strong>：</p><ul><li>产品专家可调用产品数据库API获取最新产品信息</li><li>技术支持可访问错误代码库和常见问题解决方案</li><li>客户关系Agent可查询订单系统、启动退款流程或创建上报工单</li></ul></li><li><p><strong>持续学习与改进</strong>：<br>系统记录所有交互，定期分析成功和失败案例，不断优化各Agent的知识库和响应策略。</p></li></ol><h4 id="4-应用优势-1"><a href="#4-应用优势-1" class="headerlink" title="4. 应用优势"></a>4. 应用优势</h4><ul><li><strong>可视化构建</strong>：无需编程即可设计复杂的多Agent系统</li><li><strong>灵活路由</strong>：根据问题类型动态分配最合适的Agent</li><li><strong>专业化处理</strong>：每个Agent专注于特定类型的问题，提高回答质量</li><li><strong>无缝集成</strong>：可与企业现有系统和知识库集成</li><li><strong>持续优化</strong>：基于用户反馈和交互数据不断改进</li></ul><h4 id="5-拓展应用场景-1"><a href="#5-拓展应用场景-1" class="headerlink" title="5. 拓展应用场景"></a>5. 拓展应用场景</h4><p>这一Flowise多Agent框架可应用于多个行业场景：</p><ul><li>医疗咨询（初诊分类、专科建议、预约安排）</li><li>教育辅导（学科分类、个性化辅导、学习计划制定）</li><li>金融顾问（产品推荐、风险评估、投资建议）</li><li>旅游规划（目的地推荐、行程安排、预订服务）</li></ul><h2 id="总结与最佳实践"><a href="#总结与最佳实践" class="headerlink" title="总结与最佳实践"></a>总结与最佳实践</h2><h3 id="多Agent系统设计原则"><a href="#多Agent系统设计原则" class="headerlink" title="多Agent系统设计原则"></a>多Agent系统设计原则</h3><ol><li><strong>明确分工</strong>：每个Agent应有清晰的角色定位和专业领域</li><li><strong>有效协作</strong>：设计合理的信息流转和协作机制</li><li><strong>平衡自主性</strong>：在集中控制和分散决策间找到平衡</li><li><strong>系统可解释性</strong>：确保Agent决策过程和推理逻辑可追踪</li><li><strong>持续评估</strong>：建立评估机制，不断优化Agent性能</li></ol><h3 id="选择合适的框架"><a href="#选择合适的框架" class="headerlink" title="选择合适的框架"></a>选择合适的框架</h3><ul><li><strong>CrewAI</strong>：适合需要精细控制和自定义Agent行为的开发者</li><li><strong>Flowise</strong>：适合快速原型设计和非技术人员参与构建</li></ul><p>两种框架各有优势，可根据项目需求、技术团队能力和用户参与程度选择最合适的解决方案。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Agent框架实战应用"><a href="#Agent框架实战应用" class="headerlink" title="Agent框架实战应用"></a>Agent框架实战应用</h1><p>本文介绍两个流行的Agent框架——CrewAI和Flowise的实际应用案例，重点展示多Agent协作场景的实现方法和效果。</p><h2 id="CrewAI多AI-Agents实战"><a href="#CrewAI多AI-Agents实战" class="headerlink" title="CrewAI多AI Agents实战"></a>CrewAI多AI Agents实战</h2><p>CrewAI是一个专为构建和编排多Agent系统设计的框架，它简化了多个智能体之间的协作流程，使开发者能够轻松创建复杂的多智能体应用。</p><h3 id="房地产投资分析案例"><a href="#房地产投资分析案例" class="headerlink" title="房地产投资分析案例"></a>房地产投资分析案例</h3><p>下面展示一个房地产投资分析应用，通过多个专家Agent协作完成从市场研究到投资建议的全流程分析。</p><h4 id="1-系统架构"><a href="#1-系统架构" class="headerlink" title="1. 系统架构"></a>1. 系统架构</h4><p>该系统由四个专家Agent组成：</p><ul><li>房地产市场研究员：负责收集市场数据和趋势</li><li>财务分析师：评估投资回报率和财务可行性</li><li>本地区域专家：提供特定地区的洞察和风险评估</li><li>投资顾问：整合所有信息并提出最终建议</li></ul><h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> crewai <span class="hljs-keyword">import</span> Agent, Task, Crew, Process<br><span class="hljs-keyword">from</span> langchain.llms <span class="hljs-keyword">import</span> OpenAI<br><br><span class="hljs-comment"># 配置OpenAI模型</span><br>openai_llm = OpenAI(temperature=<span class="hljs-number">0.7</span>, model=<span class="hljs-string">&quot;gpt-4&quot;</span>)<br><br><span class="hljs-comment"># 创建专家Agents</span><br>market_researcher = Agent(<br>    role=<span class="hljs-string">&quot;房地产市场研究员&quot;</span>,<br>    goal=<span class="hljs-string">&quot;提供准确、全面的房地产市场分析&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位经验丰富的房地产市场分析师，擅长识别市场趋势和机会。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>financial_analyst = Agent(<br>    role=<span class="hljs-string">&quot;财务分析师&quot;</span>,<br>    goal=<span class="hljs-string">&quot;评估投资项目的财务可行性和潜在回报&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位精通房地产财务建模的分析师，能够准确预测投资回报率和现金流。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>local_expert = Agent(<br>    role=<span class="hljs-string">&quot;本地区域专家&quot;</span>,<br>    goal=<span class="hljs-string">&quot;提供目标地区的深入洞察和风险评估&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你在目标投资区域生活多年，了解当地法规、发展规划和社区动态。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br>investment_advisor = Agent(<br>    role=<span class="hljs-string">&quot;投资顾问&quot;</span>,<br>    goal=<span class="hljs-string">&quot;整合所有信息并提供最佳投资建议&quot;</span>,<br>    backstory=<span class="hljs-string">&quot;你是一位资深投资顾问，善于综合各方面信息，为客户提供明智的投资决策建议。&quot;</span>,<br>    verbose=<span class="hljs-literal">True</span>,<br>    llm=openai_llm<br>)<br><br><span class="hljs-comment"># 定义各专家任务</span><br>market_research_task = Task(<br>    description=<span class="hljs-string">&quot;研究目标区域的房地产市场状况，包括价格趋势、供需关系、租金水平和市场饱和度。&quot;</span>,<br>    agent=market_researcher,<br>    expected_output=<span class="hljs-string">&quot;详细的市场分析报告，包含数据支持的趋势和预测。&quot;</span><br>)<br><br>financial_analysis_task = Task(<br>    description=<span class="hljs-string">&quot;基于市场研究数据，分析潜在投资的财务可行性，包括ROI、现金流、融资选项和税务考量。&quot;</span>,<br>    agent=financial_analyst,<br>    expected_output=<span class="hljs-string">&quot;财务分析报告，包含ROI计算、资本需求和投资风险评估。&quot;</span>,<br>    context=[market_research_task]<br>)<br><br>local_insight_task = Task(<br>    description=<span class="hljs-string">&quot;提供目标区域的本地洞察，包括发展规划、基础设施项目、社区变化和潜在问题。&quot;</span>,<br>    agent=local_expert,<br>    expected_output=<span class="hljs-string">&quot;本地区域分析报告，重点关注可能影响投资的具体因素。&quot;</span><br>)<br><br>investment_recommendation_task = Task(<br>    description=<span class="hljs-string">&quot;整合市场研究、财务分析和本地洞察，提出综合投资建议。&quot;</span>,<br>    agent=investment_advisor,<br>    expected_output=<span class="hljs-string">&quot;最终投资建议报告，包含明确的行动步骤和风险缓解策略。&quot;</span>,<br>    context=[market_research_task, financial_analysis_task, local_insight_task]<br>)<br><br><span class="hljs-comment"># 创建Agent团队并设置执行过程</span><br>real_estate_crew = Crew(<br>    agents=[market_researcher, financial_analyst, local_expert, investment_advisor],<br>    tasks=[market_research_task, financial_analysis_task, local_insight_task, investment_recommendation_task],<br>    verbose=<span class="hljs-number">2</span>,<br>    process=Process.sequential  <span class="hljs-comment"># 按顺序执行任务</span><br>)<br><br><span class="hljs-comment"># 执行任务</span><br>result = real_estate_crew.kickoff(<br>    inputs=&#123;<br>        <span class="hljs-string">&quot;target_area&quot;</span>: <span class="hljs-string">&quot;上海市浦东新区&quot;</span>,<br>        <span class="hljs-string">&quot;investment_budget&quot;</span>: <span class="hljs-string">&quot;500万人民币&quot;</span>,<br>        <span class="hljs-string">&quot;investment_horizon&quot;</span>: <span class="hljs-string">&quot;5-10年&quot;</span>,<br>        <span class="hljs-string">&quot;investment_goals&quot;</span>: <span class="hljs-string">&quot;稳定的租金收入和中长期资本增值&quot;</span><br>    &#125;<br>)<br><br><span class="hljs-built_in">print</span>(result)<br></code></pre></td></tr></table></figure><h4 id="3-执行流程"><a href="#3-执行流程" class="headerlink" title="3. 执行流程"></a>3. 执行流程</h4><ol><li><strong>市场研究阶段</strong>：市场研究员Agent首先分析浦东新区的房地产市场状况，包括价格趋势、供需情况和租金水平。</li><li><strong>财务分析阶段</strong>：财务分析师Agent基于市场研究结果，计算潜在投资回报率和财务可行性。</li><li><strong>本地洞察阶段</strong>：本地专家Agent提供浦东新区特有的信息，如发展规划、政策变化和社区动态。</li><li><strong>投资建议整合</strong>：投资顾问Agent综合前三位专家的分析结果，形成最终投资建议。</li></ol><h4 id="4-应用优势"><a href="#4-应用优势" class="headerlink" title="4. 应用优势"></a>4. 应用优势</h4><ul><li><strong>专业分工</strong>：每个Agent专注于自己的专业领域，提高分析质量</li><li><strong>信息传递</strong>：任务之间的上下文传递确保信息连贯性</li><li><strong>灵活配置</strong>：可以根据不同投资类型调整专家组合和任务流程</li><li><strong>系统拓展</strong>：可轻松添加更多专家（如法律顾问、建筑专家等）</li></ul><h4 id="5-拓展应用场景"><a href="#5-拓展应用场景" class="headerlink" title="5. 拓展应用场景"></a>5. 拓展应用场景</h4><p>这一多Agent协作模式可以扩展到其他领域：</p><ul><li>创业项目评估</li><li>股票投资组合分析</li><li>产品市场调研</li><li>企业并购尽职调查</li></ul><h2 id="Flowise-部署及应用"><a href="#Flowise-部署及应用" class="headerlink" title="Flowise 部署及应用"></a>Flowise 部署及应用</h2><p>Flowise是一款基于拖拽界面的Agent编排工具，它通过直观的可视化界面，使非技术用户也能构建复杂的多Agent协作流程。</p><h3 id="智能客服团队案例"><a href="#智能客服团队案例" class="headerlink" title="智能客服团队案例"></a>智能客服团队案例</h3><p>以下案例展示如何使用Flowise构建一个多层级的智能客服系统，结合多个专业Agent处理不同类型的客户查询。</p><h4 id="1-系统架构-1"><a href="#1-系统架构-1" class="headerlink" title="1. 系统架构"></a>1. 系统架构</h4><p>该智能客服系统包含四个关键组件：</p><ul><li>初级分类Agent：接收并分类客户查询</li><li>产品专家Agent：处理产品相关问题</li><li>技术支持Agent：解决技术问题</li><li>客户关系Agent：处理投诉和特殊请求</li></ul><h4 id="2-Flowise流程设计"><a href="#2-Flowise流程设计" class="headerlink" title="2. Flowise流程设计"></a>2. Flowise流程设计</h4><p><img src="/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%AE%9E%E6%88%98/flowise-customer-service.png" alt="Flowise智能客服流程图"></p><p>在Flowise中，这个系统可以如下设计：</p><ol><li><p><strong>输入节点</strong>：</p><ul><li>ChatInput：接收用户问题</li><li>ConversationHistory：存储对话历史</li></ul></li><li><p><strong>分类节点</strong>：</p><ul><li>LLM节点(初级分类Agent)：分析用户问题并分类为”产品咨询”、”技术支持”或”投诉&#x2F;特殊请求”</li><li>判断节点：根据分类结果路由到相应的专家Agent</li></ul></li><li><p><strong>专家Agent节点</strong>：</p><ul><li>LLM节点(产品专家)：配置专门回答产品问题的提示和知识库</li><li>LLM节点(技术支持)：配置专门解决技术问题的提示和工具</li><li>LLM节点(客户关系)：配置处理投诉和特殊情况的提示和策略</li></ul></li><li><p><strong>工具节点</strong>：</p><ul><li>知识库检索：连接产品文档数据库</li><li>API调用：连接内部系统查询订单状态、技术文档等</li><li>上报流程：当问题超出AI能力范围时，分配给人工客服</li></ul></li><li><p><strong>输出节点</strong>：</p><ul><li>响应格式化：统一响应格式</li><li>ChatOutput：将结果返回给用户</li></ul></li></ol><h4 id="3-工作流程详解"><a href="#3-工作流程详解" class="headerlink" title="3. 工作流程详解"></a>3. 工作流程详解</h4><ol><li><p><strong>用户查询接收与分类</strong>：<br>用户提问首先被初级分类Agent处理，它通过关键词识别和意图分析将问题分为不同类别。例如：</p><ul><li>“我想了解你们的高级套餐包含哪些功能？” → 产品咨询</li><li>“我的账户登录显示错误代码E-201” → 技术支持</li><li>“我已经等待退款三周了，这太不专业了” → 投诉处理</li></ul></li><li><p><strong>专业Agent处理</strong>：</p><ul><li><strong>产品专家Agent</strong>：访问产品知识库，提供准确的产品信息、价格、功能对比等</li><li><strong>技术支持Agent</strong>：分析错误代码，查询技术文档，提供故障排除步骤</li><li><strong>客户关系Agent</strong>：采用更温和、理解的语气，提供解决方案并安抚客户情绪</li></ul></li><li><p><strong>工具调用与集成</strong>：</p><ul><li>产品专家可调用产品数据库API获取最新产品信息</li><li>技术支持可访问错误代码库和常见问题解决方案</li><li>客户关系Agent可查询订单系统、启动退款流程或创建上报工单</li></ul></li><li><p><strong>持续学习与改进</strong>：<br>系统记录所有交互，定期分析成功和失败案例，不断优化各Agent的知识库和响应策略。</p></li></ol><h4 id="4-应用优势-1"><a href="#4-应用优势-1" class="headerlink" title="4. 应用优势"></a>4. 应用优势</h4><ul><li><strong>可视化构建</strong>：无需编程即可设计复杂的多Agent系统</li><li><strong>灵活路由</strong>：根据问题类型动态分配最合适的Agent</li><li><strong>专业化处理</strong>：每个Agent专注于特定类型的问题，提高回答质量</li><li><strong>无缝集成</strong>：可与企业现有系统和知识库集成</li><li><strong>持续优化</strong>：基于用户反馈和交互数据不断改进</li></ul><h4 id="5-拓展应用场景-1"><a href="#5-拓展应用场景-1" class="headerlink" title="5. 拓展应用场景"></a>5. 拓展应用场景</h4><p>这一Flowise多Agent框架可应用于多个行业场景：</p><ul><li>医疗咨询（初诊分类、专科建议、预约安排）</li><li>教育辅导（学科分类、个性化辅导、学习计划制定）</li><li>金融顾问（产品推荐、风险评估、投资建议）</li><li>旅游规划（目的地推荐、行程安排、预订服务）</li></ul><h2 id="总结与最佳实践"><a href="#总结与最佳实践" class="headerlink" title="总结与最佳实践"></a>总结与最佳实践</h2><h3 id="多Agent系统设计原则"><a href="#多Agent系统设计原则" class="headerlink" title="多Agent系统设计原则"></a>多Agent系统设计原则</h3><ol><li><strong>明确分工</strong>：每个Agent应有清晰的角色定位和专业领域</li><li><strong>有效协作</strong>：设计合理的信息流转和协作机制</li><li><strong>平衡自主性</strong>：在集中控制和分散决策间找到平衡</li><li><strong>系统可解释性</strong>：确保Agent决策过程和推理逻辑可追踪</li><li><strong>持续评估</strong>：建立评估机制，不断优化Agent性能</li></ol><h3 id="选择合适的框架"><a href="#选择合适的框架" class="headerlink" title="选择合适的框架"></a>选择合适的框架</h3><ul><li><strong>CrewAI</strong>：适合需要精细控制和自定义Agent行为的开发者</li><li><strong>Flowise</strong>：适合快速原型设计和非技术人员参与构建</li></ul><p>两种框架各有优势，可根据项目需求、技术团队能力和用户参与程度选择最合适的解决方案。</p><p>可能的壁垒：<br>（1）行业的脏数据<br>（2）用户习惯的绑定，遇到问题第一是找它。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.langchain.dev/how-to-think-about-agent-frameworks/">How to think about agent frameworks</a><br><a href="https://www.anthropic.com/engineering/building-effective-agents?ref=blog.langchain.dev">building-effective-agents</a></p>]]></content>
     
     
     <categories>
@@ -154,9 +216,9 @@
     
     <tags>
       
-      <tag>Agent</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Agent</tag>
       
       <tag>实践</tag>
       
@@ -357,11 +419,11 @@
   
   
   <entry>
-    <title>大模型时代的搜索引擎</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
+    <title>搜索中的索引</title>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E5%8F%AC%E5%9B%9E-%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E5%8F%AC%E5%9B%9E-%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95/</url>
     
-    <content type="html"><![CDATA[<h1 id="人工智能搜索引擎"><a href="#人工智能搜索引擎" class="headerlink" title="人工智能搜索引擎"></a>人工智能搜索引擎</h1><h2 id="Perplexity-AI"><a href="#Perplexity-AI" class="headerlink" title="Perplexity AI"></a>Perplexity AI</h2><h2 id="秘塔搜索"><a href="#秘塔搜索" class="headerlink" title="秘塔搜索"></a>秘塔搜索</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="查询的基本步骤"><a href="#查询的基本步骤" class="headerlink" title="查询的基本步骤"></a>查询的基本步骤</h2><h1 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h1><h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><h3 id="结构化数据"><a href="#结构化数据" class="headerlink" title="结构化数据"></a>结构化数据</h3><p>各垂类业务帖子的结构化数据包括：属性、标题、正文等。<br>正文通常会采取截断操作，更优的做法是征文做关键词提取、向量索引等，实现更充分的召回。</p><p>在索引层面提升召回：同义词、扩展词、语义向量。</p><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h2 id="正排索引"><a href="#正排索引" class="headerlink" title="正排索引"></a>正排索引</h2><h2 id="向量索引"><a href="#向量索引" class="headerlink" title="向量索引"></a>向量索引</h2><p>使用faiss、milvus等数据库。</p><h3 id="faiss"><a href="#faiss" class="headerlink" title="faiss"></a>faiss</h3><h4 id="faiss-IVF"><a href="#faiss-IVF" class="headerlink" title="faiss IVF"></a>faiss IVF</h4><p>聚类中心的向量ID建到倒排索引。</p>]]></content>
     
     
     <categories>
@@ -388,11 +450,11 @@
   
   
   <entry>
-    <title>搜索中的索引</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E5%8F%AC%E5%9B%9E-%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E5%8F%AC%E5%9B%9E-%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95/</url>
+    <title>大模型时代的搜索引擎</title>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="查询的基本步骤"><a href="#查询的基本步骤" class="headerlink" title="查询的基本步骤"></a>查询的基本步骤</h2><h1 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h1><h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><h3 id="结构化数据"><a href="#结构化数据" class="headerlink" title="结构化数据"></a>结构化数据</h3><p>各垂类业务帖子的结构化数据包括：属性、标题、正文等。<br>正文通常会采取截断操作，更优的做法是征文做关键词提取、向量索引等，实现更充分的召回。</p><p>在索引层面提升召回：同义词、扩展词、语义向量。</p><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h2 id="正排索引"><a href="#正排索引" class="headerlink" title="正排索引"></a>正排索引</h2><h2 id="向量索引"><a href="#向量索引" class="headerlink" title="向量索引"></a>向量索引</h2><p>使用faiss、milvus等数据库。</p><h3 id="faiss"><a href="#faiss" class="headerlink" title="faiss"></a>faiss</h3><h4 id="faiss-IVF"><a href="#faiss-IVF" class="headerlink" title="faiss IVF"></a>faiss IVF</h4><p>聚类中心的向量ID建到倒排索引。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="人工智能搜索引擎"><a href="#人工智能搜索引擎" class="headerlink" title="人工智能搜索引擎"></a>人工智能搜索引擎</h1><h2 id="Perplexity-AI"><a href="#Perplexity-AI" class="headerlink" title="Perplexity AI"></a>Perplexity AI</h2><h2 id="秘塔搜索"><a href="#秘塔搜索" class="headerlink" title="秘塔搜索"></a>秘塔搜索</h2>]]></content>
     
     
     <categories>
@@ -526,9 +588,9 @@
     
     <tags>
       
-      <tag>Agent</tag>
-      
       <tag>AI</tag>
+      
+      <tag>Agent</tag>
       
       <tag>大模型</tag>
       
@@ -559,9 +621,9 @@
     
     <tags>
       
-      <tag>计算机视觉</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>计算机视觉</tag>
       
       <tag>大模型</tag>
       
@@ -671,11 +733,42 @@
   
   
   <entry>
+    <title>语音大模型简介</title>
+    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%A4%A7%E6%A8%A1%E5%9E%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>语音大模型（speech large language model, SpeechLLMs）亦有称之为语音对话模型（spoken dialogue models）</p><h2 id="技术路径"><a href="#技术路径" class="headerlink" title="技术路径"></a>技术路径</h2><p>在大模型时代之前，一个人机语音对话系统涉及多个模块，包括：语音识别（ASR）、语言理解（NLU）、对话管理、语言生成、语音合成等。<br>在大模型时代，根据是否由一个大模型直接理解和生成语音，分为级联和端到端两种技术路径：<br><strong>级联</strong>：语音识别、LLM、语音合成三部分级联构成。优点是：构建成本低、各模块成熟且相对独立；缺点是：效果上限相对低、容易出现信息丢失问题、延迟较大。代表性系统有：AudioGPT。<br><strong>端到端</strong>：一个模型实现语音的输入、输出。优点是：系统简单、能力强、延迟低；缺点是：训练成本高，依赖大量的训练数据。代表性模型：GPT-4o</p><h1 id="典型的语音大模型"><a href="#典型的语音大模型" class="headerlink" title="典型的语音大模型"></a>典型的语音大模型</h1><p>语音大模型一般由三个模块组成：<br><strong>语音编码器（Speech Tokenizer）</strong>：典型的Tokenizer有在连续空间表示语音的Speech Encoder，和在离散空间表示语音的RVQ结构的Neural Codec Encoder。<br><strong>大模型模型（Large Language Model）</strong>：支持任意类型的LLM。<br><strong>语音合成器（Token to Speech Synthesizer）</strong>：如HiFi-GAN。</p><h2 id="SpeechGPT"><a href="#SpeechGPT" class="headerlink" title="SpeechGPT"></a>SpeechGPT</h2><h3 id="模块组成"><a href="#模块组成" class="headerlink" title="模块组成"></a>模块组成</h3><h3 id="模型框架"><a href="#模型框架" class="headerlink" title="模型框架"></a>模型框架</h3><h1 id="语音复刻技术"><a href="#语音复刻技术" class="headerlink" title="语音复刻技术"></a>语音复刻技术</h1><p>Google OpenVoice：准确的音色克隆、灵活的语音风格控制</p><h2 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h2><p>使用一小段语音复刻声音。</p><h1 id="语音识别（STT）"><a href="#语音识别（STT）" class="headerlink" title="语音识别（STT）"></a>语音识别（STT）</h1><p>OpenAI Whisper预训练模型，支持多语言转录。</p><h2 id="语音合成（TTS）"><a href="#语音合成（TTS）" class="headerlink" title="语音合成（TTS）"></a>语音合成（TTS）</h2><p>ChatTTS、FastSpeech2、VITS</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/openvoice/openvoice">Google openvoice</a><br><a href="https://github.com/myshell-ai/OpenVoice">OpenVoice</a><br><a href="https://github.com/camenduru/OpenVoice-colab?tab=readme-ov-file">OpenVoice Colab</a></p><p><a href="https://chattts.com/zh?__theme=dark">chatTTS</a></p><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p><a href="https://tianchi.aliyun.com/dataset/144044">语音识别&#x2F;说话人识别&#x2F;语音合成&#x2F;语种识别</a></p><h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><p><a href="https://anyvoice.net/zh/voices">复刻声音</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大模型训练</title>
     <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/"/>
     <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/</url>
     
-    <content type="html"><![CDATA[<h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p><h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p><h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p><h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h4 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h4><p>代码本身是Step-by-Step的指令数据。</p><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p><h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p><h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p><h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h4 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h4><p>代码本身是Step-by-Step的指令数据。</p><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a><br><a href="https://github.com/rasbt/LLMs-from-scratch">LLMs-from-scratch)</a></p>]]></content>
     
     
     <categories>
@@ -931,7 +1024,7 @@
     <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/"/>
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/</url>
     
-    <content type="html"><![CDATA[<h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p><h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p><h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p><h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p><h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>]]></content>
     
     
     <categories>
@@ -1211,9 +1304,9 @@
       
       <tag>AI</tag>
       
-      <tag>Research</tag>
-      
       <tag>LLM</tag>
+      
+      <tag>Research</tag>
       
     </tags>
     
@@ -1240,9 +1333,9 @@
     
     <tags>
       
-      <tag>机器人</tag>
-      
       <tag>AI</tag>
+      
+      <tag>机器人</tag>
       
       <tag>具身智能</tag>
       
@@ -1279,9 +1372,9 @@
       
       <tag>AI</tag>
       
-      <tag>计算机视觉</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>计算机视觉</tag>
       
     </tags>
     
@@ -1360,9 +1453,9 @@
       
       <tag>AI</tag>
       
-      <tag>NLP</tag>
-      
       <tag>深度学习</tag>
+      
+      <tag>NLP</tag>
       
       <tag>注意力机制</tag>
       
@@ -1465,48 +1558,13 @@
       
       <tag>AI</tag>
       
+      <tag>LLM</tag>
+      
       <tag>Prompts</tag>
       
       <tag>提示词工程</tag>
       
-      <tag>LLM</tag>
-      
       <tag>生成式AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>文生图技术解析(一)：扩散模型原理与架构</title>
-    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/"/>
-    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/</url>
-    
-    <content type="html"><![CDATA[<h1 id="文生图技术解析-一-：扩散模型原理与架构"><a href="#文生图技术解析-一-：扩散模型原理与架构" class="headerlink" title="文生图技术解析(一)：扩散模型原理与架构"></a>文生图技术解析(一)：扩散模型原理与架构</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>文生图(Text-to-Image)技术是近年来人工智能领域最引人瞩目的突破之一，它能够根据文本描述生成相应的图像，为创意表达、内容创作和视觉设计带来革命性变化。本文作为文生图技术解析系列的第一篇，将重点介绍当前主流文生图技术的核心——扩散模型(Diffusion Models)的基本原理和架构。</p><h2 id="扩散模型的发展历程"><a href="#扩散模型的发展历程" class="headerlink" title="扩散模型的发展历程"></a>扩散模型的发展历程</h2><h3 id="从GAN到扩散模型"><a href="#从GAN到扩散模型" class="headerlink" title="从GAN到扩散模型"></a>从GAN到扩散模型</h3><p>早期的图像生成主要依赖于生成对抗网络(GAN)，如StyleGAN等。但GAN存在训练不稳定、模式崩溃等问题。2020年，Ho等人提出了去噪扩散概率模型(DDPM)，开启了扩散模型在图像生成领域的新纪元。随后，Song等人的基于分数的生成模型(SGM)和Rombach等人的潜在扩散模型(LDM)进一步推动了扩散模型的发展。</p><h3 id="里程碑式产品"><a href="#里程碑式产品" class="headerlink" title="里程碑式产品"></a>里程碑式产品</h3><ul><li><strong>DALL-E&#x2F;DALL-E 2</strong>：OpenAI开发的先驱性文生图系统</li><li><strong>Imagen</strong>：Google开发的高保真文生图模型</li><li><strong>Stable Diffusion</strong>：稳定扩散模型，首个开源且能在消费级硬件上运行的大型文生图模型</li><li><strong>Midjourney</strong>：以艺术审美著称的闭源文生图服务</li><li><strong>GPT-4o</strong>：生成式文生图模型</li></ul><h2 id="扩散模型的基本原理"><a href="#扩散模型的基本原理" class="headerlink" title="扩散模型的基本原理"></a>扩散模型的基本原理</h2><h3 id="扩散过程的数学基础"><a href="#扩散过程的数学基础" class="headerlink" title="扩散过程的数学基础"></a>扩散过程的数学基础</h3><p>扩散模型基于马尔可夫链的数学框架，包含两个核心过程：</p><ol><li><strong>前向过程(扩散过程)</strong>：逐步向图像添加高斯噪声，直到完全破坏图像结构，变为纯噪声</li><li><strong>反向过程(去噪过程)</strong>：学习如何逐步去除噪声，从随机噪声中恢复出有意义的图像</li></ol><p>前向过程可以用以下方程表示：<br>$q(x_t|x_{t-1}) &#x3D; \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_t\mathbf{I})$</p><p>其中，$\beta_t$是控制每一步噪声添加量的参数。</p><h3 id="DDPM算法流程"><a href="#DDPM算法流程" class="headerlink" title="DDPM算法流程"></a>DDPM算法流程</h3><ol><li><p><strong>训练阶段</strong>：</p><ul><li>对原始图像施加不同程度的噪声</li><li>训练神经网络预测每一步添加的噪声，最小化预测误差</li><li>损失函数通常为均方误差：$L &#x3D; \mathbb{E}<em>{x_0,\epsilon,t}[||\epsilon - \epsilon</em>\theta(x_t, t)||^2]$</li></ul></li><li><p><strong>采样阶段</strong>：</p><ul><li>从标准正态分布采样初始噪声$x_T \sim \mathcal{N}(0, \mathbf{I})$</li><li>逐步应用学习到的去噪过程，通过迭代方式生成最终图像</li><li>采样方程：$x_{t-1} &#x3D; \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}<em>t}}\epsilon</em>\theta(x_t, t)) + \sigma_t z$，其中$z \sim \mathcal{N}(0, \mathbf{I})$</li></ul></li></ol><h2 id="文本条件扩散模型架构"><a href="#文本条件扩散模型架构" class="headerlink" title="文本条件扩散模型架构"></a>文本条件扩散模型架构</h2><h3 id="条件生成机制"><a href="#条件生成机制" class="headerlink" title="条件生成机制"></a>条件生成机制</h3><p>为了实现文本控制图像生成，需要将文本信息融入扩散过程：</p><ol><li><strong>文本编码器</strong>：使用预训练语言模型(如CLIP文本编码器)将文本提示转化为高维语义向量</li><li><strong>条件注入</strong>：通过交叉注意力机制将文本特征注入到扩散模型的U-Net架构中</li><li><strong>时间步编码</strong>：为每个去噪步骤提供时间信息，指导噪声预测过程</li></ol><h3 id="Stable-Diffusion模型解析"><a href="#Stable-Diffusion模型解析" class="headerlink" title="Stable Diffusion模型解析"></a>Stable Diffusion模型解析</h3><p>Stable Diffusion作为目前最具影响力的开源文生图模型，采用了潜在扩散模型(LDM)的架构：</p><ol><li><strong>VAE编码器</strong>：将高分辨率图像压缩到低维潜在空间</li><li><strong>U-Net主干网络</strong>：在潜在空间中执行扩散和去噪过程</li><li><strong>CLIP文本编码器</strong>：处理文本输入，提取语义特征</li><li><strong>VAE解码器</strong>：将生成的潜在表示重建为最终图像</li></ol><p>这种架构显著减少了计算资源需求，使模型能够在消费级硬件上运行。</p><h2 id="采样技术与优化方法"><a href="#采样技术与优化方法" class="headerlink" title="采样技术与优化方法"></a>采样技术与优化方法</h2><h3 id="快速采样算法"><a href="#快速采样算法" class="headerlink" title="快速采样算法"></a>快速采样算法</h3><p>扩散模型生成过程原本需要数百次迭代，但通过优化采样算法可大幅加速：</p><ol><li><strong>DDIM(确定性扩散)</strong>：通过构建非马尔可夫过程减少采样步骤</li><li><strong>DPM-Solver&#x2F;DPM-Solver++</strong>：基于常微分方程(ODE)求解器的高效采样器</li><li><strong>Euler&#x2F;Euler-a采样器</strong>：简单高效的欧拉方法及其自适应变种</li><li><strong>PLMS(伪线性多步方法)</strong>：利用前几步信息加速收敛</li></ol><h3 id="引导技术"><a href="#引导技术" class="headerlink" title="引导技术"></a>引导技术</h3><p>通过引导技术增强文本对生成过程的控制：</p><ol><li><strong>分类器引导</strong>：利用预训练图像分类器引导生成过程</li><li><strong>无分类器引导(CFG)</strong>：同时进行条件和无条件生成，通过调整两者权重控制文本遵循度<ul><li>$\epsilon_\theta^{CFG}(x_t|y) &#x3D; \epsilon_\theta(x_t|\emptyset) + s \cdot (\epsilon_\theta(x_t|y) - \epsilon_\theta(x_t|\emptyset))$</li></ul></li></ol><h2 id="当前挑战与局限性"><a href="#当前挑战与局限性" class="headerlink" title="当前挑战与局限性"></a>当前挑战与局限性</h2><h3 id="技术挑战"><a href="#技术挑战" class="headerlink" title="技术挑战"></a>技术挑战</h3><ol><li><strong>精确文本对齐</strong>：准确理解复杂文本指令仍有困难</li><li><strong>空间关系理解</strong>：复杂位置关系和视角描述的处理不够精确</li><li><strong>推理效率</strong>：尽管有所改进，生成高质量图像仍需要较长时间</li><li><strong>风格一致性</strong>：在保持艺术风格一致性方面仍有提升空间</li></ol><h3 id="社会影响与伦理考量"><a href="#社会影响与伦理考量" class="headerlink" title="社会影响与伦理考量"></a>社会影响与伦理考量</h3><ol><li><strong>内容安全</strong>：模型可能生成有害、偏见或不适当内容</li><li><strong>著作权问题</strong>：训练数据来源和生成内容的版权归属存在争议</li><li><strong>身份伪造</strong>：可能被用于创建未经授权的肖像或虚假内容</li><li><strong>就业影响</strong>：对视觉艺术工作者和创意产业的潜在影响</li></ol><h2 id="下一代扩散模型发展方向"><a href="#下一代扩散模型发展方向" class="headerlink" title="下一代扩散模型发展方向"></a>下一代扩散模型发展方向</h2><h3 id="技术演进"><a href="#技术演进" class="headerlink" title="技术演进"></a>技术演进</h3><ol><li><strong>多模态融合</strong>：与视频、3D和音频生成技术的结合</li><li><strong>高效架构</strong>：更轻量化和计算高效的模型结构</li><li><strong>个性化技术</strong>：低成本适应用户特定风格和需求的方法</li><li><strong>物理约束理解</strong>：改进对现实世界物理规则的遵循</li></ol><h3 id="应用拓展"><a href="#应用拓展" class="headerlink" title="应用拓展"></a>应用拓展</h3><ol><li><strong>辅助创意设计</strong>：概念艺术、产品原型、品牌素材生成</li><li><strong>教育可视化</strong>：复杂概念的直观图像表达</li><li><strong>医学影像</strong>：医学图像合成和诊断辅助</li><li><strong>娱乐与游戏</strong>：游戏资产生成和互动内容创作</li></ol><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>扩散模型为文生图技术提供了强大的基础，但这仅是开始。随着算法优化、计算资源降低和应用场景拓展，文生图技术将继续深刻改变视觉内容创作的方式。在下一篇文章中，我们将深入探讨提示工程（Prompt Engineering）技术，帮助读者掌握引导AI生成所需图像的艺术。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems.</li><li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. CVPR.</li><li>Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., … &amp; Chen, M. (2021). GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models. arXiv.</li><li>Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E., … &amp; Norouzi, M. (2022). Photorealistic text-to-image diffusion models with deep language understanding. arXiv.</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>计算机视觉</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>生成式AI</tag>
-      
-      <tag>扩散模型</tag>
       
     </tags>
     
@@ -1535,9 +1593,44 @@
       
       <tag>AI</tag>
       
+      <tag>深度学习</tag>
+      
       <tag>计算机视觉</tag>
       
+      <tag>生成式AI</tag>
+      
+      <tag>扩散模型</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>文生图技术解析(一)：扩散模型原理与架构</title>
+    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/"/>
+    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="文生图技术解析-一-：扩散模型原理与架构"><a href="#文生图技术解析-一-：扩散模型原理与架构" class="headerlink" title="文生图技术解析(一)：扩散模型原理与架构"></a>文生图技术解析(一)：扩散模型原理与架构</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>文生图(Text-to-Image)技术是近年来人工智能领域最引人瞩目的突破之一，它能够根据文本描述生成相应的图像，为创意表达、内容创作和视觉设计带来革命性变化。本文作为文生图技术解析系列的第一篇，将重点介绍当前主流文生图技术的核心——扩散模型(Diffusion Models)的基本原理和架构。</p><h2 id="扩散模型的发展历程"><a href="#扩散模型的发展历程" class="headerlink" title="扩散模型的发展历程"></a>扩散模型的发展历程</h2><h3 id="从GAN到扩散模型"><a href="#从GAN到扩散模型" class="headerlink" title="从GAN到扩散模型"></a>从GAN到扩散模型</h3><p>早期的图像生成主要依赖于生成对抗网络(GAN)，如StyleGAN等。但GAN存在训练不稳定、模式崩溃等问题。2020年，Ho等人提出了去噪扩散概率模型(DDPM)，开启了扩散模型在图像生成领域的新纪元。随后，Song等人的基于分数的生成模型(SGM)和Rombach等人的潜在扩散模型(LDM)进一步推动了扩散模型的发展。</p><h3 id="里程碑式产品"><a href="#里程碑式产品" class="headerlink" title="里程碑式产品"></a>里程碑式产品</h3><ul><li><strong>DALL-E&#x2F;DALL-E 2</strong>：OpenAI开发的先驱性文生图系统</li><li><strong>Imagen</strong>：Google开发的高保真文生图模型</li><li><strong>Stable Diffusion</strong>：稳定扩散模型，首个开源且能在消费级硬件上运行的大型文生图模型</li><li><strong>Midjourney</strong>：以艺术审美著称的闭源文生图服务</li><li><strong>GPT-4o</strong>：生成式文生图模型</li></ul><h2 id="扩散模型的基本原理"><a href="#扩散模型的基本原理" class="headerlink" title="扩散模型的基本原理"></a>扩散模型的基本原理</h2><h3 id="扩散过程的数学基础"><a href="#扩散过程的数学基础" class="headerlink" title="扩散过程的数学基础"></a>扩散过程的数学基础</h3><p>扩散模型基于马尔可夫链的数学框架，包含两个核心过程：</p><ol><li><strong>前向过程(扩散过程)</strong>：逐步向图像添加高斯噪声，直到完全破坏图像结构，变为纯噪声</li><li><strong>反向过程(去噪过程)</strong>：学习如何逐步去除噪声，从随机噪声中恢复出有意义的图像</li></ol><p>前向过程可以用以下方程表示：<br>$q(x_t|x_{t-1}) &#x3D; \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_t\mathbf{I})$</p><p>其中，$\beta_t$是控制每一步噪声添加量的参数。</p><h3 id="DDPM算法流程"><a href="#DDPM算法流程" class="headerlink" title="DDPM算法流程"></a>DDPM算法流程</h3><ol><li><p><strong>训练阶段</strong>：</p><ul><li>对原始图像施加不同程度的噪声</li><li>训练神经网络预测每一步添加的噪声，最小化预测误差</li><li>损失函数通常为均方误差：$L &#x3D; \mathbb{E}<em>{x_0,\epsilon,t}[||\epsilon - \epsilon</em>\theta(x_t, t)||^2]$</li></ul></li><li><p><strong>采样阶段</strong>：</p><ul><li>从标准正态分布采样初始噪声$x_T \sim \mathcal{N}(0, \mathbf{I})$</li><li>逐步应用学习到的去噪过程，通过迭代方式生成最终图像</li><li>采样方程：$x_{t-1} &#x3D; \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}<em>t}}\epsilon</em>\theta(x_t, t)) + \sigma_t z$，其中$z \sim \mathcal{N}(0, \mathbf{I})$</li></ul></li></ol><h2 id="文本条件扩散模型架构"><a href="#文本条件扩散模型架构" class="headerlink" title="文本条件扩散模型架构"></a>文本条件扩散模型架构</h2><h3 id="条件生成机制"><a href="#条件生成机制" class="headerlink" title="条件生成机制"></a>条件生成机制</h3><p>为了实现文本控制图像生成，需要将文本信息融入扩散过程：</p><ol><li><strong>文本编码器</strong>：使用预训练语言模型(如CLIP文本编码器)将文本提示转化为高维语义向量</li><li><strong>条件注入</strong>：通过交叉注意力机制将文本特征注入到扩散模型的U-Net架构中</li><li><strong>时间步编码</strong>：为每个去噪步骤提供时间信息，指导噪声预测过程</li></ol><h3 id="Stable-Diffusion模型解析"><a href="#Stable-Diffusion模型解析" class="headerlink" title="Stable Diffusion模型解析"></a>Stable Diffusion模型解析</h3><p>Stable Diffusion作为目前最具影响力的开源文生图模型，采用了潜在扩散模型(LDM)的架构：</p><ol><li><strong>VAE编码器</strong>：将高分辨率图像压缩到低维潜在空间</li><li><strong>U-Net主干网络</strong>：在潜在空间中执行扩散和去噪过程</li><li><strong>CLIP文本编码器</strong>：处理文本输入，提取语义特征</li><li><strong>VAE解码器</strong>：将生成的潜在表示重建为最终图像</li></ol><p>这种架构显著减少了计算资源需求，使模型能够在消费级硬件上运行。</p><h2 id="采样技术与优化方法"><a href="#采样技术与优化方法" class="headerlink" title="采样技术与优化方法"></a>采样技术与优化方法</h2><h3 id="快速采样算法"><a href="#快速采样算法" class="headerlink" title="快速采样算法"></a>快速采样算法</h3><p>扩散模型生成过程原本需要数百次迭代，但通过优化采样算法可大幅加速：</p><ol><li><strong>DDIM(确定性扩散)</strong>：通过构建非马尔可夫过程减少采样步骤</li><li><strong>DPM-Solver&#x2F;DPM-Solver++</strong>：基于常微分方程(ODE)求解器的高效采样器</li><li><strong>Euler&#x2F;Euler-a采样器</strong>：简单高效的欧拉方法及其自适应变种</li><li><strong>PLMS(伪线性多步方法)</strong>：利用前几步信息加速收敛</li></ol><h3 id="引导技术"><a href="#引导技术" class="headerlink" title="引导技术"></a>引导技术</h3><p>通过引导技术增强文本对生成过程的控制：</p><ol><li><strong>分类器引导</strong>：利用预训练图像分类器引导生成过程</li><li><strong>无分类器引导(CFG)</strong>：同时进行条件和无条件生成，通过调整两者权重控制文本遵循度<ul><li>$\epsilon_\theta^{CFG}(x_t|y) &#x3D; \epsilon_\theta(x_t|\emptyset) + s \cdot (\epsilon_\theta(x_t|y) - \epsilon_\theta(x_t|\emptyset))$</li></ul></li></ol><h2 id="当前挑战与局限性"><a href="#当前挑战与局限性" class="headerlink" title="当前挑战与局限性"></a>当前挑战与局限性</h2><h3 id="技术挑战"><a href="#技术挑战" class="headerlink" title="技术挑战"></a>技术挑战</h3><ol><li><strong>精确文本对齐</strong>：准确理解复杂文本指令仍有困难</li><li><strong>空间关系理解</strong>：复杂位置关系和视角描述的处理不够精确</li><li><strong>推理效率</strong>：尽管有所改进，生成高质量图像仍需要较长时间</li><li><strong>风格一致性</strong>：在保持艺术风格一致性方面仍有提升空间</li></ol><h3 id="社会影响与伦理考量"><a href="#社会影响与伦理考量" class="headerlink" title="社会影响与伦理考量"></a>社会影响与伦理考量</h3><ol><li><strong>内容安全</strong>：模型可能生成有害、偏见或不适当内容</li><li><strong>著作权问题</strong>：训练数据来源和生成内容的版权归属存在争议</li><li><strong>身份伪造</strong>：可能被用于创建未经授权的肖像或虚假内容</li><li><strong>就业影响</strong>：对视觉艺术工作者和创意产业的潜在影响</li></ol><h2 id="下一代扩散模型发展方向"><a href="#下一代扩散模型发展方向" class="headerlink" title="下一代扩散模型发展方向"></a>下一代扩散模型发展方向</h2><h3 id="技术演进"><a href="#技术演进" class="headerlink" title="技术演进"></a>技术演进</h3><ol><li><strong>多模态融合</strong>：与视频、3D和音频生成技术的结合</li><li><strong>高效架构</strong>：更轻量化和计算高效的模型结构</li><li><strong>个性化技术</strong>：低成本适应用户特定风格和需求的方法</li><li><strong>物理约束理解</strong>：改进对现实世界物理规则的遵循</li></ol><h3 id="应用拓展"><a href="#应用拓展" class="headerlink" title="应用拓展"></a>应用拓展</h3><ol><li><strong>辅助创意设计</strong>：概念艺术、产品原型、品牌素材生成</li><li><strong>教育可视化</strong>：复杂概念的直观图像表达</li><li><strong>医学影像</strong>：医学图像合成和诊断辅助</li><li><strong>娱乐与游戏</strong>：游戏资产生成和互动内容创作</li></ol><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>扩散模型为文生图技术提供了强大的基础，但这仅是开始。随着算法优化、计算资源降低和应用场景拓展，文生图技术将继续深刻改变视觉内容创作的方式。在下一篇文章中，我们将深入探讨提示工程（Prompt Engineering）技术，帮助读者掌握引导AI生成所需图像的艺术。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems.</li><li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. CVPR.</li><li>Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., … &amp; Chen, M. (2021). GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models. arXiv.</li><li>Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E., … &amp; Norouzi, M. (2022). Photorealistic text-to-image diffusion models with deep language understanding. arXiv.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
       <tag>深度学习</tag>
+      
+      <tag>计算机视觉</tag>
       
       <tag>生成式AI</tag>
       
@@ -1555,80 +1648,6 @@
     <url>/tech-blog/2025/03/23/HumanPlus/</url>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h1><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h1 id="实验评估"><a href="#实验评估" class="headerlink" title="实验评估"></a>实验评估</h1><p><a href="https://humanoid-ai.github.io/">主页</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
-    <link href="/tech-blog/2025/03/23/LAPA/"/>
-    <url>/tech-blog/2025/03/23/LAPA/</url>
-    
-    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>NLP</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
-    <link href="/tech-blog/2025/03/23/SayCan/"/>
-    <url>/tech-blog/2025/03/23/SayCan/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
     
     
     <categories>
@@ -1698,6 +1717,80 @@
   
   
   <entry>
+    <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
+    <link href="/tech-blog/2025/03/23/SayCan/"/>
+    <url>/tech-blog/2025/03/23/SayCan/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances"><a href="#Do-As-I-Can-Not-As-I-Say-Grounding-Language-in-Robotic-Affordances" class="headerlink" title="Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"></a>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://say-can.github.io/">项目主页</a></li><li><a href="https://github.com/google-research/google-research/blob/master/saycan/SayCan-Robot-Pick-Place.ipynb">代码示例</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
+    <link href="/tech-blog/2025/03/23/LAPA/"/>
+    <url>/tech-blog/2025/03/23/LAPA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>OpenVLA：开源视觉-语言-动作模型解读</title>
     <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
     <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
@@ -1735,11 +1828,11 @@
   
   
   <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/</url>
     
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
     
     
     <categories>
@@ -1772,11 +1865,11 @@
   
   
   <entry>
-    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/</url>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
     
-    <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
     
     
     <categories>
