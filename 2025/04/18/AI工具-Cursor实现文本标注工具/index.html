@@ -19,24 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="位置编码NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。 图像任务（目标检测、图像分割、） 绝对位置编码Transformer使用三角函数位置编码。BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。">
+    <meta name="description" content="参考https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;87jXLqMIeDE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大模型位置编码">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/index.html">
+<meta property="og:title" content="使用Cursor实现NLP标注工具">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E6%96%87%E6%9C%AC%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="位置编码NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。 图像任务（目标检测、图像分割、） 绝对位置编码Transformer使用三角函数位置编码。BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。">
+<meta property="og:description" content="参考https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;87jXLqMIeDE">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-20T06:07:46.543Z">
+<meta property="article:published_time" content="2025-04-18T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-08T07:30:43.081Z">
 <meta property="article:author" content="Your Name">
-<meta property="article:tag" content="AI">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="生成式AI">
+<meta property="article:tag" content="AI工具">
+<meta property="article:tag" content="Cursor">
+<meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>大模型位置编码 - Tech Blog</title>
+  <title>使用Cursor实现NLP标注工具 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大模型位置编码"></span>
+            <span id="subtitle" data-typed-text="使用Cursor实现NLP标注工具"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-26 15:11" pubdate>
-          March 26, 2025 pm
+        <time datetime="2025-04-18 10:00" pubdate>
+          April 18, 2025 am
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          138 words
+          9 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -292,15 +292,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">大模型位置编码</h1>
+            <h1 id="seo-header">使用Cursor实现NLP标注工具</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p>
-<p>图像任务（目标检测、图像分割、）</p>
-<h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p>
-<h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/v_JULY_v/article/details/134085503">一文通透位置编码</a></p>
+                <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=87jXLqMIeDE">https://www.youtube.com/watch?v=87jXLqMIeDE</a></p>
 
                 
               </div>
@@ -319,15 +316,8 @@
     
       <span class="category-chain">
         
-  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  <a href="/tech-blog/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="category-chain-item">开发工具</a>
   
-  
-    <span>></span>
-    
-  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
-  
-  
-
   
 
       </span>
@@ -341,11 +331,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+        <a href="/tech-blog/tags/AI%E5%B7%A5%E5%85%B7/" class="print-no-link">#AI工具</a>
       
-        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+        <a href="/tech-blog/tags/Cursor/" class="print-no-link">#Cursor</a>
       
-        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+        <a href="/tech-blog/tags/NLP/" class="print-no-link">#NLP</a>
       
     </div>
   
@@ -357,8 +347,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大模型位置编码</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型-位置编码/</div>
+      <div>使用Cursor实现NLP标注工具</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/18/AI工具-Cursor实现文本标注工具/</div>
     </div>
     <div class="license-meta">
       
@@ -370,7 +360,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 26, 2025</div>
+          <div>April 18, 2025</div>
         </div>
       
       
@@ -402,9 +392,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/" title="大模型原理">
+                      <a href="/tech-blog/2025/04/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%90%8E%E8%AE%AD%E7%BB%83/" title="大模型后训练：方法与实践分析">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大模型原理</span>
+                        <span class="hidden-mobile">大模型后训练：方法与实践分析</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -412,8 +402,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/" title="大模型安全">
-                        <span class="hidden-mobile">大模型安全</span>
+                      <a href="/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="使用Cursor AI实现微信小程序开发">
+                        <span class="hidden-mobile">使用Cursor AI实现微信小程序开发</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
