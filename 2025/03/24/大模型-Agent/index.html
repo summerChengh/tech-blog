@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://summerchengh.github.io/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/agent-architecture.png">
 <meta property="article:published_time" content="2025-03-23T20:26:00.000Z">
-<meta property="article:modified_time" content="2025-04-20T06:02:32.690Z">
+<meta property="article:modified_time" content="2025-05-14T06:23:17.435Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k words
+          2.3k words
         
       </span>
     
@@ -340,7 +340,12 @@
 <h2 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h2><p>内置扩展LangChain工具、使用Assistant API、在Docker容器中运行模型生成的代码、分布式智能体等功能。</p>
 <h2 id="LangFlow"><a href="#LangFlow" class="headerlink" title="LangFlow"></a>LangFlow</h2><h2 id="CrewAI"><a href="#CrewAI" class="headerlink" title="CrewAI"></a>CrewAI</h2><p>CrewAI提供了一组用于构建和编排AI Agents组而设计的通用工具和库，用于处理多代理系统的场景人物，如代理通信、协调和决策等。</p>
 <h2 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h2><p>多智能体系统框架。</p>
-<h3 id="MetaGPT提供的RAG功能"><a href="#MetaGPT提供的RAG功能" class="headerlink" title="MetaGPT提供的RAG功能"></a>MetaGPT提供的RAG功能</h3><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="AutoGLM"><a href="#AutoGLM" class="headerlink" title="AutoGLM"></a>AutoGLM</h2><h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><h3 id="LangGraph"><a href="#LangGraph" class="headerlink" title="LangGraph"></a>LangGraph</h3><h2 id="Flowise"><a href="#Flowise" class="headerlink" title="Flowise"></a>Flowise</h2><p>拖拽式编排，支持多智能体协作。</p>
+<h3 id="MetaGPT提供的RAG功能"><a href="#MetaGPT提供的RAG功能" class="headerlink" title="MetaGPT提供的RAG功能"></a>MetaGPT提供的RAG功能</h3><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="AutoGLM"><a href="#AutoGLM" class="headerlink" title="AutoGLM"></a>AutoGLM</h2><h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><h3 id="LangGraph"><a href="#LangGraph" class="headerlink" title="LangGraph"></a>LangGraph</h3><p>LangGraph：状态机框架。</p>
+<p><strong>LangChain的多智能体协作机制</strong></p>
+<p><strong>LangChain的记忆功能是如何实现的</strong></p>
+<p><strong>与AutoGen的核心差异</strong></p>
+<p><strong>基于LangChain开发一个本地知识库系统</strong></p>
+<h2 id="Flowise"><a href="#Flowise" class="headerlink" title="Flowise"></a>Flowise</h2><p>拖拽式编排，支持多智能体协作。</p>
 <h1 id="优化与实践"><a href="#优化与实践" class="headerlink" title="优化与实践"></a>优化与实践</h1><h2 id="大模核心能力"><a href="#大模核心能力" class="headerlink" title="大模核心能力"></a>大模核心能力</h2><p>自主决策、任务规划、多模态交互、环境感知等</p>
 <h2 id="多任务调度"><a href="#多任务调度" class="headerlink" title="多任务调度"></a>多任务调度</h2><h2 id="记忆管理"><a href="#记忆管理" class="headerlink" title="记忆管理"></a>记忆管理</h2><h2 id="工具调用"><a href="#工具调用" class="headerlink" title="工具调用"></a>工具调用</h2><h2 id="外部环境交互"><a href="#外部环境交互" class="headerlink" title="外部环境交互"></a>外部环境交互</h2><h2 id="智能体相关进展"><a href="#智能体相关进展" class="headerlink" title="智能体相关进展"></a>智能体相关进展</h2><h3 id="提升智能体推理能力"><a href="#提升智能体推理能力" class="headerlink" title="提升智能体推理能力"></a>提升智能体推理能力</h3><h4 id="ReAct-Reasoning-and-Acting-框架"><a href="#ReAct-Reasoning-and-Acting-框架" class="headerlink" title="ReAct(Reasoning and Acting)框架"></a>ReAct(Reasoning and Acting)框架</h4><p>大模型本身具有推理能力和执行能力(比如生成执行计划)，ReAct框架协同推理与执行，解决幻觉问题和COT推理中的错误传播问题、提高答案的可解释性。<br>ReAct采用few-shot in-context学习来生成解决问题的action和thought序列。每个in-context样例是由action、thought、observation构成的行为轨迹。<br>在推理占主导地位的应用中，我们交替生成thought和action，这样完整的行为轨迹就是多个thought-action-observation步骤。<br>在决策生成任务中（涉及大量action），thought只会在行为轨迹中最相关的位置稀疏出现，此时语言模型可用来决定thought和action的异步呈现顺序。</p>
 <h3 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h3><p>Agent记忆包括短期记忆和长期记忆。<br>记忆内容包括：（1）内部任务信息；（2）跨任务信息；（3）外部知识。</p>
