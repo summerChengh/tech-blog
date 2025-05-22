@@ -19,25 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="项目目标构建一个图文理解助手：输入一道菜的图片 + 简短描述，模型能理解内容并生成做法、配料推荐。 技术选型多模态模型：BLIP2 or MiniGPT-4 Todo：基于BLIP2的图文食谱问答系统 使用BLIP2多模态预训练模型，结合公开数据集（Food101 + Recipe1M），构建图文理解食谱问答系统   支持上传图片并自动识别菜品，生成配料清单与操作步骤，提升图文交互体验   实现微">
+    <meta name="description" content="deepseek一体机满血DeepSeek一体机671B参数、FP8原版 14.9万元 22 tokens&#x2F;s 参考https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;luK0nlylq5faBytZ6Pvc1Q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多模态问答系统（VLM）实践：图文食谱助手">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/05/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F%EF%BC%88VLM%EF%BC%89%E5%AE%9E%E8%B7%B5%EF%BC%9A%E5%9B%BE%E6%96%87%E9%A3%9F%E8%B0%B1%E5%8A%A9%E6%89%8B/index.html">
+<meta property="og:title" content="大模型一体机">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/05/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%A1%AC%E4%BB%B6-%E4%B8%80%E4%BD%93%E6%9C%BA/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="项目目标构建一个图文理解助手：输入一道菜的图片 + 简短描述，模型能理解内容并生成做法、配料推荐。 技术选型多模态模型：BLIP2 or MiniGPT-4 Todo：基于BLIP2的图文食谱问答系统 使用BLIP2多模态预训练模型，结合公开数据集（Food101 + Recipe1M），构建图文理解食谱问答系统   支持上传图片并自动识别菜品，生成配料清单与操作步骤，提升图文交互体验   实现微">
+<meta property="og:description" content="deepseek一体机满血DeepSeek一体机671B参数、FP8原版 14.9万元 22 tokens&#x2F;s 参考https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;luK0nlylq5faBytZ6Pvc1Q">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-05-15T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-05-15T07:03:26.326Z">
+<meta property="article:published_time" content="2025-05-01T07:11:00.000Z">
+<meta property="article:modified_time" content="2025-05-19T08:58:51.510Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="多模态">
 <meta property="article:tag" content="生成式AI">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>多模态问答系统（VLM）实践：图文食谱助手 - Tech Blog</title>
+  <title>大模型一体机 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="多模态问答系统（VLM）实践：图文食谱助手"></span>
+            <span id="subtitle" data-typed-text="大模型一体机"></span>
           
         </div>
 
@@ -233,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-15 15:11" pubdate>
-          May 15, 2025 pm
+        <time datetime="2025-05-01 15:11" pubdate>
+          May 1, 2025 pm
         </time>
       </span>
     
@@ -245,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          159 words
+          27 words
         
       </span>
     
@@ -256,7 +255,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -293,18 +292,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">多模态问答系统（VLM）实践：图文食谱助手</h1>
+            <h1 id="seo-header">大模型一体机</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="项目目标"><a href="#项目目标" class="headerlink" title="项目目标"></a>项目目标</h1><p>构建一个图文理解助手：输入一道菜的图片 + 简短描述，模型能理解内容并生成做法、配料推荐。</p>
-<h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>多模态模型：BLIP2 or MiniGPT-4</p>
-<h1 id="Todo：基于BLIP2的图文食谱问答系统"><a href="#Todo：基于BLIP2的图文食谱问答系统" class="headerlink" title="Todo：基于BLIP2的图文食谱问答系统"></a>Todo：基于BLIP2的图文食谱问答系统</h1><ul>
-<li>使用BLIP2多模态预训练模型，结合公开数据集（Food101 + Recipe1M），构建图文理解食谱问答系统  </li>
-<li>支持上传图片并自动识别菜品，生成配料清单与操作步骤，提升图文交互体验  </li>
-<li>实现微调训练pipeline（包含image encoder, text decoder冻结&#x2F;解冻策略），效果优于原始BLIP2在该任务表现</li>
-</ul>
+                <h1 id="deepseek一体机"><a href="#deepseek一体机" class="headerlink" title="deepseek一体机"></a>deepseek一体机</h1><p><strong>满血DeepSeek一体机</strong><br>671B参数、FP8原版 14.9万元 22 tokens&#x2F;s</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/luK0nlylq5faBytZ6Pvc1Q">https://mp.weixin.qq.com/s/luK0nlylq5faBytZ6Pvc1Q</a></p>
 
                 
               </div>
@@ -349,8 +343,6 @@
       
         <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
       
-        <a href="/tech-blog/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/" class="print-no-link">#多模态</a>
-      
         <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
       
     </div>
@@ -363,8 +355,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>多模态问答系统（VLM）实践：图文食谱助手</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/05/15/大模型-多模态问答系统（VLM）实践：图文食谱助手/</div>
+      <div>大模型一体机</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/05/01/大模型-硬件-一体机/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +368,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 15, 2025</div>
+          <div>May 1, 2025</div>
         </div>
       
       
@@ -408,12 +400,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/tech-blog/2025/05/08/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E7%A0%94%E7%A9%B6%E5%8A%A9%E6%89%8B/" title="大模型-研究助手">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">大模型-研究助手</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/05/14/coding-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/tech-blog/2025/05/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-3D%E5%BB%BA%E6%A8%A1/" title="AI驱动的3D建模：技术现状与未来展望">
+                        <span class="hidden-mobile">AI驱动的3D建模：技术现状与未来展望</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

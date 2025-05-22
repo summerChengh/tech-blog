@@ -4,9 +4,40 @@
   
   
   <entry>
+    <title>AutoGen简介</title>
+    <link href="/tech-blog/2025/05/22/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-AutoGen/"/>
+    <url>/tech-blog/2025/05/22/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-AutoGen/</url>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="存储机制"><a href="#存储机制" class="headerlink" title="存储机制"></a>存储机制</h1><p>基于<a href="https://docs.trychroma.com/docs/overview/introduction">chroma</a>向量数据库实现的RAG存储机制。<br>核心向量索引技术是基于hnswlib库实现的HNSW算法</p><p>AutoGen使用ChromeDB而不是其他类型的向量数据库</p><table><thead><tr><th>特性</th><th>ChromaDB</th><th>Milvus</th><th>FAISS</th><th>Pinecone</th></tr></thead><tbody><tr><td>安装与部署</td><td>✅ pip 即可用</td><td>❌ 需要 docker + 服务端</td><td>✅ 仅库</td><td>❌ 需注册云账号</td></tr><tr><td>适合规模</td><td>小～中</td><td>中～大</td><td>小</td><td>中～大</td></tr><tr><td>是否需要网络</td><td>❌ 无需</td><td>❌ 通常需要</td><td>❌ 无需</td><td>✅ 必需联网</td></tr><tr><td>集成复杂度</td><td>✅ 极简</td><td>❌ 有学习成本</td><td>✅ 简单但功能少</td><td>✅ 高封装，需注册</td></tr><tr><td>本地调试</td><td>✅ 极好</td><td>❌ 不便</td><td>✅ 极好</td><td>❌ 不能本地运行</td></tr></tbody></table><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>应用实践</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Agent</tag>
+      
+      <tag>实践</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>多模态问答系统（VLM）实践：图文食谱助手</title>
-    <link href="/tech-blog/2025/05/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F%EF%BC%88VLM%EF%BC%89%E5%AE%9E%E8%B7%B5%EF%BC%9A%E5%9B%BE%E6%96%87%E9%A3%9F%E8%B0%B1%E5%8A%A9%E6%89%8B/"/>
-    <url>/tech-blog/2025/05/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F%EF%BC%88VLM%EF%BC%89%E5%AE%9E%E8%B7%B5%EF%BC%9A%E5%9B%BE%E6%96%87%E9%A3%9F%E8%B0%B1%E5%8A%A9%E6%89%8B/</url>
+    <link href="/tech-blog/2025/05/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E5%A4%9A%E6%A8%A1%E6%80%81%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F%EF%BC%88VLM%EF%BC%89%E5%AE%9E%E8%B7%B5%EF%BC%9A%E5%9B%BE%E6%96%87%E9%A3%9F%E8%B0%B1%E5%8A%A9%E6%89%8B/"/>
+    <url>/tech-blog/2025/05/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E5%A4%9A%E6%A8%A1%E6%80%81%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F%EF%BC%88VLM%EF%BC%89%E5%AE%9E%E8%B7%B5%EF%BC%9A%E5%9B%BE%E6%96%87%E9%A3%9F%E8%B0%B1%E5%8A%A9%E6%89%8B/</url>
     
     <content type="html"><![CDATA[<h1 id="项目目标"><a href="#项目目标" class="headerlink" title="项目目标"></a>项目目标</h1><p>构建一个图文理解助手：输入一道菜的图片 + 简短描述，模型能理解内容并生成做法、配料推荐。</p><h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><p>多模态模型：BLIP2 or MiniGPT-4</p><h1 id="Todo：基于BLIP2的图文食谱问答系统"><a href="#Todo：基于BLIP2的图文食谱问答系统" class="headerlink" title="Todo：基于BLIP2的图文食谱问答系统"></a>Todo：基于BLIP2的图文食谱问答系统</h1><ul><li>使用BLIP2多模态预训练模型，结合公开数据集（Food101 + Recipe1M），构建图文理解食谱问答系统  </li><li>支持上传图片并自动识别菜品，生成配料清单与操作步骤，提升图文交互体验  </li><li>实现微调训练pipeline（包含image encoder, text decoder冻结&#x2F;解冻策略），效果优于原始BLIP2在该任务表现</li></ul>]]></content>
     
@@ -26,24 +57,11 @@
       
       <tag>深度学习</tag>
       
-      <tag>多模态</tag>
-      
       <tag>生成式AI</tag>
       
+      <tag>多模态</tag>
+      
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/05/14/coding-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
-    <url>/tech-blog/2025/05/14/coding-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
     
   </entry>
   
@@ -72,9 +90,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>多模态</tag>
-      
       <tag>生成式AI</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -84,10 +102,10 @@
   
   <entry>
     <title>本地部署语音助手</title>
-    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/"/>
-    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/</url>
+    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/"/>
+    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="技术挑战"><a href="#技术挑战" class="headerlink" title="技术挑战"></a>技术挑战</h1><h2 id="文档分割"><a href="#文档分割" class="headerlink" title="文档分割"></a>文档分割</h2><p>结构化文档分割与非结构化文档分割</p><p>总的来说，选择使用哪个库取决于任务的性质  </p><ul><li>如果只需要基本的 PDF 文件处理，可以选择 <strong>PyPDF2</strong>  </li><li>如果需要从 PDF 中提取结构化数据，<strong>pdfplumber</strong> 是一个不错的选择  </li><li>如果需要进行更高级的处理、分析以及对 PDF 文件进行详细操作，<strong>PyMuPDF</strong> 可能更适合</li></ul><hr><h3 id="下方思维导图-关系图"><a href="#下方思维导图-关系图" class="headerlink" title="下方思维导图&#x2F;关系图"></a>下方思维导图&#x2F;关系图</h3><ul><li><p><strong>提取表格</strong></p><ul><li>pdftables</li><li>camelot</li></ul></li><li><p><strong>提取内容（文本、图片、形状）</strong></p><ul><li>pdfplumber</li><li>pdfminer.six<ul><li>pdfminer</li><li>pdfminer3k</li></ul></li></ul></li><li><p><strong>操作页面（合并、分割、旋转）</strong></p><ul><li>PyPDF4</li><li>PyPDF2</li><li>PyPDF</li><li>pdfrw</li><li>pikepdf</li></ul></li><li><p><strong>新建内容（文本、图、表）</strong></p><ul><li>ReportLab</li><li>PyMuPDF</li></ul></li><li><p><strong>PyMuPDF</strong> 既能新建内容，也能操作页面、提取内容</p></li></ul><hr><p><strong>总结：</strong>  </p><ul><li>基础处理推荐 PyPDF2  </li><li>结构化数据提取推荐 pdfplumber  </li><li>高级处理和详细操作推荐 PyMuPDF  </li><li>还有如 pdftables、camelot（表格）、pdfminer.six（内容提取）、ReportLab（新建内容）、pikepdf、pdfrw 等工具可根据需求选择。</li></ul><h2 id="多头表格"><a href="#多头表格" class="headerlink" title="多头表格"></a>多头表格</h2><h1 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h1><h2 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h2><p>ragas</p><h1 id="技术方案成本评估"><a href="#技术方案成本评估" class="headerlink" title="技术方案成本评估"></a>技术方案成本评估</h1>]]></content>
     
     
     <categories>
@@ -114,18 +132,18 @@
   
   
   <entry>
-    <title>构建Excel/Google Sheel智能体</title>
-    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-ExcelAgents/"/>
-    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-ExcelAgents/</url>
+    <title>本地部署语音助手</title>
+    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/"/>
+    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/</url>
     
-    <content type="html"><![CDATA[<h1 id="产品功能点"><a href="#产品功能点" class="headerlink" title="产品功能点"></a>产品功能点</h1>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
     <categories>
       
       <category>AI</category>
       
-      <category>应用实践</category>
+      <category>生成模型</category>
       
     </categories>
     
@@ -134,9 +152,9 @@
       
       <tag>AI</tag>
       
-      <tag>Agent</tag>
+      <tag>深度学习</tag>
       
-      <tag>实践</tag>
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -176,9 +194,40 @@
   
   
   <entry>
+    <title>构建Excel/Google Sheel智能体</title>
+    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-Agent-ExcelAgents/"/>
+    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-Agent-ExcelAgents/</url>
+    
+    <content type="html"><![CDATA[<h1 id="产品功能点"><a href="#产品功能点" class="headerlink" title="产品功能点"></a>产品功能点</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>应用实践</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Agent</tag>
+      
+      <tag>实践</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大模型-研究助手</title>
-    <link href="/tech-blog/2025/05/08/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%A0%94%E7%A9%B6%E5%8A%A9%E6%89%8B/"/>
-    <url>/tech-blog/2025/05/08/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%A0%94%E7%A9%B6%E5%8A%A9%E6%89%8B/</url>
+    <link href="/tech-blog/2025/05/08/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E7%A0%94%E7%A9%B6%E5%8A%A9%E6%89%8B/"/>
+    <url>/tech-blog/2025/05/08/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E7%A0%94%E7%A9%B6%E5%8A%A9%E6%89%8B/</url>
     
     <content type="html"><![CDATA[<h1 id="研究助手"><a href="#研究助手" class="headerlink" title="研究助手"></a>研究助手</h1><h2 id="DeepResearch"><a href="#DeepResearch" class="headerlink" title="DeepResearch"></a>DeepResearch</h2><h2 id="超级智能体"><a href="#超级智能体" class="headerlink" title="超级智能体"></a>超级智能体</h2><h3 id="GenSpark"><a href="#GenSpark" class="headerlink" title="GenSpark"></a>GenSpark</h3><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><strong>Tiny-Scientist</strong> is a lightweight, user-friendly framework for automating the entire lifecycle of scientific research—from ideation to implementation, writing, and review. Designed for flexibility, it integrates smoothly with your favorite LLMs and search tools.</p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p><a href="https://www.aminer.cn/">AMiner</a><br><a href="https://elicit.org/">https://elicit.org</a><br><a href="https://www.connectedpapers.com/">https://www.connectedpapers.com</a><br><a href="https://paperfinder.allen.ai/chat?continueFlag=ed3c84007e3d48511aa8dfd421fe14c5">Ai2 Paper Finder</a><br><a href="https://github.com/ulab-uiuc/tiny-scientist">TinyScientist: A Lightweight Framework for Building Research Agents</a><br><a href="https://github.com/HKUDS/Auto-Deep-Research">Auto-Deep-Research</a><br><a href="https://github.com/going-doer/Paper2Code">Paper2Code</a></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/jina-ai/node-DeepResearch">Jina-DeepResearch</a></p>]]></content>
     
@@ -209,6 +258,37 @@
   
   
   <entry>
+    <title>大模型一体机</title>
+    <link href="/tech-blog/2025/05/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%A1%AC%E4%BB%B6-%E4%B8%80%E4%BD%93%E6%9C%BA/"/>
+    <url>/tech-blog/2025/05/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%A1%AC%E4%BB%B6-%E4%B8%80%E4%BD%93%E6%9C%BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="deepseek一体机"><a href="#deepseek一体机" class="headerlink" title="deepseek一体机"></a>deepseek一体机</h1><p><strong>满血DeepSeek一体机</strong><br>671B参数、FP8原版 14.9万元 22 tokens&#x2F;s</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://mp.weixin.qq.com/s/luK0nlylq5faBytZ6Pvc1Q">https://mp.weixin.qq.com/s/luK0nlylq5faBytZ6Pvc1Q</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>AI驱动的3D建模：技术现状与未来展望</title>
     <link href="/tech-blog/2025/05/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-3D%E5%BB%BA%E6%A8%A1/"/>
     <url>/tech-blog/2025/05/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-3D%E5%BB%BA%E6%A8%A1/</url>
@@ -227,11 +307,11 @@
     
     <tags>
       
+      <tag>生成式AI</tag>
+      
       <tag>人工智能</tag>
       
       <tag>3D建模</tag>
-      
-      <tag>生成式AI</tag>
       
       <tag>虚拟环境</tag>
       
@@ -277,7 +357,7 @@
     <link href="/tech-blog/2025/04/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%90%8E%E8%AE%AD%E7%BB%83/"/>
     <url>/tech-blog/2025/04/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%90%8E%E8%AE%AD%E7%BB%83/</url>
     
-    <content type="html"><![CDATA[<h1 id="大模型后训练：方法与实践分析"><a href="#大模型后训练：方法与实践分析" class="headerlink" title="大模型后训练：方法与实践分析"></a>大模型后训练：方法与实践分析</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>大模型的后训练（Post-training）是指在大规模预训练之后，针对特定能力或任务进行的额外训练过程。通过后训练，模型可以获得调用插件的能力、支持MCP（Multi-turn Conversation Protocol）等特定功能，从而提升模型在实际应用中的表现。本文将详细介绍大模型后训练的常用方法，并深入分析DeepSeek的后训练实践。</p><h2 id="后训练方法概述"><a href="#后训练方法概述" class="headerlink" title="后训练方法概述"></a>后训练方法概述</h2><p>后训练是大模型能力提升的关键环节，主要包括以下几种常用方法：</p><h3 id="1-指令微调（Instruction-Tuning）"><a href="#1-指令微调（Instruction-Tuning）" class="headerlink" title="1. 指令微调（Instruction Tuning）"></a>1. 指令微调（Instruction Tuning）</h3><p>指令微调是让模型学习如何理解和执行人类指令的训练过程。通过高质量的指令-输出对数据，模型能够更好地理解用户意图并生成符合预期的回复。</p><p><strong>关键特点</strong>：</p><ul><li>使用多样化的指令数据集</li><li>强调指令的多样性和复杂性</li><li>通常采用监督微调（SFT）方法</li></ul><p><strong>应用场景</strong>：</p><ul><li>提升模型的指令遵循能力</li><li>增强模型的任务理解能力</li><li>改善模型的输出格式和风格</li></ul><h3 id="2-工具调用训练（Tool-Calling-Training）"><a href="#2-工具调用训练（Tool-Calling-Training）" class="headerlink" title="2. 工具调用训练（Tool Calling Training）"></a>2. 工具调用训练（Tool Calling Training）</h3><p>工具调用训练使模型能够识别何时需要使用外部工具，并正确调用这些工具来完成任务。</p><p><strong>关键特点</strong>：</p><ul><li>模拟真实工具调用场景</li><li>包含工具描述、参数规范和调用示例</li><li>训练模型识别工具使用的边界条件</li></ul><p><strong>应用场景</strong>：</p><ul><li>搜索引擎调用</li><li>计算器使用</li><li>API接口调用</li><li>数据库查询</li></ul><h3 id="3-多轮对话训练（Multi-turn-Conversation-Training）"><a href="#3-多轮对话训练（Multi-turn-Conversation-Training）" class="headerlink" title="3. 多轮对话训练（Multi-turn Conversation Training）"></a>3. 多轮对话训练（Multi-turn Conversation Training）</h3><p>多轮对话训练使模型能够在连续对话中保持上下文一致性，并基于历史信息做出合理回应。</p><p><strong>关键特点</strong>：</p><ul><li>构建多轮对话数据集</li><li>包含上下文依赖的问答</li><li>训练模型理解对话历史和状态</li></ul><p><strong>应用场景</strong>：</p><ul><li>客服对话系统</li><li>个人助手</li><li>教育辅导</li></ul><h3 id="4-思维链训练（Chain-of-Thought-Training）"><a href="#4-思维链训练（Chain-of-Thought-Training）" class="headerlink" title="4. 思维链训练（Chain-of-Thought Training）"></a>4. 思维链训练（Chain-of-Thought Training）</h3><p>思维链训练鼓励模型展示推理过程，通过中间步骤来得出最终答案。</p><p><strong>关键特点</strong>：</p><ul><li>包含详细的推理步骤</li><li>强调逻辑性和连贯性</li><li>通常与指令微调结合使用</li></ul><p><strong>应用场景</strong>：</p><ul><li>数学问题解决</li><li>逻辑推理任务</li><li>复杂问题分析</li></ul><h3 id="5-对齐训练（Alignment-Training）"><a href="#5-对齐训练（Alignment-Training）" class="headerlink" title="5. 对齐训练（Alignment Training）"></a>5. 对齐训练（Alignment Training）</h3><p>对齐训练使模型的输出与人类价值观和偏好保持一致，减少有害或不适当的输出。</p><p><strong>关键特点</strong>：</p><ul><li>使用人类反馈数据</li><li>强调安全性和伦理考虑</li><li>通常采用RLHF（基于人类反馈的强化学习）方法</li></ul><p><strong>应用场景</strong>：</p><ul><li>减少模型偏见</li><li>提高模型安全性</li><li>增强模型的有用性和无害性</li></ul><h2 id="DeepSeek的后训练实践分析"><a href="#DeepSeek的后训练实践分析" class="headerlink" title="DeepSeek的后训练实践分析"></a>DeepSeek的后训练实践分析</h2><p>DeepSeek作为一家专注于大模型研发的公司，其后训练方法具有独特性和创新性。以下是对DeepSeek后训练实践的深入分析：</p><h3 id="1-数据构建策略"><a href="#1-数据构建策略" class="headerlink" title="1. 数据构建策略"></a>1. 数据构建策略</h3><p>DeepSeek采用多层次、多维度的数据构建策略：</p><p><strong>高质量指令数据</strong>：</p><ul><li>构建了包含数百万条高质量指令-输出对的数据集</li><li>涵盖学术、编程、创意写作、逻辑推理等多个领域</li><li>特别注重数据的多样性和复杂性，避免简单重复</li></ul><p><strong>工具调用数据</strong>：</p><ul><li>设计了专门的工具调用训练数据</li><li>包含丰富的工具描述、参数规范和调用示例</li><li>模拟真实场景中的工具使用情况，包括成功和失败案例</li></ul><p><strong>多轮对话数据</strong>：</p><ul><li>构建了包含复杂上下文依赖的多轮对话数据集</li><li>设计了多种对话场景和用户意图</li><li>特别关注对话状态追踪和长期记忆能力</li></ul><h3 id="2-训练方法创新"><a href="#2-训练方法创新" class="headerlink" title="2. 训练方法创新"></a>2. 训练方法创新</h3><p>DeepSeek在后训练方法上进行了多项创新：</p><p><strong>混合训练策略</strong>：</p><ul><li>结合监督微调（SFT）和强化学习（RL）的优势</li><li>采用分阶段训练方法，先进行基础能力训练，再进行特定能力训练</li><li>引入课程学习思想，从简单任务逐步过渡到复杂任务</li></ul><p><strong>上下文感知训练</strong>：</p><ul><li>设计了特殊的注意力机制，增强模型对长文本和复杂上下文的理解</li><li>在训练中引入记忆增强技术，提高模型的长期记忆能力</li><li>特别关注模型在多轮对话中的状态追踪能力</li></ul><p><strong>工具调用框架</strong>：</p><ul><li>开发了灵活的工具调用框架，支持多种类型的工具集成</li><li>设计了工具调用的决策机制，使模型能够准确判断何时使用工具</li><li>实现了工具调用的错误处理和回退机制</li></ul><h3 id="3-评估体系"><a href="#3-评估体系" class="headerlink" title="3. 评估体系"></a>3. 评估体系</h3><p>DeepSeek建立了全面的模型评估体系：</p><p><strong>多维能力评估</strong>：</p><ul><li>基础能力评估：语言理解、生成质量、知识覆盖等</li><li>特定能力评估：工具调用准确性、多轮对话连贯性、推理能力等</li><li>安全性和伦理评估：偏见检测、有害内容过滤、价值观对齐等</li></ul><p><strong>真实场景测试</strong>：</p><ul><li>设计模拟真实用户场景的测试用例</li><li>进行长期稳定性测试，检测模型在长时间运行中的表现</li><li>收集真实用户反馈，持续优化模型</li></ul><h3 id="4-技术亮点"><a href="#4-技术亮点" class="headerlink" title="4. 技术亮点"></a>4. 技术亮点</h3><p>DeepSeek的后训练方法有以下几个技术亮点：</p><p><strong>自适应学习率调度</strong>：</p><ul><li>根据任务难度和模型状态动态调整学习率</li><li>采用预热和余弦退火策略，提高训练稳定性</li><li>针对不同能力模块使用不同的学习率</li></ul><p><strong>混合精度训练</strong>：</p><ul><li>结合FP16和FP32精度，平衡训练效率和模型性能</li><li>针对关键参数使用高精度表示，确保模型稳定性</li><li>优化内存使用，支持更大规模的模型训练</li></ul><p><strong>分布式训练优化</strong>：</p><ul><li>采用高效的分布式训练策略，提高训练效率</li><li>优化通信开销，减少节点间数据传输</li><li>实现容错机制，提高训练稳定性</li></ul><h2 id="后训练对MCP能力的增强"><a href="#后训练对MCP能力的增强" class="headerlink" title="后训练对MCP能力的增强"></a>后训练对MCP能力的增强</h2><p>MCP（Multi-turn Conversation Protocol）是一种多轮对话协议，通过后训练，大模型能够更好地支持MCP能力：</p><h3 id="1-MCP能力的关键要素"><a href="#1-MCP能力的关键要素" class="headerlink" title="1. MCP能力的关键要素"></a>1. MCP能力的关键要素</h3><p><strong>上下文理解</strong>：</p><ul><li>准确理解对话历史中的关键信息</li><li>识别用户意图的变化和演进</li><li>维护对话状态和上下文连贯性</li></ul><p><strong>状态追踪</strong>：</p><ul><li>记录和更新对话中的重要状态信息</li><li>在多轮对话中保持状态一致性</li><li>处理状态转换和条件分支</li></ul><p><strong>工具调用集成</strong>：</p><ul><li>在对话流程中无缝集成工具调用</li><li>基于对话上下文决定工具调用时机</li><li>将工具调用结果自然融入对话流程</li></ul><h3 id="2-DeepSeek的MCP实现"><a href="#2-DeepSeek的MCP实现" class="headerlink" title="2. DeepSeek的MCP实现"></a>2. DeepSeek的MCP实现</h3><p>DeepSeek通过专门的后训练方法增强了模型的MCP能力：</p><p><strong>对话状态编码</strong>：</p><ul><li>设计了专门的对话状态编码机制</li><li>将对话历史转换为结构化的状态表示</li><li>支持复杂的状态转换和条件逻辑</li></ul><p><strong>工具调用决策</strong>：</p><ul><li>训练模型识别对话中需要工具调用的场景</li><li>基于对话上下文选择合适的工具和参数</li><li>实现工具调用的自然过渡和结果解释</li></ul><p><strong>多模态交互</strong>：</p><ul><li>支持文本、图像、音频等多种模态的交互</li><li>实现跨模态的上下文理解和状态追踪</li><li>设计统一的多模态对话框架</li></ul><h2 id="实践案例分析"><a href="#实践案例分析" class="headerlink" title="实践案例分析"></a>实践案例分析</h2><h3 id="1-DeepSeek-Coder的后训练实践"><a href="#1-DeepSeek-Coder的后训练实践" class="headerlink" title="1. DeepSeek Coder的后训练实践"></a>1. DeepSeek Coder的后训练实践</h3><p>DeepSeek Coder是DeepSeek推出的代码生成模型，其后训练方法具有以下特点：</p><p><strong>代码指令微调</strong>：</p><ul><li>使用高质量的代码指令数据集进行微调</li><li>涵盖多种编程语言和开发场景</li><li>特别关注代码质量和最佳实践</li></ul><p><strong>代码工具集成</strong>：</p><ul><li>集成代码分析、测试、调试等工具</li><li>训练模型理解和使用这些工具</li><li>实现代码生成与工具调用的无缝结合</li></ul><p><strong>代码上下文理解</strong>：</p><ul><li>增强模型对大型代码库的理解能力</li><li>训练模型识别代码依赖和调用关系</li><li>提高模型在复杂项目中的表现</li></ul><h3 id="2-DeepSeek-Chat的后训练实践"><a href="#2-DeepSeek-Chat的后训练实践" class="headerlink" title="2. DeepSeek Chat的后训练实践"></a>2. DeepSeek Chat的后训练实践</h3><p>DeepSeek Chat是DeepSeek的对话模型，其后训练方法包括：</p><p><strong>多轮对话优化</strong>：</p><ul><li>使用高质量的多轮对话数据集进行训练</li><li>特别关注对话的连贯性和一致性</li><li>增强模型的长期记忆和状态追踪能力</li></ul><p><strong>知识增强</strong>：</p><ul><li>集成外部知识库和实时信息</li><li>训练模型在对话中自然引用知识</li><li>提高模型的知识准确性和时效性</li></ul><p><strong>个性化交互</strong>：</p><ul><li>训练模型适应用户偏好和交互风格</li><li>实现个性化的对话体验</li><li>平衡一致性和适应性</li></ul><h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>大模型后训练技术仍在快速发展，未来可能的方向包括：</p><h3 id="1-自适应后训练"><a href="#1-自适应后训练" class="headerlink" title="1. 自适应后训练"></a>1. 自适应后训练</h3><ul><li>根据用户反馈和实际使用情况自动调整训练策略</li><li>实现个性化的能力增强</li><li>减少人工干预，提高训练效率</li></ul><h3 id="2-多模态后训练"><a href="#2-多模态后训练" class="headerlink" title="2. 多模态后训练"></a>2. 多模态后训练</h3><ul><li>扩展后训练方法到图像、音频、视频等多模态领域</li><li>实现跨模态的能力迁移和融合</li><li>构建统一的多模态交互框架</li></ul><h3 id="3-持续学习能力"><a href="#3-持续学习能力" class="headerlink" title="3. 持续学习能力"></a>3. 持续学习能力</h3><ul><li>开发支持持续学习的后训练方法</li><li>使模型能够从新数据中学习而不遗忘已有知识</li><li>实现模型能力的持续进化</li></ul><h2 id="后训练方法"><a href="#后训练方法" class="headerlink" title="后训练方法"></a>后训练方法</h2><h2 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h2><p>通过后训练是大模型具备调用插件的能力、支持MCP能力。</p><h2 id="Pre-training-vs-Post-Training"><a href="#Pre-training-vs-Post-Training" class="headerlink" title="Pre-training vs Post-Training"></a>Pre-training vs Post-Training</h2><p>相比预训练，后训练：</p><ol><li>需要的计算资源更少、迭代更快</li><li>使用RLHF</li><li>教会模型使用工具，如：检索、浏览网页、执行代码等</li><li>构建模型的特性</li><li>引入拒绝&#x2F;安全性行为：“作为一个AI语言模型……”</li><li>对预训练语言模型进一步提升泛化能力</li></ol><h2 id="后训练主要组件"><a href="#后训练主要组件" class="headerlink" title="后训练主要组件"></a>后训练主要组件</h2><p>监督微调、奖励模型训练、强化学习</p><h3 id="监督微调（SFT）"><a href="#监督微调（SFT）" class="headerlink" title="监督微调（SFT）"></a>监督微调（SFT）</h3><h3 id="奖励模型（Reward-Model）训练"><a href="#奖励模型（Reward-Model）训练" class="headerlink" title="奖励模型（Reward Model）训练"></a>奖励模型（Reward Model）训练</h3><h3 id="强化学习（RL）"><a href="#强化学习（RL）" class="headerlink" title="强化学习（RL）"></a>强化学习（RL）</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://docs.google.com/presentation/d/11KWCKUORnPpVMSY6vXgBeFSWo7fJcuGQ9yuR6vC1pzE/edit#slide=id.g3296136e56d_0_49">ChatGPT+Post-Training</a><br><a href="https://www.interconnects.ai/p/frontier-model-post-training">https://www.interconnects.ai/p/frontier-model-post-training</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="大模型后训练：方法与实践分析"><a href="#大模型后训练：方法与实践分析" class="headerlink" title="大模型后训练：方法与实践分析"></a>大模型后训练：方法与实践分析</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>大模型的后训练（Post-training）是指在大规模预训练之后，针对特定能力或任务进行的额外训练过程。通过后训练，模型可以获得调用插件的能力、支持MCP（Multi-turn Conversation Protocol）等特定功能，从而提升模型在实际应用中的表现。本文将详细介绍大模型后训练的常用方法，并深入分析DeepSeek的后训练实践。</p><h2 id="后训练方法概述"><a href="#后训练方法概述" class="headerlink" title="后训练方法概述"></a>后训练方法概述</h2><p>后训练是大模型能力提升的关键环节，主要包括以下几种常用方法：</p><h3 id="1-指令微调（Instruction-Tuning）"><a href="#1-指令微调（Instruction-Tuning）" class="headerlink" title="1. 指令微调（Instruction Tuning）"></a>1. 指令微调（Instruction Tuning）</h3><p>指令微调是让模型学习如何理解和执行人类指令的训练过程。通过高质量的指令-输出对数据，模型能够更好地理解用户意图并生成符合预期的回复。</p><p><strong>关键特点</strong>：</p><ul><li>使用多样化的指令数据集</li><li>强调指令的多样性和复杂性</li><li>通常采用监督微调（SFT）方法</li></ul><p><strong>应用场景</strong>：</p><ul><li>提升模型的指令遵循能力</li><li>增强模型的任务理解能力</li><li>改善模型的输出格式和风格</li></ul><h3 id="2-工具调用训练（Tool-Calling-Training）"><a href="#2-工具调用训练（Tool-Calling-Training）" class="headerlink" title="2. 工具调用训练（Tool Calling Training）"></a>2. 工具调用训练（Tool Calling Training）</h3><p>工具调用训练使模型能够识别何时需要使用外部工具，并正确调用这些工具来完成任务。</p><p><strong>关键特点</strong>：</p><ul><li>模拟真实工具调用场景</li><li>包含工具描述、参数规范和调用示例</li><li>训练模型识别工具使用的边界条件</li></ul><p><strong>应用场景</strong>：</p><ul><li>搜索引擎调用</li><li>计算器使用</li><li>API接口调用</li><li>数据库查询</li></ul><h3 id="3-多轮对话训练（Multi-turn-Conversation-Training）"><a href="#3-多轮对话训练（Multi-turn-Conversation-Training）" class="headerlink" title="3. 多轮对话训练（Multi-turn Conversation Training）"></a>3. 多轮对话训练（Multi-turn Conversation Training）</h3><p>多轮对话训练使模型能够在连续对话中保持上下文一致性，并基于历史信息做出合理回应。</p><p><strong>关键特点</strong>：</p><ul><li>构建多轮对话数据集</li><li>包含上下文依赖的问答</li><li>训练模型理解对话历史和状态</li></ul><p><strong>应用场景</strong>：</p><ul><li>客服对话系统</li><li>个人助手</li><li>教育辅导</li></ul><h3 id="4-思维链训练（Chain-of-Thought-Training）"><a href="#4-思维链训练（Chain-of-Thought-Training）" class="headerlink" title="4. 思维链训练（Chain-of-Thought Training）"></a>4. 思维链训练（Chain-of-Thought Training）</h3><p>思维链训练鼓励模型展示推理过程，通过中间步骤来得出最终答案。</p><p><strong>关键特点</strong>：</p><ul><li>包含详细的推理步骤</li><li>强调逻辑性和连贯性</li><li>通常与指令微调结合使用</li></ul><p><strong>应用场景</strong>：</p><ul><li>数学问题解决</li><li>逻辑推理任务</li><li>复杂问题分析</li></ul><h3 id="5-对齐训练（Alignment-Training）"><a href="#5-对齐训练（Alignment-Training）" class="headerlink" title="5. 对齐训练（Alignment Training）"></a>5. 对齐训练（Alignment Training）</h3><p>对齐训练使模型的输出与人类价值观和偏好保持一致，减少有害或不适当的输出。</p><p><strong>关键特点</strong>：</p><ul><li>使用人类反馈数据</li><li>强调安全性和伦理考虑</li><li>通常采用RLHF（基于人类反馈的强化学习）方法</li></ul><p><strong>应用场景</strong>：</p><ul><li>减少模型偏见</li><li>提高模型安全性</li><li>增强模型的有用性和无害性</li></ul><h2 id="DeepSeek的后训练实践分析"><a href="#DeepSeek的后训练实践分析" class="headerlink" title="DeepSeek的后训练实践分析"></a>DeepSeek的后训练实践分析</h2><h3 id="1-数据构建策略"><a href="#1-数据构建策略" class="headerlink" title="1. 数据构建策略"></a>1. 数据构建策略</h3><p>DeepSeek采用多层次、多维度的数据构建策略：</p><p><strong>高质量指令数据</strong>：</p><ul><li>构建了包含数百万条高质量指令-输出对的数据集</li><li>涵盖学术、编程、创意写作、逻辑推理等多个领域</li><li>特别注重数据的多样性和复杂性，避免简单重复</li></ul><p><strong>工具调用数据</strong>：</p><ul><li>设计了专门的工具调用训练数据</li><li>包含丰富的工具描述、参数规范和调用示例</li><li>模拟真实场景中的工具使用情况，包括成功和失败案例</li></ul><p><strong>多轮对话数据</strong>：</p><ul><li>构建了包含复杂上下文依赖的多轮对话数据集</li><li>设计了多种对话场景和用户意图</li><li>特别关注对话状态追踪和长期记忆能力</li></ul><h3 id="2-训练方法创新"><a href="#2-训练方法创新" class="headerlink" title="2. 训练方法创新"></a>2. 训练方法创新</h3><p>DeepSeek在后训练方法上进行了多项创新：</p><p><strong>混合训练策略</strong>：</p><ul><li>结合监督微调（SFT）和强化学习（RL）的优势</li><li>采用分阶段训练方法，先进行基础能力训练，再进行特定能力训练</li><li>引入课程学习思想，从简单任务逐步过渡到复杂任务</li></ul><p><strong>上下文感知训练</strong>：</p><ul><li>设计了特殊的注意力机制，增强模型对长文本和复杂上下文的理解</li><li>在训练中引入记忆增强技术，提高模型的长期记忆能力</li><li>特别关注模型在多轮对话中的状态追踪能力</li></ul><p><strong>工具调用框架</strong>：</p><ul><li>开发了灵活的工具调用框架，支持多种类型的工具集成</li><li>设计了工具调用的决策机制，使模型能够准确判断何时使用工具</li><li>实现了工具调用的错误处理和回退机制</li></ul><h3 id="3-评估体系"><a href="#3-评估体系" class="headerlink" title="3. 评估体系"></a>3. 评估体系</h3><p>DeepSeek建立了全面的模型评估体系：</p><p><strong>多维能力评估</strong>：</p><ul><li>基础能力评估：语言理解、生成质量、知识覆盖等</li><li>特定能力评估：工具调用准确性、多轮对话连贯性、推理能力等</li><li>安全性和伦理评估：偏见检测、有害内容过滤、价值观对齐等</li></ul><p><strong>真实场景测试</strong>：</p><ul><li>设计模拟真实用户场景的测试用例</li><li>进行长期稳定性测试，检测模型在长时间运行中的表现</li><li>收集真实用户反馈，持续优化模型</li></ul><h3 id="4-技术亮点"><a href="#4-技术亮点" class="headerlink" title="4. 技术亮点"></a>4. 技术亮点</h3><p>DeepSeek的后训练方法有以下几个技术亮点：</p><p><strong>自适应学习率调度</strong>：</p><ul><li>根据任务难度和模型状态动态调整学习率</li><li>采用预热和余弦退火策略，提高训练稳定性</li><li>针对不同能力模块使用不同的学习率</li></ul><p><strong>混合精度训练</strong>：</p><ul><li>结合FP16和FP32精度，平衡训练效率和模型性能</li><li>针对关键参数使用高精度表示，确保模型稳定性</li><li>优化内存使用，支持更大规模的模型训练</li></ul><p><strong>分布式训练优化</strong>：</p><ul><li>采用高效的分布式训练策略，提高训练效率</li><li>优化通信开销，减少节点间数据传输</li><li>实现容错机制，提高训练稳定性</li></ul><h2 id="后训练对MCP能力的增强"><a href="#后训练对MCP能力的增强" class="headerlink" title="后训练对MCP能力的增强"></a>后训练对MCP能力的增强</h2><p>MCP（Multi-turn Conversation Protocol）是一种多轮对话协议，通过后训练，大模型能够更好地支持MCP能力：</p><h3 id="1-MCP能力的关键要素"><a href="#1-MCP能力的关键要素" class="headerlink" title="1. MCP能力的关键要素"></a>1. MCP能力的关键要素</h3><p><strong>上下文理解</strong>：</p><ul><li>准确理解对话历史中的关键信息</li><li>识别用户意图的变化和演进</li><li>维护对话状态和上下文连贯性</li></ul><p><strong>状态追踪</strong>：</p><ul><li>记录和更新对话中的重要状态信息</li><li>在多轮对话中保持状态一致性</li><li>处理状态转换和条件分支</li></ul><p><strong>工具调用集成</strong>：</p><ul><li>在对话流程中无缝集成工具调用</li><li>基于对话上下文决定工具调用时机</li><li>将工具调用结果自然融入对话流程</li></ul><h3 id="2-DeepSeek的MCP实现"><a href="#2-DeepSeek的MCP实现" class="headerlink" title="2. DeepSeek的MCP实现"></a>2. DeepSeek的MCP实现</h3><p>DeepSeek通过专门的后训练方法增强了模型的MCP能力：</p><p><strong>对话状态编码</strong>：</p><ul><li>设计了专门的对话状态编码机制</li><li>将对话历史转换为结构化的状态表示</li><li>支持复杂的状态转换和条件逻辑</li></ul><p><strong>工具调用决策</strong>：</p><ul><li>训练模型识别对话中需要工具调用的场景</li><li>基于对话上下文选择合适的工具和参数</li><li>实现工具调用的自然过渡和结果解释</li></ul><p><strong>多模态交互</strong>：</p><ul><li>支持文本、图像、音频等多种模态的交互</li><li>实现跨模态的上下文理解和状态追踪</li><li>设计统一的多模态对话框架</li></ul><h2 id="实践案例分析"><a href="#实践案例分析" class="headerlink" title="实践案例分析"></a>实践案例分析</h2><h3 id="1-DeepSeek-Coder的后训练实践"><a href="#1-DeepSeek-Coder的后训练实践" class="headerlink" title="1. DeepSeek Coder的后训练实践"></a>1. DeepSeek Coder的后训练实践</h3><p>DeepSeek Coder是DeepSeek推出的代码生成模型，其后训练方法具有以下特点：</p><p><strong>代码指令微调</strong>：</p><ul><li>使用高质量的代码指令数据集进行微调</li><li>涵盖多种编程语言和开发场景</li><li>特别关注代码质量和最佳实践</li></ul><p><strong>代码工具集成</strong>：</p><ul><li>集成代码分析、测试、调试等工具</li><li>训练模型理解和使用这些工具</li><li>实现代码生成与工具调用的无缝结合</li></ul><p><strong>代码上下文理解</strong>：</p><ul><li>增强模型对大型代码库的理解能力</li><li>训练模型识别代码依赖和调用关系</li><li>提高模型在复杂项目中的表现</li></ul><h3 id="2-DeepSeek-Chat的后训练实践"><a href="#2-DeepSeek-Chat的后训练实践" class="headerlink" title="2. DeepSeek Chat的后训练实践"></a>2. DeepSeek Chat的后训练实践</h3><p>DeepSeek Chat是DeepSeek的对话模型，其后训练方法包括：</p><p><strong>多轮对话优化</strong>：</p><ul><li>使用高质量的多轮对话数据集进行训练</li><li>特别关注对话的连贯性和一致性</li><li>增强模型的长期记忆和状态追踪能力</li></ul><p><strong>知识增强</strong>：</p><ul><li>集成外部知识库和实时信息</li><li>训练模型在对话中自然引用知识</li><li>提高模型的知识准确性和时效性</li></ul><p><strong>个性化交互</strong>：</p><ul><li>训练模型适应用户偏好和交互风格</li><li>实现个性化的对话体验</li><li>平衡一致性和适应性</li></ul><h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>大模型后训练技术仍在快速发展，未来可能的方向包括：</p><h3 id="1-自适应后训练"><a href="#1-自适应后训练" class="headerlink" title="1. 自适应后训练"></a>1. 自适应后训练</h3><ul><li>根据用户反馈和实际使用情况自动调整训练策略</li><li>实现个性化的能力增强</li><li>减少人工干预，提高训练效率</li></ul><h3 id="2-多模态后训练"><a href="#2-多模态后训练" class="headerlink" title="2. 多模态后训练"></a>2. 多模态后训练</h3><ul><li>扩展后训练方法到图像、音频、视频等多模态领域</li><li>实现跨模态的能力迁移和融合</li><li>构建统一的多模态交互框架</li></ul><h3 id="3-持续学习能力"><a href="#3-持续学习能力" class="headerlink" title="3. 持续学习能力"></a>3. 持续学习能力</h3><ul><li>开发支持持续学习的后训练方法</li><li>使模型能够从新数据中学习而不遗忘已有知识</li><li>实现模型能力的持续进化</li></ul><h2 id="后训练方法"><a href="#后训练方法" class="headerlink" title="后训练方法"></a>后训练方法</h2><h2 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h2><p>通过后训练是大模型具备调用插件的能力、支持MCP能力。</p><h2 id="Pre-training-vs-Post-Training"><a href="#Pre-training-vs-Post-Training" class="headerlink" title="Pre-training vs Post-Training"></a>Pre-training vs Post-Training</h2><p>相比预训练，后训练：</p><ol><li>需要的计算资源更少、迭代更快</li><li>使用RLHF</li><li>教会模型使用工具，如：检索、浏览网页、执行代码等</li><li>构建模型的特性</li><li>引入拒绝&#x2F;安全性行为：“作为一个AI语言模型……”</li><li>对预训练语言模型进一步提升泛化能力</li></ol><h2 id="后训练主要组件"><a href="#后训练主要组件" class="headerlink" title="后训练主要组件"></a>后训练主要组件</h2><p>监督微调、奖励模型训练、强化学习</p><h3 id="监督微调（SFT）"><a href="#监督微调（SFT）" class="headerlink" title="监督微调（SFT）"></a>监督微调（SFT）</h3><h3 id="奖励模型（Reward-Model）训练"><a href="#奖励模型（Reward-Model）训练" class="headerlink" title="奖励模型（Reward Model）训练"></a>奖励模型（Reward Model）训练</h3><h3 id="强化学习（RL）"><a href="#强化学习（RL）" class="headerlink" title="强化学习（RL）"></a>强化学习（RL）</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://docs.google.com/presentation/d/11KWCKUORnPpVMSY6vXgBeFSWo7fJcuGQ9yuR6vC1pzE/edit#slide=id.g3296136e56d_0_49">ChatGPT+Post-Training</a><br><a href="https://www.interconnects.ai/p/frontier-model-post-training">https://www.interconnects.ai/p/frontier-model-post-training</a></p>]]></content>
     
     
     <categories>
@@ -308,6 +388,39 @@
   
   
   <entry>
+    <title>使用Cursor AI实现微信小程序开发</title>
+    <link href="/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <url>/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<h2 id="微信小程序开发环境搭建"><a href="#微信小程序开发环境搭建" class="headerlink" title="微信小程序开发环境搭建"></a>微信小程序开发环境搭建</h2><h3 id="1-安装必要工具"><a href="#1-安装必要工具" class="headerlink" title="1. 安装必要工具"></a>1. 安装必要工具</h3><p>下载【微信小程序开发工具】和【cursor】。</p><h3 id="2-创建小程序项目"><a href="#2-创建小程序项目" class="headerlink" title="2. 创建小程序项目"></a>2. 创建小程序项目</h3><h2 id="使用Cursor-AI开发小程序"><a href="#使用Cursor-AI开发小程序" class="headerlink" title="使用Cursor AI开发小程序"></a>使用Cursor AI开发小程序</h2><p>步骤：</p><ol><li>使用kimi生成小程序PRD</li></ol><h3 id="1-项目结构设计"><a href="#1-项目结构设计" class="headerlink" title="1. 项目结构设计"></a>1. 项目结构设计</h3><h3 id="2-页面开发"><a href="#2-页面开发" class="headerlink" title="2. 页面开发"></a>2. 页面开发</h3><h3 id="3-组件开发"><a href="#3-组件开发" class="headerlink" title="3. 组件开发"></a>3. 组件开发</h3><h2 id="实践与技巧"><a href="#实践与技巧" class="headerlink" title="实践与技巧"></a>实践与技巧</h2><h3 id="陷入修复bug"><a href="#陷入修复bug" class="headerlink" title="陷入修复bug"></a>陷入修复bug</h3><p><strong>云控函数</strong></p><p><strong>webAPI数据加密</strong></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.youtube.com/watch?v=87jXLqMIeDE">https://www.youtube.com/watch?v=87jXLqMIeDE</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发工具</category>
+      
+      <category>前端开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI工具</tag>
+      
+      <tag>Cursor</tag>
+      
+      <tag>小程序开发</tag>
+      
+      <tag>微信小程序</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用Cursor实现NLP标注工具</title>
     <link href="/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E6%96%87%E6%9C%AC%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7/"/>
     <url>/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E6%96%87%E6%9C%AC%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7/</url>
@@ -329,39 +442,6 @@
       <tag>Cursor</tag>
       
       <tag>NLP</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>使用Cursor AI实现微信小程序开发</title>
-    <link href="/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <url>/tech-blog/2025/04/18/AI%E5%B7%A5%E5%85%B7-Cursor%E5%AE%9E%E7%8E%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
-    
-    <content type="html"><![CDATA[<h2 id="微信小程序开发环境搭建"><a href="#微信小程序开发环境搭建" class="headerlink" title="微信小程序开发环境搭建"></a>微信小程序开发环境搭建</h2><h3 id="1-安装必要工具"><a href="#1-安装必要工具" class="headerlink" title="1. 安装必要工具"></a>1. 安装必要工具</h3><p>下载【微信小程序开发工具】和【cursor】。</p><h3 id="2-创建小程序项目"><a href="#2-创建小程序项目" class="headerlink" title="2. 创建小程序项目"></a>2. 创建小程序项目</h3><h2 id="使用Cursor-AI开发小程序"><a href="#使用Cursor-AI开发小程序" class="headerlink" title="使用Cursor AI开发小程序"></a>使用Cursor AI开发小程序</h2><h3 id="1-项目结构设计"><a href="#1-项目结构设计" class="headerlink" title="1. 项目结构设计"></a>1. 项目结构设计</h3><h3 id="2-页面开发"><a href="#2-页面开发" class="headerlink" title="2. 页面开发"></a>2. 页面开发</h3><h3 id="3-组件开发"><a href="#3-组件开发" class="headerlink" title="3. 组件开发"></a>3. 组件开发</h3><h2 id="实践与技巧"><a href="#实践与技巧" class="headerlink" title="实践与技巧"></a>实践与技巧</h2><p><strong>云控函数</strong></p><p><strong>webAPI数据加密</strong></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.youtube.com/watch?v=87jXLqMIeDE">https://www.youtube.com/watch?v=87jXLqMIeDE</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>开发工具</category>
-      
-      <category>前端开发</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI工具</tag>
-      
-      <tag>Cursor</tag>
-      
-      <tag>小程序开发</tag>
-      
-      <tag>微信小程序</tag>
       
     </tags>
     
@@ -539,7 +619,7 @@
     <link href="/tech-blog/2025/04/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C/"/>
     <url>/tech-blog/2025/04/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C/</url>
     
-    <content type="html"><![CDATA[<h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><p>单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。<br>开发单智能体的常用策略包括：（1）LLM配备工具调用能力，如代码执行器、web浏览器等；（2）通过提示策略获取更好的推理和规划能力，提示策略包括：思维链提示、ReAct、少样本提示等。<br>受益于多模态大模型的快速发展，agents也支持</p><h1 id="多Agent协作机制"><a href="#多Agent协作机制" class="headerlink" title="多Agent协作机制"></a>多Agent协作机制</h1><h2 id="合作类型"><a href="#合作类型" class="headerlink" title="合作类型"></a>合作类型</h2><h3 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h3><p>在合作机制，多个智能体互相协调目标为同一个目标工作。CAMEL、AutoGen等采用合作类型的协作机制。<br>优点：根据agents各自的优势分配子任务，设计简单并且能够执行明确的目标。<br>缺点：</p><p>Agent常见的一个挑战是偶尔无法利用关于物理世界的常识性知识，这种缺陷可能导致系统因重复错误而陷入循环。AutoGen是通过引入一个能够提供关键常识的grounding agent来解决该问题。</p><h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><h3 id="竞合"><a href="#竞合" class="headerlink" title="竞合"></a>竞合</h3><h2 id="合作结构"><a href="#合作结构" class="headerlink" title="合作结构"></a>合作结构</h2><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><h3 id="去中心化和分布式"><a href="#去中心化和分布式" class="headerlink" title="去中心化和分布式"></a>去中心化和分布式</h3><h3 id="分层式"><a href="#分层式" class="headerlink" title="分层式"></a>分层式</h3><h2 id="合作策略"><a href="#合作策略" class="headerlink" title="合作策略"></a>合作策略</h2><h3 id="基于规则"><a href="#基于规则" class="headerlink" title="基于规则"></a>基于规则</h3><h3 id="基于角色"><a href="#基于角色" class="headerlink" title="基于角色"></a>基于角色</h3><h3 id="基于模型"><a href="#基于模型" class="headerlink" title="基于模型"></a>基于模型</h3><h2 id="协调和编排架构"><a href="#协调和编排架构" class="headerlink" title="协调和编排架构"></a>协调和编排架构</h2><h3 id="静态架构"><a href="#静态架构" class="headerlink" title="静态架构"></a>静态架构</h3><p>合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。</p><h3 id="动态架构"><a href="#动态架构" class="headerlink" title="动态架构"></a>动态架构</h3><p>合作和角色分配可以根据任务需求动态调整。例如：Solo performance Prompting(SPP)可以根据输入动态识别相关角色，并生成相应的LLM代理进行协作。</p><h3 id="动态架构-1"><a href="#动态架构-1" class="headerlink" title="动态架构"></a>动态架构</h3><h1 id="多Agent框架和多Agent应用的区别"><a href="#多Agent框架和多Agent应用的区别" class="headerlink" title="多Agent框架和多Agent应用的区别"></a>多Agent框架和多Agent应用的区别</h1><h4 id="多智能体设计"><a href="#多智能体设计" class="headerlink" title="多智能体设计"></a>多智能体设计</h4><p>智能体角色、每个角色的职责、提示词设计</p><p>每个Agent都有特定的角色和专业知识，遵循一些已确立的标准。</p><h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="心智理论（Theory-of-Mind）"><a href="#心智理论（Theory-of-Mind）" class="headerlink" title="心智理论（Theory of Mind）"></a>心智理论（Theory of Mind）</h2><h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><p><a href="https://zhuanlan.zhihu.com/p/696245869">AAAI24大语言模型相关论文集锦</a></p><p>智能体回放和调试<br>（智能研讨厅形式-3D）<br>用户可以方便的修改短期记忆、长期记忆、提示等以调整、优化agent的效果。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="单Agent框架VS多Agent框架"><a href="#单Agent框架VS多Agent框架" class="headerlink" title="单Agent框架VS多Agent框架"></a>单Agent框架VS多Agent框架</h1><p>单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。<br>开发单智能体的常用策略包括：（1）LLM配备工具调用能力，如代码执行器、web浏览器等；（2）通过提示策略获取更好的推理和规划能力，提示策略包括：思维链提示、ReAct、少样本提示等。<br>受益于多模态大模型的快速发展，agents也支持</p><h1 id="多Agent协作机制"><a href="#多Agent协作机制" class="headerlink" title="多Agent协作机制"></a>多Agent协作机制</h1><h2 id="合作类型"><a href="#合作类型" class="headerlink" title="合作类型"></a>合作类型</h2><h3 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h3><p>在合作机制，多个智能体互相协调目标为同一个目标工作。CAMEL、AutoGen等采用合作类型的协作机制。<br>优点：根据agents各自的优势分配子任务，设计简单并且能够执行明确的目标。<br>缺点：</p><p>Agent常见的一个挑战是偶尔无法利用关于物理世界的常识性知识，这种缺陷可能导致系统因重复错误而陷入循环。AutoGen是通过引入一个能够提供关键常识的grounding agent来解决该问题。</p><h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><h3 id="竞合"><a href="#竞合" class="headerlink" title="竞合"></a>竞合</h3><h2 id="合作结构"><a href="#合作结构" class="headerlink" title="合作结构"></a>合作结构</h2><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><h3 id="去中心化和分布式"><a href="#去中心化和分布式" class="headerlink" title="去中心化和分布式"></a>去中心化和分布式</h3><h3 id="分层式"><a href="#分层式" class="headerlink" title="分层式"></a>分层式</h3><h2 id="合作策略"><a href="#合作策略" class="headerlink" title="合作策略"></a>合作策略</h2><h3 id="基于规则"><a href="#基于规则" class="headerlink" title="基于规则"></a>基于规则</h3><h3 id="基于角色"><a href="#基于角色" class="headerlink" title="基于角色"></a>基于角色</h3><h3 id="基于模型"><a href="#基于模型" class="headerlink" title="基于模型"></a>基于模型</h3><h2 id="协调和编排架构"><a href="#协调和编排架构" class="headerlink" title="协调和编排架构"></a>协调和编排架构</h2><h3 id="静态架构"><a href="#静态架构" class="headerlink" title="静态架构"></a>静态架构</h3><p>合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。</p><h3 id="动态架构"><a href="#动态架构" class="headerlink" title="动态架构"></a>动态架构</h3><p>合作和角色分配可以根据任务需求动态调整。例如：Solo performance Prompting(SPP)可以根据输入动态识别相关角色，并生成相应的LLM代理进行协作。</p><h3 id="动态架构-1"><a href="#动态架构-1" class="headerlink" title="动态架构"></a>动态架构</h3><h1 id="多Agent框架和多Agent应用的区别"><a href="#多Agent框架和多Agent应用的区别" class="headerlink" title="多Agent框架和多Agent应用的区别"></a>多Agent框架和多Agent应用的区别</h1><h4 id="多智能体设计"><a href="#多智能体设计" class="headerlink" title="多智能体设计"></a>多智能体设计</h4><p>智能体角色、每个角色的职责、提示词设计</p><p>每个Agent都有特定的角色和专业知识，遵循一些已确立的标准。</p><h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><h2 id="心智理论（Theory-of-Mind）"><a href="#心智理论（Theory-of-Mind）" class="headerlink" title="心智理论（Theory of Mind）"></a>心智理论（Theory of Mind）</h2><h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><p><a href="https://zhuanlan.zhihu.com/p/696245869">AAAI24大语言模型相关论文集锦</a></p><p>智能体回放和调试<br>（智能研讨厅形式-3D）<br>用户可以方便的修改短期记忆、长期记忆、提示等以调整、优化agent的效果。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.aivi.fyi/aiagents/introduce-AutoGen-GraphFlow">AutoGen-GraphFlow示例</a></p>]]></content>
     
     
     <categories>
@@ -560,11 +640,11 @@
   
   
   <entry>
-    <title>ElasticSearch</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/</url>
+    <title>构建索引</title>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/</url>
     
-    <content type="html"><![CDATA[<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><p>ElasticSearch是一个基于Lucene的开源分布式搜索和分析引擎，由Elastic公司开发。它是Elastic Stack（也称为ELK Stack）的核心组件，能够快速存储、搜索和分析海量数据。ElasticSearch以其高性能、可扩展性和灵活性而闻名，被广泛应用于企业搜索、日志分析、实时监控、商业智能等领域。</p><h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><h3 id="1-分布式架构"><a href="#1-分布式架构" class="headerlink" title="1. 分布式架构"></a>1. 分布式架构</h3><ul><li><strong>水平扩展能力</strong>：可以轻松地通过添加节点来扩展集群，无需停机</li><li><strong>自动分片管理</strong>：数据自动分片并分布在不同节点上，提高并行处理能力</li><li><strong>高可用性</strong>：支持副本机制，确保节点故障时数据不丢失</li></ul><h3 id="2-全文搜索"><a href="#2-全文搜索" class="headerlink" title="2. 全文搜索"></a>2. 全文搜索</h3><ul><li><strong>强大的查询语言</strong>：支持多种查询类型，包括全文搜索、结构化查询、地理空间查询等</li><li><strong>相关性排序</strong>：基于TF-IDF和BM25算法计算文档相关性</li><li><strong>分词与语言分析</strong>：支持多种语言的分词和分析，包括中文分词</li></ul><h3 id="3-实时性"><a href="#3-实时性" class="headerlink" title="3. 实时性"></a>3. 实时性</h3><ul><li><strong>近实时搜索</strong>：新增或修改的数据在短时间内（通常为1秒）即可被搜索</li><li><strong>实时分析</strong>：支持实时的数据聚合和分析</li></ul><h3 id="4-RESTful-API"><a href="#4-RESTful-API" class="headerlink" title="4. RESTful API"></a>4. RESTful API</h3><ul><li><strong>简单易用的HTTP接口</strong>：所有操作可通过RESTful API完成</li><li><strong>JSON格式数据交换</strong>：数据以JSON格式存储和传输，兼容性好</li><li><strong>丰富的客户端支持</strong>：官方提供多种语言的客户端库</li></ul><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><h3 id="1-索引-Index"><a href="#1-索引-Index" class="headerlink" title="1. 索引 (Index)"></a>1. 索引 (Index)</h3><p>相当于关系型数据库中的”数据库”概念，是文档的集合。</p><h3 id="2-类型-Type"><a href="#2-类型-Type" class="headerlink" title="2. 类型 (Type)"></a>2. 类型 (Type)</h3><p>在ElasticSearch 7.0之前，类型是索引中的逻辑分类，类似于关系数据库中的”表”。注意：类型概念在ElasticSearch 7.0后被弃用，在8.0中完全移除。</p><h3 id="3-文档-Document"><a href="#3-文档-Document" class="headerlink" title="3. 文档 (Document)"></a>3. 文档 (Document)</h3><p>是可被索引的基本信息单元，以JSON表示，类似关系数据库中的一”行”数据。</p><h3 id="4-字段-Field"><a href="#4-字段-Field" class="headerlink" title="4. 字段 (Field)"></a>4. 字段 (Field)</h3><p>文档中包含的具体数据项，类似关系数据库中的”列”。</p><h3 id="5-分片-Shard"><a href="#5-分片-Shard" class="headerlink" title="5. 分片 (Shard)"></a>5. 分片 (Shard)</h3><p>索引可分为多个分片，每个分片本身是一个功能完整的Lucene索引，分片使ElasticSearch具有水平扩展能力。</p><h3 id="6-副本-Replica"><a href="#6-副本-Replica" class="headerlink" title="6. 副本 (Replica)"></a>6. 副本 (Replica)</h3><p>分片的复制品，提供高可用性和搜索性能。</p><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>ElasticSearch的架构是分布式的，通常由多个节点组成集群：</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scss">┌─────────────────────────────────────┐<br>│           ElasticSearch集群          │<br>│                                     │<br>│  ┌─────────┐  ┌─────────┐  ┌─────────┐ <br>│  │  节点<span class="hljs-number">1</span>   │  │  节点<span class="hljs-number">2</span>   │  │  节点<span class="hljs-number">3</span>   │ <br>│  │         │  │         │  │         │ <br>│  │ 分片<span class="hljs-number">1</span>(主) │  │ 分片<span class="hljs-number">2</span>(主) │  │ 分片<span class="hljs-number">3</span>(主) │ <br>│  │ 分片<span class="hljs-number">2</span>(副) │  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │ <br>│  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │  │ 分片<span class="hljs-number">2</span>(副) │ <br>│  └─────────┘  └─────────┘  └─────────┘ <br>│                                     │<br>└─────────────────────────────────────┘<br></code></pre></td></tr></table></figure><p>每个节点都运行ElasticSearch实例，共同处理数据的存储、索引和搜索请求。集群内的节点通过内部通信协调工作。</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="1-企业搜索"><a href="#1-企业搜索" class="headerlink" title="1. 企业搜索"></a>1. 企业搜索</h3><p>为企业内部文档、产品目录、网站内容等提供强大的搜索功能。</p><h3 id="2-日志分析"><a href="#2-日志分析" class="headerlink" title="2. 日志分析"></a>2. 日志分析</h3><p>与Logstash和Kibana配合，构建强大的日志收集、分析和可视化平台。</p><h3 id="3-指标监控"><a href="#3-指标监控" class="headerlink" title="3. 指标监控"></a>3. 指标监控</h3><p>实时收集和分析系统、应用程序和业务指标数据。</p><h3 id="4-安全分析"><a href="#4-安全分析" class="headerlink" title="4. 安全分析"></a>4. 安全分析</h3><p>收集和分析安全相关数据，检测异常和威胁。</p><h3 id="5-商业智能"><a href="#5-商业智能" class="headerlink" title="5. 商业智能"></a>5. 商业智能</h3><p>存储、分析和可视化业务数据，支持决策制定。</p><h3 id="6-地理空间分析"><a href="#6-地理空间分析" class="headerlink" title="6. 地理空间分析"></a>6. 地理空间分析</h3><p>支持地理位置数据的存储和查询，适用于位置服务应用。</p><h2 id="与其他系统的比较"><a href="#与其他系统的比较" class="headerlink" title="与其他系统的比较"></a>与其他系统的比较</h2><h3 id="ElasticSearch-vs-关系数据库"><a href="#ElasticSearch-vs-关系数据库" class="headerlink" title="ElasticSearch vs 关系数据库"></a>ElasticSearch vs 关系数据库</h3><table><thead><tr><th>特性</th><th>ElasticSearch</th><th>关系数据库</th></tr></thead><tbody><tr><td>数据模型</td><td>文档导向，半结构化</td><td>表格结构，强模式</td></tr><tr><td>查询方式</td><td>全文搜索，复杂查询</td><td>精确匹配，结构化查询</td></tr><tr><td>扩展性</td><td>水平扩展</td><td>主要垂直扩展</td></tr><tr><td>事务支持</td><td>有限</td><td>强事务支持</td></tr><tr><td>一致性</td><td>最终一致性</td><td>强一致性</td></tr><tr><td>适用场景</td><td>搜索，日志分析</td><td>事务处理，关系数据</td></tr></tbody></table><h3 id="ElasticSearch-vs-Solr"><a href="#ElasticSearch-vs-Solr" class="headerlink" title="ElasticSearch vs Solr"></a>ElasticSearch vs Solr</h3><p>两者都是基于Lucene的搜索引擎，但有些区别：</p><ul><li>ElasticSearch原生支持分布式，配置简单</li><li>Solr在传统搜索应用上更成熟，但在实时搜索方面不如ElasticSearch</li><li>ElasticSearch使用JSON作为文档格式，Solr支持多种格式</li><li>ElasticSearch在日志分析和指标监控领域更受欢迎</li></ul><h1 id="Lucene内核"><a href="#Lucene内核" class="headerlink" title="Lucene内核"></a>Lucene内核</h1><p>ElasticSearch的核心搜索功能是基于Apache Lucene实现的。每个ElasticSearch分片都是一个完整的Lucene索引。Lucene提供了：</p><ul><li>倒排索引结构</li><li>高效的搜索算法</li><li>评分机制</li><li>词项分析</li><li>查询解析</li></ul><p>通过对Lucene的封装，ElasticSearch简化了分布式搜索的复杂性，并提供了更友好的接口和更多的功能扩展。</p><h1 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h1><h2 id="Lucene-Index-Toolbox-Luke"><a href="#Lucene-Index-Toolbox-Luke" class="headerlink" title="Lucene Index Toolbox (Luke)"></a>Lucene Index Toolbox (Luke)</h2><p>Luke是一个用于探索和维护Lucene索引的开源工具，对于理解和调试ElasticSearch底层索引结构非常有用。</p><h3 id="Luke主要功能"><a href="#Luke主要功能" class="headerlink" title="Luke主要功能"></a>Luke主要功能</h3><ul><li><strong>浏览索引内容</strong>：查看索引中的文档、字段和词条</li><li><strong>搜索测试</strong>：使用不同的查询语法测试搜索结果</li><li><strong>索引分析</strong>：分析索引结构、大小和性能指标</li><li><strong>分词器测试</strong>：测试不同分词器对文本的处理效果</li><li><strong>索引优化</strong>：执行索引优化和维护操作</li></ul><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul><li>调试搜索结果不符合预期的问题</li><li>分析索引结构和内容</li><li>测试自定义分词器效果</li><li>检查索引损坏或异常</li></ul><p>Luke可以作为独立应用程序运行，也可以作为Lucene库的一部分使用。对于直接处理ElasticSearch索引，通常需要先获取索引文件或使用专门的ElasticSearch插件版本。</p><h2 id="ElasticSearch工具生态"><a href="#ElasticSearch工具生态" class="headerlink" title="ElasticSearch工具生态"></a>ElasticSearch工具生态</h2><h3 id="官方工具"><a href="#官方工具" class="headerlink" title="官方工具"></a>官方工具</h3><h4 id="1-Kibana"><a href="#1-Kibana" class="headerlink" title="1. Kibana"></a>1. Kibana</h4><p>Kibana是Elastic Stack的可视化和管理界面，提供:</p><ul><li>数据可视化和仪表板</li><li>开发者控制台（用于执行ElasticSearch请求）</li><li>索引模式管理</li><li>查询和过滤器构建器</li><li>机器学习功能界面</li></ul><h4 id="2-Logstash"><a href="#2-Logstash" class="headerlink" title="2. Logstash"></a>2. Logstash</h4><p>Logstash是数据处理管道，可以:</p><ul><li>从多种源获取数据</li><li>转换数据格式</li><li>过滤和丰富数据</li><li>将处理后的数据发送到ElasticSearch</li></ul><h4 id="3-Beats"><a href="#3-Beats" class="headerlink" title="3. Beats"></a>3. Beats</h4><p>轻量级数据采集器家族:</p><ul><li><strong>Filebeat</strong>: 日志文件</li><li><strong>Metricbeat</strong>: 系统和服务指标</li><li><strong>Packetbeat</strong>: 网络数据</li><li><strong>Heartbeat</strong>: 系统可用性监控</li><li><strong>Auditbeat</strong>: 安全信息和事件审计数据</li></ul><h4 id="4-Elasticsearch-Hadoop"><a href="#4-Elasticsearch-Hadoop" class="headerlink" title="4. Elasticsearch-Hadoop"></a>4. Elasticsearch-Hadoop</h4><p>用于Hadoop生态系统和ElasticSearch之间的集成:</p><ul><li>支持MapReduce、Spark、Hive、Pig等</li><li>支持双向数据流</li></ul><h3 id="第三方工具"><a href="#第三方工具" class="headerlink" title="第三方工具"></a>第三方工具</h3><h4 id="1-ElasticHQ"><a href="#1-ElasticHQ" class="headerlink" title="1. ElasticHQ"></a>1. ElasticHQ</h4><p>开源的ElasticSearch监控和管理工具:</p><ul><li>集群状态监控</li><li>性能统计</li><li>索引和节点管理</li><li>易于使用的Web界面</li></ul><h4 id="2-Cerebro-原名Kopf"><a href="#2-Cerebro-原名Kopf" class="headerlink" title="2. Cerebro (原名Kopf)"></a>2. Cerebro (原名Kopf)</h4><p>开源的ElasticSearch Web管理工具:</p><ul><li>集群健康和状态</li><li>索引和分片分布可视化</li><li>REST API浏览器</li></ul><h4 id="3-Elasticdump"><a href="#3-Elasticdump" class="headerlink" title="3. Elasticdump"></a>3. Elasticdump</h4><p>用于ElasticSearch数据迁移的工具:</p><ul><li>在不同集群间导入&#x2F;导出数据</li><li>支持多种数据格式</li><li>适合备份和恢复</li></ul><h4 id="4-Searchguard-和-X-Pack-Security"><a href="#4-Searchguard-和-X-Pack-Security" class="headerlink" title="4. Searchguard 和 X-Pack Security"></a>4. Searchguard 和 X-Pack Security</h4><p>ElasticSearch安全解决方案:</p><ul><li>认证和授权</li><li>字段和文档级安全</li><li>审计日志</li><li>加密通信</li></ul><h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><h3 id="1-REST客户端"><a href="#1-REST客户端" class="headerlink" title="1. REST客户端"></a>1. REST客户端</h3><ul><li><strong>Postman&#x2F;Insomnia</strong>: 测试ElasticSearch REST API的通用工具</li><li><strong>curl</strong>: 命令行HTTP工具，适合脚本和自动化</li></ul><h3 id="2-编程语言客户端"><a href="#2-编程语言客户端" class="headerlink" title="2. 编程语言客户端"></a>2. 编程语言客户端</h3><p>官方支持的高级客户端:</p><ul><li>Java High Level REST Client</li><li>Python (elasticsearch-py)</li><li>JavaScript&#x2F;Node.js</li><li>.NET</li><li>PHP</li><li>Ruby</li><li>Go</li></ul><h3 id="3-查询构建工具"><a href="#3-查询构建工具" class="headerlink" title="3. 查询构建工具"></a>3. 查询构建工具</h3><ul><li><strong>ElasticSearch Query Builder</strong>: 用于构建和测试复杂查询的在线工具</li><li><strong>Kibana Query Language (KQL)</strong>: Kibana中使用的简化查询语法</li></ul><h2 id="索引管理工具"><a href="#索引管理工具" class="headerlink" title="索引管理工具"></a>索引管理工具</h2><h3 id="1-Index-Lifecycle-Management-ILM"><a href="#1-Index-Lifecycle-Management-ILM" class="headerlink" title="1. Index Lifecycle Management (ILM)"></a>1. Index Lifecycle Management (ILM)</h3><p>ElasticSearch内置的索引生命周期管理功能:</p><ul><li>自动滚动更新索引</li><li>设置索引热温冷阶段</li><li>自动删除旧索引</li></ul><h3 id="2-Curator"><a href="#2-Curator" class="headerlink" title="2. Curator"></a>2. Curator</h3><p>用于ElasticSearch索引管理的Python工具:</p><ul><li>按时间或大小删除索引</li><li>索引压缩和优化</li><li>索引快照管理</li><li>可通过命令行或API使用</li></ul><h2 id="性能调优工具"><a href="#性能调优工具" class="headerlink" title="性能调优工具"></a>性能调优工具</h2><h3 id="1-热点线程API"><a href="#1-热点线程API" class="headerlink" title="1. 热点线程API"></a>1. 热点线程API</h3><p>内置API用于识别CPU使用率高的线程:</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">GET</span> /_nodes/hot_threads<br></code></pre></td></tr></table></figure><h3 id="2-Rally"><a href="#2-Rally" class="headerlink" title="2. Rally"></a>2. Rally</h3><p>ElasticSearch官方基准测试工具:</p><ul><li>支持各种测试场景</li><li>可比较不同版本和配置的性能</li><li>可定制测试案例</li></ul><h3 id="3-JVM监控工具"><a href="#3-JVM监控工具" class="headerlink" title="3. JVM监控工具"></a>3. JVM监控工具</h3><ul><li><strong>VisualVM</strong>: 监控JVM内存使用和GC活动</li><li><strong>Prometheus + Grafana</strong>: 监控ElasticSearch性能指标</li></ul><h2 id="实用索引分析工具"><a href="#实用索引分析工具" class="headerlink" title="实用索引分析工具"></a>实用索引分析工具</h2><p>除了前面提到的Luke工具外，还有一些专门用于分析ElasticSearch索引的实用工具:</p><h3 id="1-Elasticsearch-Head"><a href="#1-Elasticsearch-Head" class="headerlink" title="1. Elasticsearch-Head"></a>1. Elasticsearch-Head</h3><p>提供索引浏览和简单查询功能的Chrome插件</p><h3 id="2-Index-Cleaner"><a href="#2-Index-Cleaner" class="headerlink" title="2. Index Cleaner"></a>2. Index Cleaner</h3><p>自动清理过期或不需要的索引数据的工具</p><h3 id="3-Analyze-API"><a href="#3-Analyze-API" class="headerlink" title="3. Analyze API"></a>3. Analyze API</h3><p>内置API，用于测试分析器、分词器、过滤器的效果:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">POST /_analyze<br>&#123;<br>  <span class="hljs-string">&quot;analyzer&quot;</span>: <span class="hljs-string">&quot;standard&quot;</span>,<br>  <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;待分析的文本&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure><p>通过使用这些工具，可以更有效地管理、监控和优化ElasticSearch集群，提高搜索性能和可靠性。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="构建索引"><a href="#构建索引" class="headerlink" title="构建索引"></a>构建索引</h1><h2 id="全量索引"><a href="#全量索引" class="headerlink" title="全量索引"></a>全量索引</h2><h2 id="实时索引"><a href="#实时索引" class="headerlink" title="实时索引"></a>实时索引</h2><p>实时索引构建的流程</p><ol><li>根据段生命周期选择合并方式</li><li>文档去重（主键索引）</li><li>重分配文档ID</li><li>合并正排、倒排、删除表、主键索引</li><li>写配置文件</li></ol><p>合并段策略</p><ol><li>内存段合并</li><li>内存段生命周期提升</li><li>内存段生命周期提升，转为磁盘段</li><li>内存段、磁盘段合并</li><li>磁盘段合并</li></ol>]]></content>
     
     
     <categories>
@@ -591,11 +671,11 @@
   
   
   <entry>
-    <title>构建索引</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/</url>
+    <title>ElasticSearch</title>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/</url>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="构建索引"><a href="#构建索引" class="headerlink" title="构建索引"></a>构建索引</h1><h2 id="全量索引"><a href="#全量索引" class="headerlink" title="全量索引"></a>全量索引</h2><h2 id="实时索引"><a href="#实时索引" class="headerlink" title="实时索引"></a>实时索引</h2><p>实时索引构建的流程</p><ol><li>根据段生命周期选择合并方式</li><li>文档去重（主键索引）</li><li>重分配文档ID</li><li>合并正排、倒排、删除表、主键索引</li><li>写配置文件</li></ol><p>合并段策略</p><ol><li>内存段合并</li><li>内存段生命周期提升</li><li>内存段生命周期提升，转为磁盘段</li><li>内存段、磁盘段合并</li><li>磁盘段合并</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><p>ElasticSearch是一个基于Lucene的开源分布式搜索和分析引擎，由Elastic公司开发。它是Elastic Stack（也称为ELK Stack）的核心组件，能够快速存储、搜索和分析海量数据。ElasticSearch以其高性能、可扩展性和灵活性而闻名，被广泛应用于企业搜索、日志分析、实时监控、商业智能等领域。</p><h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><h3 id="1-分布式架构"><a href="#1-分布式架构" class="headerlink" title="1. 分布式架构"></a>1. 分布式架构</h3><ul><li><strong>水平扩展能力</strong>：可以轻松地通过添加节点来扩展集群，无需停机</li><li><strong>自动分片管理</strong>：数据自动分片并分布在不同节点上，提高并行处理能力</li><li><strong>高可用性</strong>：支持副本机制，确保节点故障时数据不丢失</li></ul><h3 id="2-全文搜索"><a href="#2-全文搜索" class="headerlink" title="2. 全文搜索"></a>2. 全文搜索</h3><ul><li><strong>强大的查询语言</strong>：支持多种查询类型，包括全文搜索、结构化查询、地理空间查询等</li><li><strong>相关性排序</strong>：基于TF-IDF和BM25算法计算文档相关性</li><li><strong>分词与语言分析</strong>：支持多种语言的分词和分析，包括中文分词</li></ul><h3 id="3-实时性"><a href="#3-实时性" class="headerlink" title="3. 实时性"></a>3. 实时性</h3><ul><li><strong>近实时搜索</strong>：新增或修改的数据在短时间内（通常为1秒）即可被搜索</li><li><strong>实时分析</strong>：支持实时的数据聚合和分析</li></ul><h3 id="4-RESTful-API"><a href="#4-RESTful-API" class="headerlink" title="4. RESTful API"></a>4. RESTful API</h3><ul><li><strong>简单易用的HTTP接口</strong>：所有操作可通过RESTful API完成</li><li><strong>JSON格式数据交换</strong>：数据以JSON格式存储和传输，兼容性好</li><li><strong>丰富的客户端支持</strong>：官方提供多种语言的客户端库</li></ul><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><h3 id="1-索引-Index"><a href="#1-索引-Index" class="headerlink" title="1. 索引 (Index)"></a>1. 索引 (Index)</h3><p>相当于关系型数据库中的”数据库”概念，是文档的集合。</p><h3 id="2-类型-Type"><a href="#2-类型-Type" class="headerlink" title="2. 类型 (Type)"></a>2. 类型 (Type)</h3><p>在ElasticSearch 7.0之前，类型是索引中的逻辑分类，类似于关系数据库中的”表”。注意：类型概念在ElasticSearch 7.0后被弃用，在8.0中完全移除。</p><h3 id="3-文档-Document"><a href="#3-文档-Document" class="headerlink" title="3. 文档 (Document)"></a>3. 文档 (Document)</h3><p>是可被索引的基本信息单元，以JSON表示，类似关系数据库中的一”行”数据。</p><h3 id="4-字段-Field"><a href="#4-字段-Field" class="headerlink" title="4. 字段 (Field)"></a>4. 字段 (Field)</h3><p>文档中包含的具体数据项，类似关系数据库中的”列”。</p><h3 id="5-分片-Shard"><a href="#5-分片-Shard" class="headerlink" title="5. 分片 (Shard)"></a>5. 分片 (Shard)</h3><p>索引可分为多个分片，每个分片本身是一个功能完整的Lucene索引，分片使ElasticSearch具有水平扩展能力。</p><h3 id="6-副本-Replica"><a href="#6-副本-Replica" class="headerlink" title="6. 副本 (Replica)"></a>6. 副本 (Replica)</h3><p>分片的复制品，提供高可用性和搜索性能。</p><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>ElasticSearch的架构是分布式的，通常由多个节点组成集群：</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scss">┌─────────────────────────────────────┐<br>│           ElasticSearch集群          │<br>│                                     │<br>│  ┌─────────┐  ┌─────────┐  ┌─────────┐ <br>│  │  节点<span class="hljs-number">1</span>   │  │  节点<span class="hljs-number">2</span>   │  │  节点<span class="hljs-number">3</span>   │ <br>│  │         │  │         │  │         │ <br>│  │ 分片<span class="hljs-number">1</span>(主) │  │ 分片<span class="hljs-number">2</span>(主) │  │ 分片<span class="hljs-number">3</span>(主) │ <br>│  │ 分片<span class="hljs-number">2</span>(副) │  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │ <br>│  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │  │ 分片<span class="hljs-number">2</span>(副) │ <br>│  └─────────┘  └─────────┘  └─────────┘ <br>│                                     │<br>└─────────────────────────────────────┘<br></code></pre></td></tr></table></figure><p>每个节点都运行ElasticSearch实例，共同处理数据的存储、索引和搜索请求。集群内的节点通过内部通信协调工作。</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="1-企业搜索"><a href="#1-企业搜索" class="headerlink" title="1. 企业搜索"></a>1. 企业搜索</h3><p>为企业内部文档、产品目录、网站内容等提供强大的搜索功能。</p><h3 id="2-日志分析"><a href="#2-日志分析" class="headerlink" title="2. 日志分析"></a>2. 日志分析</h3><p>与Logstash和Kibana配合，构建强大的日志收集、分析和可视化平台。</p><h3 id="3-指标监控"><a href="#3-指标监控" class="headerlink" title="3. 指标监控"></a>3. 指标监控</h3><p>实时收集和分析系统、应用程序和业务指标数据。</p><h3 id="4-安全分析"><a href="#4-安全分析" class="headerlink" title="4. 安全分析"></a>4. 安全分析</h3><p>收集和分析安全相关数据，检测异常和威胁。</p><h3 id="5-商业智能"><a href="#5-商业智能" class="headerlink" title="5. 商业智能"></a>5. 商业智能</h3><p>存储、分析和可视化业务数据，支持决策制定。</p><h3 id="6-地理空间分析"><a href="#6-地理空间分析" class="headerlink" title="6. 地理空间分析"></a>6. 地理空间分析</h3><p>支持地理位置数据的存储和查询，适用于位置服务应用。</p><h2 id="与其他系统的比较"><a href="#与其他系统的比较" class="headerlink" title="与其他系统的比较"></a>与其他系统的比较</h2><h3 id="ElasticSearch-vs-关系数据库"><a href="#ElasticSearch-vs-关系数据库" class="headerlink" title="ElasticSearch vs 关系数据库"></a>ElasticSearch vs 关系数据库</h3><table><thead><tr><th>特性</th><th>ElasticSearch</th><th>关系数据库</th></tr></thead><tbody><tr><td>数据模型</td><td>文档导向，半结构化</td><td>表格结构，强模式</td></tr><tr><td>查询方式</td><td>全文搜索，复杂查询</td><td>精确匹配，结构化查询</td></tr><tr><td>扩展性</td><td>水平扩展</td><td>主要垂直扩展</td></tr><tr><td>事务支持</td><td>有限</td><td>强事务支持</td></tr><tr><td>一致性</td><td>最终一致性</td><td>强一致性</td></tr><tr><td>适用场景</td><td>搜索，日志分析</td><td>事务处理，关系数据</td></tr></tbody></table><h3 id="ElasticSearch-vs-Solr"><a href="#ElasticSearch-vs-Solr" class="headerlink" title="ElasticSearch vs Solr"></a>ElasticSearch vs Solr</h3><p>两者都是基于Lucene的搜索引擎，但有些区别：</p><ul><li>ElasticSearch原生支持分布式，配置简单</li><li>Solr在传统搜索应用上更成熟，但在实时搜索方面不如ElasticSearch</li><li>ElasticSearch使用JSON作为文档格式，Solr支持多种格式</li><li>ElasticSearch在日志分析和指标监控领域更受欢迎</li></ul><h1 id="Lucene内核"><a href="#Lucene内核" class="headerlink" title="Lucene内核"></a>Lucene内核</h1><p>ElasticSearch的核心搜索功能是基于Apache Lucene实现的。每个ElasticSearch分片都是一个完整的Lucene索引。Lucene提供了：</p><ul><li>倒排索引结构</li><li>高效的搜索算法</li><li>评分机制</li><li>词项分析</li><li>查询解析</li></ul><p>通过对Lucene的封装，ElasticSearch简化了分布式搜索的复杂性，并提供了更友好的接口和更多的功能扩展。</p><h1 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h1><h2 id="Lucene-Index-Toolbox-Luke"><a href="#Lucene-Index-Toolbox-Luke" class="headerlink" title="Lucene Index Toolbox (Luke)"></a>Lucene Index Toolbox (Luke)</h2><p>Luke是一个用于探索和维护Lucene索引的开源工具，对于理解和调试ElasticSearch底层索引结构非常有用。</p><h3 id="Luke主要功能"><a href="#Luke主要功能" class="headerlink" title="Luke主要功能"></a>Luke主要功能</h3><ul><li><strong>浏览索引内容</strong>：查看索引中的文档、字段和词条</li><li><strong>搜索测试</strong>：使用不同的查询语法测试搜索结果</li><li><strong>索引分析</strong>：分析索引结构、大小和性能指标</li><li><strong>分词器测试</strong>：测试不同分词器对文本的处理效果</li><li><strong>索引优化</strong>：执行索引优化和维护操作</li></ul><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul><li>调试搜索结果不符合预期的问题</li><li>分析索引结构和内容</li><li>测试自定义分词器效果</li><li>检查索引损坏或异常</li></ul><p>Luke可以作为独立应用程序运行，也可以作为Lucene库的一部分使用。对于直接处理ElasticSearch索引，通常需要先获取索引文件或使用专门的ElasticSearch插件版本。</p><h2 id="ElasticSearch工具生态"><a href="#ElasticSearch工具生态" class="headerlink" title="ElasticSearch工具生态"></a>ElasticSearch工具生态</h2><h3 id="官方工具"><a href="#官方工具" class="headerlink" title="官方工具"></a>官方工具</h3><h4 id="1-Kibana"><a href="#1-Kibana" class="headerlink" title="1. Kibana"></a>1. Kibana</h4><p>Kibana是Elastic Stack的可视化和管理界面，提供:</p><ul><li>数据可视化和仪表板</li><li>开发者控制台（用于执行ElasticSearch请求）</li><li>索引模式管理</li><li>查询和过滤器构建器</li><li>机器学习功能界面</li></ul><h4 id="2-Logstash"><a href="#2-Logstash" class="headerlink" title="2. Logstash"></a>2. Logstash</h4><p>Logstash是数据处理管道，可以:</p><ul><li>从多种源获取数据</li><li>转换数据格式</li><li>过滤和丰富数据</li><li>将处理后的数据发送到ElasticSearch</li></ul><h4 id="3-Beats"><a href="#3-Beats" class="headerlink" title="3. Beats"></a>3. Beats</h4><p>轻量级数据采集器家族:</p><ul><li><strong>Filebeat</strong>: 日志文件</li><li><strong>Metricbeat</strong>: 系统和服务指标</li><li><strong>Packetbeat</strong>: 网络数据</li><li><strong>Heartbeat</strong>: 系统可用性监控</li><li><strong>Auditbeat</strong>: 安全信息和事件审计数据</li></ul><h4 id="4-Elasticsearch-Hadoop"><a href="#4-Elasticsearch-Hadoop" class="headerlink" title="4. Elasticsearch-Hadoop"></a>4. Elasticsearch-Hadoop</h4><p>用于Hadoop生态系统和ElasticSearch之间的集成:</p><ul><li>支持MapReduce、Spark、Hive、Pig等</li><li>支持双向数据流</li></ul><h3 id="第三方工具"><a href="#第三方工具" class="headerlink" title="第三方工具"></a>第三方工具</h3><h4 id="1-ElasticHQ"><a href="#1-ElasticHQ" class="headerlink" title="1. ElasticHQ"></a>1. ElasticHQ</h4><p>开源的ElasticSearch监控和管理工具:</p><ul><li>集群状态监控</li><li>性能统计</li><li>索引和节点管理</li><li>易于使用的Web界面</li></ul><h4 id="2-Cerebro-原名Kopf"><a href="#2-Cerebro-原名Kopf" class="headerlink" title="2. Cerebro (原名Kopf)"></a>2. Cerebro (原名Kopf)</h4><p>开源的ElasticSearch Web管理工具:</p><ul><li>集群健康和状态</li><li>索引和分片分布可视化</li><li>REST API浏览器</li></ul><h4 id="3-Elasticdump"><a href="#3-Elasticdump" class="headerlink" title="3. Elasticdump"></a>3. Elasticdump</h4><p>用于ElasticSearch数据迁移的工具:</p><ul><li>在不同集群间导入&#x2F;导出数据</li><li>支持多种数据格式</li><li>适合备份和恢复</li></ul><h4 id="4-Searchguard-和-X-Pack-Security"><a href="#4-Searchguard-和-X-Pack-Security" class="headerlink" title="4. Searchguard 和 X-Pack Security"></a>4. Searchguard 和 X-Pack Security</h4><p>ElasticSearch安全解决方案:</p><ul><li>认证和授权</li><li>字段和文档级安全</li><li>审计日志</li><li>加密通信</li></ul><h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><h3 id="1-REST客户端"><a href="#1-REST客户端" class="headerlink" title="1. REST客户端"></a>1. REST客户端</h3><ul><li><strong>Postman&#x2F;Insomnia</strong>: 测试ElasticSearch REST API的通用工具</li><li><strong>curl</strong>: 命令行HTTP工具，适合脚本和自动化</li></ul><h3 id="2-编程语言客户端"><a href="#2-编程语言客户端" class="headerlink" title="2. 编程语言客户端"></a>2. 编程语言客户端</h3><p>官方支持的高级客户端:</p><ul><li>Java High Level REST Client</li><li>Python (elasticsearch-py)</li><li>JavaScript&#x2F;Node.js</li><li>.NET</li><li>PHP</li><li>Ruby</li><li>Go</li></ul><h3 id="3-查询构建工具"><a href="#3-查询构建工具" class="headerlink" title="3. 查询构建工具"></a>3. 查询构建工具</h3><ul><li><strong>ElasticSearch Query Builder</strong>: 用于构建和测试复杂查询的在线工具</li><li><strong>Kibana Query Language (KQL)</strong>: Kibana中使用的简化查询语法</li></ul><h2 id="索引管理工具"><a href="#索引管理工具" class="headerlink" title="索引管理工具"></a>索引管理工具</h2><h3 id="1-Index-Lifecycle-Management-ILM"><a href="#1-Index-Lifecycle-Management-ILM" class="headerlink" title="1. Index Lifecycle Management (ILM)"></a>1. Index Lifecycle Management (ILM)</h3><p>ElasticSearch内置的索引生命周期管理功能:</p><ul><li>自动滚动更新索引</li><li>设置索引热温冷阶段</li><li>自动删除旧索引</li></ul><h3 id="2-Curator"><a href="#2-Curator" class="headerlink" title="2. Curator"></a>2. Curator</h3><p>用于ElasticSearch索引管理的Python工具:</p><ul><li>按时间或大小删除索引</li><li>索引压缩和优化</li><li>索引快照管理</li><li>可通过命令行或API使用</li></ul><h2 id="性能调优工具"><a href="#性能调优工具" class="headerlink" title="性能调优工具"></a>性能调优工具</h2><h3 id="1-热点线程API"><a href="#1-热点线程API" class="headerlink" title="1. 热点线程API"></a>1. 热点线程API</h3><p>内置API用于识别CPU使用率高的线程:</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">GET</span> /_nodes/hot_threads<br></code></pre></td></tr></table></figure><h3 id="2-Rally"><a href="#2-Rally" class="headerlink" title="2. Rally"></a>2. Rally</h3><p>ElasticSearch官方基准测试工具:</p><ul><li>支持各种测试场景</li><li>可比较不同版本和配置的性能</li><li>可定制测试案例</li></ul><h3 id="3-JVM监控工具"><a href="#3-JVM监控工具" class="headerlink" title="3. JVM监控工具"></a>3. JVM监控工具</h3><ul><li><strong>VisualVM</strong>: 监控JVM内存使用和GC活动</li><li><strong>Prometheus + Grafana</strong>: 监控ElasticSearch性能指标</li></ul><h2 id="实用索引分析工具"><a href="#实用索引分析工具" class="headerlink" title="实用索引分析工具"></a>实用索引分析工具</h2><p>除了前面提到的Luke工具外，还有一些专门用于分析ElasticSearch索引的实用工具:</p><h3 id="1-Elasticsearch-Head"><a href="#1-Elasticsearch-Head" class="headerlink" title="1. Elasticsearch-Head"></a>1. Elasticsearch-Head</h3><p>提供索引浏览和简单查询功能的Chrome插件</p><h3 id="2-Index-Cleaner"><a href="#2-Index-Cleaner" class="headerlink" title="2. Index Cleaner"></a>2. Index Cleaner</h3><p>自动清理过期或不需要的索引数据的工具</p><h3 id="3-Analyze-API"><a href="#3-Analyze-API" class="headerlink" title="3. Analyze API"></a>3. Analyze API</h3><p>内置API，用于测试分析器、分词器、过滤器的效果:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">POST /_analyze<br>&#123;<br>  <span class="hljs-string">&quot;analyzer&quot;</span>: <span class="hljs-string">&quot;standard&quot;</span>,<br>  <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;待分析的文本&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure><p>通过使用这些工具，可以更有效地管理、监控和优化ElasticSearch集群，提高搜索性能和可靠性。</p>]]></content>
     
     
     <categories>
@@ -909,11 +989,11 @@
   
   
   <entry>
-    <title>大模型训练</title>
-    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/"/>
-    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/</url>
+    <title>语音大模型简介</title>
+    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%A4%A7%E6%A8%A1%E5%9E%8B/</url>
     
-    <content type="html"><![CDATA[<h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p><h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p><h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p><h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h4 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h4><p>代码本身是Step-by-Step的指令数据。</p><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a><br><a href="https://github.com/rasbt/LLMs-from-scratch">LLMs-from-scratch)</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>语音大模型（speech large language model, SpeechLLMs）亦有称之为语音对话模型（spoken dialogue models）</p><h2 id="技术路径"><a href="#技术路径" class="headerlink" title="技术路径"></a>技术路径</h2><p>在大模型时代之前，一个人机语音对话系统涉及多个模块，包括：语音识别（ASR）、语言理解（NLU）、对话管理、语言生成、语音合成等。<br>在大模型时代，根据是否由一个大模型直接理解和生成语音，分为级联和端到端两种技术路径：<br><strong>级联</strong>：语音识别、LLM、语音合成三部分级联构成。优点是：构建成本低、各模块成熟且相对独立；缺点是：效果上限相对低、容易出现信息丢失问题、延迟较大。代表性系统有：AudioGPT。<br><strong>端到端</strong>：一个模型实现语音的输入、输出。优点是：系统简单、能力强、延迟低；缺点是：训练成本高，依赖大量的训练数据。代表性模型：GPT-4o</p><h1 id="典型的语音大模型"><a href="#典型的语音大模型" class="headerlink" title="典型的语音大模型"></a>典型的语音大模型</h1><p>语音大模型一般由三个模块组成：<br><strong>语音编码器（Speech Tokenizer）</strong>：典型的Tokenizer有在连续空间表示语音的Speech Encoder，和在离散空间表示语音的RVQ结构的Neural Codec Encoder。<br><strong>大模型模型（Large Language Model）</strong>：支持任意类型的LLM。<br><strong>语音合成器（Token to Speech Synthesizer）</strong>：如HiFi-GAN。</p><h2 id="SpeechGPT"><a href="#SpeechGPT" class="headerlink" title="SpeechGPT"></a>SpeechGPT</h2><h3 id="模块组成"><a href="#模块组成" class="headerlink" title="模块组成"></a>模块组成</h3><h3 id="模型框架"><a href="#模型框架" class="headerlink" title="模型框架"></a>模型框架</h3><h1 id="语音复刻技术"><a href="#语音复刻技术" class="headerlink" title="语音复刻技术"></a>语音复刻技术</h1><p>Google OpenVoice：准确的音色克隆、灵活的语音风格控制</p><h2 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h2><p>使用一小段语音复刻声音。</p><h1 id="语音识别（STT）"><a href="#语音识别（STT）" class="headerlink" title="语音识别（STT）"></a>语音识别（STT）</h1><p>OpenAI Whisper预训练模型，支持多语言转录。</p><h2 id="语音合成（TTS）"><a href="#语音合成（TTS）" class="headerlink" title="语音合成（TTS）"></a>语音合成（TTS）</h2><p>ChatTTS、FastSpeech2、VITS</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/openvoice/openvoice">Google openvoice</a><br><a href="https://github.com/myshell-ai/OpenVoice">OpenVoice</a><br><a href="https://github.com/camenduru/OpenVoice-colab?tab=readme-ov-file">OpenVoice Colab</a></p><p><a href="https://chattts.com/zh?__theme=dark">chatTTS</a></p><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p><a href="https://tianchi.aliyun.com/dataset/144044">语音识别&#x2F;说话人识别&#x2F;语音合成&#x2F;语种识别</a></p><h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><p><a href="https://anyvoice.net/zh/voices">复刻声音</a></p>]]></content>
     
     
     <categories>
@@ -940,11 +1020,11 @@
   
   
   <entry>
-    <title>语音大模型简介</title>
-    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
-    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%A4%A7%E6%A8%A1%E5%9E%8B/</url>
+    <title>大模型训练</title>
+    <link href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/"/>
+    <url>/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/</url>
     
-    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>语音大模型（speech large language model, SpeechLLMs）亦有称之为语音对话模型（spoken dialogue models）</p><h2 id="技术路径"><a href="#技术路径" class="headerlink" title="技术路径"></a>技术路径</h2><p>在大模型时代之前，一个人机语音对话系统涉及多个模块，包括：语音识别（ASR）、语言理解（NLU）、对话管理、语言生成、语音合成等。<br>在大模型时代，根据是否由一个大模型直接理解和生成语音，分为级联和端到端两种技术路径：<br><strong>级联</strong>：语音识别、LLM、语音合成三部分级联构成。优点是：构建成本低、各模块成熟且相对独立；缺点是：效果上限相对低、容易出现信息丢失问题、延迟较大。代表性系统有：AudioGPT。<br><strong>端到端</strong>：一个模型实现语音的输入、输出。优点是：系统简单、能力强、延迟低；缺点是：训练成本高，依赖大量的训练数据。代表性模型：GPT-4o</p><h1 id="典型的语音大模型"><a href="#典型的语音大模型" class="headerlink" title="典型的语音大模型"></a>典型的语音大模型</h1><p>语音大模型一般由三个模块组成：<br><strong>语音编码器（Speech Tokenizer）</strong>：典型的Tokenizer有在连续空间表示语音的Speech Encoder，和在离散空间表示语音的RVQ结构的Neural Codec Encoder。<br><strong>大模型模型（Large Language Model）</strong>：支持任意类型的LLM。<br><strong>语音合成器（Token to Speech Synthesizer）</strong>：如HiFi-GAN。</p><h2 id="SpeechGPT"><a href="#SpeechGPT" class="headerlink" title="SpeechGPT"></a>SpeechGPT</h2><h3 id="模块组成"><a href="#模块组成" class="headerlink" title="模块组成"></a>模块组成</h3><h3 id="模型框架"><a href="#模型框架" class="headerlink" title="模型框架"></a>模型框架</h3><h1 id="语音复刻技术"><a href="#语音复刻技术" class="headerlink" title="语音复刻技术"></a>语音复刻技术</h1><p>Google OpenVoice：准确的音色克隆、灵活的语音风格控制</p><h2 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h2><p>使用一小段语音复刻声音。</p><h1 id="语音识别（STT）"><a href="#语音识别（STT）" class="headerlink" title="语音识别（STT）"></a>语音识别（STT）</h1><p>OpenAI Whisper预训练模型，支持多语言转录。</p><h2 id="语音合成（TTS）"><a href="#语音合成（TTS）" class="headerlink" title="语音合成（TTS）"></a>语音合成（TTS）</h2><p>ChatTTS、FastSpeech2、VITS</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/openvoice/openvoice">Google openvoice</a><br><a href="https://github.com/myshell-ai/OpenVoice">OpenVoice</a><br><a href="https://github.com/camenduru/OpenVoice-colab?tab=readme-ov-file">OpenVoice Colab</a></p><p><a href="https://chattts.com/zh?__theme=dark">chatTTS</a></p><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p><a href="https://tianchi.aliyun.com/dataset/144044">语音识别&#x2F;说话人识别&#x2F;语音合成&#x2F;语种识别</a></p><h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><p><a href="https://anyvoice.net/zh/voices">复刻声音</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h1><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="实效性低"><a href="#实效性低" class="headerlink" title="实效性低"></a>实效性低</h2><p>通过RAG等技术解决。</p><h2 id="大模型幻觉"><a href="#大模型幻觉" class="headerlink" title="大模型幻觉"></a>大模型幻觉</h2><p>生成式模型生成了与模型输入不相关或不准确的内容。<br>缓解大模型幻觉的常用策略</p><h1 id="提示学习"><a href="#提示学习" class="headerlink" title="提示学习"></a>提示学习</h1><p>提示（Prompt）是伴随着输入一起给模型的上下文。<br>cloze prompt：填充答案的位置在句中。<br>prefix prompt：填充答案的位置在句末。</p><h2 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h2><h2 id="In-Context-Learning"><a href="#In-Context-Learning" class="headerlink" title="In-Context Learning"></a>In-Context Learning</h2><h2 id="思维链"><a href="#思维链" class="headerlink" title="思维链"></a>思维链</h2><h3 id="链式思维-Chain-of-Thoughts"><a href="#链式思维-Chain-of-Thoughts" class="headerlink" title="链式思维(Chain of Thoughts)"></a>链式思维(Chain of Thoughts)</h3><h3 id="思维树-Tree-of-Thoughts"><a href="#思维树-Tree-of-Thoughts" class="headerlink" title="思维树(Tree of Thoughts)"></a>思维树(Tree of Thoughts)</h3><h3 id="思维图-Graph-of-Thoughts"><a href="#思维图-Graph-of-Thoughts" class="headerlink" title="思维图(Graph of Thoughts)"></a>思维图(Graph of Thoughts)</h3><h4 id="选择以推理为中心的训练集"><a href="#选择以推理为中心的训练集" class="headerlink" title="选择以推理为中心的训练集"></a>选择以推理为中心的训练集</h4><p>代码本身是Step-by-Step的指令数据。</p><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h1 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h1><h1 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a href="https://zhuanlan.zhihu.com/p/590655677">ChatGPT发展历程、原理、技术架构详解和产业未来</a><br><a href="https://github.com/chenweiphd/ChatGPT-Hub">https://github.com/chenweiphd/ChatGPT-Hub</a><br><a href="https://www.promptingguide.ai/zh/research/llm-reasoning">大语言模型的推理能力</a><br><a href="https://github.com/SinclairCoder/Instruction-Tuning-Papers">Instruction-Tuning-Papers</a><br><a href="https://github.com/rasbt/LLMs-from-scratch">LLMs-from-scratch)</a></p>]]></content>
     
     
     <categories>
@@ -993,9 +1073,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>多模态</tag>
-      
       <tag>生成式AI</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -1068,11 +1148,11 @@
   
   
   <entry>
-    <title>大模型位置编码</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/</url>
+    <title>多模态大模型：技术演进与最新进展</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
     
-    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/v_JULY_v/article/details/134085503">一文通透位置编码</a></p>]]></content>
+    <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><script>  MathJax = {    tex: {      inlineMath: [['$', '$'], ['\\(', '\\)']],      displayMath: [['$$', '$$'], ['\\[', '\\]']]    }  };</script><h1 id="多模态大模型：技术演进与最新进展"><a href="#多模态大模型：技术演进与最新进展" class="headerlink" title="多模态大模型：技术演进与最新进展"></a>多模态大模型：技术演进与最新进展</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>多模态学习（Multimodal Learning）是指AI系统同时处理和理解多种不同类型数据（如文本、图像、音频、视频等）的能力。多模态大模型通过融合不同模态的信息，实现了比单一模态更全面的理解和生成能力，为人工智能带来了质的飞跃。本文将梳理多模态技术的发展历程，探讨关键创新点，并介绍最新研究进展。</p><h2 id="多模态学习的基本概念"><a href="#多模态学习的基本概念" class="headerlink" title="多模态学习的基本概念"></a>多模态学习的基本概念</h2><p>多模态学习的核心挑战在于如何有效融合不同模态的信息。这主要涉及三个关键问题：</p><ol><li><strong>表示学习</strong>：如何将不同模态的数据映射到统一的特征空间</li><li><strong>对齐问题</strong>：如何建立不同模态之间的对应关系</li><li><strong>融合策略</strong>：如何整合多个模态的信息以获得更全面的理解</li></ol><h2 id="技术演进时间线"><a href="#技术演进时间线" class="headerlink" title="技术演进时间线"></a>技术演进时间线</h2><h3 id="早期探索阶段-2010-2015"><a href="#早期探索阶段-2010-2015" class="headerlink" title="早期探索阶段 (2010-2015)"></a>早期探索阶段 (2010-2015)</h3><ul><li><p><strong>2010-2012</strong>: 早期多模态研究主要集中在简单的图像描述任务</p><ul><li><strong>2010</strong>: Farhadi等人提出使用三元组（对象-动作-场景）进行图像描述</li><li><strong>2012</strong>: Socher等人提出将图像与句子映射到共同的多模态空间</li></ul></li><li><p><strong>2013-2014</strong>: 神经网络开始应用于多模态学习</p><ul><li><strong>2013</strong>: DeViSE模型（Frome等人）首次尝试使用神经网络将视觉和语言信息连接起来</li><li><strong>2014</strong>: Kiros等人提出多模态神经语言模型，将图像特征与单词嵌入结合</li></ul></li><li><p><strong>2015</strong>: 基于注意力机制的图像描述生成</p><ul><li>Xu等人提出的”Show, Attend and Tell”模型首次将注意力机制引入图像描述任务</li><li>Vinyals等人的”Show and Tell”模型使用CNN+LSTM架构进行端到端训练</li></ul></li></ul><h3 id="深度融合阶段-2016-2019"><a href="#深度融合阶段-2016-2019" class="headerlink" title="深度融合阶段 (2016-2019)"></a>深度融合阶段 (2016-2019)</h3><ul><li><p><strong>2016</strong>: 多模态问答和视觉对话系统出现</p><ul><li>VQA数据集（Antol等人）的发布推动了视觉问答研究</li><li>双向注意力网络（BiDAF）提出，增强了多模态信息交互</li></ul></li><li><p><strong>2017-2018</strong>: 跨模态预训练与迁移学习</p><ul><li><strong>2017</strong>: ViLBERT首次尝试将BERT扩展到视觉语言任务</li><li><strong>2018</strong>: LXMERT提出，使用Transformer实现视觉与语言的深度融合</li></ul></li><li><p><strong>2019</strong>: 大规模预训练多模态模型</p><ul><li><strong>VL-BERT</strong>: 通过大规模预训练学习视觉-语言表示</li><li><strong>VisualBERT</strong>: 提出视觉和语言的联合嵌入</li></ul></li></ul><h3 id="多模态大模型兴起-2020-2022"><a href="#多模态大模型兴起-2020-2022" class="headerlink" title="多模态大模型兴起 (2020-2022)"></a>多模态大模型兴起 (2020-2022)</h3><ul><li><p><strong>2020</strong>: 统一架构的多模态模型</p><ul><li><strong>UNITER</strong>: 提出统一的图像-文本表示学习框架</li><li><strong>Oscar</strong>: 使用目标标签作为锚点连接视觉和语言模态</li><li><strong>CLIP</strong>: OpenAI发布对比语言-图像预训练模型，开创了大规模对比学习新范式</li></ul></li><li><p><strong>2021</strong>: 生成式多模态模型突破</p><ul><li><strong>DALL-E</strong>: OpenAI推出可从文本生成图像的模型</li><li><strong>ALBEF</strong>: 提出对齐前融合方法，使图像和文本表示更紧密地对齐</li><li><strong>BLIP</strong>: 提出引导式语言-图像预训练，改进了多模态表示质量</li></ul></li><li><p><strong>2022</strong>: 多模态大模型全面发展</p><ul><li><strong>Flamingo</strong>: DeepMind提出的少样本视觉语言模型</li><li><strong>Imagen</strong>: Google发布的文本到图像扩散模型</li><li><strong>Stable Diffusion</strong>: Stability AI发布开源扩散模型，大大推动了多模态生成领域</li><li><strong>BLIP-2</strong>: 提出基于查询Transformer的视觉语言理解架构</li><li><strong>CoCa</strong>: 对比式跨模态学习，同时解决多个视觉语言任务</li></ul></li></ul><h3 id="大型多模态模型时代-2023-至今"><a href="#大型多模态模型时代-2023-至今" class="headerlink" title="大型多模态模型时代 (2023-至今)"></a>大型多模态模型时代 (2023-至今)</h3><ul><li><p><strong>2023H1</strong>: 多模态大模型集中涌现</p><ul><li><strong>GPT-4V</strong>: OpenAI发布支持视觉输入的GPT-4，开创了多模态大语言模型先河</li><li><strong>LLaVA</strong>: 提出低成本高性能的开源多模态大语言模型</li><li><strong>MiniGPT-4</strong>: 将视觉编码器与强大的LLM连接的精简架构</li><li><strong>PaLM-E</strong>: Google将视觉感知能力融入大语言模型</li><li><strong>Kosmos-1</strong>: 微软发布的多模态大语言模型</li></ul></li><li><p><strong>2023H2</strong>: 多模态能力不断扩展</p><ul><li><strong>Gemini</strong>: Google发布的可处理多种模态输入的大模型</li><li><strong>Claude 2.1</strong>: Anthropic发布的支持图像输入的多模态助手</li><li><strong>GPT-4o</strong>: OpenAI发布的实时多模态模型，支持语音输入和输出</li><li><strong>CLIP-BLIP3</strong>: 增强版多模态理解架构，改进跨模态对齐</li><li><strong>LLaVA-1.5</strong>: 性能提升的LLaVA版本，在开源多模态模型中表现突出</li></ul></li><li><p><strong>2024</strong>: 多模态融合与交互的深度演进</p><ul><li><strong>Gemini 1.5 Pro</strong>: Google提出扩展上下文长度的多模态模型（100万token）</li><li><strong>Claude 3</strong>: Anthropic推出具有更强视觉能力的模型系列</li><li><strong>VILA</strong>: 统一的视觉语言架构，改进不同模态信息的交互方式</li><li><strong>Llama 3</strong>: Meta发布的新一代多模态大语言模型，改进跨模态理解</li><li><strong>SEED</strong>: 突破性的视频理解与生成模型，支持长视频理解</li></ul></li></ul><h2 id="关键创新与技术突破"><a href="#关键创新与技术突破" class="headerlink" title="关键创新与技术突破"></a>关键创新与技术突破</h2><h3 id="1-统一表示学习"><a href="#1-统一表示学习" class="headerlink" title="1. 统一表示学习"></a>1. 统一表示学习</h3><p>多模态学习最根本的挑战是如何在统一的表示空间中处理不同模态信息。其关键创新包括：</p><ul><li><strong>跨模态投影</strong>：将不同模态映射到共享语义空间（CLIP, ALIGN）</li><li><strong>对比学习</strong>：使用对比损失拉近匹配样本，推远不匹配样本（CLIP, ALBEF）</li><li><strong>联合编码</strong>：单一通道同时处理多模态输入（ViLBERT, ALBEF）</li></ul><h3 id="2-注意力与跨模态对齐"><a href="#2-注意力与跨模态对齐" class="headerlink" title="2. 注意力与跨模态对齐"></a>2. 注意力与跨模态对齐</h3><p>解决不同模态间对齐问题的关键技术：</p><ul><li><strong>跨模态注意力</strong>：允许一个模态的特征关注另一模态中的相关部分（ViLBERT）</li><li><strong>基于图的对齐</strong>：使用图结构显式建模模态间关系（SGRAF）</li><li><strong>对齐前融合</strong>：在融合前先将不同模态特征对齐（ALBEF, FLAVA）</li></ul><h3 id="3-视觉-语言预训练任务"><a href="#3-视觉-语言预训练任务" class="headerlink" title="3. 视觉-语言预训练任务"></a>3. 视觉-语言预训练任务</h3><p>推动多模态发展的预训练任务设计：</p><ul><li><strong>掩码语言建模</strong>：预测被遮蔽的文本片段（BERT风格）</li><li><strong>掩码图像建模</strong>：重建被遮蔽的图像区域（BEiT, MAE）</li><li><strong>图像-文本匹配</strong>：判断图像和文本是否匹配（CLIP, ALBEF）</li><li><strong>视觉问答</strong>：回答关于图像的问题（VQA, ViLBERT）</li><li><strong>图像描述生成</strong>：为图像生成描述文本（Show and Tell, BLIP）</li></ul><h3 id="4-多模态大语言模型架构"><a href="#4-多模态大语言模型架构" class="headerlink" title="4. 多模态大语言模型架构"></a>4. 多模态大语言模型架构</h3><p>当前主流的多模态大语言模型架构有四种：</p><ul><li><strong>视觉编码器+大语言模型</strong>：使用视觉编码器提取特征，输入到LLM（LLaVA, MiniGPT-4）</li><li><strong>端到端训练</strong>：从头训练包含多模态处理能力的模型（Gemini, GPT-4V）</li><li><strong>模块化设计</strong>：使用专门的模块处理不同模态（BLIP-2, Flamingo）</li><li><strong>统一表示空间</strong>：所有模态映射到同一嵌入空间（CLIP, ALIGN）</li></ul><h3 id="5-知识融合与指令调优"><a href="#5-知识融合与指令调优" class="headerlink" title="5. 知识融合与指令调优"></a>5. 知识融合与指令调优</h3><ul><li><strong>多模态指令微调</strong>：根据多模态指令调整模型行为（LLaVA-Instruct）</li><li><strong>知识蒸馏</strong>：从高性能模型向轻量模型转移能力（MiniGPT-4）</li><li><strong>多阶段训练</strong>：先对齐，再理解，最后生成（BLIP-2, LLaVA）</li></ul><h2 id="最新研究进展"><a href="#最新研究进展" class="headerlink" title="最新研究进展"></a>最新研究进展</h2><h3 id="视觉-语言融合的深化"><a href="#视觉-语言融合的深化" class="headerlink" title="视觉-语言融合的深化"></a>视觉-语言融合的深化</h3><ul><li><strong>视觉语言融合 (VLF)</strong>：更高效的图像-文本交互方法，提高了视觉信息在语言推理中的利用效率</li><li><strong>统一视觉中枢</strong>：统一处理图像、视频和文本的架构，简化了多模态处理流程</li><li><strong>长上下文多模态理解</strong>：扩展多模态处理的上下文窗口，支持更复杂的理解任务</li></ul><h3 id="多模态生成的突破"><a href="#多模态生成的突破" class="headerlink" title="多模态生成的突破"></a>多模态生成的突破</h3><ul><li><strong>一致性增强</strong>：改进模型生成内容与多模态输入的一致性（Imagen 2, DALL-E 3）</li><li><strong>Video-LLM</strong>：支持视频理解和生成的大语言模型架构（VideoChat, Video-LLaMA）</li><li><strong>多模态创意生成</strong>：基于语言描述生成多种形式的内容，包括图像、视频和音频</li></ul><h3 id="高效多模态模型"><a href="#高效多模态模型" class="headerlink" title="高效多模态模型"></a>高效多模态模型</h3><ul><li><strong>参数高效微调</strong>：使用LoRA等技术降低多模态模型训练成本</li><li><strong>量化与压缩</strong>：降低多模态模型的资源需求，实现高效部署</li><li><strong>多模态检索增强</strong>：结合外部知识库增强多模态理解能力</li></ul><h3 id="多模态评估的进展"><a href="#多模态评估的进展" class="headerlink" title="多模态评估的进展"></a>多模态评估的进展</h3><ul><li><strong>多维度评估</strong>：从忠实度、流畅性、相关性等多维度评估多模态模型</li><li><strong>跨模态一致性</strong>：评估不同模态生成内容之间的一致性</li><li><strong>人类对齐评估</strong>：评估多模态模型与人类偏好的一致程度</li></ul><h2 id="应用突破"><a href="#应用突破" class="headerlink" title="应用突破"></a>应用突破</h2><p>多模态大模型已在多个领域实现了重要应用突破：</p><h3 id="内容创作与设计"><a href="#内容创作与设计" class="headerlink" title="内容创作与设计"></a>内容创作与设计</h3><ul><li><strong>AI辅助设计</strong>：基于文本描述生成图像、视频和3D模型</li><li><strong>多模态内容编辑</strong>：跨模态内容编辑和生成，如基于图像或音频的文本生成</li><li><strong>创意协作</strong>：人机协作的创意内容生成流程</li></ul><h3 id="医疗健康"><a href="#医疗健康" class="headerlink" title="医疗健康"></a>医疗健康</h3><ul><li><strong>多模态医疗诊断</strong>：结合医学影像、临床文本和患者数据进行诊断</li><li><strong>辅助医学研究</strong>：分析医学文献和数据，辅助医学研究</li><li><strong>患者交互</strong>：改善医患沟通和医疗服务体验</li></ul><h3 id="教育与学习"><a href="#教育与学习" class="headerlink" title="教育与学习"></a>教育与学习</h3><ul><li><strong>个性化学习体验</strong>：根据学习者需求提供多模态学习内容</li><li><strong>交互式知识探索</strong>：通过多模态对话探索复杂知识</li><li><strong>可视化教学</strong>：将抽象概念可视化，提高理解效率</li></ul><h3 id="工业应用"><a href="#工业应用" class="headerlink" title="工业应用"></a>工业应用</h3><ul><li><strong>质量检测与分析</strong>：结合视觉和文本数据进行产品质量检测</li><li><strong>多模态监控</strong>：监控工业设备运行状态，预测潜在问题</li><li><strong>自动化流程优化</strong>：优化工业生产流程和决策</li></ul><h2 id="未来发展方向"><a href="#未来发展方向" class="headerlink" title="未来发展方向"></a>未来发展方向</h2><h3 id="多模态理解的深化"><a href="#多模态理解的深化" class="headerlink" title="多模态理解的深化"></a>多模态理解的深化</h3><ul><li><strong>更深层次的语义理解</strong>：超越表面关联，理解模态间的深层语义联系</li><li><strong>常识推理增强</strong>：融入更多常识性知识，提升推理能力</li><li><strong>情境理解</strong>：理解多模态内容的社会和文化背景</li></ul><h3 id="模态拓展"><a href="#模态拓展" class="headerlink" title="模态拓展"></a>模态拓展</h3><ul><li><strong>触觉、味觉等感官模态的融入</strong>：拓展到更多人类感官模态</li><li><strong>3D与物理世界理解</strong>：理解物理世界的结构和规律</li><li><strong>多模态交互系统</strong>：自然、流畅的多模态人机交互系统</li></ul><h3 id="多模态伦理与安全"><a href="#多模态伦理与安全" class="headerlink" title="多模态伦理与安全"></a>多模态伦理与安全</h3><ul><li><strong>防止有害内容生成</strong>：减少错误信息和有害内容的生成</li><li><strong>多模态偏见减轻</strong>：识别和减轻模型中的各种偏见</li><li><strong>隐私保护</strong>：在保护用户隐私的前提下处理多模态数据</li></ul><h3 id="语义web与知识图谱"><a href="#语义web与知识图谱" class="headerlink" title="语义web与知识图谱"></a>语义web与知识图谱</h3><ul><li><strong>多模态知识表示</strong>：构建包含多模态信息的知识图谱</li><li><strong>跨模态语义搜索</strong>：基于语义而非关键词的多模态搜索</li><li><strong>多模态知识库</strong>：构建大规模多模态知识库</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>多模态大模型的发展正在改变人工智能的格局，从单一模态的专家系统向全面理解和生成能力的通用智能转变。虽然仍面临诸多挑战，如模态间的语义鸿沟、计算资源需求和伦理问题，但多模态技术无疑代表了AI发展的重要方向。随着技术的不断进步，多模态大模型将进一步融入我们的日常生活和工作，带来更自然、更智能的人机交互体验。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., … &amp; Sutskever, I. (2021). Learning transferable visual models from natural language supervision. ICML 2021.</li><li>Li, J., Li, D., Savarese, S., &amp; Hoi, S. (2023). BLIP-2: Bootstrapping language-image pre-training with frozen image encoders and large language models. ICML 2023.</li><li>Liu, H., Li, C., Wu, Q., &amp; Lee, Y. J. (2023). Visual instruction tuning. NeurIPS 2023.</li><li>OpenAI. (2023). GPT-4 Technical Report.</li><li>Gemini Team. (2023). Gemini: A Family of Highly Capable Multimodal Models.</li><li>Driess, D., et al. (2023). PaLM-E: An embodied multimodal language model. ICML 2023.</li><li>Alayrac, J. B., et al. (2022). Flamingo: a visual language model for few-shot learning. NeurIPS 2022.</li><li>Huang, Z., et al. (2023). LLaVA: Large Language and Vision Assistant. arXiv preprint.</li><li>Chen, X., et al. (2023). InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning. NeurIPS 2023.</li><li>Google. (2024). Gemini 1.5: Pushing the Frontiers of Multimodal AI.</li></ol>]]></content>
     
     
     <categories>
@@ -1091,6 +1171,8 @@
       <tag>深度学习</tag>
       
       <tag>生成式AI</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -1121,9 +1203,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>多模态</tag>
-      
       <tag>生成式AI</tag>
+      
+      <tag>多模态</tag>
       
     </tags>
     
@@ -1132,11 +1214,11 @@
   
   
   <entry>
-    <title>多模态大模型：技术演进与最新进展</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/</url>
+    <title>大模型推理加速</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><script>  MathJax = {    tex: {      inlineMath: [['$', '$'], ['\\(', '\\)']],      displayMath: [['$$', '$$'], ['\\[', '\\]']]    }  };</script><h1 id="多模态大模型：技术演进与最新进展"><a href="#多模态大模型：技术演进与最新进展" class="headerlink" title="多模态大模型：技术演进与最新进展"></a>多模态大模型：技术演进与最新进展</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>多模态学习（Multimodal Learning）是指AI系统同时处理和理解多种不同类型数据（如文本、图像、音频、视频等）的能力。多模态大模型通过融合不同模态的信息，实现了比单一模态更全面的理解和生成能力，为人工智能带来了质的飞跃。本文将梳理多模态技术的发展历程，探讨关键创新点，并介绍最新研究进展。</p><h2 id="多模态学习的基本概念"><a href="#多模态学习的基本概念" class="headerlink" title="多模态学习的基本概念"></a>多模态学习的基本概念</h2><p>多模态学习的核心挑战在于如何有效融合不同模态的信息。这主要涉及三个关键问题：</p><ol><li><strong>表示学习</strong>：如何将不同模态的数据映射到统一的特征空间</li><li><strong>对齐问题</strong>：如何建立不同模态之间的对应关系</li><li><strong>融合策略</strong>：如何整合多个模态的信息以获得更全面的理解</li></ol><h2 id="技术演进时间线"><a href="#技术演进时间线" class="headerlink" title="技术演进时间线"></a>技术演进时间线</h2><h3 id="早期探索阶段-2010-2015"><a href="#早期探索阶段-2010-2015" class="headerlink" title="早期探索阶段 (2010-2015)"></a>早期探索阶段 (2010-2015)</h3><ul><li><p><strong>2010-2012</strong>: 早期多模态研究主要集中在简单的图像描述任务</p><ul><li><strong>2010</strong>: Farhadi等人提出使用三元组（对象-动作-场景）进行图像描述</li><li><strong>2012</strong>: Socher等人提出将图像与句子映射到共同的多模态空间</li></ul></li><li><p><strong>2013-2014</strong>: 神经网络开始应用于多模态学习</p><ul><li><strong>2013</strong>: DeViSE模型（Frome等人）首次尝试使用神经网络将视觉和语言信息连接起来</li><li><strong>2014</strong>: Kiros等人提出多模态神经语言模型，将图像特征与单词嵌入结合</li></ul></li><li><p><strong>2015</strong>: 基于注意力机制的图像描述生成</p><ul><li>Xu等人提出的”Show, Attend and Tell”模型首次将注意力机制引入图像描述任务</li><li>Vinyals等人的”Show and Tell”模型使用CNN+LSTM架构进行端到端训练</li></ul></li></ul><h3 id="深度融合阶段-2016-2019"><a href="#深度融合阶段-2016-2019" class="headerlink" title="深度融合阶段 (2016-2019)"></a>深度融合阶段 (2016-2019)</h3><ul><li><p><strong>2016</strong>: 多模态问答和视觉对话系统出现</p><ul><li>VQA数据集（Antol等人）的发布推动了视觉问答研究</li><li>双向注意力网络（BiDAF）提出，增强了多模态信息交互</li></ul></li><li><p><strong>2017-2018</strong>: 跨模态预训练与迁移学习</p><ul><li><strong>2017</strong>: ViLBERT首次尝试将BERT扩展到视觉语言任务</li><li><strong>2018</strong>: LXMERT提出，使用Transformer实现视觉与语言的深度融合</li></ul></li><li><p><strong>2019</strong>: 大规模预训练多模态模型</p><ul><li><strong>VL-BERT</strong>: 通过大规模预训练学习视觉-语言表示</li><li><strong>VisualBERT</strong>: 提出视觉和语言的联合嵌入</li></ul></li></ul><h3 id="多模态大模型兴起-2020-2022"><a href="#多模态大模型兴起-2020-2022" class="headerlink" title="多模态大模型兴起 (2020-2022)"></a>多模态大模型兴起 (2020-2022)</h3><ul><li><p><strong>2020</strong>: 统一架构的多模态模型</p><ul><li><strong>UNITER</strong>: 提出统一的图像-文本表示学习框架</li><li><strong>Oscar</strong>: 使用目标标签作为锚点连接视觉和语言模态</li><li><strong>CLIP</strong>: OpenAI发布对比语言-图像预训练模型，开创了大规模对比学习新范式</li></ul></li><li><p><strong>2021</strong>: 生成式多模态模型突破</p><ul><li><strong>DALL-E</strong>: OpenAI推出可从文本生成图像的模型</li><li><strong>ALBEF</strong>: 提出对齐前融合方法，使图像和文本表示更紧密地对齐</li><li><strong>BLIP</strong>: 提出引导式语言-图像预训练，改进了多模态表示质量</li></ul></li><li><p><strong>2022</strong>: 多模态大模型全面发展</p><ul><li><strong>Flamingo</strong>: DeepMind提出的少样本视觉语言模型</li><li><strong>Imagen</strong>: Google发布的文本到图像扩散模型</li><li><strong>Stable Diffusion</strong>: Stability AI发布开源扩散模型，大大推动了多模态生成领域</li><li><strong>BLIP-2</strong>: 提出基于查询Transformer的视觉语言理解架构</li><li><strong>CoCa</strong>: 对比式跨模态学习，同时解决多个视觉语言任务</li></ul></li></ul><h3 id="大型多模态模型时代-2023-至今"><a href="#大型多模态模型时代-2023-至今" class="headerlink" title="大型多模态模型时代 (2023-至今)"></a>大型多模态模型时代 (2023-至今)</h3><ul><li><p><strong>2023H1</strong>: 多模态大模型集中涌现</p><ul><li><strong>GPT-4V</strong>: OpenAI发布支持视觉输入的GPT-4，开创了多模态大语言模型先河</li><li><strong>LLaVA</strong>: 提出低成本高性能的开源多模态大语言模型</li><li><strong>MiniGPT-4</strong>: 将视觉编码器与强大的LLM连接的精简架构</li><li><strong>PaLM-E</strong>: Google将视觉感知能力融入大语言模型</li><li><strong>Kosmos-1</strong>: 微软发布的多模态大语言模型</li></ul></li><li><p><strong>2023H2</strong>: 多模态能力不断扩展</p><ul><li><strong>Gemini</strong>: Google发布的可处理多种模态输入的大模型</li><li><strong>Claude 2.1</strong>: Anthropic发布的支持图像输入的多模态助手</li><li><strong>GPT-4o</strong>: OpenAI发布的实时多模态模型，支持语音输入和输出</li><li><strong>CLIP-BLIP3</strong>: 增强版多模态理解架构，改进跨模态对齐</li><li><strong>LLaVA-1.5</strong>: 性能提升的LLaVA版本，在开源多模态模型中表现突出</li></ul></li><li><p><strong>2024</strong>: 多模态融合与交互的深度演进</p><ul><li><strong>Gemini 1.5 Pro</strong>: Google提出扩展上下文长度的多模态模型（100万token）</li><li><strong>Claude 3</strong>: Anthropic推出具有更强视觉能力的模型系列</li><li><strong>VILA</strong>: 统一的视觉语言架构，改进不同模态信息的交互方式</li><li><strong>Llama 3</strong>: Meta发布的新一代多模态大语言模型，改进跨模态理解</li><li><strong>SEED</strong>: 突破性的视频理解与生成模型，支持长视频理解</li></ul></li></ul><h2 id="关键创新与技术突破"><a href="#关键创新与技术突破" class="headerlink" title="关键创新与技术突破"></a>关键创新与技术突破</h2><h3 id="1-统一表示学习"><a href="#1-统一表示学习" class="headerlink" title="1. 统一表示学习"></a>1. 统一表示学习</h3><p>多模态学习最根本的挑战是如何在统一的表示空间中处理不同模态信息。其关键创新包括：</p><ul><li><strong>跨模态投影</strong>：将不同模态映射到共享语义空间（CLIP, ALIGN）</li><li><strong>对比学习</strong>：使用对比损失拉近匹配样本，推远不匹配样本（CLIP, ALBEF）</li><li><strong>联合编码</strong>：单一通道同时处理多模态输入（ViLBERT, ALBEF）</li></ul><h3 id="2-注意力与跨模态对齐"><a href="#2-注意力与跨模态对齐" class="headerlink" title="2. 注意力与跨模态对齐"></a>2. 注意力与跨模态对齐</h3><p>解决不同模态间对齐问题的关键技术：</p><ul><li><strong>跨模态注意力</strong>：允许一个模态的特征关注另一模态中的相关部分（ViLBERT）</li><li><strong>基于图的对齐</strong>：使用图结构显式建模模态间关系（SGRAF）</li><li><strong>对齐前融合</strong>：在融合前先将不同模态特征对齐（ALBEF, FLAVA）</li></ul><h3 id="3-视觉-语言预训练任务"><a href="#3-视觉-语言预训练任务" class="headerlink" title="3. 视觉-语言预训练任务"></a>3. 视觉-语言预训练任务</h3><p>推动多模态发展的预训练任务设计：</p><ul><li><strong>掩码语言建模</strong>：预测被遮蔽的文本片段（BERT风格）</li><li><strong>掩码图像建模</strong>：重建被遮蔽的图像区域（BEiT, MAE）</li><li><strong>图像-文本匹配</strong>：判断图像和文本是否匹配（CLIP, ALBEF）</li><li><strong>视觉问答</strong>：回答关于图像的问题（VQA, ViLBERT）</li><li><strong>图像描述生成</strong>：为图像生成描述文本（Show and Tell, BLIP）</li></ul><h3 id="4-多模态大语言模型架构"><a href="#4-多模态大语言模型架构" class="headerlink" title="4. 多模态大语言模型架构"></a>4. 多模态大语言模型架构</h3><p>当前主流的多模态大语言模型架构有四种：</p><ul><li><strong>视觉编码器+大语言模型</strong>：使用视觉编码器提取特征，输入到LLM（LLaVA, MiniGPT-4）</li><li><strong>端到端训练</strong>：从头训练包含多模态处理能力的模型（Gemini, GPT-4V）</li><li><strong>模块化设计</strong>：使用专门的模块处理不同模态（BLIP-2, Flamingo）</li><li><strong>统一表示空间</strong>：所有模态映射到同一嵌入空间（CLIP, ALIGN）</li></ul><h3 id="5-知识融合与指令调优"><a href="#5-知识融合与指令调优" class="headerlink" title="5. 知识融合与指令调优"></a>5. 知识融合与指令调优</h3><ul><li><strong>多模态指令微调</strong>：根据多模态指令调整模型行为（LLaVA-Instruct）</li><li><strong>知识蒸馏</strong>：从高性能模型向轻量模型转移能力（MiniGPT-4）</li><li><strong>多阶段训练</strong>：先对齐，再理解，最后生成（BLIP-2, LLaVA）</li></ul><h2 id="最新研究进展"><a href="#最新研究进展" class="headerlink" title="最新研究进展"></a>最新研究进展</h2><h3 id="视觉-语言融合的深化"><a href="#视觉-语言融合的深化" class="headerlink" title="视觉-语言融合的深化"></a>视觉-语言融合的深化</h3><ul><li><strong>视觉语言融合 (VLF)</strong>：更高效的图像-文本交互方法，提高了视觉信息在语言推理中的利用效率</li><li><strong>统一视觉中枢</strong>：统一处理图像、视频和文本的架构，简化了多模态处理流程</li><li><strong>长上下文多模态理解</strong>：扩展多模态处理的上下文窗口，支持更复杂的理解任务</li></ul><h3 id="多模态生成的突破"><a href="#多模态生成的突破" class="headerlink" title="多模态生成的突破"></a>多模态生成的突破</h3><ul><li><strong>一致性增强</strong>：改进模型生成内容与多模态输入的一致性（Imagen 2, DALL-E 3）</li><li><strong>Video-LLM</strong>：支持视频理解和生成的大语言模型架构（VideoChat, Video-LLaMA）</li><li><strong>多模态创意生成</strong>：基于语言描述生成多种形式的内容，包括图像、视频和音频</li></ul><h3 id="高效多模态模型"><a href="#高效多模态模型" class="headerlink" title="高效多模态模型"></a>高效多模态模型</h3><ul><li><strong>参数高效微调</strong>：使用LoRA等技术降低多模态模型训练成本</li><li><strong>量化与压缩</strong>：降低多模态模型的资源需求，实现高效部署</li><li><strong>多模态检索增强</strong>：结合外部知识库增强多模态理解能力</li></ul><h3 id="多模态评估的进展"><a href="#多模态评估的进展" class="headerlink" title="多模态评估的进展"></a>多模态评估的进展</h3><ul><li><strong>多维度评估</strong>：从忠实度、流畅性、相关性等多维度评估多模态模型</li><li><strong>跨模态一致性</strong>：评估不同模态生成内容之间的一致性</li><li><strong>人类对齐评估</strong>：评估多模态模型与人类偏好的一致程度</li></ul><h2 id="应用突破"><a href="#应用突破" class="headerlink" title="应用突破"></a>应用突破</h2><p>多模态大模型已在多个领域实现了重要应用突破：</p><h3 id="内容创作与设计"><a href="#内容创作与设计" class="headerlink" title="内容创作与设计"></a>内容创作与设计</h3><ul><li><strong>AI辅助设计</strong>：基于文本描述生成图像、视频和3D模型</li><li><strong>多模态内容编辑</strong>：跨模态内容编辑和生成，如基于图像或音频的文本生成</li><li><strong>创意协作</strong>：人机协作的创意内容生成流程</li></ul><h3 id="医疗健康"><a href="#医疗健康" class="headerlink" title="医疗健康"></a>医疗健康</h3><ul><li><strong>多模态医疗诊断</strong>：结合医学影像、临床文本和患者数据进行诊断</li><li><strong>辅助医学研究</strong>：分析医学文献和数据，辅助医学研究</li><li><strong>患者交互</strong>：改善医患沟通和医疗服务体验</li></ul><h3 id="教育与学习"><a href="#教育与学习" class="headerlink" title="教育与学习"></a>教育与学习</h3><ul><li><strong>个性化学习体验</strong>：根据学习者需求提供多模态学习内容</li><li><strong>交互式知识探索</strong>：通过多模态对话探索复杂知识</li><li><strong>可视化教学</strong>：将抽象概念可视化，提高理解效率</li></ul><h3 id="工业应用"><a href="#工业应用" class="headerlink" title="工业应用"></a>工业应用</h3><ul><li><strong>质量检测与分析</strong>：结合视觉和文本数据进行产品质量检测</li><li><strong>多模态监控</strong>：监控工业设备运行状态，预测潜在问题</li><li><strong>自动化流程优化</strong>：优化工业生产流程和决策</li></ul><h2 id="未来发展方向"><a href="#未来发展方向" class="headerlink" title="未来发展方向"></a>未来发展方向</h2><h3 id="多模态理解的深化"><a href="#多模态理解的深化" class="headerlink" title="多模态理解的深化"></a>多模态理解的深化</h3><ul><li><strong>更深层次的语义理解</strong>：超越表面关联，理解模态间的深层语义联系</li><li><strong>常识推理增强</strong>：融入更多常识性知识，提升推理能力</li><li><strong>情境理解</strong>：理解多模态内容的社会和文化背景</li></ul><h3 id="模态拓展"><a href="#模态拓展" class="headerlink" title="模态拓展"></a>模态拓展</h3><ul><li><strong>触觉、味觉等感官模态的融入</strong>：拓展到更多人类感官模态</li><li><strong>3D与物理世界理解</strong>：理解物理世界的结构和规律</li><li><strong>多模态交互系统</strong>：自然、流畅的多模态人机交互系统</li></ul><h3 id="多模态伦理与安全"><a href="#多模态伦理与安全" class="headerlink" title="多模态伦理与安全"></a>多模态伦理与安全</h3><ul><li><strong>防止有害内容生成</strong>：减少错误信息和有害内容的生成</li><li><strong>多模态偏见减轻</strong>：识别和减轻模型中的各种偏见</li><li><strong>隐私保护</strong>：在保护用户隐私的前提下处理多模态数据</li></ul><h3 id="语义web与知识图谱"><a href="#语义web与知识图谱" class="headerlink" title="语义web与知识图谱"></a>语义web与知识图谱</h3><ul><li><strong>多模态知识表示</strong>：构建包含多模态信息的知识图谱</li><li><strong>跨模态语义搜索</strong>：基于语义而非关键词的多模态搜索</li><li><strong>多模态知识库</strong>：构建大规模多模态知识库</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>多模态大模型的发展正在改变人工智能的格局，从单一模态的专家系统向全面理解和生成能力的通用智能转变。虽然仍面临诸多挑战，如模态间的语义鸿沟、计算资源需求和伦理问题，但多模态技术无疑代表了AI发展的重要方向。随着技术的不断进步，多模态大模型将进一步融入我们的日常生活和工作，带来更自然、更智能的人机交互体验。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol><li>Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., … &amp; Sutskever, I. (2021). Learning transferable visual models from natural language supervision. ICML 2021.</li><li>Li, J., Li, D., Savarese, S., &amp; Hoi, S. (2023). BLIP-2: Bootstrapping language-image pre-training with frozen image encoders and large language models. ICML 2023.</li><li>Liu, H., Li, C., Wu, Q., &amp; Lee, Y. J. (2023). Visual instruction tuning. NeurIPS 2023.</li><li>OpenAI. (2023). GPT-4 Technical Report.</li><li>Gemini Team. (2023). Gemini: A Family of Highly Capable Multimodal Models.</li><li>Driess, D., et al. (2023). PaLM-E: An embodied multimodal language model. ICML 2023.</li><li>Alayrac, J. B., et al. (2022). Flamingo: a visual language model for few-shot learning. NeurIPS 2022.</li><li>Huang, Z., et al. (2023). LLaVA: Large Language and Vision Assistant. arXiv preprint.</li><li>Chen, X., et al. (2023). InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning. NeurIPS 2023.</li><li>Google. (2024). Gemini 1.5: Pushing the Frontiers of Multimodal AI.</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>]]></content>
     
     
     <categories>
@@ -1154,8 +1236,6 @@
       
       <tag>深度学习</tag>
       
-      <tag>多模态</tag>
-      
       <tag>生成式AI</tag>
       
     </tags>
@@ -1165,11 +1245,11 @@
   
   
   <entry>
-    <title>大模型推理加速</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
+    <title>大模型位置编码</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/</url>
     
-    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/v_JULY_v/article/details/134085503">一文通透位置编码</a></p>]]></content>
     
     
     <categories>
@@ -1322,43 +1402,6 @@
   
   
   <entry>
-    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
-    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/"/>
-    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/</url>
-    
-    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>ComputerVision</tag>
-      
-      <tag>Robotics</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
     <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/"/>
     <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/</url>
@@ -1385,9 +1428,46 @@
       
       <tag>Research</tag>
       
+      <tag>Robotics</tag>
+      
       <tag>ComputerVision</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
+    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/"/>
+    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><h1 id="NVIDIA-Isaac-GR00T-N1"><a href="#NVIDIA-Isaac-GR00T-N1" class="headerlink" title="NVIDIA Isaac GR00T N1"></a>NVIDIA Isaac GR00T N1</h1><p><img src="/tech-blog/model-architecture.png" alt="NVIDIA GR00T-N1机器人"></p><p>NVIDIA推出的通用机器人基础模型GR00T N1具有突破性的能力，能够通过视觉和语言指令控制各种机器人系统。</p><p><a href="https://github.com/NVIDIA/Isaac-GR00T">NVIDIA Isaac GR00T N1 GitHub</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Research</tag>
+      
       <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -1563,32 +1643,7 @@
     <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/"/>
     <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/</url>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="Agent发展"><a href="#Agent发展" class="headerlink" title="Agent发展"></a>Agent发展</h2><p>Agent经历了以下几个阶段的发展：<br>符号式Agents：符号智能时代的产物，使用符号抽象规则和推理过程。<br>反馈式Agents<br>强化学习Agents<br>迁移学习、元学习Agents<br>大语言模型Agents</p><h2 id="Agent架构与组件"><a href="#Agent架构与组件" class="headerlink" title="Agent架构与组件"></a>Agent架构与组件</h2><p>下图展示了现代大模型Agent的核心架构和关键组件：</p><p><img src="/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/agent-architecture.png" alt="Agent架构图"></p><p><strong>图1：Agent架构与工作流程</strong></p><h3 id="核心组件解析"><a href="#核心组件解析" class="headerlink" title="核心组件解析"></a>核心组件解析</h3><ol><li><p><strong>中央处理器 - Agents</strong>：作为整个系统的核心，负责协调各组件之间的交互。</p></li><li><p><strong>记忆系统 (Memory)</strong>：</p><ul><li>感知记忆 (Sensory Memory)：存储感知输入</li><li>短期记忆 (Short-term Memory)：临时工作存储空间</li><li>长期记忆 (Long-term Memory)：持久化知识存储</li></ul></li><li><p><strong>规划模块 (Planning)</strong>：负责确定行动步骤，可以独立规划也可由LLM辅助规划。</p></li><li><p><strong>工具箱 (Tools)</strong>：Agent可用的各种工具，包括搜索、资讯获取、天气查询、汇率转换、代码执行等功能。</p></li><li><p><strong>大语言模型 (LLM)</strong>：作为Agent的”大脑”，负责理解信息、观察反思，并通过FunctionCall、TaskWeaver和ReAct等机制与外界交互。</p></li></ol><h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><ol><li><strong>理解信息</strong>：Agent通过Memory系统理解和存储相关信息</li><li><strong>规划行动</strong>：通过Planning模块确定执行步骤</li><li><strong>工具使用</strong>：选择并使用适当的工具完成任务</li><li><strong>观察反思</strong>：使用LLM进行结果分析和反思</li></ol><p>Agent可以根据任务需求进行自主协调，包括任务分解、Agent协作、LLM调用、工具使用和记忆存取等操作。</p><h2 id="Agents主要组件"><a href="#Agents主要组件" class="headerlink" title="Agents主要组件"></a>Agents主要组件</h2><h3 id="配置模块（Profile-Module）"><a href="#配置模块（Profile-Module）" class="headerlink" title="配置模块（Profile Module）"></a>配置模块（Profile Module）</h3><p>旨在指示agent角色的特征描述，这些评测通常被写入提示中以影响LLM行为。Agent profile通常包含基本信息，例如年龄、性别和职业，以及心理学信息（反映了agent的个性）和社交信息（详细说明了agent之间的关系）。描述agent信息的选择在很大程度上取决于具体的应用场景。</p><h4 id="人工生成"><a href="#人工生成" class="headerlink" title="人工生成"></a>人工生成</h4><h4 id="LLM生成"><a href="#LLM生成" class="headerlink" title="LLM生成"></a>LLM生成</h4><p>基于LLM自动生成，例如，RecAgent首先通过手动制作一些agents的背景，如年龄、性别、个人特征和电影偏好，为他们创建种子档案（profile）。然后，它利用ChatGPT基于种子信息生成更多的agent profile（代理配置文件）。该方法高效但缺乏对Profile的精确控制。</p><h4 id="数据集对齐方法"><a href="#数据集对齐方法" class="headerlink" title="数据集对齐方法"></a>数据集对齐方法</h4><h3 id="记忆模块（Memory-Module）"><a href="#记忆模块（Memory-Module）" class="headerlink" title="记忆模块（Memory Module）"></a>记忆模块（Memory Module）</h3><h4 id="短期记忆"><a href="#短期记忆" class="headerlink" title="短期记忆"></a>短期记忆</h4><h4 id="长期记忆"><a href="#长期记忆" class="headerlink" title="长期记忆"></a>长期记忆</h4><p>长期记忆一般采用向量数据库实现</p><h3 id="规划模块（Planning-Module）"><a href="#规划模块（Planning-Module）" class="headerlink" title="规划模块（Planning Module）"></a>规划模块（Planning Module）</h3><h3 id="执行模块（Action-Module）"><a href="#执行模块（Action-Module）" class="headerlink" title="执行模块（Action Module）"></a>执行模块（Action Module）</h3><h2 id="Agent设计模式"><a href="#Agent设计模式" class="headerlink" title="Agent设计模式"></a>Agent设计模式</h2><h3 id="反思-Reflection"><a href="#反思-Reflection" class="headerlink" title="反思(Reflection)"></a>反思(Reflection)</h3><p>自我反思是一个通过语言反馈来强化基于大模型的智能体的框架。根据 Shinn et al. (2023)，”自我反思是一种’口头’强化的新范例，它将策略参数化为智能体的记忆编码与 LLM 的参数选择配对。”<br>在高层次上，自我反思将来自环境的反馈（自由形式的语言或者标量）转换为语言反馈，也被称作 self-reflection，为下一轮中 LLM 智能体提供上下文。这有助于智能体快速有效地从之前的错误中学习，进而提升许多高级任务的性能。</p><p>简单的自我反思由两个LLM组成，一个作为生成器，一个对生成器的结果进行Reflect。</p><p>Reflextion Agents由三个不同的大模型组成：参与者、评估者、自我反思。</p><p>自我反思的关键步骤：（1）任务定义；（2）生成轨迹；（3）评估；（4）执行自我反思；（5）生成下一条轨迹。<br>自我反思引入了自我评估、自我反思、记忆组建来拓展ReAct框架。</p><p>Reflextion Agents适用的任务：<br>（1）序列决策<br>（2）推理<br>（3）编程</p><h3 id="规划-Planning"><a href="#规划-Planning" class="headerlink" title="规划(Planning)"></a>规划(Planning)</h3><p>规划（Planning）设计模式是一种通过提前计划和组织任务步骤来提高效率和准确性的方法。在这种模式中，模型将复杂任务分解为多个步骤，并依次执行每个步骤，以达到预期的目标.这类似于人类在处理复杂任务时所采用的分步计划和执行方法。每个步骤可以由不同的模型或工具来完成，增强了整体任务处理的灵活性和扩展性。<br>示例： HuggingGPT，采用ChatGPT作为控制器，利用其语言理解和生成能力进行任务规划，并根据Hugging Face中模型的描述选择合适的AI模型来执行子任务，最后汇总执行结果。</p><h3 id="工具使用-Tool-use"><a href="#工具使用-Tool-use" class="headerlink" title="工具使用(Tool use)"></a>工具使用(Tool use)</h3><p>工具调用（Tool Use）设计模式是一种让AI模型通过调用外部工具或库来增强任务执行能力的方法。<br>实现方式：（1）预先规划好；（2）自主调用</p><h3 id="多智能体协作-Multi-agent-collaboration"><a href="#多智能体协作-Multi-agent-collaboration" class="headerlink" title="多智能体协作(Multi-agent collaboration)"></a>多智能体协作(Multi-agent collaboration)</h3><p>多智能体协作（Multiagent Collaboration）设计模式是一种通过多个智能体之间的合作来提高任务执行效率和准确性的方法。在这种模式中，多个智能体分担任务，并通过相互交流和协作，共同完成复杂任务。</p><h1 id="Agent框架对比"><a href="#Agent框架对比" class="headerlink" title="Agent框架对比"></a>Agent框架对比</h1><h2 id="Auto-GPT"><a href="#Auto-GPT" class="headerlink" title="Auto-GPT"></a>Auto-GPT</h2><p>规划能力强<br>缺点：接口和变量的定义和Agent框架的概念没有对应，学习成本会高一些。</p><h2 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h2><p>内置扩展LangChain工具、使用Assistant API、在Docker容器中运行模型生成的代码、分布式智能体等功能。</p><h2 id="LangFlow"><a href="#LangFlow" class="headerlink" title="LangFlow"></a>LangFlow</h2><h2 id="CrewAI"><a href="#CrewAI" class="headerlink" title="CrewAI"></a>CrewAI</h2><p>CrewAI提供了一组用于构建和编排AI Agents组而设计的通用工具和库，用于处理多代理系统的场景人物，如代理通信、协调和决策等。</p><h2 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h2><p>多智能体系统框架。</p><h3 id="MetaGPT提供的RAG功能"><a href="#MetaGPT提供的RAG功能" class="headerlink" title="MetaGPT提供的RAG功能"></a>MetaGPT提供的RAG功能</h3><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="AutoGLM"><a href="#AutoGLM" class="headerlink" title="AutoGLM"></a>AutoGLM</h2><h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><h3 id="LangGraph"><a href="#LangGraph" class="headerlink" title="LangGraph"></a>LangGraph</h3><p>LangGraph：状态机框架。</p><p><strong>LangChain的多智能体协作机制</strong></p><p><strong>LangChain的记忆功能是如何实现的</strong></p><p><strong>与AutoGen的核心差异</strong></p><p><strong>基于LangChain开发一个本地知识库系统</strong></p><h2 id="Flowise"><a href="#Flowise" class="headerlink" title="Flowise"></a>Flowise</h2><p>拖拽式编排，支持多智能体协作。</p><h1 id="优化与实践"><a href="#优化与实践" class="headerlink" title="优化与实践"></a>优化与实践</h1><h2 id="大模核心能力"><a href="#大模核心能力" class="headerlink" title="大模核心能力"></a>大模核心能力</h2><p>自主决策、任务规划、多模态交互、环境感知等</p><h2 id="多任务调度"><a href="#多任务调度" class="headerlink" title="多任务调度"></a>多任务调度</h2><h2 id="记忆管理"><a href="#记忆管理" class="headerlink" title="记忆管理"></a>记忆管理</h2><h2 id="工具调用"><a href="#工具调用" class="headerlink" title="工具调用"></a>工具调用</h2><h2 id="外部环境交互"><a href="#外部环境交互" class="headerlink" title="外部环境交互"></a>外部环境交互</h2><h2 id="智能体相关进展"><a href="#智能体相关进展" class="headerlink" title="智能体相关进展"></a>智能体相关进展</h2><h3 id="提升智能体推理能力"><a href="#提升智能体推理能力" class="headerlink" title="提升智能体推理能力"></a>提升智能体推理能力</h3><h4 id="ReAct-Reasoning-and-Acting-框架"><a href="#ReAct-Reasoning-and-Acting-框架" class="headerlink" title="ReAct(Reasoning and Acting)框架"></a>ReAct(Reasoning and Acting)框架</h4><p>大模型本身具有推理能力和执行能力(比如生成执行计划)，ReAct框架协同推理与执行，解决幻觉问题和COT推理中的错误传播问题、提高答案的可解释性。<br>ReAct采用few-shot in-context学习来生成解决问题的action和thought序列。每个in-context样例是由action、thought、observation构成的行为轨迹。<br>在推理占主导地位的应用中，我们交替生成thought和action，这样完整的行为轨迹就是多个thought-action-observation步骤。<br>在决策生成任务中（涉及大量action），thought只会在行为轨迹中最相关的位置稀疏出现，此时语言模型可用来决定thought和action的异步呈现顺序。</p><h3 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h3><p>Agent记忆包括短期记忆和长期记忆。<br>记忆内容包括：（1）内部任务信息；（2）跨任务信息；（3）外部知识。</p><h4 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h4><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p><h4 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h4><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p><h4 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h4><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p><h4 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h4><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p><h4 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h4><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p><h1 id="智能体应用发展"><a href="#智能体应用发展" class="headerlink" title="智能体应用发展"></a>智能体应用发展</h1><h2 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h2><p>OpenAI已经推出和即将推出的三款Agent产品</p><ul><li>Deep Research：可自主执行深入调研，自动总结并生成专业报告；</li><li>Operator：可充当线上“任务代理”，帮助预订机票、酒店、餐厅等；</li><li>A-SWE（Agentic Software Engineer）：可以自行完成软件开发、QA、Bug 测试和文档撰写，相当于一个“自动化开发者”。</li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p><a href="https://github.com/google/adk-python">Google adk-python</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/langflow-ai/langflow.git">LangFlow</a><br><a href="https://github.com/FlowiseAI/Flowise">flowise</a><br><a href="https://github.com/crewAIInc/crewAI">CrewAI</a><br><a href="https://github.com/camel-ai/owl">OWL</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a><br><a href="https://github.com/langgenius/dify">Dify</a><br><a href="https://github.com/om-ai-lab/OmAgent">OmAgent</a><br><a href="https://www.langchain.com/langgraph">LangGraph</a><br><a href="https://github.com/huggingface/smolagents">SmolAgents</a><br><a href="https://github.com/plurai-ai/intellagent">intellagent</a><br><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a><br><a href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a><br><a href="https://github.com/MotiaDev/motia">Motia</a><br><a href="https://www.genspark.ai/agents">GenSpark</a></p><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="https://google.github.io/adk-docs/agents/llm-agents/">Agent Development Kit文档</a><br><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="windsurf.com/blog/what-is-an-agent">windsurf.com&#x2F;blog&#x2F;what-is-an-agent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://docs.deepwisdom.ai/main/zh/guide/tutorials/agent_101.html">Meta-GPT 智能体入门</a><br><a href="https://react-lm.github.io/">ReAct</a><br><a href="https://arthurchiao.art/blog/ai-agent-white-paper-zh/">AI Agent（智能体）技术白皮书</a></p><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/2504.01990">Advances and challenges in foundatation agents</a><br><a href="https://github.com/WooooDyy/LLM-Agent-Paper-List">LLM-Agent-Paper-List</a><br><a href="https://arxiv.org/pdf/2309.07864">The Rise and Potential of Large Language Model Based Agents: A Survey</a><br><a href="https://arxiv.org/pdf/2504.01990">ADVANCES AND CHALLENGES IN FOUNDATION AGENTS</a><br><a href="https://arxiv.org/pdf/2303.17651.pdf">Self-Refine: Iterative Refinement with Self-Feedback</a><br><a href="https://arxiv.org/pdf/2303.11366.pdf">Reflexion: Language Agents with Verbal Reinforcement Learning</a><br><a href="https://arxiv.org/pdf/2305.11738.pdf">CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing</a><br><a href="https://arxiv.org/abs/2305.15334">Gorilla: Large Language Model Connected with Massive APIs</a><br><a href="https://arxiv.org/abs/2303.11381">MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action</a><br><a href="https://arxiv.org/abs/2303.17580">HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face</a><br><a href="https://arxiv.org/abs/2308.08155">AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation</a><br><a href="https://arxiv.org/pdf/2501.06322">Multi-Agent Collaboration Mechanisms: A Survey of LLMs</a><br><a href="https://link.springer.com/article/10.1007/s11704-024-40231-1">A Survey on Large Language Model Based Autonomous Agents</a><br><a href="https://arxiv.org/pdf/2503.12434">A Survey on the Optimization of Large Language Model-based Agents</a></p><h3 id="课程-教程"><a href="#课程-教程" class="headerlink" title="课程&#x2F;教程"></a>课程&#x2F;教程</h3><p><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/">Multi AI Agent Systems with crewAI</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/">AI Agentic Design Patterns with AutoGen</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/">AI Agents in LangGraph</a><br><a href="https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/">LLMs as Operating Systems: Agent Memory</a><br><a href="https://www.youtube.com/watch?v=sC9SV06gsDM">LangFlow创建流程视频教程</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>数字分身(Digital twin)</title>
-    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
-    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
-    
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Digital twin：译作数字孪生、数字分身、数位双生，指在信息化平台内模拟物理实体、流程或者系统，类似实体系统在信息化平台中的双胞胎。[1]</p><h1 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h1><h2 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h2><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E6%98%A0%E5%B0%84">数字映射-维基百科</a><br><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="Agent发展"><a href="#Agent发展" class="headerlink" title="Agent发展"></a>Agent发展</h2><p>Agent经历了以下几个阶段的发展：<br>符号式Agents：符号智能时代的产物，使用符号抽象规则和推理过程。<br>反馈式Agents<br>强化学习Agents<br>迁移学习、元学习Agents<br>大语言模型Agents</p><h2 id="Agent架构与组件"><a href="#Agent架构与组件" class="headerlink" title="Agent架构与组件"></a>Agent架构与组件</h2><p>下图展示了现代大模型Agent的核心架构和关键组件：</p><p><img src="/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/agent-architecture.png" alt="Agent架构图"></p><p><strong>图1：Agent架构与工作流程</strong></p><h3 id="核心组件解析"><a href="#核心组件解析" class="headerlink" title="核心组件解析"></a>核心组件解析</h3><ol><li><p><strong>中央处理器 - Agents</strong>：作为整个系统的核心，负责协调各组件之间的交互。</p></li><li><p><strong>记忆系统 (Memory)</strong>：</p><ul><li>感知记忆 (Sensory Memory)：存储感知输入</li><li>短期记忆 (Short-term Memory)：临时工作存储空间</li><li>长期记忆 (Long-term Memory)：持久化知识存储</li></ul></li><li><p><strong>规划模块 (Planning)</strong>：负责确定行动步骤，可以独立规划也可由LLM辅助规划。</p></li><li><p><strong>工具箱 (Tools)</strong>：Agent可用的各种工具，包括搜索、资讯获取、天气查询、汇率转换、代码执行等功能。</p></li><li><p><strong>大语言模型 (LLM)</strong>：作为Agent的”大脑”，负责理解信息、观察反思，并通过FunctionCall、TaskWeaver和ReAct等机制与外界交互。</p></li></ol><h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><ol><li><strong>理解信息</strong>：Agent通过Memory系统理解和存储相关信息</li><li><strong>规划行动</strong>：通过Planning模块确定执行步骤</li><li><strong>工具使用</strong>：选择并使用适当的工具完成任务</li><li><strong>观察反思</strong>：使用LLM进行结果分析和反思</li></ol><p>Agent可以根据任务需求进行自主协调，包括任务分解、Agent协作、LLM调用、工具使用和记忆存取等操作。</p><h2 id="Agents主要组件"><a href="#Agents主要组件" class="headerlink" title="Agents主要组件"></a>Agents主要组件</h2><h3 id="配置模块（Profile-Module）"><a href="#配置模块（Profile-Module）" class="headerlink" title="配置模块（Profile Module）"></a>配置模块（Profile Module）</h3><p>旨在指示agent角色的特征描述，这些评测通常被写入提示中以影响LLM行为。Agent profile通常包含基本信息，例如年龄、性别和职业，以及心理学信息（反映了agent的个性）和社交信息（详细说明了agent之间的关系）。描述agent信息的选择在很大程度上取决于具体的应用场景。</p><h4 id="人工生成"><a href="#人工生成" class="headerlink" title="人工生成"></a>人工生成</h4><h4 id="LLM生成"><a href="#LLM生成" class="headerlink" title="LLM生成"></a>LLM生成</h4><p>基于LLM自动生成，例如，RecAgent首先通过手动制作一些agents的背景，如年龄、性别、个人特征和电影偏好，为他们创建种子档案（profile）。然后，它利用ChatGPT基于种子信息生成更多的agent profile（代理配置文件）。该方法高效但缺乏对Profile的精确控制。</p><h4 id="数据集对齐方法"><a href="#数据集对齐方法" class="headerlink" title="数据集对齐方法"></a>数据集对齐方法</h4><h3 id="记忆模块（Memory-Module）"><a href="#记忆模块（Memory-Module）" class="headerlink" title="记忆模块（Memory Module）"></a>记忆模块（Memory Module）</h3><h4 id="短期记忆"><a href="#短期记忆" class="headerlink" title="短期记忆"></a>短期记忆</h4><h4 id="长期记忆"><a href="#长期记忆" class="headerlink" title="长期记忆"></a>长期记忆</h4><p>长期记忆一般采用向量数据库实现</p><h4 id="LangChain的Memory实现"><a href="#LangChain的Memory实现" class="headerlink" title="LangChain的Memory实现"></a>LangChain的Memory实现</h4><h4 id="CrewAI的Memory实现"><a href="#CrewAI的Memory实现" class="headerlink" title="CrewAI的Memory实现"></a>CrewAI的Memory实现</h4><p>CrewAI的短时记忆使用RAG机制实现<br>CrewAI的长时记忆使用</p><h4 id="SmolAgents的Memory实现"><a href="#SmolAgents的Memory实现" class="headerlink" title="SmolAgents的Memory实现"></a>SmolAgents的Memory实现</h4><h4 id="AutoGen的Memory实现"><a href="#AutoGen的Memory实现" class="headerlink" title="AutoGen的Memory实现"></a>AutoGen的Memory实现</h4><h3 id="规划模块（Planning-Module）"><a href="#规划模块（Planning-Module）" class="headerlink" title="规划模块（Planning Module）"></a>规划模块（Planning Module）</h3><h3 id="执行模块（Action-Module）"><a href="#执行模块（Action-Module）" class="headerlink" title="执行模块（Action Module）"></a>执行模块（Action Module）</h3><h2 id="Agent设计模式"><a href="#Agent设计模式" class="headerlink" title="Agent设计模式"></a>Agent设计模式</h2><h3 id="反思-Reflection"><a href="#反思-Reflection" class="headerlink" title="反思(Reflection)"></a>反思(Reflection)</h3><p>自我反思是一个通过语言反馈来强化基于大模型的智能体的框架。根据 Shinn et al. (2023)，”自我反思是一种’口头’强化的新范例，它将策略参数化为智能体的记忆编码与 LLM 的参数选择配对。”<br>在高层次上，自我反思将来自环境的反馈（自由形式的语言或者标量）转换为语言反馈，也被称作 self-reflection，为下一轮中 LLM 智能体提供上下文。这有助于智能体快速有效地从之前的错误中学习，进而提升许多高级任务的性能。</p><p>简单的自我反思由两个LLM组成，一个作为生成器，一个对生成器的结果进行Reflect。</p><p>Reflextion Agents由三个不同的大模型组成：参与者、评估者、自我反思。</p><p>自我反思的关键步骤：（1）任务定义；（2）生成轨迹；（3）评估；（4）执行自我反思；（5）生成下一条轨迹。<br>自我反思引入了自我评估、自我反思、记忆组建来拓展ReAct框架。</p><p>Reflextion Agents适用的任务：<br>（1）序列决策<br>（2）推理<br>（3）编程</p><h3 id="规划-Planning"><a href="#规划-Planning" class="headerlink" title="规划(Planning)"></a>规划(Planning)</h3><p>规划（Planning）设计模式是一种通过提前计划和组织任务步骤来提高效率和准确性的方法。在这种模式中，模型将复杂任务分解为多个步骤，并依次执行每个步骤，以达到预期的目标.这类似于人类在处理复杂任务时所采用的分步计划和执行方法。每个步骤可以由不同的模型或工具来完成，增强了整体任务处理的灵活性和扩展性。<br>示例： HuggingGPT，采用ChatGPT作为控制器，利用其语言理解和生成能力进行任务规划，并根据Hugging Face中模型的描述选择合适的AI模型来执行子任务，最后汇总执行结果。</p><h3 id="工具使用-Tool-use"><a href="#工具使用-Tool-use" class="headerlink" title="工具使用(Tool use)"></a>工具使用(Tool use)</h3><p>工具调用（Tool Use）设计模式是一种让AI模型通过调用外部工具或库来增强任务执行能力的方法。<br>实现方式：（1）预先规划好；（2）自主调用</p><h3 id="多智能体协作-Multi-agent-collaboration"><a href="#多智能体协作-Multi-agent-collaboration" class="headerlink" title="多智能体协作(Multi-agent collaboration)"></a>多智能体协作(Multi-agent collaboration)</h3><p>多智能体协作（Multiagent Collaboration）设计模式是一种通过多个智能体之间的合作来提高任务执行效率和准确性的方法。在这种模式中，多个智能体分担任务，并通过相互交流和协作，共同完成复杂任务。</p><h1 id="Agent框架对比"><a href="#Agent框架对比" class="headerlink" title="Agent框架对比"></a>Agent框架对比</h1><h2 id="Auto-GPT"><a href="#Auto-GPT" class="headerlink" title="Auto-GPT"></a>Auto-GPT</h2><p>规划能力强<br>缺点：接口和变量的定义和Agent框架的概念没有对应，学习成本会高一些。</p><h2 id="AutoGen"><a href="#AutoGen" class="headerlink" title="AutoGen"></a>AutoGen</h2><p>内置扩展LangChain工具、使用Assistant API、在Docker容器中运行模型生成的代码、分布式智能体等功能。</p><h2 id="LangFlow"><a href="#LangFlow" class="headerlink" title="LangFlow"></a>LangFlow</h2><h2 id="CrewAI"><a href="#CrewAI" class="headerlink" title="CrewAI"></a>CrewAI</h2><p>CrewAI提供了一组用于构建和编排AI Agents组而设计的通用工具和库，用于处理多代理系统的场景人物，如代理通信、协调和决策等。</p><h2 id="MetaGPT"><a href="#MetaGPT" class="headerlink" title="MetaGPT"></a>MetaGPT</h2><p>多智能体系统框架。</p><h3 id="MetaGPT提供的RAG功能"><a href="#MetaGPT提供的RAG功能" class="headerlink" title="MetaGPT提供的RAG功能"></a>MetaGPT提供的RAG功能</h3><h2 id="Qwen-Agent"><a href="#Qwen-Agent" class="headerlink" title="Qwen-Agent"></a>Qwen-Agent</h2><h2 id="Auto-Gen"><a href="#Auto-Gen" class="headerlink" title="Auto-Gen"></a>Auto-Gen</h2><h2 id="AutoGLM"><a href="#AutoGLM" class="headerlink" title="AutoGLM"></a>AutoGLM</h2><h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><h3 id="LangGraph"><a href="#LangGraph" class="headerlink" title="LangGraph"></a>LangGraph</h3><p>LangGraph：状态机框架。</p><p><strong>LangChain的多智能体协作机制</strong></p><p><strong>LangChain的记忆功能是如何实现的</strong></p><p><strong>与AutoGen的核心差异</strong></p><p><strong>基于LangChain开发一个本地知识库系统</strong></p><h2 id="Flowise"><a href="#Flowise" class="headerlink" title="Flowise"></a>Flowise</h2><p>拖拽式编排，支持多智能体协作。</p><h1 id="优化与实践"><a href="#优化与实践" class="headerlink" title="优化与实践"></a>优化与实践</h1><h2 id="大模核心能力"><a href="#大模核心能力" class="headerlink" title="大模核心能力"></a>大模核心能力</h2><p>自主决策、任务规划、多模态交互、环境感知等</p><h2 id="多任务调度"><a href="#多任务调度" class="headerlink" title="多任务调度"></a>多任务调度</h2><h2 id="记忆管理"><a href="#记忆管理" class="headerlink" title="记忆管理"></a>记忆管理</h2><h2 id="工具调用"><a href="#工具调用" class="headerlink" title="工具调用"></a>工具调用</h2><h2 id="外部环境交互"><a href="#外部环境交互" class="headerlink" title="外部环境交互"></a>外部环境交互</h2><h2 id="智能体相关进展"><a href="#智能体相关进展" class="headerlink" title="智能体相关进展"></a>智能体相关进展</h2><h3 id="提升智能体推理能力"><a href="#提升智能体推理能力" class="headerlink" title="提升智能体推理能力"></a>提升智能体推理能力</h3><h4 id="ReAct-Reasoning-and-Acting-框架"><a href="#ReAct-Reasoning-and-Acting-框架" class="headerlink" title="ReAct(Reasoning and Acting)框架"></a>ReAct(Reasoning and Acting)框架</h4><p>大模型本身具有推理能力和执行能力(比如生成执行计划)，ReAct框架协同推理与执行，解决幻觉问题和COT推理中的错误传播问题、提高答案的可解释性。<br>ReAct采用few-shot in-context学习来生成解决问题的action和thought序列。每个in-context样例是由action、thought、observation构成的行为轨迹。<br>在推理占主导地位的应用中，我们交替生成thought和action，这样完整的行为轨迹就是多个thought-action-observation步骤。<br>在决策生成任务中（涉及大量action），thought只会在行为轨迹中最相关的位置稀疏出现，此时语言模型可用来决定thought和action的异步呈现顺序。</p><h3 id="智能体记忆框架"><a href="#智能体记忆框架" class="headerlink" title="智能体记忆框架"></a>智能体记忆框架</h3><p>Agent记忆包括短期记忆和长期记忆。<br>记忆内容包括：（1）内部任务信息；（2）跨任务信息；（3）外部知识。</p><h4 id="Graphiti"><a href="#Graphiti" class="headerlink" title="Graphiti"></a>Graphiti</h4><p>Graphiti 构建了具有时间感知的知识图谱，这些图谱会随着时间推移，随着关系和上下文的变化而演变，从而适应智能体的需求。</p><h4 id="Letta"><a href="#Letta" class="headerlink" title="Letta"></a>Letta</h4><p>Letta 是一个开源框架，用于构建具有高级推理能力和透明且长期记忆状态的智能体。Letta 框架是 “白盒” 设计，并且与模型无关。此外，它还允许用户在自己的服务器上以可视化方式测试、调试和观察智能体的行为。</p><h4 id="Mem0"><a href="#Mem0" class="headerlink" title="Mem0"></a>Mem0</h4><p>Mem0 是一个为智能体设计的智能记忆层，能够通过与用户的交互主动学习并适应变化。它结合了大语言模型（LLM）和向量存储技术。LLM 负责从对话中提取关键信息，而向量存储则用于语义搜索和记忆检索。</p><h4 id="Memary"><a href="#Memary" class="headerlink" title="Memary"></a>Memary</h4><p>Memary 赋予 AI 智能体类似人类的记忆能力。它通过知识图谱跟踪实体知识、偏好和聊天历史记录，并且该知识图谱会随着智能体与用户的交互自动更新。</p><h4 id="Cognee"><a href="#Cognee" class="headerlink" title="Cognee"></a>Cognee</h4><p>Cognee 是一个 Python 库，将知识图谱与 RAG 结合起来，为智能体和应用程序构建不断演化的语义记忆。它利用动态知识图谱来维护不同信息之间的关系。</p><h1 id="智能体应用发展"><a href="#智能体应用发展" class="headerlink" title="智能体应用发展"></a>智能体应用发展</h1><h2 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h2><p>OpenAI已经推出和即将推出的三款Agent产品</p><ul><li>Deep Research：可自主执行深入调研，自动总结并生成专业报告；</li><li>Operator：可充当线上“任务代理”，帮助预订机票、酒店、餐厅等；</li><li>A-SWE（Agentic Software Engineer）：可以自行完成软件开发、QA、Bug 测试和文档撰写，相当于一个“自动化开发者”。</li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p><a href="https://github.com/google/adk-python">Google adk-python</a><br><a href="https://github.com/microsoft/autogen">AutoGen</a><br><a href="https://github.com/langflow-ai/langflow.git">LangFlow</a><br><a href="https://github.com/FlowiseAI/Flowise">flowise</a><br><a href="https://github.com/crewAIInc/crewAI">CrewAI</a><br><a href="https://github.com/camel-ai/owl">OWL</a><br><a href="https://github.com/geekan/MetaGPT">MetaGPT</a><br><a href="https://github.com/langgenius/dify">Dify</a><br><a href="https://github.com/om-ai-lab/OmAgent">OmAgent</a><br><a href="https://www.langchain.com/langgraph">LangGraph</a><br><a href="https://github.com/huggingface/smolagents">SmolAgents</a><br><a href="https://github.com/plurai-ai/intellagent">intellagent</a><br><a href="https://github.com/camel-ai/owl">Optimized Workforce Learning</a><br><a href="https://github.com/getzep/graphiti?continueFlag=185e25247d3c66fe408f09ab1870b8ef">graphiti</a><br><a href="https://github.com/mem0ai/mem0?continueFlag=185e25247d3c66fe408f09ab1870b8ef">Mem0</a><br><a href="https://github.com/MotiaDev/motia">Motia</a><br><a href="https://www.genspark.ai/agents">GenSpark</a></p><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="https://google.github.io/adk-docs/agents/llm-agents/">Agent Development Kit文档</a><br><a href="https://arxiv.org/pdf/2502.05957">AutoAgent</a><br><a href="windsurf.com/blog/what-is-an-agent">windsurf.com&#x2F;blog&#x2F;what-is-an-agent</a><br><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">A Visual Guide to LLM Agents: Exploring the main components of Single- and Multi-Agents</a><br><a href="https://docs.deepwisdom.ai/main/zh/guide/tutorials/agent_101.html">Meta-GPT 智能体入门</a><br><a href="https://react-lm.github.io/">ReAct</a><br><a href="https://arthurchiao.art/blog/ai-agent-white-paper-zh/">AI Agent（智能体）技术白皮书</a></p><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/2504.01990">Advances and challenges in foundatation agents</a><br><a href="https://github.com/WooooDyy/LLM-Agent-Paper-List">LLM-Agent-Paper-List</a><br><a href="https://arxiv.org/pdf/2309.07864">The Rise and Potential of Large Language Model Based Agents: A Survey</a><br><a href="https://arxiv.org/pdf/2504.01990">ADVANCES AND CHALLENGES IN FOUNDATION AGENTS</a><br><a href="https://arxiv.org/pdf/2303.17651.pdf">Self-Refine: Iterative Refinement with Self-Feedback</a><br><a href="https://arxiv.org/pdf/2303.11366.pdf">Reflexion: Language Agents with Verbal Reinforcement Learning</a><br><a href="https://arxiv.org/pdf/2305.11738.pdf">CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing</a><br><a href="https://arxiv.org/abs/2305.15334">Gorilla: Large Language Model Connected with Massive APIs</a><br><a href="https://arxiv.org/abs/2303.11381">MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action</a><br><a href="https://arxiv.org/abs/2303.17580">HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face</a><br><a href="https://arxiv.org/abs/2308.08155">AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation</a><br><a href="https://arxiv.org/pdf/2501.06322">Multi-Agent Collaboration Mechanisms: A Survey of LLMs</a><br><a href="https://link.springer.com/article/10.1007/s11704-024-40231-1">A Survey on Large Language Model Based Autonomous Agents</a><br><a href="https://arxiv.org/pdf/2503.12434">A Survey on the Optimization of Large Language Model-based Agents</a></p><h3 id="课程-教程"><a href="#课程-教程" class="headerlink" title="课程&#x2F;教程"></a>课程&#x2F;教程</h3><p><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/">Multi AI Agent Systems with crewAI</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/">AI Agentic Design Patterns with AutoGen</a><br><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/">AI Agents in LangGraph</a><br><a href="https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/">LLMs as Operating Systems: Agent Memory</a><br><a href="https://www.youtube.com/watch?v=sC9SV06gsDM">LangFlow创建流程视频教程</a></p>]]></content>
     
     
     <categories>
@@ -1636,6 +1691,31 @@
       <tag>注意力机制</tag>
       
       <tag>Transformer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数字分身(Digital twin)</title>
+    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/"/>
+    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/</url>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Digital twin：译作数字孪生、数字分身、数位双生，指在信息化平台内模拟物理实体、流程或者系统，类似实体系统在信息化平台中的双胞胎。[1]</p><h1 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h1><h2 id="Second-Me；实现数字版的你"><a href="#Second-Me；实现数字版的你" class="headerlink" title="Second Me；实现数字版的你"></a>Second Me；实现数字版的你</h2><p>基于AI原生记忆、分层记忆建模和Me-Alignment算法，它通过分析理解你的记忆和经历，学习你的思维方式、价值观和行为模式，从而来构建一个高度个性化的AI分身。它可以记住你的重要信息、代表你与他人&#x2F;应用互动，如回复邮件、参与在线讨论等。</p><p>支持本地化部署，数据存储和训练在本地进行。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E6%98%A0%E5%B0%84">数字映射-维基百科</a><br><a href="https://github.com/mindverse/Second-Me">Second Me</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
       
     </tags>
     
@@ -1736,11 +1816,11 @@
       
       <tag>LLM</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>Prompts</tag>
       
       <tag>提示词工程</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -1845,9 +1925,9 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
-      
       <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -1882,46 +1962,9 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
-      
       <tag>Robotics</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
-    <link href="/tech-blog/2025/03/23/UMI/"/>
-    <url>/tech-blog/2025/03/23/UMI/</url>
-    
-    <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>Research</tag>
-      
       <tag>ComputerVision</tag>
-      
-      <tag>Robotics</tag>
       
     </tags>
     
@@ -1956,9 +1999,9 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
-      
       <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -1967,11 +2010,11 @@
   
   
   <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
+    <link href="/tech-blog/2025/03/23/UMI/"/>
+    <url>/tech-blog/2025/03/23/UMI/</url>
     
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
     
     
     <categories>
@@ -1993,46 +2036,9 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
-      
       <tag>Robotics</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/</url>
-    
-    <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>Research</tag>
-      
       <tag>ComputerVision</tag>
-      
-      <tag>Robotics</tag>
       
     </tags>
     
@@ -2067,9 +2073,83 @@
       
       <tag>Research</tag>
       
+      <tag>Robotics</tag>
+      
       <tag>ComputerVision</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Research</tag>
+      
       <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/</url>
+    
+    <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -2102,9 +2182,9 @@
       
       <tag>Research</tag>
       
-      <tag>ComputerVision</tag>
-      
       <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
       
       <tag>DiffusionModels</tag>
       
@@ -2137,9 +2217,9 @@
       
       <tag>AI</tag>
       
-      <tag>DeepLearning</tag>
-      
       <tag>Robotics</tag>
+      
+      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       
@@ -2174,9 +2254,9 @@
       
       <tag>AI</tag>
       
-      <tag>DeepLearning</tag>
-      
       <tag>Robotics</tag>
+      
+      <tag>DeepLearning</tag>
       
       <tag>Robot</tag>
       

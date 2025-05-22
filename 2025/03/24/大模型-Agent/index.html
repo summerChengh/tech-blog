@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://summerchengh.github.io/tech-blog/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent/agent-architecture.png">
 <meta property="article:published_time" content="2025-03-23T20:26:00.000Z">
-<meta property="article:modified_time" content="2025-05-14T06:23:17.435Z">
+<meta property="article:modified_time" content="2025-05-22T03:43:09.497Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
@@ -255,7 +255,7 @@
         
         
         
-          19 mins
+          20 mins
         
       </span>
     
@@ -328,7 +328,8 @@
 <h2 id="Agents主要组件"><a href="#Agents主要组件" class="headerlink" title="Agents主要组件"></a>Agents主要组件</h2><h3 id="配置模块（Profile-Module）"><a href="#配置模块（Profile-Module）" class="headerlink" title="配置模块（Profile Module）"></a>配置模块（Profile Module）</h3><p>旨在指示agent角色的特征描述，这些评测通常被写入提示中以影响LLM行为。Agent profile通常包含基本信息，例如年龄、性别和职业，以及心理学信息（反映了agent的个性）和社交信息（详细说明了agent之间的关系）。描述agent信息的选择在很大程度上取决于具体的应用场景。</p>
 <h4 id="人工生成"><a href="#人工生成" class="headerlink" title="人工生成"></a>人工生成</h4><h4 id="LLM生成"><a href="#LLM生成" class="headerlink" title="LLM生成"></a>LLM生成</h4><p>基于LLM自动生成，例如，RecAgent首先通过手动制作一些agents的背景，如年龄、性别、个人特征和电影偏好，为他们创建种子档案（profile）。然后，它利用ChatGPT基于种子信息生成更多的agent profile（代理配置文件）。该方法高效但缺乏对Profile的精确控制。</p>
 <h4 id="数据集对齐方法"><a href="#数据集对齐方法" class="headerlink" title="数据集对齐方法"></a>数据集对齐方法</h4><h3 id="记忆模块（Memory-Module）"><a href="#记忆模块（Memory-Module）" class="headerlink" title="记忆模块（Memory Module）"></a>记忆模块（Memory Module）</h3><h4 id="短期记忆"><a href="#短期记忆" class="headerlink" title="短期记忆"></a>短期记忆</h4><h4 id="长期记忆"><a href="#长期记忆" class="headerlink" title="长期记忆"></a>长期记忆</h4><p>长期记忆一般采用向量数据库实现</p>
-<h3 id="规划模块（Planning-Module）"><a href="#规划模块（Planning-Module）" class="headerlink" title="规划模块（Planning Module）"></a>规划模块（Planning Module）</h3><h3 id="执行模块（Action-Module）"><a href="#执行模块（Action-Module）" class="headerlink" title="执行模块（Action Module）"></a>执行模块（Action Module）</h3><h2 id="Agent设计模式"><a href="#Agent设计模式" class="headerlink" title="Agent设计模式"></a>Agent设计模式</h2><h3 id="反思-Reflection"><a href="#反思-Reflection" class="headerlink" title="反思(Reflection)"></a>反思(Reflection)</h3><p>自我反思是一个通过语言反馈来强化基于大模型的智能体的框架。根据 Shinn et al. (2023)，”自我反思是一种’口头’强化的新范例，它将策略参数化为智能体的记忆编码与 LLM 的参数选择配对。”<br>在高层次上，自我反思将来自环境的反馈（自由形式的语言或者标量）转换为语言反馈，也被称作 self-reflection，为下一轮中 LLM 智能体提供上下文。这有助于智能体快速有效地从之前的错误中学习，进而提升许多高级任务的性能。</p>
+<h4 id="LangChain的Memory实现"><a href="#LangChain的Memory实现" class="headerlink" title="LangChain的Memory实现"></a>LangChain的Memory实现</h4><h4 id="CrewAI的Memory实现"><a href="#CrewAI的Memory实现" class="headerlink" title="CrewAI的Memory实现"></a>CrewAI的Memory实现</h4><p>CrewAI的短时记忆使用RAG机制实现<br>CrewAI的长时记忆使用</p>
+<h4 id="SmolAgents的Memory实现"><a href="#SmolAgents的Memory实现" class="headerlink" title="SmolAgents的Memory实现"></a>SmolAgents的Memory实现</h4><h4 id="AutoGen的Memory实现"><a href="#AutoGen的Memory实现" class="headerlink" title="AutoGen的Memory实现"></a>AutoGen的Memory实现</h4><h3 id="规划模块（Planning-Module）"><a href="#规划模块（Planning-Module）" class="headerlink" title="规划模块（Planning Module）"></a>规划模块（Planning Module）</h3><h3 id="执行模块（Action-Module）"><a href="#执行模块（Action-Module）" class="headerlink" title="执行模块（Action Module）"></a>执行模块（Action Module）</h3><h2 id="Agent设计模式"><a href="#Agent设计模式" class="headerlink" title="Agent设计模式"></a>Agent设计模式</h2><h3 id="反思-Reflection"><a href="#反思-Reflection" class="headerlink" title="反思(Reflection)"></a>反思(Reflection)</h3><p>自我反思是一个通过语言反馈来强化基于大模型的智能体的框架。根据 Shinn et al. (2023)，”自我反思是一种’口头’强化的新范例，它将策略参数化为智能体的记忆编码与 LLM 的参数选择配对。”<br>在高层次上，自我反思将来自环境的反馈（自由形式的语言或者标量）转换为语言反馈，也被称作 self-reflection，为下一轮中 LLM 智能体提供上下文。这有助于智能体快速有效地从之前的错误中学习，进而提升许多高级任务的性能。</p>
 <p>简单的自我反思由两个LLM组成，一个作为生成器，一个对生成器的结果进行Reflect。</p>
 <p>Reflextion Agents由三个不同的大模型组成：参与者、评估者、自我反思。</p>
 <p>自我反思的关键步骤：（1）任务定义；（2）生成轨迹；（3）评估；（4）执行自我反思；（5）生成下一条轨迹。<br>自我反思引入了自我评估、自我反思、记忆组建来拓展ReAct框架。</p>
@@ -464,8 +465,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E5%AD%97%E5%88%86%E8%BA%AB/" title="数字分身(Digital twin)">
-                        <span class="hidden-mobile">数字分身(Digital twin)</span>
+                      <a href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E7%90%86%E8%AE%BA-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" title="注意力机制：深度学习中的关键创新">
+                        <span class="hidden-mobile">注意力机制：深度学习中的关键创新</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
