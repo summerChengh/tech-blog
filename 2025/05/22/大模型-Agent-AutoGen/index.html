@@ -27,7 +27,7 @@
 <meta property="og:description" content="简介记忆机制RAG基于chroma向量数据库实现的RAG存储机制。核心向量索引技术是基于hnswlib库实现的HNSW算法 向量数据库AutoGen使用ChromeDB而不是其他类型的向量数据库。    特性 ChromaDB Milvus FAISS Pinecone    安装与部署 ✅ pip 即可用 ❌ 需要 docker + 服务端 ✅ 仅库 ❌ 需注册云账号   适合规模 小～中 中～">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-22T01:30:00.000Z">
-<meta property="article:modified_time" content="2025-05-23T07:14:37.818Z">
+<meta property="article:modified_time" content="2025-05-27T05:16:33.667Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Agent">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          2.5k words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          12 mins
+          21 mins
         
       </span>
     
@@ -349,12 +349,201 @@
 <h1 id="缓存存储"><a href="#缓存存储" class="headerlink" title="缓存存储"></a>缓存存储</h1><p>提供了两种缓存存储机制：Redis和DiskCache。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><strong>组件架构</strong><br>实现了AutoGen的Component接口，支持序列化和反序列化<br>提供了_to_config和_from_config方法，实现配置与实例间的转换<br><strong>泛型支持</strong><br>支持缓存任何类型的数据<br><strong>依赖注入</strong><br>构造函数接受外部创建的缓存实例，使用户可以灵活配置</p>
 <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p><strong>缓存LLM结果</strong><br>减少重复的API调用，节约成本<br>提供应用的响应速度<br><strong>作为分布式应用的共享状态</strong><br>Redis实现适合多实例&#x2F;多服务器部署<br>支持团队协作和共享缓存<br><strong>持久化存储</strong><br>DiskCache提供了本地持久化存储<br>适合单机部署或不要共享缓存的场景</p>
-<h1 id="代码执行器"><a href="#代码执行器" class="headerlink" title="代码执行器"></a>代码执行器</h1><h2 id="azure"><a href="#azure" class="headerlink" title="azure"></a>azure</h2><h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><h2 id="jupyter"><a href="#jupyter" class="headerlink" title="jupyter"></a>jupyter</h2><h2 id="local"><a href="#local" class="headerlink" title="local"></a>local</h2><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="代码执行器-1"><a href="#代码执行器-1" class="headerlink" title="代码执行器"></a>代码执行器</h2><h2 id="Microsoft-Azure"><a href="#Microsoft-Azure" class="headerlink" title="Microsoft Azure"></a>Microsoft Azure</h2><h2 id="graphrag"><a href="#graphrag" class="headerlink" title="graphrag"></a>graphrag</h2><h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h2 id="Langchain"><a href="#Langchain" class="headerlink" title="Langchain"></a>Langchain</h2><h2 id="MCP"><a href="#MCP" class="headerlink" title="MCP"></a>MCP</h2><h2 id="Semantic-Kernel"><a href="#Semantic-Kernel" class="headerlink" title="Semantic Kernel"></a>Semantic Kernel</h2><p>Semantic Kernel（语义内核）是微软推出的开源SDK，旨在将大型语言模型（LLM）与传统编程语言（如C#、Pythovn、Java）无缝集成，帮助开发者构建结合AI自然语言能力和传统编程精确性的智能应用。</p>
+<h1 id="代码执行器"><a href="#代码执行器" class="headerlink" title="代码执行器"></a>代码执行器</h1><h2 id="azure"><a href="#azure" class="headerlink" title="azure"></a>azure</h2><h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><h2 id="jupyter"><a href="#jupyter" class="headerlink" title="jupyter"></a>jupyter</h2><h2 id="local"><a href="#local" class="headerlink" title="local"></a>local</h2><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="代码执行器-1"><a href="#代码执行器-1" class="headerlink" title="代码执行器"></a>代码执行器</h2><h2 id="Microsoft-Azure"><a href="#Microsoft-Azure" class="headerlink" title="Microsoft Azure"></a>Microsoft Azure</h2><h2 id="Graphrag"><a href="#Graphrag" class="headerlink" title="Graphrag"></a>Graphrag</h2><p>AutoGen的GraphRAG是一个基于图结构的检索增强生成(RAG)工具，它将图数据库和语义搜索相结合，用于在大型文档集合上执行更智能的搜索和信息检索。GraphRAG扩展了传统RAG系统，通过将文档间的关系建模为图，实现了更复杂、更相关的信息检索。</p>
+<h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><p>GraphRAG在AutoGen中提供了两种主要的搜索工具:</p>
+<h3 id="1-GlobalSearchTool"><a href="#1-GlobalSearchTool" class="headerlink" title="1. GlobalSearchTool"></a>1. GlobalSearchTool</h3><p>用于执行全局范围的搜索，关注整个文档集合的概述和社区级别的信息:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalSearchTool</span>(BaseTool[GlobalSearchToolArgs, GlobalSearchToolReturn]):<br>    <span class="hljs-string">&quot;&quot;&quot;Enables running GraphRAG global search queries as an AutoGen tool.&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>用途</strong>: 回答关于整体趋势、主题社区和高层次概念的广泛问题</li>
+<li><strong>配置</strong>: 通过<code>GlobalDataConfig</code>配置数据源，使用<code>GlobalContextConfig</code>配置上下文参数</li>
+<li><strong>主要组件</strong>:<ul>
+<li>社区(Communities): 相关实体的集合</li>
+<li>社区报告(Reports): 关于社区的文本摘要和见解</li>
+<li>Map-Reduce流程: 使用<code>MapReduceConfig</code>配置分批处理大型文档集</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-LocalSearchTool"><a href="#2-LocalSearchTool" class="headerlink" title="2. LocalSearchTool"></a>2. LocalSearchTool</h3><p>用于执行专注于特定实体和关系的本地搜索:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LocalSearchTool</span>(BaseTool[LocalSearchToolArgs, LocalSearchToolReturn]):<br>    <span class="hljs-string">&quot;&quot;&quot;Enables running GraphRAG local search queries as an AutoGen tool.&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>用途</strong>: 回答关于特定实体、实体间关系或详细事实的精确问题</li>
+<li><strong>配置</strong>: 通过<code>LocalDataConfig</code>配置数据源，使用<code>LocalContextConfig</code>配置上下文参数</li>
+<li><strong>主要组件</strong>:<ul>
+<li>实体(Entities): 文档中的关键概念或对象</li>
+<li>关系(Relationships): 实体之间的连接</li>
+<li>文本单元(Text Units): 包含实体信息的文本段落</li>
+</ul>
+</li>
+</ul>
+<h2 id="配置类"><a href="#配置类" class="headerlink" title="配置类"></a>配置类</h2><p>GraphRAG工具使用多级配置系统来自定义搜索行为:</p>
+<h3 id="数据配置"><a href="#数据配置" class="headerlink" title="数据配置"></a>数据配置</h3><ul>
+<li><strong>DataConfig</strong>: 基础数据配置，指定输入目录和表名</li>
+<li><strong>GlobalDataConfig</strong>: 全局搜索专用配置，添加了社区相关表格</li>
+<li><strong>LocalDataConfig</strong>: 本地搜索专用配置，添加了关系和文本单元表格</li>
+</ul>
+<h3 id="上下文配置"><a href="#上下文配置" class="headerlink" title="上下文配置"></a>上下文配置</h3><ul>
+<li><strong>ContextConfig</strong>: 基础上下文配置，设置最大令牌数</li>
+<li><strong>GlobalContextConfig</strong>: 控制社区数据如何被使用(权重、排名等)</li>
+<li><strong>LocalContextConfig</strong>: 控制实体、关系和文本单元的使用比例</li>
+</ul>
+<h3 id="搜索和处理配置"><a href="#搜索和处理配置" class="headerlink" title="搜索和处理配置"></a>搜索和处理配置</h3><ul>
+<li><strong>MapReduceConfig</strong>: 控制全局搜索中的Map-Reduce流程</li>
+<li><strong>SearchConfig</strong>: 控制本地搜索行为</li>
+</ul>
+<h2 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h2><ol>
+<li><p><strong>前提条件</strong>: </p>
+<ul>
+<li>安装依赖: <code>pip install -U &quot;autogen-agentchat&quot; &quot;autogen-ext[graphrag]&quot;</code></li>
+<li>完成GraphRAG索引过程，生成必要的数据文件</li>
+</ul>
+</li>
+<li><p><strong>初始化工具</strong>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 从GraphRAG设置文件创建工具</span><br>global_tool = GlobalSearchTool.from_settings(settings_path=<span class="hljs-string">&quot;./settings.yaml&quot;</span>)<br>local_tool = LocalSearchTool.from_settings(settings_path=<span class="hljs-string">&quot;./settings.yaml&quot;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>集成到AutoGen代理</strong>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">assistant_agent = AssistantAgent(<br>    name=<span class="hljs-string">&quot;search_assistant&quot;</span>,<br>    tools=[global_tool, local_tool],<br>    model_client=openai_client,<br>    system_message=<span class="hljs-string">&quot;你是一个使用GraphRAG框架的AI助手...&quot;</span><br>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>执行搜索</strong>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 全局搜索示例</span><br><span class="hljs-keyword">await</span> assistant_agent.run_stream(task=<span class="hljs-string">&quot;整个数据集的整体情感是什么?&quot;</span>)<br><br><span class="hljs-comment"># 本地搜索示例</span><br><span class="hljs-keyword">await</span> assistant_agent.run_stream(task=<span class="hljs-string">&quot;站长关于Becher博士说了什么?&quot;</span>)<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><ol>
+<li><strong>向量存储</strong>: 使用<code>LanceDBVectorStore</code>存储实体嵌入，用于语义搜索</li>
+<li><strong>文本编码</strong>: 使用<code>tiktoken</code>进行标记化和编码</li>
+<li><strong>上下文构建</strong>: <ul>
+<li><code>GlobalCommunityContext</code>: 构建基于社区的全局上下文</li>
+<li><code>LocalSearchMixedContext</code>: 混合实体、关系和文本单元构建本地上下文</li>
+</ul>
+</li>
+<li><strong>并发处理</strong>: 全局搜索支持高并发协程执行</li>
+</ol>
+<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><ol>
+<li><p><strong>数据预处理与索引</strong>:</p>
+<ul>
+<li>文档被分解为实体、关系和文本单元</li>
+<li>实体被分组为社区，生成社区报告</li>
+<li>所有元素被嵌入到向量空间</li>
+</ul>
+</li>
+<li><p><strong>查询处理</strong>:</p>
+<ul>
+<li>分析用户查询，确定相关实体和主题</li>
+<li>根据查询类型选择适当的搜索策略</li>
+</ul>
+</li>
+<li><p><strong>上下文构建</strong>:</p>
+<ul>
+<li>全局搜索: 收集相关社区及其报告</li>
+<li>本地搜索: 获取特定实体及其关系和相关文本</li>
+</ul>
+</li>
+<li><p><strong>生成回答</strong>:</p>
+<ul>
+<li>将构建的上下文与用户查询一起发送给LLM</li>
+<li>(对于全局搜索)使用Map-Reduce处理大型上下文</li>
+</ul>
+</li>
+</ol>
+<p>GraphRAG通过将图结构与语义搜索相结合，提供了比传统RAG系统更强大的搜索能力，尤其适合处理多文档、复杂关系的信息检索任务。</p>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><h3 id="特点与优势"><a href="#特点与优势" class="headerlink" title="特点与优势"></a>特点与优势</h3><p>灵活的API集成: 可以连接到任何HTTP&#x2F;HTTPS服务<br>参数验证: 使用JSON Schema保证输入参数的合法性<br>路径参数支持: 可以方便地在URL路径中插入参数<br>异步实现: 基于httpx的异步HTTP客户端<br>多种HTTP方法: 支持GET、POST、PUT、DELETE、PATCH<br>灵活的响应处理: 可以返回原始文本或JSON对象</p>
+<h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><p>访问Web API: 连接到外部服务如天气API、翻译服务等<br>数据检索: 从在线数据源获取信息<br>服务集成: 接入企业内部服务<br>工具扩展: 通过HTTP扩展代理的能力</p>
+<h2 id="Langchain"><a href="#Langchain" class="headerlink" title="Langchain"></a>Langchain</h2><h2 id="MCP"><a href="#MCP" class="headerlink" title="MCP"></a>MCP</h2><h2 id="Semantic-Kernel"><a href="#Semantic-Kernel" class="headerlink" title="Semantic Kernel"></a>Semantic Kernel</h2><p>Semantic Kernel（语义内核）是微软推出的开源SDK，旨在将大型语言模型（LLM）与传统编程语言（如C#、Pythovn、Java）无缝集成，帮助开发者构建结合AI自然语言能力和传统编程精确性的智能应用。</p>
 <h1 id="大模型"><a href="#大模型" class="headerlink" title="大模型"></a>大模型</h1><h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h2 id="Olloma"><a href="#Olloma" class="headerlink" title="Olloma"></a>Olloma</h2><h2 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="多智能体协作（AutoGen-Teams）"><a href="#多智能体协作（AutoGen-Teams）" class="headerlink" title="多智能体协作（AutoGen Teams）"></a>多智能体协作（AutoGen Teams）</h1><h2 id="SelectorGroupChat"><a href="#SelectorGroupChat" class="headerlink" title="SelectorGroupChat"></a>SelectorGroupChat</h2><p><strong>适用场景</strong><br><strong>潜在问题</strong></p>
-<h2 id="并行执行"><a href="#并行执行" class="headerlink" title="并行执行"></a>并行执行</h2><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h1 id="任务中心记忆-1"><a href="#任务中心记忆-1" class="headerlink" title="任务中心记忆"></a>任务中心记忆</h1><h2 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h2><p>解决以下问题:<br>帮助AI代理突破上下文窗口的限制<br>记住用户提供的指导、纠正和计划<br>从代理自身经验中学习<br>避免重复之前犯过的错误</p>
-<p>Task-Centric Memory 核心组件<br>MemoryController：<br>主要控制器类，管理记忆的创建、存储和检索<br>提供API用于添加记忆(memo)、检索相关记忆，以及从任务中学习<br>负责与MemoryBank通信并处理记忆流程<br>MemoryBank：<br>存储记忆的核心组件<br>使用向量数据库存储”topic”到”insight”的映射<br>管理记忆的持久化存储和检索<br>Memo：<br>记忆的基本单位，包含两个主要字段：<br>task：可选的任务描述<br>insight：帮助解决类似任务的提示、解决方案或计划<br>StringSimilarityMap：<br>实现语义相似度搜索功能<br>用于找到与当前任务语义上相关的记忆<br>Prompter：<br>负责生成各种提示以与LLM交互<br>处理任务泛化和主题提取<br>工作流程<br>记忆创建和存储：<br>Apply to _rich_consol…<br>)<br>系统将任务泛化，以便更好地匹配未来相似但不完全相同的任务<br>从任务和洞察中提取主题(topics)<br>这些主题被映射到记忆，并存储在向量数据库中<br>记忆检索：<br>Apply to _rich_consol…<br>)<br>对给定任务进行泛化处理<br>从泛化任务中提取查询主题<br>在向量数据库中查找与这些主题最相似的存储主题<br>筛选出最相关的记忆，并通过LLM验证它们对当前任务的有用性<br>记忆使用：<br>检索到的记忆被格式化为提示，附加到发送给代理的任务描述中<br>代理可以利用这些记忆解决当前任务<br>学习循环：<br>系统可以通过train_on_task方法从任务执行中学习<br>它会多次尝试任务，发现失败模式，然后生成有用的洞察力(insights)<br>这些洞察力被添加到记忆库中，用于未来相似任务<br>技术特点<br>任务泛化：将特定任务转化为更一般的形式，提高知识迁移能力<br>主题提取：从任务和洞察中提取多词主题，增强语义匹配<br>相似度过滤：使用向量相似度和LLM验证双层过滤，确保检索记忆的相关性<br>持久化存储：记忆可以保存到磁盘，在不同会话间保持<br>集成方式<br>代码提供了两种集成方式：<br>直接使用MemoryController：<br>Apply to _rich_consol…<br>)<br>创建支持记忆的代理：<br>Apply to _rich_consol…<br>代理实现<br>研究状态和限制<br>注意代码中多次标记”EXPERIMENTAL, RESEARCH IN PROGRESS”，表明这是一个实验性功能，仍在积极开发中。主要目标是解决以下问题：<br>帮助AI代理突破上下文窗口的限制<br>记住用户提供的指导、纠正和计划<br>从代理自身经验中学习<br>避免重复之前犯过的错误<br>这个实验性功能代表了AutoGen朝着更持久、更适应性强的AI代理迈出的重要一步，使AI能够从交互中积累知识并应用于未来任务</p>
+<h2 id="并行执行"><a href="#并行执行" class="headerlink" title="并行执行"></a>并行执行</h2><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h1 id="任务中心记忆-1"><a href="#任务中心记忆-1" class="headerlink" title="任务中心记忆"></a>任务中心记忆</h1><p>AutoGen的<code>@experimental</code>模块是一个包含实验性功能的代码集合，目前主要包含”Task-Centric Memory”（任务中心记忆）功能。这个功能旨在解决AI代理的记忆限制问题，让AI能够从之前的交互中学习并在未来的任务中应用这些知识。</p>
+<h2 id="Task-Centric-Memory-核心组件"><a href="#Task-Centric-Memory-核心组件" class="headerlink" title="Task-Centric Memory 核心组件"></a>Task-Centric Memory 核心组件</h2><ol>
+<li><p><strong>MemoryController</strong>：</p>
+<ul>
+<li>主要控制器类，管理记忆的创建、存储和检索</li>
+<li>提供API用于添加记忆(memo)、检索相关记忆，以及从任务中学习</li>
+<li>负责与MemoryBank通信并处理记忆流程</li>
+</ul>
+</li>
+<li><p><strong>MemoryBank</strong>：</p>
+<ul>
+<li>存储记忆的核心组件</li>
+<li>使用向量数据库存储”topic”到”insight”的映射</li>
+<li>管理记忆的持久化存储和检索</li>
+</ul>
+</li>
+<li><p><strong>Memo</strong>：</p>
+<ul>
+<li>记忆的基本单位，包含两个主要字段：<ul>
+<li><code>task</code>：可选的任务描述</li>
+<li><code>insight</code>：帮助解决类似任务的提示、解决方案或计划</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>StringSimilarityMap</strong>：</p>
+<ul>
+<li>实现语义相似度搜索功能</li>
+<li>用于找到与当前任务语义上相关的记忆</li>
+</ul>
+</li>
+<li><p><strong>Prompter</strong>：</p>
+<ul>
+<li>负责生成各种提示以与LLM交互</li>
+<li>处理任务泛化和主题提取</li>
+</ul>
+</li>
+</ol>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><ol>
+<li><p><strong>记忆创建和存储</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">await</span> memory_controller.add_memo(task=<span class="hljs-string">&quot;What color do I like?&quot;</span>, insight=<span class="hljs-string">&quot;Deep blue is my favorite color&quot;</span>)<br></code></pre></td></tr></table></figure>
+<ul>
+<li>系统将任务泛化，以便更好地匹配未来相似但不完全相同的任务</li>
+<li>从任务和洞察中提取主题(topics)</li>
+<li>这些主题被映射到记忆，并存储在向量数据库中</li>
+</ul>
+</li>
+<li><p><strong>记忆检索</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">memos = <span class="hljs-keyword">await</span> memory_controller.retrieve_relevant_memos(task=<span class="hljs-string">&quot;What colors do I like most?&quot;</span>)<br></code></pre></td></tr></table></figure>
+<ul>
+<li>对给定任务进行泛化处理</li>
+<li>从泛化任务中提取查询主题</li>
+<li>在向量数据库中查找与这些主题最相似的存储主题</li>
+<li>筛选出最相关的记忆，并通过LLM验证它们对当前任务的有用性</li>
+</ul>
+</li>
+<li><p><strong>记忆使用</strong>：</p>
+<ul>
+<li>检索到的记忆被格式化为提示，附加到发送给代理的任务描述中</li>
+<li>代理可以利用这些记忆解决当前任务</li>
+</ul>
+</li>
+<li><p><strong>学习循环</strong>：</p>
+<ul>
+<li>系统可以通过<code>train_on_task</code>方法从任务执行中学习</li>
+<li>它会多次尝试任务，发现失败模式，然后生成有用的洞察力(insights)</li>
+<li>这些洞察力被添加到记忆库中，用于未来相似任务</li>
+</ul>
+</li>
+</ol>
+<h2 id="技术特点"><a href="#技术特点" class="headerlink" title="技术特点"></a>技术特点</h2><ol>
+<li><strong>任务泛化</strong>：将特定任务转化为更一般的形式，提高知识迁移能力</li>
+<li><strong>主题提取</strong>：从任务和洞察中提取多词主题，增强语义匹配</li>
+<li><strong>相似度过滤</strong>：使用向量相似度和LLM验证双层过滤，确保检索记忆的相关性</li>
+<li><strong>持久化存储</strong>：记忆可以保存到磁盘，在不同会话间保持</li>
+</ol>
+<h2 id="集成方式"><a href="#集成方式" class="headerlink" title="集成方式"></a>集成方式</h2><p>代码提供了两种集成方式：</p>
+<ol>
+<li><p><strong>直接使用MemoryController</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">memory_controller = MemoryController(reset=<span class="hljs-literal">True</span>, client=client)<br><span class="hljs-keyword">await</span> memory_controller.add_memo(task=<span class="hljs-string">&quot;...&quot;</span>, insight=<span class="hljs-string">&quot;...&quot;</span>)<br>memos = <span class="hljs-keyword">await</span> memory_controller.retrieve_relevant_memos(task=<span class="hljs-string">&quot;...&quot;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>创建支持记忆的代理</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MemoryEnabledAgent</span>(<span class="hljs-title class_ inherited__">RoutedAgent</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, description, model_client, memory_controller</span>):<br>        <span class="hljs-comment"># ...代理实现</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="研究状态和限制"><a href="#研究状态和限制" class="headerlink" title="研究状态和限制"></a>研究状态和限制</h2><p>注意代码中多次标记”EXPERIMENTAL, RESEARCH IN PROGRESS”，表明这是一个实验性功能，仍在积极开发中。主要目标是解决以下问题：</p>
+<ol>
+<li>帮助AI代理突破上下文窗口的限制</li>
+<li>记住用户提供的指导、纠正和计划</li>
+<li>从代理自身经验中学习</li>
+<li>避免重复之前犯过的错误</li>
+</ol>
 <h1 id="应用实践"><a href="#应用实践" class="headerlink" title="应用实践"></a>应用实践</h1><h2 id="个性化"><a href="#个性化" class="headerlink" title="个性化"></a>个性化</h2><p>每个用户的问题&#x2F;回答如何存储？<br>再次提问时如何构造当前问题的上下文？<br>如何实现借助超过大模型Context窗口的上下文实现更好的推理？</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://github.com/karthik-codex/Autogen_GraphRAG_Ollama">Autogen_GraphRAG_Ollama</a></p>
+
                 
               </div>
             
