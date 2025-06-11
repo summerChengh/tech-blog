@@ -4,11 +4,73 @@
   
   
   <entry>
-    <title>KVCache</title>
-    <link href="/tech-blog/2025/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-KVCache/"/>
-    <url>/tech-blog/2025/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-KVCache/</url>
+    <title>基于本地知识库的智能问答</title>
+    <link href="/tech-blog/2026/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E6%99%BA%E8%83%BD%E9%97%AE%E7%AD%94/"/>
+    <url>/tech-blog/2026/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E6%99%BA%E8%83%BD%E9%97%AE%E7%AD%94/</url>
     
-    <content type="html"><![CDATA[<p>KVCache解决的是什么问题？</p><p>实现方式</p><h1 id="标准推理-vs-KVCache"><a href="#标准推理-vs-KVCache" class="headerlink" title="标准推理 vs KVCache"></a>标准推理 vs KVCache</h1><table><thead><tr><th>特性</th><th>标准推理</th><th>KVCache缓存</th></tr></thead><tbody><tr><td>每词计算量</td><td>每个词都重复相同计算</td><td>复用历史计算，结果更快</td></tr><tr><td>内存占用</td><td>每步内存占用少，但文本越长内存增长</td><td>额外占用内存存储历史信息，但整体更高效</td></tr><tr><td>速度</td><td>文本越长越慢，因为重复计算</td><td>避免重复计算，长文本也能保持高速</td></tr><tr><td>效率</td><td>计算成本高，响应慢</td><td>记忆历史计算，效率更高，响应更快</td></tr><tr><td>长文本处理</td><td>长文本时因重复计算容易卡顿</td><td>适合长文本，能记住历史步骤，处理流畅</td></tr></tbody></table><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://huggingface.co/blog/not-lain/kv-caching">KV Caching Explained: Optimizing Transformer Inference Efficiency</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="多轮问答优化"><a href="#多轮问答优化" class="headerlink" title="多轮问答优化"></a>多轮问答优化</h1><p>受限于LLM的上下文窗口，多轮问答可能出现“偏离主题”等问题。</p><h2 id="常见的解决方案"><a href="#常见的解决方案" class="headerlink" title="常见的解决方案"></a>常见的解决方案</h2><h3 id="MemoryOS"><a href="#MemoryOS" class="headerlink" title="MemoryOS"></a>MemoryOS</h3><p>在LoCoMo上，其在F1和BLEU-1分数上分别实现了平均 49.11%和46.18%的提升</p><p>它通过分层的方式来管理记忆，分为短期、中期以及长期记忆，使AI能更高效的处理信息</p><p>可以自动更新，系统会自动把短期记忆整合到中期记忆中，中期记忆的内容如果被频繁使用，就会被分析，关键信息会被存到长期记忆里</p><p>有上下文感知能力，生成回复时，系统会从所有记忆层检索相关信息，提供更符合上下文的回复</p><p>有四个核心模块：存储、更新、检索、生成<br>1、存储，存储不同层级的记忆<br>2、更新，在不同记忆层级之间转移和更新信息<br>3、检索，从记忆中检索相关信息<br>4、生成，根据查询和检索到的记忆生成回复 </p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/BAI-LAB/MemoryOS">MemoryOS</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Speculative Decoding</title>
+    <link href="/tech-blog/2025/06/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-Speculative%20Decoding/"/>
+    <url>/tech-blog/2025/06/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-Speculative%20Decoding/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>LLM</tag>
+      
+      <tag>Research</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>KVCache</title>
+    <link href="/tech-blog/2025/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-KVCache/"/>
+    <url>/tech-blog/2025/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-KVCache/</url>
+    
+    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>Prefill + Decode 分离</p><h1 id="KVCache解决的是什么问题？"><a href="#KVCache解决的是什么问题？" class="headerlink" title="KVCache解决的是什么问题？"></a>KVCache解决的是什么问题？</h1><p>回顾Transformer的Decoder结构，在decode阶段，模型进行推理时，预测t位置的token，会用到前t-1个token，序列token的key、value向量会被重复计算，KVCache通过缓存已计算token的key、value向量降低冗余计算。</p><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="缓存结构（Pytorch示意）"><a href="#缓存结构（Pytorch示意）" class="headerlink" title="缓存结构（Pytorch示意）"></a>缓存结构（Pytorch示意）</h2><p><code>kv_cache = &#123;   layer_0: &#123;     &quot;key&quot;: Tensor [seq_len, num_heads, head_dim],     &quot;value&quot;: Tensor [seq_len, num_heads, head_dim]   &#125;,   ... &#125;</code></p><h1 id="标准推理-vs-KVCache"><a href="#标准推理-vs-KVCache" class="headerlink" title="标准推理 vs KVCache"></a>标准推理 vs KVCache</h1><table><thead><tr><th>特性</th><th>标准推理</th><th>KVCache缓存</th></tr></thead><tbody><tr><td>每词计算量</td><td>每个词都重复相同计算</td><td>复用历史计算，结果更快</td></tr><tr><td>内存占用</td><td>每步内存占用少，但文本越长内存增长</td><td>额外占用内存存储历史信息，但整体更高效</td></tr><tr><td>速度</td><td>文本越长越慢，因为重复计算</td><td>避免重复计算，长文本也能保持高速</td></tr><tr><td>效率</td><td>计算成本高，响应慢</td><td>记忆历史计算，效率更高，响应更快</td></tr><tr><td>长文本处理</td><td>长文本时因重复计算容易卡顿</td><td>适合长文本，能记住历史步骤，处理流畅</td></tr></tbody></table><h1 id="KV-Cache优化"><a href="#KV-Cache优化" class="headerlink" title="KV Cache优化"></a>KV Cache优化</h1><h2 id="Paged-KV-Cache"><a href="#Paged-KV-Cache" class="headerlink" title="Paged KV Cache"></a>Paged KV Cache</h2><h2 id="MQA-GQA"><a href="#MQA-GQA" class="headerlink" title="MQA &#x2F; GQA"></a>MQA &#x2F; GQA</h2><h1 id="长上下文对KVCache的挑战"><a href="#长上下文对KVCache的挑战" class="headerlink" title="长上下文对KVCache的挑战"></a>长上下文对KVCache的挑战</h1><p>有限的GPU显存条件下，超长上下文推理的KVCache很容易成为显存瓶颈。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://medium.com/@joaolages/kv-caching-explained-276520203249">Transformers KV Caching Explained</a><br><a href="https://huggingface.co/blog/not-lain/kv-caching">KV Caching Explained: Optimizing Transformer Inference Efficiency</a><br><a href="https://arxiv.org/pdf/2407.12820">PQCache: Product Quantization-based KVCache for Long<br>Context LLM Inference</a><br><a href="https://arxiv.org/pdf/2306.14048">H2O: Heavy-Hitter Oracle for Efficient Generative<br>Inference of Large Language Models</a></p>]]></content>
     
     
     <categories>
@@ -64,6 +126,35 @@
   
   
   <entry>
+    <title>动手能力</title>
+    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%8A%A8%E6%89%8B%E8%83%BD%E5%8A%9B/"/>
+    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%8A%A8%E6%89%8B%E8%83%BD%E5%8A%9B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="动手能力的重要性"><a href="#动手能力的重要性" class="headerlink" title="动手能力的重要性"></a>动手能力的重要性</h1><h2 id="精细化动作"><a href="#精细化动作" class="headerlink" title="精细化动作"></a>精细化动作</h2><h1 id="脑科学支撑"><a href="#脑科学支撑" class="headerlink" title="脑科学支撑"></a>脑科学支撑</h1><h1 id="人工智能与机器人"><a href="#人工智能与机器人" class="headerlink" title="人工智能与机器人"></a>人工智能与机器人</h1><h1 id="低成本培养方式"><a href="#低成本培养方式" class="headerlink" title="低成本培养方式"></a>低成本培养方式</h1><h1 id="学校选择"><a href="#学校选择" class="headerlink" title="学校选择"></a>学校选择</h1><h1 id="职业发展建议"><a href="#职业发展建议" class="headerlink" title="职业发展建议"></a>职业发展建议</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>教育</category>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>教育</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>小学学科规划</title>
     <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%B0%8F%E5%AD%A6%E5%AD%A6%E7%A7%91%E8%A7%84%E5%88%92/"/>
     <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%B0%8F%E5%AD%A6%E5%AD%A6%E7%A7%91%E8%A7%84%E5%88%92/</url>
@@ -93,40 +184,11 @@
   
   
   <entry>
-    <title>数学思维</title>
-    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/"/>
-    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/</url>
+    <title>磨耳朵音频</title>
+    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E9%9F%B3%E9%A2%91%E8%B5%84%E6%96%99/"/>
+    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E9%9F%B3%E9%A2%91%E8%B5%84%E6%96%99/</url>
     
-    <content type="html"><![CDATA[<h1 id="数学能力"><a href="#数学能力" class="headerlink" title="数学能力"></a>数学能力</h1><h1 id="市面上的优势思维课"><a href="#市面上的优势思维课" class="headerlink" title="市面上的优势思维课"></a>市面上的优势思维课</h1><h1 id="数学引导"><a href="#数学引导" class="headerlink" title="数学引导"></a>数学引导</h1><h1 id="优秀的数据家"><a href="#优秀的数据家" class="headerlink" title="优秀的数据家"></a>优秀的数据家</h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>教育</category>
-      
-      <category>人工智能</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>教育</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>动手能力</title>
-    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%8A%A8%E6%89%8B%E8%83%BD%E5%8A%9B/"/>
-    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%8A%A8%E6%89%8B%E8%83%BD%E5%8A%9B/</url>
-    
-    <content type="html"><![CDATA[<h1 id="动手能力的重要性"><a href="#动手能力的重要性" class="headerlink" title="动手能力的重要性"></a>动手能力的重要性</h1><h2 id="精细化动作"><a href="#精细化动作" class="headerlink" title="精细化动作"></a>精细化动作</h2><h1 id="脑科学支撑"><a href="#脑科学支撑" class="headerlink" title="脑科学支撑"></a>脑科学支撑</h1><h1 id="人工智能与机器人"><a href="#人工智能与机器人" class="headerlink" title="人工智能与机器人"></a>人工智能与机器人</h1><h1 id="低成本培养方式"><a href="#低成本培养方式" class="headerlink" title="低成本培养方式"></a>低成本培养方式</h1><h1 id="学校选择"><a href="#学校选择" class="headerlink" title="学校选择"></a>学校选择</h1><h1 id="职业发展建议"><a href="#职业发展建议" class="headerlink" title="职业发展建议"></a>职业发展建议</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="音频列表"><a href="#音频列表" class="headerlink" title="音频列表"></a>音频列表</h1><p>柴荣传<br>姜天一历史音频<br>博雅新闻时间</p>]]></content>
     
     
     <categories>
@@ -180,11 +242,11 @@
   
   
   <entry>
-    <title>磨耳朵音频</title>
-    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E9%9F%B3%E9%A2%91%E8%B5%84%E6%96%99/"/>
-    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E9%9F%B3%E9%A2%91%E8%B5%84%E6%96%99/</url>
+    <title>数学思维</title>
+    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/"/>
+    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/</url>
     
-    <content type="html"><![CDATA[<h1 id="音频列表"><a href="#音频列表" class="headerlink" title="音频列表"></a>音频列表</h1><p>柴荣传<br>姜天一历史音频<br>博雅新闻时间</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="数学能力"><a href="#数学能力" class="headerlink" title="数学能力"></a>数学能力</h1><h1 id="市面上的优势思维课"><a href="#市面上的优势思维课" class="headerlink" title="市面上的优势思维课"></a>市面上的优势思维课</h1><h1 id="数学引导"><a href="#数学引导" class="headerlink" title="数学引导"></a>数学引导</h1><h1 id="优秀的数据家"><a href="#优秀的数据家" class="headerlink" title="优秀的数据家"></a>优秀的数据家</h1>]]></content>
     
     
     <categories>
@@ -280,13 +342,33 @@
   
   
   <entry>
-    <title></title>
+    <title>大模型本地部署</title>
     <link href="/tech-blog/2025/05/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%B7%A5%E5%85%B7/"/>
     <url>/tech-blog/2025/05/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%B7%A5%E5%85%B7/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><h2 id="ollama"><a href="#ollama" class="headerlink" title="ollama"></a>ollama</h2><h3 id="如何保持上下文记忆"><a href="#如何保持上下文记忆" class="headerlink" title="如何保持上下文记忆"></a>如何保持上下文记忆</h3><ol><li><p>Transformer的自注意力机制和KV缓存技术。</p></li><li><p>上下文窗口的大小及其在本地部署中的配置。</p></li><li><p>应用层如何维护对话历史并传递给模型。</p></li><li><p>本地硬件资源对上下文长度的支持。</p></li><li><p>模型训练时的上下文长度与推理时的处理方式。</p></li></ol><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
     
     
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
+      
+    </tags>
     
   </entry>
   
@@ -509,9 +591,42 @@
       
       <tag>深度学习</tag>
       
+      <tag>多模态</tag>
+      
       <tag>生成式AI</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>多模态大模型最新进展</title>
+    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81-24&amp;25%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95/"/>
+    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81-24&amp;25%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://chatgpt.com/s/dr_68219ab7c5f481918c6c798e4860b258">ChatGPT deep research</a><br><a href="github.com/ngxson/smolvlm-realtime-webcam">smolvlm</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -551,39 +666,6 @@
   
   
   <entry>
-    <title>多模态大模型最新进展</title>
-    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81-24&amp;25%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95/"/>
-    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81-24&amp;25%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95/</url>
-    
-    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://chatgpt.com/s/dr_68219ab7c5f481918c6c798e4860b258">ChatGPT deep research</a><br><a href="github.com/ngxson/smolvlm-realtime-webcam">smolvlm</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>生成式AI</tag>
-      
-      <tag>多模态</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>本地部署语音助手</title>
     <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/"/>
     <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/</url>
@@ -615,11 +697,11 @@
   
   
   <entry>
-    <title>构建Excel/Google Sheel智能体</title>
-    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-Agent-ExcelAgents/"/>
-    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-Agent-ExcelAgents/</url>
+    <title>smolagents简介</title>
+    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-Smolagents/"/>
+    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-Smolagents/</url>
     
-    <content type="html"><![CDATA[<h1 id="产品功能点"><a href="#产品功能点" class="headerlink" title="产品功能点"></a>产品功能点</h1>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
     <categories>
@@ -646,11 +728,11 @@
   
   
   <entry>
-    <title>smolagents简介</title>
-    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-Smolagents/"/>
-    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-Smolagents/</url>
+    <title>构建Excel/Google Sheel智能体</title>
+    <link href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-Agent-ExcelAgents/"/>
+    <url>/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-Agent-ExcelAgents/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="产品功能点"><a href="#产品功能点" class="headerlink" title="产品功能点"></a>产品功能点</h1>]]></content>
     
     
     <categories>
@@ -1123,11 +1205,11 @@
   
   
   <entry>
-    <title>大模型时代的搜索引擎</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
+    <title>ElasticSearch</title>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/</url>
     
-    <content type="html"><![CDATA[<h1 id="人工智能搜索引擎"><a href="#人工智能搜索引擎" class="headerlink" title="人工智能搜索引擎"></a>人工智能搜索引擎</h1><h2 id="Perplexity-AI"><a href="#Perplexity-AI" class="headerlink" title="Perplexity AI"></a>Perplexity AI</h2><h2 id="秘塔搜索"><a href="#秘塔搜索" class="headerlink" title="秘塔搜索"></a>秘塔搜索</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><p>ElasticSearch是一个基于Lucene的开源分布式搜索和分析引擎，由Elastic公司开发。它是Elastic Stack（也称为ELK Stack）的核心组件，能够快速存储、搜索和分析海量数据。ElasticSearch以其高性能、可扩展性和灵活性而闻名，被广泛应用于企业搜索、日志分析、实时监控、商业智能等领域。</p><h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><h3 id="1-分布式架构"><a href="#1-分布式架构" class="headerlink" title="1. 分布式架构"></a>1. 分布式架构</h3><ul><li><strong>水平扩展能力</strong>：可以轻松地通过添加节点来扩展集群，无需停机</li><li><strong>自动分片管理</strong>：数据自动分片并分布在不同节点上，提高并行处理能力</li><li><strong>高可用性</strong>：支持副本机制，确保节点故障时数据不丢失</li></ul><h3 id="2-全文搜索"><a href="#2-全文搜索" class="headerlink" title="2. 全文搜索"></a>2. 全文搜索</h3><ul><li><strong>强大的查询语言</strong>：支持多种查询类型，包括全文搜索、结构化查询、地理空间查询等</li><li><strong>相关性排序</strong>：基于TF-IDF和BM25算法计算文档相关性</li><li><strong>分词与语言分析</strong>：支持多种语言的分词和分析，包括中文分词</li></ul><h3 id="3-实时性"><a href="#3-实时性" class="headerlink" title="3. 实时性"></a>3. 实时性</h3><ul><li><strong>近实时搜索</strong>：新增或修改的数据在短时间内（通常为1秒）即可被搜索</li><li><strong>实时分析</strong>：支持实时的数据聚合和分析</li></ul><h3 id="4-RESTful-API"><a href="#4-RESTful-API" class="headerlink" title="4. RESTful API"></a>4. RESTful API</h3><ul><li><strong>简单易用的HTTP接口</strong>：所有操作可通过RESTful API完成</li><li><strong>JSON格式数据交换</strong>：数据以JSON格式存储和传输，兼容性好</li><li><strong>丰富的客户端支持</strong>：官方提供多种语言的客户端库</li></ul><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><h3 id="1-索引-Index"><a href="#1-索引-Index" class="headerlink" title="1. 索引 (Index)"></a>1. 索引 (Index)</h3><p>相当于关系型数据库中的”数据库”概念，是文档的集合。</p><h3 id="2-类型-Type"><a href="#2-类型-Type" class="headerlink" title="2. 类型 (Type)"></a>2. 类型 (Type)</h3><p>在ElasticSearch 7.0之前，类型是索引中的逻辑分类，类似于关系数据库中的”表”。注意：类型概念在ElasticSearch 7.0后被弃用，在8.0中完全移除。</p><h3 id="3-文档-Document"><a href="#3-文档-Document" class="headerlink" title="3. 文档 (Document)"></a>3. 文档 (Document)</h3><p>是可被索引的基本信息单元，以JSON表示，类似关系数据库中的一”行”数据。</p><h3 id="4-字段-Field"><a href="#4-字段-Field" class="headerlink" title="4. 字段 (Field)"></a>4. 字段 (Field)</h3><p>文档中包含的具体数据项，类似关系数据库中的”列”。</p><h3 id="5-分片-Shard"><a href="#5-分片-Shard" class="headerlink" title="5. 分片 (Shard)"></a>5. 分片 (Shard)</h3><p>索引可分为多个分片，每个分片本身是一个功能完整的Lucene索引，分片使ElasticSearch具有水平扩展能力。</p><h3 id="6-副本-Replica"><a href="#6-副本-Replica" class="headerlink" title="6. 副本 (Replica)"></a>6. 副本 (Replica)</h3><p>分片的复制品，提供高可用性和搜索性能。</p><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>ElasticSearch的架构是分布式的，通常由多个节点组成集群：</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scss">┌─────────────────────────────────────┐<br>│           ElasticSearch集群          │<br>│                                     │<br>│  ┌─────────┐  ┌─────────┐  ┌─────────┐ <br>│  │  节点<span class="hljs-number">1</span>   │  │  节点<span class="hljs-number">2</span>   │  │  节点<span class="hljs-number">3</span>   │ <br>│  │         │  │         │  │         │ <br>│  │ 分片<span class="hljs-number">1</span>(主) │  │ 分片<span class="hljs-number">2</span>(主) │  │ 分片<span class="hljs-number">3</span>(主) │ <br>│  │ 分片<span class="hljs-number">2</span>(副) │  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │ <br>│  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │  │ 分片<span class="hljs-number">2</span>(副) │ <br>│  └─────────┘  └─────────┘  └─────────┘ <br>│                                     │<br>└─────────────────────────────────────┘<br></code></pre></td></tr></table></figure><p>每个节点都运行ElasticSearch实例，共同处理数据的存储、索引和搜索请求。集群内的节点通过内部通信协调工作。</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="1-企业搜索"><a href="#1-企业搜索" class="headerlink" title="1. 企业搜索"></a>1. 企业搜索</h3><p>为企业内部文档、产品目录、网站内容等提供强大的搜索功能。</p><h3 id="2-日志分析"><a href="#2-日志分析" class="headerlink" title="2. 日志分析"></a>2. 日志分析</h3><p>与Logstash和Kibana配合，构建强大的日志收集、分析和可视化平台。</p><h3 id="3-指标监控"><a href="#3-指标监控" class="headerlink" title="3. 指标监控"></a>3. 指标监控</h3><p>实时收集和分析系统、应用程序和业务指标数据。</p><h3 id="4-安全分析"><a href="#4-安全分析" class="headerlink" title="4. 安全分析"></a>4. 安全分析</h3><p>收集和分析安全相关数据，检测异常和威胁。</p><h3 id="5-商业智能"><a href="#5-商业智能" class="headerlink" title="5. 商业智能"></a>5. 商业智能</h3><p>存储、分析和可视化业务数据，支持决策制定。</p><h3 id="6-地理空间分析"><a href="#6-地理空间分析" class="headerlink" title="6. 地理空间分析"></a>6. 地理空间分析</h3><p>支持地理位置数据的存储和查询，适用于位置服务应用。</p><h2 id="与其他系统的比较"><a href="#与其他系统的比较" class="headerlink" title="与其他系统的比较"></a>与其他系统的比较</h2><h3 id="ElasticSearch-vs-关系数据库"><a href="#ElasticSearch-vs-关系数据库" class="headerlink" title="ElasticSearch vs 关系数据库"></a>ElasticSearch vs 关系数据库</h3><table><thead><tr><th>特性</th><th>ElasticSearch</th><th>关系数据库</th></tr></thead><tbody><tr><td>数据模型</td><td>文档导向，半结构化</td><td>表格结构，强模式</td></tr><tr><td>查询方式</td><td>全文搜索，复杂查询</td><td>精确匹配，结构化查询</td></tr><tr><td>扩展性</td><td>水平扩展</td><td>主要垂直扩展</td></tr><tr><td>事务支持</td><td>有限</td><td>强事务支持</td></tr><tr><td>一致性</td><td>最终一致性</td><td>强一致性</td></tr><tr><td>适用场景</td><td>搜索，日志分析</td><td>事务处理，关系数据</td></tr></tbody></table><h3 id="ElasticSearch-vs-Solr"><a href="#ElasticSearch-vs-Solr" class="headerlink" title="ElasticSearch vs Solr"></a>ElasticSearch vs Solr</h3><p>两者都是基于Lucene的搜索引擎，但有些区别：</p><ul><li>ElasticSearch原生支持分布式，配置简单</li><li>Solr在传统搜索应用上更成熟，但在实时搜索方面不如ElasticSearch</li><li>ElasticSearch使用JSON作为文档格式，Solr支持多种格式</li><li>ElasticSearch在日志分析和指标监控领域更受欢迎</li></ul><h1 id="Lucene内核"><a href="#Lucene内核" class="headerlink" title="Lucene内核"></a>Lucene内核</h1><p>ElasticSearch的核心搜索功能是基于Apache Lucene实现的。每个ElasticSearch分片都是一个完整的Lucene索引。Lucene提供了：</p><ul><li>倒排索引结构</li><li>高效的搜索算法</li><li>评分机制</li><li>词项分析</li><li>查询解析</li></ul><p>通过对Lucene的封装，ElasticSearch简化了分布式搜索的复杂性，并提供了更友好的接口和更多的功能扩展。</p><h1 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h1><h2 id="Lucene-Index-Toolbox-Luke"><a href="#Lucene-Index-Toolbox-Luke" class="headerlink" title="Lucene Index Toolbox (Luke)"></a>Lucene Index Toolbox (Luke)</h2><p>Luke是一个用于探索和维护Lucene索引的开源工具，对于理解和调试ElasticSearch底层索引结构非常有用。</p><h3 id="Luke主要功能"><a href="#Luke主要功能" class="headerlink" title="Luke主要功能"></a>Luke主要功能</h3><ul><li><strong>浏览索引内容</strong>：查看索引中的文档、字段和词条</li><li><strong>搜索测试</strong>：使用不同的查询语法测试搜索结果</li><li><strong>索引分析</strong>：分析索引结构、大小和性能指标</li><li><strong>分词器测试</strong>：测试不同分词器对文本的处理效果</li><li><strong>索引优化</strong>：执行索引优化和维护操作</li></ul><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul><li>调试搜索结果不符合预期的问题</li><li>分析索引结构和内容</li><li>测试自定义分词器效果</li><li>检查索引损坏或异常</li></ul><p>Luke可以作为独立应用程序运行，也可以作为Lucene库的一部分使用。对于直接处理ElasticSearch索引，通常需要先获取索引文件或使用专门的ElasticSearch插件版本。</p><h2 id="ElasticSearch工具生态"><a href="#ElasticSearch工具生态" class="headerlink" title="ElasticSearch工具生态"></a>ElasticSearch工具生态</h2><h3 id="官方工具"><a href="#官方工具" class="headerlink" title="官方工具"></a>官方工具</h3><h4 id="1-Kibana"><a href="#1-Kibana" class="headerlink" title="1. Kibana"></a>1. Kibana</h4><p>Kibana是Elastic Stack的可视化和管理界面，提供:</p><ul><li>数据可视化和仪表板</li><li>开发者控制台（用于执行ElasticSearch请求）</li><li>索引模式管理</li><li>查询和过滤器构建器</li><li>机器学习功能界面</li></ul><h4 id="2-Logstash"><a href="#2-Logstash" class="headerlink" title="2. Logstash"></a>2. Logstash</h4><p>Logstash是数据处理管道，可以:</p><ul><li>从多种源获取数据</li><li>转换数据格式</li><li>过滤和丰富数据</li><li>将处理后的数据发送到ElasticSearch</li></ul><h4 id="3-Beats"><a href="#3-Beats" class="headerlink" title="3. Beats"></a>3. Beats</h4><p>轻量级数据采集器家族:</p><ul><li><strong>Filebeat</strong>: 日志文件</li><li><strong>Metricbeat</strong>: 系统和服务指标</li><li><strong>Packetbeat</strong>: 网络数据</li><li><strong>Heartbeat</strong>: 系统可用性监控</li><li><strong>Auditbeat</strong>: 安全信息和事件审计数据</li></ul><h4 id="4-Elasticsearch-Hadoop"><a href="#4-Elasticsearch-Hadoop" class="headerlink" title="4. Elasticsearch-Hadoop"></a>4. Elasticsearch-Hadoop</h4><p>用于Hadoop生态系统和ElasticSearch之间的集成:</p><ul><li>支持MapReduce、Spark、Hive、Pig等</li><li>支持双向数据流</li></ul><h3 id="第三方工具"><a href="#第三方工具" class="headerlink" title="第三方工具"></a>第三方工具</h3><h4 id="1-ElasticHQ"><a href="#1-ElasticHQ" class="headerlink" title="1. ElasticHQ"></a>1. ElasticHQ</h4><p>开源的ElasticSearch监控和管理工具:</p><ul><li>集群状态监控</li><li>性能统计</li><li>索引和节点管理</li><li>易于使用的Web界面</li></ul><h4 id="2-Cerebro-原名Kopf"><a href="#2-Cerebro-原名Kopf" class="headerlink" title="2. Cerebro (原名Kopf)"></a>2. Cerebro (原名Kopf)</h4><p>开源的ElasticSearch Web管理工具:</p><ul><li>集群健康和状态</li><li>索引和分片分布可视化</li><li>REST API浏览器</li></ul><h4 id="3-Elasticdump"><a href="#3-Elasticdump" class="headerlink" title="3. Elasticdump"></a>3. Elasticdump</h4><p>用于ElasticSearch数据迁移的工具:</p><ul><li>在不同集群间导入&#x2F;导出数据</li><li>支持多种数据格式</li><li>适合备份和恢复</li></ul><h4 id="4-Searchguard-和-X-Pack-Security"><a href="#4-Searchguard-和-X-Pack-Security" class="headerlink" title="4. Searchguard 和 X-Pack Security"></a>4. Searchguard 和 X-Pack Security</h4><p>ElasticSearch安全解决方案:</p><ul><li>认证和授权</li><li>字段和文档级安全</li><li>审计日志</li><li>加密通信</li></ul><h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><h3 id="1-REST客户端"><a href="#1-REST客户端" class="headerlink" title="1. REST客户端"></a>1. REST客户端</h3><ul><li><strong>Postman&#x2F;Insomnia</strong>: 测试ElasticSearch REST API的通用工具</li><li><strong>curl</strong>: 命令行HTTP工具，适合脚本和自动化</li></ul><h3 id="2-编程语言客户端"><a href="#2-编程语言客户端" class="headerlink" title="2. 编程语言客户端"></a>2. 编程语言客户端</h3><p>官方支持的高级客户端:</p><ul><li>Java High Level REST Client</li><li>Python (elasticsearch-py)</li><li>JavaScript&#x2F;Node.js</li><li>.NET</li><li>PHP</li><li>Ruby</li><li>Go</li></ul><h3 id="3-查询构建工具"><a href="#3-查询构建工具" class="headerlink" title="3. 查询构建工具"></a>3. 查询构建工具</h3><ul><li><strong>ElasticSearch Query Builder</strong>: 用于构建和测试复杂查询的在线工具</li><li><strong>Kibana Query Language (KQL)</strong>: Kibana中使用的简化查询语法</li></ul><h2 id="索引管理工具"><a href="#索引管理工具" class="headerlink" title="索引管理工具"></a>索引管理工具</h2><h3 id="1-Index-Lifecycle-Management-ILM"><a href="#1-Index-Lifecycle-Management-ILM" class="headerlink" title="1. Index Lifecycle Management (ILM)"></a>1. Index Lifecycle Management (ILM)</h3><p>ElasticSearch内置的索引生命周期管理功能:</p><ul><li>自动滚动更新索引</li><li>设置索引热温冷阶段</li><li>自动删除旧索引</li></ul><h3 id="2-Curator"><a href="#2-Curator" class="headerlink" title="2. Curator"></a>2. Curator</h3><p>用于ElasticSearch索引管理的Python工具:</p><ul><li>按时间或大小删除索引</li><li>索引压缩和优化</li><li>索引快照管理</li><li>可通过命令行或API使用</li></ul><h2 id="性能调优工具"><a href="#性能调优工具" class="headerlink" title="性能调优工具"></a>性能调优工具</h2><h3 id="1-热点线程API"><a href="#1-热点线程API" class="headerlink" title="1. 热点线程API"></a>1. 热点线程API</h3><p>内置API用于识别CPU使用率高的线程:</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">GET</span> /_nodes/hot_threads<br></code></pre></td></tr></table></figure><h3 id="2-Rally"><a href="#2-Rally" class="headerlink" title="2. Rally"></a>2. Rally</h3><p>ElasticSearch官方基准测试工具:</p><ul><li>支持各种测试场景</li><li>可比较不同版本和配置的性能</li><li>可定制测试案例</li></ul><h3 id="3-JVM监控工具"><a href="#3-JVM监控工具" class="headerlink" title="3. JVM监控工具"></a>3. JVM监控工具</h3><ul><li><strong>VisualVM</strong>: 监控JVM内存使用和GC活动</li><li><strong>Prometheus + Grafana</strong>: 监控ElasticSearch性能指标</li></ul><h2 id="实用索引分析工具"><a href="#实用索引分析工具" class="headerlink" title="实用索引分析工具"></a>实用索引分析工具</h2><p>除了前面提到的Luke工具外，还有一些专门用于分析ElasticSearch索引的实用工具:</p><h3 id="1-Elasticsearch-Head"><a href="#1-Elasticsearch-Head" class="headerlink" title="1. Elasticsearch-Head"></a>1. Elasticsearch-Head</h3><p>提供索引浏览和简单查询功能的Chrome插件</p><h3 id="2-Index-Cleaner"><a href="#2-Index-Cleaner" class="headerlink" title="2. Index Cleaner"></a>2. Index Cleaner</h3><p>自动清理过期或不需要的索引数据的工具</p><h3 id="3-Analyze-API"><a href="#3-Analyze-API" class="headerlink" title="3. Analyze API"></a>3. Analyze API</h3><p>内置API，用于测试分析器、分词器、过滤器的效果:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">POST /_analyze<br>&#123;<br>  <span class="hljs-string">&quot;analyzer&quot;</span>: <span class="hljs-string">&quot;standard&quot;</span>,<br>  <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;待分析的文本&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure><p>通过使用这些工具，可以更有效地管理、监控和优化ElasticSearch集群，提高搜索性能和可靠性。</p>]]></content>
     
     
     <categories>
@@ -1154,11 +1236,11 @@
   
   
   <entry>
-    <title>ElasticSearch</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/</url>
+    <title>大模型时代的搜索引擎</title>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
     
-    <content type="html"><![CDATA[<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><p>ElasticSearch是一个基于Lucene的开源分布式搜索和分析引擎，由Elastic公司开发。它是Elastic Stack（也称为ELK Stack）的核心组件，能够快速存储、搜索和分析海量数据。ElasticSearch以其高性能、可扩展性和灵活性而闻名，被广泛应用于企业搜索、日志分析、实时监控、商业智能等领域。</p><h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><h3 id="1-分布式架构"><a href="#1-分布式架构" class="headerlink" title="1. 分布式架构"></a>1. 分布式架构</h3><ul><li><strong>水平扩展能力</strong>：可以轻松地通过添加节点来扩展集群，无需停机</li><li><strong>自动分片管理</strong>：数据自动分片并分布在不同节点上，提高并行处理能力</li><li><strong>高可用性</strong>：支持副本机制，确保节点故障时数据不丢失</li></ul><h3 id="2-全文搜索"><a href="#2-全文搜索" class="headerlink" title="2. 全文搜索"></a>2. 全文搜索</h3><ul><li><strong>强大的查询语言</strong>：支持多种查询类型，包括全文搜索、结构化查询、地理空间查询等</li><li><strong>相关性排序</strong>：基于TF-IDF和BM25算法计算文档相关性</li><li><strong>分词与语言分析</strong>：支持多种语言的分词和分析，包括中文分词</li></ul><h3 id="3-实时性"><a href="#3-实时性" class="headerlink" title="3. 实时性"></a>3. 实时性</h3><ul><li><strong>近实时搜索</strong>：新增或修改的数据在短时间内（通常为1秒）即可被搜索</li><li><strong>实时分析</strong>：支持实时的数据聚合和分析</li></ul><h3 id="4-RESTful-API"><a href="#4-RESTful-API" class="headerlink" title="4. RESTful API"></a>4. RESTful API</h3><ul><li><strong>简单易用的HTTP接口</strong>：所有操作可通过RESTful API完成</li><li><strong>JSON格式数据交换</strong>：数据以JSON格式存储和传输，兼容性好</li><li><strong>丰富的客户端支持</strong>：官方提供多种语言的客户端库</li></ul><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><h3 id="1-索引-Index"><a href="#1-索引-Index" class="headerlink" title="1. 索引 (Index)"></a>1. 索引 (Index)</h3><p>相当于关系型数据库中的”数据库”概念，是文档的集合。</p><h3 id="2-类型-Type"><a href="#2-类型-Type" class="headerlink" title="2. 类型 (Type)"></a>2. 类型 (Type)</h3><p>在ElasticSearch 7.0之前，类型是索引中的逻辑分类，类似于关系数据库中的”表”。注意：类型概念在ElasticSearch 7.0后被弃用，在8.0中完全移除。</p><h3 id="3-文档-Document"><a href="#3-文档-Document" class="headerlink" title="3. 文档 (Document)"></a>3. 文档 (Document)</h3><p>是可被索引的基本信息单元，以JSON表示，类似关系数据库中的一”行”数据。</p><h3 id="4-字段-Field"><a href="#4-字段-Field" class="headerlink" title="4. 字段 (Field)"></a>4. 字段 (Field)</h3><p>文档中包含的具体数据项，类似关系数据库中的”列”。</p><h3 id="5-分片-Shard"><a href="#5-分片-Shard" class="headerlink" title="5. 分片 (Shard)"></a>5. 分片 (Shard)</h3><p>索引可分为多个分片，每个分片本身是一个功能完整的Lucene索引，分片使ElasticSearch具有水平扩展能力。</p><h3 id="6-副本-Replica"><a href="#6-副本-Replica" class="headerlink" title="6. 副本 (Replica)"></a>6. 副本 (Replica)</h3><p>分片的复制品，提供高可用性和搜索性能。</p><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>ElasticSearch的架构是分布式的，通常由多个节点组成集群：</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scss">┌─────────────────────────────────────┐<br>│           ElasticSearch集群          │<br>│                                     │<br>│  ┌─────────┐  ┌─────────┐  ┌─────────┐ <br>│  │  节点<span class="hljs-number">1</span>   │  │  节点<span class="hljs-number">2</span>   │  │  节点<span class="hljs-number">3</span>   │ <br>│  │         │  │         │  │         │ <br>│  │ 分片<span class="hljs-number">1</span>(主) │  │ 分片<span class="hljs-number">2</span>(主) │  │ 分片<span class="hljs-number">3</span>(主) │ <br>│  │ 分片<span class="hljs-number">2</span>(副) │  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │ <br>│  │ 分片<span class="hljs-number">3</span>(副) │  │ 分片<span class="hljs-number">1</span>(副) │  │ 分片<span class="hljs-number">2</span>(副) │ <br>│  └─────────┘  └─────────┘  └─────────┘ <br>│                                     │<br>└─────────────────────────────────────┘<br></code></pre></td></tr></table></figure><p>每个节点都运行ElasticSearch实例，共同处理数据的存储、索引和搜索请求。集群内的节点通过内部通信协调工作。</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="1-企业搜索"><a href="#1-企业搜索" class="headerlink" title="1. 企业搜索"></a>1. 企业搜索</h3><p>为企业内部文档、产品目录、网站内容等提供强大的搜索功能。</p><h3 id="2-日志分析"><a href="#2-日志分析" class="headerlink" title="2. 日志分析"></a>2. 日志分析</h3><p>与Logstash和Kibana配合，构建强大的日志收集、分析和可视化平台。</p><h3 id="3-指标监控"><a href="#3-指标监控" class="headerlink" title="3. 指标监控"></a>3. 指标监控</h3><p>实时收集和分析系统、应用程序和业务指标数据。</p><h3 id="4-安全分析"><a href="#4-安全分析" class="headerlink" title="4. 安全分析"></a>4. 安全分析</h3><p>收集和分析安全相关数据，检测异常和威胁。</p><h3 id="5-商业智能"><a href="#5-商业智能" class="headerlink" title="5. 商业智能"></a>5. 商业智能</h3><p>存储、分析和可视化业务数据，支持决策制定。</p><h3 id="6-地理空间分析"><a href="#6-地理空间分析" class="headerlink" title="6. 地理空间分析"></a>6. 地理空间分析</h3><p>支持地理位置数据的存储和查询，适用于位置服务应用。</p><h2 id="与其他系统的比较"><a href="#与其他系统的比较" class="headerlink" title="与其他系统的比较"></a>与其他系统的比较</h2><h3 id="ElasticSearch-vs-关系数据库"><a href="#ElasticSearch-vs-关系数据库" class="headerlink" title="ElasticSearch vs 关系数据库"></a>ElasticSearch vs 关系数据库</h3><table><thead><tr><th>特性</th><th>ElasticSearch</th><th>关系数据库</th></tr></thead><tbody><tr><td>数据模型</td><td>文档导向，半结构化</td><td>表格结构，强模式</td></tr><tr><td>查询方式</td><td>全文搜索，复杂查询</td><td>精确匹配，结构化查询</td></tr><tr><td>扩展性</td><td>水平扩展</td><td>主要垂直扩展</td></tr><tr><td>事务支持</td><td>有限</td><td>强事务支持</td></tr><tr><td>一致性</td><td>最终一致性</td><td>强一致性</td></tr><tr><td>适用场景</td><td>搜索，日志分析</td><td>事务处理，关系数据</td></tr></tbody></table><h3 id="ElasticSearch-vs-Solr"><a href="#ElasticSearch-vs-Solr" class="headerlink" title="ElasticSearch vs Solr"></a>ElasticSearch vs Solr</h3><p>两者都是基于Lucene的搜索引擎，但有些区别：</p><ul><li>ElasticSearch原生支持分布式，配置简单</li><li>Solr在传统搜索应用上更成熟，但在实时搜索方面不如ElasticSearch</li><li>ElasticSearch使用JSON作为文档格式，Solr支持多种格式</li><li>ElasticSearch在日志分析和指标监控领域更受欢迎</li></ul><h1 id="Lucene内核"><a href="#Lucene内核" class="headerlink" title="Lucene内核"></a>Lucene内核</h1><p>ElasticSearch的核心搜索功能是基于Apache Lucene实现的。每个ElasticSearch分片都是一个完整的Lucene索引。Lucene提供了：</p><ul><li>倒排索引结构</li><li>高效的搜索算法</li><li>评分机制</li><li>词项分析</li><li>查询解析</li></ul><p>通过对Lucene的封装，ElasticSearch简化了分布式搜索的复杂性，并提供了更友好的接口和更多的功能扩展。</p><h1 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h1><h2 id="Lucene-Index-Toolbox-Luke"><a href="#Lucene-Index-Toolbox-Luke" class="headerlink" title="Lucene Index Toolbox (Luke)"></a>Lucene Index Toolbox (Luke)</h2><p>Luke是一个用于探索和维护Lucene索引的开源工具，对于理解和调试ElasticSearch底层索引结构非常有用。</p><h3 id="Luke主要功能"><a href="#Luke主要功能" class="headerlink" title="Luke主要功能"></a>Luke主要功能</h3><ul><li><strong>浏览索引内容</strong>：查看索引中的文档、字段和词条</li><li><strong>搜索测试</strong>：使用不同的查询语法测试搜索结果</li><li><strong>索引分析</strong>：分析索引结构、大小和性能指标</li><li><strong>分词器测试</strong>：测试不同分词器对文本的处理效果</li><li><strong>索引优化</strong>：执行索引优化和维护操作</li></ul><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul><li>调试搜索结果不符合预期的问题</li><li>分析索引结构和内容</li><li>测试自定义分词器效果</li><li>检查索引损坏或异常</li></ul><p>Luke可以作为独立应用程序运行，也可以作为Lucene库的一部分使用。对于直接处理ElasticSearch索引，通常需要先获取索引文件或使用专门的ElasticSearch插件版本。</p><h2 id="ElasticSearch工具生态"><a href="#ElasticSearch工具生态" class="headerlink" title="ElasticSearch工具生态"></a>ElasticSearch工具生态</h2><h3 id="官方工具"><a href="#官方工具" class="headerlink" title="官方工具"></a>官方工具</h3><h4 id="1-Kibana"><a href="#1-Kibana" class="headerlink" title="1. Kibana"></a>1. Kibana</h4><p>Kibana是Elastic Stack的可视化和管理界面，提供:</p><ul><li>数据可视化和仪表板</li><li>开发者控制台（用于执行ElasticSearch请求）</li><li>索引模式管理</li><li>查询和过滤器构建器</li><li>机器学习功能界面</li></ul><h4 id="2-Logstash"><a href="#2-Logstash" class="headerlink" title="2. Logstash"></a>2. Logstash</h4><p>Logstash是数据处理管道，可以:</p><ul><li>从多种源获取数据</li><li>转换数据格式</li><li>过滤和丰富数据</li><li>将处理后的数据发送到ElasticSearch</li></ul><h4 id="3-Beats"><a href="#3-Beats" class="headerlink" title="3. Beats"></a>3. Beats</h4><p>轻量级数据采集器家族:</p><ul><li><strong>Filebeat</strong>: 日志文件</li><li><strong>Metricbeat</strong>: 系统和服务指标</li><li><strong>Packetbeat</strong>: 网络数据</li><li><strong>Heartbeat</strong>: 系统可用性监控</li><li><strong>Auditbeat</strong>: 安全信息和事件审计数据</li></ul><h4 id="4-Elasticsearch-Hadoop"><a href="#4-Elasticsearch-Hadoop" class="headerlink" title="4. Elasticsearch-Hadoop"></a>4. Elasticsearch-Hadoop</h4><p>用于Hadoop生态系统和ElasticSearch之间的集成:</p><ul><li>支持MapReduce、Spark、Hive、Pig等</li><li>支持双向数据流</li></ul><h3 id="第三方工具"><a href="#第三方工具" class="headerlink" title="第三方工具"></a>第三方工具</h3><h4 id="1-ElasticHQ"><a href="#1-ElasticHQ" class="headerlink" title="1. ElasticHQ"></a>1. ElasticHQ</h4><p>开源的ElasticSearch监控和管理工具:</p><ul><li>集群状态监控</li><li>性能统计</li><li>索引和节点管理</li><li>易于使用的Web界面</li></ul><h4 id="2-Cerebro-原名Kopf"><a href="#2-Cerebro-原名Kopf" class="headerlink" title="2. Cerebro (原名Kopf)"></a>2. Cerebro (原名Kopf)</h4><p>开源的ElasticSearch Web管理工具:</p><ul><li>集群健康和状态</li><li>索引和分片分布可视化</li><li>REST API浏览器</li></ul><h4 id="3-Elasticdump"><a href="#3-Elasticdump" class="headerlink" title="3. Elasticdump"></a>3. Elasticdump</h4><p>用于ElasticSearch数据迁移的工具:</p><ul><li>在不同集群间导入&#x2F;导出数据</li><li>支持多种数据格式</li><li>适合备份和恢复</li></ul><h4 id="4-Searchguard-和-X-Pack-Security"><a href="#4-Searchguard-和-X-Pack-Security" class="headerlink" title="4. Searchguard 和 X-Pack Security"></a>4. Searchguard 和 X-Pack Security</h4><p>ElasticSearch安全解决方案:</p><ul><li>认证和授权</li><li>字段和文档级安全</li><li>审计日志</li><li>加密通信</li></ul><h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><h3 id="1-REST客户端"><a href="#1-REST客户端" class="headerlink" title="1. REST客户端"></a>1. REST客户端</h3><ul><li><strong>Postman&#x2F;Insomnia</strong>: 测试ElasticSearch REST API的通用工具</li><li><strong>curl</strong>: 命令行HTTP工具，适合脚本和自动化</li></ul><h3 id="2-编程语言客户端"><a href="#2-编程语言客户端" class="headerlink" title="2. 编程语言客户端"></a>2. 编程语言客户端</h3><p>官方支持的高级客户端:</p><ul><li>Java High Level REST Client</li><li>Python (elasticsearch-py)</li><li>JavaScript&#x2F;Node.js</li><li>.NET</li><li>PHP</li><li>Ruby</li><li>Go</li></ul><h3 id="3-查询构建工具"><a href="#3-查询构建工具" class="headerlink" title="3. 查询构建工具"></a>3. 查询构建工具</h3><ul><li><strong>ElasticSearch Query Builder</strong>: 用于构建和测试复杂查询的在线工具</li><li><strong>Kibana Query Language (KQL)</strong>: Kibana中使用的简化查询语法</li></ul><h2 id="索引管理工具"><a href="#索引管理工具" class="headerlink" title="索引管理工具"></a>索引管理工具</h2><h3 id="1-Index-Lifecycle-Management-ILM"><a href="#1-Index-Lifecycle-Management-ILM" class="headerlink" title="1. Index Lifecycle Management (ILM)"></a>1. Index Lifecycle Management (ILM)</h3><p>ElasticSearch内置的索引生命周期管理功能:</p><ul><li>自动滚动更新索引</li><li>设置索引热温冷阶段</li><li>自动删除旧索引</li></ul><h3 id="2-Curator"><a href="#2-Curator" class="headerlink" title="2. Curator"></a>2. Curator</h3><p>用于ElasticSearch索引管理的Python工具:</p><ul><li>按时间或大小删除索引</li><li>索引压缩和优化</li><li>索引快照管理</li><li>可通过命令行或API使用</li></ul><h2 id="性能调优工具"><a href="#性能调优工具" class="headerlink" title="性能调优工具"></a>性能调优工具</h2><h3 id="1-热点线程API"><a href="#1-热点线程API" class="headerlink" title="1. 热点线程API"></a>1. 热点线程API</h3><p>内置API用于识别CPU使用率高的线程:</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">GET</span> /_nodes/hot_threads<br></code></pre></td></tr></table></figure><h3 id="2-Rally"><a href="#2-Rally" class="headerlink" title="2. Rally"></a>2. Rally</h3><p>ElasticSearch官方基准测试工具:</p><ul><li>支持各种测试场景</li><li>可比较不同版本和配置的性能</li><li>可定制测试案例</li></ul><h3 id="3-JVM监控工具"><a href="#3-JVM监控工具" class="headerlink" title="3. JVM监控工具"></a>3. JVM监控工具</h3><ul><li><strong>VisualVM</strong>: 监控JVM内存使用和GC活动</li><li><strong>Prometheus + Grafana</strong>: 监控ElasticSearch性能指标</li></ul><h2 id="实用索引分析工具"><a href="#实用索引分析工具" class="headerlink" title="实用索引分析工具"></a>实用索引分析工具</h2><p>除了前面提到的Luke工具外，还有一些专门用于分析ElasticSearch索引的实用工具:</p><h3 id="1-Elasticsearch-Head"><a href="#1-Elasticsearch-Head" class="headerlink" title="1. Elasticsearch-Head"></a>1. Elasticsearch-Head</h3><p>提供索引浏览和简单查询功能的Chrome插件</p><h3 id="2-Index-Cleaner"><a href="#2-Index-Cleaner" class="headerlink" title="2. Index Cleaner"></a>2. Index Cleaner</h3><p>自动清理过期或不需要的索引数据的工具</p><h3 id="3-Analyze-API"><a href="#3-Analyze-API" class="headerlink" title="3. Analyze API"></a>3. Analyze API</h3><p>内置API，用于测试分析器、分词器、过滤器的效果:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">POST /_analyze<br>&#123;<br>  <span class="hljs-string">&quot;analyzer&quot;</span>: <span class="hljs-string">&quot;standard&quot;</span>,<br>  <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;待分析的文本&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure><p>通过使用这些工具，可以更有效地管理、监控和优化ElasticSearch集群，提高搜索性能和可靠性。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="人工智能搜索引擎"><a href="#人工智能搜索引擎" class="headerlink" title="人工智能搜索引擎"></a>人工智能搜索引擎</h1><h2 id="Perplexity-AI"><a href="#Perplexity-AI" class="headerlink" title="Perplexity AI"></a>Perplexity AI</h2><h2 id="秘塔搜索"><a href="#秘塔搜索" class="headerlink" title="秘塔搜索"></a>秘塔搜索</h2>]]></content>
     
     
     <categories>
@@ -1525,9 +1607,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -1561,6 +1643,37 @@
       <tag>生成式AI</tag>
       
       <tag>检索</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>窗口外推技术综述</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-LLM%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-LLM%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h2 id="衡量超长上下文的核心维度"><a href="#衡量超长上下文的核心维度" class="headerlink" title="衡量超长上下文的核心维度"></a>衡量超长上下文的核心维度</h2><table><thead><tr><th>维度</th><th>关键问题</th><th>示例指标或方法</th></tr></thead><tbody><tr><td>🧠 记忆能力</td><td>模型能否保留并使用早期输入信息？</td><td>Attention Score, Retrieval Accuracy</td></tr><tr><td>🔍 信息利用</td><td>模型是否正确引用了上下文中的关键信息？</td><td>Answer Correctness, Source Attribution</td></tr><tr><td>📏 上下文距离</td><td>模型能处理的最大“有效”token跨度是多少？</td><td>Token Distance vs Accuracy 曲线</td></tr><tr><td>🧱 上下文稀疏鲁棒性</td><td>插入无关信息后仍能保持性能吗？</td><td>Needle-In-A-Haystack、Passkey等测试</td></tr><tr><td>⚡ 推理效率</td><td>上下文越长是否大幅拖慢速度？</td><td>推理时间、显存使用、Token&#x2F;s</td></tr><tr><td>🧠 泛化能力</td><td>模型对训练时未见过的长上下文是否泛化？</td><td>Interpolation vs Extrapolation Comparison</td></tr></tbody></table><h2 id="主流评估方法"><a href="#主流评估方法" class="headerlink" title="主流评估方法"></a>主流评估方法</h2><table><thead><tr><th>方法&#x2F;指标</th><th>类型</th><th>适用任务</th><th>能力维度</th></tr></thead><tbody><tr><td>Needle-in-a-Haystack</td><td>对抗测试</td><td>通用</td><td>远距记忆、干扰鲁棒性</td></tr><tr><td>Passkey Test</td><td>控制变量实验</td><td>通用</td><td>记忆保持、跨度泛化</td></tr><tr><td>文档问答 QA</td><td>应用场景评估</td><td>法律、教育、企业RAG</td><td>信息提取、引用准确性</td></tr><tr><td>LRA</td><td>标准评测集</td><td>学术</td><td>长序列建模能力</td></tr><tr><td>多轮对话回忆评估</td><td>用户模拟</td><td>助理型模型</td><td>记忆力、上下文一致性</td></tr><tr><td>写作连贯性分析</td><td>主观评分+BLEU</td><td>生成类任务</td><td>一致性、记忆性</td></tr></tbody></table><h1 id="主流技术路线"><a href="#主流技术路线" class="headerlink" title="主流技术路线"></a>主流技术路线</h1><p>目前已有多种技术路线尝试破解以上挑战，分别从结构优化、注意力稀疏化、位置编码设计、外部记忆机制等方向切入。</p><p>✅ 路线一：稀疏注意力机制（Sparse Attention）<br>⏩ 方法代表：<br>Longformer（fixed + sliding window attention）</p><p>BigBird（window + global + random）</p><p>Sparse Transformer（block sparse）</p><p>Reformer（LSH attention）</p><p>📌 优势：<br>将O(n²)降为 O(n√n) 或更低；</p><p>结构清晰，较容易在已有Transformer框架中集成。</p><p>⚠️ 限制：<br>对长距离依赖仍然有限制；</p><p>在一般语言任务中未显著超过标准全注意力模型。</p><p>✅ 路线二：Flash Attention &#x2F; Linear Attention 加速<br>⏩ 方法代表：<br>FlashAttention v1&#x2F;v2（OpenAI）</p><p>xFormers、Memory-efficient Attention</p><p>Performer &#x2F; Linear Transformer（内积核逼近）</p><p>📌 优势：<br>保留全注意力机制，降低显存需求；</p><p>FlashAttention 在 GPT-4&#x2F;Claude等模型中广泛使用。</p><p>⚠️ 限制：<br>FlashAttention 加速的是“计算效率”，并不提升“信息记忆能力”；</p><p>Linear Attention 有泛化退化的问题。</p><p>✅ 路线三：改进位置编码以支持无限泛化<br>⏩ 方法代表：<br>RoPE缩放（如ChatGPT-4-128k）</p><p>YaRN（RoPE延拓技术，2023）</p><p>ALiBi（位置偏移，Meta）</p><p>Position Interpolation (Pi) - 如Claude 100k使用</p><p>📌 优势：<br>实现 RoPE 向更长范围的“插值”泛化；</p><p>在不改变模型结构的情况下，延长上下文窗口（RoPE缩放即可）。</p><p>⚠️ 限制：<br>插值策略对不同任务鲁棒性不同；</p><p>训练阶段未见的长序列在推理时表现可能不稳定。</p><p>✅ 路线四：外部记忆机制（Memory Augmented &#x2F; Retrieval）<br>⏩ 方法代表：<br>RETRO (DeepMind)：检索增强Transformer</p><p>RAG (Facebook)、LlamaIndex &#x2F; LangChain Memory</p><p>MemGPT、LongChat（Memory Injection）</p><p>📌 优势：<br>通过检索外部知识库或历史记录，实现“动态上下文扩展”；</p><p>提高信息检索能力而非模型“死记硬背”。</p><p>⚠️ 限制：<br>需要额外设计召回机制；</p><p>召回结果质量决定模型上下文质量。</p><p>✅ 路线五：分块处理和延迟更新策略<br>⏩ 方法代表：<br>Transformer-XL（带有segment-level recurrence）</p><p>GPTCache &#x2F; Streaming LLMs</p><p>Windowed Transformer + Recurrence</p><p>📌 优势：<br>模拟“上下文记忆”的方式实现跨块信息流；</p><p>支持流式、低延迟推理。</p><p>⚠️ 限制：<br>对生成任务效果不如全局上下文直接可见。</p><h1 id="关键场景与超长上下文需求"><a href="#关键场景与超长上下文需求" class="headerlink" title="关键场景与超长上下文需求"></a>关键场景与超长上下文需求</h1><table><thead><tr><th>场景类别</th><th>示例任务</th><th>对上下文长度的需求</th></tr></thead><tbody><tr><td>学术&#x2F;法律文档</td><td>合同分析、论文问答</td><td>✅必须全文处理</td></tr><tr><td>多轮对话</td><td>私人助理、多Agent协作</td><td>✅需记住多轮上下文</td></tr><tr><td>代码理解</td><td>项目级代码生成</td><td>✅需跨文件全局语义</td></tr><tr><td>RAG系统</td><td>企业知识库问答</td><td>✅上下文拼接需保持完整</td></tr><tr><td>文本创作</td><td>小说剧本生成</td><td>✅情节一致性要求高</td></tr><tr><td>多模态场景</td><td>视频理解、电子病历分析</td><td>✅时序长度需求极高</td></tr></tbody></table><h2 id="多轮对话-Agent协作系统"><a href="#多轮对话-Agent协作系统" class="headerlink" title="多轮对话&#x2F;Agent协作系统"></a>多轮对话&#x2F;Agent协作系统</h2><h2 id="长文档理解"><a href="#长文档理解" class="headerlink" title="长文档理解"></a>长文档理解</h2><h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><h2 id="RAG系统"><a href="#RAG系统" class="headerlink" title="RAG系统"></a>RAG系统</h2><p><strong>企业内部文档问答</strong><br><strong>基于大量文档的洞察报告生成</strong></p><h2 id="长文档生成"><a href="#长文档生成" class="headerlink" title="长文档生成"></a>长文档生成</h2><p><strong>长篇小说&#x2F;剧本&#x2F;</strong><br><strong>视频脚本&#x2F;课程讲义生成</strong></p><h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p><h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p><h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h2 id="上下文窗口外推常见问题"><a href="#上下文窗口外推常见问题" class="headerlink" title="上下文窗口外推常见问题"></a>上下文窗口外推常见问题</h2><ol><li>在注意力机制中距离倍增时容易发生梯度爆炸或收缩</li><li>在上下文非常长时（如128K），大部分 token 实际上对训练损失的贡献较小（尤其是头尾位置</li></ol><p>DeepSeek应用 YaRN（Peng et al., 2023a）进行上下文扩展，并进行两个额外的训练阶段，每个阶段包含1000步，逐步将上下文窗口从4K扩展到32K，然后扩展到128K。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>深度学习</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -1653,9 +1766,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -1686,9 +1799,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -1701,38 +1814,7 @@
     <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
     <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p><h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>深度学习</tag>
-      
-      <tag>生成式AI</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>窗口外推技术综述</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/</url>
-    
-    <content type="html"><![CDATA[<h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h2 id="多轮对话-Agent协作系统"><a href="#多轮对话-Agent协作系统" class="headerlink" title="多轮对话&#x2F;Agent协作系统"></a>多轮对话&#x2F;Agent协作系统</h2><h2 id="长文档理解"><a href="#长文档理解" class="headerlink" title="长文档理解"></a>长文档理解</h2><h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><h2 id="RAG系统"><a href="#RAG系统" class="headerlink" title="RAG系统"></a>RAG系统</h2><p><strong>企业内部文档问答</strong><br><strong>基于大量文档的洞察报告生成</strong></p><h2 id="长文档生成"><a href="#长文档生成" class="headerlink" title="长文档生成"></a>长文档生成</h2><p><strong>长篇小说&#x2F;剧本&#x2F;</strong><br><strong>视频脚本&#x2F;课程讲义生成</strong></p><h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p><h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p><h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p><h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p><h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p><h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p><h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p><h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p><h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p><h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache及其优化"><a href="#KVCache及其优化" class="headerlink" title="KVCache及其优化"></a>KVCache及其优化</h2><h2 id="Speculative-Decoding"><a href="#Speculative-Decoding" class="headerlink" title="Speculative Decoding"></a>Speculative Decoding</h2><p>一次生成多个token</p><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p><h1 id="ChatGPT总结"><a href="#ChatGPT总结" class="headerlink" title="ChatGPT总结"></a>ChatGPT总结</h1><p>大模型（如 GPT-3、LLaMA、Qwen 等）的推理速度，是影响其在线服务成本和响应时延的核心瓶颈。除了 FlashAttention，还有多种有效的推理加速技术，涵盖 <strong>算子级优化、模型结构压缩、系统并行、KV 缓存改进等方面</strong>。</p><p>下面我系统总结 <strong>当前主流 LLM 推理加速方法</strong>，并说明它们背后的原理与适用场景：</p><hr><h2 id="🧠-一、算子级优化（Operator-Level）"><a href="#🧠-一、算子级优化（Operator-Level）" class="headerlink" title="🧠 一、算子级优化（Operator-Level）"></a>🧠 一、算子级优化（Operator-Level）</h2><table><thead><tr><th>方法</th><th>原理</th><th>效果</th></tr></thead><tbody><tr><td>✅ FlashAttention</td><td>Kernel 融合 + 分块 softmax</td><td>内存↓、速度↑，适合长上下文</td></tr><tr><td>xformers &#x2F; Triton kernel</td><td>自定义 fused kernel</td><td>替代标准 PyTorch 算子，更高效</td></tr><tr><td>TensorRT &#x2F; ONNX 加速</td><td>转为图执行，优化图结构</td><td>大幅降低推理延迟，适合部署</td></tr><tr><td>FlashDecoding（来自 FlashInfer）</td><td>加速 KV cache 使用</td><td>对解码阶段大幅提速</td></tr></tbody></table><hr><h2 id="💾-二、KV-Cache-优化（Decoder-Only-模型特有）"><a href="#💾-二、KV-Cache-优化（Decoder-Only-模型特有）" class="headerlink" title="💾 二、KV Cache 优化（Decoder Only 模型特有）"></a>💾 二、KV Cache 优化（Decoder Only 模型特有）</h2><table><thead><tr><th>方法</th><th>原理</th><th>效果</th></tr></thead><tbody><tr><td>✅ KV Cache</td><td>缓存历史 token 的 K&#x2F;V，避免重复计算</td><td>将 self-attn 从 $O(n^2)$ 降为 $O(n)$</td></tr><tr><td>Paged KV Cache（vLLM）</td><td>将 KV Cache 分页管理，按需释放、重用</td><td>支持多请求高效复用显存</td></tr><tr><td>MQA &#x2F; GQA（多组共享 key）</td><td>多个 head 共享 key，减少 cache 大小</td><td>比标准 KV 缓存减少一半显存</td></tr><tr><td>Speculative Decoding</td><td>猜测多个 token、再校验</td><td>多 token 并行预测，加速解码阶段</td></tr></tbody></table><hr><h2 id="📉-三、模型结构压缩与低精度推理"><a href="#📉-三、模型结构压缩与低精度推理" class="headerlink" title="📉 三、模型结构压缩与低精度推理"></a>📉 三、模型结构压缩与低精度推理</h2><table><thead><tr><th>方法</th><th>原理</th><th>效果</th></tr></thead><tbody><tr><td>✅ 量化（Int8&#x2F;Int4）</td><td>减少参数存储和矩阵乘计算精度</td><td>显存 ↓ 4-8x，速度↑1.5-3x</td></tr><tr><td>BitsAndBytes (bnb)</td><td>支持训练和推理的量化引擎</td><td>Hugging Face 提供接口</td></tr><tr><td>LoRA + 推理合并</td><td>推理时合并 adapter 和主模型</td><td>多任务共享权重，适合多模型部署</td></tr><tr><td>模型蒸馏</td><td>训练小模型拟合大模型输出</td><td>能大幅缩小模型体积，提升速度</td></tr></tbody></table><hr><h2 id="🚀-四、并行策略与系统优化"><a href="#🚀-四、并行策略与系统优化" class="headerlink" title="🚀 四、并行策略与系统优化"></a>🚀 四、并行策略与系统优化</h2><table><thead><tr><th>方法</th><th>原理</th><th>效果</th></tr></thead><tbody><tr><td>Tensor Parallel</td><td>拆分每层的参数矩阵，在多个 GPU 上并行</td><td>多卡推理&#x2F;训练</td></tr><tr><td>Pipeline Parallel</td><td>拆分不同层，流水线执行</td><td>减少 GPU 空闲时间</td></tr><tr><td>Sequence Parallel（如 DeepSpeed）</td><td>对单序列进行细粒度并行</td><td>减少单卡内存瓶颈</td></tr><tr><td>Prefill + Decode 分离</td><td>预填充阶段并行，decode 阶段增量计算</td><td>大幅提升多请求吞吐量（vLLM）</td></tr></tbody></table><hr><h2 id="💡-五、推理策略层面优化"><a href="#💡-五、推理策略层面优化" class="headerlink" title="💡 五、推理策略层面优化"></a>💡 五、推理策略层面优化</h2><table><thead><tr><th>方法</th><th>原理</th><th>效果</th></tr></thead><tbody><tr><td>Top-k, Top-p Sampling</td><td>限制候选词数量</td><td>加速生成阶段</td></tr><tr><td>Early Exit</td><td>模型前几层就做输出判断</td><td>降低平均计算量（需训练）</td></tr><tr><td>Dynamic Prompt Pruning</td><td>对 prompt 进行裁剪和重写</td><td>降低 context 长度</td></tr></tbody></table><hr><h2 id="🔬-六、业界代表系统（你可以参考-复用）"><a href="#🔬-六、业界代表系统（你可以参考-复用）" class="headerlink" title="🔬 六、业界代表系统（你可以参考&#x2F;复用）"></a>🔬 六、业界代表系统（你可以参考&#x2F;复用）</h2><table><thead><tr><th>系统&#x2F;框架</th><th>核心优势</th><th>来源</th></tr></thead><tbody><tr><td><strong>vLLM</strong></td><td>Paged KV Cache + 高并发 + FlashAttention</td><td>UC Berkeley</td></tr><tr><td><strong>Triton &#x2F; TensorRT-LLM</strong></td><td>高性能推理 + 模型优化</td><td>NVIDIA</td></tr><tr><td><strong>DeepSpeed-Inference</strong></td><td>分布式推理 + INT8&#x2F;FP16 支持</td><td>Microsoft</td></tr><tr><td><strong>TGI (Text Generation Inference)</strong></td><td>Hugging Face 部署方案</td><td>HuggingFace</td></tr><tr><td><strong>FasterTransformer</strong></td><td>编译优化 + 分布式支持</td><td>NVIDIA</td></tr></tbody></table><hr><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>]]></content>
     
     
     <categories>
@@ -1854,43 +1936,6 @@
   
   
   <entry>
-    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
-    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/"/>
-    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/</url>
-    
-    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="https://github.com/qizekun/ShapeLLM">ShapeLLM</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>NVIDIA Isaac GR00T N1: 通用机器人基础模型</title>
     <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/"/>
     <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-GR00T-N1/</url>
@@ -1913,13 +1958,50 @@
       
       <tag>AI</tag>
       
-      <tag>NLP</tag>
-      
       <tag>Research</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
       
       <tag>Robotics</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>傅立叶机器人最新研究FreeMotion、ShapeLLM解读</title>
+    <link href="/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/"/>
+    <url>/tech-blog/2025/03/25/%E6%9C%BA%E5%99%A8%E4%BA%BA-FreeMotion/</url>
+    
+    <content type="html"><![CDATA[<p><a href="">FreeMotion</a><br><a href="https://github.com/qizekun/ShapeLLM">ShapeLLM</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
       <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -2281,11 +2363,11 @@
   
   
   <entry>
-    <title>文生图技术解析(一)：扩散模型原理与架构</title>
-    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/"/>
-    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/</url>
+    <title>文生图技术解析二</title>
+    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6/"/>
+    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6/</url>
     
-    <content type="html"><![CDATA[<h1 id="文生图技术解析-一-：扩散模型原理与架构"><a href="#文生图技术解析-一-：扩散模型原理与架构" class="headerlink" title="文生图技术解析(一)：扩散模型原理与架构"></a>文生图技术解析(一)：扩散模型原理与架构</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>文生图(Text-to-Image)技术是近年来人工智能领域最引人瞩目的突破之一，它能够根据文本描述生成相应的图像，为创意表达、内容创作和视觉设计带来革命性变化。本文作为文生图技术解析系列的第一篇，将重点介绍当前主流文生图技术的核心——扩散模型(Diffusion Models)的基本原理和架构。</p><h2 id="扩散模型的发展历程"><a href="#扩散模型的发展历程" class="headerlink" title="扩散模型的发展历程"></a>扩散模型的发展历程</h2><h3 id="从GAN到扩散模型"><a href="#从GAN到扩散模型" class="headerlink" title="从GAN到扩散模型"></a>从GAN到扩散模型</h3><p>早期的图像生成主要依赖于生成对抗网络(GAN)，如StyleGAN等。但GAN存在训练不稳定、模式崩溃等问题。2020年，Ho等人提出了去噪扩散概率模型(DDPM)，开启了扩散模型在图像生成领域的新纪元。随后，Song等人的基于分数的生成模型(SGM)和Rombach等人的潜在扩散模型(LDM)进一步推动了扩散模型的发展。</p><h3 id="里程碑式产品"><a href="#里程碑式产品" class="headerlink" title="里程碑式产品"></a>里程碑式产品</h3><ul><li><strong>DALL-E&#x2F;DALL-E 2</strong>：OpenAI开发的先驱性文生图系统</li><li><strong>Imagen</strong>：Google开发的高保真文生图模型</li><li><strong>Stable Diffusion</strong>：稳定扩散模型，首个开源且能在消费级硬件上运行的大型文生图模型</li><li><strong>Midjourney</strong>：以艺术审美著称的闭源文生图服务</li><li><strong>GPT-4o</strong>：生成式文生图模型</li></ul><h2 id="扩散模型的基本原理"><a href="#扩散模型的基本原理" class="headerlink" title="扩散模型的基本原理"></a>扩散模型的基本原理</h2><h3 id="扩散过程的数学基础"><a href="#扩散过程的数学基础" class="headerlink" title="扩散过程的数学基础"></a>扩散过程的数学基础</h3><p>扩散模型基于马尔可夫链的数学框架，包含两个核心过程：</p><ol><li><strong>前向过程(扩散过程)</strong>：逐步向图像添加高斯噪声，直到完全破坏图像结构，变为纯噪声</li><li><strong>反向过程(去噪过程)</strong>：学习如何逐步去除噪声，从随机噪声中恢复出有意义的图像</li></ol><p>前向过程可以用以下方程表示：<br>$q(x_t|x_{t-1}) &#x3D; \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_t\mathbf{I})$</p><p>其中，$\beta_t$是控制每一步噪声添加量的参数。</p><h3 id="DDPM算法流程"><a href="#DDPM算法流程" class="headerlink" title="DDPM算法流程"></a>DDPM算法流程</h3><ol><li><p><strong>训练阶段</strong>：</p><ul><li>对原始图像施加不同程度的噪声</li><li>训练神经网络预测每一步添加的噪声，最小化预测误差</li><li>损失函数通常为均方误差：$L &#x3D; \mathbb{E}<em>{x_0,\epsilon,t}[||\epsilon - \epsilon</em>\theta(x_t, t)||^2]$</li></ul></li><li><p><strong>采样阶段</strong>：</p><ul><li>从标准正态分布采样初始噪声$x_T \sim \mathcal{N}(0, \mathbf{I})$</li><li>逐步应用学习到的去噪过程，通过迭代方式生成最终图像</li><li>采样方程：$x_{t-1} &#x3D; \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}<em>t}}\epsilon</em>\theta(x_t, t)) + \sigma_t z$，其中$z \sim \mathcal{N}(0, \mathbf{I})$</li></ul></li></ol><h2 id="文本条件扩散模型架构"><a href="#文本条件扩散模型架构" class="headerlink" title="文本条件扩散模型架构"></a>文本条件扩散模型架构</h2><h3 id="条件生成机制"><a href="#条件生成机制" class="headerlink" title="条件生成机制"></a>条件生成机制</h3><p>为了实现文本控制图像生成，需要将文本信息融入扩散过程：</p><ol><li><strong>文本编码器</strong>：使用预训练语言模型(如CLIP文本编码器)将文本提示转化为高维语义向量</li><li><strong>条件注入</strong>：通过交叉注意力机制将文本特征注入到扩散模型的U-Net架构中</li><li><strong>时间步编码</strong>：为每个去噪步骤提供时间信息，指导噪声预测过程</li></ol><h3 id="Stable-Diffusion模型解析"><a href="#Stable-Diffusion模型解析" class="headerlink" title="Stable Diffusion模型解析"></a>Stable Diffusion模型解析</h3><p>Stable Diffusion作为目前最具影响力的开源文生图模型，采用了潜在扩散模型(LDM)的架构：</p><ol><li><strong>VAE编码器</strong>：将高分辨率图像压缩到低维潜在空间</li><li><strong>U-Net主干网络</strong>：在潜在空间中执行扩散和去噪过程</li><li><strong>CLIP文本编码器</strong>：处理文本输入，提取语义特征</li><li><strong>VAE解码器</strong>：将生成的潜在表示重建为最终图像</li></ol><p>这种架构显著减少了计算资源需求，使模型能够在消费级硬件上运行。</p><h2 id="采样技术与优化方法"><a href="#采样技术与优化方法" class="headerlink" title="采样技术与优化方法"></a>采样技术与优化方法</h2><h3 id="快速采样算法"><a href="#快速采样算法" class="headerlink" title="快速采样算法"></a>快速采样算法</h3><p>扩散模型生成过程原本需要数百次迭代，但通过优化采样算法可大幅加速：</p><ol><li><strong>DDIM(确定性扩散)</strong>：通过构建非马尔可夫过程减少采样步骤</li><li><strong>DPM-Solver&#x2F;DPM-Solver++</strong>：基于常微分方程(ODE)求解器的高效采样器</li><li><strong>Euler&#x2F;Euler-a采样器</strong>：简单高效的欧拉方法及其自适应变种</li><li><strong>PLMS(伪线性多步方法)</strong>：利用前几步信息加速收敛</li></ol><h3 id="引导技术"><a href="#引导技术" class="headerlink" title="引导技术"></a>引导技术</h3><p>通过引导技术增强文本对生成过程的控制：</p><ol><li><strong>分类器引导</strong>：利用预训练图像分类器引导生成过程</li><li><strong>无分类器引导(CFG)</strong>：同时进行条件和无条件生成，通过调整两者权重控制文本遵循度<ul><li>$\epsilon_\theta^{CFG}(x_t|y) &#x3D; \epsilon_\theta(x_t|\emptyset) + s \cdot (\epsilon_\theta(x_t|y) - \epsilon_\theta(x_t|\emptyset))$</li></ul></li></ol><h2 id="当前挑战与局限性"><a href="#当前挑战与局限性" class="headerlink" title="当前挑战与局限性"></a>当前挑战与局限性</h2><h3 id="技术挑战"><a href="#技术挑战" class="headerlink" title="技术挑战"></a>技术挑战</h3><ol><li><strong>精确文本对齐</strong>：准确理解复杂文本指令仍有困难</li><li><strong>空间关系理解</strong>：复杂位置关系和视角描述的处理不够精确</li><li><strong>推理效率</strong>：尽管有所改进，生成高质量图像仍需要较长时间</li><li><strong>风格一致性</strong>：在保持艺术风格一致性方面仍有提升空间</li></ol><h3 id="社会影响与伦理考量"><a href="#社会影响与伦理考量" class="headerlink" title="社会影响与伦理考量"></a>社会影响与伦理考量</h3><ol><li><strong>内容安全</strong>：模型可能生成有害、偏见或不适当内容</li><li><strong>著作权问题</strong>：训练数据来源和生成内容的版权归属存在争议</li><li><strong>身份伪造</strong>：可能被用于创建未经授权的肖像或虚假内容</li><li><strong>就业影响</strong>：对视觉艺术工作者和创意产业的潜在影响</li></ol><h2 id="下一代扩散模型发展方向"><a href="#下一代扩散模型发展方向" class="headerlink" title="下一代扩散模型发展方向"></a>下一代扩散模型发展方向</h2><h3 id="技术演进"><a href="#技术演进" class="headerlink" title="技术演进"></a>技术演进</h3><ol><li><strong>多模态融合</strong>：与视频、3D和音频生成技术的结合</li><li><strong>高效架构</strong>：更轻量化和计算高效的模型结构</li><li><strong>个性化技术</strong>：低成本适应用户特定风格和需求的方法</li><li><strong>物理约束理解</strong>：改进对现实世界物理规则的遵循</li></ol><h3 id="应用拓展"><a href="#应用拓展" class="headerlink" title="应用拓展"></a>应用拓展</h3><ol><li><strong>辅助创意设计</strong>：概念艺术、产品原型、品牌素材生成</li><li><strong>教育可视化</strong>：复杂概念的直观图像表达</li><li><strong>医学影像</strong>：医学图像合成和诊断辅助</li><li><strong>娱乐与游戏</strong>：游戏资产生成和互动内容创作</li></ol><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>扩散模型为文生图技术提供了强大的基础，但这仅是开始。随着算法优化、计算资源降低和应用场景拓展，文生图技术将继续深刻改变视觉内容创作的方式。在下一篇文章中，我们将深入探讨提示工程（Prompt Engineering）技术，帮助读者掌握引导AI生成所需图像的艺术。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems.</li><li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. CVPR.</li><li>Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., … &amp; Chen, M. (2021). GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models. arXiv.</li><li>Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E., … &amp; Norouzi, M. (2022). Photorealistic text-to-image diffusion models with deep language understanding. arXiv.</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="文生图技术解析-二-：生成式文生图"><a href="#文生图技术解析-二-：生成式文生图" class="headerlink" title="文生图技术解析(二)：生成式文生图"></a>文生图技术解析(二)：生成式文生图</h1>]]></content>
     
     
     <categories>
@@ -2316,11 +2398,11 @@
   
   
   <entry>
-    <title>文生图技术解析二</title>
-    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6/"/>
-    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6/</url>
+    <title>文生图技术解析(一)：扩散模型原理与架构</title>
+    <link href="/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/"/>
+    <url>/tech-blog/2025/03/24/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%96%87%E7%94%9F%E5%9B%BE-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90%E4%B8%80/</url>
     
-    <content type="html"><![CDATA[<h1 id="文生图技术解析-二-：生成式文生图"><a href="#文生图技术解析-二-：生成式文生图" class="headerlink" title="文生图技术解析(二)：生成式文生图"></a>文生图技术解析(二)：生成式文生图</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="文生图技术解析-一-：扩散模型原理与架构"><a href="#文生图技术解析-一-：扩散模型原理与架构" class="headerlink" title="文生图技术解析(一)：扩散模型原理与架构"></a>文生图技术解析(一)：扩散模型原理与架构</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>文生图(Text-to-Image)技术是近年来人工智能领域最引人瞩目的突破之一，它能够根据文本描述生成相应的图像，为创意表达、内容创作和视觉设计带来革命性变化。本文作为文生图技术解析系列的第一篇，将重点介绍当前主流文生图技术的核心——扩散模型(Diffusion Models)的基本原理和架构。</p><h2 id="扩散模型的发展历程"><a href="#扩散模型的发展历程" class="headerlink" title="扩散模型的发展历程"></a>扩散模型的发展历程</h2><h3 id="从GAN到扩散模型"><a href="#从GAN到扩散模型" class="headerlink" title="从GAN到扩散模型"></a>从GAN到扩散模型</h3><p>早期的图像生成主要依赖于生成对抗网络(GAN)，如StyleGAN等。但GAN存在训练不稳定、模式崩溃等问题。2020年，Ho等人提出了去噪扩散概率模型(DDPM)，开启了扩散模型在图像生成领域的新纪元。随后，Song等人的基于分数的生成模型(SGM)和Rombach等人的潜在扩散模型(LDM)进一步推动了扩散模型的发展。</p><h3 id="里程碑式产品"><a href="#里程碑式产品" class="headerlink" title="里程碑式产品"></a>里程碑式产品</h3><ul><li><strong>DALL-E&#x2F;DALL-E 2</strong>：OpenAI开发的先驱性文生图系统</li><li><strong>Imagen</strong>：Google开发的高保真文生图模型</li><li><strong>Stable Diffusion</strong>：稳定扩散模型，首个开源且能在消费级硬件上运行的大型文生图模型</li><li><strong>Midjourney</strong>：以艺术审美著称的闭源文生图服务</li><li><strong>GPT-4o</strong>：生成式文生图模型</li></ul><h2 id="扩散模型的基本原理"><a href="#扩散模型的基本原理" class="headerlink" title="扩散模型的基本原理"></a>扩散模型的基本原理</h2><h3 id="扩散过程的数学基础"><a href="#扩散过程的数学基础" class="headerlink" title="扩散过程的数学基础"></a>扩散过程的数学基础</h3><p>扩散模型基于马尔可夫链的数学框架，包含两个核心过程：</p><ol><li><strong>前向过程(扩散过程)</strong>：逐步向图像添加高斯噪声，直到完全破坏图像结构，变为纯噪声</li><li><strong>反向过程(去噪过程)</strong>：学习如何逐步去除噪声，从随机噪声中恢复出有意义的图像</li></ol><p>前向过程可以用以下方程表示：<br>$q(x_t|x_{t-1}) &#x3D; \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_t\mathbf{I})$</p><p>其中，$\beta_t$是控制每一步噪声添加量的参数。</p><h3 id="DDPM算法流程"><a href="#DDPM算法流程" class="headerlink" title="DDPM算法流程"></a>DDPM算法流程</h3><ol><li><p><strong>训练阶段</strong>：</p><ul><li>对原始图像施加不同程度的噪声</li><li>训练神经网络预测每一步添加的噪声，最小化预测误差</li><li>损失函数通常为均方误差：$L &#x3D; \mathbb{E}<em>{x_0,\epsilon,t}[||\epsilon - \epsilon</em>\theta(x_t, t)||^2]$</li></ul></li><li><p><strong>采样阶段</strong>：</p><ul><li>从标准正态分布采样初始噪声$x_T \sim \mathcal{N}(0, \mathbf{I})$</li><li>逐步应用学习到的去噪过程，通过迭代方式生成最终图像</li><li>采样方程：$x_{t-1} &#x3D; \frac{1}{\sqrt{\alpha_t}}(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}<em>t}}\epsilon</em>\theta(x_t, t)) + \sigma_t z$，其中$z \sim \mathcal{N}(0, \mathbf{I})$</li></ul></li></ol><h2 id="文本条件扩散模型架构"><a href="#文本条件扩散模型架构" class="headerlink" title="文本条件扩散模型架构"></a>文本条件扩散模型架构</h2><h3 id="条件生成机制"><a href="#条件生成机制" class="headerlink" title="条件生成机制"></a>条件生成机制</h3><p>为了实现文本控制图像生成，需要将文本信息融入扩散过程：</p><ol><li><strong>文本编码器</strong>：使用预训练语言模型(如CLIP文本编码器)将文本提示转化为高维语义向量</li><li><strong>条件注入</strong>：通过交叉注意力机制将文本特征注入到扩散模型的U-Net架构中</li><li><strong>时间步编码</strong>：为每个去噪步骤提供时间信息，指导噪声预测过程</li></ol><h3 id="Stable-Diffusion模型解析"><a href="#Stable-Diffusion模型解析" class="headerlink" title="Stable Diffusion模型解析"></a>Stable Diffusion模型解析</h3><p>Stable Diffusion作为目前最具影响力的开源文生图模型，采用了潜在扩散模型(LDM)的架构：</p><ol><li><strong>VAE编码器</strong>：将高分辨率图像压缩到低维潜在空间</li><li><strong>U-Net主干网络</strong>：在潜在空间中执行扩散和去噪过程</li><li><strong>CLIP文本编码器</strong>：处理文本输入，提取语义特征</li><li><strong>VAE解码器</strong>：将生成的潜在表示重建为最终图像</li></ol><p>这种架构显著减少了计算资源需求，使模型能够在消费级硬件上运行。</p><h2 id="采样技术与优化方法"><a href="#采样技术与优化方法" class="headerlink" title="采样技术与优化方法"></a>采样技术与优化方法</h2><h3 id="快速采样算法"><a href="#快速采样算法" class="headerlink" title="快速采样算法"></a>快速采样算法</h3><p>扩散模型生成过程原本需要数百次迭代，但通过优化采样算法可大幅加速：</p><ol><li><strong>DDIM(确定性扩散)</strong>：通过构建非马尔可夫过程减少采样步骤</li><li><strong>DPM-Solver&#x2F;DPM-Solver++</strong>：基于常微分方程(ODE)求解器的高效采样器</li><li><strong>Euler&#x2F;Euler-a采样器</strong>：简单高效的欧拉方法及其自适应变种</li><li><strong>PLMS(伪线性多步方法)</strong>：利用前几步信息加速收敛</li></ol><h3 id="引导技术"><a href="#引导技术" class="headerlink" title="引导技术"></a>引导技术</h3><p>通过引导技术增强文本对生成过程的控制：</p><ol><li><strong>分类器引导</strong>：利用预训练图像分类器引导生成过程</li><li><strong>无分类器引导(CFG)</strong>：同时进行条件和无条件生成，通过调整两者权重控制文本遵循度<ul><li>$\epsilon_\theta^{CFG}(x_t|y) &#x3D; \epsilon_\theta(x_t|\emptyset) + s \cdot (\epsilon_\theta(x_t|y) - \epsilon_\theta(x_t|\emptyset))$</li></ul></li></ol><h2 id="当前挑战与局限性"><a href="#当前挑战与局限性" class="headerlink" title="当前挑战与局限性"></a>当前挑战与局限性</h2><h3 id="技术挑战"><a href="#技术挑战" class="headerlink" title="技术挑战"></a>技术挑战</h3><ol><li><strong>精确文本对齐</strong>：准确理解复杂文本指令仍有困难</li><li><strong>空间关系理解</strong>：复杂位置关系和视角描述的处理不够精确</li><li><strong>推理效率</strong>：尽管有所改进，生成高质量图像仍需要较长时间</li><li><strong>风格一致性</strong>：在保持艺术风格一致性方面仍有提升空间</li></ol><h3 id="社会影响与伦理考量"><a href="#社会影响与伦理考量" class="headerlink" title="社会影响与伦理考量"></a>社会影响与伦理考量</h3><ol><li><strong>内容安全</strong>：模型可能生成有害、偏见或不适当内容</li><li><strong>著作权问题</strong>：训练数据来源和生成内容的版权归属存在争议</li><li><strong>身份伪造</strong>：可能被用于创建未经授权的肖像或虚假内容</li><li><strong>就业影响</strong>：对视觉艺术工作者和创意产业的潜在影响</li></ol><h2 id="下一代扩散模型发展方向"><a href="#下一代扩散模型发展方向" class="headerlink" title="下一代扩散模型发展方向"></a>下一代扩散模型发展方向</h2><h3 id="技术演进"><a href="#技术演进" class="headerlink" title="技术演进"></a>技术演进</h3><ol><li><strong>多模态融合</strong>：与视频、3D和音频生成技术的结合</li><li><strong>高效架构</strong>：更轻量化和计算高效的模型结构</li><li><strong>个性化技术</strong>：低成本适应用户特定风格和需求的方法</li><li><strong>物理约束理解</strong>：改进对现实世界物理规则的遵循</li></ol><h3 id="应用拓展"><a href="#应用拓展" class="headerlink" title="应用拓展"></a>应用拓展</h3><ol><li><strong>辅助创意设计</strong>：概念艺术、产品原型、品牌素材生成</li><li><strong>教育可视化</strong>：复杂概念的直观图像表达</li><li><strong>医学影像</strong>：医学图像合成和诊断辅助</li><li><strong>娱乐与游戏</strong>：游戏资产生成和互动内容创作</li></ol><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>扩散模型为文生图技术提供了强大的基础，但这仅是开始。随着算法优化、计算资源降低和应用场景拓展，文生图技术将继续深刻改变视觉内容创作的方式。在下一篇文章中，我们将深入探讨提示工程（Prompt Engineering）技术，帮助读者掌握引导AI生成所需图像的艺术。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. Advances in Neural Information Processing Systems.</li><li>Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. CVPR.</li><li>Nichol, A., Dhariwal, P., Ramesh, A., Shyam, P., Mishkin, P., McGrew, B., … &amp; Chen, M. (2021). GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models. arXiv.</li><li>Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E., … &amp; Norouzi, M. (2022). Photorealistic text-to-image diffusion models with deep language understanding. arXiv.</li></ul>]]></content>
     
     
     <categories>
@@ -2373,50 +2455,13 @@
       
       <tag>AI</tag>
       
-      <tag>NLP</tag>
-      
       <tag>Research</tag>
-      
-      <tag>Robotics</tag>
       
       <tag>ComputerVision</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
-    <link href="/tech-blog/2025/03/23/UMI/"/>
-    <url>/tech-blog/2025/03/23/UMI/</url>
-    
-    <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
       <tag>NLP</tag>
       
-      <tag>Research</tag>
-      
       <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -2447,13 +2492,13 @@
       
       <tag>AI</tag>
       
-      <tag>NLP</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -2484,13 +2529,13 @@
       
       <tag>AI</tag>
       
-      <tag>NLP</tag>
-      
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -2499,11 +2544,11 @@
   
   
   <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    <title>UMI In-The-Wild Robot Teaching Without In-The-Wild Robots文章解读</title>
+    <link href="/tech-blog/2025/03/23/UMI/"/>
+    <url>/tech-blog/2025/03/23/UMI/</url>
     
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="数据收集"><a href="#数据收集" class="headerlink" title="数据收集"></a>数据收集</h1><h1 id="策略学习"><a href="#策略学习" class="headerlink" title="策略学习"></a>策略学习</h1><p><a href="https://umi-gripper.github.io/">主页</a></p>]]></content>
     
     
     <categories>
@@ -2521,50 +2566,13 @@
       
       <tag>AI</tag>
       
-      <tag>NLP</tag>
-      
       <tag>Research</tag>
-      
-      <tag>Robotics</tag>
       
       <tag>ComputerVision</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
-    
-    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
       <tag>NLP</tag>
       
-      <tag>Research</tag>
-      
       <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
       
     </tags>
     
@@ -2595,13 +2603,87 @@
       
       <tag>AI</tag>
       
-      <tag>NLP</tag>
-      
       <tag>Research</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
       
       <tag>Robotics</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>OpenVLA：开源视觉-语言-动作模型解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="论文解读"><a href="#论文解读" class="headerlink" title="论文解读"></a>论文解读</h1><h1 id="OpenVLA"><a href="#OpenVLA" class="headerlink" title="OpenVLA"></a>OpenVLA</h1><h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>Prismatic-7B VLM</p><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><h3 id="视觉编码器"><a href="#视觉编码器" class="headerlink" title="视觉编码器"></a>视觉编码器</h3><h3 id="投影器"><a href="#投影器" class="headerlink" title="投影器"></a>投影器</h3><p>视觉特征映射到语言嵌入空间</p><h3 id="LLM骨干"><a href="#LLM骨干" class="headerlink" title="LLM骨干"></a>LLM骨干</h3><h2 id="微调数据集"><a href="#微调数据集" class="headerlink" title="微调数据集"></a>微调数据集</h2><p>Open X-Embodiment：包含 970k 个机器人操作轨迹，涵盖多种机器人形态、任务和场景。</p><h2 id="微调方法：Lora"><a href="#微调方法：Lora" class="headerlink" title="微调方法：Lora"></a>微调方法：Lora</h2><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><h3 id="量化推理"><a href="#量化推理" class="headerlink" title="量化推理"></a>量化推理</h3><h1 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h1><h2 id="仅支持单图输入"><a href="#仅支持单图输入" class="headerlink" title="仅支持单图输入"></a>仅支持单图输入</h2><h2 id="推理吞吐量有限"><a href="#推理吞吐量有限" class="headerlink" title="推理吞吐量有限"></a>推理吞吐量有限</h2><h2 id="在测试任务的成功率低于90-，可靠性有待提升"><a href="#在测试任务的成功率低于90-，可靠性有待提升" class="headerlink" title="在测试任务的成功率低于90%，可靠性有待提升"></a>在测试任务的成功率低于90%，可靠性有待提升</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li>项目主页: <a href="https://openvla.github.io/">OpenVLA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
       <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>ComputerVision</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Robotics</tag>
       
     </tags>
     
@@ -2634,9 +2716,9 @@
       
       <tag>Research</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>ComputerVision</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>DiffusionModels</tag>
       
@@ -2669,9 +2751,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       
@@ -2706,9 +2788,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       

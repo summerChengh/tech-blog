@@ -1,0 +1,914 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content="超长上下文衡量超长上下文的核心维度   维度 关键问题 示例指标或方法    🧠 记忆能力 模型能否保留并使用早期输入信息？ Attention Score, Retrieval Accuracy   🔍 信息利用 模型是否正确引用了上下文中的关键信息？ Answer Correctness, Source Attribution   📏 上下文距离 模型能处理的最大“有效”token跨度是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="窗口外推技术综述">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-LLM%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content="超长上下文衡量超长上下文的核心维度   维度 关键问题 示例指标或方法    🧠 记忆能力 模型能否保留并使用早期输入信息？ Attention Score, Retrieval Accuracy   🔍 信息利用 模型是否正确引用了上下文中的关键信息？ Answer Correctness, Source Attribution   📏 上下文距离 模型能处理的最大“有效”token跨度是">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
+<meta property="article:modified_time" content="2025-06-10T09:36:13.885Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="生成式AI">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>窗口外推技术综述 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="窗口外推技术综述"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-26 15:11" pubdate>
+          March 26, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">窗口外推技术综述</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h2 id="衡量超长上下文的核心维度"><a href="#衡量超长上下文的核心维度" class="headerlink" title="衡量超长上下文的核心维度"></a>衡量超长上下文的核心维度</h2><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>关键问题</th>
+<th>示例指标或方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🧠 记忆能力</td>
+<td>模型能否保留并使用早期输入信息？</td>
+<td>Attention Score, Retrieval Accuracy</td>
+</tr>
+<tr>
+<td>🔍 信息利用</td>
+<td>模型是否正确引用了上下文中的关键信息？</td>
+<td>Answer Correctness, Source Attribution</td>
+</tr>
+<tr>
+<td>📏 上下文距离</td>
+<td>模型能处理的最大“有效”token跨度是多少？</td>
+<td>Token Distance vs Accuracy 曲线</td>
+</tr>
+<tr>
+<td>🧱 上下文稀疏鲁棒性</td>
+<td>插入无关信息后仍能保持性能吗？</td>
+<td>Needle-In-A-Haystack、Passkey等测试</td>
+</tr>
+<tr>
+<td>⚡ 推理效率</td>
+<td>上下文越长是否大幅拖慢速度？</td>
+<td>推理时间、显存使用、Token&#x2F;s</td>
+</tr>
+<tr>
+<td>🧠 泛化能力</td>
+<td>模型对训练时未见过的长上下文是否泛化？</td>
+<td>Interpolation vs Extrapolation Comparison</td>
+</tr>
+</tbody></table>
+<h2 id="主流评估方法"><a href="#主流评估方法" class="headerlink" title="主流评估方法"></a>主流评估方法</h2><table>
+<thead>
+<tr>
+<th>方法&#x2F;指标</th>
+<th>类型</th>
+<th>适用任务</th>
+<th>能力维度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Needle-in-a-Haystack</td>
+<td>对抗测试</td>
+<td>通用</td>
+<td>远距记忆、干扰鲁棒性</td>
+</tr>
+<tr>
+<td>Passkey Test</td>
+<td>控制变量实验</td>
+<td>通用</td>
+<td>记忆保持、跨度泛化</td>
+</tr>
+<tr>
+<td>文档问答 QA</td>
+<td>应用场景评估</td>
+<td>法律、教育、企业RAG</td>
+<td>信息提取、引用准确性</td>
+</tr>
+<tr>
+<td>LRA</td>
+<td>标准评测集</td>
+<td>学术</td>
+<td>长序列建模能力</td>
+</tr>
+<tr>
+<td>多轮对话回忆评估</td>
+<td>用户模拟</td>
+<td>助理型模型</td>
+<td>记忆力、上下文一致性</td>
+</tr>
+<tr>
+<td>写作连贯性分析</td>
+<td>主观评分+BLEU</td>
+<td>生成类任务</td>
+<td>一致性、记忆性</td>
+</tr>
+</tbody></table>
+<h1 id="主流技术路线"><a href="#主流技术路线" class="headerlink" title="主流技术路线"></a>主流技术路线</h1><p>目前已有多种技术路线尝试破解以上挑战，分别从结构优化、注意力稀疏化、位置编码设计、外部记忆机制等方向切入。</p>
+<p>✅ 路线一：稀疏注意力机制（Sparse Attention）<br>⏩ 方法代表：<br>Longformer（fixed + sliding window attention）</p>
+<p>BigBird（window + global + random）</p>
+<p>Sparse Transformer（block sparse）</p>
+<p>Reformer（LSH attention）</p>
+<p>📌 优势：<br>将O(n²)降为 O(n√n) 或更低；</p>
+<p>结构清晰，较容易在已有Transformer框架中集成。</p>
+<p>⚠️ 限制：<br>对长距离依赖仍然有限制；</p>
+<p>在一般语言任务中未显著超过标准全注意力模型。</p>
+<p>✅ 路线二：Flash Attention &#x2F; Linear Attention 加速<br>⏩ 方法代表：<br>FlashAttention v1&#x2F;v2（OpenAI）</p>
+<p>xFormers、Memory-efficient Attention</p>
+<p>Performer &#x2F; Linear Transformer（内积核逼近）</p>
+<p>📌 优势：<br>保留全注意力机制，降低显存需求；</p>
+<p>FlashAttention 在 GPT-4&#x2F;Claude等模型中广泛使用。</p>
+<p>⚠️ 限制：<br>FlashAttention 加速的是“计算效率”，并不提升“信息记忆能力”；</p>
+<p>Linear Attention 有泛化退化的问题。</p>
+<p>✅ 路线三：改进位置编码以支持无限泛化<br>⏩ 方法代表：<br>RoPE缩放（如ChatGPT-4-128k）</p>
+<p>YaRN（RoPE延拓技术，2023）</p>
+<p>ALiBi（位置偏移，Meta）</p>
+<p>Position Interpolation (Pi) - 如Claude 100k使用</p>
+<p>📌 优势：<br>实现 RoPE 向更长范围的“插值”泛化；</p>
+<p>在不改变模型结构的情况下，延长上下文窗口（RoPE缩放即可）。</p>
+<p>⚠️ 限制：<br>插值策略对不同任务鲁棒性不同；</p>
+<p>训练阶段未见的长序列在推理时表现可能不稳定。</p>
+<p>✅ 路线四：外部记忆机制（Memory Augmented &#x2F; Retrieval）<br>⏩ 方法代表：<br>RETRO (DeepMind)：检索增强Transformer</p>
+<p>RAG (Facebook)、LlamaIndex &#x2F; LangChain Memory</p>
+<p>MemGPT、LongChat（Memory Injection）</p>
+<p>📌 优势：<br>通过检索外部知识库或历史记录，实现“动态上下文扩展”；</p>
+<p>提高信息检索能力而非模型“死记硬背”。</p>
+<p>⚠️ 限制：<br>需要额外设计召回机制；</p>
+<p>召回结果质量决定模型上下文质量。</p>
+<p>✅ 路线五：分块处理和延迟更新策略<br>⏩ 方法代表：<br>Transformer-XL（带有segment-level recurrence）</p>
+<p>GPTCache &#x2F; Streaming LLMs</p>
+<p>Windowed Transformer + Recurrence</p>
+<p>📌 优势：<br>模拟“上下文记忆”的方式实现跨块信息流；</p>
+<p>支持流式、低延迟推理。</p>
+<p>⚠️ 限制：<br>对生成任务效果不如全局上下文直接可见。</p>
+<h1 id="关键场景与超长上下文需求"><a href="#关键场景与超长上下文需求" class="headerlink" title="关键场景与超长上下文需求"></a>关键场景与超长上下文需求</h1><table>
+<thead>
+<tr>
+<th>场景类别</th>
+<th>示例任务</th>
+<th>对上下文长度的需求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>学术&#x2F;法律文档</td>
+<td>合同分析、论文问答</td>
+<td>✅必须全文处理</td>
+</tr>
+<tr>
+<td>多轮对话</td>
+<td>私人助理、多Agent协作</td>
+<td>✅需记住多轮上下文</td>
+</tr>
+<tr>
+<td>代码理解</td>
+<td>项目级代码生成</td>
+<td>✅需跨文件全局语义</td>
+</tr>
+<tr>
+<td>RAG系统</td>
+<td>企业知识库问答</td>
+<td>✅上下文拼接需保持完整</td>
+</tr>
+<tr>
+<td>文本创作</td>
+<td>小说剧本生成</td>
+<td>✅情节一致性要求高</td>
+</tr>
+<tr>
+<td>多模态场景</td>
+<td>视频理解、电子病历分析</td>
+<td>✅时序长度需求极高</td>
+</tr>
+</tbody></table>
+<h2 id="多轮对话-Agent协作系统"><a href="#多轮对话-Agent协作系统" class="headerlink" title="多轮对话&#x2F;Agent协作系统"></a>多轮对话&#x2F;Agent协作系统</h2><h2 id="长文档理解"><a href="#长文档理解" class="headerlink" title="长文档理解"></a>长文档理解</h2><h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><h2 id="RAG系统"><a href="#RAG系统" class="headerlink" title="RAG系统"></a>RAG系统</h2><p><strong>企业内部文档问答</strong><br><strong>基于大量文档的洞察报告生成</strong></p>
+<h2 id="长文档生成"><a href="#长文档生成" class="headerlink" title="长文档生成"></a>长文档生成</h2><p><strong>长篇小说&#x2F;剧本&#x2F;</strong><br><strong>视频脚本&#x2F;课程讲义生成</strong></p>
+<h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p>
+<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p>
+<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p>
+<h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h2 id="上下文窗口外推常见问题"><a href="#上下文窗口外推常见问题" class="headerlink" title="上下文窗口外推常见问题"></a>上下文窗口外推常见问题</h2><ol>
+<li>在注意力机制中距离倍增时容易发生梯度爆炸或收缩</li>
+<li>在上下文非常长时（如128K），大部分 token 实际上对训练损失的贡献较小（尤其是头尾位置</li>
+</ol>
+<p>DeepSeek应用 YaRN（Peng et al., 2023a）进行上下文扩展，并进行两个额外的训练阶段，每个阶段包含1000步，逐步将上下文窗口从4K扩展到32K，然后扩展到128K。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+      
+        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>窗口外推技术综述</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型-LLM窗口外推技术综述/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 26, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/03/27/%E5%A4%A7%E6%A8%A1%E5%9E%8B-RAG/" title="RAG">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">RAG</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/" title="大模型原理">
+                        <span class="hidden-mobile">大模型原理</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

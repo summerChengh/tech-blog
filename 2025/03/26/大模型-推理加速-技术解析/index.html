@@ -27,7 +27,7 @@
 <meta property="og:description" content="大模型推理基于Transformer解码器的大模型，推理阶段计算过程。 Transformer Decoder推理计算过程标准Transformer Decoder推理时间复杂度是O(N^2) 推理加速方法量化16bit、8bit量化，通常会损失一定的效果。 模型结构改进Muti-Query Attention小结：训练速度不变，推理速度提升很大。 Grouped Query AttentionF">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-13T13:35:55.758Z">
+<meta property="article:modified_time" content="2025-06-11T10:08:38.621Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          177 words
+          845 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          2 mins
+          8 mins
         
       </span>
     
@@ -304,8 +304,191 @@
 <h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p>
 <h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p>
 <h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p>
-<h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache"><a href="#KVCache" class="headerlink" title="KVCache"></a>KVCache</h2><p>解码过程中的冗余计算</p>
-<h2 id="KVCache的进一步优化"><a href="#KVCache的进一步优化" class="headerlink" title="KVCache的进一步优化"></a>KVCache的进一步优化</h2><h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><h3 id="一次生成多个token"><a href="#一次生成多个token" class="headerlink" title="一次生成多个token"></a>一次生成多个token</h3><h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p>
+<h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache及其优化"><a href="#KVCache及其优化" class="headerlink" title="KVCache及其优化"></a>KVCache及其优化</h2><h2 id="Speculative-Decoding"><a href="#Speculative-Decoding" class="headerlink" title="Speculative Decoding"></a>Speculative Decoding</h2><p>一次生成多个token</p>
+<h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p>
+<h1 id="ChatGPT总结"><a href="#ChatGPT总结" class="headerlink" title="ChatGPT总结"></a>ChatGPT总结</h1><p>大模型（如 GPT-3、LLaMA、Qwen 等）的推理速度，是影响其在线服务成本和响应时延的核心瓶颈。除了 FlashAttention，还有多种有效的推理加速技术，涵盖 <strong>算子级优化、模型结构压缩、系统并行、KV 缓存改进等方面</strong>。</p>
+<p>下面我系统总结 <strong>当前主流 LLM 推理加速方法</strong>，并说明它们背后的原理与适用场景：</p>
+<hr>
+<h2 id="🧠-一、算子级优化（Operator-Level）"><a href="#🧠-一、算子级优化（Operator-Level）" class="headerlink" title="🧠 一、算子级优化（Operator-Level）"></a>🧠 一、算子级优化（Operator-Level）</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>原理</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✅ FlashAttention</td>
+<td>Kernel 融合 + 分块 softmax</td>
+<td>内存↓、速度↑，适合长上下文</td>
+</tr>
+<tr>
+<td>xformers &#x2F; Triton kernel</td>
+<td>自定义 fused kernel</td>
+<td>替代标准 PyTorch 算子，更高效</td>
+</tr>
+<tr>
+<td>TensorRT &#x2F; ONNX 加速</td>
+<td>转为图执行，优化图结构</td>
+<td>大幅降低推理延迟，适合部署</td>
+</tr>
+<tr>
+<td>FlashDecoding（来自 FlashInfer）</td>
+<td>加速 KV cache 使用</td>
+<td>对解码阶段大幅提速</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="💾-二、KV-Cache-优化（Decoder-Only-模型特有）"><a href="#💾-二、KV-Cache-优化（Decoder-Only-模型特有）" class="headerlink" title="💾 二、KV Cache 优化（Decoder Only 模型特有）"></a>💾 二、KV Cache 优化（Decoder Only 模型特有）</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>原理</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✅ KV Cache</td>
+<td>缓存历史 token 的 K&#x2F;V，避免重复计算</td>
+<td>将 self-attn 从 $O(n^2)$ 降为 $O(n)$</td>
+</tr>
+<tr>
+<td>Paged KV Cache（vLLM）</td>
+<td>将 KV Cache 分页管理，按需释放、重用</td>
+<td>支持多请求高效复用显存</td>
+</tr>
+<tr>
+<td>MQA &#x2F; GQA（多组共享 key）</td>
+<td>多个 head 共享 key，减少 cache 大小</td>
+<td>比标准 KV 缓存减少一半显存</td>
+</tr>
+<tr>
+<td>Speculative Decoding</td>
+<td>猜测多个 token、再校验</td>
+<td>多 token 并行预测，加速解码阶段</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📉-三、模型结构压缩与低精度推理"><a href="#📉-三、模型结构压缩与低精度推理" class="headerlink" title="📉 三、模型结构压缩与低精度推理"></a>📉 三、模型结构压缩与低精度推理</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>原理</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✅ 量化（Int8&#x2F;Int4）</td>
+<td>减少参数存储和矩阵乘计算精度</td>
+<td>显存 ↓ 4-8x，速度↑1.5-3x</td>
+</tr>
+<tr>
+<td>BitsAndBytes (bnb)</td>
+<td>支持训练和推理的量化引擎</td>
+<td>Hugging Face 提供接口</td>
+</tr>
+<tr>
+<td>LoRA + 推理合并</td>
+<td>推理时合并 adapter 和主模型</td>
+<td>多任务共享权重，适合多模型部署</td>
+</tr>
+<tr>
+<td>模型蒸馏</td>
+<td>训练小模型拟合大模型输出</td>
+<td>能大幅缩小模型体积，提升速度</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🚀-四、并行策略与系统优化"><a href="#🚀-四、并行策略与系统优化" class="headerlink" title="🚀 四、并行策略与系统优化"></a>🚀 四、并行策略与系统优化</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>原理</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tensor Parallel</td>
+<td>拆分每层的参数矩阵，在多个 GPU 上并行</td>
+<td>多卡推理&#x2F;训练</td>
+</tr>
+<tr>
+<td>Pipeline Parallel</td>
+<td>拆分不同层，流水线执行</td>
+<td>减少 GPU 空闲时间</td>
+</tr>
+<tr>
+<td>Sequence Parallel（如 DeepSpeed）</td>
+<td>对单序列进行细粒度并行</td>
+<td>减少单卡内存瓶颈</td>
+</tr>
+<tr>
+<td>Prefill + Decode 分离</td>
+<td>预填充阶段并行，decode 阶段增量计算</td>
+<td>大幅提升多请求吞吐量（vLLM）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="💡-五、推理策略层面优化"><a href="#💡-五、推理策略层面优化" class="headerlink" title="💡 五、推理策略层面优化"></a>💡 五、推理策略层面优化</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>原理</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Top-k, Top-p Sampling</td>
+<td>限制候选词数量</td>
+<td>加速生成阶段</td>
+</tr>
+<tr>
+<td>Early Exit</td>
+<td>模型前几层就做输出判断</td>
+<td>降低平均计算量（需训练）</td>
+</tr>
+<tr>
+<td>Dynamic Prompt Pruning</td>
+<td>对 prompt 进行裁剪和重写</td>
+<td>降低 context 长度</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🔬-六、业界代表系统（你可以参考-复用）"><a href="#🔬-六、业界代表系统（你可以参考-复用）" class="headerlink" title="🔬 六、业界代表系统（你可以参考&#x2F;复用）"></a>🔬 六、业界代表系统（你可以参考&#x2F;复用）</h2><table>
+<thead>
+<tr>
+<th>系统&#x2F;框架</th>
+<th>核心优势</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>vLLM</strong></td>
+<td>Paged KV Cache + 高并发 + FlashAttention</td>
+<td>UC Berkeley</td>
+</tr>
+<tr>
+<td><strong>Triton &#x2F; TensorRT-LLM</strong></td>
+<td>高性能推理 + 模型优化</td>
+<td>NVIDIA</td>
+</tr>
+<tr>
+<td><strong>DeepSpeed-Inference</strong></td>
+<td>分布式推理 + INT8&#x2F;FP16 支持</td>
+<td>Microsoft</td>
+</tr>
+<tr>
+<td><strong>TGI (Text Generation Inference)</strong></td>
+<td>Hugging Face 部署方案</td>
+<td>HuggingFace</td>
+</tr>
+<tr>
+<td><strong>FasterTransformer</strong></td>
+<td>编译优化 + 分布式支持</td>
+<td>NVIDIA</td>
+</tr>
+</tbody></table>
+<hr>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>
 
                 
@@ -418,8 +601,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/" title="窗口外推技术综述">
-                        <span class="hidden-mobile">窗口外推技术综述</span>
+                      <a href="/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/" title="AI编程与VibeCoding">
+                        <span class="hidden-mobile">AI编程与VibeCoding</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

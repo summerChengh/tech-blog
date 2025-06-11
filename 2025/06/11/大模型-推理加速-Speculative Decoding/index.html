@@ -19,24 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="超长上下文多轮对话&#x2F;Agent协作系统长文档理解软件工程RAG系统企业内部文档问答基于大量文档的洞察报告生成 长文档生成长篇小说&#x2F;剧本&#x2F;视频脚本&#x2F;课程讲义生成 窗口外推技术直接外推提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。 插值线性内插将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的">
+    <meta name="description" content="Sharing insights, tutorials, and experiences in software development">
 <meta property="og:type" content="article">
-<meta property="og:title" content="窗口外推技术综述">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/index.html">
+<meta property="og:title" content="Speculative Decoding">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/06/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-Speculative%20Decoding/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="超长上下文多轮对话&#x2F;Agent协作系统长文档理解软件工程RAG系统企业内部文档问答基于大量文档的洞察报告生成 长文档生成长篇小说&#x2F;剧本&#x2F;视频脚本&#x2F;课程讲义生成 窗口外推技术直接外推提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。 插值线性内插将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的">
+<meta property="og:description" content="Sharing insights, tutorials, and experiences in software development">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-06-09T10:03:56.594Z">
+<meta property="article:published_time" content="2025-06-11T02:32:00.000Z">
+<meta property="article:modified_time" content="2025-06-11T10:05:51.558Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="生成式AI">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="Research">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>窗口外推技术综述 - Tech Blog</title>
+  <title>Speculative Decoding - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="窗口外推技术综述"></span>
+            <span id="subtitle" data-typed-text="Speculative Decoding"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-26 15:11" pubdate>
-          March 26, 2025 pm
+        <time datetime="2025-06-11 10:32" pubdate>
+          June 11, 2025 am
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          188 words
+          0 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -292,17 +292,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">窗口外推技术综述</h1>
+            <h1 id="seo-header">Speculative Decoding</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h2 id="多轮对话-Agent协作系统"><a href="#多轮对话-Agent协作系统" class="headerlink" title="多轮对话&#x2F;Agent协作系统"></a>多轮对话&#x2F;Agent协作系统</h2><h2 id="长文档理解"><a href="#长文档理解" class="headerlink" title="长文档理解"></a>长文档理解</h2><h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><h2 id="RAG系统"><a href="#RAG系统" class="headerlink" title="RAG系统"></a>RAG系统</h2><p><strong>企业内部文档问答</strong><br><strong>基于大量文档的洞察报告生成</strong></p>
-<h2 id="长文档生成"><a href="#长文档生成" class="headerlink" title="长文档生成"></a>长文档生成</h2><p><strong>长篇小说&#x2F;剧本&#x2F;</strong><br><strong>视频脚本&#x2F;课程讲义生成</strong></p>
-<h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p>
-<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p>
-<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p>
-<h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                
                 
               </div>
             
@@ -320,12 +315,12 @@
     
       <span class="category-chain">
         
-  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  <a href="/tech-blog/categories/Research/" class="category-chain-item">Research</a>
   
   
     <span>></span>
     
-  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
+  <a href="/tech-blog/categories/Research/AI/" class="category-chain-item">AI</a>
   
   
 
@@ -344,9 +339,9 @@
       
         <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+        <a href="/tech-blog/tags/LLM/" class="print-no-link">#LLM</a>
       
-        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+        <a href="/tech-blog/tags/Research/" class="print-no-link">#Research</a>
       
     </div>
   
@@ -358,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>窗口外推技术综述</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型-语言模型窗口外推技术综述/</div>
+      <div>Speculative Decoding</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/06/11/大模型-推理加速-Speculative Decoding/</div>
     </div>
     <div class="license-meta">
       
@@ -371,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 26, 2025</div>
+          <div>June 11, 2025</div>
         </div>
       
       
@@ -403,9 +398,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/" title="大模型推理加速">
+                      <a href="/tech-blog/2026/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E6%99%BA%E8%83%BD%E9%97%AE%E7%AD%94/" title="基于本地知识库的智能问答">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大模型推理加速</span>
+                        <span class="hidden-mobile">基于本地知识库的智能问答</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -413,8 +408,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/AI%E7%BC%96%E7%A8%8BVibeCoding/" title="AI编程与VibeCoding">
-                        <span class="hidden-mobile">AI编程与VibeCoding</span>
+                      <a href="/tech-blog/2025/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-KVCache/" title="KVCache">
+                        <span class="hidden-mobile">KVCache</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
