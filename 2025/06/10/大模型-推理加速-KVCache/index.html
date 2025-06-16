@@ -27,7 +27,7 @@
 <meta property="og:description" content="大模型推理Prefill + Decode 分离 KVCache解决的是什么问题？回顾Transformer的Decoder结构，在decode阶段，模型进行推理时，预测t位置的token，会用到前t-1个token，序列token的key、value向量会被重复计算，KVCache通过缓存已计算token的key、value向量降低冗余计算。 实现缓存结构（Pytorch示意）kv_cache">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-06-10T02:32:00.000Z">
-<meta property="article:modified_time" content="2025-06-16T04:39:11.949Z">
+<meta property="article:modified_time" content="2025-06-16T08:35:56.780Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="LLM">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          537 words
+          532 words
         
       </span>
     
@@ -334,7 +334,7 @@
 <td>适合长文本，能记住历史步骤，处理流畅</td>
 </tr>
 </tbody></table>
-<h1 id="KV-Cache优化"><a href="#KV-Cache优化" class="headerlink" title="KV Cache优化"></a>KV Cache优化</h1><p>标准KV Cache存在以下几种内存浪费：<br><strong>内碎片</strong><br><strong>预留浪费</strong><br><strong>外碎片</strong></p>
+<h1 id="KV-Cache优化"><a href="#KV-Cache优化" class="headerlink" title="KV Cache优化"></a>KV Cache优化</h1><p>有限的GPU显存条件下，超长上下文推理的KVCache很容易成为显存瓶颈。<br>标准KV Cache存在以下几种内存浪费：<br><strong>内碎片(Internal Fragmentation)</strong><br><strong>预留浪费(Reservation Waste)</strong><br><strong>外碎片(External Fragmentation)</strong></p>
 <table>
 <thead>
 <tr>
@@ -369,7 +369,6 @@
 </tbody></table>
 <h2 id="Paged-KV-Cache"><a href="#Paged-KV-Cache" class="headerlink" title="Paged KV Cache"></a>Paged KV Cache</h2><p>通过将传统连续缓存（KV Cache）拆分成可管理的小块（pages &#x2F; blocks），显著提升了内存利用率与推理效率。</p>
 <h2 id="MQA-GQA"><a href="#MQA-GQA" class="headerlink" title="MQA &#x2F; GQA"></a>MQA &#x2F; GQA</h2><p><strong>MQA</strong><br>每个Head有一个独立的Query，所有Head共享一组Key、Value。减少Key、Value的内存占用和带宽开销。<br><strong>GQA</strong><br>每个Head有一个独立的Query，所有Head划分为G组，每组共享一组Key、Value。GQA 是介于 MHA 与 MQA 之间的 中间折中方案。</p>
-<h1 id="长上下文对KVCache的挑战"><a href="#长上下文对KVCache的挑战" class="headerlink" title="长上下文对KVCache的挑战"></a>长上下文对KVCache的挑战</h1><p>有限的GPU显存条件下，超长上下文推理的KVCache很容易成为显存瓶颈。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://medium.com/@joaolages/kv-caching-explained-276520203249">Transformers KV Caching Explained</a><br><a target="_blank" rel="noopener" href="https://huggingface.co/blog/not-lain/kv-caching">KV Caching Explained: Optimizing Transformer Inference Efficiency</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2410.00161">Paged KV Cache</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.12820">PQCache: Product Quantization-based KVCache for Long<br>Context LLM Inference</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2306.14048">H2O: Heavy-Hitter Oracle for Efficient Generative<br>Inference of Large Language Models</a></p>
 
                 
