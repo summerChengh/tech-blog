@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="大模型推理基于Transformer解码器的大模型，推理阶段计算过程。 Transformer Decoder推理计算过程标准Transformer Decoder推理时间复杂度是O(N^2) 推理加速方法量化16bit、8bit量化，通常会损失一定的效果。 模型结构改进Muti-Query Attention小结：训练速度不变，推理速度提升很大。 Grouped Query AttentionF">
+    <meta name="description" content="大模型推理基于Transformer解码器的大模型，推理阶段计算过程。 Transformer Decoder推理计算过程标准Transformer Decoder推理时间复杂度是O(N^2) 推理加速方法量化16bit、8bit量化，通常会损失一定的效果。 模型结构改进Muti-Query Attention每个Head有一个独立的Query，所有Head共享一组Key、Value。减少Key、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型推理加速">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="大模型推理基于Transformer解码器的大模型，推理阶段计算过程。 Transformer Decoder推理计算过程标准Transformer Decoder推理时间复杂度是O(N^2) 推理加速方法量化16bit、8bit量化，通常会损失一定的效果。 模型结构改进Muti-Query Attention小结：训练速度不变，推理速度提升很大。 Grouped Query AttentionF">
+<meta property="og:description" content="大模型推理基于Transformer解码器的大模型，推理阶段计算过程。 Transformer Decoder推理计算过程标准Transformer Decoder推理时间复杂度是O(N^2) 推理加速方法量化16bit、8bit量化，通常会损失一定的效果。 模型结构改进Muti-Query Attention每个Head有一个独立的Query，所有Head共享一组Key、Value。减少Key、">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-06-11T10:08:38.621Z">
+<meta property="article:modified_time" content="2025-06-16T05:56:27.106Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          845 words
+          1.1k words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          8 mins
+          10 mins
         
       </span>
     
@@ -300,11 +300,28 @@
                 <h1 id="大模型推理"><a href="#大模型推理" class="headerlink" title="大模型推理"></a>大模型推理</h1><p>基于Transformer解码器的大模型，推理阶段计算过程。</p>
 <h2 id="Transformer-Decoder推理计算过程"><a href="#Transformer-Decoder推理计算过程" class="headerlink" title="Transformer Decoder推理计算过程"></a>Transformer Decoder推理计算过程</h2><p>标准Transformer Decoder推理时间复杂度是O(N^2)</p>
 <h1 id="推理加速方法"><a href="#推理加速方法" class="headerlink" title="推理加速方法"></a>推理加速方法</h1><h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>16bit、8bit量化，通常会损失一定的效果。</p>
-<h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>小结：训练速度不变，推理速度提升很大。</p>
-<h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><h3 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h3><p>分配计算、充分利用GPU。</p>
-<h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p>
+<h2 id="模型结构改进"><a href="#模型结构改进" class="headerlink" title="模型结构改进"></a>模型结构改进</h2><h3 id="Muti-Query-Attention"><a href="#Muti-Query-Attention" class="headerlink" title="Muti-Query Attention"></a>Muti-Query Attention</h3><p>每个Head有一个独立的Query，所有Head共享一组Key、Value。减少Key、Value的内存占用和带宽开销。</p>
+<h3 id="Grouped-Query-Attention"><a href="#Grouped-Query-Attention" class="headerlink" title="Grouped Query Attention"></a>Grouped Query Attention</h3><p>每个Head有一个独立的Query，所有Head划分为G组，每组共享一组Key、Value。GQA 是介于 MHA 与 MQA 之间的 中间折中方案。</p>
+<h2 id="KVCache及其优化"><a href="#KVCache及其优化" class="headerlink" title="KVCache及其优化"></a>KVCache及其优化</h2><p>缓存LLM Decode阶段的Key、value，避免重复计算Key、Value。</p>
+<h3 id="PageAttention"><a href="#PageAttention" class="headerlink" title="PageAttention"></a>PageAttention</h3><p>通过将传统连续缓存（KV Cache）拆分成可管理的小块（pages &#x2F; blocks），显著提升了内存利用率与推理效率。</p>
+<h2 id="FlashAttention"><a href="#FlashAttention" class="headerlink" title="FlashAttention"></a>FlashAttention</h2><p>分配计算、充分利用GPU。<br><strong>FlashAttention 1</strong><br>采用tiling技术，分块计算softmax。减少内存读写操作。</p>
+<p><strong>FlashAttention2相比FlashAttention1加速2x，计算效率达到GEMM的50%～70%。</strong></p>
+<ol>
+<li><p>改进1:  </p>
+</li>
+<li><p>改进2:</p>
+</li>
+<li><p>改进3: </p>
+</li>
+<li><p>因果掩码，跳过无效计算，降低构造[L,L]完整掩码矩阵带来的显存开销，带来1.7～1.8倍计算加速。<br>2.1 上三角块跳过计算<br>2.2 下三角块无需掩码<br>2.3 仅针对处在对角线的块进行局部因果掩码。</p>
+</li>
+</ol>
+<p><strong>softmax</strong></p>
+<p><strong>safe softmax</strong></p>
+<p><strong>block softmax</strong></p>
+<h2 id="内存墙-Memory-Wall"><a href="#内存墙-Memory-Wall" class="headerlink" title="内存墙(Memory Wall)"></a>内存墙(Memory Wall)</h2><h3 id="硬件层面"><a href="#硬件层面" class="headerlink" title="硬件层面"></a>硬件层面</h3><p>高速带宽内存</p>
 <h3 id="软件层面"><a href="#软件层面" class="headerlink" title="软件层面"></a>软件层面</h3><p>FlashAttention、PageAttention、MultiQueryAttention可以理解为从软件层面缓解内存墙问题。</p>
-<h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="KVCache及其优化"><a href="#KVCache及其优化" class="headerlink" title="KVCache及其优化"></a>KVCache及其优化</h2><h2 id="Speculative-Decoding"><a href="#Speculative-Decoding" class="headerlink" title="Speculative Decoding"></a>Speculative Decoding</h2><p>一次生成多个token</p>
+<h2 id="Dynamic-Batch"><a href="#Dynamic-Batch" class="headerlink" title="Dynamic Batch"></a>Dynamic Batch</h2><h2 id="Speculative-Decoding"><a href="#Speculative-Decoding" class="headerlink" title="Speculative Decoding"></a>Speculative Decoding</h2><p>使用小模型一次生成多个token，大模型对生成的token序列进行并行验证。</p>
 <h1 id="节省数据传输"><a href="#节省数据传输" class="headerlink" title="节省数据传输"></a>节省数据传输</h1><p>SparQ Attention修改注意力</p>
 <h1 id="ChatGPT总结"><a href="#ChatGPT总结" class="headerlink" title="ChatGPT总结"></a>ChatGPT总结</h1><p>大模型（如 GPT-3、LLaMA、Qwen 等）的推理速度，是影响其在线服务成本和响应时延的核心瓶颈。除了 FlashAttention，还有多种有效的推理加速技术，涵盖 <strong>算子级优化、模型结构压缩、系统并行、KV 缓存改进等方面</strong>。</p>
 <p>下面我系统总结 <strong>当前主流 LLM 推理加速方法</strong>，并说明它们背后的原理与适用场景：</p>
@@ -490,6 +507,7 @@
 </tbody></table>
 <hr>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1911.02150">Fast Transformer Decoding</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2305.13245">Grouped Query Attention</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2312.04985">SparQ Attention: Bandwidth-Efficient LLM Inference</a></p>
+<h2 id="blog"><a href="#blog" class="headerlink" title="blog"></a>blog</h2><p><a target="_blank" rel="noopener" href="https://crfm.stanford.edu/2023/10/12/flashdecoding.html">Flash-Decoding for long-context inference</a></p>
 
                 
               </div>
@@ -591,9 +609,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%89%E5%85%A8/" title="大模型安全">
+                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%A4%9A%E6%A8%A1%E6%80%81/" title="多模态大模型：技术演进与最新进展">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大模型安全</span>
+                        <span class="hidden-mobile">多模态大模型：技术演进与最新进展</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     

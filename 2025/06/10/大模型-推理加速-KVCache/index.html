@@ -27,7 +27,7 @@
 <meta property="og:description" content="大模型推理Prefill + Decode 分离 KVCache解决的是什么问题？回顾Transformer的Decoder结构，在decode阶段，模型进行推理时，预测t位置的token，会用到前t-1个token，序列token的key、value向量会被重复计算，KVCache通过缓存已计算token的key、value向量降低冗余计算。 实现缓存结构（Pytorch示意）kv_cache">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-06-10T02:32:00.000Z">
-<meta property="article:modified_time" content="2025-06-11T10:04:50.833Z">
+<meta property="article:modified_time" content="2025-06-16T04:39:11.949Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="LLM">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          317 words
+          537 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          3 mins
+          5 mins
         
       </span>
     
@@ -334,8 +334,43 @@
 <td>适合长文本，能记住历史步骤，处理流畅</td>
 </tr>
 </tbody></table>
-<h1 id="KV-Cache优化"><a href="#KV-Cache优化" class="headerlink" title="KV Cache优化"></a>KV Cache优化</h1><h2 id="Paged-KV-Cache"><a href="#Paged-KV-Cache" class="headerlink" title="Paged KV Cache"></a>Paged KV Cache</h2><h2 id="MQA-GQA"><a href="#MQA-GQA" class="headerlink" title="MQA &#x2F; GQA"></a>MQA &#x2F; GQA</h2><h1 id="长上下文对KVCache的挑战"><a href="#长上下文对KVCache的挑战" class="headerlink" title="长上下文对KVCache的挑战"></a>长上下文对KVCache的挑战</h1><p>有限的GPU显存条件下，超长上下文推理的KVCache很容易成为显存瓶颈。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://medium.com/@joaolages/kv-caching-explained-276520203249">Transformers KV Caching Explained</a><br><a target="_blank" rel="noopener" href="https://huggingface.co/blog/not-lain/kv-caching">KV Caching Explained: Optimizing Transformer Inference Efficiency</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.12820">PQCache: Product Quantization-based KVCache for Long<br>Context LLM Inference</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2306.14048">H2O: Heavy-Hitter Oracle for Efficient Generative<br>Inference of Large Language Models</a></p>
+<h1 id="KV-Cache优化"><a href="#KV-Cache优化" class="headerlink" title="KV Cache优化"></a>KV Cache优化</h1><p>标准KV Cache存在以下几种内存浪费：<br><strong>内碎片</strong><br><strong>预留浪费</strong><br><strong>外碎片</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>原因</th>
+<th>常见场景</th>
+<th>解决方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Internal Fragmentation</td>
+<td>预分配空间未被用到</td>
+<td>估算过长</td>
+<td>设定 max_length 过大</td>
+<td>动态分配、估算优化</td>
+</tr>
+<tr>
+<td>Reservation Waste</td>
+<td>为未来 token 预留</td>
+<td>保证连续写入</td>
+<td>每步生成时存在</td>
+<td>按需动态增长</td>
+</tr>
+<tr>
+<td>External Fragmentation</td>
+<td>多请求之间出现空洞</td>
+<td>长度不一致</td>
+<td>多用户并发推理</td>
+<td>分块调度、defrag</td>
+</tr>
+</tbody></table>
+<h2 id="Paged-KV-Cache"><a href="#Paged-KV-Cache" class="headerlink" title="Paged KV Cache"></a>Paged KV Cache</h2><p>通过将传统连续缓存（KV Cache）拆分成可管理的小块（pages &#x2F; blocks），显著提升了内存利用率与推理效率。</p>
+<h2 id="MQA-GQA"><a href="#MQA-GQA" class="headerlink" title="MQA &#x2F; GQA"></a>MQA &#x2F; GQA</h2><p><strong>MQA</strong><br>每个Head有一个独立的Query，所有Head共享一组Key、Value。减少Key、Value的内存占用和带宽开销。<br><strong>GQA</strong><br>每个Head有一个独立的Query，所有Head划分为G组，每组共享一组Key、Value。GQA 是介于 MHA 与 MQA 之间的 中间折中方案。</p>
+<h1 id="长上下文对KVCache的挑战"><a href="#长上下文对KVCache的挑战" class="headerlink" title="长上下文对KVCache的挑战"></a>长上下文对KVCache的挑战</h1><p>有限的GPU显存条件下，超长上下文推理的KVCache很容易成为显存瓶颈。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://medium.com/@joaolages/kv-caching-explained-276520203249">Transformers KV Caching Explained</a><br><a target="_blank" rel="noopener" href="https://huggingface.co/blog/not-lain/kv-caching">KV Caching Explained: Optimizing Transformer Inference Efficiency</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2410.00161">Paged KV Cache</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.12820">PQCache: Product Quantization-based KVCache for Long<br>Context LLM Inference</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2306.14048">H2O: Heavy-Hitter Oracle for Efficient Generative<br>Inference of Large Language Models</a></p>
 
                 
               </div>
@@ -437,9 +472,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/06/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F-Speculative%20Decoding/" title="Speculative Decoding">
+                      <a href="/tech-blog/2025/06/10/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E6%99%BA%E8%83%BD%E9%97%AE%E7%AD%94/" title="基于本地知识库的智能问答">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Speculative Decoding</span>
+                        <span class="hidden-mobile">基于本地知识库的智能问答</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
