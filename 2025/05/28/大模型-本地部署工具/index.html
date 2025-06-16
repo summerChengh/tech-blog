@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="本地部署ollama如何保持上下文记忆 Transformer的自注意力机制和KV缓存技术。  上下文窗口的大小及其在本地部署中的配置。  应用层如何维护对话历史并传递给模型。  本地硬件资源对上下文长度的支持。  模型训练时的上下文长度与推理时的处理方式。">
+    <meta name="description" content="本地部署ollama如何保持上下文记忆 Transformer的自注意力机制和KV缓存技术。  上下文窗口的大小及其在本地部署中的配置。  应用层如何维护对话历史并传递给模型。  本地硬件资源对上下文长度的支持。  模型训练时的上下文长度与推理时的处理方式。   LMStudio 跨平台桌面端大模型推理与管理工具，支持多种模型格式（如GGUF、GGML、llama.cpp等）。 提供可视化界面，便">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型本地部署">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/05/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="本地部署ollama如何保持上下文记忆 Transformer的自注意力机制和KV缓存技术。  上下文窗口的大小及其在本地部署中的配置。  应用层如何维护对话历史并传递给模型。  本地硬件资源对上下文长度的支持。  模型训练时的上下文长度与推理时的处理方式。">
+<meta property="og:description" content="本地部署ollama如何保持上下文记忆 Transformer的自注意力机制和KV缓存技术。  上下文窗口的大小及其在本地部署中的配置。  应用层如何维护对话历史并传递给模型。  本地硬件资源对上下文长度的支持。  模型训练时的上下文长度与推理时的处理方式。   LMStudio 跨平台桌面端大模型推理与管理工具，支持多种模型格式（如GGUF、GGML、llama.cpp等）。 提供可视化界面，便">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-28T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-06-16T06:58:38.824Z">
+<meta property="article:modified_time" content="2025-06-16T07:56:26.948Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          97 words
+          451 words
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          1 mins
+          4 mins
         
       </span>
     
@@ -310,7 +310,37 @@
 <li><p>模型训练时的上下文长度与推理时的处理方式。</p>
 </li>
 </ol>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<h2 id="LMStudio"><a href="#LMStudio" class="headerlink" title="LMStudio"></a>LMStudio</h2><ul>
+<li>跨平台桌面端大模型推理与管理工具，支持多种模型格式（如GGUF、GGML、llama.cpp等）。</li>
+<li>提供可视化界面，便于模型加载、参数调整和对话管理。</li>
+<li>适合个人用户和开发者快速体验和测试本地大模型。</li>
+</ul>
+<h2 id="LMDeploy"><a href="#LMDeploy" class="headerlink" title="LMDeploy"></a>LMDeploy</h2><ul>
+<li>由上海人工智能实验室开源，专注于高效推理和多端部署。</li>
+<li>支持多种硬件（CPU、GPU、NPU）和主流大模型（Llama、Qwen等）。</li>
+<li>适合企业级应用和大规模推理场景。</li>
+</ul>
+<h2 id="Text-Generation-WebUI"><a href="#Text-Generation-WebUI" class="headerlink" title="Text Generation WebUI"></a>Text Generation WebUI</h2><ul>
+<li>基于Web的多模型推理和管理平台，支持Llama、ChatGLM、RWKV等。</li>
+<li>提供丰富的插件和可视化功能，便于自定义和扩展。</li>
+<li>适合需要多模型管理和交互的用户。</li>
+</ul>
+<h2 id="llama-cpp"><a href="#llama-cpp" class="headerlink" title="llama.cpp"></a>llama.cpp</h2><ul>
+<li>轻量级C&#x2F;C++实现，支持在本地CPU、树莓派等低资源设备上运行Llama系列模型。</li>
+<li>支持量化推理，极大降低硬件门槛。</li>
+<li>适合嵌入式、边缘计算和个人PC用户。</li>
+</ul>
+<h2 id="vllm"><a href="#vllm" class="headerlink" title="vllm"></a>vllm</h2><ul>
+<li>高性能推理引擎，专为大语言模型的高吞吐量推理优化。</li>
+<li>支持KVCache高效管理和多用户并发。</li>
+<li>适合需要高并发、低延迟的本地或云端部署。</li>
+</ul>
+<h2 id="DeepSpeed"><a href="#DeepSpeed" class="headerlink" title="DeepSpeed"></a>DeepSpeed</h2><ul>
+<li>微软开源的深度学习训练与推理加速库。</li>
+<li>支持大模型分布式训练、推理和内存优化。</li>
+<li>适合科研、企业级大规模模型部署。</li>
+</ul>
+
                 
               </div>
             
