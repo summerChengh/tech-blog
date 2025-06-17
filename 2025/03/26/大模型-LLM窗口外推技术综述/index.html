@@ -27,7 +27,7 @@
 <meta property="og:description" content="超长上下文衡量超长上下文的核心维度   维度 关键问题 示例指标或方法    🧠 记忆能力 模型能否保留并使用早期输入信息？ Attention Score, Retrieval Accuracy   🔍 信息利用 模型是否正确引用了上下文中的关键信息？ Answer Correctness, Source Attribution   📏 上下文距离 模型能处理的最大“有效”token跨度是">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-06-10T09:36:13.885Z">
+<meta property="article:modified_time" content="2025-06-17T09:28:04.071Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          1.5k words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          11 mins
+          13 mins
         
       </span>
     
@@ -468,7 +468,57 @@
 <li>在上下文非常长时（如128K），大部分 token 实际上对训练损失的贡献较小（尤其是头尾位置</li>
 </ol>
 <p>DeepSeek应用 YaRN（Peng et al., 2023a）进行上下文扩展，并进行两个额外的训练阶段，每个阶段包含1000步，逐步将上下文窗口从4K扩展到32K，然后扩展到128K。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+<h1 id="长上下文大模型（Long-Context-LLM）微调"><a href="#长上下文大模型（Long-Context-LLM）微调" class="headerlink" title="长上下文大模型（Long-Context LLM）微调"></a>长上下文大模型（Long-Context LLM）微调</h1><h2 id="LongLora"><a href="#LongLora" class="headerlink" title="LongLora"></a>LongLora</h2><table>
+<thead>
+<tr>
+<th>技术</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Sequence-Parallel LoRA (SP-LoRA)</strong></td>
+<td>将序列维度并行，用多个 GPU 分担超长序列计算，显著降低单卡显存压力</td>
+</tr>
+<tr>
+<td><strong>Hidden State Caching</strong></td>
+<td>在重复的上下文块中缓存隐藏状态，减少冗余计算，加快训练</td>
+</tr>
+<tr>
+<td><strong>Mixed-Precision KV Cache Training</strong></td>
+<td>用低精度训练 KV cache，节省内存、提升速度</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>普通 LoRA</th>
+<th>LongLoRA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>支持上下文长度</td>
+<td>通常 &lt;8K</td>
+<td>支持长达 128K-1M</td>
+</tr>
+<tr>
+<td>显存需求</td>
+<td>快速增长</td>
+<td>显著优化，线性扩展</td>
+</tr>
+<tr>
+<td>训练效率</td>
+<td>慢，受限于序列长度</td>
+<td>快，支持更大 batch 和序列</td>
+</tr>
+<tr>
+<td>稳定性</td>
+<td>长 context 下容易崩</td>
+<td>收敛更稳定</td>
+</tr>
+</tbody></table>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2304.11062">Scaling Transformer to 1M tokens and beyond with RMT</a><br><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1209784">突破Transformer输入限制：实测支持200万个有效token</a></p>
+
                 
               </div>
             
