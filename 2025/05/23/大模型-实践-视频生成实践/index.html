@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="视频生成照片+提示生成 视频风格 视频生成agent工作流coez">
+    <meta name="description" content="视频生成照片+提示生成 视频风格 基于大模型的视频生成核心技术 扩散模型（Diffusion Models）：当前主流的视频生成方法，支持高质量帧生成和多模态输入（如文本、图片、音频）。 时序一致性建模：通过3D卷积、时序Transformer等结构，保证视频帧之间的连贯性和流畅性。 文生视频（Text-to-Video, T2V）：利用大语言模型和视觉模型，将文本描述转化为连续视频片段。 多模态">
 <meta property="og:type" content="article">
 <meta property="og:title" content="视频生成">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/05/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="视频生成照片+提示生成 视频风格 视频生成agent工作流coez">
+<meta property="og:description" content="视频生成照片+提示生成 视频风格 基于大模型的视频生成核心技术 扩散模型（Diffusion Models）：当前主流的视频生成方法，支持高质量帧生成和多模态输入（如文本、图片、音频）。 时序一致性建模：通过3D卷积、时序Transformer等结构，保证视频帧之间的连贯性和流畅性。 文生视频（Text-to-Video, T2V）：利用大语言模型和视觉模型，将文本描述转化为连续视频片段。 多模态">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-23T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-05-23T06:14:53.805Z">
+<meta property="article:modified_time" content="2025-06-16T09:21:49.677Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          22 words
+          588 words
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          1 mins
+          5 mins
         
       </span>
     
@@ -300,8 +300,32 @@
                 
                 <h1 id="视频生成"><a href="#视频生成" class="headerlink" title="视频生成"></a>视频生成</h1><p><strong>照片+提示生成</strong></p>
 <p><strong>视频风格</strong></p>
-<h1 id="视频生成agent工作流"><a href="#视频生成agent工作流" class="headerlink" title="视频生成agent工作流"></a>视频生成agent工作流</h1><p><strong>coez</strong></p>
-<hr>
+<h2 id="基于大模型的视频生成核心技术"><a href="#基于大模型的视频生成核心技术" class="headerlink" title="基于大模型的视频生成核心技术"></a>基于大模型的视频生成核心技术</h2><ol>
+<li><strong>扩散模型（Diffusion Models）</strong>：当前主流的视频生成方法，支持高质量帧生成和多模态输入（如文本、图片、音频）。</li>
+<li><strong>时序一致性建模</strong>：通过3D卷积、时序Transformer等结构，保证视频帧之间的连贯性和流畅性。</li>
+<li><strong>文生视频（Text-to-Video, T2V）</strong>：利用大语言模型和视觉模型，将文本描述转化为连续视频片段。</li>
+<li><strong>多模态融合</strong>：结合文本、图片、音频等多种输入，提升生成内容的丰富性和可控性。</li>
+<li><strong>条件生成与风格迁移</strong>：支持指定风格、场景、动作等条件，生成定制化视频。</li>
+<li><strong>高效推理与加速</strong>：采用分阶段生成、帧插值、低精度推理等技术提升生成速度。</li>
+</ol>
+<h2 id="代表性大模型视频生成系统"><a href="#代表性大模型视频生成系统" class="headerlink" title="代表性大模型视频生成系统"></a>代表性大模型视频生成系统</h2><ul>
+<li><strong>Sora（OpenAI）</strong>：支持高分辨率、长时长视频生成，文本理解能力强。</li>
+<li><strong>Gen-2（Runway）</strong>：支持文本、图片到视频的多模态生成，风格多样。</li>
+<li><strong>VideoCrafter</strong>：开源高质量文生视频系统，支持多种输入控制。</li>
+<li><strong>Pika Labs</strong>：专注于创意短视频生成，交互性强。</li>
+<li><strong>AnimateDiff</strong>：基于扩散模型的动画视频生成，适合角色和场景动画。</li>
+</ul>
+<h1 id="视频生成agent工作流"><a href="#视频生成agent工作流" class="headerlink" title="视频生成agent工作流"></a>视频生成agent工作流</h1><h2 id="基于Agent的视频生成代表性方法"><a href="#基于Agent的视频生成代表性方法" class="headerlink" title="基于Agent的视频生成代表性方法"></a>基于Agent的视频生成代表性方法</h2><ol>
+<li><strong>多Agent协作生成</strong>：将视频生成任务拆分为脚本编写、镜头规划、素材检索、帧生成、后期编辑等子任务，由不同Agent协作完成。</li>
+<li><strong>智能提示工程（Prompt Engineering Agent）</strong>：自动优化文本提示，提升生成内容的相关性和多样性。</li>
+<li><strong>内容审核与修正Agent</strong>：自动检测生成视频中的不合理内容，并进行修正或重生成。</li>
+<li><strong>多模态输入融合Agent</strong>：整合文本、图片、音频等多源信息，提升生成视频的丰富性。</li>
+<li><strong>自动化后期处理Agent</strong>：包括剪辑、配音、字幕、风格迁移等自动化处理。</li>
+</ol>
+<h3 id="典型工作流示例"><a href="#典型工作流示例" class="headerlink" title="典型工作流示例"></a>典型工作流示例</h3><p><strong>coez</strong></p>
+<ul>
+<li>用户输入文本&#x2F;图片&#x2F;音频 → Prompt Agent生成优化提示 → 生成Agent调用大模型生成视频帧 → 审核Agent检测并修正问题 → 后期Agent自动剪辑与配音 → 输出最终视频。</li>
+</ul>
 
                 
               </div>

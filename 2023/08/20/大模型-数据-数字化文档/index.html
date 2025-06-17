@@ -27,7 +27,7 @@
 <meta property="og:description" content="数字化文档：企业转型的核心驱动力引言随着数字化浪潮席卷全球，企业正从传统的纸质文档管理向数字化文档体系转变。数字化文档不仅仅是纸质文档的电子版本，更是企业知识资产的重要载体和数字化转型的关键基础设施。本文将探讨数字化文档的概念、价值、实施策略以及未来发展趋势。 什么是数字化文档数字化文档是指以电子形式存储、管理和分享的文档，包括但不限于：  通过扫描转换的纸质文档 原生数字创建的文档（Word、E">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-20T01:30:00.000Z">
-<meta property="article:modified_time" content="2025-06-16T03:44:17.984Z">
+<meta property="article:modified_time" content="2025-06-16T09:58:00.865Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="数字化转型">
 <meta property="article:tag" content="文档管理">
@@ -246,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          2.1k words
         
       </span>
     
@@ -257,7 +257,7 @@
         
         
         
-          14 mins
+          18 mins
         
       </span>
     
@@ -389,6 +389,16 @@
 <h2 id="检测公式"><a href="#检测公式" class="headerlink" title="检测公式"></a>检测公式</h2><h3 id="教育场景"><a href="#教育场景" class="headerlink" title="教育场景"></a>教育场景</h3><p>教育场景相比通用场景需要额外解决的挑战是什么？</p>
 <p>Versatile-OCR-Program给出的解决方案，相比较其他PDF读取工具有何优势？</p>
 <h4 id="Prompt"><a href="#Prompt" class="headerlink" title="Prompt"></a>Prompt</h4><p>[scence]相比[通用场景]需要额外解决的挑战是什么？<br>[]针对这些挑战，给出的解决方案是什么？</p>
+<h1 id="视觉Agent方案"><a href="#视觉Agent方案" class="headerlink" title="视觉Agent方案"></a>视觉Agent方案</h1><p>##Agentic Document Extraction</p>
+<h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><p><strong>可视化定位 (Visual Grounding)</strong></p>
+<p>可视化定位是 Agentic Document Extraction 的基石。它不仅仅识别文档中的文本，更重要的是 精确定位每个视觉元素和文本在文档中的确切位置。这意味着它可以准确识别文档中的段落、表格、图片、复选框等，并知道它们之间的空间关系。</p>
+<p>更进一步，可视化定位技术实现了 答案验证。API 的响应结果可以 链接回文档的原始位置，用户可以清晰地看到提取的信息来源于文档的哪个部分，这对于需要审计跟踪、确保数据来源可靠性的应用场景至关重要。</p>
+<p><strong>复选框提取 (Checkbox Extraction)</strong></p>
+<p>对于包含大量复选框的文档，如调查问卷、申请表格等，传统 OCR 处理起来往往效率低下且容易出错。Agentic Document Extraction 专门强化了 复选框提取 功能，能够准确识别和提取文档中的复选框状态 (选中或未选中)，极大地方便了表单数据的自动化处理。</p>
+<p><strong>高级图像分析 (Advanced Image Analysis)</strong></p>
+<p>现代文档往往包含丰富的图像信息，例如 logo、图表、照片等。Agentic Document Extraction 具备 高级图像分析能力，能够处理文档中的图像，例如从图像中提取文本 (例如图片中的文字水印)，甚至识别图像的内容 (例如识别合同中的印章)。这使得它可以处理更复杂、信息更丰富的文档。</p>
+<p><strong>PDF to ASCII 转换 (PDF to ASCII Conversion)</strong></p>
+<p>PDF 是常见的文档格式，但直接处理 PDF 文件中的文本有时会比较困难。Agentic Document Extraction 支持 PDF to ASCII 转换，可以将 PDF 文档转换为纯文本格式，方便后续的文本分析、信息检索等操作。</p>
 <h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><h3 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h3><p><a target="_blank" rel="noopener" href="https://www.bright.cn/">bright data</a></p>
 <h3 id="Github-Projects"><a href="#Github-Projects" class="headerlink" title="Github Projects"></a>Github Projects</h3><p><a target="_blank" rel="noopener" href="https://www.modelscope.cn/l1731396519/MonkeyOCR.git">MonkeyOCR</a><br><a target="_blank" rel="noopener" href="https://github.com/landing-ai/agentic-doc">Agentic Document Extraction</a></p>
 <h3 id="开源文档"><a href="#开源文档" class="headerlink" title="开源文档"></a>开源文档</h3><p><a target="_blank" rel="noopener" href="https://github.com/tesseract-ocr/tesseract">Google Tesseract</a><br><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleOCR">Baidu PaddleOCR</a><br><a target="_blank" rel="noopener" href="https://github.com/Stirling-Tools/Stirling-PDF">Stirling-PDF</a><br><a target="_blank" rel="noopener" href="https://github.com/allenai/olmocr">olmocr</a><br><a target="_blank" rel="noopener" href="https://github.com/oomol-lab/pdf-craft">PDF-Craft</a><br><a target="_blank" rel="noopener" href="https://github.com/infiniflow/ragflow">RAG-Flow</a><br><a target="_blank" rel="noopener" href="https://github.com/ses4255/Versatile-OCR-Program">Versatile-OCR-Program</a><br><a target="_blank" rel="noopener" href="https://relevanceai.com/agent-templates-software/microsoft-excel">Microsoft Excel AI Agents</a></p>
