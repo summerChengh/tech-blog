@@ -1,0 +1,820 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content="TTS大模型效果最好的API及报价1. ElevenLabs 效果：业界公认最自然、情感丰富，支持多语种和自定义声音克隆。 API报价（2024年6月）： 免费额度：每月1万字符 Starter：$5&#x2F;月，10万字符 Creator：$22&#x2F;月，50万字符 Independent Publisher：$99&#x2F;月，200万字符 超额部分约$0.30&#x2F;10万字符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TTS大模型与API报价">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/06/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B-TTS%E5%A4%A7%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content="TTS大模型效果最好的API及报价1. ElevenLabs 效果：业界公认最自然、情感丰富，支持多语种和自定义声音克隆。 API报价（2024年6月）： 免费额度：每月1万字符 Starter：$5&#x2F;月，10万字符 Creator：$22&#x2F;月，50万字符 Independent Publisher：$99&#x2F;月，200万字符 超额部分约$0.30&#x2F;10万字符">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-01T08:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-18T07:53:54.972Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="TTS">
+<meta property="article:tag" content="语音合成">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>TTS大模型与API报价 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="TTS大模型与API报价"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-01 16:00" pubdate>
+          June 1, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          506 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">TTS大模型与API报价</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="TTS大模型效果最好的API及报价"><a href="#TTS大模型效果最好的API及报价" class="headerlink" title="TTS大模型效果最好的API及报价"></a>TTS大模型效果最好的API及报价</h1><h2 id="1-ElevenLabs"><a href="#1-ElevenLabs" class="headerlink" title="1. ElevenLabs"></a>1. ElevenLabs</h2><ul>
+<li><strong>效果</strong>：业界公认最自然、情感丰富，支持多语种和自定义声音克隆。</li>
+<li><strong>API报价</strong>（2024年6月）：<ul>
+<li>免费额度：每月1万字符</li>
+<li>Starter：$5&#x2F;月，10万字符</li>
+<li>Creator：$22&#x2F;月，50万字符</li>
+<li>Independent Publisher：$99&#x2F;月，200万字符</li>
+<li>超额部分约$0.30&#x2F;10万字符</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://elevenlabs.io/">官网</a></li>
+</ul>
+<h2 id="2-OpenAI-TTS-Speech-API"><a href="#2-OpenAI-TTS-Speech-API" class="headerlink" title="2. OpenAI TTS (Speech API)"></a>2. OpenAI TTS (Speech API)</h2><ul>
+<li><strong>效果</strong>：基于Whisper和自研TTS，语音自然，适合多场景。</li>
+<li><strong>API报价</strong>（2024年6月）：<ul>
+<li>$0.015&#x2F;1000字符（标准）</li>
+<li>$0.030&#x2F;1000字符（高质量）</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://platform.openai.com/docs/guides/text-to-speech">官方文档</a></li>
+</ul>
+<h2 id="3-Microsoft-Azure-Speech"><a href="#3-Microsoft-Azure-Speech" class="headerlink" title="3. Microsoft Azure Speech"></a>3. Microsoft Azure Speech</h2><ul>
+<li><strong>效果</strong>：多语种、情感、风格丰富，适合企业级应用。</li>
+<li><strong>API报价</strong>（2024年6月）：<ul>
+<li>标准语音：$4&#x2F;100万字符</li>
+<li>神经网络语音：$16&#x2F;100万字符</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/zh-cn/products/ai-services/text-to-speech">官方文档</a></li>
+</ul>
+<h2 id="4-Google-Cloud-Text-to-Speech"><a href="#4-Google-Cloud-Text-to-Speech" class="headerlink" title="4. Google Cloud Text-to-Speech"></a>4. Google Cloud Text-to-Speech</h2><ul>
+<li><strong>效果</strong>：支持多语种、WaveNet高质量语音。</li>
+<li><strong>API报价</strong>（2024年6月）：<ul>
+<li>标准：$4&#x2F;100万字符</li>
+<li>WaveNet：$16&#x2F;100万字符</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://cloud.google.com/text-to-speech/pricing">官方文档</a></li>
+</ul>
+<h2 id="5-科大讯飞（iFLYTEK）"><a href="#5-科大讯飞（iFLYTEK）" class="headerlink" title="5. 科大讯飞（iFLYTEK）"></a>5. 科大讯飞（iFLYTEK）</h2><ul>
+<li><strong>效果</strong>：中文语音合成自然度业界领先，支持多种情感、方言和自定义音色。</li>
+<li><strong>API报价</strong>（2024年6月）：<ul>
+<li>免费额度：每月10万字符</li>
+<li>标准语音：约￥20&#x2F;100万字符</li>
+<li>智能语音合成（高质量）：约￥50&#x2F;100万字符</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.xfyun.cn/services/online_tts">官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/iflytekopensource/iFlytekSpark-13B">星火大模型-开源</a></li>
+</ul>
+<h1 id="效果最好的开源TTS大模型"><a href="#效果最好的开源TTS大模型" class="headerlink" title="效果最好的开源TTS大模型"></a>效果最好的开源TTS大模型</h1><h2 id="1-Bark"><a href="#1-Bark" class="headerlink" title="1. Bark"></a>1. Bark</h2><ul>
+<li><strong>简介</strong>：Suno团队开源，支持多语种、情感、音乐、非语言声音，效果接近ElevenLabs。</li>
+<li><strong>地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/suno-ai/bark">Bark GitHub</a></li>
+</ul>
+<h2 id="2-XTTS-Coqui"><a href="#2-XTTS-Coqui" class="headerlink" title="2. XTTS (Coqui)"></a>2. XTTS (Coqui)</h2><ul>
+<li><strong>简介</strong>：支持多语种、跨语言语音克隆，推理速度快，社区活跃。</li>
+<li><strong>地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/coqui-ai/TTS">XTTS GitHub</a></li>
+</ul>
+<h2 id="3-VITS"><a href="#3-VITS" class="headerlink" title="3. VITS"></a>3. VITS</h2><ul>
+<li><strong>简介</strong>：基于端到端神经网络，支持高质量语音合成，适合中文和多语种。</li>
+<li><strong>地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/jaywalnut310/vits">VITS GitHub</a></li>
+</ul>
+<h2 id="4-Tortoise-TTS"><a href="#4-Tortoise-TTS" class="headerlink" title="4. Tortoise TTS"></a>4. Tortoise TTS</h2><ul>
+<li><strong>简介</strong>：以高保真和多样性著称，适合生成长文本和多风格语音。</li>
+<li><strong>地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/neonbjb/tortoise-tts">Tortoise TTS GitHub</a></li>
+</ul>
+<h2 id="5-FastSpeech2"><a href="#5-FastSpeech2" class="headerlink" title="5. FastSpeech2"></a>5. FastSpeech2</h2><ul>
+<li><strong>简介</strong>：高效、端到端，适合实时语音合成。</li>
+<li><strong>地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/ming024/FastSpeech2">FastSpeech2 GitHub</a></li>
+</ul>
+<h2 id="6-百度（Baidu-PaddleSpeech）"><a href="#6-百度（Baidu-PaddleSpeech）" class="headerlink" title="6. 百度（Baidu PaddleSpeech）"></a>6. 百度（Baidu PaddleSpeech）</h2><ul>
+<li><strong>简介</strong>：支持多语种、情感、风格，语音自然，适合多场景。</li>
+<li><strong>地址</strong>：<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleSpeech">PaddleSpeech TTS</a>（支持多种高质量TTS模型，包括FastSpeech2、VITS等）</li>
+</ul>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/" class="category-chain-item">语音助手</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="category-chain-item">人工智能</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tech-blog/tags/TTS/" class="print-no-link">#TTS</a>
+      
+        <a href="/tech-blog/tags/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" class="print-no-link">#语音合成</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>TTS大模型与API报价</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/06/01/大模型-语音助手-TTS大模型/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>June 1, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/06/05/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%80%9D%E8%80%83:AI%E6%95%99%E8%82%B2/" title="思考-AI教育">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">思考-AI教育</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/05/28/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%B7%A5%E5%85%B7/" title="大模型本地部署">
+                        <span class="hidden-mobile">大模型本地部署</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
