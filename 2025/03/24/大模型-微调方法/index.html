@@ -27,7 +27,7 @@
 <meta property="og:description" content="MathJax &#x3D; {     tex: {       inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],       displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]     }   };   简介按微调目标划分指令微调(Instruction Tuning)从模型微调的目标进行划分，可分为提示微调、有监督微调、指令">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-24T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-06-17T10:15:17.890Z">
+<meta property="article:modified_time" content="2025-06-26T09:08:06.046Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k words
+          1.6k words
         
       </span>
     
@@ -334,7 +334,7 @@
 </ol>
 <p><strong>提升跨任务泛化能力</strong></p>
 <p><strong>基于描述，即时适配</strong><br>Text-to-Lora</p>
-<h4 id="LoRA相关进展"><a href="#LoRA相关进展" class="headerlink" title="LoRA相关进展"></a>LoRA相关进展</h4><p><strong>LongLora</strong></p>
+<h4 id="LoRA相关进展"><a href="#LoRA相关进展" class="headerlink" title="LoRA相关进展"></a>LoRA相关进展</h4><p><strong>LongLora</strong>：解决长上下文LLM有效微调的问题。<br><strong>QLora</strong>：可以在单张48GB GPU上微调65B的LLM。<br><strong>LoRI</strong>：</p>
 <h3 id="Prefix-Tuning"><a href="#Prefix-Tuning" class="headerlink" title="Prefix Tuning"></a>Prefix Tuning</h3><p>受prompts技术的启发，P-Tuning采用微调Embedding的方式，在模型输入前添加一个任务特定的向量序列即prefix，微调时冻结基础模型参数，只优化prefix参数。<br>P-Tuning由于引入了可学习的prefix embedding，prefix embedding也可由encoder动态生成，这部分计算会略微增加推理耗时。</p>
 <h3 id="LST"><a href="#LST" class="headerlink" title="LST"></a>LST</h3><p>LST（Ladder Side-Tuning，阶梯式侧向微调）是一种参数高效微调（PEFT）方法。其核心思想是在预训练模型的不同层插入侧向分支（side network），通过这些分支以”阶梯式”方式引入任务特定的适配参数。</p>
 <p><strong>基本原理：</strong></p>
