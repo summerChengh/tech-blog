@@ -1,0 +1,798 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content="传统信息检索的优势1. 精确性与可控性 精确匹配：对于明确的关键词查询，能提供精确的文档匹配。 布尔逻辑支持：支持AND、OR、NOT等布尔操作符，精确控制搜索范围。 结果可预测：搜索算法行为可预测，结果具有确定性。  2. 高效性与可扩展性 计算效率高：索引检索通常比LLM推理更快，延迟更低。 海量数据处理：能高效处理PB级数据，扩展性强。 资源消耗低：不需要大量GPU资源，运行成本低。  3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大模型搜索与传统信息检索的优势对比">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/07/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%90%9C%E7%B4%A2/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content="传统信息检索的优势1. 精确性与可控性 精确匹配：对于明确的关键词查询，能提供精确的文档匹配。 布尔逻辑支持：支持AND、OR、NOT等布尔操作符，精确控制搜索范围。 结果可预测：搜索算法行为可预测，结果具有确定性。  2. 高效性与可扩展性 计算效率高：索引检索通常比LLM推理更快，延迟更低。 海量数据处理：能高效处理PB级数据，扩展性强。 资源消耗低：不需要大量GPU资源，运行成本低。  3.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-04T08:30:00.000Z">
+<meta property="article:modified_time" content="2025-07-14T04:05:02.795Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="搜索">
+<meta property="article:tag" content="信息检索">
+<meta property="article:tag" content="语义搜索">
+<meta property="article:tag" content="向量检索">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>大模型搜索与传统信息检索的优势对比 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="大模型搜索与传统信息检索的优势对比"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-04 16:30" pubdate>
+          July 4, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          756 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">大模型搜索与传统信息检索的优势对比</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="传统信息检索的优势"><a href="#传统信息检索的优势" class="headerlink" title="传统信息检索的优势"></a>传统信息检索的优势</h2><h3 id="1-精确性与可控性"><a href="#1-精确性与可控性" class="headerlink" title="1. 精确性与可控性"></a>1. 精确性与可控性</h3><ul>
+<li><strong>精确匹配</strong>：对于明确的关键词查询，能提供精确的文档匹配。</li>
+<li><strong>布尔逻辑支持</strong>：支持AND、OR、NOT等布尔操作符，精确控制搜索范围。</li>
+<li><strong>结果可预测</strong>：搜索算法行为可预测，结果具有确定性。</li>
+</ul>
+<h3 id="2-高效性与可扩展性"><a href="#2-高效性与可扩展性" class="headerlink" title="2. 高效性与可扩展性"></a>2. 高效性与可扩展性</h3><ul>
+<li><strong>计算效率高</strong>：索引检索通常比LLM推理更快，延迟更低。</li>
+<li><strong>海量数据处理</strong>：能高效处理PB级数据，扩展性强。</li>
+<li><strong>资源消耗低</strong>：不需要大量GPU资源，运行成本低。</li>
+</ul>
+<h3 id="3-最新信息与实时性"><a href="#3-最新信息与实时性" class="headerlink" title="3. 最新信息与实时性"></a>3. 最新信息与实时性</h3><ul>
+<li><strong>实时更新</strong>：可以实时索引最新内容，无需重新训练。</li>
+<li><strong>新闻、股票等时效性内容</strong>：对于需要最新信息的查询，传统检索更有优势。</li>
+<li><strong>动态内容适应性</strong>：能快速适应不断变化的信息环境。</li>
+</ul>
+<h3 id="4-来源透明度与可验证性"><a href="#4-来源透明度与可验证性" class="headerlink" title="4. 来源透明度与可验证性"></a>4. 来源透明度与可验证性</h3><ul>
+<li><strong>结果可溯源</strong>：每个结果都有明确的来源文档。</li>
+<li><strong>证据链完整</strong>：用户可以直接查看原始文档验证信息。</li>
+<li><strong>无幻觉风险</strong>：不会像LLM那样”编造”不存在的信息。</li>
+</ul>
+<h3 id="5-结构化数据处理"><a href="#5-结构化数据处理" class="headerlink" title="5. 结构化数据处理"></a>5. 结构化数据处理</h3><ul>
+<li><strong>精确的数值计算</strong>：对数值、日期等结构化数据处理更精确。</li>
+<li><strong>专业数据库查询</strong>：支持SQL等专业查询语言，处理复杂结构化数据。</li>
+<li><strong>元数据过滤</strong>：可基于作者、日期、文件类型等元数据精确过滤。</li>
+</ul>
+<h2 id="概率模型在信息检索中的应用"><a href="#概率模型在信息检索中的应用" class="headerlink" title="概率模型在信息检索中的应用"></a>概率模型在信息检索中的应用</h2><p>在传统信息检索中，概率模型扮演着重要角色。例如，条件概率可以用来表示文档相关性和查询条件之间的关系：</p>
+<p>$$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$$</p>
+<p>其中：</p>
+<ul>
+<li>$p(z&amp;y &#x3D; 1|\boldsymbol{x})$ 表示条件文本-上下文-视觉检索概率 (pCTCVR)</li>
+<li>$p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x})$ 表示条件视觉检索概率 (pCVR)</li>
+<li>$p(y &#x3D; 1|\boldsymbol{x})$ 表示条件文本检索概率 (pCTR)</li>
+</ul>
+<p>这种概率框架使传统检索系统能够精确量化不同特征对检索结果的贡献，形成可解释的排序机制。</p>
+<h2 id="融合趋势：RAG与混合架构"><a href="#融合趋势：RAG与混合架构" class="headerlink" title="融合趋势：RAG与混合架构"></a>融合趋势：RAG与混合架构</h2><p>当前技术发展趋势是融合两种方法的优势，如检索增强生成(RAG)技术：</p>
+<ul>
+<li><strong>检索增强生成(RAG)</strong>：利用传统检索获取相关文档，再由LLM生成回答，结合两者优势。</li>
+<li><strong>混合排序系统</strong>：将传统排序算法与神经网络模型结合。</li>
+<li><strong>可控生成</strong>：通过检索限定LLM生成的范围，提高准确性。</li>
+</ul>
+<h2 id="应用场景选择"><a href="#应用场景选择" class="headerlink" title="应用场景选择"></a>应用场景选择</h2><p>根据不同需求选择合适的技术：</p>
+<ul>
+<li><strong>需要精确事实或最新信息</strong>：传统检索更合适</li>
+<li><strong>需要理解复杂问题或生成内容</strong>：LLM更有优势</li>
+<li><strong>企业知识库或专业领域</strong>：RAG等混合方案最佳</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="category-chain-item">大模型</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/" class="category-chain-item">信息检索</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tech-blog/tags/RAG/" class="print-no-link">#RAG</a>
+      
+        <a href="/tech-blog/tags/%E6%90%9C%E7%B4%A2/" class="print-no-link">#搜索</a>
+      
+        <a href="/tech-blog/tags/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/" class="print-no-link">#信息检索</a>
+      
+        <a href="/tech-blog/tags/%E8%AF%AD%E4%B9%89%E6%90%9C%E7%B4%A2/" class="print-no-link">#语义搜索</a>
+      
+        <a href="/tech-blog/tags/%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/" class="print-no-link">#向量检索</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>大模型搜索与传统信息检索的优势对比</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/07/04/大模型-搜索/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 4, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/07/12/%E7%AE%97%E6%B3%95-leetcode/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/07/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E6%B5%85%E6%9E%90Transformer/" title="大模型基础知识-浅析Transformer">
+                        <span class="hidden-mobile">大模型基础知识-浅析Transformer</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
