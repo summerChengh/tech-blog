@@ -27,7 +27,7 @@
 <meta property="og:description" content="超长上下文衡量超长上下文的核心维度   维度 关键问题 示例指标或方法    🧠 记忆能力 模型能否保留并使用早期输入信息？ Attention Score, Retrieval Accuracy   🔍 信息利用 模型是否正确引用了上下文中的关键信息？ Answer Correctness, Source Attribution   📏 上下文距离 模型能处理的最大“有效”token跨度是">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-06-17T09:28:04.071Z">
+<meta property="article:modified_time" content="2025-07-17T01:45:44.245Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -465,7 +465,7 @@
 <h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p>
 <h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h2 id="上下文窗口外推常见问题"><a href="#上下文窗口外推常见问题" class="headerlink" title="上下文窗口外推常见问题"></a>上下文窗口外推常见问题</h2><ol>
 <li>在注意力机制中距离倍增时容易发生梯度爆炸或收缩</li>
-<li>在上下文非常长时（如128K），大部分 token 实际上对训练损失的贡献较小（尤其是头尾位置</li>
+<li>在上下文非常长时（如128K），大部分 token 实际上对训练损失的贡献较小（尤其是头尾位置）</li>
 </ol>
 <p>DeepSeek应用 YaRN（Peng et al., 2023a）进行上下文扩展，并进行两个额外的训练阶段，每个阶段包含1000步，逐步将上下文窗口从4K扩展到32K，然后扩展到128K。</p>
 <h1 id="长上下文大模型（Long-Context-LLM）微调"><a href="#长上下文大模型（Long-Context-LLM）微调" class="headerlink" title="长上下文大模型（Long-Context LLM）微调"></a>长上下文大模型（Long-Context LLM）微调</h1><h2 id="LongLora"><a href="#LongLora" class="headerlink" title="LongLora"></a>LongLora</h2><table>

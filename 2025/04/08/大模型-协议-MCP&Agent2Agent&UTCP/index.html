@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content="MCP协议基本概念MCP (Model Context Protocol，模型上下文协议) 是由 Anthropic 在 2024 年底推出的一种开放协议，它通过提供一种标准化的接口，旨在通过标准化的接口实现大语言模型 (LLM) 与外部数据源及工具的无缝集成。    问题 描述 MCP如何解决    上下文碎片化 模型输入只能接收简单串联的 prompt，不擅长处理结构化、多源上下文 MCP定义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MCP协议：增强大模型认知能力的新范式">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/08/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%8D%8F%E8%AE%AE-MCP&Agent2Agent&UTCP/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content="MCP协议基本概念MCP (Model Context Protocol，模型上下文协议) 是由 Anthropic 在 2024 年底推出的一种开放协议，它通过提供一种标准化的接口，旨在通过标准化的接口实现大语言模型 (LLM) 与外部数据源及工具的无缝集成。    问题 描述 MCP如何解决    上下文碎片化 模型输入只能接收简单串联的 prompt，不擅长处理结构化、多源上下文 MCP定义">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-08T12:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-16T08:51:37.653Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="大模型">
+<meta property="article:tag" content="认知计算">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>MCP协议：增强大模型认知能力的新范式 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="MCP协议：增强大模型认知能力的新范式"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-08 20:00" pubdate>
+          April 8, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          860 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          8 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">MCP协议：增强大模型认知能力的新范式</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="MCP协议基本概念"><a href="#MCP协议基本概念" class="headerlink" title="MCP协议基本概念"></a>MCP协议基本概念</h1><p>MCP (Model Context Protocol，模型上下文协议) 是由 Anthropic 在 2024 年底推出的一种开放协议，它通过提供一种标准化的接口，旨在通过标准化的接口实现大语言模型 (LLM) 与外部数据源及工具的无缝集成。</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>描述</th>
+<th>MCP如何解决</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上下文碎片化</td>
+<td>模型输入只能接收简单串联的 prompt，不擅长处理结构化、多源上下文</td>
+<td>MCP定义标准的结构化上下文协议（如用户意图、候选对象、系统状态等）</td>
+</tr>
+<tr>
+<td>插件难组合</td>
+<td>模型与插件之间的接口不统一，扩展困难</td>
+<td>MCP提供模块化的上下文与响应结构，实现模型与插件之间的协议对接</td>
+</tr>
+<tr>
+<td>上下文协同能力弱</td>
+<td>模型只能基于静态 prompt 推理，缺乏动态感知环境变化的能力</td>
+<td>MCP支持动态上下文更新、插件调用、memory等机制，增强模型实时感知和响应能力</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>原始问题</th>
+<th>MCP解决方案</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>prompt难以表达复杂上下文</td>
+<td>上下文结构化表达</td>
+<td>用户画像+历史行为+候选列表</td>
+</tr>
+<tr>
+<td>插件调用无法统一接入模型</td>
+<td>协议化插件封装</td>
+<td><code>plugin</code>: name + function</td>
+</tr>
+<tr>
+<td>多模态数据难融合</td>
+<td>多模态统一上下文协议</td>
+<td>支持图文、表格等模态</td>
+</tr>
+<tr>
+<td>对话缺乏记忆、协同规划</td>
+<td>memory字段 + multi-turn</td>
+<td>类似agent framework</td>
+</tr>
+</tbody></table>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><h2 id="MCP生态"><a href="#MCP生态" class="headerlink" title="MCP生态"></a>MCP生态</h2><h3 id="Jupter-MCP-Server"><a href="#Jupter-MCP-Server" class="headerlink" title="Jupter MCP Server"></a>Jupter MCP Server</h3><p>让AI助手在Jupyter笔记本中添加代码&#x2F;文字。</p>
+<h1 id="Agent2Agent协议"><a href="#Agent2Agent协议" class="headerlink" title="Agent2Agent协议"></a>Agent2Agent协议</h1><p>让Agent调用其他Agent</p>
+<h2 id="协议原则"><a href="#协议原则" class="headerlink" title="协议原则"></a>协议原则</h2><ol>
+<li>拥抱智能体的核心能力：允许智能体以自然、非结构化的方式进行互动。</li>
+<li>基于现有标准构建：采用现代流行的技术标准，如HTTP、SSE和JSON-RPC。</li>
+<li>默认安全：内置认证和授权机制，确保通信的安全性。</li>
+<li>支持长时间运行的任务：能够处理长时间任务的执行，并同步任务状态。</li>
+<li>支持多种模态：支持音频和视频等多种数据格式</li>
+</ol>
+<h2 id="关键功能"><a href="#关键功能" class="headerlink" title="关键功能"></a>关键功能</h2><ol>
+<li>能力发现：智能体可以通过JSON格式的“智能体名片”（Agent Card）宣传自己的能力，使客户端智能体能够识别最适合执行特定任务的智能体。</li>
+<li>任务管理：定义了任务的生命周期，支持短期和长期任务的管理。</li>
+<li>协作：智能体之间可以互相发送消息，传递上下文信息、回复、成果或用户指令。</li>
+<li>用户体验协商：每条消息包含“内容片段”，允许智能体协商所需的正确格式，并明确包含对用户界面能力的协商。</li>
+</ol>
+<h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><ol>
+<li>通信协议：定义了一套标准的通信协议，规范智能体间消息的交换规则、语法结构和传输机制。</li>
+<li>Agent身份：智能体可以通过Agent Card声明自身标识、功能特性、服务接口等信息。</li>
+<li>服务发现机制：提供了服务发现机制，使智能体能够依据任务需求查询并定位具备特定能力的其他智能体。</li>
+</ol>
+<h1 id="目标及优势"><a href="#目标及优势" class="headerlink" title="目标及优势"></a>目标及优势</h1><h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.53ai.com/news/OpenSourceLLM/2025040680692.html">不同的语言模型可能需要针对其特性调整MCP协议的实施方式，增加了跨模型应用的难度。</a><br><a target="_blank" rel="noopener" href="https://onevcat.com/2025/02/mcp/">MCP 是什么，现状和未来</a><br><a target="_blank" rel="noopener" href="https://github.com/datalayer/jupyter-mcp-server">Jupter MCP Server</a></p>
+<h2 id="MCP应用案例"><a href="#MCP应用案例" class="headerlink" title="MCP应用案例"></a>MCP应用案例</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5ODU1MzQzOQ==&mid=2451425733&idx=1&sn=fd71574469941c9a20473884707f6111&scene=21#wechat_redirect">10分钟搞定高德地图MCP</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/AI/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF/" class="category-chain-item">大模型技术</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tech-blog/tags/Agent/" class="print-no-link">#Agent</a>
+      
+        <a href="/tech-blog/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#大模型</a>
+      
+        <a href="/tech-blog/tags/%E8%AE%A4%E7%9F%A5%E8%AE%A1%E7%AE%97/" class="print-no-link">#认知计算</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>MCP协议：增强大模型认知能力的新范式</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/08/大模型-协议-MCP&amp;Agent2Agent&amp;UTCP/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 8, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/04/09/%E6%90%9C%E7%B4%A2-%E6%9E%B6%E6%9E%84/" title="搜索架构">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">搜索架构</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/04/08/NLP-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/" title="语义分割：技术发展脉络与大模型时代的解决方案">
+                        <span class="hidden-mobile">语义分割：技术发展脉络与大模型时代的解决方案</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
