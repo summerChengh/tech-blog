@@ -4,32 +4,6 @@
   
   
   <entry>
-    <title></title>
-    <link href="/tech-blog/2025/07/14/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
-    <url>/tech-blog/2025/07/14/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<h1 id="样本稀疏"><a href="#样本稀疏" class="headerlink" title="样本稀疏"></a>样本稀疏</h1><h1 id="样本选择偏差"><a href="#样本选择偏差" class="headerlink" title="样本选择偏差"></a>样本选择偏差</h1><h2 id="经典论文"><a href="#经典论文" class="headerlink" title="经典论文"></a>经典论文</h2><h3 id="ESMM"><a href="#ESMM" class="headerlink" title="ESMM"></a>ESMM</h3><p>核心解决两个问题：样本稀疏、样本选择偏差<br>技术实现：<br>多任务学习(MTL)：<br>$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$</p><p>其中：</p><ul><li>$p(z&amp;y &#x3D; 1|\boldsymbol{x})$ 表示条件文本-上下文-视觉检索概率 (pCTCVR)</li><li>$p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x})$ 表示条件视觉检索概率 (pCVR)</li><li>$p(y &#x3D; 1|\boldsymbol{x})$ 表示条件文本检索概率 (pCTR)</li></ul><p>ESMM损失函数：</p><p>$$L(\theta_{cvr}, \theta_{ctr}) &#x3D; \sum_{i&#x3D;1}^{N} l(y_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr})) + \sum_{i&#x3D;1}^{N} l(y_i&amp;z_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr}) \times f(\boldsymbol{x}<em>i; \theta</em>{cvr})),$$</p><p>其中：</p><ul><li>$\theta_{cvr}$ 和 $\theta_{ctr}$ 分别是CVR和CTR任务的模型参数</li><li>$l$ 表示损失函数（通常为对数损失）</li><li>$y_i$ 表示点击标签</li><li>$z_i$ 表示转化标签</li><li>$f(\boldsymbol{x}_i; \theta)$ 表示模型对输入特征的预测输出</li></ul>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/tech-blog/2025/07/12/%E7%AE%97%E6%B3%95-leetcode/"/>
-    <url>/tech-blog/2025/07/12/%E7%AE%97%E6%B3%95-leetcode/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>大模型搜索与传统信息检索的优势对比</title>
     <link href="/tech-blog/2025/07/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%90%9C%E7%B4%A2/"/>
     <url>/tech-blog/2025/07/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%90%9C%E7%B4%A2/</url>
@@ -176,6 +150,64 @@
   
   
   <entry>
+    <title>算法-LeetCode分类</title>
+    <link href="/tech-blog/2025/06/18/%E7%AE%97%E6%B3%95-leetcode/"/>
+    <url>/tech-blog/2025/06/18/%E7%AE%97%E6%B3%95-leetcode/</url>
+    
+    <content type="html"><![CDATA[<h1 id="LeetCode题型分类"><a href="#LeetCode题型分类" class="headerlink" title="LeetCode题型分类"></a>LeetCode题型分类</h1><ul><li>数组与排序</li><li>链表</li><li>栈与队列</li><li>哈希表</li><li>字符串</li><li>二分查找</li><li>动态规划</li><li>回溯与递归</li><li>树与二叉树</li><li>图与搜索（BFS&#x2F;DFS）</li><li>贪心算法</li><li>位运算</li><li>并查集</li><li>滑动窗口</li><li>设计题</li></ul><blockquote><p>后续可针对每类题型补充典型题目与解题思路。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+      <category>刷题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>LeetCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>搜索推荐-常见问题</title>
+    <link href="/tech-blog/2025/06/18/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    <url>/tech-blog/2025/06/18/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="样本稀疏"><a href="#样本稀疏" class="headerlink" title="样本稀疏"></a>样本稀疏</h1><h1 id="样本选择偏差"><a href="#样本选择偏差" class="headerlink" title="样本选择偏差"></a>样本选择偏差</h1><h2 id="经典论文"><a href="#经典论文" class="headerlink" title="经典论文"></a>经典论文</h2><h3 id="ESMM"><a href="#ESMM" class="headerlink" title="ESMM"></a>ESMM</h3><p>核心解决两个问题：样本稀疏、样本选择偏差<br>技术实现：<br>多任务学习(MTL)：<br>$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$</p><p>其中：</p><ul><li>$p(z&amp;y &#x3D; 1|\boldsymbol{x})$ 表示条件文本-上下文-视觉检索概率 (pCTCVR)</li><li>$p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x})$ 表示条件视觉检索概率 (pCVR)</li><li>$p(y &#x3D; 1|\boldsymbol{x})$ 表示条件文本检索概率 (pCTR)</li></ul><p>ESMM损失函数：</p><p>$$L(\theta_{cvr}, \theta_{ctr}) &#x3D; \sum_{i&#x3D;1}^{N} l(y_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr})) + \sum_{i&#x3D;1}^{N} l(y_i&amp;z_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr}) \times f(\boldsymbol{x}<em>i; \theta</em>{cvr})),$$</p><p>其中：</p><ul><li>$\theta_{cvr}$ 和 $\theta_{ctr}$ 分别是CVR和CTR任务的模型参数</li><li>$l$ 表示损失函数（通常为对数损失）</li><li>$y_i$ 表示点击标签</li><li>$z_i$ 表示转化标签</li><li>$f(\boldsymbol{x}_i; \theta)$ 表示模型对输入特征的预测输出</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+      <category>搜索推荐</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>搜索</tag>
+      
+      <tag>推荐</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>大模型-跟进</title>
     <link href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%B7%9F%E8%BF%9B/"/>
     <url>/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%B7%9F%E8%BF%9B/</url>
@@ -205,11 +237,11 @@
   
   
   <entry>
-    <title>Agent效果优化——提示策略</title>
-    <link href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%8F%90%E7%A4%BA%E7%AD%96%E7%95%A5/"/>
-    <url>/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%8F%90%E7%A4%BA%E7%AD%96%E7%95%A5/</url>
+    <title>Agent效果优化——LLM基础Function Call能力强化</title>
+    <link href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/"/>
+    <url>/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</url>
     
-    <content type="html"><![CDATA[<h1 id="思维链（Chain-of-Thought）"><a href="#思维链（Chain-of-Thought）" class="headerlink" title="思维链（Chain of Thought）"></a>思维链（Chain of Thought）</h1><h1 id="Least-to-most提示"><a href="#Least-to-most提示" class="headerlink" title="Least-to-most提示"></a>Least-to-most提示</h1><p>Plan &amp; Execute</p><p>LangChain优化选择：<br><a href="https://langchain-ai.github.io/langgraph/tutorials/reflection/reflection/">Reflection</a><br>[]</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/abs/2205.10625">Least-to-Most Prompting Enables Complex Reasoning in Large Language Models</a><br>[Self-Refine](Self-Refine: Iterative Refinement with Self-Feedback)<br><a href=""></a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h2><p>Function Call指LLM通过结构化指定调用外部函数&#x2F;API，将自然语言意图转为可执行命令的能力。<br>解决LLM实效性低（搜索：新闻、天气、股票）、专业领域能力（比如计算器、定酒店、定机票等）差等问题</p><p><strong>主流应用场景</strong></p><ol><li>实时数据查询：天气&#x2F;股票API调用（动态更新结果）</li><li>自动化任务执行：定酒店+机票+行程规划（多智能体协同）</li><li>企业系统执行：CRM客户查询+ERP库存更新（跨系统无缝对接）</li><li>复杂计算处理：数学运算&#x2F;专业领域分析（法律条文&#x2F;医疗诊断）</li></ol><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>调用参数错误</strong></p><p><strong>生成幻觉API</strong></p><p><strong>依赖关系混乱</strong></p><h1 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="LLM原生Function-Call能力"><a href="#LLM原生Function-Call能力" class="headerlink" title="LLM原生Function Call能力"></a>LLM原生Function Call能力</h3><h4 id="1-拆解当前场景大模型Function-Call数据通用形式"><a href="#1-拆解当前场景大模型Function-Call数据通用形式" class="headerlink" title="1. 拆解当前场景大模型Function Call数据通用形式"></a>1. 拆解当前场景大模型Function Call数据通用形式</h4><h5 id="用户输入"><a href="#用户输入" class="headerlink" title="用户输入"></a>用户输入</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs json">tools = <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;function&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;function&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;get_current_temperature&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Get current temperature at a location.&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;parameters&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;object&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;properties&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;location&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                    <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;string&quot;</span><span class="hljs-punctuation">,</span><br>                    <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;The location to get the temperature for, in the format \&quot;City, State, Country\&quot;.&quot;</span><br>                <span class="hljs-punctuation">&#125;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;required&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;location&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br>messages = <span class="hljs-punctuation">[</span><br>    <span class="hljs-punctuation">&#123;</span>&#x27;role&#x27;<span class="hljs-punctuation">:</span> &#x27;system&#x27;<span class="hljs-punctuation">,</span> &#x27;content&#x27;<span class="hljs-punctuation">:</span> &#x27;你是**&#x27;<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span>&#x27;role&#x27;<span class="hljs-punctuation">:</span> &#x27;user&#x27;<span class="hljs-punctuation">,</span> &#x27;content&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;现在北京的天气怎么样?&quot;</span><span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">]</span><br></code></pre></td></tr></table></figure><h5 id="调用模型"><a href="#调用模型" class="headerlink" title="调用模型"></a>调用模型</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">response = client.chat.completions.create(<br>    model=model_name,<br>    messages=messages,<br>    tools=tools<br>)<br></code></pre></td></tr></table></figure><p>模型调用时增加tools字段，注册工具信息</p><h5 id="模型输出"><a href="#模型输出" class="headerlink" title="模型输出"></a>模型输出</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;role&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;assistant&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span>为了获取当前天气，我需要调用&#x27;get_current_temperature&#x27;这个工具<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;,</span><br><span class="hljs-string">    &quot;</span>tool_calls<span class="hljs-string">&quot;: [</span><br><span class="hljs-string">        &#123;</span><br><span class="hljs-string">            &quot;</span>type<span class="hljs-string">&quot;: &quot;</span>function<span class="hljs-string">&quot;,</span><br><span class="hljs-string">            &quot;</span>function<span class="hljs-string">&quot;: &#123;</span><br><span class="hljs-string">                &quot;</span>name<span class="hljs-string">&quot;: &quot;</span>get_current_temperature<span class="hljs-string">&quot;, </span><br><span class="hljs-string">                &quot;</span>arguments<span class="hljs-string">&quot;: &#123;&quot;</span>location<span class="hljs-string">&quot;: &quot;</span>北京<span class="hljs-string">&quot;&#125;</span><br><span class="hljs-string">            &#125;</span><br><span class="hljs-string">        &#125;</span><br><span class="hljs-string">    ]</span><br><span class="hljs-string">&#125;</span><br></code></pre></td></tr></table></figure><p>将输出解析为content和tool_calls两个字段，模型输出调用工具信息及参数</p><h2 id="数据构建流程"><a href="#数据构建流程" class="headerlink" title="数据构建流程"></a>数据构建流程</h2><h3 id="工具构建"><a href="#工具构建" class="headerlink" title="工具构建"></a>工具构建</h3><p>工具是Agent能力的基础，构建高质量的工具定义是提升函数调用效果的关键。</p><p><img src="/tech-blog/../images/function-call-data-flow.png" alt="数据构建流程"></p><h3 id="真实工具-VS-LLM虚构工具"><a href="#真实工具-VS-LLM虚构工具" class="headerlink" title="真实工具 VS LLM虚构工具"></a>真实工具 VS LLM虚构工具</h3><table><thead><tr><th>维度</th><th>真实工具 (Real-world Tools)</th><th>LLM虚构工具 (Hallucinated Tools)</th></tr></thead><tbody><tr><td>本质</td><td>调用外部真实存在的API或服务（如天气接口、数据库），依赖现实数据源</td><td>工具功能及结果完全由LLM生成，无真实后端支持，本质是模型内部推理的延伸</td></tr><tr><td>流程</td><td>1. 用户指令 → 2. LLM解析请求 → 3. 调用外部API → 4. LLM基于返回结果继续生成</td><td>1. 用户指令 → 2. LLM生成工具调用请求 → 3. LLM伪造工具调用结果 → 4. LLM基于返回结果继续生成</td></tr><tr><td>优势</td><td>✅ 返回结果高真实性：结果与现实严格一致（如实时股价）<br>✅ 工具贴近真实场景：符合用户实际使用需求<br>✅ 对抗幻觉：依靠外部证据，减少虚构</td><td>✅ 零调用成本：无需API费用，仅消耗Token<br>✅ 高定制性：自由定义工具逻辑（如模拟专家决策）<br>✅ 稳定性高：无第三方依赖</td></tr><tr><td>挑战</td><td>❌ 开发复杂：需处理API认证、错误重试<br>❌ 调用成本高：频繁使用需支付API费用<br>❌ 外部依赖风险：API服务若宕机则失效</td><td>❌ 结果不可信：易编造不存在的事实<br>❌ 逻辑矛盾：可能违反常识<br>❌ 滥用风险：生成误导性内容需人工审核</td></tr><tr><td>适用场景</td><td>高精度的垂类任务：金融分析、医疗诊断</td><td>基础常见任务：旅游攻略、天气查询</td></tr></tbody></table><p>虚构工具构建方法：</p><ul><li>从开源API库中获取真实工具描述信息</li><li>利用LLM语料中划分大量文本，从中提取场景，进一步构建API描述</li></ul><p>[1] Liu, Weiwen et al. “ToolACE: Winning the Points of LLM Function Calling.” ArXiv abs&#x2F;2409.00920 (2024): n. pag.</p><h3 id="任务构建"><a href="#任务构建" class="headerlink" title="任务构建"></a>任务构建</h3><p>任务构建是Function Call数据流程中的关键环节，涉及如何设计用户指令以触发工具调用：</p><h4 id="任务构建直接方法"><a href="#任务构建直接方法" class="headerlink" title="任务构建直接方法"></a>任务构建直接方法</h4><ul><li>直接使用大模型针对工具List合成问题，以及基于对话历史信息构建任务</li></ul><h4 id="任务构建进阶方法"><a href="#任务构建进阶方法" class="headerlink" title="任务构建进阶方法"></a>任务构建进阶方法</h4><ul><li>依据Function Call数据类型分布均衡构建</li><li>加入persona和场景设计，借助指令进化方法，使得Agent数据的任务变得更加接近真实使用场景，逐渐增加问题难度和多样性</li><li>合并已有的简单任务，逐步构建复杂任务</li></ul><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><table><thead><tr><th>任务类型</th><th>示例</th><th>问题</th></tr></thead><tbody><tr><td>简单直接任务</td><td>今天北京天气如何？</td><td>get_weather<br>get_tourist_guide</td></tr><tr><td>缺工具提供</td><td>给我推荐个地方去避暑，再预定一张机票</td><td>缺工具提供</td></tr><tr><td>缺参数信息</td><td>我过生日那天北京天气咋样？</td><td>缺参数信息</td></tr><tr><td>复杂任务</td><td>我是个北方人，没怎么看过海，想找个有海的地方度过我的暑假，但是也别太热别太潮，最好玩儿的地方能多一些</td><td>复杂任务</td></tr></tbody></table><ol><li><strong>指令设计</strong>：构建明确需要工具调用的用户问题，如”今天北京天气如何？”</li><li><strong>隐式需求</strong>：设计含蓄表达工具需求的问题，如”我需要穿外套出门吗？”（隐含天气查询）</li><li><strong>多工具协同</strong>：设计需要多个工具配合完成的复杂任务，如”给我推荐个地方去避暑，再预定一张机票”</li><li><strong>参数缺失场景</strong>：构建缺少关键参数的问题，如”我过生日那天北京天气咋样？”，训练模型主动询问缺失信息</li><li><strong>复杂场景描述</strong>：设计包含多重需求的复杂描述，如”我是个北方人，没怎么看过海，想找个有海的地方度过我的暑假，但是也别太热别太潮，最好玩儿的地方能多一些”</li></ol><h3 id="答案构建"><a href="#答案构建" class="headerlink" title="答案构建"></a>答案构建</h3><p>答案构建：数据构建最关键的部分，质量直接影响模型输出效果</p><h4 id="方法类型与操作逻辑"><a href="#方法类型与操作逻辑" class="headerlink" title="方法类型与操作逻辑"></a>方法类型与操作逻辑</h4><table><thead><tr><th>方法类型</th><th>操作逻辑</th></tr></thead><tbody><tr><td>基础方法</td><td>基于LLM构建&#x2F;人工标注</td></tr><tr><td>进阶方法</td><td>聚合多个来源结果 → 投票筛选&#x2F;一致性校验 → 保留高置信度答案</td></tr><tr><td>特殊任务</td><td>搭建带可执行API的模拟环境 → 智能体在环境中交互 → 记录真实调用路径作为答案</td></tr></tbody></table><h4 id="模拟环境交互构建法"><a href="#模拟环境交互构建法" class="headerlink" title="模拟环境交互构建法"></a>模拟环境交互构建法</h4><p>Agent在模拟环境中与可执行API交互的过程：</p><ol><li>从任务意图出发，由模拟人类提出初始问题</li><li>测试Agent分析问题并选择合适的API调用</li><li>环境配置提供实际可执行的API接口</li><li>记录多轮交互过程，包括API调用及结果</li><li>将真实交互路径作为高质量答案样本</li></ol><h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><p>校验环节确保Function Call的可靠性：</p><ol><li><strong>格式验证</strong>：检查工具调用JSON格式是否符合规范</li><li><strong>参数验证</strong>：验证提取的参数是否符合工具要求</li><li><strong>逻辑验证</strong>：确认工具调用与用户意图一致</li><li><strong>结果验证</strong>：评估工具调用结果是否满足用户需求</li></ol><h3 id="产出数据"><a href="#产出数据" class="headerlink" title="产出数据"></a>产出数据</h3><p>最终产出的高质量Function Call训练数据包含：</p><ol><li><strong>用户指令</strong>：触发工具调用的问题</li><li><strong>工具定义</strong>：明确的工具名称、描述和参数规范</li><li><strong>标准回复</strong>：包含工具调用JSON和自然语言解释的完整回复</li><li><strong>工具结果</strong>：模拟的工具执行结果（用于后续对话）</li></ol><p><a href="https://arxiv.org/pdf/2412.04141">Reducing Tool Hallucination via Reliability Alignment</a></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>[1] Kim, S., Moon, S., Tabrizi, R., Lee, N., Mahoney, M.W., Keutzer, K., &amp; Gholami, A. (2023). An LLM Compiler for Parallel Function Calling. ArXiv, abs&#x2F;2312.04511.<br>[2] Xu, H., Zhu, S., Wang, Z., Zheng, H., Ma, D., Cao, R., Fan, S., Chen, L., &amp; Yu, K. (2024). Reducing Tool Hallucination via Reliability Alignment. ArXiv, abs&#x2F;2412.04141.</p>]]></content>
     
     
     <categories>
@@ -236,11 +268,11 @@
   
   
   <entry>
-    <title>Agent效果优化——LLM基础Function Call能力强化</title>
-    <link href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/"/>
-    <url>/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</url>
+    <title>Agent效果优化——提示策略</title>
+    <link href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%8F%90%E7%A4%BA%E7%AD%96%E7%95%A5/"/>
+    <url>/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%8F%90%E7%A4%BA%E7%AD%96%E7%95%A5/</url>
     
-    <content type="html"><![CDATA[<h2 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h2><p>Function Call指LLM通过结构化指定调用外部函数&#x2F;API，将自然语言意图转为可执行命令的能力。<br>解决LLM实效性低（搜索：新闻、天气、股票）、专业领域能力（比如计算器、定酒店、定机票等）差等问题</p><p><strong>主流应用场景</strong></p><ol><li>实时数据查询：天气&#x2F;股票API调用（动态更新结果）</li><li>自动化任务执行：定酒店+机票+行程规划（多智能体协同）</li><li>企业系统执行：CRM客户查询+ERP库存更新（跨系统无缝对接）</li><li>复杂计算处理：数学运算&#x2F;专业领域分析（法律条文&#x2F;医疗诊断）</li></ol><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>调用参数错误</strong></p><p><strong>生成幻觉API</strong></p><p><strong>依赖关系混乱</strong></p><h1 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><h3 id="LLM原生Function-Call能力"><a href="#LLM原生Function-Call能力" class="headerlink" title="LLM原生Function Call能力"></a>LLM原生Function Call能力</h3><h4 id="1-拆解当前场景大模型Function-Call数据通用形式"><a href="#1-拆解当前场景大模型Function-Call数据通用形式" class="headerlink" title="1. 拆解当前场景大模型Function Call数据通用形式"></a>1. 拆解当前场景大模型Function Call数据通用形式</h4><h5 id="用户输入"><a href="#用户输入" class="headerlink" title="用户输入"></a>用户输入</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs json">tools = <span class="hljs-punctuation">[</span><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;function&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;function&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;get_current_temperature&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Get current temperature at a location.&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;parameters&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;object&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;properties&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;location&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                    <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;string&quot;</span><span class="hljs-punctuation">,</span><br>                    <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;The location to get the temperature for, in the format \&quot;City, State, Country\&quot;.&quot;</span><br>                <span class="hljs-punctuation">&#125;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;required&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;location&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">]</span><br><br>messages = <span class="hljs-punctuation">[</span><br>    <span class="hljs-punctuation">&#123;</span>&#x27;role&#x27;<span class="hljs-punctuation">:</span> &#x27;system&#x27;<span class="hljs-punctuation">,</span> &#x27;content&#x27;<span class="hljs-punctuation">:</span> &#x27;你是**&#x27;<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span>&#x27;role&#x27;<span class="hljs-punctuation">:</span> &#x27;user&#x27;<span class="hljs-punctuation">,</span> &#x27;content&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;现在北京的天气怎么样?&quot;</span><span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">]</span><br></code></pre></td></tr></table></figure><h5 id="调用模型"><a href="#调用模型" class="headerlink" title="调用模型"></a>调用模型</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">response = client.chat.completions.create(<br>    model=model_name,<br>    messages=messages,<br>    tools=tools<br>)<br></code></pre></td></tr></table></figure><p>模型调用时增加tools字段，注册工具信息</p><h5 id="模型输出"><a href="#模型输出" class="headerlink" title="模型输出"></a>模型输出</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;role&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;assistant&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span>为了获取当前天气，我需要调用&#x27;get_current_temperature&#x27;这个工具<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;,</span><br><span class="hljs-string">    &quot;</span>tool_calls<span class="hljs-string">&quot;: [</span><br><span class="hljs-string">        &#123;</span><br><span class="hljs-string">            &quot;</span>type<span class="hljs-string">&quot;: &quot;</span>function<span class="hljs-string">&quot;,</span><br><span class="hljs-string">            &quot;</span>function<span class="hljs-string">&quot;: &#123;</span><br><span class="hljs-string">                &quot;</span>name<span class="hljs-string">&quot;: &quot;</span>get_current_temperature<span class="hljs-string">&quot;, </span><br><span class="hljs-string">                &quot;</span>arguments<span class="hljs-string">&quot;: &#123;&quot;</span>location<span class="hljs-string">&quot;: &quot;</span>北京<span class="hljs-string">&quot;&#125;</span><br><span class="hljs-string">            &#125;</span><br><span class="hljs-string">        &#125;</span><br><span class="hljs-string">    ]</span><br><span class="hljs-string">&#125;</span><br></code></pre></td></tr></table></figure><p>将输出解析为content和tool_calls两个字段，模型输出调用工具信息及参数</p><h2 id="数据构建流程"><a href="#数据构建流程" class="headerlink" title="数据构建流程"></a>数据构建流程</h2><h3 id="工具构建"><a href="#工具构建" class="headerlink" title="工具构建"></a>工具构建</h3><p>工具是Agent能力的基础，构建高质量的工具定义是提升函数调用效果的关键。</p><p><img src="/tech-blog/../images/function-call-data-flow.png" alt="数据构建流程"></p><h3 id="真实工具-VS-LLM虚构工具"><a href="#真实工具-VS-LLM虚构工具" class="headerlink" title="真实工具 VS LLM虚构工具"></a>真实工具 VS LLM虚构工具</h3><table><thead><tr><th>维度</th><th>真实工具 (Real-world Tools)</th><th>LLM虚构工具 (Hallucinated Tools)</th></tr></thead><tbody><tr><td>本质</td><td>调用外部真实存在的API或服务（如天气接口、数据库），依赖现实数据源</td><td>工具功能及结果完全由LLM生成，无真实后端支持，本质是模型内部推理的延伸</td></tr><tr><td>流程</td><td>1. 用户指令 → 2. LLM解析请求 → 3. 调用外部API → 4. LLM基于返回结果继续生成</td><td>1. 用户指令 → 2. LLM生成工具调用请求 → 3. LLM伪造工具调用结果 → 4. LLM基于返回结果继续生成</td></tr><tr><td>优势</td><td>✅ 返回结果高真实性：结果与现实严格一致（如实时股价）<br>✅ 工具贴近真实场景：符合用户实际使用需求<br>✅ 对抗幻觉：依靠外部证据，减少虚构</td><td>✅ 零调用成本：无需API费用，仅消耗Token<br>✅ 高定制性：自由定义工具逻辑（如模拟专家决策）<br>✅ 稳定性高：无第三方依赖</td></tr><tr><td>挑战</td><td>❌ 开发复杂：需处理API认证、错误重试<br>❌ 调用成本高：频繁使用需支付API费用<br>❌ 外部依赖风险：API服务若宕机则失效</td><td>❌ 结果不可信：易编造不存在的事实<br>❌ 逻辑矛盾：可能违反常识<br>❌ 滥用风险：生成误导性内容需人工审核</td></tr><tr><td>适用场景</td><td>高精度的垂类任务：金融分析、医疗诊断</td><td>基础常见任务：旅游攻略、天气查询</td></tr></tbody></table><p>虚构工具构建方法：</p><ul><li>从开源API库中获取真实工具描述信息</li><li>利用LLM语料中划分大量文本，从中提取场景，进一步构建API描述</li></ul><p>[1] Liu, Weiwen et al. “ToolACE: Winning the Points of LLM Function Calling.” ArXiv abs&#x2F;2409.00920 (2024): n. pag.</p><h3 id="任务构建"><a href="#任务构建" class="headerlink" title="任务构建"></a>任务构建</h3><p>任务构建是Function Call数据流程中的关键环节，涉及如何设计用户指令以触发工具调用：</p><h4 id="任务构建直接方法"><a href="#任务构建直接方法" class="headerlink" title="任务构建直接方法"></a>任务构建直接方法</h4><ul><li>直接使用大模型针对工具List合成问题，以及基于对话历史信息构建任务</li></ul><h4 id="任务构建进阶方法"><a href="#任务构建进阶方法" class="headerlink" title="任务构建进阶方法"></a>任务构建进阶方法</h4><ul><li>依据Function Call数据类型分布均衡构建</li><li>加入persona和场景设计，借助指令进化方法，使得Agent数据的任务变得更加接近真实使用场景，逐渐增加问题难度和多样性</li><li>合并已有的简单任务，逐步构建复杂任务</li></ul><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><table><thead><tr><th>任务类型</th><th>示例</th><th>问题</th></tr></thead><tbody><tr><td>简单直接任务</td><td>今天北京天气如何？</td><td>get_weather<br>get_tourist_guide</td></tr><tr><td>缺工具提供</td><td>给我推荐个地方去避暑，再预定一张机票</td><td>缺工具提供</td></tr><tr><td>缺参数信息</td><td>我过生日那天北京天气咋样？</td><td>缺参数信息</td></tr><tr><td>复杂任务</td><td>我是个北方人，没怎么看过海，想找个有海的地方度过我的暑假，但是也别太热别太潮，最好玩儿的地方能多一些</td><td>复杂任务</td></tr></tbody></table><ol><li><strong>指令设计</strong>：构建明确需要工具调用的用户问题，如”今天北京天气如何？”</li><li><strong>隐式需求</strong>：设计含蓄表达工具需求的问题，如”我需要穿外套出门吗？”（隐含天气查询）</li><li><strong>多工具协同</strong>：设计需要多个工具配合完成的复杂任务，如”给我推荐个地方去避暑，再预定一张机票”</li><li><strong>参数缺失场景</strong>：构建缺少关键参数的问题，如”我过生日那天北京天气咋样？”，训练模型主动询问缺失信息</li><li><strong>复杂场景描述</strong>：设计包含多重需求的复杂描述，如”我是个北方人，没怎么看过海，想找个有海的地方度过我的暑假，但是也别太热别太潮，最好玩儿的地方能多一些”</li></ol><h3 id="答案构建"><a href="#答案构建" class="headerlink" title="答案构建"></a>答案构建</h3><p>答案构建：数据构建最关键的部分，质量直接影响模型输出效果</p><h4 id="方法类型与操作逻辑"><a href="#方法类型与操作逻辑" class="headerlink" title="方法类型与操作逻辑"></a>方法类型与操作逻辑</h4><table><thead><tr><th>方法类型</th><th>操作逻辑</th></tr></thead><tbody><tr><td>基础方法</td><td>基于LLM构建&#x2F;人工标注</td></tr><tr><td>进阶方法</td><td>聚合多个来源结果 → 投票筛选&#x2F;一致性校验 → 保留高置信度答案</td></tr><tr><td>特殊任务</td><td>搭建带可执行API的模拟环境 → 智能体在环境中交互 → 记录真实调用路径作为答案</td></tr></tbody></table><h4 id="模拟环境交互构建法"><a href="#模拟环境交互构建法" class="headerlink" title="模拟环境交互构建法"></a>模拟环境交互构建法</h4><p>Agent在模拟环境中与可执行API交互的过程：</p><ol><li>从任务意图出发，由模拟人类提出初始问题</li><li>测试Agent分析问题并选择合适的API调用</li><li>环境配置提供实际可执行的API接口</li><li>记录多轮交互过程，包括API调用及结果</li><li>将真实交互路径作为高质量答案样本</li></ol><h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><p>校验环节确保Function Call的可靠性：</p><ol><li><strong>格式验证</strong>：检查工具调用JSON格式是否符合规范</li><li><strong>参数验证</strong>：验证提取的参数是否符合工具要求</li><li><strong>逻辑验证</strong>：确认工具调用与用户意图一致</li><li><strong>结果验证</strong>：评估工具调用结果是否满足用户需求</li></ol><h3 id="产出数据"><a href="#产出数据" class="headerlink" title="产出数据"></a>产出数据</h3><p>最终产出的高质量Function Call训练数据包含：</p><ol><li><strong>用户指令</strong>：触发工具调用的问题</li><li><strong>工具定义</strong>：明确的工具名称、描述和参数规范</li><li><strong>标准回复</strong>：包含工具调用JSON和自然语言解释的完整回复</li><li><strong>工具结果</strong>：模拟的工具执行结果（用于后续对话）</li></ol><p><a href="https://arxiv.org/pdf/2412.04141">Reducing Tool Hallucination via Reliability Alignment</a></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>[1] Kim, S., Moon, S., Tabrizi, R., Lee, N., Mahoney, M.W., Keutzer, K., &amp; Gholami, A. (2023). An LLM Compiler for Parallel Function Calling. ArXiv, abs&#x2F;2312.04511.<br>[2] Xu, H., Zhu, S., Wang, Z., Zheng, H., Ma, D., Cao, R., Fan, S., Chen, L., &amp; Yu, K. (2024). Reducing Tool Hallucination via Reliability Alignment. ArXiv, abs&#x2F;2412.04141.</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="思维链（Chain-of-Thought）"><a href="#思维链（Chain-of-Thought）" class="headerlink" title="思维链（Chain of Thought）"></a>思维链（Chain of Thought）</h1><h1 id="Least-to-most提示"><a href="#Least-to-most提示" class="headerlink" title="Least-to-most提示"></a>Least-to-most提示</h1><p>Plan &amp; Execute</p><p>LangChain优化选择：<br><a href="https://langchain-ai.github.io/langgraph/tutorials/reflection/reflection/">Reflection</a><br>[]</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://arxiv.org/abs/2205.10625">Least-to-Most Prompting Enables Complex Reasoning in Large Language Models</a><br>[Self-Refine](Self-Refine: Iterative Refinement with Self-Feedback)<br><a href=""></a></p>]]></content>
     
     
     <categories>
@@ -422,11 +454,11 @@
   
   
   <entry>
-    <title>小学学科规划</title>
-    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%B0%8F%E5%AD%A6%E5%AD%A6%E7%A7%91%E8%A7%84%E5%88%92/"/>
-    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%B0%8F%E5%AD%A6%E5%AD%A6%E7%A7%91%E8%A7%84%E5%88%92/</url>
+    <title>儿童优势发现与评估</title>
+    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E4%BC%98%E5%8A%BF%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%AF%84%E4%BC%B0/"/>
+    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E4%BC%98%E5%8A%BF%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%AF%84%E4%BC%B0/</url>
     
-    <content type="html"><![CDATA[<h1 id="一二年级"><a href="#一二年级" class="headerlink" title="一二年级"></a>一二年级</h1><h2 id="英语学习"><a href="#英语学习" class="headerlink" title="英语学习"></a>英语学习</h2><ul><li>大量学习，注重英语环境持续输入。</li><li>RAZ分级阅读：<ul><li>初期以RAZ为主，建立基础阅读能力。</li><li>学完三个级别后，逐步加入原版教材并行学习。</li></ul></li><li>原版教材：<ul><li>G级别后，原版教材学习占比逐步提升。</li></ul></li></ul><h2 id="积累阅读"><a href="#积累阅读" class="headerlink" title="积累阅读"></a>积累阅读</h2><ul><li>持续积累中文阅读：<ul><li>前提：幼儿园阶段已开始大量亲子阅读。</li><li>目标：每年阅读200本，实现阅读能力跨越提升。</li><li>关键：成功进入自主阅读阶段。</li></ul></li></ul><h2 id="奥数学习"><a href="#奥数学习" class="headerlink" title="奥数学习"></a>奥数学习</h2><ul><li>保持奥数学习：<ul><li>普娃以6年为维度，按部就班学习。</li><li>现阶段非学习重点，重在兴趣和基础。</li><li>高强度学习仅适用于智商超群、极具兴趣的孩子。</li></ul></li></ul><h1 id="三、四年级"><a href="#三、四年级" class="headerlink" title="三、四年级"></a>三、四年级</h1><h2 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h2><ul><li>3年级冲KET，4年级冲PET，作为短期内重点目标。</li></ul><h2 id="奥数"><a href="#奥数" class="headerlink" title="奥数"></a>奥数</h2><ul><li>绝对重心，认真学：<ul><li>真人老师授课</li><li>同学伴学</li><li>学习时间每周不少于4-5小时</li><li>6年级前完成奥数主线内容</li></ul></li></ul><h2 id="语文"><a href="#语文" class="headerlink" title="语文"></a>语文</h2><ul><li>难度登顶：<ul><li>阅读哈利波特类无障碍</li><li>阅读四大名著原文（可适当辅助）</li></ul></li><li>阅读理解</li><li>写作</li></ul><h1 id="五、六年级"><a href="#五、六年级" class="headerlink" title="五、六年级"></a>五、六年级</h1><h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><h3 id="英语-1"><a href="#英语-1" class="headerlink" title="英语"></a>英语</h3><p>三年级通过KET<br>四年级通过PET</p><h3 id="奥数-初中数学"><a href="#奥数-初中数学" class="headerlink" title="奥数&#x2F;初中数学"></a>奥数&#x2F;初中数学</h3><ul><li>奥数学完，PET通过后即开始初中数学。</li><li>初中数学分两轮：<ul><li>第一轮：天天练&#x2F;洋葱&#x2F;同步练习分册</li><li>第二轮：如有时间，线上真人老师授课或线上朱韬老师</li></ul></li></ul><h3 id="语文-1"><a href="#语文-1" class="headerlink" title="语文"></a>语文</h3><ul><li>小白书500首，初中古诗文</li><li>语基、阅读理解、写作能力提升</li><li>初中必读16本</li><li>刷中考难度的阅读理解（哈佛识文&#x2F;初一真题4-5篇&#x2F;周）</li><li>学初中语法：<ul><li>系统课、线上课（语法专项串讲）</li><li>小粉书&#x2F;小绿书</li></ul></li></ul><h2 id="英语-2"><a href="#英语-2" class="headerlink" title="英语"></a>英语</h2><ul><li>5年级考过PET（或6年级上之前）</li><li>学初中语法</li></ul><h1 id="磨耳朵音频"><a href="#磨耳朵音频" class="headerlink" title="磨耳朵音频"></a>磨耳朵音频</h1><p>柴荣传<br>姜天一历史音频<br>博雅新闻时间</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="优势评估"><a href="#优势评估" class="headerlink" title="优势评估"></a>优势评估</h1><h1 id="协作速配"><a href="#协作速配" class="headerlink" title="协作速配"></a>协作速配</h1>]]></content>
     
     
     <categories>
@@ -480,40 +512,11 @@
   
   
   <entry>
-    <title>数学思维</title>
-    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/"/>
-    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/</url>
+    <title>小学学科规划</title>
+    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%B0%8F%E5%AD%A6%E5%AD%A6%E7%A7%91%E8%A7%84%E5%88%92/"/>
+    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E5%B0%8F%E5%AD%A6%E5%AD%A6%E7%A7%91%E8%A7%84%E5%88%92/</url>
     
-    <content type="html"><![CDATA[<h1 id="数学能力"><a href="#数学能力" class="headerlink" title="数学能力"></a>数学能力</h1><h1 id="市面上的优势思维课"><a href="#市面上的优势思维课" class="headerlink" title="市面上的优势思维课"></a>市面上的优势思维课</h1><h1 id="数学引导"><a href="#数学引导" class="headerlink" title="数学引导"></a>数学引导</h1><h1 id="优秀的数据家"><a href="#优秀的数据家" class="headerlink" title="优秀的数据家"></a>优秀的数据家</h1>]]></content>
-    
-    
-    <categories>
-      
-      <category>教育</category>
-      
-      <category>人工智能</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>教育</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>儿童优势发现与评估</title>
-    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E4%BC%98%E5%8A%BF%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%AF%84%E4%BC%B0/"/>
-    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E4%BC%98%E5%8A%BF%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%AF%84%E4%BC%B0/</url>
-    
-    <content type="html"><![CDATA[<h1 id="优势评估"><a href="#优势评估" class="headerlink" title="优势评估"></a>优势评估</h1><h1 id="协作速配"><a href="#协作速配" class="headerlink" title="协作速配"></a>协作速配</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="一二年级"><a href="#一二年级" class="headerlink" title="一二年级"></a>一二年级</h1><h2 id="英语学习"><a href="#英语学习" class="headerlink" title="英语学习"></a>英语学习</h2><ul><li>大量学习，注重英语环境持续输入。</li><li>RAZ分级阅读：<ul><li>初期以RAZ为主，建立基础阅读能力。</li><li>学完三个级别后，逐步加入原版教材并行学习。</li></ul></li><li>原版教材：<ul><li>G级别后，原版教材学习占比逐步提升。</li></ul></li></ul><h2 id="积累阅读"><a href="#积累阅读" class="headerlink" title="积累阅读"></a>积累阅读</h2><ul><li>持续积累中文阅读：<ul><li>前提：幼儿园阶段已开始大量亲子阅读。</li><li>目标：每年阅读200本，实现阅读能力跨越提升。</li><li>关键：成功进入自主阅读阶段。</li></ul></li></ul><h2 id="奥数学习"><a href="#奥数学习" class="headerlink" title="奥数学习"></a>奥数学习</h2><ul><li>保持奥数学习：<ul><li>普娃以6年为维度，按部就班学习。</li><li>现阶段非学习重点，重在兴趣和基础。</li><li>高强度学习仅适用于智商超群、极具兴趣的孩子。</li></ul></li></ul><h1 id="三、四年级"><a href="#三、四年级" class="headerlink" title="三、四年级"></a>三、四年级</h1><h2 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h2><ul><li>3年级冲KET，4年级冲PET，作为短期内重点目标。</li></ul><h2 id="奥数"><a href="#奥数" class="headerlink" title="奥数"></a>奥数</h2><ul><li>绝对重心，认真学：<ul><li>真人老师授课</li><li>同学伴学</li><li>学习时间每周不少于4-5小时</li><li>6年级前完成奥数主线内容</li></ul></li></ul><h2 id="语文"><a href="#语文" class="headerlink" title="语文"></a>语文</h2><ul><li>难度登顶：<ul><li>阅读哈利波特类无障碍</li><li>阅读四大名著原文（可适当辅助）</li></ul></li><li>阅读理解</li><li>写作</li></ul><h1 id="五、六年级"><a href="#五、六年级" class="headerlink" title="五、六年级"></a>五、六年级</h1><h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><h3 id="英语-1"><a href="#英语-1" class="headerlink" title="英语"></a>英语</h3><p>三年级通过KET<br>四年级通过PET</p><h3 id="奥数-初中数学"><a href="#奥数-初中数学" class="headerlink" title="奥数&#x2F;初中数学"></a>奥数&#x2F;初中数学</h3><ul><li>奥数学完，PET通过后即开始初中数学。</li><li>初中数学分两轮：<ul><li>第一轮：天天练&#x2F;洋葱&#x2F;同步练习分册</li><li>第二轮：如有时间，线上真人老师授课或线上朱韬老师</li></ul></li></ul><h3 id="语文-1"><a href="#语文-1" class="headerlink" title="语文"></a>语文</h3><ul><li>小白书500首，初中古诗文</li><li>语基、阅读理解、写作能力提升</li><li>初中必读16本</li><li>刷中考难度的阅读理解（哈佛识文&#x2F;初一真题4-5篇&#x2F;周）</li><li>学初中语法：<ul><li>系统课、线上课（语法专项串讲）</li><li>小粉书&#x2F;小绿书</li></ul></li></ul><h2 id="英语-2"><a href="#英语-2" class="headerlink" title="英语"></a>英语</h2><ul><li>5年级考过PET（或6年级上之前）</li><li>学初中语法</li></ul><h1 id="磨耳朵音频"><a href="#磨耳朵音频" class="headerlink" title="磨耳朵音频"></a>磨耳朵音频</h1><p>柴荣传<br>姜天一历史音频<br>博雅新闻时间</p>]]></content>
     
     
     <categories>
@@ -543,6 +546,35 @@
     <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E9%AB%98%E6%95%8F%E6%84%9F%E5%AD%A9%E5%AD%90%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</url>
     
     <content type="html"><![CDATA[<p>挑战：<br>高敏感孩子处理情绪、进入学习状态通常花费很多时间。</p><h1 id="高敏感孩子的特点"><a href="#高敏感孩子的特点" class="headerlink" title="高敏感孩子的特点"></a>高敏感孩子的特点</h1><p>高敏感孩子（Highly Sensitive Child, HSC）在神经系统上对外界刺激（如声音、光线、气味、情绪氛围等）反应更为强烈。他们常见的特点包括：</p><ul><li>情绪感受力强，容易被他人情绪影响</li><li>对环境变化、噪音、混乱等高度敏感</li><li>需要较多的安静和独处时间来恢复能量</li><li>对批评、压力、失败等反应更大，容易焦虑或自责</li><li>富有同理心，善于觉察他人需求</li><li>在新环境或新任务前，适应期较长</li></ul><p>神经科学研究表明，高敏感孩子的大脑边缘系统（情绪处理区）和前额叶皮层（自我调节区）活动更为活跃，导致他们在面对多重刺激时更容易感到压力。</p><h1 id="蒙特梭利教育对高敏感孩子有哪些帮助"><a href="#蒙特梭利教育对高敏感孩子有哪些帮助" class="headerlink" title="蒙特梭利教育对高敏感孩子有哪些帮助"></a>蒙特梭利教育对高敏感孩子有哪些帮助</h1><p>蒙特梭利教育强调尊重儿童个体差异、自由选择和有序环境，这对高敏感孩子尤为有益：</p><ul><li><strong>有序、安静的环境</strong>：减少感官过载，帮助孩子更好地专注和自我调节。</li><li><strong>自主选择活动</strong>：让孩子根据自身状态选择任务，降低压力和抵触情绪。</li><li><strong>节奏缓慢、重复性强的工作</strong>：有助于高敏感孩子建立安全感和自信心。</li><li><strong>尊重与接纳</strong>：教师和家长以温和、理解的态度对待孩子，减少负面评价，增强其自我价值感。</li><li><strong>情绪表达与管理</strong>：蒙特梭利教育鼓励孩子表达情绪，学习用合适方式调节情绪。</li></ul><h1 id="高敏感孩子的养育要特别注意什么？"><a href="#高敏感孩子的养育要特别注意什么？" class="headerlink" title="高敏感孩子的养育要特别注意什么？"></a>高敏感孩子的养育要特别注意什么？</h1><ol><li><strong>情绪共情与接纳</strong>：家长要理解孩子的情绪反应，避免否定或批评，给予积极回应。</li><li><strong>建立规律作息</strong>：有规律的生活和学习时间表，帮助孩子预期和适应，减少焦虑。</li><li><strong>预告和过渡</strong>：在活动切换前提前告知，给予缓冲时间，帮助孩子平稳过渡。</li><li><strong>创造安全空间</strong>：为孩子提供一个可以安静独处、恢复能量的空间。</li><li><strong>正面引导与鼓励</strong>：关注孩子的努力和进步，避免过度关注结果。</li><li><strong>教授情绪管理技巧</strong>：如深呼吸、正念冥想、情绪日记等，帮助孩子学会自我调节。</li><li><strong>避免过度刺激</strong>：减少环境中的噪音、强光、电子产品等刺激源。</li></ol><h1 id="高敏感-低能量养育者"><a href="#高敏感-低能量养育者" class="headerlink" title="高敏感+低能量养育者"></a>高敏感+低能量养育者</h1><p>当家长本身能量较低（如易疲劳、压力大、情绪波动），养育高敏感孩子会面临更大挑战。建议：</p><ul><li><strong>自我照顾优先</strong>：家长要关注自身身心健康，适当寻求支持和休息。</li><li><strong>简化家庭流程</strong>：减少不必要的活动和社交，保持生活简单有序。</li><li><strong>合理分工与求助</strong>：与伴侣、家人或专业人士分担育儿压力。</li><li><strong>情绪管理共成长</strong>：与孩子一起学习情绪调节方法，互相鼓励和支持。</li><li><strong>接纳不完美</strong>：允许自己和孩子都不是”完美”的，关注成长过程。</li></ul><hr><p>高敏感孩子在时间管理和情绪调节上需要更多理解和支持。家长和教育者应以科学、温和的方式，帮助孩子建立安全感和自信心，逐步提升其自我管理能力。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>教育</category>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>教育</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数学思维</title>
+    <link href="/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/"/>
+    <url>/tech-blog/2025/06/09/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%99%E8%82%B2-%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="数学能力"><a href="#数学能力" class="headerlink" title="数学能力"></a>数学能力</h1><h1 id="市面上的优势思维课"><a href="#市面上的优势思维课" class="headerlink" title="市面上的优势思维课"></a>市面上的优势思维课</h1><h1 id="数学引导"><a href="#数学引导" class="headerlink" title="数学引导"></a>数学引导</h1><h1 id="优秀的数据家"><a href="#优秀的数据家" class="headerlink" title="优秀的数据家"></a>优秀的数据家</h1>]]></content>
     
     
     <categories>
@@ -647,9 +679,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -874,9 +906,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -907,9 +939,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -1459,37 +1491,6 @@
   
   
   <entry>
-    <title>构建索引</title>
-    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/"/>
-    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/</url>
-    
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="构建索引"><a href="#构建索引" class="headerlink" title="构建索引"></a>构建索引</h1><h2 id="全量索引"><a href="#全量索引" class="headerlink" title="全量索引"></a>全量索引</h2><h2 id="实时索引"><a href="#实时索引" class="headerlink" title="实时索引"></a>实时索引</h2><p>实时索引构建的流程</p><ol><li>根据段生命周期选择合并方式</li><li>文档去重（主键索引）</li><li>重分配文档ID</li><li>合并正排、倒排、删除表、主键索引</li><li>写配置文件</li></ol><p>合并段策略</p><ol><li>内存段合并</li><li>内存段生命周期提升</li><li>内存段生命周期提升，转为磁盘段</li><li>内存段、磁盘段合并</li><li>磁盘段合并</li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>技术</category>
-      
-      <category>搜索引擎</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>搜索</tag>
-      
-      <tag>信息检索</tag>
-      
-      <tag>机器学习</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>ElasticSearch</title>
     <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/"/>
     <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/</url>
@@ -1526,6 +1527,37 @@
     <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-%E5%8F%AC%E5%9B%9E-%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95/</url>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="查询的基本步骤"><a href="#查询的基本步骤" class="headerlink" title="查询的基本步骤"></a>查询的基本步骤</h2><h1 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h1><h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><h3 id="结构化数据"><a href="#结构化数据" class="headerlink" title="结构化数据"></a>结构化数据</h3><p>各垂类业务帖子的结构化数据包括：属性、标题、正文等。<br>正文通常会采取截断操作，更优的做法是征文做关键词提取、向量索引等，实现更充分的召回。</p><p>在索引层面提升召回：同义词、扩展词、语义向量。</p><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h2 id="正排索引"><a href="#正排索引" class="headerlink" title="正排索引"></a>正排索引</h2><h2 id="向量索引"><a href="#向量索引" class="headerlink" title="向量索引"></a>向量索引</h2><p>使用faiss、milvus等数据库。</p><h3 id="faiss"><a href="#faiss" class="headerlink" title="faiss"></a>faiss</h3><h4 id="faiss-IVF"><a href="#faiss-IVF" class="headerlink" title="faiss IVF"></a>faiss IVF</h4><p>聚类中心的向量ID建到倒排索引。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+      <category>搜索引擎</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>搜索</tag>
+      
+      <tag>信息检索</tag>
+      
+      <tag>机器学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>构建索引</title>
+    <link href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/"/>
+    <url>/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/</url>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="构建索引"><a href="#构建索引" class="headerlink" title="构建索引"></a>构建索引</h1><h2 id="全量索引"><a href="#全量索引" class="headerlink" title="全量索引"></a>全量索引</h2><h2 id="实时索引"><a href="#实时索引" class="headerlink" title="实时索引"></a>实时索引</h2><p>实时索引构建的流程</p><ol><li>根据段生命周期选择合并方式</li><li>文档去重（主键索引）</li><li>重分配文档ID</li><li>合并正排、倒排、删除表、主键索引</li><li>写配置文件</li></ol><p>合并段策略</p><ol><li>内存段合并</li><li>内存段生命周期提升</li><li>内存段生命周期提升，转为磁盘段</li><li>内存段、磁盘段合并</li><li>磁盘段合并</li></ol>]]></content>
     
     
     <categories>
@@ -1665,9 +1697,9 @@
       
       <tag>AI</tag>
       
-      <tag>Agent</tag>
-      
       <tag>大模型</tag>
+      
+      <tag>Agent</tag>
       
       <tag>认知计算</tag>
       
@@ -1934,11 +1966,11 @@
   
   
   <entry>
-    <title>大模型原理</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
+    <title>大模型位置编码</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/</url>
     
-    <content type="html"><![CDATA[<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1><p>NLP任务的发展阶段：（1）基于规则+传统机器学习；（2）预训练语言模型+下游任务微调；（3）提示微调+指令微调；（4）多模态大模型+端到端智能体</p><h2 id="自回归语言模型"><a href="#自回归语言模型" class="headerlink" title="自回归语言模型"></a>自回归语言模型</h2><h2 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h2><h2 id="灾难性遗忘问题"><a href="#灾难性遗忘问题" class="headerlink" title="灾难性遗忘问题"></a>灾难性遗忘问题</h2><h3 id="弹性权重巩固（EWC）"><a href="#弹性权重巩固（EWC）" class="headerlink" title="弹性权重巩固（EWC）"></a>弹性权重巩固（EWC）</h3><p>通过引入正则化项，限制对旧任务重要权重的更新。实现方式：<br>（1）计算Fisher信息矩阵，确定权重对就任务的重要性。<br>（2）在新任务的训练中，添加一个正则化项，限制权重更新幅度。</p><h3 id="经验回放"><a href="#经验回放" class="headerlink" title="经验回放"></a>经验回放</h3><p>保留一部分旧任务的数据，在学习新任务时进行回放，帮助模型在新、旧任务之间保持平衡。</p><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="Transformer-Encoder"><a href="#Transformer-Encoder" class="headerlink" title="Transformer Encoder"></a>Transformer Encoder</h2><h2 id="Prefix-Decoder"><a href="#Prefix-Decoder" class="headerlink" title="Prefix Decoder"></a>Prefix Decoder</h2><p>代表性模型有ChatGLM、U-PaLM<br>特点：Prefix部分的token互相可看到。</p><h2 id="Casual-Decoder"><a href="#Casual-Decoder" class="headerlink" title="Casual Decoder"></a>Casual Decoder</h2><p>从左到右的单向注意力<br>代表性模型：LLaMa7B、LLaMa衍生物。</p><h2 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder-Decoder"></a>Encoder-Decoder</h2><p>输入双向注意力、输出单项注意力<br>代表性模型：T5、Flan-T5、BART</p><h2 id="Transformer-Decoder"><a href="#Transformer-Decoder" class="headerlink" title="Transformer Decoder"></a>Transformer Decoder</h2><p>生成式大语言模型采用的是Transformer Decoder结构。</p><p>LLaMa采用了前置层归一和RMSNorm均方根标准化替代曾标准化。</p><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h1 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h1><h2 id="上下文学习（In-Context-Learning）"><a href="#上下文学习（In-Context-Learning）" class="headerlink" title="上下文学习（In-Context Learning）"></a>上下文学习（In-Context Learning）</h2><p>LLM具有很强的ICL能力，即不需要微调就可以适配多个下游任务达到不错的效果（Large language models (LLMs) possess a remarkable ability to perform in-context learning (ICL),<br>which enables them to handle multiple downstream tasks simultaneously without requiring taskspecific fine-tuning. ），对于中等规模的模型（7 B～8B）可以通过小样本上下文微调获得ICL的能力，但是其ICL的效果相比单独为一个下游任务精细微调的效果要差。<br>ManyICL使用一个新的训练目标，使中等规模模型（Mistral-v0.3）具备达到与下游任务精细微调效果接近的ICL能力。</p><h1 id="代表性模型"><a href="#代表性模型" class="headerlink" title="代表性模型"></a>代表性模型</h1><h2 id="GPT系列"><a href="#GPT系列" class="headerlink" title="GPT系列"></a>GPT系列</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h3 id="LLaMA3"><a href="#LLaMA3" class="headerlink" title="LLaMA3"></a>LLaMA3</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><h4 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h4><h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>RoPE</p><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><p>模型结构采用Prefix Decoder</p><h2 id="Qwen"><a href="#Qwen" class="headerlink" title="Qwen"></a>Qwen</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p><h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>采用了多头潜在注意力(MLA)和DeepSeekMoE架构。</p><h4 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h4><p>负载平衡策略<br>采用了多token预测训练目标，验证对模型性能有益且，并且可用于推理加速。</p><h4 id="语料"><a href="#语料" class="headerlink" title="语料"></a>语料</h4><p>14.8万亿token</p><h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/naklecha/llama3-from-scratch/tree/main">llama3 implemented from scratch</a><br><a href="https://github.com/HarleysZhang/llm_note/blob/main/1-transformer_model/llama1-3%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.md">llama1模型结构详解</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/pdf/2506.11103">ManyICL</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/v_JULY_v/article/details/134085503">一文通透位置编码</a></p>]]></content>
     
     
     <categories>
@@ -1965,11 +1997,11 @@
   
   
   <entry>
-    <title>大模型位置编码</title>
-    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
-    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/</url>
+    <title>大模型原理</title>
+    <link href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/"/>
+    <url>/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<h1 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h1><p>NLP任务（翻译、阅读理解、文本摘要）高度依赖句子顺序，位置编码可以让模型捕获序列的位置信息，提升语言理解能力。</p><p>图像任务（目标检测、图像分割、）</p><h2 id="绝对位置编码"><a href="#绝对位置编码" class="headerlink" title="绝对位置编码"></a>绝对位置编码</h2><p>Transformer使用三角函数位置编码。<br>BERT使用一个类似于单词嵌入的可训练的参数矩阵作为位置编码（Position Embedding），与Token Embedding和Segement Embedding相加作为输入。</p><h2 id="相对位置编码"><a href="#相对位置编码" class="headerlink" title="相对位置编码"></a>相对位置编码</h2><h3 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h3><h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/v_JULY_v/article/details/134085503">一文通透位置编码</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1><p>NLP任务的发展阶段：（1）基于规则+传统机器学习；（2）预训练语言模型+下游任务微调；（3）提示微调+指令微调；（4）多模态大模型+端到端智能体</p><h2 id="自回归语言模型"><a href="#自回归语言模型" class="headerlink" title="自回归语言模型"></a>自回归语言模型</h2><h2 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h2><h2 id="灾难性遗忘问题"><a href="#灾难性遗忘问题" class="headerlink" title="灾难性遗忘问题"></a>灾难性遗忘问题</h2><h3 id="弹性权重巩固（EWC）"><a href="#弹性权重巩固（EWC）" class="headerlink" title="弹性权重巩固（EWC）"></a>弹性权重巩固（EWC）</h3><p>通过引入正则化项，限制对旧任务重要权重的更新。实现方式：<br>（1）计算Fisher信息矩阵，确定权重对就任务的重要性。<br>（2）在新任务的训练中，添加一个正则化项，限制权重更新幅度。</p><h3 id="经验回放"><a href="#经验回放" class="headerlink" title="经验回放"></a>经验回放</h3><p>保留一部分旧任务的数据，在学习新任务时进行回放，帮助模型在新、旧任务之间保持平衡。</p><h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><h2 id="Transformer-Encoder"><a href="#Transformer-Encoder" class="headerlink" title="Transformer Encoder"></a>Transformer Encoder</h2><h2 id="Prefix-Decoder"><a href="#Prefix-Decoder" class="headerlink" title="Prefix Decoder"></a>Prefix Decoder</h2><p>代表性模型有ChatGLM、U-PaLM<br>特点：Prefix部分的token互相可看到。</p><h2 id="Casual-Decoder"><a href="#Casual-Decoder" class="headerlink" title="Casual Decoder"></a>Casual Decoder</h2><p>从左到右的单向注意力<br>代表性模型：LLaMa7B、LLaMa衍生物。</p><h2 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder-Decoder"></a>Encoder-Decoder</h2><p>输入双向注意力、输出单项注意力<br>代表性模型：T5、Flan-T5、BART</p><h2 id="Transformer-Decoder"><a href="#Transformer-Decoder" class="headerlink" title="Transformer Decoder"></a>Transformer Decoder</h2><p>生成式大语言模型采用的是Transformer Decoder结构。</p><p>LLaMa采用了前置层归一和RMSNorm均方根标准化替代曾标准化。</p><h1 id="训练数据"><a href="#训练数据" class="headerlink" title="训练数据"></a>训练数据</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>推理能力的大幅增加一部分源于使用代码数据进行训练。</p><h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><h1 id="训练策略"><a href="#训练策略" class="headerlink" title="训练策略"></a>训练策略</h1><h2 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h2><h3 id="指令微调"><a href="#指令微调" class="headerlink" title="指令微调"></a>指令微调</h3><h3 id="RLHF"><a href="#RLHF" class="headerlink" title="RLHF"></a>RLHF</h3><h4 id="强化学习之PPO"><a href="#强化学习之PPO" class="headerlink" title="强化学习之PPO"></a>强化学习之PPO</h4><p>奖励<br>状态<br>行为<br>优化目标</p><h1 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h1><h2 id="上下文学习（In-Context-Learning）"><a href="#上下文学习（In-Context-Learning）" class="headerlink" title="上下文学习（In-Context Learning）"></a>上下文学习（In-Context Learning）</h2><p>LLM具有很强的ICL能力，即不需要微调就可以适配多个下游任务达到不错的效果（Large language models (LLMs) possess a remarkable ability to perform in-context learning (ICL),<br>which enables them to handle multiple downstream tasks simultaneously without requiring taskspecific fine-tuning. ），对于中等规模的模型（7 B～8B）可以通过小样本上下文微调获得ICL的能力，但是其ICL的效果相比单独为一个下游任务精细微调的效果要差。<br>ManyICL使用一个新的训练目标，使中等规模模型（Mistral-v0.3）具备达到与下游任务精细微调效果接近的ICL能力。</p><h1 id="代表性模型"><a href="#代表性模型" class="headerlink" title="代表性模型"></a>代表性模型</h1><h2 id="GPT系列"><a href="#GPT系列" class="headerlink" title="GPT系列"></a>GPT系列</h2><h2 id="LLaMA"><a href="#LLaMA" class="headerlink" title="LLaMA"></a>LLaMA</h2><h3 id="LLaMA3"><a href="#LLaMA3" class="headerlink" title="LLaMA3"></a>LLaMA3</h3><h4 id="模型结构-1"><a href="#模型结构-1" class="headerlink" title="模型结构"></a>模型结构</h4><h4 id="Tokenizer"><a href="#Tokenizer" class="headerlink" title="Tokenizer"></a>Tokenizer</h4><h4 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h4><p>RoPE</p><h2 id="ChatGLM"><a href="#ChatGLM" class="headerlink" title="ChatGLM"></a>ChatGLM</h2><p>模型结构采用Prefix Decoder</p><h2 id="Qwen"><a href="#Qwen" class="headerlink" title="Qwen"></a>Qwen</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h3 id="DeepSeek的影响"><a href="#DeepSeek的影响" class="headerlink" title="DeepSeek的影响"></a>DeepSeek的影响</h3><p>改变了AI大模型商业化的叙事方式，促使OpenAI等大模型的商业模式进行调整。在训练策略方面做出的创新使得训练效果良好的大模型不依赖英伟达的高端显卡成为可能，降低了大模型在训练阶段对高端显卡的依赖，增大了大模型应用的想象空间。应用的爆发会带来大模型推理阶段对显卡的需求。</p><h4 id="模型结构-2"><a href="#模型结构-2" class="headerlink" title="模型结构"></a>模型结构</h4><p>采用了多头潜在注意力(MLA)和DeepSeekMoE架构。</p><h4 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h4><p>负载平衡策略<br>采用了多token预测训练目标，验证对模型性能有益且，并且可用于推理加速。</p><h4 id="语料"><a href="#语料" class="headerlink" title="语料"></a>语料</h4><p>14.8万亿token</p><h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><h3 id="蒸馏"><a href="#蒸馏" class="headerlink" title="蒸馏"></a>蒸馏</h3><h3 id="后训练"><a href="#后训练" class="headerlink" title="后训练"></a>后训练</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/naklecha/llama3-from-scratch/tree/main">llama3 implemented from scratch</a><br><a href="https://github.com/HarleysZhang/llm_note/blob/main/1-transformer_model/llama1-3%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.md">llama1模型结构详解</a><br><a href="https://arxiv.org/abs/2503.11486">DeepSeek Innovative Techniques</a><br><a href="https://arxiv.org/pdf/2506.11103">ManyICL</a></p>]]></content>
     
     
     <categories>
@@ -2018,9 +2050,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -2051,9 +2083,9 @@
       
       <tag>深度学习</tag>
       
-      <tag>生成式AI</tag>
-      
       <tag>多模态</tag>
+      
+      <tag>生成式AI</tag>
       
     </tags>
     
@@ -2685,43 +2717,6 @@
   
   
   <entry>
-    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
-    <link href="/tech-blog/2025/03/23/LAPA/"/>
-    <url>/tech-blog/2025/03/23/LAPA/</url>
-    
-    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>AI</category>
-      
-      <category>Robotics</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>NLP</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>ComputerVision</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances解读</title>
     <link href="/tech-blog/2025/03/23/SayCan/"/>
     <url>/tech-blog/2025/03/23/SayCan/</url>
@@ -2796,6 +2791,43 @@
   
   
   <entry>
+    <title>LAPA: Latent Action Pretraining from Videos文章解读</title>
+    <link href="/tech-blog/2025/03/23/LAPA/"/>
+    <url>/tech-blog/2025/03/23/LAPA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="LAPA"><a href="#LAPA" class="headerlink" title="LAPA"></a>LAPA</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li>项目主页: <a href="https://openvla.github.io/">LAPA</a></li><li>代码仓库: <a href="https://github.com/openvla/openvla">GitHub - OpenVLA</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>AI</category>
+      
+      <category>Robotics</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>NLP</tag>
+      
+      <tag>Research</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>ComputerVision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>OpenVLA：开源视觉-语言-动作模型解读</title>
     <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/"/>
     <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-OpenVLA/</url>
@@ -2833,11 +2865,11 @@
   
   
   <entry>
-    <title>PaLM-E解读</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
+    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/</url>
     
-    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
     
     
     <categories>
@@ -2870,11 +2902,11 @@
   
   
   <entry>
-    <title>QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</title>
-    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/"/>
-    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-QuasiSim/</url>
+    <title>PaLM-E解读</title>
+    <link href="/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/"/>
+    <url>/tech-blog/2025/03/23/%E6%9C%BA%E5%99%A8%E4%BA%BA-Palm-E/</url>
     
-    <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://meowuu7.github.io/QuasiSim/">QuasiSim: Quasi-Physical Simulators for Dexterous Manipulations Transfer</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="PaLM-E-Model"><a href="#PaLM-E-Model" class="headerlink" title="PaLM-E Model"></a>PaLM-E Model</h1><h2 id="for-robotics"><a href="#for-robotics" class="headerlink" title="for robotics"></a>for robotics</h2><h2 id="generally-capable-vision-and-language-model"><a href="#generally-capable-vision-and-language-model" class="headerlink" title="generally-capable vision-and-language model"></a>generally-capable vision-and-language model</h2><p>可用于视觉任务如：描述图片、目标检测、场景分类，也可用于文本任务如：解数学题、生成代码等。</p><p><a href="https://research.google/blog/palm-e-an-embodied-multimodal-language-model/">PaLM-E</a></p>]]></content>
     
     
     <categories>
@@ -2966,9 +2998,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       
@@ -3003,9 +3035,9 @@
       
       <tag>AI</tag>
       
-      <tag>Robotics</tag>
-      
       <tag>DeepLearning</tag>
+      
+      <tag>Robotics</tag>
       
       <tag>Robot</tag>
       
@@ -3125,7 +3157,7 @@
     <link href="/tech-blog/2023/08/20/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E6%8D%AE-%E6%95%B0%E5%AD%97%E5%8C%96%E6%96%87%E6%A1%A3/"/>
     <url>/tech-blog/2023/08/20/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%95%B0%E6%8D%AE-%E6%95%B0%E5%AD%97%E5%8C%96%E6%96%87%E6%A1%A3/</url>
     
-    <content type="html"><![CDATA[<h1 id="数字化文档：企业转型的核心驱动力"><a href="#数字化文档：企业转型的核心驱动力" class="headerlink" title="数字化文档：企业转型的核心驱动力"></a>数字化文档：企业转型的核心驱动力</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>随着数字化浪潮席卷全球，企业正从传统的纸质文档管理向数字化文档体系转变。数字化文档不仅仅是纸质文档的电子版本，更是企业知识资产的重要载体和数字化转型的关键基础设施。本文将探讨数字化文档的概念、价值、实施策略以及未来发展趋势。</p><h2 id="什么是数字化文档"><a href="#什么是数字化文档" class="headerlink" title="什么是数字化文档"></a>什么是数字化文档</h2><p>数字化文档是指以电子形式存储、管理和分享的文档，包括但不限于：</p><ul><li>通过扫描转换的纸质文档</li><li>原生数字创建的文档（Word、Excel、PDF等）</li><li>结构化数据文档（XML、JSON等）</li><li>富媒体文档（包含音频、视频的复合型文档）</li><li>智能文档（具有交互功能和自动化能力的文档）</li></ul><p>相比传统纸质文档，数字化文档具有易于存储、检索、分享、协作和分析等特点，为企业带来极大便利。</p><h2 id="数字化文档的价值"><a href="#数字化文档的价值" class="headerlink" title="数字化文档的价值"></a>数字化文档的价值</h2><h3 id="提升效率与协作"><a href="#提升效率与协作" class="headerlink" title="提升效率与协作"></a>提升效率与协作</h3><ol><li><strong>实时协作</strong>：多人可同时编辑和评论文档，大幅提升团队协作效率</li><li><strong>远程办公支持</strong>：支持随时随地访问和处理文档，促进灵活工作模式</li><li><strong>流程自动化</strong>：文档审批、流转过程可自动化处理，减少人工干预</li></ol><h3 id="知识管理与保存"><a href="#知识管理与保存" class="headerlink" title="知识管理与保存"></a>知识管理与保存</h3><ol><li><strong>知识沉淀</strong>：将企业经验和智慧以数字形式保存下来</li><li><strong>智能检索</strong>：通过全文搜索和语义分析快速找到所需信息</li><li><strong>版本控制</strong>：跟踪文档变更历史，确保信息准确性</li></ol><h3 id="成本节约"><a href="#成本节约" class="headerlink" title="成本节约"></a>成本节约</h3><ol><li><strong>减少纸张使用</strong>：降低打印和存储成本</li><li><strong>空间节约</strong>：无需大量物理存储空间</li><li><strong>人力资源优化</strong>：减少文档管理的人工成本</li></ol><h3 id="安全与合规"><a href="#安全与合规" class="headerlink" title="安全与合规"></a>安全与合规</h3><ol><li><strong>精细权限控制</strong>：基于角色和需求设置访问权限</li><li><strong>审计追踪</strong>：记录所有文档操作，便于合规审计</li><li><strong>灾难恢复</strong>：数据备份和恢复机制，提高业务连续性</li></ol><h2 id="数字化文档体系建设"><a href="#数字化文档体系建设" class="headerlink" title="数字化文档体系建设"></a>数字化文档体系建设</h2><h3 id="策略与规划"><a href="#策略与规划" class="headerlink" title="策略与规划"></a>策略与规划</h3><ol><li><strong>需求分析</strong>：明确组织对文档管理的需求和挑战</li><li><strong>制定标准</strong>：建立文档命名、分类、元数据等标准</li><li><strong>选择合适工具</strong>：根据业务需求选择文档管理系统</li></ol><h3 id="技术实施"><a href="#技术实施" class="headerlink" title="技术实施"></a>技术实施</h3><ol><li><strong>文档管理系统(DMS)</strong>：核心平台，支持文档全生命周期管理</li><li><strong>内容协作平台</strong>：如Microsoft 365、Google Workspace等</li><li><strong>专业领域工具</strong>：如CAD文档、BIM模型等专业文档管理工具</li><li><strong>集成与互操作</strong>：与企业其他系统（如ERP、CRM）的集成</li></ol><h3 id="流程优化"><a href="#流程优化" class="headerlink" title="流程优化"></a>流程优化</h3><ol><li><strong>文档生命周期管理</strong>：从创建、审批到归档的全流程管理</li><li><strong>工作流自动化</strong>：自动化文档流转和审批过程</li><li><strong>业务流程再造</strong>：基于数字化文档重新设计业务流程</li></ol><h3 id="变革管理"><a href="#变革管理" class="headerlink" title="变革管理"></a>变革管理</h3><ol><li><strong>用户培训</strong>：确保员工掌握新系统和流程</li><li><strong>推广与激励</strong>：鼓励员工积极使用数字化文档</li><li><strong>持续改进</strong>：基于反馈不断优化系统和流程</li></ol><h2 id="数字化文档最佳实践"><a href="#数字化文档最佳实践" class="headerlink" title="数字化文档最佳实践"></a>数字化文档最佳实践</h2><h3 id="文档标准化"><a href="#文档标准化" class="headerlink" title="文档标准化"></a>文档标准化</h3><ol><li><strong>模板管理</strong>：建立统一的文档模板库</li><li><strong>元数据规范</strong>：定义文档属性和标签体系</li><li><strong>文档分类</strong>：建立科学的分类层次结构</li></ol><h3 id="智能内容管理"><a href="#智能内容管理" class="headerlink" title="智能内容管理"></a>智能内容管理</h3><ol><li><strong>OCR技术</strong>：将扫描文档转换为可搜索文本</li><li><strong>智能分类</strong>：利用AI自动对文档进行分类</li><li><strong>内容提取</strong>：自动识别并提取文档中的关键信息</li></ol><h3 id="安全与合规-1"><a href="#安全与合规-1" class="headerlink" title="安全与合规"></a>安全与合规</h3><ol><li><strong>数据加密</strong>：保护敏感文档内容</li><li><strong>水印与防泄漏</strong>：防止文档未授权分享</li><li><strong>合规存档</strong>：满足行业法规对文档保存的要求</li></ol><h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><h3 id="金融行业"><a href="#金融行业" class="headerlink" title="金融行业"></a>金融行业</h3><p>银行通过数字化文档系统实现了贷款申请流程的无纸化，将审批时间从7天缩短至1天，大幅提升了客户满意度和业务效率。</p><h3 id="制造业"><a href="#制造业" class="headerlink" title="制造业"></a>制造业</h3><p>某制造企业将产品设计文档、工艺文档和质量记录整合到统一的数字化平台，实现了从设计到生产的无缝协作，产品研发周期缩短30%。</p><h3 id="医疗行业"><a href="#医疗行业" class="headerlink" title="医疗行业"></a>医疗行业</h3><p>医院通过电子病历系统管理患者档案，医生可即时访问完整的患者病史，提高了诊断准确性和治疗效果，同时减少了医疗差错。</p><h2 id="未来趋势"><a href="#未来趋势" class="headerlink" title="未来趋势"></a>未来趋势</h2><h3 id="AI驱动的智能文档"><a href="#AI驱动的智能文档" class="headerlink" title="AI驱动的智能文档"></a>AI驱动的智能文档</h3><ol><li><strong>自然语言处理</strong>：理解文档内容，提供智能摘要和分析</li><li><strong>智能问答</strong>：从大量文档中自动提取回答用户问题的信息</li><li><strong>自动生成</strong>：基于数据和模板自动生成标准化文档</li></ol><h3 id="无代码文档应用"><a href="#无代码文档应用" class="headerlink" title="无代码文档应用"></a>无代码文档应用</h3><ol><li><strong>可视化构建</strong>：通过拖拽方式创建文档工作流</li><li><strong>智能表单</strong>：自适应的表单设计，提升数据收集效率</li><li><strong>集成能力</strong>：便捷地与各种业务系统集成</li></ol><h3 id="增强现实-AR-与文档"><a href="#增强现实-AR-与文档" class="headerlink" title="增强现实(AR)与文档"></a>增强现实(AR)与文档</h3><ol><li><strong>交互式说明书</strong>：结合AR技术的产品使用指南</li><li><strong>现场维修指导</strong>：通过AR展示设备维修文档</li><li><strong>空间标注</strong>：将文档信息叠加在物理空间</li></ol><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>数字化文档已经从简单的电子存储演变为企业数字化转型的核心驱动力。通过建立完善的数字化文档体系，企业不仅能提升运营效率，还能促进知识共享、强化数据安全，并为智能化决策奠定基础。未来，随着人工智能、无代码平台和增强现实等技术的融合，数字化文档将为企业创造更多价值，推动组织迈向真正的数字化转型。</p><h2 id="检测布局"><a href="#检测布局" class="headerlink" title="检测布局"></a>检测布局</h2><p>检测PDF文件布局(DocLayout-YOLO)<br>检测行内公式布局(YOLOv8)</p><p>支持解析PDF、PPT等</p><h2 id="检测公式"><a href="#检测公式" class="headerlink" title="检测公式"></a>检测公式</h2><h3 id="教育场景"><a href="#教育场景" class="headerlink" title="教育场景"></a>教育场景</h3><p>教育场景相比通用场景需要额外解决的挑战是什么？</p><p>Versatile-OCR-Program给出的解决方案，相比较其他PDF读取工具有何优势？</p><h4 id="Prompt"><a href="#Prompt" class="headerlink" title="Prompt"></a>Prompt</h4><p>[scence]相比[通用场景]需要额外解决的挑战是什么？<br>[]针对这些挑战，给出的解决方案是什么？</p><h1 id="视觉Agent方案"><a href="#视觉Agent方案" class="headerlink" title="视觉Agent方案"></a>视觉Agent方案</h1><p>##Agentic Document Extraction</p><h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><p><strong>可视化定位 (Visual Grounding)</strong></p><p>可视化定位是 Agentic Document Extraction 的基石。它不仅仅识别文档中的文本，更重要的是 精确定位每个视觉元素和文本在文档中的确切位置。这意味着它可以准确识别文档中的段落、表格、图片、复选框等，并知道它们之间的空间关系。</p><p>更进一步，可视化定位技术实现了 答案验证。API 的响应结果可以 链接回文档的原始位置，用户可以清晰地看到提取的信息来源于文档的哪个部分，这对于需要审计跟踪、确保数据来源可靠性的应用场景至关重要。</p><p><strong>复选框提取 (Checkbox Extraction)</strong></p><p>对于包含大量复选框的文档，如调查问卷、申请表格等，传统 OCR 处理起来往往效率低下且容易出错。Agentic Document Extraction 专门强化了 复选框提取 功能，能够准确识别和提取文档中的复选框状态 (选中或未选中)，极大地方便了表单数据的自动化处理。</p><p><strong>高级图像分析 (Advanced Image Analysis)</strong></p><p>现代文档往往包含丰富的图像信息，例如 logo、图表、照片等。Agentic Document Extraction 具备 高级图像分析能力，能够处理文档中的图像，例如从图像中提取文本 (例如图片中的文字水印)，甚至识别图像的内容 (例如识别合同中的印章)。这使得它可以处理更复杂、信息更丰富的文档。</p><p><strong>PDF to ASCII 转换 (PDF to ASCII Conversion)</strong></p><p>PDF 是常见的文档格式，但直接处理 PDF 文件中的文本有时会比较困难。Agentic Document Extraction 支持 PDF to ASCII 转换，可以将 PDF 文档转换为纯文本格式，方便后续的文本分析、信息检索等操作。</p><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><h3 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h3><p><a href="https://www.bright.cn/">bright data</a></p><h3 id="Github-Projects"><a href="#Github-Projects" class="headerlink" title="Github Projects"></a>Github Projects</h3><p><a href="https://www.modelscope.cn/l1731396519/MonkeyOCR.git">MonkeyOCR</a><br><a href="https://github.com/landing-ai/agentic-doc">Agentic Document Extraction</a></p><h3 id="开源文档"><a href="#开源文档" class="headerlink" title="开源文档"></a>开源文档</h3><p><a href="https://github.com/tesseract-ocr/tesseract">Google Tesseract</a><br><a href="https://github.com/PaddlePaddle/PaddleOCR">Baidu PaddleOCR</a><br><a href="https://github.com/Stirling-Tools/Stirling-PDF">Stirling-PDF</a><br><a href="https://github.com/allenai/olmocr">olmocr</a><br><a href="https://github.com/oomol-lab/pdf-craft">PDF-Craft</a><br><a href="https://github.com/infiniflow/ragflow">RAG-Flow</a><br><a href="https://github.com/ses4255/Versatile-OCR-Program">Versatile-OCR-Program</a><br><a href="https://relevanceai.com/agent-templates-software/microsoft-excel">Microsoft Excel AI Agents</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="数字化文档：企业转型的核心驱动力"><a href="#数字化文档：企业转型的核心驱动力" class="headerlink" title="数字化文档：企业转型的核心驱动力"></a>数字化文档：企业转型的核心驱动力</h1><h2 id="数字化文档的价值"><a href="#数字化文档的价值" class="headerlink" title="数字化文档的价值"></a>数字化文档的价值</h2><h3 id="提升效率与协作"><a href="#提升效率与协作" class="headerlink" title="提升效率与协作"></a>提升效率与协作</h3><ol><li><strong>实时协作</strong>：多人可同时编辑和评论文档，大幅提升团队协作效率</li><li><strong>远程办公支持</strong>：支持随时随地访问和处理文档，促进灵活工作模式</li><li><strong>流程自动化</strong>：文档审批、流转过程可自动化处理，减少人工干预</li></ol><h3 id="知识管理与保存"><a href="#知识管理与保存" class="headerlink" title="知识管理与保存"></a>知识管理与保存</h3><ol><li><strong>知识沉淀</strong>：将企业经验和智慧以数字形式保存下来</li><li><strong>智能检索</strong>：通过全文搜索和语义分析快速找到所需信息</li><li><strong>版本控制</strong>：跟踪文档变更历史，确保信息准确性</li></ol><h3 id="成本节约"><a href="#成本节约" class="headerlink" title="成本节约"></a>成本节约</h3><ol><li><strong>减少纸张使用</strong>：降低打印和存储成本</li><li><strong>空间节约</strong>：无需大量物理存储空间</li><li><strong>人力资源优化</strong>：减少文档管理的人工成本</li></ol><h3 id="安全与合规"><a href="#安全与合规" class="headerlink" title="安全与合规"></a>安全与合规</h3><ol><li><strong>精细权限控制</strong>：基于角色和需求设置访问权限</li><li><strong>审计追踪</strong>：记录所有文档操作，便于合规审计</li><li><strong>灾难恢复</strong>：数据备份和恢复机制，提高业务连续性</li></ol><h2 id="数字化文档体系建设"><a href="#数字化文档体系建设" class="headerlink" title="数字化文档体系建设"></a>数字化文档体系建设</h2><h3 id="策略与规划"><a href="#策略与规划" class="headerlink" title="策略与规划"></a>策略与规划</h3><ol><li><strong>需求分析</strong>：明确组织对文档管理的需求和挑战</li><li><strong>制定标准</strong>：建立文档命名、分类、元数据等标准</li><li><strong>选择合适工具</strong>：根据业务需求选择文档管理系统</li></ol><h3 id="技术实施"><a href="#技术实施" class="headerlink" title="技术实施"></a>技术实施</h3><ol><li><strong>文档管理系统(DMS)</strong>：核心平台，支持文档全生命周期管理</li><li><strong>内容协作平台</strong>：如Microsoft 365、Google Workspace等</li><li><strong>专业领域工具</strong>：如CAD文档、BIM模型等专业文档管理工具</li><li><strong>集成与互操作</strong>：与企业其他系统（如ERP、CRM）的集成</li></ol><h3 id="流程优化"><a href="#流程优化" class="headerlink" title="流程优化"></a>流程优化</h3><ol><li><strong>文档生命周期管理</strong>：从创建、审批到归档的全流程管理</li><li><strong>工作流自动化</strong>：自动化文档流转和审批过程</li><li><strong>业务流程再造</strong>：基于数字化文档重新设计业务流程</li></ol><h3 id="变革管理"><a href="#变革管理" class="headerlink" title="变革管理"></a>变革管理</h3><ol><li><strong>用户培训</strong>：确保员工掌握新系统和流程</li><li><strong>推广与激励</strong>：鼓励员工积极使用数字化文档</li><li><strong>持续改进</strong>：基于反馈不断优化系统和流程</li></ol><h2 id="数字化文档最佳实践"><a href="#数字化文档最佳实践" class="headerlink" title="数字化文档最佳实践"></a>数字化文档最佳实践</h2><h3 id="文档标准化"><a href="#文档标准化" class="headerlink" title="文档标准化"></a>文档标准化</h3><ol><li><strong>模板管理</strong>：建立统一的文档模板库</li><li><strong>元数据规范</strong>：定义文档属性和标签体系</li><li><strong>文档分类</strong>：建立科学的分类层次结构</li></ol><h3 id="智能内容管理"><a href="#智能内容管理" class="headerlink" title="智能内容管理"></a>智能内容管理</h3><ol><li><strong>OCR技术</strong>：将扫描文档转换为可搜索文本</li><li><strong>智能分类</strong>：利用AI自动对文档进行分类</li><li><strong>内容提取</strong>：自动识别并提取文档中的关键信息</li></ol><h3 id="安全与合规-1"><a href="#安全与合规-1" class="headerlink" title="安全与合规"></a>安全与合规</h3><ol><li><strong>数据加密</strong>：保护敏感文档内容</li><li><strong>水印与防泄漏</strong>：防止文档未授权分享</li><li><strong>合规存档</strong>：满足行业法规对文档保存的要求</li></ol><h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><h3 id="金融行业"><a href="#金融行业" class="headerlink" title="金融行业"></a>金融行业</h3><p>银行通过数字化文档系统实现了贷款申请流程的无纸化，将审批时间从7天缩短至1天，大幅提升了客户满意度和业务效率。</p><h3 id="制造业"><a href="#制造业" class="headerlink" title="制造业"></a>制造业</h3><p>某制造企业将产品设计文档、工艺文档和质量记录整合到统一的数字化平台，实现了从设计到生产的无缝协作，产品研发周期缩短30%。</p><h3 id="医疗行业"><a href="#医疗行业" class="headerlink" title="医疗行业"></a>医疗行业</h3><p>医院通过电子病历系统管理患者档案，医生可即时访问完整的患者病史，提高了诊断准确性和治疗效果，同时减少了医疗差错。</p><ol start="2"><li><strong>智能问答</strong>：从大量文档中自动提取回答用户问题的信息</li><li><strong>自动生成</strong>：基于数据和模板自动生成标准化文档</li></ol><h3 id="无代码文档应用"><a href="#无代码文档应用" class="headerlink" title="无代码文档应用"></a>无代码文档应用</h3><ol><li><strong>可视化构建</strong>：通过拖拽方式创建文档工作流</li><li><strong>智能表单</strong>：自适应的表单设计，提升数据收集效率</li><li><strong>集成能力</strong>：便捷地与各种业务系统集成</li></ol><h2 id="检测布局"><a href="#检测布局" class="headerlink" title="检测布局"></a>检测布局</h2><p>检测PDF文件布局(DocLayout-YOLO)<br>检测行内公式布局(YOLOv8)</p><p>支持解析PDF、PPT等</p><h2 id="检测公式"><a href="#检测公式" class="headerlink" title="检测公式"></a>检测公式</h2><h3 id="教育场景"><a href="#教育场景" class="headerlink" title="教育场景"></a>教育场景</h3><p>教育场景相比通用场景需要额外解决的挑战是什么？</p><p>Versatile-OCR-Program给出的解决方案，相比较其他PDF读取工具有何优势？</p><h1 id="视觉Agent方案"><a href="#视觉Agent方案" class="headerlink" title="视觉Agent方案"></a>视觉Agent方案</h1><p>##Agentic Document Extraction</p><h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><p><strong>可视化定位 (Visual Grounding)</strong></p><p>可视化定位是 Agentic Document Extraction 的基石。它不仅仅识别文档中的文本，更重要的是 精确定位每个视觉元素和文本在文档中的确切位置。这意味着它可以准确识别文档中的段落、表格、图片、复选框等，并知道它们之间的空间关系。</p><p>更进一步，可视化定位技术实现了 答案验证。API 的响应结果可以 链接回文档的原始位置，用户可以清晰地看到提取的信息来源于文档的哪个部分，这对于需要审计跟踪、确保数据来源可靠性的应用场景至关重要。</p><p><strong>复选框提取 (Checkbox Extraction)</strong></p><p>对于包含大量复选框的文档，如调查问卷、申请表格等，传统 OCR 处理起来往往效率低下且容易出错。Agentic Document Extraction 专门强化了 复选框提取 功能，能够准确识别和提取文档中的复选框状态 (选中或未选中)，极大地方便了表单数据的自动化处理。</p><p><strong>高级图像分析 (Advanced Image Analysis)</strong></p><p>现代文档往往包含丰富的图像信息，例如 logo、图表、照片等。Agentic Document Extraction 具备 高级图像分析能力，能够处理文档中的图像，例如从图像中提取文本 (例如图片中的文字水印)，甚至识别图像的内容 (例如识别合同中的印章)。这使得它可以处理更复杂、信息更丰富的文档。</p><p><strong>PDF to ASCII 转换 (PDF to ASCII Conversion)</strong></p><p>PDF 是常见的文档格式，但直接处理 PDF 文件中的文本有时会比较困难。Agentic Document Extraction 支持 PDF to ASCII 转换，可以将 PDF 文档转换为纯文本格式，方便后续的文本分析、信息检索等操作。</p><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><h3 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h3><p><a href="https://www.bright.cn/">bright data</a></p><h3 id="Github-Projects"><a href="#Github-Projects" class="headerlink" title="Github Projects"></a>Github Projects</h3><p><a href="https://www.modelscope.cn/l1731396519/MonkeyOCR.git">MonkeyOCR</a><br><a href="https://github.com/landing-ai/agentic-doc">Agentic Document Extraction</a></p><h3 id="开源文档"><a href="#开源文档" class="headerlink" title="开源文档"></a>开源文档</h3><p><a href="https://github.com/tesseract-ocr/tesseract">Google Tesseract</a><br><a href="https://github.com/PaddlePaddle/PaddleOCR">Baidu PaddleOCR</a><br><a href="https://github.com/Stirling-Tools/Stirling-PDF">Stirling-PDF</a><br><a href="https://github.com/allenai/olmocr">olmocr</a><br><a href="https://github.com/oomol-lab/pdf-craft">PDF-Craft</a><br><a href="https://github.com/infiniflow/ragflow">RAG-Flow</a><br><a href="https://github.com/ses4255/Versatile-OCR-Program">Versatile-OCR-Program</a><br><a href="https://relevanceai.com/agent-templates-software/microsoft-excel">Microsoft Excel AI Agents</a></p>]]></content>
     
     
     <categories>

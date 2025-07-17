@@ -19,22 +19,23 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="样本稀疏样本选择偏差经典论文ESMM核心解决两个问题：样本稀疏、样本选择偏差技术实现：多任务学习(MTL)：$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$ 其中：  $p(z&amp;y &#x3D; 1|\bolds">
+    <meta name="description" content="LeetCode题型分类 数组与排序 链表 栈与队列 哈希表 字符串 二分查找 动态规划 回溯与递归 树与二叉树 图与搜索（BFS&#x2F;DFS） 贪心算法 位运算 并查集 滑动窗口 设计题   后续可针对每类题型补充典型题目与解题思路。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tech Blog">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/07/14/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="算法-LeetCode分类">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/06/18/%E7%AE%97%E6%B3%95-leetcode/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="样本稀疏样本选择偏差经典论文ESMM核心解决两个问题：样本稀疏、样本选择偏差技术实现：多任务学习(MTL)：$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$ 其中：  $p(z&amp;y &#x3D; 1|\bolds">
+<meta property="og:description" content="LeetCode题型分类 数组与排序 链表 栈与队列 哈希表 字符串 二分查找 动态规划 回溯与递归 树与二叉树 图与搜索（BFS&#x2F;DFS） 贪心算法 位运算 并查集 滑动窗口 设计题   后续可针对每类题型补充典型题目与解题思路。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-07-14T03:58:51.619Z">
-<meta property="article:modified_time" content="2025-07-14T04:15:53.419Z">
+<meta property="article:published_time" content="2025-06-18T02:15:00.000Z">
+<meta property="article:modified_time" content="2025-07-17T13:42:57.830Z">
 <meta property="article:author" content="Your Name">
-<meta property="article:tag" content="technology, programming, web development, software engineering">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Tech Blog</title>
+  <title>算法-LeetCode分类 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="算法-LeetCode分类"></span>
           
         </div>
 
@@ -230,8 +231,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-14 11:58" pubdate>
-          July 14, 2025 am
+        <time datetime="2025-06-18 10:15" pubdate>
+          June 18, 2025 am
         </time>
       </span>
     
@@ -242,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          241 words
+          84 words
         
       </span>
     
@@ -253,7 +254,7 @@
         
         
         
-          3 mins
+          1 mins
         
       </span>
     
@@ -290,28 +291,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">算法-LeetCode分类</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="样本稀疏"><a href="#样本稀疏" class="headerlink" title="样本稀疏"></a>样本稀疏</h1><h1 id="样本选择偏差"><a href="#样本选择偏差" class="headerlink" title="样本选择偏差"></a>样本选择偏差</h1><h2 id="经典论文"><a href="#经典论文" class="headerlink" title="经典论文"></a>经典论文</h2><h3 id="ESMM"><a href="#ESMM" class="headerlink" title="ESMM"></a>ESMM</h3><p>核心解决两个问题：样本稀疏、样本选择偏差<br>技术实现：<br>多任务学习(MTL)：<br>$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$</p>
-<p>其中：</p>
-<ul>
-<li>$p(z&amp;y &#x3D; 1|\boldsymbol{x})$ 表示条件文本-上下文-视觉检索概率 (pCTCVR)</li>
-<li>$p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x})$ 表示条件视觉检索概率 (pCVR)</li>
-<li>$p(y &#x3D; 1|\boldsymbol{x})$ 表示条件文本检索概率 (pCTR)</li>
+                <h1 id="LeetCode题型分类"><a href="#LeetCode题型分类" class="headerlink" title="LeetCode题型分类"></a>LeetCode题型分类</h1><ul>
+<li>数组与排序</li>
+<li>链表</li>
+<li>栈与队列</li>
+<li>哈希表</li>
+<li>字符串</li>
+<li>二分查找</li>
+<li>动态规划</li>
+<li>回溯与递归</li>
+<li>树与二叉树</li>
+<li>图与搜索（BFS&#x2F;DFS）</li>
+<li>贪心算法</li>
+<li>位运算</li>
+<li>并查集</li>
+<li>滑动窗口</li>
+<li>设计题</li>
 </ul>
-<p>ESMM损失函数：</p>
-<p>$$L(\theta_{cvr}, \theta_{ctr}) &#x3D; \sum_{i&#x3D;1}^{N} l(y_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr})) + \sum_{i&#x3D;1}^{N} l(y_i&amp;z_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr}) \times f(\boldsymbol{x}<em>i; \theta</em>{cvr})),$$</p>
-<p>其中：</p>
-<ul>
-<li>$\theta_{cvr}$ 和 $\theta_{ctr}$ 分别是CVR和CTR任务的模型参数</li>
-<li>$l$ 表示损失函数（通常为对数损失）</li>
-<li>$y_i$ 表示点击标签</li>
-<li>$z_i$ 表示转化标签</li>
-<li>$f(\boldsymbol{x}_i; \theta)$ 表示模型对输入特征的预测输出</li>
-</ul>
+<blockquote>
+<p>后续可针对每类题型补充典型题目与解题思路。</p>
+</blockquote>
 
                 
               </div>
@@ -320,6 +324,43 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/%E7%AE%97%E6%B3%95/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+      
+        <a href="/tech-blog/tags/LeetCode/" class="print-no-link">#LeetCode</a>
+      
+    </div>
   
 </div>
 
@@ -329,8 +370,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>https://summerchengh.github.io/tech-blog/2025/07/14/搜索推荐-常见问题/</div>
+      <div>算法-LeetCode分类</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/06/18/算法-leetcode/</div>
     </div>
     <div class="license-meta">
       
@@ -342,7 +383,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 14, 2025</div>
+          <div>June 18, 2025</div>
         </div>
       
       
@@ -374,12 +415,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/tech-blog/2025/06/24/%E6%8A%95%E8%B5%84-%E6%9C%BA%E5%99%A8%E4%BA%BA-%E8%BF%BD%E8%A7%85%E7%A7%91%E6%8A%80/" title="追觅科技投资分析：SWOT与行业竞争格局">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">追觅科技投资分析：SWOT与行业竞争格局</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/07/12/%E7%AE%97%E6%B3%95-leetcode/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/tech-blog/2025/06/18/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="搜索推荐-常见问题">
+                        <span class="hidden-mobile">搜索推荐-常见问题</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
