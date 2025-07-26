@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="ChatExcelChatBI解决方案词槽 Text2DSL Text2SQL 产品功能点参考">
+    <meta name="description" content="生产级Agent评估考量的指标KVCache缓存命中率 效果优化效果的稳定性工具调用在迭代过程中，动态添加或删除工具，容易导致模型选择错误行动或低效路径的概率升高。  在大多数LLM中，工具定义在序列化后位于上下文的前部，通常在系统提示之前或之后。因此任何更改都会使后续所有动作和观察的KV缓存失效。   当先前的动作和观察仍然引用当前上下文中不再定义的工具时，模型会感到困惑。如果没有约束解码，这通">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Excel&#x2F;Google Sheel智能体 &amp; ChatBI调研">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-Agent-ExcelAgents-ChatBI/index.html">
+<meta property="og:title" content="Agent效果优化——上下文工程">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/07/19/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="ChatExcelChatBI解决方案词槽 Text2DSL Text2SQL 产品功能点参考">
+<meta property="og:description" content="生产级Agent评估考量的指标KVCache缓存命中率 效果优化效果的稳定性工具调用在迭代过程中，动态添加或删除工具，容易导致模型选择错误行动或低效路径的概率升高。  在大多数LLM中，工具定义在序列化后位于上下文的前部，通常在系统提示之前或之后。因此任何更改都会使后续所有动作和观察的KV缓存失效。   当先前的动作和观察仍然引用当前上下文中不再定义的工具时，模型会感到困惑。如果没有约束解码，这通">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-05-12T01:30:00.000Z">
-<meta property="article:modified_time" content="2025-07-16T11:08:25.150Z">
+<meta property="article:published_time" content="2025-07-19T01:30:00.000Z">
+<meta property="article:modified_time" content="2025-07-23T06:40:32.289Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Agent">
@@ -36,7 +36,7 @@
   
   
   
-  <title>Excel/Google Sheel智能体 &amp; ChatBI调研 - Tech Blog</title>
+  <title>Agent效果优化——上下文工程 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Excel/Google Sheel智能体 &amp; ChatBI调研"></span>
+            <span id="subtitle" data-typed-text="Agent效果优化——上下文工程"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-12 09:30" pubdate>
-          May 12, 2025 am
+        <time datetime="2025-07-19 09:30" pubdate>
+          July 19, 2025 am
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          14 words
+          911 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          1 mins
+          8 mins
         
       </span>
     
@@ -292,15 +292,40 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Excel/Google Sheel智能体 &amp; ChatBI调研</h1>
+            <h1 id="seo-header">Agent效果优化——上下文工程</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="ChatExcel"><a href="#ChatExcel" class="headerlink" title="ChatExcel"></a>ChatExcel</h1><h1 id="ChatBI"><a href="#ChatBI" class="headerlink" title="ChatBI"></a>ChatBI</h1><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p><strong>词槽</strong></p>
-<p><strong>Text2DSL</strong></p>
-<p><strong>Text2SQL</strong></p>
-<h1 id="产品功能点"><a href="#产品功能点" class="headerlink" title="产品功能点"></a>产品功能点</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+                <h1 id="生产级Agent评估考量的指标"><a href="#生产级Agent评估考量的指标" class="headerlink" title="生产级Agent评估考量的指标"></a>生产级Agent评估考量的指标</h1><p><strong>KVCache缓存命中率</strong></p>
+<h1 id="效果优化"><a href="#效果优化" class="headerlink" title="效果优化"></a>效果优化</h1><h2 id="效果的稳定性"><a href="#效果的稳定性" class="headerlink" title="效果的稳定性"></a>效果的稳定性</h2><h3 id="工具调用"><a href="#工具调用" class="headerlink" title="工具调用"></a>工具调用</h3><p>在迭代过程中，动态添加或删除工具，容易导致模型选择错误行动或低效路径的概率升高。</p>
+<ol>
+<li>在大多数LLM中，工具定义在序列化后位于上下文的前部，通常在系统提示之前或之后。因此任何更改都会使后续所有动作和观察的KV缓存失效。</li>
+<li></li>
+</ol>
+<p>当先前的动作和观察仍然引用当前上下文中不再定义的工具时，模型会感到困惑。如果没有约束解码，这通常会导致模式违规或幻觉动作。</p>
+<p><strong>使用状态机管理工具可用性</strong><br>在解码过程中掩蔽token的logits，以基于当前上下文阻止（或强制）选择某些动作</p>
+<h3 id="上下文"><a href="#上下文" class="headerlink" title="上下文"></a>上下文</h3><p>128K上下文窗口通常不够用，主要痛点：</p>
+<ol>
+<li><p>观察结果可能非常庞大，尤其是当代理与网页或PDF等非结构化数据交互时。很容易超出上下文限制。</p>
+</li>
+<li><p>模型性能往往会下降，超过一定的上下文长度后，即使技术上支持该窗口大小。</p>
+</li>
+<li><p>长输入成本高昂，即使使用前缀缓存。你仍然需要为传输和预填充每个token付费。</p>
+</li>
+</ol>
+<p>常用的解决方案：上下文截断或压缩。不可逆的压缩容易导致信息丢失，在多步之后的推理可能使用压缩前的信息效果更好，所以保留更多信息很重要。</p>
+<p><strong>使用文件系统作为上下文</strong><br>大小不受限制，天然持久化，并且代理可以直接操作。<br>将文件系统作为存储和结构化的外部记忆。<br>另外，压缩策略始终设计为可恢复的。</p>
+<p><strong>复述目标到上下文末尾</strong><br>Manus中的一个典型任务平均需要大约50次工具调用。这是一个很长的循环——由于Manus依赖LLM进行决策，它很容易偏离主题或忘记早期目标，尤其是在长上下文或复杂任务中。</p>
+<p>通过不断重写待办事项列表，Manus将其目标复述到上下文的末尾。这将全局计划推入模型的近期注意力范围内，避免了”丢失在中间”的问题，并减少了目标不一致。实际上，它使用自然语言来使自己的注意力偏向任务目标——而不需要特殊的架构变更。</p>
+<p><strong>将错误的尝试保留在上下文中</strong><br>将错误的尝试保留在上下文中。</p>
+<p><strong>少样本提示中通过受控的随机性增加多样性</strong><br>在行动和观察中引入少量的结构化变化——不同的序列化模板、替代性措辞、顺序或格式上的微小噪音。</p>
+<h1 id="成本控制"><a href="#成本控制" class="headerlink" title="成本控制"></a>成本控制</h1><p>推理成本按token计费，命中缓存的输入token比未命中缓存的token成本低很多，设计注意的两个点：</p>
+<ol>
+<li>提高命中缓存的概率<br>1.1 保持提示前缀稳定<br>1.1.1 大模型推理框架<br>使用vLLM 这样的框架自托管模型，确保启用了前缀&#x2F;提示缓存，并且你正在使用会话 ID 等技术在分布式工作节点之间一致地路由请求。<br>1.2 上下文只追加内容，避免修改之前的内容<br>1.3 在需要时明确标记缓存断点</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus">AI代理的上下文工程：构建Manus的经验教训</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2507.13334">A Survey of Context Engineering for Large Language Models</a><br><a target="_blank" rel="noopener" href="https://github.com/davidkimai/Context-Engineering">Context-Engineering</a></p>
+
                 
               </div>
             
@@ -356,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Excel/Google Sheel智能体 &amp; ChatBI调研</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/05/12/大模型-实践-Agent-ExcelAgents-ChatBI/</div>
+      <div>Agent效果优化——上下文工程</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/07/19/大模型-Agent-效果优化-上下文工程/</div>
     </div>
     <div class="license-meta">
       
@@ -369,7 +394,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 12, 2025</div>
+          <div>July 19, 2025</div>
         </div>
       
       
@@ -401,9 +426,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/05/12/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-Smolagents/" title="smolagents简介">
+                      <a href="/tech-blog/2025/07/20/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1/" title="记忆机制设计">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">smolagents简介</span>
+                        <span class="hidden-mobile">记忆机制设计</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -411,8 +436,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/05/08/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%AE%9E%E8%B7%B5-%E7%A0%94%E7%A9%B6%E5%8A%A9%E6%89%8B/" title="大模型-研究助手">
-                        <span class="hidden-mobile">大模型-研究助手</span>
+                      <a href="/tech-blog/2025/07/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-RAG-%E7%9F%A5%E8%AF%86%E5%BA%93/" title="知识库">
+                        <span class="hidden-mobile">知识库</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

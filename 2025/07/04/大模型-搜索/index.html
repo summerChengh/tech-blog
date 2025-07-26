@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="传统信息检索的优势1. 精确性与可控性 精确匹配：对于明确的关键词查询，能提供精确的文档匹配。 布尔逻辑支持：支持AND、OR、NOT等布尔操作符，精确控制搜索范围。 结果可预测：搜索算法行为可预测，结果具有确定性。  2. 高效性与可扩展性 计算效率高：索引检索通常比LLM推理更快，延迟更低。 海量数据处理：能高效处理PB级数据，扩展性强。 资源消耗低：不需要大量GPU资源，运行成本低。  3.">
+    <meta name="description" content="大模型实效性 幻觉问题 推理速度 搜索多跳检索 语义检索">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型搜索与传统信息检索的优势对比">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/07/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="传统信息检索的优势1. 精确性与可控性 精确匹配：对于明确的关键词查询，能提供精确的文档匹配。 布尔逻辑支持：支持AND、OR、NOT等布尔操作符，精确控制搜索范围。 结果可预测：搜索算法行为可预测，结果具有确定性。  2. 高效性与可扩展性 计算效率高：索引检索通常比LLM推理更快，延迟更低。 海量数据处理：能高效处理PB级数据，扩展性强。 资源消耗低：不需要大量GPU资源，运行成本低。  3.">
+<meta property="og:description" content="大模型实效性 幻觉问题 推理速度 搜索多跳检索 语义检索">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-07-04T08:30:00.000Z">
-<meta property="article:modified_time" content="2025-07-16T11:09:18.021Z">
+<meta property="article:modified_time" content="2025-07-26T14:56:41.220Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="RAG">
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          756 words
+          24 words
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
         
-          7 mins
+          1 mins
         
       </span>
     
@@ -300,52 +300,11 @@
             
               <div class="markdown-body">
                 
-                <h2 id="传统信息检索的优势"><a href="#传统信息检索的优势" class="headerlink" title="传统信息检索的优势"></a>传统信息检索的优势</h2><h3 id="1-精确性与可控性"><a href="#1-精确性与可控性" class="headerlink" title="1. 精确性与可控性"></a>1. 精确性与可控性</h3><ul>
-<li><strong>精确匹配</strong>：对于明确的关键词查询，能提供精确的文档匹配。</li>
-<li><strong>布尔逻辑支持</strong>：支持AND、OR、NOT等布尔操作符，精确控制搜索范围。</li>
-<li><strong>结果可预测</strong>：搜索算法行为可预测，结果具有确定性。</li>
-</ul>
-<h3 id="2-高效性与可扩展性"><a href="#2-高效性与可扩展性" class="headerlink" title="2. 高效性与可扩展性"></a>2. 高效性与可扩展性</h3><ul>
-<li><strong>计算效率高</strong>：索引检索通常比LLM推理更快，延迟更低。</li>
-<li><strong>海量数据处理</strong>：能高效处理PB级数据，扩展性强。</li>
-<li><strong>资源消耗低</strong>：不需要大量GPU资源，运行成本低。</li>
-</ul>
-<h3 id="3-最新信息与实时性"><a href="#3-最新信息与实时性" class="headerlink" title="3. 最新信息与实时性"></a>3. 最新信息与实时性</h3><ul>
-<li><strong>实时更新</strong>：可以实时索引最新内容，无需重新训练。</li>
-<li><strong>新闻、股票等时效性内容</strong>：对于需要最新信息的查询，传统检索更有优势。</li>
-<li><strong>动态内容适应性</strong>：能快速适应不断变化的信息环境。</li>
-</ul>
-<h3 id="4-来源透明度与可验证性"><a href="#4-来源透明度与可验证性" class="headerlink" title="4. 来源透明度与可验证性"></a>4. 来源透明度与可验证性</h3><ul>
-<li><strong>结果可溯源</strong>：每个结果都有明确的来源文档。</li>
-<li><strong>证据链完整</strong>：用户可以直接查看原始文档验证信息。</li>
-<li><strong>无幻觉风险</strong>：不会像LLM那样”编造”不存在的信息。</li>
-</ul>
-<h3 id="5-结构化数据处理"><a href="#5-结构化数据处理" class="headerlink" title="5. 结构化数据处理"></a>5. 结构化数据处理</h3><ul>
-<li><strong>精确的数值计算</strong>：对数值、日期等结构化数据处理更精确。</li>
-<li><strong>专业数据库查询</strong>：支持SQL等专业查询语言，处理复杂结构化数据。</li>
-<li><strong>元数据过滤</strong>：可基于作者、日期、文件类型等元数据精确过滤。</li>
-</ul>
-<h2 id="概率模型在信息检索中的应用"><a href="#概率模型在信息检索中的应用" class="headerlink" title="概率模型在信息检索中的应用"></a>概率模型在信息检索中的应用</h2><p>在传统信息检索中，概率模型扮演着重要角色。例如，条件概率可以用来表示文档相关性和查询条件之间的关系：</p>
-<p>$$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$$</p>
-<p>其中：</p>
-<ul>
-<li>$p(z&amp;y &#x3D; 1|\boldsymbol{x})$ 表示条件文本-上下文-视觉检索概率 (pCTCVR)</li>
-<li>$p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x})$ 表示条件视觉检索概率 (pCVR)</li>
-<li>$p(y &#x3D; 1|\boldsymbol{x})$ 表示条件文本检索概率 (pCTR)</li>
-</ul>
-<p>这种概率框架使传统检索系统能够精确量化不同特征对检索结果的贡献，形成可解释的排序机制。</p>
-<h2 id="融合趋势：RAG与混合架构"><a href="#融合趋势：RAG与混合架构" class="headerlink" title="融合趋势：RAG与混合架构"></a>融合趋势：RAG与混合架构</h2><p>当前技术发展趋势是融合两种方法的优势，如检索增强生成(RAG)技术：</p>
-<ul>
-<li><strong>检索增强生成(RAG)</strong>：利用传统检索获取相关文档，再由LLM生成回答，结合两者优势。</li>
-<li><strong>混合排序系统</strong>：将传统排序算法与神经网络模型结合。</li>
-<li><strong>可控生成</strong>：通过检索限定LLM生成的范围，提高准确性。</li>
-</ul>
-<h2 id="应用场景选择"><a href="#应用场景选择" class="headerlink" title="应用场景选择"></a>应用场景选择</h2><p>根据不同需求选择合适的技术：</p>
-<ul>
-<li><strong>需要精确事实或最新信息</strong>：传统检索更合适</li>
-<li><strong>需要理解复杂问题或生成内容</strong>：LLM更有优势</li>
-<li><strong>企业知识库或专业领域</strong>：RAG等混合方案最佳</li>
-</ul>
+                <h2 id="大模型"><a href="#大模型" class="headerlink" title="大模型"></a>大模型</h2><p><strong>实效性</strong></p>
+<p><strong>幻觉问题</strong></p>
+<p><strong>推理速度</strong></p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p><strong>多跳检索</strong></p>
+<p><strong>语义检索</strong></p>
 
                 
               </div>
@@ -452,6 +411,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/tech-blog/2025/07/17/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%B7%9F%E8%BF%9B/" title="大模型-跟进">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">大模型-跟进</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

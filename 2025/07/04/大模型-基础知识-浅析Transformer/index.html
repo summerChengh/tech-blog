@@ -27,7 +27,7 @@
 <meta property="og:description" content="Transformer基础知识问答1. 什么是自注意力机制（Self-Attention）？自注意力机制是一种能够在序列的每个位置上，根据序列中所有其他位置的信息动态计算表示的方法。它通过计算查询（Query）、键（Key）、值（Value）三组向量之间的相关性分数，实现信息的全局交互。 2. Transformer相比LSTM有哪些优势？ 并行计算：Transformer不依赖序列顺序，所有位置">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-07-04T07:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-11T08:29:37.860Z">
+<meta property="article:modified_time" content="2025-07-20T14:54:53.223Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="Transformer">
@@ -246,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          829 words
+          984 words
         
       </span>
     
@@ -257,7 +257,7 @@
         
         
         
-          7 mins
+          9 mins
         
       </span>
     
@@ -307,22 +307,31 @@
 <li><strong>训练效率高</strong>：更易于大规模数据和模型的训练。</li>
 </ul>
 <h2 id="3-自注意力为什么要用缩放（Scaling）？"><a href="#3-自注意力为什么要用缩放（Scaling）？" class="headerlink" title="3. 自注意力为什么要用缩放（Scaling）？"></a>3. 自注意力为什么要用缩放（Scaling）？</h2><p><strong>为什么需要scaling</strong><br>当$$QK^{T}$$值较大时，softmax会导致，注意力机制只关注到$$QK^{T}$较大的位置，而忽略了全局位置信息。另外，Query和Key的点积随维度增加而增大，导致softmax梯度消失。通过除以( \sqrt{d_k} )（d_k为Key的维度），可以让softmax输出更平滑，训练更稳定。</p>
-<p><strong>缩放为什么是 $$\sqrt{d_k}$$</strong><br>假设Query Key服从(0,1)正太分布，</p>
-<h2 id="4-位置编码（Positional-Encoding）有什么作用？"><a href="#4-位置编码（Positional-Encoding）有什么作用？" class="headerlink" title="4. 位置编码（Positional Encoding）有什么作用？"></a>4. 位置编码（Positional Encoding）有什么作用？</h2><p>Transformer本身不感知序列顺序，位置编码为每个输入位置引入唯一的向量，使模型能够区分不同位置的信息，实现序列建模。<br>Transformer的位置编码采用了三角函数编码，是一个中绝对位置编码。</p>
+<p><strong>缩放为什么是 $$\sqrt{d_k}$$</strong><br>假设Query Key服从(0,1)正太分布，$QK^{T}$则为均值为0，标准方差为：$\sqrt{d_k}$的正太分布，除以( \sqrt{d_k} )（d_k为Key的维度）归一化。</p>
+<h2 id="4-位置编码（Positional-Encoding）有什么作用？"><a href="#4-位置编码（Positional-Encoding）有什么作用？" class="headerlink" title="4. 位置编码（Positional Encoding）有什么作用？"></a>4. 位置编码（Positional Encoding）有什么作用？</h2><p>Transformer本身不感知序列顺序，位置编码为每个输入位置引入唯一的向量，使模型能够区分不同位置的信息，实现序列建模。<br>Transformer的位置编码采用了三角函数编码，是一种绝对位置编码。</p>
 <h2 id="5-位置编码有哪些优化工作？"><a href="#5-位置编码有哪些优化工作？" class="headerlink" title="5. 位置编码有哪些优化工作？"></a>5. 位置编码有哪些优化工作？</h2><ul>
 <li><strong>可学习位置编码</strong>：将位置向量作为参数训练，提升灵活性。</li>
 <li><strong>相对位置编码</strong>：建模位置之间的相对关系（如Transformer-XL、T5、DeBERTa）。</li>
 <li><strong>旋转位置编码（RoPE）</strong>：通过旋转操作编码相对位置信息，提升泛化能力（如Llama、Qwen等）。</li>
 <li><strong>混合位置编码</strong>：结合绝对和相对位置编码优势。</li>
 </ul>
-<h2 id="6-多头注意力（Multi-Head-Attention）有什么优势？"><a href="#6-多头注意力（Multi-Head-Attention）有什么优势？" class="headerlink" title="6. 多头注意力（Multi-Head Attention）有什么优势？"></a>6. 多头注意力（Multi-Head Attention）有什么优势？</h2><p>多头注意力将输入分成多个子空间，分别进行自注意力计算，最后拼接融合。这样模型可以关注不同的子空间特征，提升表达能力和鲁棒性。</p>
-<h2 id="7-残差网络（Residual-Connection）在Transformer中的作用？"><a href="#7-残差网络（Residual-Connection）在Transformer中的作用？" class="headerlink" title="7. 残差网络（Residual Connection）在Transformer中的作用？"></a>7. 残差网络（Residual Connection）在Transformer中的作用？</h2><p>残差连接缓解了深层网络的梯度消失问题，使信息和梯度能够直接跨层传递，提升模型的可训练性和收敛速度。这是能够训练更深更大的网络的关键。</p>
+<h2 id="6-多头注意力（Multi-Head-Attention）有什么优势？"><a href="#6-多头注意力（Multi-Head-Attention）有什么优势？" class="headerlink" title="6. 多头注意力（Multi-Head Attention）有什么优势？"></a>6. 多头注意力（Multi-Head Attention）有什么优势？</h2><p>多头注意力将输入分成多个子空间，分别进行自注意力计算，最后拼接融合。模型可以关注不同的子空间特征，提升表达能力和鲁棒性。</p>
+<h2 id="7-残差网络（Residual-Connection）的作用？"><a href="#7-残差网络（Residual-Connection）的作用？" class="headerlink" title="7. 残差网络（Residual Connection）的作用？"></a>7. 残差网络（Residual Connection）的作用？</h2><p>残差连接缓解了深层网络的梯度消失问题，使信息和梯度能够直接跨层传递，提升模型的可训练性和收敛速度。这是能够训练更深更大的网络的关键。</p>
 <h2 id="8-为什么基于解码器的大模型（如GPT系列）比基于编码器的大模型（如BERT）在现阶段取得了更好效果？"><a href="#8-为什么基于解码器的大模型（如GPT系列）比基于编码器的大模型（如BERT）在现阶段取得了更好效果？" class="headerlink" title="8. 为什么基于解码器的大模型（如GPT系列）比基于编码器的大模型（如BERT）在现阶段取得了更好效果？"></a>8. 为什么基于解码器的大模型（如GPT系列）比基于编码器的大模型（如BERT）在现阶段取得了更好效果？</h2><ul>
 <li><strong>自回归生成能力</strong>：解码器结构天然适合生成任务，能处理更复杂的上下文。</li>
 <li><strong>大规模预训练语料</strong>：解码器模型通常用更大规模的无监督文本进行预训练，泛化能力更强。</li>
 <li><strong>任务适应性强</strong>：解码器模型可直接用于对话、写作、代码生成等多种任务。</li>
 <li><strong>推理与多轮对话优势</strong>：自回归结构更适合多轮推理和交互。</li>
 </ul>
+<h1 id="训练优化相关"><a href="#训练优化相关" class="headerlink" title="训练优化相关"></a>训练优化相关</h1><h2 id="LLM训练为什么通常不使用dropout？"><a href="#LLM训练为什么通常不使用dropout？" class="headerlink" title="LLM训练为什么通常不使用dropout？"></a>LLM训练为什么通常不使用dropout？</h2><p>dropout是深度学习训练常用的一种提升模型泛化能力的方式。<br>但训练LLM通常不使用dropout，主要基于以下几个点的考量：</p>
+<ol>
+<li>LLM参数量巨大，通常容易欠拟合而不是过拟合。</li>
+<li>dropout相当于引入了噪声，会破坏训练稳定性</li>
+<li>Dropout训练和推理不一致</li>
+</ol>
+<h1 id="Transformer的缺点"><a href="#Transformer的缺点" class="headerlink" title="Transformer的缺点"></a>Transformer的缺点</h1><p>推理时间复杂度是序列长度n的平方</p>
+<h1 id="Google-MoR"><a href="#Google-MoR" class="headerlink" title="Google MoR"></a>Google MoR</h1><hr>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2507.10524">Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation</a></p>
 
                 
               </div>

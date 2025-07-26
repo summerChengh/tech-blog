@@ -22,12 +22,12 @@
     <meta name="description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。开发单智能体的常用策略包括：（1）LLM配备工具调用能力，如代码执行器、web浏览器等；（2）通过提示策略获取更好的推理和规划能力，提示策略包括：思维链提示、ReAct、少样本提示等。 多智能体系统在各个领域已展现出显著的成就，通过利用专业智能体之间的协作与协调来增强单个 LLM 的能力">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多智能体协作">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C/index.html">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/11/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Tech Blog">
 <meta property="og:description" content="单Agent框架VS多Agent框架单Agent框架，主要关注智能体的感知、决策、学习，不涉及多个智能体的交互。开发单智能体的常用策略包括：（1）LLM配备工具调用能力，如代码执行器、web浏览器等；（2）通过提示策略获取更好的推理和规划能力，提示策略包括：思维链提示、ReAct、少样本提示等。 多智能体系统在各个领域已展现出显著的成就，通过利用专业智能体之间的协作与协调来增强单个 LLM 的能力">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-11T01:26:00.000Z">
-<meta property="article:modified_time" content="2025-07-16T11:26:30.611Z">
+<meta property="article:modified_time" content="2025-07-23T08:05:42.308Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          1.4k words
         
       </span>
     
@@ -300,7 +300,8 @@
 <h1 id="多Agent协作机制"><a href="#多Agent协作机制" class="headerlink" title="多Agent协作机制"></a>多Agent协作机制</h1><p>多智能体协作机制促使传统、孤立的模型向强调交互的方法转变，使智能体能够连接、协商、做决策、规划并联合行动，推动集体环境中的 AI 能力发展</p>
 <h2 id="合作类型"><a href="#合作类型" class="headerlink" title="合作类型"></a>合作类型</h2><h3 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h3><p>在合作机制，多个智能体互相协调目标为同一个目标工作。CAMEL、AutoGen等采用合作类型的协作机制。<br>优点：根据agents各自的优势分配子任务，设计简单并且能够执行明确的目标。<br>缺点：</p>
 <p>Agent常见的一个挑战是偶尔无法利用关于物理世界的常识性知识，这种缺陷可能导致系统因重复错误而陷入循环。<br>AutoGen是通过引入一个能够提供关键常识的grounding agent来解决该问题。</p>
-<h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><h3 id="竞合"><a href="#竞合" class="headerlink" title="竞合"></a>竞合</h3><h2 id="合作结构"><a href="#合作结构" class="headerlink" title="合作结构"></a>合作结构</h2><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><h3 id="去中心化和分布式"><a href="#去中心化和分布式" class="headerlink" title="去中心化和分布式"></a>去中心化和分布式</h3><h3 id="分层式"><a href="#分层式" class="headerlink" title="分层式"></a>分层式</h3><h2 id="合作策略"><a href="#合作策略" class="headerlink" title="合作策略"></a>合作策略</h2><h3 id="基于规则的合作策略"><a href="#基于规则的合作策略" class="headerlink" title="基于规则的合作策略"></a>基于规则的合作策略</h3><h3 id="基于角色的合作策略"><a href="#基于角色的合作策略" class="headerlink" title="基于角色的合作策略"></a>基于角色的合作策略</h3><p>编程智能体通常基于角色合作。</p>
+<h3 id="竞争"><a href="#竞争" class="headerlink" title="竞争"></a>竞争</h3><p>通常在游戏策略中使用<br>《西部世界》这个虚拟世界可以。</p>
+<h3 id="竞合"><a href="#竞合" class="headerlink" title="竞合"></a>竞合</h3><h2 id="合作结构"><a href="#合作结构" class="headerlink" title="合作结构"></a>合作结构</h2><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><h3 id="去中心化和分布式"><a href="#去中心化和分布式" class="headerlink" title="去中心化和分布式"></a>去中心化和分布式</h3><h3 id="分层式"><a href="#分层式" class="headerlink" title="分层式"></a>分层式</h3><h2 id="合作策略"><a href="#合作策略" class="headerlink" title="合作策略"></a>合作策略</h2><h3 id="基于规则的合作策略"><a href="#基于规则的合作策略" class="headerlink" title="基于规则的合作策略"></a>基于规则的合作策略</h3><h3 id="基于角色的合作策略"><a href="#基于角色的合作策略" class="headerlink" title="基于角色的合作策略"></a>基于角色的合作策略</h3><p>编程智能体通常基于角色合作。</p>
 <h3 id="基于模型的合作策略"><a href="#基于模型的合作策略" class="headerlink" title="基于模型的合作策略"></a>基于模型的合作策略</h3><h2 id="协调和编排架构"><a href="#协调和编排架构" class="headerlink" title="协调和编排架构"></a>协调和编排架构</h2><h3 id="静态架构"><a href="#静态架构" class="headerlink" title="静态架构"></a>静态架构</h3><p>合作和任务执行是静态的，基于领域知识和预定义规则。例如：顺序链接通道，代理按顺序协作完成任务。</p>
 <h3 id="动态架构"><a href="#动态架构" class="headerlink" title="动态架构"></a>动态架构</h3><p>合作和角色分配可以根据任务需求动态调整。例如：Solo performance Prompting(SPP)可以根据输入动态识别相关角色，并生成相应的LLM代理进行协作。</p>
 <h3 id="动态架构-1"><a href="#动态架构-1" class="headerlink" title="动态架构"></a>动态架构</h3><h2 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h2><p>集体推理和决策</p>
@@ -363,7 +364,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>多智能体协作</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/04/11/大模型-Agent-多Agent协作/</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/04/11/大模型-Agent-效果优化-多Agent协作/</div>
     </div>
     <div class="license-meta">
       
@@ -417,8 +418,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-ElasticSearch/" title="ElasticSearch">
-                        <span class="hidden-mobile">ElasticSearch</span>
+                      <a href="/tech-blog/2025/04/10/%E6%90%9C%E7%B4%A2-Builder/" title="构建索引">
+                        <span class="hidden-mobile">构建索引</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

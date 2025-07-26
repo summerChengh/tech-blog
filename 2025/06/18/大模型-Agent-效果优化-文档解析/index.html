@@ -19,23 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="几个AI领域的关键产品人物： Kevin Weil，OpenAI产品负责人Christopher Petregal，Granola创始人Nan yu，Linear产品负责人Raiza Martin，前NotebookLM产品负责人Josh Woodward，Google Labs和Gemini负责人Amanda Askell，Anthropic的Claude负责人 重点跟进：  模型的边界 发展趋">
+    <meta name="description" content="优化基于Pipeline的方法基于多模态大模型的端到端方法技术细节文档结构识别(Layout)文字识别方案效果、速度、成本对比MonkeyOCR优化在标准文档上效果非常好，但是拍照场景（文档有弯曲变形或者有阴影）效果比较差。先用文档矫正算法把图片矫正，再进行解析。 开源工具MinerUMonkeyOCR SurveyAesthetics is Cheap, Show me the Text: An">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大模型-跟进">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%B7%9F%E8%BF%9B/index.html">
+<meta property="og:title" content="文档解析实战结果">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%96%87%E6%A1%A3%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="几个AI领域的关键产品人物： Kevin Weil，OpenAI产品负责人Christopher Petregal，Granola创始人Nan yu，Linear产品负责人Raiza Martin，前NotebookLM产品负责人Josh Woodward，Google Labs和Gemini负责人Amanda Askell，Anthropic的Claude负责人 重点跟进：  模型的边界 发展趋">
+<meta property="og:description" content="优化基于Pipeline的方法基于多模态大模型的端到端方法技术细节文档结构识别(Layout)文字识别方案效果、速度、成本对比MonkeyOCR优化在标准文档上效果非常好，但是拍照场景（文档有弯曲变形或者有阴影）效果比较差。先用文档矫正算法把图片矫正，再进行解析。 开源工具MinerUMonkeyOCR SurveyAesthetics is Cheap, Show me the Text: An">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-06-18T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-07-17T11:19:37.786Z">
+<meta property="article:published_time" content="2025-06-18T01:30:00.000Z">
+<meta property="article:modified_time" content="2025-07-26T09:03:10.080Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="大模型">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="实践">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>大模型-跟进 - Tech Blog</title>
+  <title>文档解析实战结果 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大模型-跟进"></span>
+            <span id="subtitle" data-typed-text="文档解析实战结果"></span>
           
         </div>
 
@@ -231,7 +232,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-18 10:00" pubdate>
+        <time datetime="2025-06-18 09:30" pubdate>
           June 18, 2025 am
         </time>
       </span>
@@ -243,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          97 words
+          112 words
         
       </span>
     
@@ -291,20 +292,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">大模型-跟进</h1>
+            <h1 id="seo-header">文档解析实战结果</h1>
             
             
               <div class="markdown-body">
                 
-                <p>几个AI领域的关键产品人物：</p>
-<p>Kevin Weil，OpenAI产品负责人<br>Christopher Petregal，Granola创始人<br>Nan yu，Linear产品负责人<br>Raiza Martin，前NotebookLM产品负责人<br>Josh Woodward，Google Labs和Gemini负责人<br>Amanda Askell，Anthropic的Claude负责人</p>
-<p>重点跟进：</p>
-<ol>
-<li>模型的边界</li>
-<li>发展趋势（未来3-6个月能实现什么效果）</li>
-<li>如何把技术变成好的产品</li>
-<li>如何把AI产品的价值传递给客户</li>
-</ol>
+                <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="基于Pipeline的方法"><a href="#基于Pipeline的方法" class="headerlink" title="基于Pipeline的方法"></a>基于Pipeline的方法</h2><h2 id="基于多模态大模型的端到端方法"><a href="#基于多模态大模型的端到端方法" class="headerlink" title="基于多模态大模型的端到端方法"></a>基于多模态大模型的端到端方法</h2><h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><h3 id="文档结构识别-Layout"><a href="#文档结构识别-Layout" class="headerlink" title="文档结构识别(Layout)"></a>文档结构识别(Layout)</h3><h3 id="文字识别"><a href="#文字识别" class="headerlink" title="文字识别"></a>文字识别</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="方案效果、速度、成本对比"><a href="#方案效果、速度、成本对比" class="headerlink" title="方案效果、速度、成本对比"></a>方案效果、速度、成本对比</h2><h2 id="MonkeyOCR"><a href="#MonkeyOCR" class="headerlink" title="MonkeyOCR"></a>MonkeyOCR</h2><p><strong>优化</strong><br>在标准文档上效果非常好，但是拍照场景（文档有弯曲变形或者有阴影）效果比较差。先用文档矫正算法把图片矫正，再进行解析。</p>
+<h1 id="开源工具"><a href="#开源工具" class="headerlink" title="开源工具"></a>开源工具</h1><p><a target="_blank" rel="noopener" href="https://github.com/opendatalab/MinerU">MinerU</a><br><a target="_blank" rel="noopener" href="https://github.com/Yuliang-Liu/MonkeyOCR">MonkeyOCR</a></p>
+<h1 id="Survey"><a href="#Survey" class="headerlink" title="Survey"></a>Survey</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2507.15085">Aesthetics is Cheap, Show me the Text: An Empirical Evaluation of State-of-the-Art Generative Models for OCR</a></p>
 
                 
               </div>
@@ -328,7 +323,7 @@
   
     <span>></span>
     
-  <a href="/tech-blog/categories/AI/%E8%B7%9F%E8%BF%9B/" class="category-chain-item">跟进</a>
+  <a href="/tech-blog/categories/AI/%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/" class="category-chain-item">应用实践</a>
   
   
 
@@ -347,7 +342,9 @@
       
         <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tech-blog/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#大模型</a>
+        <a href="/tech-blog/tags/Agent/" class="print-no-link">#Agent</a>
+      
+        <a href="/tech-blog/tags/%E5%AE%9E%E8%B7%B5/" class="print-no-link">#实践</a>
       
     </div>
   
@@ -359,8 +356,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大模型-跟进</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/06/18/大模型-跟进/</div>
+      <div>文档解析实战结果</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/06/18/大模型-Agent-效果优化-文档解析/</div>
     </div>
     <div class="license-meta">
       
@@ -404,9 +401,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/06/18/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="搜索推荐-常见问题">
+                      <a href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%8F%90%E7%A4%BA%E7%AD%96%E7%95%A5/" title="Agent效果优化——提示策略">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">搜索推荐-常见问题</span>
+                        <span class="hidden-mobile">Agent效果优化——提示策略</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -414,8 +411,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/" title="Agent效果优化——LLM基础Function Call能力强化">
-                        <span class="hidden-mobile">Agent效果优化——LLM基础Function Call能力强化</span>
+                      <a href="/tech-blog/2025/06/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B-TTS%E5%A4%A7%E6%A8%A1%E5%9E%8B/" title="TTS大模型与API报价">
+                        <span class="hidden-mobile">TTS大模型与API报价</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
