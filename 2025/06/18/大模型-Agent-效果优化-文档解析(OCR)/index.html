@@ -19,23 +19,24 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="样本稀疏样本选择偏差经典论文ESMM核心解决两个问题：样本稀疏、样本选择偏差技术实现：多任务学习(MTL)：$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$ 其中：  $p(z&amp;y &#x3D; 1|\bolds">
+    <meta name="description" content="开源工具PaddleOCRMinerUSteps:  文档预处理PyMuPDF过滤掉不能处理（比如加密文档）的文档，提取PDF metadata：文档分类、语言类型、页码等语言识别主要支持中、英文识别，作为OCR识别的参数。乱码识别提前识别乱码，保证OCR识别文字的效果。扫描PDF识别基于文本的PDF，直接使用PyMuPDF。扫描件PDF，需要开启OCR。页面metadata抽取比如：总页数，页面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搜索推荐-常见问题">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/06/18/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="文档解析实战结果">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%96%87%E6%A1%A3%E8%A7%A3%E6%9E%90(OCR)/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="样本稀疏样本选择偏差经典论文ESMM核心解决两个问题：样本稀疏、样本选择偏差技术实现：多任务学习(MTL)：$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$ 其中：  $p(z&amp;y &#x3D; 1|\bolds">
+<meta property="og:description" content="开源工具PaddleOCRMinerUSteps:  文档预处理PyMuPDF过滤掉不能处理（比如加密文档）的文档，提取PDF metadata：文档分类、语言类型、页码等语言识别主要支持中、英文识别，作为OCR识别的参数。乱码识别提前识别乱码，保证OCR识别文字的效果。扫描PDF识别基于文本的PDF，直接使用PyMuPDF。扫描件PDF，需要开启OCR。页面metadata抽取比如：总页数，页面">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-06-18T02:10:00.000Z">
-<meta property="article:modified_time" content="2025-07-17T13:41:50.055Z">
+<meta property="article:published_time" content="2025-06-18T01:30:00.000Z">
+<meta property="article:modified_time" content="2025-08-05T04:25:20.025Z">
 <meta property="article:author" content="Your Name">
-<meta property="article:tag" content="搜索">
-<meta property="article:tag" content="推荐">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="实践">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>搜索推荐-常见问题 - Tech Blog</title>
+  <title>文档解析实战结果 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="搜索推荐-常见问题"></span>
+            <span id="subtitle" data-typed-text="文档解析实战结果"></span>
           
         </div>
 
@@ -231,7 +232,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-18 10:10" pubdate>
+        <time datetime="2025-06-18 09:30" pubdate>
           June 18, 2025 am
         </time>
       </span>
@@ -243,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          241 words
+          1.3k words
         
       </span>
     
@@ -254,7 +255,7 @@
         
         
         
-          3 mins
+          11 mins
         
       </span>
     
@@ -291,28 +292,78 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">搜索推荐-常见问题</h1>
+            <h1 id="seo-header">文档解析实战结果</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="样本稀疏"><a href="#样本稀疏" class="headerlink" title="样本稀疏"></a>样本稀疏</h1><h1 id="样本选择偏差"><a href="#样本选择偏差" class="headerlink" title="样本选择偏差"></a>样本选择偏差</h1><h2 id="经典论文"><a href="#经典论文" class="headerlink" title="经典论文"></a>经典论文</h2><h3 id="ESMM"><a href="#ESMM" class="headerlink" title="ESMM"></a>ESMM</h3><p>核心解决两个问题：样本稀疏、样本选择偏差<br>技术实现：<br>多任务学习(MTL)：<br>$p(z&amp;y &#x3D; 1|\boldsymbol{x}) &#x3D; p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x}) p(y &#x3D; 1|\boldsymbol{x}),$</p>
-<p>其中：</p>
-<ul>
-<li>$p(z&amp;y &#x3D; 1|\boldsymbol{x})$ 表示条件文本-上下文-视觉检索概率 (pCTCVR)</li>
-<li>$p(z &#x3D; 1|y &#x3D; 1, \boldsymbol{x})$ 表示条件视觉检索概率 (pCVR)</li>
-<li>$p(y &#x3D; 1|\boldsymbol{x})$ 表示条件文本检索概率 (pCTR)</li>
-</ul>
-<p>ESMM损失函数：</p>
-<p>$$L(\theta_{cvr}, \theta_{ctr}) &#x3D; \sum_{i&#x3D;1}^{N} l(y_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr})) + \sum_{i&#x3D;1}^{N} l(y_i&amp;z_i, f(\boldsymbol{x}<em>i; \theta</em>{ctr}) \times f(\boldsymbol{x}<em>i; \theta</em>{cvr})),$$</p>
-<p>其中：</p>
-<ul>
-<li>$\theta_{cvr}$ 和 $\theta_{ctr}$ 分别是CVR和CTR任务的模型参数</li>
-<li>$l$ 表示损失函数（通常为对数损失）</li>
-<li>$y_i$ 表示点击标签</li>
-<li>$z_i$ 表示转化标签</li>
-<li>$f(\boldsymbol{x}_i; \theta)$ 表示模型对输入特征的预测输出</li>
-</ul>
+                <h1 id="开源工具"><a href="#开源工具" class="headerlink" title="开源工具"></a>开源工具</h1><h2 id="PaddleOCR"><a href="#PaddleOCR" class="headerlink" title="PaddleOCR"></a>PaddleOCR</h2><h2 id="MinerU"><a href="#MinerU" class="headerlink" title="MinerU"></a>MinerU</h2><p>Steps:</p>
+<ol>
+<li><p>文档预处理<br>PyMuPDF过滤掉不能处理（比如加密文档）的文档，提取PDF metadata：文档分类、语言类型、页码等<br><strong>语言识别</strong><br>主要支持中、英文识别，作为OCR识别的参数。<br><strong>乱码识别</strong><br>提前识别乱码，保证OCR识别文字的效果。<br><strong>扫描PDF识别</strong><br>基于文本的PDF，直接使用PyMuPDF。<br>扫描件PDF，需要开启OCR。<br><strong>页面metadata抽取</strong><br>比如：总页数，页面的宽度、高度。</p>
+</li>
+<li><p>文档内容解析<br>PDF-Extract-Kit model library检测不同的region并识别相应region的内容。</p>
+</li>
+</ol>
+<p>MinerU使用了5个模型，分别用于：layer检测、公式检测、表格检测、公式识别、OCR。<br><strong>Layerout检测</strong></p>
+<ol>
+<li><p>PDF-Extract-Kit layerout检测算法：实时目标检测算法YOLOv10、Layoutlmv3</p>
+</li>
+<li><p>数据集<br>2.1 多样化数据选择：学术paper、电子书、textbooks、试卷、杂志、PPT、研究报告等<br>2.2 对文档组成部分中涉及的版面标注类型进行分类，包括：标题、正文段落、图片、图片标题、表格、表格标题、图片表格注释、行内公式、公式标签，以及需舍弃的类型。<br>2.3 模型训练：<br>微调检测模型<br>2.4 迭代数据选择和模型训练</p>
+</li>
+<li><p>模型结构</p>
+</li>
+<li><p>评估指标</p>
+</li>
+</ol>
+<p><strong>公式检测</strong><br>公式如果不能提前被检测，后续的文本识别很容易将公式部分识别为乱码。</p>
+<ol>
+<li>模型：公式检测单独训练了一个基于YOLO的检测模型。</li>
+<li>数据：行内公式、</li>
+</ol>
+<p><strong>公式识别</strong><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2404.15254">UniMERNet</a></p>
+<ol>
+<li><p>数据集<br>训练集：: UniMER-1M：1061791 latex-image对，<br>测试集：UniMER-Test</p>
+</li>
+<li><p>模型结构<br>模型结构基于Swin-Transformer编码器和mBART解码器。<br>输入：公式图片，公式图片经过数据增强模块，转换成多个图像。编码器将图像编码成特征向量。解码器通过交叉注意力机制将图像特征向量和输出的文本序列进行交互生成公式。解码器的输入为：图像特征向量、token向量、位置编码。<br>UniMERNet-Encoder，UniMERNet-Decoder在结构上做了优化提高推理速度，精度稍有损失。</p>
+</li>
+<li><p>任务类型<br>语言模型任务。</p>
+</li>
+<li><p>损失函数<br>交叉熵损失。</p>
+</li>
+<li><p>评估指标<br>bleu<br>编辑距离<br>表达式识别率(Expression Recognition Rate)</p>
+</li>
+</ol>
+<p><strong>表格识别</strong></p>
+<p>从表格中提取结构化数据。<br>表格转Latex<br>表格转html<br>TableMaster：使用PubTabNet数据集。<br>TableMaster将表格识别分解为四个子任务：表结构识别、text line检测、text line识别、box assignment。<br>StructEqTable：使用DocGenome benchmark数据集。<br>StructEqTable：采用端到端的方式进行表格识别。</p>
+<p><strong>OCR识别</strong><br>使用集成到PDF-Extract-Kit中的Paddle-OCR进行文本识别。<br>直接对整页进行OCR识别有时会导致跨列的行被识别为一行，导致错误的语序。<br>对layerout检测识别出的文本块进行OCR文本识别。<br>对有行内公式公式的文本，先通过公式检测模型检测出公式的坐标，将公式mask掉，再执行OCR识别文字，再将公式插回识别结果。</p>
+<ol start="3">
+<li><p>文档内容后处理<br>解决内容顺序的问题。模型识别出文本、图像、公式块等可能会有overlap，OCR识别的文字也可能会有overlap。<br>后处理主要处理边界框的关系：<br>3.1 处理边框包含关系：移除图像和表格区域中的公式和文字，以及公式块中的边框。<br>3.2 部分覆盖关系：使用分割算法（segmentation algorithm）</p>
+</li>
+<li><p>格式转换<br>识别结果为：meta Json，可按需转为markdown或Json格式。</p>
+</li>
+</ol>
+<h3 id="实测效果"><a href="#实测效果" class="headerlink" title="实测效果"></a>实测效果</h3><p>MinerU相比paddlepaddle：行内公式识别还可以；表格也比pp要准点；序号经常错；标题层级基本不分；页眉页脚几乎没有；</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>MacOS</strong><br><a target="_blank" rel="noopener" href="https://github.com/opendatalab/MinerU/issues/315">参考安装</a></p>
+<p>问题：65536 not supported at the MPS device</p>
+<p><strong>Linux</strong></p>
+<h3 id="MinerU-MCP"><a href="#MinerU-MCP" class="headerlink" title="MinerU MCP"></a>MinerU MCP</h3><h3 id="不适应场景"><a href="#不适应场景" class="headerlink" title="不适应场景"></a>不适应场景</h3><ol>
+<li>阅读顺序基于模型对可阅读内容在空间中的分布进行排序，在极端复杂的排版下可能会部分区域乱序</li>
+<li>对竖排文字的支持较为有限</li>
+<li>目录和列表通过规则进行识别，少部分不常见的列表形式可能无法识别</li>
+<li>代码块在layout模型里还没有支持</li>
+<li>漫画书、艺术图册、小学教材、习题尚不能很好解析</li>
+<li>表格识别在复杂表格上可能会出现行&#x2F;列识别错误</li>
+<li>在小语种PDF上，OCR识别可能会出现字符不准确的情况（如阿拉伯文易混淆字符等）</li>
+<li>部分公式可能会无法在markdown中渲染</li>
+</ol>
+<h2 id="MonkeyOCR"><a href="#MonkeyOCR" class="headerlink" title="MonkeyOCR"></a>MonkeyOCR</h2><h3 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h3><p>使用doclayout_yolo进行版面检测（标题、段落、表格、图片区域等）</p>
+<h3 id="关系理解"><a href="#关系理解" class="headerlink" title="关系理解"></a>关系理解</h3><p>处理版面多个内容块之间的关系</p>
+<h3 id="内容识别"><a href="#内容识别" class="headerlink" title="内容识别"></a>内容识别</h3><p>使用视觉理解模型进行内容识别</p>
+<h3 id="实测效果-1"><a href="#实测效果-1" class="headerlink" title="实测效果"></a>实测效果</h3><p><strong>linux</strong></p>
+<h3 id="成本"><a href="#成本" class="headerlink" title="成本"></a>成本</h3><p>评估调用API的成本与部署开源方案的成本</p>
+<p><strong>优化</strong><br>在标准文档上效果非常好，但是拍照场景（文档有弯曲变形或者有阴影）效果比较差。先用文档矫正算法把图片矫正，再进行解析。</p>
+<h2 id="开源工具-1"><a href="#开源工具-1" class="headerlink" title="开源工具"></a>开源工具</h2><p><a target="_blank" rel="noopener" href="https://github.com/opendatalab/MinerU">MinerU</a><br><a target="_blank" rel="noopener" href="https://github.com/Yuliang-Liu/MonkeyOCR">MonkeyOCR</a></p>
+<h2 id="Survey"><a href="#Survey" class="headerlink" title="Survey"></a>Survey</h2><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2507.15085">Aesthetics is Cheap, Show me the Text: An Empirical Evaluation of State-of-the-Art Generative Models for OCR</a></p>
 
                 
               </div>
@@ -336,7 +387,7 @@
   
     <span>></span>
     
-  <a href="/tech-blog/categories/AI/%E6%90%9C%E7%B4%A2%E6%8E%A8%E8%8D%90/" class="category-chain-item">搜索推荐</a>
+  <a href="/tech-blog/categories/AI/%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/" class="category-chain-item">应用实践</a>
   
   
 
@@ -353,9 +404,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tech-blog/tags/%E6%90%9C%E7%B4%A2/" class="print-no-link">#搜索</a>
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tech-blog/tags/%E6%8E%A8%E8%8D%90/" class="print-no-link">#推荐</a>
+        <a href="/tech-blog/tags/Agent/" class="print-no-link">#Agent</a>
+      
+        <a href="/tech-blog/tags/%E5%AE%9E%E8%B7%B5/" class="print-no-link">#实践</a>
       
     </div>
   
@@ -367,8 +420,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>搜索推荐-常见问题</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/06/18/搜索推荐-常见问题/</div>
+      <div>文档解析实战结果</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/06/18/大模型-Agent-效果优化-文档解析(OCR)/</div>
     </div>
     <div class="license-meta">
       
@@ -412,9 +465,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/06/18/%E7%AE%97%E6%B3%95-leetcode/" title="算法-LeetCode分类">
+                      <a href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E6%8F%90%E7%A4%BA%E7%AD%96%E7%95%A5/" title="Agent效果优化——提示策略">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">算法-LeetCode分类</span>
+                        <span class="hidden-mobile">Agent效果优化——提示策略</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -422,8 +475,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/06/18/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-RAG-%E8%AF%AD%E4%B9%89%E5%90%91%E9%87%8F/" title="微调语义向量模型">
-                        <span class="hidden-mobile">微调语义向量模型</span>
+                      <a href="/tech-blog/2025/06/15/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B-TTS%E5%A4%A7%E6%A8%A1%E5%9E%8B/" title="TTS大模型与API报价">
+                        <span class="hidden-mobile">TTS大模型与API报价</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

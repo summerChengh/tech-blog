@@ -1,0 +1,948 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/tech-blog/img/fluid.png">
+  <link rel="icon" href="/tech-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Your Name">
+  <meta name="keywords" content="technology, programming, web development, software engineering">
+  
+    <meta name="description" content="大模型分布式训练框架DeepSpeedGPU底层优化训练数据并行策略模型并行推理压缩Megtron[https:&#x2F;&#x2F;github.com&#x2F;NVIDIA&#x2F;Megatron-LM]大模型推理部署框架Ollamaollama vLLM推理加速vLLM支持的推理加速技术  Paged Attention Continuous batching of incoming requests CUDA&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大模型训练推理部署框架">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/08/06/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84/index.html">
+<meta property="og:site_name" content="Tech Blog">
+<meta property="og:description" content="大模型分布式训练框架DeepSpeedGPU底层优化训练数据并行策略模型并行推理压缩Megtron[https:&#x2F;&#x2F;github.com&#x2F;NVIDIA&#x2F;Megatron-LM]大模型推理部署框架Ollamaollama vLLM推理加速vLLM支持的推理加速技术  Paged Attention Continuous batching of incoming requests CUDA&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-08-06T07:11:00.000Z">
+<meta property="article:modified_time" content="2025-08-06T03:00:03.631Z">
+<meta property="article:author" content="Your Name">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="多模态">
+<meta property="article:tag" content="生成式AI">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>大模型训练推理部署框架 - Tech Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/tech-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/tech-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/tech-blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"summerchengh.github.io","root":"/tech-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"heading_list":["h2","h3","h4"]},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/tech-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/tech-blog/js/utils.js" ></script>
+  <script  src="/tech-blog/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/tech-blog/">
+      <strong>Tech Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tech-blog/contact/" target="_self">
+                <i class="iconfont icon-mail"></i>
+                <span>contact</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/tech-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="大模型训练推理部署框架"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Your Name
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-06 15:11" pubdate>
+          August 6, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          820 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">大模型训练推理部署框架</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="大模型分布式训练框架"><a href="#大模型分布式训练框架" class="headerlink" title="大模型分布式训练框架"></a>大模型分布式训练框架</h1><h2 id="DeepSpeed"><a href="#DeepSpeed" class="headerlink" title="DeepSpeed"></a><a target="_blank" rel="noopener" href="https://github.com/deepspeedai/DeepSpeed">DeepSpeed</a></h2><h3 id="GPU底层优化"><a href="#GPU底层优化" class="headerlink" title="GPU底层优化"></a>GPU底层优化</h3><h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><h4 id="数据并行策略"><a href="#数据并行策略" class="headerlink" title="数据并行策略"></a>数据并行策略</h4><h4 id="模型并行"><a href="#模型并行" class="headerlink" title="模型并行"></a>模型并行</h4><h3 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h3><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><h2 id="Megtron-https-github-com-NVIDIA-Megatron-LM"><a href="#Megtron-https-github-com-NVIDIA-Megatron-LM" class="headerlink" title="Megtron[https://github.com/NVIDIA/Megatron-LM]"></a>Megtron[<a target="_blank" rel="noopener" href="https://github.com/NVIDIA/Megatron-LM]">https://github.com/NVIDIA/Megatron-LM]</a></h2><h1 id="大模型推理部署框架"><a href="#大模型推理部署框架" class="headerlink" title="大模型推理部署框架"></a>大模型推理部署框架</h1><h2 id="Ollama"><a href="#Ollama" class="headerlink" title="Ollama"></a><a target="_blank" rel="noopener" href="https://ollama.com/">Ollama</a></h2><p>ollama</p>
+<h2 id="vLLM"><a href="#vLLM" class="headerlink" title="vLLM"></a><a target="_blank" rel="noopener" href="https://github.com/vllm-project/vllm">vLLM</a></h2><p><strong>推理加速</strong><br>vLLM支持的推理加速技术</p>
+<ol>
+<li>Paged Attention</li>
+<li>Continuous batching of incoming requests</li>
+<li>CUDA&#x2F;HIP graph</li>
+<li>量化：GPTQ, AWQ, AutoRound, INT4, INT8, and FP8</li>
+<li>优化的CUDA kernels：集成了Flash Attention和FlashInfer</li>
+<li>Speculative decoding</li>
+<li>Chunked prefill<br><strong><a href="">支持的开源模型</a></strong></li>
+<li>Transformer系列模型（例如：LLaMa）</li>
+<li>混合专家大语言模型（例如：Mixtral、Deepseek-V2 and V3）</li>
+<li>Embedding模型（例如：E5-Mistral）</li>
+<li>多模态大模型（例如：LLaVA）</li>
+</ol>
+<h1 id="大模型微调工具"><a href="#大模型微调工具" class="headerlink" title="大模型微调工具"></a>大模型微调工具</h1><h2 id="LlamaFactory-https-github-com-hiyouga-LLaMA-Factory"><a href="#LlamaFactory-https-github-com-hiyouga-LLaMA-Factory" class="headerlink" title="LlamaFactory[https://github.com/hiyouga/LLaMA-Factory]"></a>LlamaFactory[<a target="_blank" rel="noopener" href="https://github.com/hiyouga/LLaMA-Factory]">https://github.com/hiyouga/LLaMA-Factory]</a></h2><h2 id="Unsloth"><a href="#Unsloth" class="headerlink" title="Unsloth"></a>Unsloth</h2><p>提升微调速度2-5倍。</p>
+<p><strong>内存优化</strong></p>
+<p><strong>算子融合</strong></p>
+<p><strong>针对LoRA的特殊优化</strong></p>
+<h1 id="可扩展的AI工具"><a href="#可扩展的AI工具" class="headerlink" title="可扩展的AI工具"></a>可扩展的AI工具</h1><h2 id="Ray"><a href="#Ray" class="headerlink" title="Ray"></a><a target="_blank" rel="noopener" href="https://github.com/ray-project/ray">Ray</a></h2><h1 id="算力生态"><a href="#算力生态" class="headerlink" title="算力生态"></a>算力生态</h1><h2 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h2><h3 id="国际市场GPU市场占比"><a href="#国际市场GPU市场占比" class="headerlink" title="国际市场GPU市场占比"></a>国际市场GPU市场占比</h3><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>市场份额</th>
+<th>主要产品线</th>
+<th>优势</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NVIDIA</strong></td>
+<td>约80-85%的独立GPU市场</td>
+<td>GeForce RTX系列 (消费级)<br>Tesla&#x2F;Quadro系列 (专业级)<br>H100&#x2F;A100&#x2F;V100 (数据中心&#x2F;AI训练)</td>
+<td>CUDA生态、AI训练优化、技术领先</td>
+</tr>
+<tr>
+<td><strong>AMD</strong></td>
+<td>约10-15%的独立GPU市场</td>
+<td>Radeon RX系列 (消费级)<br>Instinct MI系列 (数据中心&#x2F;AI)</td>
+<td>性价比、开源生态</td>
+</tr>
+<tr>
+<td><strong>Intel</strong></td>
+<td>约5%的独立GPU市场</td>
+<td>Arc系列 (消费级)<br>Ponte Vecchio (数据中心)</td>
+<td>集成显卡市场主导地位</td>
+</tr>
+<tr>
+<td><strong>其他厂商</strong></td>
+<td>约1-2%</td>
+<td>Imagination Technologies、ARM Mali等</td>
+<td>细分市场应用</td>
+</tr>
+</tbody></table>
+<h3 id="AI训练专用GPU市场"><a href="#AI训练专用GPU市场" class="headerlink" title="AI训练专用GPU市场"></a>AI训练专用GPU市场</h3><ul>
+<li><strong>NVIDIA</strong>: 95%+的市场份额</li>
+<li><strong>主要产品</strong>: H100、A100、V100</li>
+<li><strong>应用场景</strong>: 大模型训练、推理、数据中心</li>
+</ul>
+<h3 id="市场趋势"><a href="#市场趋势" class="headerlink" title="市场趋势"></a>市场趋势</h3><ul>
+<li><strong>生态建设</strong>: CUDA vs ROCm vs OneAPI竞争</li>
+</ul>
+<h2 id="云服务公司"><a href="#云服务公司" class="headerlink" title="云服务公司"></a>云服务公司</h2><h3 id="全球云服务市场占比"><a href="#全球云服务市场占比" class="headerlink" title="全球云服务市场占比"></a>全球云服务市场占比</h3><table>
+<thead>
+<tr>
+<th>云服务商</th>
+<th>全球市场份额</th>
+<th>主要服务</th>
+<th>特色优势</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Amazon Web Services (AWS)</strong></td>
+<td>约32%</td>
+<td>EC2, S3, Lambda, SageMaker</td>
+<td>服务最全面、生态最成熟</td>
+</tr>
+<tr>
+<td><strong>Microsoft Azure</strong></td>
+<td>约23%</td>
+<td>Azure VM, Azure ML, Cognitive Services</td>
+<td>企业集成、混合云优势</td>
+</tr>
+<tr>
+<td><strong>Google Cloud Platform (GCP)</strong></td>
+<td>约10%</td>
+<td>Compute Engine, Vertex AI, BigQuery</td>
+<td>AI&#x2F;ML技术领先、数据分析</td>
+</tr>
+<tr>
+<td><strong>阿里云 (Alibaba Cloud)</strong></td>
+<td>约5%</td>
+<td>ECS, PAI, 通义千问</td>
+<td>亚太市场领先</td>
+</tr>
+<tr>
+<td><strong>其他云服务商</strong></td>
+<td>约30%</td>
+<td>IBM Cloud, Oracle Cloud, 腾讯云等</td>
+<td>细分领域专业化</td>
+</tr>
+</tbody></table>
+<h3 id="中国云服务市场占比"><a href="#中国云服务市场占比" class="headerlink" title="中国云服务市场占比"></a>中国云服务市场占比</h3><table>
+<thead>
+<tr>
+<th>云服务商</th>
+<th>中国市场份额</th>
+<th>主要产品</th>
+<th>本土化优势</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>阿里云</strong></td>
+<td>约40%</td>
+<td>ECS, PAI平台, 通义千问</td>
+<td>电商生态、本土化服务</td>
+</tr>
+<tr>
+<td><strong>腾讯云</strong></td>
+<td>约18%</td>
+<td>CVM, TI平台, 混元大模型</td>
+<td>社交游戏生态、To B转型</td>
+</tr>
+<tr>
+<td><strong>华为云</strong></td>
+<td>约15%</td>
+<td>ECS, ModelArts, 盘古大模型</td>
+<td>企业市场、自研芯片</td>
+</tr>
+<tr>
+<td><strong>百度智能云</strong></td>
+<td>约8%</td>
+<td>BCC, 飞桨平台, 文心一言</td>
+<td>AI技术积累、搜索生态</td>
+</tr>
+<tr>
+<td><strong>天翼云</strong></td>
+<td>约7%</td>
+<td>云主机, 天翼云AI</td>
+<td>运营商背景、政企市场</td>
+</tr>
+<tr>
+<td><strong>京东云</strong></td>
+<td>约3%</td>
+<td>云主机, 言犀大模型</td>
+<td>零售供应链、物流优势</td>
+</tr>
+<tr>
+<td><strong>其他</strong></td>
+<td>约9%</td>
+<td>金山云、UCloud、青云等</td>
+<td>垂直领域专业化</td>
+</tr>
+</tbody></table>
+<h3 id="AI大模型云服务对比"><a href="#AI大模型云服务对比" class="headerlink" title="AI大模型云服务对比"></a>AI大模型云服务对比</h3><table>
+<thead>
+<tr>
+<th>云服务商</th>
+<th>大模型产品</th>
+<th>GPU资源</th>
+<th>特色能力</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>阿里云</strong></td>
+<td>通义千问系列</td>
+<td>A100&#x2F;H100集群</td>
+<td>多模态、API调用</td>
+</tr>
+<tr>
+<td><strong>腾讯云</strong></td>
+<td>混元大模型</td>
+<td>A100&#x2F;V100集群</td>
+<td>文档理解、代码生成</td>
+</tr>
+<tr>
+<td><strong>华为云</strong></td>
+<td>盘古大模型</td>
+<td>昇腾910集群</td>
+<td>行业定制、自研芯片</td>
+</tr>
+<tr>
+<td><strong>百度智能云</strong></td>
+<td>文心一言</td>
+<td>A100集群</td>
+<td>中文优化、搜索集成</td>
+</tr>
+<tr>
+<td><strong>AWS</strong></td>
+<td>Bedrock平台</td>
+<td>P4&#x2F;P5实例</td>
+<td>多模型集成、企业级</td>
+</tr>
+<tr>
+<td><strong>Azure</strong></td>
+<td>OpenAI服务</td>
+<td>ND系列</td>
+<td>GPT-4集成、Office协同</td>
+</tr>
+<tr>
+<td><strong>GCP</strong></td>
+<td>Vertex AI</td>
+<td>TPU v4&#x2F;v5</td>
+<td>自研TPU、开源友好</td>
+</tr>
+</tbody></table>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2403241">9大主流分布式深度学习框架简介</a></p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2403.13372">LLAMAFACTORY: Unified Efficient Fine-Tuning of 100+ Language Models</a></p>
+<h2 id="GPU芯片"><a href="#GPU芯片" class="headerlink" title="GPU芯片"></a>GPU芯片</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/14857803963">国产GPU芯片</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+      
+        <a href="/tech-blog/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/" class="print-no-link">#多模态</a>
+      
+        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>大模型训练推理部署框架</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/08/06/大模型-分布式架构/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Your Name</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 6, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tech-blog/2025/08/05/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B-Qwen%E7%B3%BB%E5%88%97/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/tech-blog/js/events.js" ></script>
+<script  src="/tech-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/tech-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/tech-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/tech-blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
