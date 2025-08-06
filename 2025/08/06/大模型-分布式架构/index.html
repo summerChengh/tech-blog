@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="大模型分布式训练框架DeepSpeedGPU底层优化训练数据并行策略模型并行推理压缩Megtron大模型推理部署框架Ollamaollama vLLM推理加速vLLM支持的推理加速技术  Paged Attention Continuous batching of incoming requests CUDA&#x2F;HIP graph 量化：GPTQ, AWQ, AutoRound, INT4">
+    <meta name="description" content="大模型分布式训练框架主流框架对比   框架 开发机构 主要特性 并行策略 优势 适用场景    DeepSpeed Microsoft ZeRO优化器混合精度训练推理优化 数据并行模型并行流水线并行 内存优化易于使用推理支持 大规模预训练微调推理部署   Megatron-LM NVIDIA Transformer优化混合并行序列并行 张量并行流水线并行数据并行 Transformer专门优化高性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型训练推理部署框架">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/08/06/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="大模型分布式训练框架DeepSpeedGPU底层优化训练数据并行策略模型并行推理压缩Megtron大模型推理部署框架Ollamaollama vLLM推理加速vLLM支持的推理加速技术  Paged Attention Continuous batching of incoming requests CUDA&#x2F;HIP graph 量化：GPTQ, AWQ, AutoRound, INT4">
+<meta property="og:description" content="大模型分布式训练框架主流框架对比   框架 开发机构 主要特性 并行策略 优势 适用场景    DeepSpeed Microsoft ZeRO优化器混合精度训练推理优化 数据并行模型并行流水线并行 内存优化易于使用推理支持 大规模预训练微调推理部署   Megatron-LM NVIDIA Transformer优化混合并行序列并行 张量并行流水线并行数据并行 Transformer专门优化高性">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-08-06T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-08-06T03:24:09.571Z">
+<meta property="article:modified_time" content="2025-08-06T03:29:55.226Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          806 words
+          1.1k words
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          7 mins
+          9 mins
         
       </span>
     
@@ -298,8 +298,59 @@
             
               <div class="markdown-body">
                 
-                <h1 id="大模型分布式训练框架"><a href="#大模型分布式训练框架" class="headerlink" title="大模型分布式训练框架"></a>大模型分布式训练框架</h1><h2 id="DeepSpeed"><a href="#DeepSpeed" class="headerlink" title="DeepSpeed"></a><a target="_blank" rel="noopener" href="https://github.com/deepspeedai/DeepSpeed">DeepSpeed</a></h2><h3 id="GPU底层优化"><a href="#GPU底层优化" class="headerlink" title="GPU底层优化"></a>GPU底层优化</h3><h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><h4 id="数据并行策略"><a href="#数据并行策略" class="headerlink" title="数据并行策略"></a>数据并行策略</h4><h4 id="模型并行"><a href="#模型并行" class="headerlink" title="模型并行"></a>模型并行</h4><h3 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h3><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><h2 id="Megtron"><a href="#Megtron" class="headerlink" title="Megtron"></a><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/Megatron-LM">Megtron</a></h2><h1 id="大模型推理部署框架"><a href="#大模型推理部署框架" class="headerlink" title="大模型推理部署框架"></a>大模型推理部署框架</h1><h2 id="Ollama"><a href="#Ollama" class="headerlink" title="Ollama"></a><a target="_blank" rel="noopener" href="https://ollama.com/">Ollama</a></h2><p>ollama</p>
-<h2 id="vLLM"><a href="#vLLM" class="headerlink" title="vLLM"></a><a target="_blank" rel="noopener" href="https://github.com/vllm-project/vllm">vLLM</a></h2><p><strong>推理加速</strong><br>vLLM支持的推理加速技术</p>
+                <h1 id="大模型分布式训练框架"><a href="#大模型分布式训练框架" class="headerlink" title="大模型分布式训练框架"></a>大模型分布式训练框架</h1><h2 id="主流框架对比"><a href="#主流框架对比" class="headerlink" title="主流框架对比"></a>主流框架对比</h2><table>
+<thead>
+<tr>
+<th>框架</th>
+<th>开发机构</th>
+<th>主要特性</th>
+<th>并行策略</th>
+<th>优势</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/deepspeedai/DeepSpeed">DeepSpeed</a></strong></td>
+<td>Microsoft</td>
+<td>ZeRO优化器<br>混合精度训练<br>推理优化</td>
+<td>数据并行<br>模型并行<br>流水线并行</td>
+<td>内存优化<br>易于使用<br>推理支持</td>
+<td>大规模预训练<br>微调<br>推理部署</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/Megatron-LM">Megatron-LM</a></strong></td>
+<td>NVIDIA</td>
+<td>Transformer优化<br>混合并行<br>序列并行</td>
+<td>张量并行<br>流水线并行<br>数据并行</td>
+<td>Transformer专门优化<br>高性能<br>大规模支持</td>
+<td>超大规模语言模型<br>GPT&#x2F;BERT训练</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/facebookresearch/fairscale">FairScale</a></strong></td>
+<td>Meta</td>
+<td>FSDP<br>模块化设计<br>混合精度</td>
+<td>数据并行<br>模型并行<br>专家并行</td>
+<td>模块化<br>易集成<br>内存高效</td>
+<td>研究实验<br>中等规模训练</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/horovod/horovod">Horovod</a></strong></td>
+<td>Uber</td>
+<td>分布式训练<br>多框架支持<br>高效通信</td>
+<td>数据并行<br>梯度聚合</td>
+<td>简单易用<br>框架无关<br>成熟稳定</td>
+<td>传统深度学习<br>多框架环境</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/hpcaitech/ColossalAI">ColossalAI</a></strong></td>
+<td>HPC-AI Tech</td>
+<td>自动并行<br>异构训练<br>低资源训练</td>
+<td>混合并行<br>ZeRO-like优化</td>
+<td>自动化程度高<br>资源利用率高<br>易于扩展</td>
+<td>资源受限环境<br>自动优化需求</td>
+</tr>
+</tbody></table>
+<h2 id="DeepSpeed"><a href="#DeepSpeed" class="headerlink" title="DeepSpeed"></a><a target="_blank" rel="noopener" href="https://github.com/deepspeedai/DeepSpeed">DeepSpeed</a></h2><h3 id="GPU底层优化"><a href="#GPU底层优化" class="headerlink" title="GPU底层优化"></a>GPU底层优化</h3><h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><h4 id="数据并行策略"><a href="#数据并行策略" class="headerlink" title="数据并行策略"></a>数据并行策略</h4><h4 id="模型并行"><a href="#模型并行" class="headerlink" title="模型并行"></a>模型并行</h4><h3 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h3><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><h2 id="Megtron"><a href="#Megtron" class="headerlink" title="Megtron"></a><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/Megatron-LM">Megtron</a></h2><h1 id="大模型推理部署框架"><a href="#大模型推理部署框架" class="headerlink" title="大模型推理部署框架"></a>大模型推理部署框架</h1><h2 id="Ollama"><a href="#Ollama" class="headerlink" title="Ollama"></a><a target="_blank" rel="noopener" href="https://ollama.com/">Ollama</a></h2><h2 id="vLLM"><a href="#vLLM" class="headerlink" title="vLLM"></a><a target="_blank" rel="noopener" href="https://github.com/vllm-project/vllm">vLLM</a></h2><p><strong>推理加速</strong><br>vLLM支持的推理加速技术</p>
 <ol>
 <li>Paged Attention</li>
 <li>Continuous batching of incoming requests</li>
