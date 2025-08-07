@@ -27,7 +27,7 @@
 <meta property="og:description" content="本地部署ollama部署自定义（huggingface&#x2F;modelscope）大模型支持部署GGUF格式大模型。GGUF是一种由开发者Georgi Gerganov提出的大模型文件格式，全称为GPT-Generated Unified Format。 ModelFile文件ModelFile是ollama用于描述和配置自定义大模型部署的核心文件，通常命名为Modelfile（无扩展名，类">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-28T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-06-17T04:34:22.192Z">
+<meta property="article:modified_time" content="2025-08-06T04:18:29.879Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          722 words
+          510 words
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          7 mins
+          5 mins
         
       </span>
     
@@ -332,36 +332,50 @@
 <li><p>模型训练时的上下文长度与推理时的处理方式。</p>
 </li>
 </ol>
-<h2 id="LMStudio"><a href="#LMStudio" class="headerlink" title="LMStudio"></a>LMStudio</h2><ul>
-<li>跨平台桌面端大模型推理与管理工具，支持多种模型格式（如GGUF、GGML、llama.cpp等）。</li>
-<li>提供可视化界面，便于模型加载、参数调整和对话管理。</li>
-<li>适合个人用户和开发者快速体验和测试本地大模型。</li>
-</ul>
-<h2 id="LMDeploy"><a href="#LMDeploy" class="headerlink" title="LMDeploy"></a>LMDeploy</h2><ul>
-<li>由上海人工智能实验室开源，专注于高效推理和多端部署。</li>
-<li>支持多种硬件（CPU、GPU、NPU）和主流大模型（Llama、Qwen等）。</li>
-<li>适合企业级应用和大规模推理场景。</li>
-</ul>
-<h2 id="Text-Generation-WebUI"><a href="#Text-Generation-WebUI" class="headerlink" title="Text Generation WebUI"></a>Text Generation WebUI</h2><ul>
-<li>基于Web的多模型推理和管理平台，支持Llama、ChatGLM、RWKV等。</li>
-<li>提供丰富的插件和可视化功能，便于自定义和扩展。</li>
-<li>适合需要多模型管理和交互的用户。</li>
-</ul>
-<h2 id="llama-cpp"><a href="#llama-cpp" class="headerlink" title="llama.cpp"></a>llama.cpp</h2><ul>
-<li>轻量级C&#x2F;C++实现，支持在本地CPU、树莓派等低资源设备上运行Llama系列模型。</li>
-<li>支持量化推理，极大降低硬件门槛。</li>
-<li>适合嵌入式、边缘计算和个人PC用户。</li>
-</ul>
-<h2 id="vllm"><a href="#vllm" class="headerlink" title="vllm"></a>vllm</h2><ul>
-<li>高性能推理引擎，专为大语言模型的高吞吐量推理优化。</li>
-<li>支持KVCache高效管理和多用户并发。</li>
-<li>适合需要高并发、低延迟的本地或云端部署。</li>
-</ul>
-<h2 id="DeepSpeed"><a href="#DeepSpeed" class="headerlink" title="DeepSpeed"></a>DeepSpeed</h2><ul>
-<li>微软开源的深度学习训练与推理加速库。</li>
-<li>支持大模型分布式训练、推理和内存优化。</li>
-<li>适合科研、企业级大规模模型部署。</li>
-</ul>
+<h2 id="笔记本电脑部署工具对比"><a href="#笔记本电脑部署工具对比" class="headerlink" title="笔记本电脑部署工具对比"></a>笔记本电脑部署工具对比</h2><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>界面类型</th>
+<th>支持格式</th>
+<th>硬件要求</th>
+<th>特色功能</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><a target="_blank" rel="noopener" href="https://ollama.com/">Ollama</a></strong></td>
+<td>命令行</td>
+<td>GGUF</td>
+<td>CPU&#x2F;GPU</td>
+<td>简单易用<br>一键安装模型<br>API接口</td>
+<td>开发者<br>命令行爱好者</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://lmstudio.ai/">LM Studio</a></strong></td>
+<td>桌面GUI</td>
+<td>GGUF&#x2F;GGML</td>
+<td>CPU&#x2F;GPU</td>
+<td>可视化界面<br>参数调节<br>模型管理</td>
+<td>普通用户<br>图形界面偏好</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/oobabooga/text-generation-webui">Text Generation WebUI</a></strong></td>
+<td>Web界面</td>
+<td>多种格式</td>
+<td>CPU&#x2F;GPU</td>
+<td>丰富插件<br>多模型支持<br>扩展性强</td>
+<td>研究实验<br>功能定制</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/ggerganov/llama.cpp">llama.cpp</a></strong></td>
+<td>命令行</td>
+<td>GGUF</td>
+<td>CPU优先</td>
+<td>轻量级<br>C++实现<br>低资源消耗</td>
+<td>嵌入式<br>低配置设备</td>
+</tr>
+</tbody></table>
 
                 
               </div>

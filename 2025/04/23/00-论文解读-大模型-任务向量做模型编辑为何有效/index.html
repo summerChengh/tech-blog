@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="作者介绍： 论文标题：When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers论文地址：https:&#x2F;&#x2F;openreview.net&#x2F;pdf?id&#x3D;vRvVVb0NAz 背景任务向量（task vector）指微调得到的模型与预训练模型之">
+    <meta name="description" content="背景任务向量（task vector）指微调得到的模型与预训练模型之间的权重差值。将不同的任务向量进行线性算数运算后叠加在一个预训练模型上可以直接赋予该模型新的能力，比如多任务学习、机器遗忘、分布外泛化等，这种基于任务向量的直接运算对模型进行编辑做下游任务预测的方法称为任务运算。该文章为任务加减法运算的有效性提供了一个特征学习的理论框架。 参考When is Task Vector Provabl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文解读系列-任务向量做模型编辑为何有效？">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/23/00-%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB-%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%BB%E5%8A%A1%E5%90%91%E9%87%8F%E5%81%9A%E6%A8%A1%E5%9E%8B%E7%BC%96%E8%BE%91%E4%B8%BA%E4%BD%95%E6%9C%89%E6%95%88/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="作者介绍： 论文标题：When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers论文地址：https:&#x2F;&#x2F;openreview.net&#x2F;pdf?id&#x3D;vRvVVb0NAz 背景任务向量（task vector）指微调得到的模型与预训练模型之">
+<meta property="og:description" content="背景任务向量（task vector）指微调得到的模型与预训练模型之间的权重差值。将不同的任务向量进行线性算数运算后叠加在一个预训练模型上可以直接赋予该模型新的能力，比如多任务学习、机器遗忘、分布外泛化等，这种基于任务向量的直接运算对模型进行编辑做下游任务预测的方法称为任务运算。该文章为任务加减法运算的有效性提供了一个特征学习的理论框架。 参考When is Task Vector Provabl">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-23T02:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-23T03:01:10.288Z">
+<meta property="article:modified_time" content="2025-08-07T03:32:48.169Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="深度学习">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          171 words
+          155 words
         
       </span>
     
@@ -297,9 +297,8 @@
             
               <div class="markdown-body">
                 
-                <p>作者介绍：</p>
-<p>论文标题：<br>When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers<br>论文地址：<br><a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=vRvVVb0NAz">https://openreview.net/pdf?id=vRvVVb0NAz</a></p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>任务向量（task vector）指微调得到的模型与预训练模型之间的权重差值。<br>将不同的任务向量进行线性算数运算后叠加在一个预训练模型上可以直接赋予该模型新的能力，比如多任务学习、机器遗忘、分布外泛化等，这种基于任务向量的直接运算对模型进行编辑做下游任务预测的方法称为任务运算。<br>该文章为任务加减法运算的有效性提供了一个特征学习的理论框架。</p>
+                <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>任务向量（task vector）指微调得到的模型与预训练模型之间的权重差值。<br>将不同的任务向量进行线性算数运算后叠加在一个预训练模型上可以直接赋予该模型新的能力，比如多任务学习、机器遗忘、分布外泛化等，这种基于任务向量的直接运算对模型进行编辑做下游任务预测的方法称为任务运算。<br>该文章为任务加减法运算的有效性提供了一个特征学习的理论框架。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=vRvVVb0NAz">When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers</a></p>
 
                 
               </div>

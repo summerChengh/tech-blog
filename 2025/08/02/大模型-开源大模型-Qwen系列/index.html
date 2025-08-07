@@ -19,24 +19,25 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="超长上下文衡量超长上下文的核心维度   维度 关键问题 示例指标或方法    🧠 记忆能力 模型能否保留并使用早期输入信息？ Attention Score, Retrieval Accuracy   🔍 信息利用 模型是否正确引用了上下文中的关键信息？ Answer Correctness, Source Attribution   📏 上下文距离 模型能处理的最大“有效”token跨度是">
+    <meta name="description" content="Sharing insights, tutorials, and experiences in software development">
 <meta property="og:type" content="article">
-<meta property="og:title" content="窗口外推技术综述">
-<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-LLM%E7%AA%97%E5%8F%A3%E5%A4%96%E6%8E%A8%E6%8A%80%E6%9C%AF%E7%BB%BC%E8%BF%B0/index.html">
+<meta property="og:title" content="Qwen大模型">
+<meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/08/02/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B-Qwen%E7%B3%BB%E5%88%97/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="超长上下文衡量超长上下文的核心维度   维度 关键问题 示例指标或方法    🧠 记忆能力 模型能否保留并使用早期输入信息？ Attention Score, Retrieval Accuracy   🔍 信息利用 模型是否正确引用了上下文中的关键信息？ Answer Correctness, Source Attribution   📏 上下文距离 模型能处理的最大“有效”token跨度是">
+<meta property="og:description" content="Sharing insights, tutorials, and experiences in software development">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-26T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-08-07T02:14:57.557Z">
+<meta property="article:published_time" content="2025-08-02T06:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-07T03:34:52.825Z">
 <meta property="article:author" content="Your Name">
-<meta property="article:tag" content="AI">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="生成式AI">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="大模型">
+<meta property="article:tag" content="源码解读">
+<meta property="article:tag" content="Qwen">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>窗口外推技术综述 - Tech Blog</title>
+  <title>Qwen大模型 - Tech Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="窗口外推技术综述"></span>
+            <span id="subtitle" data-typed-text="Qwen大模型"></span>
           
         </div>
 
@@ -232,8 +233,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-26 15:11" pubdate>
-          March 26, 2025 pm
+        <time datetime="2025-08-02 14:00" pubdate>
+          August 2, 2025 pm
         </time>
       </span>
     
@@ -244,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k words
+          0 words
         
       </span>
     
@@ -255,7 +256,7 @@
         
         
         
-          13 mins
+          1 mins
         
       </span>
     
@@ -292,233 +293,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">窗口外推技术综述</h1>
+            <h1 id="seo-header">Qwen大模型</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="超长上下文"><a href="#超长上下文" class="headerlink" title="超长上下文"></a>超长上下文</h1><h2 id="衡量超长上下文的核心维度"><a href="#衡量超长上下文的核心维度" class="headerlink" title="衡量超长上下文的核心维度"></a>衡量超长上下文的核心维度</h2><table>
-<thead>
-<tr>
-<th>维度</th>
-<th>关键问题</th>
-<th>示例指标或方法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>🧠 记忆能力</td>
-<td>模型能否保留并使用早期输入信息？</td>
-<td>Attention Score, Retrieval Accuracy</td>
-</tr>
-<tr>
-<td>🔍 信息利用</td>
-<td>模型是否正确引用了上下文中的关键信息？</td>
-<td>Answer Correctness, Source Attribution</td>
-</tr>
-<tr>
-<td>📏 上下文距离</td>
-<td>模型能处理的最大“有效”token跨度是多少？</td>
-<td>Token Distance vs Accuracy 曲线</td>
-</tr>
-<tr>
-<td>🧱 上下文稀疏鲁棒性</td>
-<td>插入无关信息后仍能保持性能吗？</td>
-<td>Needle-In-A-Haystack、Passkey等测试</td>
-</tr>
-<tr>
-<td>⚡ 推理效率</td>
-<td>上下文越长是否大幅拖慢速度？</td>
-<td>推理时间、显存使用、Token&#x2F;s</td>
-</tr>
-<tr>
-<td>🧠 泛化能力</td>
-<td>模型对训练时未见过的长上下文是否泛化？</td>
-<td>Interpolation vs Extrapolation Comparison</td>
-</tr>
-</tbody></table>
-<h2 id="主流评估方法"><a href="#主流评估方法" class="headerlink" title="主流评估方法"></a>主流评估方法</h2><table>
-<thead>
-<tr>
-<th>方法&#x2F;指标</th>
-<th>类型</th>
-<th>适用任务</th>
-<th>能力维度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Needle-in-a-Haystack</td>
-<td>对抗测试</td>
-<td>通用</td>
-<td>远距记忆、干扰鲁棒性</td>
-</tr>
-<tr>
-<td>Passkey Test</td>
-<td>控制变量实验</td>
-<td>通用</td>
-<td>记忆保持、跨度泛化</td>
-</tr>
-<tr>
-<td>文档问答 QA</td>
-<td>应用场景评估</td>
-<td>法律、教育、企业RAG</td>
-<td>信息提取、引用准确性</td>
-</tr>
-<tr>
-<td>LRA</td>
-<td>标准评测集</td>
-<td>学术</td>
-<td>长序列建模能力</td>
-</tr>
-<tr>
-<td>多轮对话回忆评估</td>
-<td>用户模拟</td>
-<td>助理型模型</td>
-<td>记忆力、上下文一致性</td>
-</tr>
-<tr>
-<td>写作连贯性分析</td>
-<td>主观评分+BLEU</td>
-<td>生成类任务</td>
-<td>一致性、记忆性</td>
-</tr>
-</tbody></table>
-<h1 id="主流技术路线"><a href="#主流技术路线" class="headerlink" title="主流技术路线"></a>主流技术路线</h1><p>目前已有多种技术路线尝试破解以上挑战，分别从结构优化、注意力稀疏化、位置编码设计、外部记忆机制等方向切入。</p>
-<p>✅ 路线一：稀疏注意力机制（Sparse Attention）<br>⏩ 方法代表：<br>Longformer（fixed + sliding window attention）</p>
-<p>BigBird（window + global + random）</p>
-<p>Sparse Transformer（block sparse）</p>
-<p>Reformer（LSH attention）</p>
-<p>📌 优势：<br>将O(n²)降为 O(n√n) 或更低；</p>
-<p>结构清晰，较容易在已有Transformer框架中集成。</p>
-<p>⚠️ 限制：<br>对长距离依赖仍然有限制；</p>
-<p>在一般语言任务中未显著超过标准全注意力模型。</p>
-<p>✅ 路线二：Flash Attention &#x2F; Linear Attention 加速<br>⏩ 方法代表：<br>FlashAttention v1&#x2F;v2（OpenAI）</p>
-<p>xFormers、Memory-efficient Attention</p>
-<p>Performer &#x2F; Linear Transformer（内积核逼近）</p>
-<p>📌 优势：<br>保留全注意力机制，降低显存需求；</p>
-<p>FlashAttention 在 GPT-4&#x2F;Claude等模型中广泛使用。</p>
-<p>⚠️ 限制：<br>FlashAttention 加速的是“计算效率”，并不提升“信息记忆能力”；</p>
-<p>Linear Attention 有泛化退化的问题。</p>
-<p>✅ 路线三：改进位置编码以支持无限泛化<br>⏩ 方法代表：<br>RoPE缩放（如ChatGPT-4-128k）</p>
-<p>YaRN（RoPE延拓技术，2023）</p>
-<p>ALiBi（位置偏移，Meta）</p>
-<p>Position Interpolation (Pi) - 如Claude 100k使用</p>
-<p>📌 优势：<br>实现 RoPE 向更长范围的“插值”泛化；</p>
-<p>在不改变模型结构的情况下，延长上下文窗口（RoPE缩放即可）。</p>
-<p>⚠️ 限制：<br>插值策略对不同任务鲁棒性不同；</p>
-<p>训练阶段未见的长序列在推理时表现可能不稳定。</p>
-<p>✅ 路线四：外部记忆机制（Memory Augmented &#x2F; Retrieval）<br>⏩ 方法代表：<br>RETRO (DeepMind)：检索增强Transformer</p>
-<p>RAG (Facebook)、LlamaIndex &#x2F; LangChain Memory</p>
-<p>MemGPT、LongChat（Memory Injection）</p>
-<p>📌 优势：<br>通过检索外部知识库或历史记录，实现“动态上下文扩展”；</p>
-<p>提高信息检索能力而非模型“死记硬背”。</p>
-<p>⚠️ 限制：<br>需要额外设计召回机制；</p>
-<p>召回结果质量决定模型上下文质量。</p>
-<p>✅ 路线五：分块处理和延迟更新策略<br>⏩ 方法代表：<br>Transformer-XL（带有segment-level recurrence）</p>
-<p>GPTCache &#x2F; Streaming LLMs</p>
-<p>Windowed Transformer + Recurrence</p>
-<p>📌 优势：<br>模拟“上下文记忆”的方式实现跨块信息流；</p>
-<p>支持流式、低延迟推理。</p>
-<p>⚠️ 限制：<br>对生成任务效果不如全局上下文直接可见。</p>
-<h1 id="关键场景与超长上下文需求"><a href="#关键场景与超长上下文需求" class="headerlink" title="关键场景与超长上下文需求"></a>关键场景与超长上下文需求</h1><table>
-<thead>
-<tr>
-<th>场景类别</th>
-<th>示例任务</th>
-<th>对上下文长度的需求</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>学术&#x2F;法律文档</td>
-<td>合同分析、论文问答</td>
-<td>✅必须全文处理</td>
-</tr>
-<tr>
-<td>多轮对话</td>
-<td>私人助理、多Agent协作</td>
-<td>✅需记住多轮上下文</td>
-</tr>
-<tr>
-<td>代码理解</td>
-<td>项目级代码生成</td>
-<td>✅需跨文件全局语义</td>
-</tr>
-<tr>
-<td>RAG系统</td>
-<td>企业知识库问答</td>
-<td>✅上下文拼接需保持完整</td>
-</tr>
-<tr>
-<td>文本创作</td>
-<td>小说剧本生成</td>
-<td>✅情节一致性要求高</td>
-</tr>
-<tr>
-<td>多模态场景</td>
-<td>视频理解、电子病历分析</td>
-<td>✅时序长度需求极高</td>
-</tr>
-</tbody></table>
-<h2 id="多轮对话-Agent协作系统"><a href="#多轮对话-Agent协作系统" class="headerlink" title="多轮对话&#x2F;Agent协作系统"></a>多轮对话&#x2F;Agent协作系统</h2><h2 id="长文档理解"><a href="#长文档理解" class="headerlink" title="长文档理解"></a>长文档理解</h2><h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><h2 id="RAG系统"><a href="#RAG系统" class="headerlink" title="RAG系统"></a>RAG系统</h2><p><strong>企业内部文档问答</strong><br><strong>基于大量文档的洞察报告生成</strong></p>
-<h2 id="长文档生成"><a href="#长文档生成" class="headerlink" title="长文档生成"></a>长文档生成</h2><p><strong>长篇小说&#x2F;剧本&#x2F;</strong><br><strong>视频脚本&#x2F;课程讲义生成</strong></p>
-<h1 id="窗口外推技术"><a href="#窗口外推技术" class="headerlink" title="窗口外推技术"></a>窗口外推技术</h1><h2 id="直接外推"><a href="#直接外推" class="headerlink" title="直接外推"></a>直接外推</h2><p>提前预留一些维度，训练阶段设为0，推理阶段直接改为其他数字。</p>
-<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><h3 id="线性内插"><a href="#线性内插" class="headerlink" title="线性内插"></a>线性内插</h3><p>将不在预训练范围的位置除整数后映射到训练范围，适应相对位置（序信息）更重要的场景。通常需要微调以便适应新的映射关系。</p>
-<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><h2 id="NTK-aware插值"><a href="#NTK-aware插值" class="headerlink" title="NTK-aware插值"></a>NTK-aware插值</h2><h2 id="RoPE"><a href="#RoPE" class="headerlink" title="RoPE"></a>RoPE</h2><h2 id="YaRN"><a href="#YaRN" class="headerlink" title="YaRN"></a>YaRN</h2><p>本质是一种新的RoPE方法。</p>
-<h2 id="S2-Attention"><a href="#S2-Attention" class="headerlink" title="S2-Attention"></a>S2-Attention</h2><h2 id="上下文窗口外推常见问题"><a href="#上下文窗口外推常见问题" class="headerlink" title="上下文窗口外推常见问题"></a>上下文窗口外推常见问题</h2><ol>
-<li>在注意力机制中距离倍增时容易发生梯度爆炸或收缩</li>
-<li>在上下文非常长时（如128K），大部分 token 实际上对训练损失的贡献较小（尤其是头尾位置）</li>
-</ol>
-<p>DeepSeek应用 YaRN（Peng et al., 2023a）进行上下文扩展，并进行两个额外的训练阶段，每个阶段包含1000步，逐步将上下文窗口从4K扩展到32K，然后扩展到128K。</p>
-<h1 id="长上下文大模型（Long-Context-LLM）微调"><a href="#长上下文大模型（Long-Context-LLM）微调" class="headerlink" title="长上下文大模型（Long-Context LLM）微调"></a>长上下文大模型（Long-Context LLM）微调</h1><h2 id="LongLora"><a href="#LongLora" class="headerlink" title="LongLora"></a>LongLora</h2><table>
-<thead>
-<tr>
-<th>技术</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Sequence-Parallel LoRA (SP-LoRA)</strong></td>
-<td>将序列维度并行，用多个 GPU 分担超长序列计算，显著降低单卡显存压力</td>
-</tr>
-<tr>
-<td><strong>Hidden State Caching</strong></td>
-<td>在重复的上下文块中缓存隐藏状态，减少冗余计算，加快训练</td>
-</tr>
-<tr>
-<td><strong>Mixed-Precision KV Cache Training</strong></td>
-<td>用低精度训练 KV cache，节省内存、提升速度</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>普通 LoRA</th>
-<th>LongLoRA</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>支持上下文长度</td>
-<td>通常 &lt;8K</td>
-<td>支持长达 128K-1M</td>
-</tr>
-<tr>
-<td>显存需求</td>
-<td>快速增长</td>
-<td>显著优化，线性扩展</td>
-</tr>
-<tr>
-<td>训练效率</td>
-<td>慢，受限于序列长度</td>
-<td>快，支持更大 batch 和序列</td>
-</tr>
-<tr>
-<td>稳定性</td>
-<td>长 context 下容易崩</td>
-<td>收敛更稳定</td>
-</tr>
-</tbody></table>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2304.11062">Scaling Transformer to 1M tokens and beyond with RMT</a><br><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1209784">突破Transformer输入限制：实测支持200万个有效token</a></p>
-
+                
                 
               </div>
             
@@ -536,12 +316,12 @@
     
       <span class="category-chain">
         
-  <a href="/tech-blog/categories/AI/" class="category-chain-item">AI</a>
+  <a href="/tech-blog/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="category-chain-item">大模型</a>
   
   
     <span>></span>
     
-  <a href="/tech-blog/categories/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
+  <a href="/tech-blog/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="category-chain-item">源码分析</a>
   
   
 
@@ -558,11 +338,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tech-blog/tags/AI/" class="print-no-link">#AI</a>
+        <a href="/tech-blog/tags/LLM/" class="print-no-link">#LLM</a>
       
-        <a href="/tech-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+        <a href="/tech-blog/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#大模型</a>
       
-        <a href="/tech-blog/tags/%E7%94%9F%E6%88%90%E5%BC%8FAI/" class="print-no-link">#生成式AI</a>
+        <a href="/tech-blog/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/" class="print-no-link">#源码解读</a>
+      
+        <a href="/tech-blog/tags/Qwen/" class="print-no-link">#Qwen</a>
       
     </div>
   
@@ -574,8 +356,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>窗口外推技术综述</div>
-      <div>https://summerchengh.github.io/tech-blog/2025/03/26/大模型-LLM窗口外推技术综述/</div>
+      <div>Qwen大模型</div>
+      <div>https://summerchengh.github.io/tech-blog/2025/08/02/大模型-开源大模型-Qwen系列/</div>
     </div>
     <div class="license-meta">
       
@@ -587,7 +369,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 26, 2025</div>
+          <div>August 2, 2025</div>
         </div>
       
       
@@ -619,9 +401,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/27/%E5%A4%A7%E6%A8%A1%E5%9E%8B-RAG/" title="RAG">
+                      <a href="/tech-blog/2025/08/06/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AE%AD%E7%BB%83%E9%83%A8%E7%BD%B2%E6%8E%A8%E7%90%86%E6%9E%B6%E6%9E%84/" title="大模型训练推理部署框架">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">RAG</span>
+                        <span class="hidden-mobile">大模型训练推理部署框架</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -629,8 +411,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/03/26/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E8%A7%A3%E6%9E%90/" title="大模型原理">
-                        <span class="hidden-mobile">大模型原理</span>
+                      <a href="/tech-blog/2025/07/20/%E5%A4%A7%E6%A8%A1%E5%9E%8B-Agent-%E6%95%88%E6%9E%9C%E4%BC%98%E5%8C%96-%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1/" title="记忆机制设计">
+                        <span class="hidden-mobile">记忆机制设计</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

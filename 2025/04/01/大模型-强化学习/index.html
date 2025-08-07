@@ -19,15 +19,15 @@
   <meta name="author" content="Your Name">
   <meta name="keywords" content="technology, programming, web development, software engineering">
   
-    <meta name="description" content="强化学习基本概念强化学习涉及以下几个概念：智能体(Agent)、环境(Environment)、状态(State)、行为(Action)、奖励(Reward)。环境由智能体所有时刻的状态组成。智能体在执行行为后，感知环境的状态，根据状态和目标计算奖励函数，并根据策略选择下一个行动。 强化学习在大模型中的核心作用显著提升大模型的推理能力。 常用算法ChatGPTDeepSeek研究点提升模型推理能力">
+    <meta name="description" content="强化学习基本概念强化学习涉及以下几个概念：智能体(Agent)、环境(Environment)、状态(State)、行为(Action)、奖励(Reward)。环境由智能体所有时刻的状态组成。智能体在执行行为后，感知环境的状态，根据状态和目标计算奖励函数，并根据策略选择下一个行动。 强化学习在大模型中的核心作用显著提升大模型的推理能力。 强化学习训练框架对比   框架 开发机构 支持算法 主要特性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大模型训练-强化学习篇">
 <meta property="og:url" content="https://summerchengh.github.io/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Tech Blog">
-<meta property="og:description" content="强化学习基本概念强化学习涉及以下几个概念：智能体(Agent)、环境(Environment)、状态(State)、行为(Action)、奖励(Reward)。环境由智能体所有时刻的状态组成。智能体在执行行为后，感知环境的状态，根据状态和目标计算奖励函数，并根据策略选择下一个行动。 强化学习在大模型中的核心作用显著提升大模型的推理能力。 常用算法ChatGPTDeepSeek研究点提升模型推理能力">
+<meta property="og:description" content="强化学习基本概念强化学习涉及以下几个概念：智能体(Agent)、环境(Environment)、状态(State)、行为(Action)、奖励(Reward)。环境由智能体所有时刻的状态组成。智能体在执行行为后，感知环境的状态，根据状态和目标计算奖励函数，并根据策略选择下一个行动。 强化学习在大模型中的核心作用显著提升大模型的推理能力。 强化学习训练框架对比   框架 开发机构 支持算法 主要特性">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-01T07:11:00.000Z">
-<meta property="article:modified_time" content="2025-04-21T07:35:19.013Z">
+<meta property="article:modified_time" content="2025-08-06T05:01:01.645Z">
 <meta property="article:author" content="Your Name">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="生成式AI">
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          238 words
+          693 words
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          2 mins
+          6 mins
         
       </span>
     
@@ -299,7 +299,90 @@
                 
                 <h1 id="强化学习基本概念"><a href="#强化学习基本概念" class="headerlink" title="强化学习基本概念"></a>强化学习基本概念</h1><p>强化学习涉及以下几个概念：智能体(Agent)、环境(Environment)、状态(State)、行为(Action)、奖励(Reward)。<br>环境由智能体所有时刻的状态组成。智能体在执行行为后，感知环境的状态，根据状态和目标计算奖励函数，并根据策略选择下一个行动。</p>
 <h1 id="强化学习在大模型中的核心作用"><a href="#强化学习在大模型中的核心作用" class="headerlink" title="强化学习在大模型中的核心作用"></a>强化学习在大模型中的核心作用</h1><p>显著提升大模型的推理能力。</p>
-<h2 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h2><h2 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="研究点"><a href="#研究点" class="headerlink" title="研究点"></a>研究点</h2><h3 id="提升模型推理能力"><a href="#提升模型推理能力" class="headerlink" title="提升模型推理能力"></a>提升模型推理能力</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><p>现状：预先确定了工具的使用模式、限制了对最优策略的探索、实现透明度不足等。<br>Tool-Integrated Reinforcement Learning框架允许模型直接从基座模型开始，通过强化学习自主探索最优工具使用策略，而非受限于与定义的工具使用模式。</p>
+<h2 id="强化学习训练框架对比"><a href="#强化学习训练框架对比" class="headerlink" title="强化学习训练框架对比"></a>强化学习训练框架对比</h2><table>
+<thead>
+<tr>
+<th>框架</th>
+<th>开发机构</th>
+<th>支持算法</th>
+<th>主要特性</th>
+<th>优势</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/huggingface/trl">TRL</a></strong></td>
+<td>HuggingFace</td>
+<td>PPO&#x2F;DPO<br>RLHF<br>Reward Modeling</td>
+<td>Transformers集成<br>易于使用<br>丰富示例</td>
+<td>生态完整<br>文档齐全<br>社区活跃</td>
+<td>研究实验<br>快速原型</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/microsoft/DeepSpeed">DeepSpeed-Chat</a></strong></td>
+<td>Microsoft</td>
+<td>PPO<br>Actor-Critic<br>分布式RLHF</td>
+<td>ZeRO优化<br>大规模训练<br>内存高效</td>
+<td>企业级<br>可扩展性强<br>性能优化</td>
+<td>大规模训练<br>企业部署</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/OpenLLMAI/OpenRLHF">OpenRLHF</a></strong></td>
+<td>OpenLLMAI</td>
+<td>PPO&#x2F;DPO<br>ReAct<br>多种RL算法</td>
+<td>模块化设计<br>算法丰富<br>易扩展</td>
+<td>算法全面<br>研究友好<br>开源透明</td>
+<td>算法研究<br>学术实验</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/hpcaitech/ColossalAI">ColossalAI-Chat</a></strong></td>
+<td>HPC-AI Tech</td>
+<td>PPO<br>RLHF<br>低资源训练</td>
+<td>自动并行<br>异构训练<br>成本优化</td>
+<td>资源友好<br>自动化高<br>成本低</td>
+<td>资源受限<br>成本敏感</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/CarperAI/trlx">TRLX</a></strong></td>
+<td>CarperAI</td>
+<td>PPO&#x2F;ILQL<br>分布式训练<br>Reward学习</td>
+<td>分布式优化<br>多GPU支持<br>灵活配置</td>
+<td>性能稳定<br>配置灵活<br>扩展性好</td>
+<td>中大规模训练<br>性能要求高</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/PKU-Alignment/ChatGLM-RLHF">ChatGLM-RLHF</a></strong></td>
+<td>北京大学</td>
+<td>PPO<br>DPO<br>中文优化</td>
+<td>中文数据集<br>ChatGLM优化<br>安全对齐</td>
+<td>中文效果好<br>安全性强<br>本土化</td>
+<td>中文应用<br>安全要求高</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://github.com/allenai/reward-bench">RewardBench</a></strong></td>
+<td>Allen AI</td>
+<td>奖励模型评估<br>基准测试<br>多任务评估</td>
+<td>评估标准化<br>基准全面<br>可复现</td>
+<td>评估权威<br>标准统一<br>研究导向</td>
+<td>模型评估<br>学术研究</td>
+</tr>
+</tbody></table>
+<h2 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h2><h3 id="PPO-Proximal-Policy-Optimization"><a href="#PPO-Proximal-Policy-Optimization" class="headerlink" title="PPO (Proximal Policy Optimization)"></a>PPO (Proximal Policy Optimization)</h3><ul>
+<li><strong>原理</strong>: 通过限制策略更新幅度，保证训练稳定性</li>
+<li><strong>优势</strong>: 稳定性好、易于实现、效果可靠</li>
+<li><strong>应用</strong>: ChatGPT、GPT-4等主流模型的RLHF训练</li>
+</ul>
+<h3 id="DPO-Direct-Preference-Optimization"><a href="#DPO-Direct-Preference-Optimization" class="headerlink" title="DPO (Direct Preference Optimization)"></a>DPO (Direct Preference Optimization)</h3><ul>
+<li><strong>原理</strong>: 直接优化偏好数据，无需显式奖励模型</li>
+<li><strong>优势</strong>: 训练简单、计算效率高、避免奖励模型偏差</li>
+<li><strong>应用</strong>: Llama 2、Claude等模型的偏好学习</li>
+</ul>
+<h3 id="ILQL-Implicit-Language-Q-Learning"><a href="#ILQL-Implicit-Language-Q-Learning" class="headerlink" title="ILQL (Implicit Language Q-Learning)"></a>ILQL (Implicit Language Q-Learning)</h3><ul>
+<li><strong>原理</strong>: 结合Q-Learning和语言模型，隐式学习价值函数</li>
+<li><strong>优势</strong>: 不需要显式价值函数、适合长序列</li>
+<li><strong>应用</strong>: 长文本生成、对话系统优化</li>
+</ul>
+<h2 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h2><h2 id="DeepSeek"><a href="#DeepSeek" class="headerlink" title="DeepSeek"></a>DeepSeek</h2><h2 id="研究点"><a href="#研究点" class="headerlink" title="研究点"></a>研究点</h2><h3 id="提升模型推理能力"><a href="#提升模型推理能力" class="headerlink" title="提升模型推理能力"></a>提升模型推理能力</h3><h3 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h3><p>现状：预先确定了工具的使用模式、限制了对最优策略的探索、实现透明度不足等。<br>Tool-Integrated Reinforcement Learning框架允许模型直接从基座模型开始，通过强化学习自主探索最优工具使用策略，而非受限于与定义的工具使用模式。</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Fine-Tuning Language Models from Human Preferences<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TLQ3TdrB5gLb697AFmjEYQ">ChatGPT 背后的“功臣”——RLHF 技术详解</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2402.03300">DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2503.23383">TORL: Scaling Tool-Integrated RL</a></p>
 
                 
@@ -409,9 +492,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tech-blog/2025/04/02/%E8%84%91%E7%A7%91%E5%AD%A6-%E5%B9%B4%E9%BE%84%E4%B8%8E%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" title="你的大脑也许根本就不会老：认知能力与年龄的复杂关系">
+                      <a href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E9%A2%84%E8%AE%AD%E7%BB%83/" title="大模型训练">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">你的大脑也许根本就不会老：认知能力与年龄的复杂关系</span>
+                        <span class="hidden-mobile">大模型训练</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -419,8 +502,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tech-blog/2025/04/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E8%AF%AD%E9%9F%B3%E5%A4%A7%E6%A8%A1%E5%9E%8B/" title="语音大模型简介">
-                        <span class="hidden-mobile">语音大模型简介</span>
+                      <a href="/tech-blog/2025/03/27/%E5%A4%A7%E6%A8%A1%E5%9E%8B-RAG/" title="RAG">
+                        <span class="hidden-mobile">RAG</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
